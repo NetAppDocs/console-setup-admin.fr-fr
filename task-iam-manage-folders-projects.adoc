@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-folders-projects.html 
+keywords: folders, projects, resource hierarchy, create folders, create projects, iam, identity and access management, project id 
+summary: 'au sein de la console NetApp , l"utilisation de la gestion des identités et des accès vous permet de représenter une hiérarchie complète des ressources à l"aide de dossiers et de projets.' 
+---
+= Organisez vos ressources de la console NetApp avec des dossiers et des projets
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans la console NetApp , vous organisez vos ressources NetApp à l'aide de projets et de dossiers.  Un _projet_ représente un espace de travail dans la console auquel les membres de l'organisation accèdent pour gérer les _ressources_ (par exemple, un système Cloud Volumes ONTAP ).  Un _dossier_ regroupe des projets liés.  Après avoir organisé vos ressources en dossiers et projets, vous pouvez accorder un accès granulaire aux ressources en fournissant aux membres de l’organisation des autorisations sur des dossiers et des projets spécifiques.
+
+
+
+== Ajouter un dossier ou un projet
+
+Lorsque vous créez votre organisation, elle comprend un seul projet.  Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets associés.
+
+La hiérarchie des ressources de votre organisation peut comporter jusqu'à sept niveaux, avec des dossiers imbriqués sur six niveaux de profondeur et des projets au septième.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Organisation*.
+. Depuis la page *Organisation*, sélectionnez *Ajouter un dossier ou un projet*.
+. Sélectionnez *Dossier* ou *Projet*.
+. Fournissez des détails sur le dossier ou le projet :
++
+** *Nom et emplacement* : saisissez un nom et choisissez un emplacement dans la hiérarchie pour le dossier ou le projet.  Un dossier ou un projet peut être directement sous l'organisation ou à l'intérieur d'un dossier.
+** *Ressources* : Sélectionnez les ressources que vous souhaitez associer à ce dossier ou projet.
++
+Vous pouvez sélectionner des ressources associées au dossier parent ou au projet.
+
++
+link:concept-identity-and-access-management.html#associate-resource-folder["Apprenez quand associer une ressource à un dossier"] .
+
+** *Accès* : Affichez les membres qui auront accès au dossier ou au projet en fonction des autorisations existantes déjà définies dans votre hiérarchie de ressources.
++
+Sélectionnez *Ajouter un membre* pour attribuer l'accès et un rôle à des membres supplémentaires. Un rôle définit les autorisations dont disposent les membres pour le dossier ou le projet.
+
++
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+
+
+. Sélectionnez *Ajouter*.
+
+
+
+
+== Renommer un dossier ou un projet
+
+Si nécessaire, vous pouvez modifier le nom de vos dossiers et projets.
+
+.Étapes
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône avec trois points"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
+. Sur la page *Modifier*, saisissez un nouveau nom et sélectionnez *Appliquer*.
+
+
+
+
+== Supprimer un dossier ou un projet
+
+Supprimez les dossiers et les projets dont vous n’avez plus besoin.
+
+.Avant de commencer
+* Assurez-vous que le dossier ou le projet n’a aucune ressource associée. <<modify-resources,Apprenez à dissocier les ressources>> .
+* Assurez-vous que le dossier ou le projet n’a aucune ressource associée.
+
+
+.Étapes
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône avec trois points"] puis sélectionnez *Supprimer*.
+. Confirmez que vous souhaitez supprimer le dossier ou le projet.
+
+
+
+
+== Afficher les ressources associées à un dossier ou à un projet
+
+Afficher les ressources et les membres associés à un dossier ou à un projet.
+
+.Étapes
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
++
+image:screenshot-iam-edit-project.png["Une capture d’écran de la page Organisation qui montre l’option Modifier le projet lors de la sélection du menu d’action pour un projet dans le tableau."]
+
+. Sur la page *Modifier*, vous pouvez afficher les détails du dossier ou du projet sélectionné en développant les sections *Ressources* ou *Accès*.
++
+** Sélectionnez *Ressources* pour afficher les ressources associées.  Dans le tableau, la colonne *Statut* identifie les ressources associées au dossier ou au projet.
++
+image:screenshot-iam-allocated-resources.png["Une capture d'écran de la page Modifier le projet qui montre les ressources disponibles que vous pouvez associer ou dissocier du projet."]
+
+
+
+
+
+
+
+== Modifier les ressources associées à un dossier ou à un projet
+
+Les membres disposant d’autorisations pour un dossier ou un projet peuvent accéder à ses ressources associées.
+
+.Avant de commencer
+link:concept-identity-and-access-management.html#associate-resource-folder["Apprenez quand associer une ressource à un dossier"] .
+
+.Étapes
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
+. Sur la page *Modifier*, sélectionnez *Ressources*.
++
+Dans le tableau, la colonne *Statut* identifie les ressources associées au dossier ou au projet.
+
+. Sélectionnez les ressources que vous souhaitez associer ou dissocier.
+. En fonction des ressources que vous avez sélectionnées, sélectionnez *Associer au projet* ou *Dissocier du projet*.
++
+image:screenshot-iam-associate-resources.png["Une capture d'écran de la page Modifier le projet qui montre l'option Associer des ressources disponible après avoir sélectionné des ressources qui ne sont pas actuellement associées."]
+
+. Sélectionnez *Appliquer*
+
+
+
+
+== Afficher les membres associés à un dossier ou à un projet
+
+* Sélectionnez *Accès* pour afficher les membres qui ont accès au dossier ou au projet.
++
+image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier le projet qui montre les membres qui ont accès au projet."]
+
+
+
+
+
+== Modifier l'accès des membres à un dossier ou à un projet
+
+Modifiez l'accès des membres pour garantir que les bons membres peuvent accéder aux ressources associées.
+
+L’accès des membres fourni à un niveau hiérarchique supérieur ne peut pas être modifié à des niveaux inférieurs.  Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l'accès.  Alternativement, vous pouvezlink:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"] .
+
+link:concept-identity-and-access-management.html#role-inheritance["En savoir plus sur l'héritage des rôles"] .
+
+.Étapes
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
+. Sur la page *Modifier*, sélectionnez *Accès* pour afficher la liste des membres qui ont accès au dossier ou au projet sélectionné.
+. Modifier l'accès des membres :
++
+** *Ajouter un membre* : Sélectionnez le membre que vous souhaitez ajouter au dossier ou au projet et attribuez-lui un rôle.
+** *Modifier le rôle d'un membre* : Pour tous les membres ayant un rôle autre qu'Administrateur de l'organisation, sélectionnez leur rôle existant, puis choisissez un nouveau rôle.
+** *Supprimer l'accès des membres* : pour les membres qui ont un rôle défini dans le dossier ou le projet que vous consultez, vous pouvez supprimer leur accès.
+
+
+. Sélectionnez *Appliquer*.
+
+
+
+
+== Informations connexes
+
+* link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la console NetApp"]
+* link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
+* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API d'identité et d'accès"]
+

@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: reference-ports-azure.html 
+keywords: ports, security group, http, https, inbound, outbound 
+summary: 'Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d"installation, vous devez configurer ce groupe de sécurité manuellement.' 
+---
+= Règles du groupe de sécurité de l'agent de console dans Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d'installation, vous devez configurer ce groupe de sécurité manuellement.
+
+
+
+== Règles entrantes
+
+[cols="3*"]
+|===
+| Protocole | Port | But 
+
+
+| SSH | 22 | Fournit un accès SSH à l'hôte de l'agent 
+
+
+| HTTP | 80  a| 
+* Fournit un accès HTTP depuis les navigateurs Web clients vers l'interface utilisateur locale
+* Utilisé pendant le processus de mise à niveau de Cloud Volumes ONTAP
+
+
+
+
+| HTTPS | 443 | Fournit un accès HTTPS depuis les navigateurs Web clients à l'interface utilisateur locale et des connexions depuis l'instance de classification des données NetApp 
+
+
+| TCP | 3128 | Fournit à Cloud Volumes ONTAP un accès Internet pour envoyer des messages AutoSupport au support NetApp .  Vous devez ouvrir manuellement ce port après le déploiement. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-verify-autosupport.html["Découvrez comment l'agent est utilisé comme proxy pour les messages AutoSupport"^] 
+|===
+
+
+== Règles de sortie
+
+Le groupe de sécurité prédéfini pour l'agent ouvre tout le trafic sortant.  Si cela est acceptable, suivez les règles de sortie de base.  Si vous avez besoin de règles plus rigides, utilisez les règles sortantes avancées.
+
+
+
+=== Règles de base pour les voyages sortants
+
+Le groupe de sécurité prédéfini pour l’agent inclut les règles sortantes suivantes.
+
+[cols="3*"]
+|===
+| Protocole | Port | But 
+
+
+| Tous les TCP | Tous | Tout le trafic sortant 
+
+
+| Tout UDP | Tous | Tout le trafic sortant 
+|===
+
+
+=== Règles sortantes avancées
+
+Si vous avez besoin de règles strictes pour le trafic sortant, vous pouvez utiliser les informations suivantes pour ouvrir uniquement les ports requis pour la communication sortante par l'agent.
+
+
+NOTE: L'adresse IP source est l'hôte de l'agent.
+
+[cols="5*"]
+|===
+| Service | Protocole | Port | Destination | But 
+
+
+| Appels API et AutoSupport | HTTPS | 443 | Gestion de cluster Internet sortant et ONTAP LIF | Appels d'API vers Azure, vers ONTAP, vers la classification des données NetApp et envoi de messages AutoSupport à NetApp 
+
+
+| Appels d'API | TCP | 8080 | Classification des données | Sonder l'instance de classification des données pendant le déploiement 
+
+
+| DNS | UDP | 53 | DNS | Utilisé pour la résolution DNS par la console 
+|===

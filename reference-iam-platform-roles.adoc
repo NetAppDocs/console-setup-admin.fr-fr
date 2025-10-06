@@ -1,0 +1,173 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-platform-roles.html 
+keywords: predefined roles, iam roles, organization admin, folder or project admin, classification viewer, snapcenter admin, role, iam role, admin, iam, identity and access management, bluexp 
+summary: Attribuez des rôles de plateforme aux utilisateurs pour accorder des autorisations de gestion de la console NetApp , attribuer des rôles, ajouter des utilisateurs, créer des agents de console et gérer les fédérations. 
+---
+= Rôles d'accès à la plateforme NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Attribuez des rôles de plateforme aux utilisateurs pour accorder des autorisations de gestion de la console NetApp , attribuer des rôles, ajouter des utilisateurs, créer des agents de console et gérer les fédérations.
+
+.Exemple de rôles organisationnels pour une grande organisation multinationale
+XYZ Corporation organise l'accès au stockage des données par région (Amérique du Nord, Europe et Asie-Pacifique), offrant un contrôle régional avec une surveillance centralisée.
+
+L'*administrateur de l'organisation* dans la console de la société XYZ crée une organisation initiale et des dossiers distincts pour chaque région. L'*administrateur de dossier ou de projet* de chaque région organise les projets (avec les ressources associées) dans le dossier de la région.
+
+Les administrateurs régionaux dotés du rôle *Administrateur de dossier ou de projet* gèrent activement leurs dossiers en ajoutant des ressources et des utilisateurs. Ces administrateurs régionaux peuvent également ajouter, supprimer ou renommer les dossiers et les projets qu’ils gèrent. L'*administrateur de l'organisation* hérite des autorisations pour toutes les nouvelles ressources, maintenant ainsi la visibilité de l'utilisation du stockage dans l'ensemble de l'organisation.
+
+Au sein de la même organisation, un utilisateur se voit attribuer le rôle *Administrateur de la fédération* pour gérer la fédération de l'organisation avec son IdP d'entreprise. Cet utilisateur peut ajouter ou supprimer des organisations fédérées, mais ne peut pas gérer les utilisateurs ou les ressources au sein de l'organisation. L'*administrateur de l'organisation* attribue à un utilisateur le rôle de *spectateur de fédération* pour vérifier l'état de la fédération et afficher les organisations fédérées.
+
+Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de console peut effectuer.
+
+
+
+== Rôles d'administration de l'organisation
+
+[cols="2,1,1"]
+|===
+| Tâche | Administrateur de l'organisation | Administrateur de dossier ou de projet 
+
+
+| Créer des agents | Oui | Non 
+
+
+| Créer, modifier ou supprimer des systèmes depuis la console (ajouter ou découvrir des systèmes) | Oui | Oui 
+
+
+| Créer des dossiers et des projets, y compris la suppression | Oui | Non 
+
+
+| Renommer les dossiers et projets existants | Oui | Oui 
+
+
+| Attribuer des rôles et ajouter des utilisateurs | Oui | Oui 
+
+
+| Associer des ressources à des dossiers et des projets | Oui | Oui 
+
+
+| Associer des agents à des dossiers et des projets | Oui | Non 
+
+
+| Supprimer les agents des dossiers et des projets | Oui | Non 
+
+
+| Gérer les agents (modifier les certificats, les paramètres, etc.) | Oui | Non 
+
+
+| Gérer les informations d'identification depuis Administration > Informations d'identification | Oui | Oui 
+
+
+| Créer, gérer et afficher les fédérations | Oui | Non 
+
+
+| Inscrivez-vous au support et soumettez des cas via la console | Oui | Oui 
+
+
+| Utiliser des services de données qui ne sont pas associés à un rôle d’accès explicite | Oui | Oui 
+
+
+| Afficher la page d'audit et les notifications | Oui | Oui 
+|===
+
+
+== Rôles de la Fédération
+
+[cols="2,1,1"]
+|===
+| Tâche | Administrateur de la fédération | Téléspectateur de la Fédération 
+
+
+| Créer une fédération | Oui | Non 
+
+
+| Vérifier un domaine | Oui | Non 
+
+
+| Ajouter un domaine à une fédération | Oui | Non 
+
+
+| Désactiver et supprimer les fédérations | Oui | Non 
+
+
+| Fédérations de tests | Oui | Non 
+
+
+| Voir les fédérations et leurs coordonnées | Oui | Oui 
+|===
+
+
+== Rôles de partenariat
+
+[cols="2,1,1"]
+|===
+| Tâche | Administrateur de partenariat | Visionneuse de partenariat 
+
+
+| Peut créer un partenariat | Oui | Non 
+
+
+| Attribuer des rôles aux membres partenaires | Oui | Non 
+
+
+| Peut ajouter des membres à un partenariat | Oui | Non 
+
+
+| Peut afficher les détails du partenariat de l'organisation | Oui | Oui 
+|===
+
+
+== Rôles de super administrateur et de spectateur
+
+Le rôle *Super administrateur* offre un accès complet pour gérer les fonctionnalités de la console, le stockage et les services de données.  Ce rôle convient à ceux qui supervisent l’administration et la gouvernance.  En revanche, le rôle *Super visualiseur* offre un accès en lecture seule, idéal pour les auditeurs ou les parties prenantes qui ont besoin de visibilité sans apporter de modifications.
+
+Les organisations doivent utiliser l'accès *Super administrateur* avec parcimonie afin de minimiser les risques de sécurité et de se conformer au principe du moindre privilège.  La plupart des organisations devraient attribuer des rôles précis avec uniquement les autorisations nécessaires pour réduire les risques et améliorer l’auditabilité.
+
+.Exemple de super rôles
+ABC Corporation dispose d'une petite équipe de cinq personnes qui utilisent la console NetApp pour les services de données et la gestion du stockage.  Au lieu de distribuer plusieurs rôles, ils attribuent le rôle de *Super administrateur* à deux membres seniors de l'équipe qui gèrent toutes les tâches administratives, y compris la gestion des utilisateurs et la configuration des ressources.  Les trois membres restants de l'équipe se voient attribuer le rôle de *Super visualiseur*, leur permettant de surveiller l'état du stockage et l'état du service de données sans pouvoir modifier les paramètres.
+
+[cols="2,1"]
+|===
+| Rôle | Rôles hérités 
+
+
+ a| 
+Super administrateur
+ a| 
+* Administrateur de l'organisation
+* Administrateur de dossier ou de projet
+* Administrateur de la fédération
+* Administrateur de partenariat
+* Administrateur de la résilience aux ransomwares
+* Administrateur de reprise après sinistre
+* Super administrateur de sauvegarde
+* Administrateur de stockage
+* Administrateur Keystone
+* Administrateur Google Cloud NetApp Volumes
+
+
+
+
+ a| 
+Super spectateur
+ a| 
+* Visionneuse d'organisation
+* Téléspectateur de la Fédération
+* Visionneuse de partenariat
+* Visionneuse de résilience aux ransomwares
+* Visionneuse de reprise après sinistre
+* Visionneuse de sauvegarde
+* Visionneuse de stockage
+* Visionneuse Keystone
+* Visionneuse de Google Cloud NetApp Volumes
+
+
+|===

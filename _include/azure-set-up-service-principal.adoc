@@ -1,0 +1,138 @@
+= 
+:allow-uri-read: 
+
+
+. Assurez-vous que vous disposez des autorisations dans Azure pour créer une application Active Directory et attribuer l’application à un rôle.
++
+Pour plus de détails, reportez-vous à https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentation Microsoft Azure : autorisations requises"^]
+
+. Depuis le portail Azure, ouvrez le service *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsoft Azure."]
+
+. Dans le menu, sélectionnez *Inscriptions d'applications*.
+. Sélectionnez *Nouvelle inscription*.
+. Précisez les détails de l'application :
++
+** *Nom*: Saisissez un nom pour l'application.
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *URI de redirection*: Vous pouvez laisser ce champ vide.
+
+
+. Sélectionnez *S'inscrire*.
++
+Vous avez créé l’application AD et le principal de service.
+
+
+
+. Créer un rôle personnalisé :
++
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+
++
+.. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour l'agent de la console"] et les enregistrer dans un fichier JSON.
+.. Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
++
+Vous devez ajouter l’ID de chaque abonnement Azure à partir duquel les utilisateurs créeront des systèmes Cloud Volumes ONTAP .
+
++
+*Exemple*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+.. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
++
+Les étapes suivantes décrivent comment créer le rôle à l’aide de Bash dans Azure Cloud Shell.
+
++
+*** Commencer https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] et choisissez l'environnement Bash.
+*** Téléchargez le fichier JSON.
++
+image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud Shell où vous pouvez choisir l’option de télécharger un fichier."]
+
+*** Utilisez l’interface de ligne de commande Azure pour créer le rôle personnalisé :
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
++
+Vous devriez maintenant avoir un rôle personnalisé appelé Opérateur de console que vous pouvez attribuer à la machine virtuelle de l’agent de console.
+
+
+
+
+
+. Affecter l'application au rôle :
++
+.. Depuis le portail Azure, ouvrez le service *Abonnements*.
+.. Sélectionnez l'abonnement.
+.. Sélectionnez *Contrôle d'accès (IAM) > Ajouter > Ajouter une attribution de rôle*.
+.. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et sélectionnez *Suivant*.
+.. Dans l'onglet *Membres*, procédez comme suit :
++
+*** Gardez *Utilisateur, groupe ou principal du service* sélectionné.
+*** Sélectionnez *Sélectionner les membres*.
++
+image:screenshot-azure-service-principal-role.png["Une capture d’écran du portail Azure qui affiche la page Membres lors de l’ajout d’un rôle à une application."]
+
+*** Recherchez le nom de l'application.
++
+Voici un exemple :
+
++
+image:screenshot_azure_service_principal_role.png["Une capture d’écran du portail Azure qui montre le formulaire Ajouter une attribution de rôle dans le portail Azure."]
+
+*** Sélectionnez l'application et sélectionnez *Sélectionner*.
+*** Sélectionnez *Suivant*.
+
+
+.. Sélectionnez *Réviser + attribuer*.
++
+Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
+
++
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+
+
+
+
+
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Sélectionnez *Autorisations API > Ajouter une autorisation*.
+. Sous *API Microsoft*, sélectionnez *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif["Une capture d’écran du portail Azure qui affiche les autorisations de l’API Azure Service Management."]
+
+. Sélectionnez *Accéder à Azure Service Management en tant qu’utilisateurs de l’organisation*, puis sélectionnez *Ajouter des autorisations*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Une capture d’écran du portail Azure qui montre l’ajout des API Azure Service Management."]
+
+
+
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Copiez l'*ID d'application (client)* et l'*ID de répertoire (locataire)*.
++
+image:screenshot_azure_app_ids.gif["Une capture d'écran qui montre l'ID d'application (client) et l'ID de répertoire (locataire) pour une application dans Microsoft Entra IDy."]
+
++
+Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
+
+
+
+. Ouvrez le service *Microsoft Entra ID*.
+. Sélectionnez *Inscriptions d'applications* et sélectionnez votre application.
+. Sélectionnez *Certificats et secrets > Nouveau secret client*.
+. Fournissez une description du secret et une durée.
+. Sélectionnez *Ajouter*.
+. Copiez la valeur du secret client.
++
+image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azure qui affiche un secret client pour le principal du service Microsoft Entra."]
+
+

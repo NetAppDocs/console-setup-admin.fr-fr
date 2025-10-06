@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task-iam-audit-actions-timeline.html 
+keywords: iam, audit, monitor, audit iam actions, monitor iam actions 
+summary: Surveillez ou auditez les actions de gestion des identités et des accès de la console NetApp à partir de la page Audit. 
+---
+= Surveiller ou auditer l'activité IAM
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous devez surveiller ou auditer une action effectuée en lien avec l'identité et l'accès, vous pouvez afficher les détails à partir de la page Audit.  Par exemple, vous souhaiterez peut-être vérifier qui a ajouté un membre à une organisation ou qu’un projet a été supprimé avec succès.
+
+.Étapes
+. Sélectionnez *Administration > Audit*.
+. Sur la page *Audit*, utilisez les filtres pour affiner les résultats.  Sélectionnez *Service* puis *Location*.
+. Utilisez l’un des autres filtres pour modifier les actions affichées dans le tableau.
++
+Par exemple, vous pouvez utiliser le filtre *Utilisateur* pour afficher les actions liées à un compte utilisateur spécifique.
+
+

@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: reference-networking-saas-console-previous.html 
+keywords: networking, urls, endpoints, web browser, console, network, set up networking, bluexp 
+summary: Lorsque vous vous connectez et utilisez la console Web, celle-ci contacte plusieurs points de terminaison pour terminer les actions que vous lancez.  Les ordinateurs qui accèdent à la console NetApp doivent disposer de connexions à ces points de terminaison. 
+---
+= Points d'accès réseau requis pour la version 3.9.55 et les versions antérieures
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette rubrique détaille l'accès réseau requis pour les versions du mode standard de la console NetApp antérieures à la version 4.0.0 de la console NetApp , l'agent de la console NetApp et l'accès Internet sortant des services de données NetApp et la possibilité de contacter les points de terminaison nécessaires.  Vous devez vous assurer que la console et tous les agents que vous installez disposent du bon accès réseau pour fonctionner.
+
+Vous devrez configurer l'accès réseau pour les ordinateurs qui accèdent à la console NetApp en tant que logiciel en tant que service (SaaS) et pour tous les agents de console que vous installez sur site ou dans le cloud.  Vous pouvez également avoir besoin de points de terminaison supplémentaires pour certains services de données NetApp , notamment Cloud Volumes ONTAP.
+
+
+
+== Mettez à jour votre liste de points de terminaison vers la liste révisée pour la version 4.0.0 et supérieure
+
+À partir de la version 4.0.0, les agents de console nécessitent moins de points de terminaison.  Les déploiements existants avant la version 4.0.0 restent pris en charge.  Après la mise à niveau vers la version 4.0.0 ou une version ultérieure, vous pouvez supprimer les anciens points de terminaison de votre liste d'autorisation lorsque cela vous convient.
+
+NetApp vous recommande de mettre à jour vos règles de pare-feu pour utiliser la liste de points de terminaison révisée.  La liste révisée est plus petite, donc plus sûre et plus facile à gérer.
+
+Revoirlink:reference-networking-saas-console.html["points de terminaison pris en charge pour la version 4.0.0 et supérieure"]
+
+.Étapes
+. Mettre sur liste blanche les points de terminaison danslink:reference-networking-saas-console.html["Points de terminaison pris en charge pour la version 4.0.0 et supérieure"] .
+. Redémarrez le service Service Manager 2 sur chaque agent en exécutant la commande suivante :
++
+[source, cli]
+----
+systemctl restart netapp-service-manager.service
+----
+. Exécutez la commande suivante et vérifiez que l'état de l'agent indique _actif (en cours d'exécution)_ : _
++
+[source, cli]
+----
+systemctl status netapp-service-manager.service
+----
+. Supprimez les anciens points de terminaison de votre liste autorisée.
+
+
+
+
+== Points de terminaison contactés par la console NetApp
+
+Chaque ordinateur qui accède à la console NetApp doit disposer de connexions aux points de terminaison répertoriés ci-dessous.
+
+Le système contacte ces points de terminaison dans deux scénarios :
+
+* À partir d'un ordinateur accédant au https://console.netapp.com["Console NetApp"^] en tant que logiciel en tant que service (SaaS).
+* Depuis un ordinateur accédant directement à un hôte agent, soit pour se connecter et le configurer, soit pour accéder à la console depuis l'hôte agent.
+
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://support.netapp.com \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
+| \https://\*.api.bluexp.netapp.com \ https://api.bluexp.netapp.com \https://*.cloudmanager.cloud.netapp.com \ https://cloudmanager.cloud.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com | Pour fournir des fonctionnalités et des services au sein de la console NetApp . 
+
+
+ a| 
+Choisissez entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée)
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2, sauf si vous utilisez Ransomware Resilience ou Backup and Recovery.  Notez les points suivants à propos de ces points de terminaison :
+
+* Les points de terminaison de l'option 1 sont pris en charge dans la version 3.9.47 et supérieure.  Les versions antérieures à la version 3.9.47 ne prennent pas en charge la compatibilité descendante.
+* L'agent de console initie d'abord le contact avec les points de terminaison de l'option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+|===
+
+
+== Points de terminaison contactés par l'agent de la console
+
+Vous installez l’agent de console sur site ou dans le cloud, et il contacte les points de terminaison pour effectuer les actions initiées par la console.
+
+Les agents de console doivent accéder aux mêmes points de terminaison que la console NetApp , ainsi qu'à des points de terminaison supplémentaires si vous déployez l'agent chez votre fournisseur de cloud.
+
+
+
+=== Points de terminaison d'agent pour AWS
+
+Ces points de terminaison s'appliquent aux agents de console antérieurs à la version 4.0.0.
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| Services AWS (amazonaws.com) : CloudFormation Elastic Compute Cloud (EC2), gestion des identités et des accès (IAM), service de gestion des clés (KMS), service de jeton de sécurité (STS), service de stockage simple (S3). | Pour gérer les ressources dans AWS.  Le point de terminaison exact dépend de la région AWS que vous utilisez.  Consultez la documentation AWS pour plus de détails sur l'obtention d'informations sur les licences et l'envoi de messages AutoSupport au support NetApp . 
+
+
+| \ https://support.netapp.com \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
+ a| 
+Choisissez entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée)
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2, sauf si vous utilisez Ransomware Resilience ou Backup and Recovery.  Notez les points suivants à propos de ces points de terminaison :
+
+* Les points de terminaison de l'option 1 sont pris en charge dans la version 3.9.47 et supérieure.  Les versions antérieures à la version 3.9.47 ne prennent pas en charge la compatibilité descendante.
+* L'agent de console initie d'abord le contact avec les points de terminaison de l'option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+|===
+
+
+=== Points de terminaison d'agent pour Azure
+
+Ces points de terminaison s’appliquent aux agents de console antérieurs à la version 4.0.0.
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net | Pour gérer les ressources dans les régions publiques Azure. 
+
+
+| \ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn | Pour gérer les ressources dans les régions Azure Chine. 
+
+
+| \ https://support.netapp.com \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
+ a| 
+Choisissez entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée)
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2, sauf si vous utilisez Ransomware Resilience ou Backup and Recovery.  Notez les points suivants à propos de ces points de terminaison :
+
+* Les points de terminaison de l'option 1 sont pris en charge dans la version 3.9.47 et supérieure.  Les versions antérieures à la version 3.9.47 ne prennent pas en charge la compatibilité descendante.
+* L'agent de console initie d'abord le contact avec les points de terminaison de l'option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+|===
+
+
+=== Points de terminaison d'agent pour Google Cloud
+
+Ces points de terminaison s’appliquent aux agents de console antérieurs à la version 4.0.0.
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/project | Pour gérer les ressources dans Google Cloud. 
+
+
+| \ https://support.netapp.com \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
+ a| 
+Choisissez entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée)
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
+
+* À partir de la version 3.9.47 de l'agent de console, le système prend en charge les points de terminaison répertoriés dans l'option 1.  Les versions précédentes de l’agent de console ne prennent pas en charge la compatibilité descendante.
+* L’agent de la console contacte d’abord les points de terminaison dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+|===
+
+
+== Points de terminaison d'agent sur site

@@ -1,0 +1,192 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-members-permissions.html 
+keywords: user, service account, member, role, permissions, organization, project, folder, iam, identity and access management 
+summary: Gérez les membres de votre organisation pour fournir des autorisations à différents niveaux de la hiérarchie des ressources de votre organisation. 
+---
+= Ajouter des membres et des comptes de service à la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans la console, vous pouvez ajouter des utilisateurs et des comptes de service à votre organisation et leur attribuer un ou plusieurs rôles dans votre hiérarchie de ressources.  Un _rôle_ contient un ensemble d’autorisations qui permet à un membre (utilisateur ou compte de service) d’effectuer des actions spécifiques à un niveau spécifique de la hiérarchie des ressources.
+
+Vous avez besoin de l’un des rôles suivants pour gérer les utilisateurs et les autorisations :
+
+* Administrateur de l'organisation
++
+Les utilisateurs avec ce rôle peuvent gérer tous les membres
+
+* Administrateur de dossier ou de projet
++
+Les utilisateurs disposant de ce rôle peuvent gérer uniquement les membres d'un dossier ou d'un projet désigné
+
++
+_L'administrateur du dossier ou du projet_ peut afficher tous les membres sur la page *Membres* mais gérer les autorisations uniquement pour les dossiers et les projets auxquels il a accès. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
+
+
+
+
+
+== Ajoutez des membres à votre organisation
+
+Vous pouvez ajouter deux types de membres à votre organisation : un compte utilisateur et un compte de service. Les applications utilisent des comptes de service pour effectuer des tâches API sans intervention humaine.  Une personne utilise généralement un compte utilisateur pour se connecter et gérer les ressources.
+
+Les utilisateurs doivent s'inscrire à la console NetApp avant de pouvoir les ajouter à une organisation ou leur attribuer un rôle.  Vous créez des comptes de service directement depuis la console.
+
+Pour gérer les utilisateurs et leurs autorisations, vous devez disposer du rôle *Administrateur de l'organisation* ou du rôle *Administrateur de dossier ou de projet*.  N'oubliez pas que les utilisateurs disposant du rôle *Administrateur de dossier ou de projet* ne peuvent gérer que les membres du dossier ou des projets pour lesquels ils disposent des autorisations d'administrateur.
+
+
+
+=== Ajouter un compte utilisateur
+
+Bien que les utilisateurs s'inscrivent eux-mêmes à la console NetApp , ils doivent être explicitement ajoutés à une organisation ou à des dossiers ou projets spécifiques pour accéder aux ressources de la console.
+
+.Étapes
+. Diriger l'utilisateur vers la visite https://console.netapp.com/["Console NetApp"^] pour s'inscrire.
++
+Une fois que les utilisateurs se sont inscrits, ils remplissent la page *Inscription*, vérifient leur courrier électronique et se connectent. Si la console invite les utilisateurs à créer une organisation, ils la ferment et vous informent de la création de leur compte.  Vous pouvez ensuite ajouter l’utilisateur à votre organisation existante.
+
++
+link:task-sign-up-saas.html["Découvrez comment vous inscrire à la console NetApp"] .
+
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Sélectionnez *Ajouter un membre*.
+. Pour *Type de membre*, gardez *Utilisateur* sélectionné.
+. Pour *E-mail de l'utilisateur*, saisissez l'adresse e-mail de l'utilisateur associée à la connexion qu'il a créée.
+. Utilisez la section *Sélectionnez une organisation, un dossier ou un projet* pour choisir le niveau de votre hiérarchie de ressources pour lequel le membre doit disposer d'autorisations.
++
+Notez ce qui suit :
+
++
+** Vous ne pouvez sélectionner que les dossiers et les projets pour lesquels vous disposez d'autorisations.
+** La sélection d’une organisation ou d’un dossier accorde au membre des autorisations sur tout son contenu.
+** Vous ne pouvez attribuer le rôle *Administrateur de l'organisation* qu'au niveau de l'organisation.
+
+
+. *Sélectionnez une catégorie* puis sélectionnez un *Rôle* qui fournit au membre des autorisations pour les ressources associées à l'organisation, au dossier ou au projet que vous avez sélectionné.
++
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+. Facultatif : sélectionnez un rôle ou un projet supplémentaire.  Si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation ou accorder à l'utilisateur des rôles supplémentaires dans la zone sélectionnée, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier ou projet ou une catégorie de rôle différente, puis choisissez un rôle.
+. Sélectionnez *Ajouter*.
++
+La console envoie à l'utilisateur un e-mail avec des instructions.
+
+
+
+
+
+=== Ajouter un compte de service
+
+Vous pouvez automatiser les tâches et intégrer les API de la console en toute sécurité avec les comptes de service.  Lorsque vous créez un compte de service, choisissez entre deux méthodes d’authentification : à l’aide d’un ID client et d’un secret, ou à l’aide de l’authentification JWT (JSON Web Token).  L'ID client et la méthode secrète conviennent aux configurations simples, tandis que l'authentification JWT offre une sécurité renforcée pour les environnements automatisés ou natifs du cloud.  Choisissez l’option qui correspond le mieux à vos besoins de sécurité et à la manière dont vous prévoyez d’utiliser la console.
+
+Si vous souhaitez utiliser l’authentification JWT, préparez votre clé publique ou votre certificat.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Sélectionnez *Ajouter un membre*.
+. Pour *Type de membre*, sélectionnez *Compte de service*.
+. Saisissez un nom pour le compte de service.
+. Si vous souhaitez utiliser l’authentification JWT, sélectionnez *Utiliser l’authentification JWT par clé privée* et téléchargez votre clé RSA publique ou votre certificat.  Ignorez cette étape si vous souhaitez utiliser un identifiant client et un secret à la place.
++
+Votre certificat X.509.  Il doit être au format PEM, CRT ou CER.
+
+. Utilisez la section *Sélectionnez une organisation, un dossier ou un projet* pour choisir le niveau de votre hiérarchie de ressources pour lequel le membre doit disposer d'autorisations.
++
+Notez ce qui suit :
+
++
+** Vous ne pouvez sélectionner que les dossiers et les projets pour lesquels vous disposez d'autorisations.
+** La sélection d’une organisation ou d’un dossier accorde au membre des autorisations sur tout son contenu.
+** Vous ne pouvez attribuer le rôle *Administrateur de l'organisation* qu'au niveau de l'organisation.
+
+
+. Sélectionnez une *Catégorie* puis sélectionnez un *Rôle* qui fournit au membre des autorisations pour les ressources associées à l'organisation, au dossier ou au projet que vous avez sélectionné.
++
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+. Facultatif : sélectionnez un rôle ou un projet supplémentaire.  Si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation ou accorder à l'utilisateur des rôles supplémentaires dans la zone sélectionnée, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier ou projet ou une catégorie de rôle différente, puis choisissez un rôle.
+. Si vous n’avez pas choisi d’utiliser l’authentification JWT, téléchargez ou copiez l’ID client et le secret client.  + La console affiche le secret du client une seule fois.  Copiez-le en toute sécurité ; vous pourrez le recréer plus tard si nécessaire.
+. Si vous avez choisi l’authentification JWT, téléchargez ou copiez l’ID client et l’audience JWT.  Ces informations ne sont affichées qu'une seule fois et ne peuvent pas être récupérées ultérieurement.
+. Sélectionnez *Fermer*.
+
+
+
+
+== Afficher les membres de l'organisation
+
+Pour comprendre quelles ressources et autorisations sont disponibles pour un membre, vous pouvez afficher les rôles attribués au membre à différents niveaux de la hiérarchie des ressources de votre organisation.link:task-iam-manage-roles.html["Découvrez comment utiliser les rôles pour contrôler l’accès aux ressources de la console."^]
+
+Vous pouvez afficher les comptes d'utilisateurs et les comptes de service à partir de la page *Membres*.
+
+
+NOTE: Vous pouvez également afficher tous les membres associés à un dossier ou à un projet spécifique. link:task-iam-manage-folders-projects.html#view-associated-resources-members["Apprendre encore plus"] .
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
++
+Le tableau *Membres* répertorie les membres de votre organisation.
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+
+
+
+
+== Supprimer un membre de votre organisation
+
+Vous devrez peut-être supprimer un membre de votre organisation, par exemple s'il quitte votre entreprise.
+
+Le système supprime les autorisations du membre mais conserve ses comptes de console et de site de support NetApp .
+
+.Étapes
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Supprimer l'utilisateur*.
+. Confirmez que vous souhaitez supprimer le membre de votre organisation.
+
+
+
+
+== Recréer les informations d'identification pour un compte de service
+
+Créez de nouvelles informations d’identification si vous les perdez ou si vous devez les mettre à jour.
+
+Lorsque vous recréez les informations d’identification, vous supprimez les informations d’identification existantes pour le compte de service et en créez de nouvelles. Vous ne pouvez pas utiliser les informations d'identification précédentes.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Dans le tableau *Membres*, accédez à un compte de service, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Recréer les secrets*.
+. Sélectionnez *Recréer*.
+. Téléchargez ou copiez l'ID client et le secret client.  + Le secret client ne s'affiche qu'une seule fois. Copiez-le ou téléchargez-le et stockez-le en toute sécurité.
+
+
+
+
+== Gérer l'authentification multifacteur (MFA) d'un utilisateur
+
+Si un utilisateur perd l’accès à son périphérique MFA, vous pouvez supprimer ou désactiver sa configuration MFA.
+
+Les utilisateurs doivent reconfigurer MFA lors de la connexion après la suppression.  Si l'utilisateur n'a perdu l'accès à son appareil MFA que temporairement, il peut utiliser le code de récupération qu'il a enregistré lors de la configuration de MFA pour se connecter.
+
+S'ils ne disposent pas de leur code de récupération, désactivez temporairement MFA pour autoriser la connexion. Lorsque vous désactivez l'authentification multifacteur pour un utilisateur, elle est désactivée pendant huit heures seulement, puis réactivée automatiquement. L'utilisateur est autorisé à se connecter une fois pendant cette période sans MFA. Après les huit heures, l’utilisateur doit utiliser MFA pour se connecter.
+
+
+NOTE: Pour gérer l'authentification multifacteur d'un utilisateur, vous devez disposer d'une adresse e-mail dans le même domaine que l'utilisateur concerné.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
++
+Le tableau *Membres* répertorie les membres de votre organisation.
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Gérer l'authentification multifacteur*.
+. Choisissez de supprimer ou de désactiver la configuration MFA de l'utilisateur.
+

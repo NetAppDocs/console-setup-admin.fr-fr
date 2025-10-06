@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+. Entrez les détails de votre domaine :
++
+.. Choisissez si vous souhaitez utiliser un domaine vérifié ou votre domaine de messagerie.  Le domaine de messagerie est le domaine associé au compte avec lequel vous êtes connecté.
+.. Entrez le nom de la fédération que vous configurez.
+.. Si vous choisissez un domaine vérifié, sélectionnez le domaine dans la liste.
+
+
+. Sélectionnez *Suivant*.
+

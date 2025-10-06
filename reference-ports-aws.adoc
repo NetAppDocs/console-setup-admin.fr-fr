@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: reference-ports-aws.html 
+keywords: ports, security group, http, https, inbound, outbound 
+summary: Le groupe de sécurité AWS pour l’agent de console nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation. 
+---
+= Règles du groupe de sécurité de l'agent de console dans AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le groupe de sécurité AWS pour l'agent nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation.
+
+
+
+== Règles entrantes
+
+[cols="10,10,80"]
+|===
+| Protocole | Port | But 
+
+
+| SSH | 22 | Fournit un accès SSH à l'hôte de l'agent 
+
+
+| HTTP | 80  a| 
+* Fournit un accès HTTP depuis les navigateurs Web clients vers l'interface utilisateur locale
+* Utilisé pendant le processus de mise à niveau de Cloud Volumes ONTAP
+
+
+
+
+| HTTPS | 443 | Fournit un accès HTTPS à l'interface utilisateur locale et aux connexions à partir de l'instance de classification des données NetApp 
+
+
+| TCP | 3128 | Fournit à Cloud Volumes ONTAP un accès Internet.  Vous devez ouvrir manuellement ce port après le déploiement. 
+|===
+
+
+== Règles de sortie
+
+Le groupe de sécurité prédéfini pour l'agent ouvre tout le trafic sortant.  Si cela est acceptable, suivez les règles de sortie de base.  Si vous avez besoin de règles plus rigides, utilisez les règles sortantes avancées.
+
+
+
+=== Règles de base pour les voyages sortants
+
+Le groupe de sécurité prédéfini pour l’agent inclut les règles sortantes suivantes.
+
+[cols="20,20,60"]
+|===
+| Protocole | Port | But 
+
+
+| Tous les TCP | Tous | Tout le trafic sortant 
+
+
+| Tout UDP | Tous | Tout le trafic sortant 
+|===
+
+
+=== Règles sortantes avancées
+
+Si vous avez besoin de règles rigides pour le trafic sortant, vous pouvez utiliser les informations suivantes pour ouvrir uniquement les ports requis pour la communication sortante par l'agent
+
+
+NOTE: L'adresse IP source est l'hôte de l'agent.
+
+[cols="5*"]
+|===
+| Service | Protocole | Port | Destination | But 
+
+
+| Appels API et AutoSupport | HTTPS | 443 | Gestion de cluster Internet sortant et ONTAP LIF | Appels d'API vers AWS, ONTAP, NetApp Data Classification et envoi de messages AutoSupport à NetApp 
+
+
+.2+| Appels d'API | TCP | 3000 | Médiateur ONTAP HA | Communication avec le médiateur ONTAP HA 
+
+
+| TCP | 8080 | Classification des données | Sonder l'instance de classification des données pendant le déploiement 
+
+
+| DNS | UDP | 53 | DNS | Utilisé pour la résolution DNS par la console 
+|===

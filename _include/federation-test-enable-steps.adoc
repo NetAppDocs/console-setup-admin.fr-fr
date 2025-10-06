@@ -1,0 +1,12 @@
+= 
+:allow-uri-read: 
+
+
+. Sélectionnez *Suivant*.
+. Sélectionnez *Tester la connexion* pour tester votre connexion.  Vous êtes dirigé vers une page de connexion pour votre serveur IdP.  Connectez-vous avec vos identifiants IdP pour terminer le test et revenez à la console pour activer la connexion.
+. Sélectionnez *Suivant*.
+. Sur la page *Activer la fédération*, vérifiez les détails de la fédération, puis sélectionnez *Activer la fédération*.
+. Sélectionnez *Terminer* pour terminer le processus.
+
+
+Une fois la fédération activée, les utilisateurs peuvent se connecter à la console NetApp à l’aide de leurs informations d’identification d’entreprise.

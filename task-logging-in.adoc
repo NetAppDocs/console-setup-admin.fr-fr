@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-logging-in.html 
+keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account 
+summary: La manière dont vous vous connectez à la console NetApp dépend du mode de déploiement que vous utilisez. 
+---
+= Connectez-vous à la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La manière dont vous vous connectez à la console NetApp dépend du mode de déploiement que vous utilisez.
+
+Vous êtes automatiquement déconnecté après 24 heures ou si vous fermez votre navigateur.
+
+link:concept-modes.html["En savoir plus sur les modes de déploiement de la console"] .
+
+[role="tabbed-block"]
+====
+.Mode standard
+--
+Après vous être inscrit à la console NetApp , vous pouvez vous connecter à partir de la console Web pour commencer à gérer vos données et votre infrastructure de stockage.
+
+.À propos de cette tâche
+Vous pouvez vous connecter à la console NetApp en utilisant l’une des options suivantes :
+
+* Vos informations d'identification du site de support NetApp (NSS) existantes
+* Un compte NetApp Console utilisant votre adresse e-mail et un mot de passe
+* Une connexion fédérée
++
+Vous pouvez utiliser l’authentification unique pour vous connecter à l’aide des informations d’identification de votre annuaire d’entreprise (identité fédérée). link:concept-federation.html["Apprenez à configurer la fédération d'identité"] .
+
+
+
+.Étapes
+. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["Console NetApp"]
+. Sur la page *Connexion*, saisissez l'adresse e-mail associée à votre connexion.
+. Selon la méthode d'authentification associée à votre connexion, vous serez invité à saisir vos identifiants :
++
+** Identifiants cloud NetApp : saisissez votre mot de passe
+** Utilisateur fédéré : saisissez vos identifiants d’identité fédérée
+** Compte du site de support NetApp : saisissez vos identifiants de site de support NetApp
+
+
+
+
+.Résultat
+Vous êtes maintenant connecté et pouvez commencer à l'utiliser pour gérer votre infrastructure multicloud hybride.
+
+--
+.Mode restreint
+--
+Lorsque vous utilisez la console en mode restreint, vous devez vous connecter à la console à partir de l'interface utilisateur qui s'exécute localement sur l'agent.
+
+.À propos de cette tâche
+La console prend en charge la connexion avec l’une des options suivantes en mode restreint :
+
+* Une connexion à la console NetApp à l'aide de votre adresse e-mail et d'un mot de passe
+* Une connexion fédérée
++
+Vous pouvez utiliser l’authentification unique pour vous connecter à l’aide des informations d’identification de votre annuaire d’entreprise (identité fédérée). link:concept-federation.html["Apprenez à utiliser la fédération d'identité"] .
+
+
+
+.Étapes
+. Ouvrez un navigateur Web et entrez l’adresse IP où l’agent est installé.
+. Entrez votre nom d'utilisateur et votre mot de passe pour vous connecter.
+
+
+--
+====

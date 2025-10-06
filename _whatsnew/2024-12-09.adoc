@@ -1,0 +1,22 @@
+= Connecteur 3.9.47
+:allow-uri-read: 
+
+
+
+
+=== Connecteur 3.9.47
+
+Cette version du connecteur BlueXP inclut des corrections de bogues et une modification des points de terminaison contactés lors de l'installation du connecteur.
+
+À l'heure actuelle, la version 3.9.47 est disponible pour le mode standard et le mode restreint.
+
+.Point de terminaison pour contacter le support NetApp pendant l'installation
+Lorsque vous installez manuellement le connecteur, le programme d'installation ne contacte plus \ https://support.netapp.com.
+
+L'installateur contacte toujours \ https://mysupport.netapp.com.
+
+
+
+=== Gestion des identités et des accès BlueXP
+
+La page Connecteurs répertorie uniquement les connecteurs actuellement disponibles.  Il n'affiche plus les connecteurs que vous avez supprimés.

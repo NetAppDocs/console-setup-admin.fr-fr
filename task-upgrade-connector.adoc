@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: task-upgrade-connector.html 
+keywords: upgrade, manual upgrade, agent upgrade, manual agent upgrade, upgrade agent manually, private mode upgrade, offline upgrade, upgrade private mode, connector upgrade, agent upgrade 
+summary: 'Lorsque vous utilisez le mode standard ou le mode restreint, la console NetApp met automatiquement à niveau votre agent de console vers la dernière version, à condition que l"agent de console dispose d"un accès Internet sortant pour obtenir la mise à jour logicielle.' 
+---
+= Gérer les mises à niveau de l'agent de la console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous utilisez le mode standard ou le mode restreint, la console NetApp met automatiquement à niveau votre agent de console vers la dernière version, à condition que l'agent de console dispose d'un accès Internet sortant pour obtenir la mise à jour logicielle.
+
+Si vous devez gérer manuellement le moment où l'agent de console est mis à niveau, vous pouvez désactiver les mises à niveau automatiques pour le mode standard ou le mode restreint.
+
+
+
+== Désactiver les mises à niveau automatiques
+
+La désactivation de la mise à niveau automatique pour votre agent de console comprend deux étapes.  Vous devez d’abord vous assurer que votre agent de console est sain et à jour.  Ensuite, vous modifiez un fichier de configuration pour désactiver les mises à niveau automatiques.
+
+
+NOTE: Vous ne pouvez désactiver les mises à niveau automatiques que si vous disposez d'un agent de console version 3.9.48 ou supérieure.
+
+
+
+=== Vérifiez la santé de votre agent
+
+Vous devez vérifier que votre agent est stable et que tous les conteneurs exécutés sur votre machine virtuelle d’agent sont sains et en cours d’exécution.  Une fois les mises à niveau automatiques désactivées, votre machine virtuelle agent cesse de rechercher de nouveaux services ou packages de mise à niveau.
+
+Utilisez l’une des commandes suivantes pour vérifier votre agent de console.  Tous les services doivent avoir le statut _En cours d'exécution_.  Si ce n’est pas le cas, contactez le support NetApp avant de désactiver la mise à niveau automatique.
+
+Docker (pour les déploiements Ubuntu et VCenter)::
++
+--
+[source, cli]
+----
+docker ps -a
+----
+--
+Podman::
++
+--
+[source, cli]
+----
+podman ps -a
+----
+--
+
+
+
+
+=== Désactiver la mise à niveau automatique de l'agent
+
+Vous désactivez les mises à niveau automatiques en définissant l'indicateur _isUpgradeDisabled_ dans le fichier _com/opt/application/netapp/service-manager-2/config.json_.  Par défaut, cet indicateur est défini sur faux et votre agent est automatiquement mis à niveau.  Vous pouvez définir cet indicateur sur vrai pour désactiver les mises à niveau automatiques.  Vous devez être familiarisé avec la syntaxe JSON avant de terminer cette étape.
+
+Pour réactiver la mise à niveau automatique, procédez comme suit et définissez l'indicateur _isUpgradeDisabled_ sur false.
+
+.Étapes
+. Assurez-vous d'avoir vérifié que votre agent est à jour et sain.
+. Créez une copie de sauvegarde du fichier _/opt/application/netapp/service-manager-2/config.json_ pour vous assurer de pouvoir annuler vos modifications.
+. Modifiez le fichier _/opt/application/netapp/service-manager-2/config.json_ et remplacez la valeur de l'indicateur _isUpgradeDisabled_ par true.
++
+[source, json]
+----
+  "isUpgradeDisabled": true,
+----
+. Enregistrez votre fichier.
+. Redémarrez le service Service Manager 2 en exécutant la commande suivante :
++
+[source, cli]
+----
+systemctl restart netapp-service-manager.service
+----
+. Exécutez la commande suivante et vérifiez que l'état de l'agent indique _actif (en cours d'exécution)_ : _
++
+[source, cli]
+----
+systemctl status netapp-service-manager.service
+_
+----
+
+
+
+
+== Mettre à niveau l'agent de la console
+
+L'agent de la console doit redémarrer pendant le processus de mise à niveau afin que la console NetApp ne soit pas disponible pendant la mise à niveau.
+
+.Étapes
+. Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] .
+. Copiez le programme d’installation sur l’hôte Linux.
+. Attribuer des autorisations pour exécuter le script.
++
+[source, cli]
+----
+chmod +x /path/NetApp-Console-Agent-Offline-<version>
+----
++
+Où <version> est la version de l’agent de console que vous avez téléchargé.
+
+. Exécutez le script d’installation :
++
+[source, cli]
+----
+sudo /path/NetApp-Console-Agent-Offline-<version>
+----
++
+Où <version> est la version de l'agent que vous avez téléchargé.
+
+. Une fois la mise à niveau terminée, vous pouvez vérifier la version de l'agent en accédant à *Administration > Support > Agents*.
+

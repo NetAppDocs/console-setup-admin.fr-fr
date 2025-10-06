@@ -1,0 +1,49 @@
+= Connecteur 3.9.53
+:allow-uri-read: 
+
+
+
+
+=== Connecteur 3.9.53
+
+Cette version du connecteur BlueXP inclut des améliorations de sécurité et des corrections de bogues.
+
+La version 3.9.53 est disponible pour le mode standard et le mode restreint.
+
+
+
+=== Alertes d'utilisation de l'espace disque
+
+Le centre de notifications inclut désormais des alertes sur l’utilisation de l’espace disque sur le connecteur.link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#monitor-disk-space["Apprendre encore plus."^]
+
+
+
+=== Améliorations de l'audit
+
+La chronologie inclut désormais les événements de connexion et de déconnexion des utilisateurs.  Vous pouvez voir l'activité de connexion, ce qui peut aider à l'audit et à la surveillance de la sécurité.  Les utilisateurs de l'API qui ont le rôle d'administrateur de l'organisation peuvent afficher l'adresse e-mail de l'utilisateur qui s'est connecté en incluant le `includeUserData=true`` paramètre comme dans ce qui suit : `/audit/<account_id>?includeUserData=true` .
+
+
+
+=== Gestion des abonnements Keystone disponible dans BlueXP
+
+Vous pouvez gérer votre abonnement NetApp Keystone depuis BlueXP.
+
+link:https://docs.netapp.com/us-en/keystone-staas/index.html["Découvrez la gestion des abonnements Keystone dans BlueXP."^]
+
+
+
+=== Gestion des identités et des accès BlueXP (IAM)
+
+
+
+==== Authentification multifacteur (MFA)
+
+Les utilisateurs non fédérés peuvent activer MFA pour leurs comptes BlueXP afin d'améliorer la sécurité.  Les administrateurs peuvent gérer les paramètres MFA, notamment la réinitialisation ou la désactivation de MFA pour les utilisateurs selon les besoins.  Ceci est pris en charge uniquement en mode standard.
+
+link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-user-settings.html#task-user-mfa["Découvrez comment configurer l’authentification multifacteur pour vous-même."^] link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-iam-manage-members-permissions.html#manage-mfa["Découvrez comment administrer l’authentification multifacteur pour les utilisateurs."^]
+
+
+
+=== Charges de travail
+
+Vous pouvez désormais afficher et supprimer les informations d’identification Amazon FSx for NetApp ONTAP à partir de la page Informations d’identification dans BlueXP.

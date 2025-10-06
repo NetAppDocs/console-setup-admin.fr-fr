@@ -1,0 +1,40 @@
+= Nouveaux points de terminaison sécurisés pour obtenir des images de connecteur
+:allow-uri-read: 
+
+
+
+
+=== Nouveaux points de terminaison sécurisés pour obtenir des images de connecteur
+
+Lorsque vous installez le connecteur ou lorsqu'une mise à niveau automatique se produit, le connecteur contacte les référentiels pour télécharger des images pour l'installation ou la mise à niveau.  Par défaut, le connecteur a toujours contacté les points de terminaison suivants :
+
+* \https://*.blob.core.windows.net
+* \ https://cloudmanagerinfraprod.azurecr.io
+
+
+Le premier point de terminaison inclut un caractère générique car nous ne pouvons pas fournir un emplacement définitif.  L'équilibrage de charge du référentiel est géré par le fournisseur de services, ce qui signifie que les téléchargements peuvent s'effectuer à partir de différents points de terminaison.
+
+Pour une sécurité accrue, le connecteur peut désormais télécharger les images d'installation et de mise à niveau à partir de points de terminaison dédiés :
+
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
+
+
+Nous vous recommandons de commencer à utiliser ces nouveaux points de terminaison en supprimant les points de terminaison existants de vos règles de pare-feu et en autorisant les nouveaux points de terminaison.
+
+Ces nouveaux points de terminaison sont pris en charge à partir de la version 3.9.47 du connecteur.  Il n'y a pas de compatibilité descendante avec les versions précédentes du connecteur.
+
+Notez ce qui suit :
+
+* Les points de terminaison existants sont toujours pris en charge.  Si vous ne souhaitez pas utiliser les nouveaux points de terminaison, aucune modification n'est requise.
+* Le connecteur contacte d’abord les points de terminaison existants.  Si ces points de terminaison ne sont pas accessibles, le connecteur contacte automatiquement les nouveaux points de terminaison.
+* Les nouveaux points de terminaison ne sont pas pris en charge dans les scénarios suivants :
++
+** Si le connecteur est installé dans une région gouvernementale.
+** Si vous utilisez le connecteur avec la BlueXP backup and recovery ou la BlueXP ransomware protection.
+
+
++
+Pour ces deux scénarios, vous pouvez continuer à utiliser les points de terminaison existants.
+
+

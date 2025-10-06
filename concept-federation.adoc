@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: concept-federation.html 
+keywords: identity federation, single sign-on, SSO, identity provider, IdP, SAML, Microsoft Entra ID, AD FS, PingFederate, ACS URL, Entity ID, user access, security, productivity, compliance, authentication, business continuity, account management, user experience, access control, workflow automation, credential management, login process, organization admin, bluexp, BlueXP 
+summary: La fédération d’identité permet l’authentification unique avec la console NetApp afin que les utilisateurs puissent se connecter à l’aide des informations d’identification de votre identité d’entreprise.  Pour commencer, passez en revue le processus de configuration. 
+---
+= Activer l'authentification unique en utilisant la fédération d'identité avec la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'authentification unique (fédération) simplifie le processus de connexion et améliore la sécurité en permettant aux utilisateurs de se connecter à la console NetApp à l'aide de leurs informations d'identification d'entreprise.  Vous pouvez activer l'authentification unique (SSO) avec votre fournisseur d'identité (IdP) ou avec le site de support NetApp .
+
+.Rôle requis
+Administrateur d'organisation, administrateur de fédération, visualiseur de fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+
+
+== Fédération d'identité avec le site de support NetApp
+
+La fédération avec le site de support NetApp permet aux utilisateurs de se connecter à la console, à Active IQ Digital Advisor et à d'autres applications associées à l'aide des mêmes informations d'identification.
+
+
+NOTE: Si vous vous fédérez avec le site de support NetApp , vous ne pouvez pas également vous fédérer avec votre fournisseur de gestion des identités d'entreprise.  Choisissez celui qui convient le mieux à votre organisation.
+
+.Étapes
+. Téléchargez et complétez le https://kb.netapp.com/@api/deki/files/98382/NetApp-B2C-Federation-Request-Form-April-2022.docx?revision=1["Formulaire de demande de fédération NetApp"^] .
+. Soumettez le formulaire à l'adresse e-mail indiquée dans le formulaire.
++
+L'équipe de support NetApp examine et traite votre demande.
+
+
+
+
+
+== Configurer une connexion fédérée avec votre fournisseur d'identité
+
+Vous pouvez configurer une connexion fédérée avec votre fournisseur d’identité pour activer l’authentification unique (SSO) pour la console.  Le processus implique la configuration de votre fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services, puis la création de la connexion dans la console.
+
+
+NOTE: Si vous avez précédemment configuré la fédération à l’aide de NetApp Cloud Central (une application externe à la console), vous devez importer votre fédération à l’aide de la page Fédération pour la gérer dans la console.link:task-federation-import.html["Apprenez à importer votre fédération."]
+
+
+
+=== Fournisseurs d'identité pris en charge
+
+NetApp prend en charge les protocoles et fournisseurs d’identité suivants pour la fédération :
+
+.Protocoles
+* Fournisseurs d'identité SAML (Security Assertion Markup Language)
+* Services de fédération Active Directory (AD FS)
+
+
+.Fournisseurs d'identité
+* Identifiant Microsoft Entra
+* PingFédéré
+
+
+
+
+=== Fédération avec le flux de travail de la console NetApp
+
+NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Vous devez d’abord configurer le fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services.  Ensuite, vous pouvez créer une connexion dans la console qui utilise la configuration du fournisseur d’identité.
+
+Vous pouvez fédérer avec votre domaine de messagerie ou avec un autre domaine que vous possédez.  Pour fédérer avec un domaine différent de votre domaine de messagerie, vérifiez d'abord que vous êtes propriétaire du domaine.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Vérifiez votre domaine (si vous n'utilisez pas votre domaine de messagerie)
+[role="quick-margin-para"]
+Pour fédérer avec un domaine différent de votre domaine de messagerie, vérifiez que vous en êtes propriétaire. Vous pouvez fédérer votre domaine de messagerie sans aucune étape supplémentaire.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Configurez votre IdP pour faire confiance à NetApp en tant que fournisseur de services
+[role="quick-margin-para"]
+Configurez votre fournisseur d’identité pour qu’il fasse confiance à NetApp en créant une nouvelle application et en fournissant des détails tels que l’URL ACS, l’ID d’entité ou d’autres informations d’identification. Les informations sur le fournisseur de services varient selon le fournisseur d'identité. Reportez-vous donc à la documentation de votre fournisseur d'identité spécifique pour plus de détails. Vous devrez travailler avec votre administrateur IdP pour terminer cette étape.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"]Créer la connexion fédérée dans la console
+[role="quick-margin-para"]
+Fournissez l’URL ou le fichier de métadonnées SAML de votre fournisseur d’identité pour créer la connexion.  Ces informations sont utilisées pour établir la relation de confiance entre la console et votre fournisseur d’identité. Les informations que vous fournissez dépendent de l'IdP que vous utilisez. Par exemple, si vous utilisez Microsoft Entra ID, vous devez fournir l’ID client, le secret et le domaine.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Trois"]Testez votre fédération dans la console
+[role="quick-margin-para"]
+Testez votre connexion fédérée avant de l'activer. Utilisez l’option de test sur la page Fédération dans la console pour vérifier que votre utilisateur de test peut s’authentifier avec succès. Si le test réussit, vous pouvez activer la connexion.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Trois"]Activez votre connexion dans la console
+[role="quick-margin-para"]
+Une fois la connexion activée, les utilisateurs peuvent se connecter à la console à l’aide de leurs informations d’identification d’entreprise.
+
+Consultez le sujet de votre protocole ou IdP respectif pour commencer :
+
+* link:task-federation-adfs.html["Configurer une connexion fédérée avec AD FS"]
+* link:task-federation-entra-id.html["Configurer une connexion fédérée avec Microsoft Entra ID"]
+* link:task-federation-ping.html["Configurer une connexion fédérée avec PingFederate"]
+* link:task-federation-saml.html["Configurer une connexion fédérée avec un fournisseur d'identité SAML"]
+

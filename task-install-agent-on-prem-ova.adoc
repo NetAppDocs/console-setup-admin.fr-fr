@@ -1,0 +1,581 @@
+---
+sidebar: sidebar 
+permalink: task-install-agent-on-prem-ova.html 
+keywords: install agent, on prem agent installation, on prem connector, vmware, OVA, manual install 
+summary: 'Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.  Le téléchargement ou l"URL OVA est disponible via la console NetApp .' 
+---
+= Installer un agent de console sur site à l'aide de VCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.  Le téléchargement ou l'URL OVA est disponible via la console NetApp .
+
+
+NOTE: Lorsque vous installez un agent de console avec vos outils VCenter, vous pouvez utiliser la console Web de la machine virtuelle pour effectuer des tâches de maintenance.link:task-agent-vm-config.html["En savoir plus sur la console VM pour l’agent."]
+
+
+
+== Préparez-vous à installer l'agent de la console
+
+Avant l’installation, assurez-vous que votre hôte de machine virtuelle répond aux exigences et que l’agent de console peut accéder à Internet et aux réseaux ciblés.  Pour utiliser les services de données NetApp ou Cloud Volumes ONTAP, créez des informations d'identification de fournisseur de cloud pour que l'agent de la console effectue des actions en votre nom.
+
+
+
+=== Examen des exigences de l'hôte de l'agent de console
+
+Assurez-vous que votre machine hôte répond aux exigences d’installation avant d’installer l’agent de console.
+
+
+NOTE: Installez l’agent dans un environnement vCenter plutôt que directement sur un hôte ESXi.
+
+
+
+=== Configurer l'accès réseau pour l'agent de la console
+
+Travaillez avec votre administrateur réseau pour vous assurer que l’agent de la console dispose d’un accès sortant aux points de terminaison requis et aux connexions aux réseaux ciblés.
+
+Connexions aux réseaux cibles:: L'agent de console nécessite une connexion réseau à l'emplacement où vous prévoyez de créer et de gérer des systèmes.  Par exemple, le réseau sur lequel vous prévoyez de créer des systèmes Cloud Volumes ONTAP ou un système de stockage dans votre environnement local.
+
+
+Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
+
+
+Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la console Web NetApp::
++
+--
+Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
+
+link:reference-networking-saas-console.html["Préparer la mise en réseau pour la console NetApp"] .
+
+--
+
+
+Points de terminaison contactés depuis l'agent de la console:: L'agent de console nécessite un accès Internet sortant pour contacter les points de terminaison suivants afin de gérer les ressources et les processus au sein de votre environnement de cloud public pour les opérations quotidiennes.
++
+--
+Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
+
+--
+
+
+
+NOTE: Vous ne pouvez pas gérer les ressources dans Google Cloud avec un agent de console installé sur vos locaux.  Pour gérer les ressources Google Cloud, installez un agent dans Google Cloud.
+
+[role="tabbed-block"]
+====
+.AWS
+--
+Lorsque l'agent de console est installé sur site, il a besoin d'un accès réseau aux points de terminaison AWS suivants afin de gérer les systèmes NetApp (tels que Cloud Volumes ONTAP) déployés dans AWS.
+
+Points de terminaison contactés depuis l'agent de la console:: L'agent de console nécessite un accès Internet sortant pour contacter les points de terminaison suivants afin de gérer les ressources et les processus au sein de votre environnement de cloud public pour les opérations quotidiennes.
++
+--
+Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+Services AWS (amazonaws.com) :
+
+* CloudFormation
+* Cloud de calcul élastique (EC2)
+* Gestion des identités et des accès (IAM)
+* Service de gestion des clés (KMS)
+* Service de jetons de sécurité (STS)
+* Service de stockage simple (S3)
+
+ a| 
+Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+
+
+--
+.Azuré
+--
+Lorsque l’agent de console est installé sur site, il a besoin d’un accès réseau aux points de terminaison Azure suivants afin de gérer les systèmes NetApp (tels que Cloud Volumes ONTAP) déployés dans Azure.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+\ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
+ a| 
+Pour gérer les ressources dans les régions publiques Azure.
+
+
+
+ a| 
+\ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn
+ a| 
+Pour gérer les ressources dans les régions Azure Chine.
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+====
+Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et transparentes.  Si vous utilisez un proxy transparent, vous devez uniquement fournir le certificat du serveur proxy.  Si vous utilisez un proxy explicite, vous aurez également besoin de l'adresse IP et des informations d'identification.
++
+--
+* adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+--
+
+
+Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
++
+--
+* HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
+* SSH (22) n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+* Les connexions entrantes via le port 3128 sont requises si vous déployez des systèmes Cloud Volumes ONTAP dans un sous-réseau où une connexion Internet sortante n'est pas disponible.
++
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet sortante pour envoyer des messages AutoSupport , la console configure automatiquement ces systèmes pour utiliser un serveur proxy inclus avec l'agent de la console.  La seule exigence est de s’assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Vous devrez ouvrir ce port après avoir déployé l’agent de console.
+
+
+
+--
+
+
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+
+
+
+
+=== Créer des autorisations cloud pour l'agent de console pour AWS ou Azure
+
+Si vous souhaitez utiliser les services de données NetApp dans AWS ou Azure avec un agent de console sur site, vous devez configurer des autorisations dans votre fournisseur de cloud afin de pouvoir ajouter les informations d'identification à l'agent de console après son installation.
+
+
+NOTE: Vous ne pouvez pas gérer les ressources dans Google Cloud avec un agent de console installé sur vos locaux.  Si vous souhaitez gérer les ressources Google Cloud, vous devez installer un agent dans Google Cloud.
+
+[role="tabbed-block"]
+====
+.AWS
+--
+Pour les agents de console sur site, fournissez des autorisations AWS en ajoutant des clés d’accès utilisateur IAM.
+
+Utilisez les clés d’accès utilisateur IAM pour les agents de console sur site ; les rôles IAM ne sont pas pris en charge pour les agents de console sur site.
+
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
++
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
++
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.
+
++
+Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+
+
+
+. Attachez les politiques à un utilisateur IAM.
++
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["Documentation AWS : Création de rôles IAM"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
+
+
+. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la console NetApp après avoir installé l'agent de console.
+
+
+.Résultat
+Vous devez maintenant disposer des clés d’accès utilisateur IAM avec les autorisations requises. Après avoir installé l’agent de console, associez ces informations d’identification à l’agent de console à partir de la console.
+
+--
+.Azuré
+--
+Lorsque l’agent de console est installé sur site, vous devez lui accorder des autorisations Azure en configurant un principal de service dans Microsoft Entra ID et en obtenant les informations d’identification Azure dont l’agent de console a besoin.
+
+.Créer une application Microsoft Entra pour le contrôle d'accès basé sur les rôles
+. Assurez-vous que vous disposez des autorisations dans Azure pour créer une application Active Directory et attribuer l’application à un rôle.
++
+Pour plus de détails, reportez-vous à https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentation Microsoft Azure : autorisations requises"^]
+
+. Depuis le portail Azure, ouvrez le service *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsoft Azure."]
+
+. Dans le menu, sélectionnez *Inscriptions d'applications*.
+. Sélectionnez *Nouvelle inscription*.
+. Précisez les détails de l'application :
++
+** *Nom*: Saisissez un nom pour l'application.
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *URI de redirection*: Vous pouvez laisser ce champ vide.
+
+
+. Sélectionnez *S'inscrire*.
++
+Vous avez créé l’application AD et le principal de service.
+
+
+
+.Affecter l'application à un rôle
+. Créer un rôle personnalisé :
++
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+
++
+.. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour l'agent de la console"] et les enregistrer dans un fichier JSON.
+.. Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
++
+Vous devez ajouter l’ID de chaque abonnement Azure à partir duquel les utilisateurs créeront des systèmes Cloud Volumes ONTAP .
+
++
+*Exemple*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+.. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
++
+Les étapes suivantes décrivent comment créer le rôle à l’aide de Bash dans Azure Cloud Shell.
+
++
+*** Commencer https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] et choisissez l'environnement Bash.
+*** Téléchargez le fichier JSON.
++
+image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud Shell où vous pouvez choisir l’option de télécharger un fichier."]
+
+*** Utilisez l’interface de ligne de commande Azure pour créer le rôle personnalisé :
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
++
+Vous devriez maintenant avoir un rôle personnalisé appelé Opérateur de console que vous pouvez attribuer à la machine virtuelle de l’agent de console.
+
+
+
+
+
+. Affecter l'application au rôle :
++
+.. Depuis le portail Azure, ouvrez le service *Abonnements*.
+.. Sélectionnez l'abonnement.
+.. Sélectionnez *Contrôle d'accès (IAM) > Ajouter > Ajouter une attribution de rôle*.
+.. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et sélectionnez *Suivant*.
+.. Dans l'onglet *Membres*, procédez comme suit :
++
+*** Gardez *Utilisateur, groupe ou principal du service* sélectionné.
+*** Sélectionnez *Sélectionner les membres*.
++
+image:screenshot-azure-service-principal-role.png["Une capture d’écran du portail Azure qui affiche la page Membres lors de l’ajout d’un rôle à une application."]
+
+*** Recherchez le nom de l'application.
++
+Voici un exemple :
+
++
+image:screenshot_azure_service_principal_role.png["Une capture d’écran du portail Azure qui montre le formulaire Ajouter une attribution de rôle dans le portail Azure."]
+
+*** Sélectionnez l'application et sélectionnez *Sélectionner*.
+*** Sélectionnez *Suivant*.
+
+
+.. Sélectionnez *Réviser + attribuer*.
++
+Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
+
++
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+
+
+
+
+
+.Ajouter des autorisations à l'API de gestion des services Windows Azure
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Sélectionnez *Autorisations API > Ajouter une autorisation*.
+. Sous *API Microsoft*, sélectionnez *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif["Une capture d’écran du portail Azure qui affiche les autorisations de l’API Azure Service Management."]
+
+. Sélectionnez *Accéder à Azure Service Management en tant qu’utilisateurs de l’organisation*, puis sélectionnez *Ajouter des autorisations*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Une capture d’écran du portail Azure qui montre l’ajout des API Azure Service Management."]
+
+
+
+.Obtenir l'ID de l'application et l'ID du répertoire de l'application
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Copiez l'*ID d'application (client)* et l'*ID de répertoire (locataire)*.
++
+image:screenshot_azure_app_ids.gif["Une capture d'écran qui montre l'ID d'application (client) et l'ID de répertoire (locataire) pour une application dans Microsoft Entra IDy."]
+
++
+Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
+
+
+
+.Créer un secret client
+. Ouvrez le service *Microsoft Entra ID*.
+. Sélectionnez *Inscriptions d'applications* et sélectionnez votre application.
+. Sélectionnez *Certificats et secrets > Nouveau secret client*.
+. Fournissez une description du secret et une durée.
+. Sélectionnez *Ajouter*.
+. Copiez la valeur du secret client.
++
+image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azure qui affiche un secret client pour le principal du service Microsoft Entra."]
+
+
+
+--
+====
+
+
+== Installer un agent de console dans votre environnement VCenter
+
+NetApp prend en charge l’installation de l’agent de console dans votre environnement VCenter.  Le fichier OVA inclut une image VM préconfigurée que vous pouvez déployer dans votre environnement VMware.  Un téléchargement de fichier ou un déploiement d'URL est disponible directement depuis la console NetApp .  Il comprend le logiciel agent de console et un certificat auto-signé.
+
+
+
+=== Téléchargez l'OVA ou copiez l'URL
+
+Téléchargez l'OVA ou copiez l'URL de l'OVA directement depuis la console NetApp .
+
+. Sélectionnez *Administration > Agents*.
+. Sur la page *Aperçu*, sélectionnez *Déployer l'agent > Sur site*.
+. Sélectionnez *Avec OVA*.
+. Choisissez de télécharger l'OVA ou de copier l'URL à utiliser dans VCenter.
+
+
+
+
+=== Déployez l'agent dans votre VCenter
+
+Connectez-vous à votre environnement VCenter pour déployer l'agent.
+
+.Étapes
+. Téléchargez le certificat auto-signé sur vos certificats de confiance si votre environnement l'exige.  Vous remplacez ce certificat après l'installation.link:task-installing-https-cert.html["Découvrez comment remplacer le certificat auto-signé."]
+. Déployez l’OVA à partir de la bibliothèque de contenu ou du système local.
++
+|===
+
+
+| Du système local | De la bibliothèque de contenu 
+
+
+| a. Cliquez avec le bouton droit de la souris et sélectionnez *Déployer le modèle OVF...*. b. Choisissez le fichier OVA à partir de l'URL ou accédez à son emplacement, puis sélectionnez *Suivant*. | a. Accédez à votre bibliothèque de contenu et sélectionnez l'agent de console OVA. b. Sélectionnez *Actions* > *Nouvelle machine virtuelle à partir de ce modèle*. 
+|===
+. Terminez l’assistant de déploiement de modèle OVF pour déployer l’agent de console.
+. Sélectionnez un nom et un dossier pour la machine virtuelle, puis sélectionnez *Suivant*.
+. Sélectionnez une ressource de calcul, puis sélectionnez *Suivant*.
+. Vérifiez les détails du modèle, puis sélectionnez *Suivant*.
+. Acceptez le contrat de licence, puis sélectionnez *Suivant*.
+. Choisissez le type de configuration proxy que vous souhaitez utiliser : proxy explicite, proxy transparent ou aucun proxy.
+. Sélectionnez le magasin de données dans lequel vous souhaitez déployer la machine virtuelle, puis sélectionnez *Suivant*.  Assurez-vous qu'il répond aux exigences de l'hôte.
+. Sélectionnez le réseau auquel vous souhaitez connecter la VM, puis sélectionnez *Suivant*.  Assurez-vous que le réseau est IPv4 et dispose d'un accès Internet sortant vers les points de terminaison requis.
+. dans la fenêtre *Personnaliser le modèle*, remplissez les champs suivants :
++
+** *Informations proxy*
++
+*** Si vous avez sélectionné un proxy explicite, entrez le nom d'hôte ou l'adresse IP et le numéro de port du serveur proxy, ainsi que le nom d'utilisateur et le mot de passe.
+*** Si vous avez sélectionné un proxy transparent, téléchargez le certificat correspondant.
+
+
+** *Configuration de la machine virtuelle*
++
+*** *Ignorer la vérification de configuration* : cette case à cocher est décochée par défaut, ce qui signifie que l'agent exécute une vérification de configuration pour valider l'accès au réseau.
++
+**** NetApp recommande de laisser cette case décochée afin que l'installation inclue une vérification de la configuration de l'agent.  La vérification de configuration valide que l'agent dispose d'un accès réseau aux points de terminaison requis.  Si le déploiement échoue en raison de problèmes de connectivité, vous pouvez accéder au rapport de validation et aux journaux à partir de l'hôte de l'agent.  Dans certains cas, si vous êtes sûr que l'agent dispose d'un accès au réseau, vous pouvez choisir d'ignorer la vérification.  Par exemple, si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, cochez la case pour installer sans vérification de validation. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+
+*** *Mot de passe de maintenance* : Définissez le mot de passe pour le `maint` utilisateur qui permet l'accès à la console de maintenance de l'agent.
+*** *Serveurs NTP* : spécifiez un ou plusieurs serveurs NTP pour la synchronisation horaire.
+*** *Nom d'hôte* : définissez le nom d'hôte pour cette machine virtuelle.  Il ne doit pas inclure le domaine de recherche.  Par exemple, un FQDN de console10.searchdomain.company.com doit être saisi sous la forme console10.
+*** *DNS principal* : spécifiez le serveur DNS principal à utiliser pour la résolution de noms.
+*** *DNS secondaire* : spécifiez le serveur DNS secondaire à utiliser pour la résolution de noms.
+*** Domaines de recherche : spécifiez le nom de domaine de recherche à utiliser lors de la résolution du nom d’hôte.  Par exemple, si le nom de domaine complet est console10.searchdomain.company.com, saisissez searchdomain.company.com.
+*** *Adresse IPv4* : l'adresse IP qui est mappée au nom d'hôte.
+*** *Masque de sous-réseau IPv4* : Le masque de sous-réseau pour l'adresse IPv4.
+*** *Adresse de passerelle IPv4* : l'adresse de passerelle pour l'adresse IPv4.
+
+
+
+
+. Sélectionnez *Suivant*.
+. Vérifiez les détails dans la fenêtre *Prêt à terminer*, sélectionnez *Terminer*.
++
+La barre des tâches vSphere affiche la progression du déploiement de l'agent de console.
+
+. Allumez la VM.
+
+
+
+NOTE: Si le déploiement échoue, vous pouvez accéder au rapport de validation et aux journaux à partir de l’hôte de l’agent.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+
+
+== Enregistrer l'agent de console auprès de la console NetApp
+
+Connectez-vous à la console et associez l’agent de la console à votre organisation.  La manière dont vous vous connectez dépend du mode dans lequel vous utilisez la console.  Si vous utilisez la console en mode standard, vous vous connectez via le site Web SaaS.  Si vous utilisez la console en mode restreint ou privé, vous vous connectez localement à partir de l'hôte de l'agent de la console.
+
+.Étapes
+. Ouvrez un navigateur Web et entrez l’URL de l’hôte de l’agent de la console :
++
+L'URL de l'hôte de la console peut être un hôte local, une adresse IP privée ou une adresse IP publique, selon la configuration de l'hôte.  Par exemple, si l’agent de console se trouve dans le cloud public sans adresse IP publique, vous devez saisir une adresse IP privée provenant d’un hôte disposant d’une connexion à l’hôte de l’agent de console.
+
+. Inscrivez-vous ou connectez-vous.
+. Après vous être connecté, configurez la console :
++
+.. Spécifiez l’organisation de la console à associer à l’agent de la console.
+.. Entrez un nom pour le système.
+.. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
++
+Le mode restreint n’est pas pris en charge lorsque l’agent de console est installé sur site.
+
+.. Sélectionnez *Commençons*.
+
+
+
+
+
+
+== Ajouter les informations d'identification du fournisseur de cloud à la console
+
+Après avoir installé et configuré l’agent de console, ajoutez vos informations d’identification cloud afin que l’agent de console dispose des autorisations requises pour effectuer des actions dans AWS ou Azure.
+
+[role="tabbed-block"]
+====
+.AWS
+--
+.Avant de commencer
+Si vous venez de créer ces informations d'identification AWS, leur disponibilité peut prendre quelques minutes.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Agent.
+.. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+Vous pouvez désormais accéder à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+
+--
+.Azuré
+--
+.Avant de commencer
+Si vous venez de créer ces informations d’identification Azure, leur disponibilité peut prendre quelques minutes.  Attendez quelques minutes avant d’ajouter les informations d’identification de l’agent de la console.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Microsoft Azure > Agent*.
+.. *Définir les informations d'identification* : saisissez les informations sur le principal du service Microsoft Entra qui accorde les autorisations requises :
++
+*** ID de l'application (client)
+*** ID du répertoire (locataire)
+*** Secret client
+
+
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+.Résultat
+L’agent de console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.  Vous pouvez désormais accéder à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+
+--
+====

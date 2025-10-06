@@ -1,0 +1,402 @@
+---
+sidebar: sidebar 
+permalink: task-adding-aws-accounts.html 
+keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials, bluexp 
+summary: 'Ajoutez et gérez les informations d’identification AWS afin que la console NetApp dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos comptes AWS.  Si vous gérez plusieurs abonnements AWS, vous pouvez attribuer chacun d"eux à différentes informations d"identification AWS à partir de la page Informations d"identification.' 
+---
+= Gérer les informations d'identification AWS et les abonnements au marché pour NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ajoutez et gérez les informations d’identification AWS afin de déployer et de gérer les ressources cloud dans vos comptes AWS à partir de la console NetApp .  Si vous gérez plusieurs abonnements AWS Marketplace, vous pouvez attribuer chacun d'eux à différentes informations d'identification AWS à partir de la page Informations d'identification.
+
+
+
+== Aperçu
+
+Vous pouvez ajouter des informations d’identification AWS à un agent de console existant ou directement à la console :
+
+* Ajouter des informations d'identification AWS supplémentaires à un agent existant
++
+Ajoutez les informations d’identification AWS à un agent de console pour gérer les ressources cloud. <<add-aws-credentials-agent-creation,Découvrez comment ajouter des informations d'identification AWS à un agent de console>> .
+
+* Ajoutez les informations d’identification AWS à la console pour créer un agent de console
++
+L’ajout de nouvelles informations d’identification AWS à la console fournit les autorisations nécessaires pour créer un agent de console. <<add-aws-credentials-agent-creation,Découvrez comment ajouter des informations d'identification AWS à la console NetApp>> .
+
+* Ajouter les informations d'identification AWS à la console pour FSx pour ONTAP
++
+Ajoutez de nouvelles informations d’identification AWS à la console pour créer et gérer FSx pour ONTAP. https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Découvrez comment configurer les autorisations pour FSx pour ONTAP"^]
+
+
+
+
+
+== Comment faire tourner les informations d'identification
+
+La console NetApp vous permet de fournir des informations d'identification AWS de plusieurs manières : un rôle IAM associé à l'instance de l'agent, en assumant un rôle IAM dans un compte approuvé ou en fournissant des clés d'accès AWS. link:concept-accounts-aws.html["En savoir plus sur les informations d'identification et les autorisations AWS"] .
+
+Avec les deux premières options, la console utilise le service AWS Security Token pour obtenir des informations d’identification temporaires qui changent constamment.  Ce processus est la meilleure pratique car il est automatique et sécurisé.
+
+Faites pivoter manuellement les clés d’accès AWS en les mettant à jour dans la console.
+
+
+
+== Ajouter des informations d'identification supplémentaires à un agent de console
+
+Ajoutez des informations d’identification AWS supplémentaires à un agent de console afin qu’il dispose des autorisations nécessaires pour gérer les ressources et les processus au sein de votre environnement de cloud public.  Vous pouvez soit fournir l'ARN d'un rôle IAM dans un autre compte, soit fournir des clés d'accès AWS.
+
+Si vous débutez avec la console,link:concept-accounts-aws.html["Découvrez comment la console NetApp utilise les informations d'identification et les autorisations AWS"] .
+
+
+
+=== Accorder des autorisations
+
+Accordez des autorisations avant d’ajouter des informations d’identification AWS à un agent de console.  Les autorisations permettent à un agent de console de gérer les ressources et les processus au sein de ce compte AWS.  Vous pouvez fournir les autorisations avec l’ARN d’un rôle dans un compte approuvé ou des clés AWS.
+
+
+NOTE: Si vous avez déployé un agent de console à partir de la console, les informations d’identification AWS pour le compte dans lequel vous avez déployé un agent de console ont été automatiquement ajoutées.  Cela garantit que les autorisations nécessaires sont en place pour la gestion des ressources. link:concept-accounts-aws.html["En savoir plus sur les informations d'identification et les autorisations AWS"] .
+
+*Choix*
+
+* <<Accorder des autorisations en assumant un rôle IAM dans un autre compte>>
+* <<Accorder des autorisations en fournissant des clés AWS>>
+
+
+
+
+==== Accorder des autorisations en assumant un rôle IAM dans un autre compte
+
+Vous pouvez configurer une relation d'approbation entre le compte AWS source dans lequel vous avez déployé une instance d'agent de console et d'autres comptes AWS à l'aide de rôles IAM.  Vous devez ensuite fournir à la console l’ARN des rôles IAM à partir des comptes approuvés.
+
+Si un agent de console est installé sur site, vous ne pouvez pas utiliser cette méthode d’authentification.  Vous devez utiliser des clés AWS.
+
+.Étapes
+. Accédez à la console IAM du compte cible dans lequel vous souhaitez fournir des autorisations à un agent de console.
+. Sous Gestion des accès, sélectionnez *Rôles > Créer un rôle* et suivez les étapes pour créer le rôle.
++
+Assurez-vous de faire ce qui suit :
+
++
+** Sous *Type d’entité de confiance*, sélectionnez *Compte AWS*.
+** Sélectionnez *Un autre compte AWS* et saisissez l’ID du compte sur lequel réside une instance d’agent de console.
+** Créez les politiques requises en copiant et en collant le contenu delink:reference-permissions-aws.html["les politiques IAM pour un agent de console"] .
+
+
+. Copiez l’ARN du rôle IAM afin de pouvoir le coller ultérieurement dans la console.
+
+
+.Résultat
+Le compte dispose des autorisations requises. <<add-the-credentials,Vous pouvez désormais ajouter les informations d’identification à un agent de console>> .
+
+
+
+==== Accorder des autorisations en fournissant des clés AWS
+
+Si vous souhaitez fournir à la console des clés AWS pour un utilisateur IAM, vous devez accorder les autorisations requises à cet utilisateur.  La politique IAM de la console définit les actions et ressources AWS que la console est autorisée à utiliser.
+
+Vous devez utiliser cette méthode d’authentification si un agent de console est installé sur site.  Vous ne pouvez pas utiliser un rôle IAM.
+
+.Étapes
+. Depuis la console IAM, créez des politiques en copiant et en collant le contenu delink:reference-permissions-aws.html["les politiques IAM pour un agent de console"] .
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["Documentation AWS : Création de politiques IAM"^]
+
+. Attachez les politiques à un rôle IAM ou à un utilisateur IAM.
++
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["Documentation AWS : Création de rôles IAM"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
+
+
+
+
+.Résultat
+Le compte dispose des autorisations requises. <<add-the-credentials,Vous pouvez désormais ajouter les informations d’identification à un agent de console>> .
+
+
+
+=== Ajoutez les informations d'identification
+
+Après avoir fourni à un compte AWS les autorisations requises, vous pouvez ajouter les informations d’identification de ce compte à un agent existant.  Cela vous permet de lancer des systèmes Cloud Volumes ONTAP dans ce compte à l'aide du même agent.
+
+ New credentials in your cloud provider may take a few minutes to become available. Then, add the credentials.
+.Étapes
+. Utilisez la barre de navigation supérieure pour sélectionner un agent de console auquel vous souhaitez ajouter des informations d’identification.
+. Dans la barre de navigation de gauche, sélectionnez *Administration > Informations d'identification*.
+. Sur la page *Informations d’identification de l’organisation*, sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : Sélectionnez *Amazon Web Services > Agent*.
+.. *Définir les informations d'identification* : fournissez l'ARN (Amazon Resource Name) d'un rôle IAM approuvé ou saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
++
+Pour payer les services à un tarif horaire (PAYGO) ou avec un contrat annuel, vous devez associer les informations d'identification AWS à votre abonnement AWS Marketplace.
+
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+.Résultat
+Vous pouvez désormais passer à un autre ensemble d'informations d'identification à partir de la page Détails et informations d'identification lors de l'ajout d'un système à la console.
+
+image:screenshot_accounts_switch_aws.png["Une capture d'écran qui montre la sélection entre les comptes de fournisseurs de cloud après avoir sélectionné Changer de compte dans la page Détails et informations d'identification."]
+
+
+
+== Ajoutez des informations d'identification à la console pour créer un agent de console
+
+Ajoutez les informations d’identification AWS en fournissant l’ARN d’un rôle IAM qui donne les autorisations nécessaires pour créer un agent de console.  Vous pouvez choisir ces informations d’identification lors de la création d’un nouvel agent.
+
+
+
+=== Configurer le rôle IAM
+
+Configurez un rôle IAM qui permet à la couche logicielle en tant que service (SaaS) de la console NetApp d’assumer le rôle.
+
+.Étapes
+. Accédez à la console IAM dans le compte cible.
+. Sous Gestion des accès, sélectionnez *Rôles > Créer un rôle* et suivez les étapes pour créer le rôle.
++
+Assurez-vous de faire ce qui suit :
+
++
+** Sous *Type d’entité de confiance*, sélectionnez *Compte AWS*.
+** Sélectionnez *Un autre compte AWS* et saisissez l'ID de la console NetApp SaaS : 952013314444
+** Pour Amazon FSx for NetApp ONTAP en particulier, modifiez la politique *Relations de confiance* pour inclure « AWS » : « arn:aws:iam::952013314444:root ».
++
+Par exemple, la politique devrait ressembler à ceci :
+
++
+[source, JSON]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::952013314444:root",
+        "Service": "ec2.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+----
++
+Se référer à link:https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-cross-account-resource-access.html["Documentation AWS Identity and Access Management (IAM)"^] pour plus d'informations sur l'accès aux ressources inter-comptes dans IAM.
+
+** Créez une politique qui inclut les autorisations requises pour créer un agent de console.
++
+*** https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Afficher les autorisations nécessaires pour FSx pour ONTAP"^]
+*** link:task-install-connector-aws-bluexp.html#aws-permissions-agent["Afficher la politique de déploiement de l'agent"]
+
+
+
+
+. Copiez l’ARN du rôle IAM afin de pouvoir le coller dans la console à l’étape suivante.
+
+
+.Résultat
+Le rôle IAM dispose désormais des autorisations requises. <<add-the-credentials-2,Vous pouvez maintenant l'ajouter à la console>> .
+
+
+
+=== Ajoutez les informations d'identification
+
+Après avoir fourni au rôle IAM les autorisations requises, ajoutez l’ARN du rôle à la console.
+
+.Avant de commencer
+Si vous venez de créer le rôle IAM, il faudra peut-être quelques minutes avant qu'il soit disponible pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
++
+image:screenshot-settings-icon-organization.png["Une capture d’écran qui montre l’icône Paramètres en haut à droite de la console."]
+
+. Sur la page *Informations d’identification de l’organisation* ou *Informations d’identification du compte*, sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Console NetApp *.
+.. *Définir les informations d’identification* : indiquez l’ARN (Amazon Resource Name) du rôle IAM.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+
+
+== Ajouter des informations d'identification à la console pour Amazon FSx for ONTAP
+
+Pour plus de détails, reportez-vous à la https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["la documentation de la console pour Amazon FSx pour ONTAP"^]
+
+
+
+== Configurer un abonnement AWS
+
+Après avoir ajouté vos informations d’identification AWS, vous pouvez configurer un abonnement AWS Marketplace avec ces informations d’identification.  L'abonnement vous permet de payer Cloud Volumes ONTAP à un tarif horaire (PAYGO) ou via un contrat annuel, et de payer d'autres services de données.
+
+Il existe deux scénarios dans lesquels vous pouvez configurer un abonnement AWS Marketplace après avoir ajouté les informations d'identification :
+
+* Vous n’avez pas configuré d’abonnement lorsque vous avez initialement ajouté les informations d’identification.
+* Vous souhaitez modifier l’abonnement AWS Marketplace configuré avec les informations d’identification AWS.
++
+Le remplacement de l'abonnement actuel au marché par un nouvel abonnement modifie l'abonnement au marché pour tous les systèmes Cloud Volumes ONTAP existants et tous les nouveaux systèmes.
+
+
+
+.Avant de commencer
+Vous devez créer un agent de console avant de pouvoir configurer un abonnement. link:concept-connectors.html#connector-installation["Apprenez à créer un agent de console"] .
+
+La vidéo suivante montre les étapes à suivre pour s'abonner à NetApp Intelligent Services depuis AWS Marketplace :
+
+.Abonnez-vous aux services intelligents NetApp depuis la place de marché AWS
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
+.Étapes
+. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
++
+Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement à la place de marché à des informations d'identification associées à la console NetApp .
+
++
+image:screenshot_aws_configure_subscription.png["Une capture d’écran du menu d’action pour un ensemble d’informations d’identification existantes."]
+
+. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les informations d'identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans AWS Marketplace :
++
+.. Sélectionnez *Afficher les options d'achat*.
+.. Sélectionnez *S'abonner*.
+.. Sélectionnez *Configurer votre compte*.
++
+Vous serez redirigé vers la console NetApp .
+
+.. À partir de la page *Affectation d'abonnement* :
++
+*** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+*** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
+*** Sélectionnez *Enregistrer*.
+
+
+
+
+
+
+
+
+== Associer un abonnement existant à votre organisation ou à votre compte
+
+Lorsque vous vous abonnez à partir d'AWS Marketplace, la dernière étape du processus consiste à associer l'abonnement à votre organisation.  Si vous n’avez pas effectué cette étape, vous ne pourrez pas utiliser l’abonnement avec votre organisation ou votre compte.
+
+* link:concept-modes.html["En savoir plus sur les modes de déploiement de la console"]
+* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès à la console"]
+
+
+Suivez les étapes ci-dessous si vous vous êtes abonné aux services de données intelligents NetApp depuis AWS Marketplace, mais que vous avez manqué l’étape permettant d’associer l’abonnement à votre compte.
+
+.Étapes
+. Confirmez que vous n’avez pas associé votre abonnement à votre organisation ou à votre compte Console.
++
+.. Dans le menu de navigation, sélectionnez *Administration > Licences et abonnements*.
+.. Sélectionnez *Abonnements*.
+.. Vérifiez que votre abonnement n'apparaît pas.
++
+Vous ne verrez que les abonnements associés à l'organisation ou au compte que vous consultez actuellement.  Si vous ne voyez pas votre abonnement, procédez aux étapes suivantes.
+
+
+
+. Connectez-vous à la console AWS et accédez à *Abonnements AWS Marketplace*.
+. Trouver l'abonnement.
++
+image:screenshot-aws-marketplace-bluexp-subscription.png["Une capture d’écran de la place de marché AWS montrant un abonnement NetApp ."]
+
+. Sélectionnez *Configurer le produit*.
++
+La page de l’offre d’abonnement doit se charger dans un nouvel onglet ou une nouvelle fenêtre du navigateur.
+
+. Sélectionnez *Configurer votre compte*.
++
+image:screenshot-aws-marketplace-set-up-account.png["Une capture d’écran de la place de marché AWS montrant un abonnement NetApp et l’option Configurer votre compte qui apparaît en haut à droite de la page."]
+
++
+La page *Affectation d'abonnement* sur netapp.com doit se charger dans un nouvel onglet ou une nouvelle fenêtre de navigateur.
+
++
+Notez que vous serez peut-être invité à vous connecter d’abord à la console.
+
+. À partir de la page *Affectation d'abonnement* :
++
+** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
++
+image:screenshot-subscription-assignment.png["Une capture d’écran de la page d’attribution d’abonnement qui vous permet de choisir les organisations à associer à cet abonnement."]
+
+
+
+. Confirmez que l’abonnement est associé à votre organisation ou à votre compte.
++
+.. Dans le menu de navigation, sélectionnez *Administration > Licences et abonnements*.
+.. Sélectionnez *Abonnements*.
+.. Vérifiez que votre abonnement apparaît.
+
+
+. Confirmez que l’abonnement est associé à vos informations d’identification AWS.
++
+.. En haut à droite de la console, sélectionnez l’icône Paramètres, puis sélectionnez *Informations d’identification*.
+.. Sur la page *Informations d’identification de l’organisation*, vérifiez que l’abonnement est associé à vos informations d’identification AWS.
++
+Voici un exemple.
+
++
+image:screenshot-credentials-with-subscription.png["Une capture d'écran de la page d'informations d'identification du compte de console qui affiche les informations d'identification AWS qui incluent un champ d'abonnement qui identifie le nom de l'abonnement associé aux informations d'identification."]
+
+
+
+
+
+
+
+== Modifier les informations d'identification
+
+Modifiez vos informations d'identification AWS en modifiant le type de compte (clés AWS ou rôle d'assumé), en modifiant le nom ou en mettant à jour les informations d'identification elles-mêmes (les clés ou l'ARN du rôle).
+
+
+NOTE: Vous ne pouvez pas modifier les informations d'identification d'un profil d'instance associé à une instance d'agent de console ou à une instance Amazon FSx for ONTAP .  Vous ne pouvez renommer les informations d'identification que pour une instance FSx for ONTAP .
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sur la page *Informations d'identification de l'organisation* ou *Informations d'identification du compte*, sélectionnez le menu d'action pour un ensemble d'informations d'identification, puis sélectionnez *Modifier les informations d'identification*.
+. Apportez les modifications requises, puis sélectionnez *Appliquer*.
+
+
+
+
+== Supprimer les informations d'identification
+
+Si vous n’avez plus besoin d’un ensemble d’informations d’identification, vous pouvez les supprimer.  Vous ne pouvez supprimer que les informations d’identification qui ne sont pas associées à un système.
+
+
+TIP: Vous ne pouvez pas supprimer les informations d’identification d’un profil d’instance associé à une instance d’agent de console.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sur la page *Informations d'identification de l'organisation* ou *Informations d'identification du compte*, sélectionnez le menu d'action pour un ensemble d'informations d'identification, puis sélectionnez *Supprimer les informations d'identification*.
+. Sélectionnez *Supprimer* pour confirmer.
+

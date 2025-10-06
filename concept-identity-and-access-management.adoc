@@ -1,0 +1,243 @@
+---
+sidebar: sidebar 
+permalink: concept-identity-and-access-management.html 
+keywords: iam overview, overview, how iam works, iam example, organization, folders, projects, resources, members, roles, permissions, resource hierarchy, identity and access management, access roles, iam, bluexp IAM 
+summary: 'La gestion des identités et des accès (IAM) dans la console NetApp vous permet de contrôler l"accès aux ressources de votre organisation.' 
+---
+= En savoir plus sur la gestion des identités et des accès de la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La gestion des identités et des accès (IAM) dans la console NetApp vous permet d'organiser et de contrôler l'accès à vos ressources NetApp .  Vous pouvez organiser vos ressources en fonction de la hiérarchie de votre organisation.  Par exemple, vous pouvez organiser les ressources par emplacement géographique, site ou unité commerciale.  Vous pouvez ensuite attribuer des rôles IAM aux membres de parties spécifiques de la hiérarchie, ce qui empêche l’accès aux ressources dans d’autres parties de la hiérarchie.
+
+* link:concept-modes.html["En savoir plus sur les modes de déploiement de la console"]
+
+
+
+
+== Comment fonctionne IAM
+
+IAM vous permet d'accorder l'accès aux ressources en attribuant aux utilisateurs des rôles d'accès à des parties spécifiques de la hiérarchie.  Par exemple, un membre peut se voir attribuer le rôle d’administrateur de dossier ou de projet pour un projet comportant cinq ressources.
+
+Lorsque vous utilisez IAM, vous gérez les composants suivants :
+
+* L'organisation
+* Dossiers
+* Projets
+* Ressources
+* Membres
+* Rôles et autorisations
+* Agents de console
+
+
+Les ressources sont organisées hiérarchiquement :
+
+* L'organisation est le sommet de la hiérarchie.
+* Les dossiers sont des enfants de l'organisation ou d'un autre dossier.
+* Les projets sont des enfants de l'organisation ou d'un dossier.
+* Les ressources sont associées à un ou plusieurs dossiers ou projets.
+
+
+L’image suivante illustre cette hiérarchie à un niveau de base.
+
+image:diagram-iam-resource-hierarchy.png["Un diagramme conceptuel qui montre la hiérarchie des ressources pour la gestion des accès : une organisation, des dossiers, des projets et des ressources."]
+
+
+
+=== Organisation
+
+Une _organisation_ est le niveau supérieur du système IAM de la console et représente généralement votre entreprise.  Votre organisation se compose de dossiers, de projets, de membres, de rôles et de ressources.  Les agents sont associés à des projets spécifiques au sein de l’organisation.
+
+
+
+=== Dossiers
+
+Un _dossier_ vous permet de regrouper des projets liés et de les séparer des autres projets de votre organisation.  Par exemple, un dossier peut représenter un emplacement géographique (UE ou États-Unis Est), un site (Londres ou Toronto) ou une unité commerciale (ingénierie ou marketing).
+
+Vous pouvez organiser des dossiers pour contenir des projets, d'autres dossiers ou les deux.  Ils sont facultatifs.
+
+
+
+=== Projets
+
+Un _projet_ représente un espace de travail dans la console auquel les membres de l'organisation accèdent à partir de la page *Systèmes* afin de gérer les ressources.  Par exemple, un projet peut inclure un système Cloud Volumes ONTAP , un cluster ONTAP sur site ou un système de fichiers FSx pour ONTAP .
+
+Une organisation peut avoir un ou plusieurs projets.  Un projet peut résider directement sous l’organisation ou dans un dossier.
+
+
+
+=== Ressources
+
+Une _ressource_ est un système que vous avez créé ou découvert dans la console.
+
+Lorsque vous créez ou découvrez une ressource, la ressource est associée au projet actuellement sélectionné.  C'est peut-être le seul projet auquel vous souhaitez associer cette ressource.  Mais vous pouvez choisir d’associer la ressource à des projets supplémentaires dans votre organisation.
+
+Par exemple, vous pouvez associer un système Cloud Volumes ONTAP à un projet supplémentaire ou à tous les projets de votre organisation.  La manière dont vous associez une ressource dépend des besoins de votre organisation.
+
+
+TIP: Les agents peuvent également être associés à plusieurs projets. <<associate-agents,En savoir plus sur l'utilisation des agents avec IAM>> .
+
+
+
+==== Quand associer une ressource à un dossier
+
+Vous avez également la possibilité d'associer une ressource à un dossier, mais cela est facultatif et répond aux besoins d'un cas d'utilisation spécifique.
+
+Un _administrateur d'organisation_ peut associer une ressource à un dossier afin qu'un _administrateur de dossier ou de projet_ puisse la lier aux projets appropriés dans le dossier.
+
+Par exemple, disons que vous avez un dossier qui contient deux projets :
+
+image:diagram-iam-resource-association-folder-1.png["Un diagramme qui montre un dossier et deux projets qui résident dans le dossier : projet A et projet B."]
+
+L'administrateur de l'organisation peut associer une ressource au dossier :
+
+image:diagram-iam-resource-association-folder-2.png["Un diagramme qui montre un dossier, une ressource associée au dossier et deux projets qui résident dans le dossier : le projet A et le projet B."]
+
+Associer une ressource à un dossier ne la rend pas accessible à tous les projets ; seul l'administrateur du dossier ou du projet peut la voir.  L'administrateur du dossier ou du projet décide quels projets peuvent y accéder et associe la ressource aux projets appropriés.
+
+Dans cet exemple, l’administrateur associe la ressource au projet A :
+
+image:diagram-iam-resource-association-folder-3.png["Un diagramme qui montre un dossier, deux projets qui résident dans le dossier : le projet A et le projet B, et une ressource associée au projet A."]
+
+Les membres disposant d’autorisations pour le projet A peuvent désormais accéder à la ressource.
+
+
+
+=== Membres
+
+Les membres de votre organisation sont des comptes d’utilisateurs ou des comptes de service.  Un compte de service est généralement utilisé par une application pour effectuer des tâches spécifiques sans intervention humaine.
+
+Chaque organisation comprend au moins un utilisateur avec le rôle _Administrateur de l'organisation_ (la console attribue automatiquement ce rôle à l'utilisateur qui crée l'organisation).  Vous pouvez ajouter d’autres membres à l’organisation et attribuer différentes autorisations à différents niveaux de la hiérarchie des ressources.
+
+
+
+=== Rôles et autorisations
+
+Vous n’accordez pas d’autorisations directement aux membres de l’organisation.  Au lieu de cela, vous attribuez à chaque membre un rôle.  Un rôle contient un ensemble d’autorisations qui permet à un membre d’effectuer des actions spécifiques à un niveau spécifique de la hiérarchie des ressources.
+
+L'octroi de rôles au niveau hiérarchique restreint l'accès aux ressources et aux services dont un membre a besoin.
+
+
+
+==== Où vous pouvez attribuer des rôles dans la hiérarchie
+
+Lorsque vous associez un membre à un rôle, vous devez sélectionner l’organisation entière, un dossier spécifique ou un projet spécifique.  Le rôle que vous sélectionnez donne à un membre des autorisations sur les ressources de la partie sélectionnée de la hiérarchie.
+
+
+
+==== Héritage des rôles
+
+Lorsque vous attribuez un rôle, celui-ci est hérité dans la hiérarchie de l'organisation :
+
+Organisation:: Accorder à un membre un rôle d’accès au niveau de l’organisation lui donne des autorisations sur tous les dossiers, projets et ressources.
+Dossiers:: Lorsque vous accordez un rôle d’accès au niveau du dossier, tous les dossiers, projets et ressources du dossier héritent de ce rôle.
++
+--
+Par exemple, si vous attribuez un rôle au niveau du dossier et que ce dossier contient trois projets, le membre disposera d’autorisations sur ces trois projets et toutes les ressources associées.
+
+--
+Projets:: Lorsque vous accordez un rôle d’accès au niveau du projet, toutes les ressources associées à ce projet héritent de ce rôle.
+
+
+
+
+==== Rôles multiples
+
+Vous pouvez attribuer à chaque membre de l’organisation un rôle à différents niveaux de la hiérarchie de l’organisation.  Il peut s’agir du même rôle ou d’un rôle différent.  Par exemple, vous pouvez attribuer un rôle de membre A au projet 1 et au projet 2.  Ou vous pouvez attribuer un rôle de membre A pour le projet 1 et un rôle B pour le projet 2.
+
+
+
+==== Rôles d'accès
+
+La console fournit des rôles d’accès que vous pouvez attribuer aux membres de votre organisation.
+
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+
+
+=== Agents de console
+
+Lorsqu'un _administrateur d'organisation_ crée un agent de console, la console associe automatiquement cet agent à l'organisation et au projet actuellement sélectionné.  L'administrateur de l'organisation a automatiquement accès à cet agent depuis n'importe quel endroit de l'organisation.  Mais si vous avez d’autres membres dans votre organisation avec des rôles différents, ces membres ne peuvent accéder à cet agent qu’à partir du projet dans lequel il a été créé, sauf si vous associez cet agent à d’autres projets.
+
+Vous rendez un agent de console disponible pour un autre projet dans ces cas :
+
+* Vous souhaitez autoriser les membres de votre organisation à utiliser un agent existant pour créer ou découvrir des systèmes supplémentaires dans un autre projet
+* Vous avez associé une ressource existante à un autre projet et cette ressource est gérée par un agent de console
++
+Si une ressource que vous associez à un projet supplémentaire est découverte à l'aide d'un agent de console, vous devez également associer l'agent au projet auquel la ressource est désormais associée. Sinon, l'agent et sa ressource associée ne sont pas accessibles depuis la page *Systèmes* par les membres qui n'ont pas le rôle _Administrateur de l'organisation_.
+
+
+
+Vous pouvez créer une association à partir de la page *Agents* dans la console IAM :
+
+* Associer un agent de console à un projet
++
+Lorsque vous associez un agent de console à un projet, cet agent est accessible depuis la page *Systèmes* lors de l'affichage du projet.
+
+* Associer un agent de console à un dossier
++
+L'association d'un agent de console à un dossier ne rend pas automatiquement cet agent accessible à partir de tous les projets du dossier.  Les membres de l'organisation ne peuvent pas accéder à un agent de console à partir d'un projet tant que vous n'avez pas associé l'agent à ce projet spécifique.
+
++
+Un _administrateur d'organisation_ peut associer un agent de console à un dossier afin que l'_administrateur de dossier ou de projet_ puisse prendre la décision d'associer cet agent aux projets appropriés qui résident dans le dossier.
+
+
+
+
+
+== Exemples d'IAM
+
+Ces exemples montrent comment vous pourriez mettre en place votre organisation.
+
+
+
+=== Organisation simple
+
+Le diagramme suivant montre un exemple simple d’une organisation qui utilise le projet par défaut et aucun dossier.  Un seul membre gère l’ensemble de l’organisation.
+
+image:diagram-iam-example-hierarchy-simple.png["Un diagramme conceptuel qui montre une organisation avec un projet, des ressources associées et un administrateur d'organisation."]
+
+
+
+=== Organisation avancée
+
+Le diagramme suivant montre une organisation qui utilise des dossiers pour organiser les projets pour chaque emplacement géographique de l’entreprise.  Chaque projet dispose de son propre ensemble de ressources associées.  Les membres comprennent un administrateur d’organisation et un administrateur pour chaque dossier de l’organisation.
+
+image:diagram-iam-example-hierarchy-advanced.png["Un diagramme conceptuel qui montre une organisation avec trois dossiers, chacun avec trois projets, et leurs ressources associées.  Il y a quatre membres : un administrateur d'organisation et trois administrateurs de dossier."]
+
+
+
+== Ce que vous pouvez faire avec IAM
+
+Les exemples suivants décrivent comment vous pouvez utiliser IAM pour gérer votre organisation de console :
+
+* Accordez des rôles spécifiques à des membres spécifiques afin qu'ils puissent uniquement effectuer les tâches requises.
+* Modifier les autorisations des membres parce qu’ils ont changé de service ou parce qu’ils ont des responsabilités supplémentaires.
+* Supprimer un utilisateur qui a quitté l'entreprise.
+* Ajoutez des dossiers ou des projets à votre hiérarchie car une nouvelle unité commerciale a ajouté du stockage NetApp .
+* Associez une ressource à un autre projet car cette ressource a une capacité qu’une autre équipe peut utiliser.
+* Consultez les ressources auxquelles un membre peut accéder.
+* Afficher les membres et les ressources associés à un projet spécifique.
+
+
+
+
+== Où aller ensuite
+
+* link:task-iam-get-started.html["Démarrer avec IAM dans la console NetApp"]
+* link:task-iam-manage-folders-projects.html["Organisez vos ressources dans la console NetApp avec des dossiers et des projets"]
+* link:task-iam-manage-members-permissions.html["Gérer les membres de la console NetApp et leurs autorisations"]
+* link:task-iam-manage-resources.html["Gérer la hiérarchie des ressources dans votre organisation NetApp Console"]
+* link:task-iam-associate-connectors.html["Associer des agents à des dossiers et des projets"]
+* link:task-iam-switch-organizations-projects.html["Basculer entre les projets et les organisations de la console NetApp"]
+* link:task-iam-rename-organization.html["Renommez votre organisation NetApp Console"]
+* link:task-iam-audit-actions-timeline.html["Surveiller ou auditer l'activité IAM"]
+* link:reference-iam-predefined-roles.html["Rôles d'accès à la console NetApp"]
+* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour NetApp Console IAM"^]
+

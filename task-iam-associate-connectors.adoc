@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: task-iam-associate-connectors.html 
+keywords: agent, associate agent, folder, project, associate folder with connector, associate project with connector, associate connector with project, associate connector with resource, connector, associate connector, 
+summary: Si les membres de votre organisation doivent utiliser un agent de console dans un autre projet, vous devez associer cet agent de console au projet concerné. 
+---
+= Associer un agent de console à d'autres dossiers et projets
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsqu'un _administrateur d'organisation_ crée un agent de console, l'agent de console est automatiquement associé au projet actuellement sélectionné au sein de l'organisation.  Bien qu'une personne disposant du rôle _Administrateur de l'organisation_ puisse accéder à cet agent de console depuis n'importe où dans l'organisation.  Les autres membres de votre organisation ne peuvent accéder à cet agent de console qu’à partir du projet dans lequel il a été créé, sauf si vous associez cet agent de console à d’autres projets.
+
+.Avant de commencer
+Découvrez comment fonctionne l’association d’agents de console. link:concept-identity-and-access-management.html#associate-agents["En savoir plus sur l'utilisation de l'agent de console avec Identity and Access"] .
+
+.À propos de cette tâche
+Un _administrateur de dossier ou de projet_ peut afficher tous les agents de la console sur la page *Agent* mais ne peut associer les agents de la console qu'aux dossiers et aux projets pour lesquels il dispose d'autorisations. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès* > *Agents*.
+. Dans le tableau, recherchez l’agent de console que vous souhaitez associer.
++
+Utilisez la recherche au-dessus du tableau pour trouver un agent de console spécifique ou filtrez le tableau par hiérarchie de ressources.
+
+. Pour afficher les dossiers et les projets liés à l'agent de la console, sélectionnezimage:icon-action.png["Icône à trois points"] puis sélectionnez *Afficher les détails*.
++
+La page affiche les détails sur les dossiers et les projets associés à l'agent de console.
+
+. Sélectionnez *Associer au dossier ou au projet*.
+. Sélectionnez un dossier ou un projet, puis sélectionnez *Accepter*.
+. Pour associer l'agent de console à un dossier ou un projet supplémentaire, sélectionnez *Ajouter un dossier ou un projet*, puis sélectionnez le dossier ou le projet.
+. Sélectionnez *Agent associé*.
+
+
+.Après avoir terminé
+Associez les ressources de l'agent de console aux mêmes dossiers et projets à partir de la page *Ressources*.
+
+link:task-iam-manage-resources.html#associate-resource["Apprenez à associer une ressource à des dossiers et des projets"] .
+
+.Informations connexes
+* link:concept-connectors.html["En savoir plus sur les agents de la console NetApp"]
+* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès de la console NetApp"]
+* link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
+* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour la gestion des identités et des accès"^]
+

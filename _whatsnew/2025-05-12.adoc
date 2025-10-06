@@ -1,0 +1,76 @@
+= Connecteur 3.9.52
+:allow-uri-read: 
+
+
+
+
+=== Connecteur 3.9.52
+
+Cette version du connecteur BlueXP inclut des améliorations de sécurité mineures et des corrections de bogues, ainsi que quelques mises à jour supplémentaires.
+
+À l'heure actuelle, la version 3.9.52 est disponible pour le mode standard et le mode restreint.
+
+
+
+==== Prise en charge de Docker 27 et Docker 28
+
+Docker 27 et Docker 28 sont désormais pris en charge avec le connecteur.
+
+
+
+==== Cloud Volumes ONTAP
+
+Les nœuds Cloud Volumes ONTAP ne s'arrêtent plus lorsque le connecteur n'est plus conforme ou hors service pendant plus de 14 jours.  Cloud Volumes ONTAP envoie toujours des messages de gestion des événements lorsqu'il perd l'accès au connecteur.  Cette modification vise à garantir que Cloud Volumes ONTAP peut continuer à fonctionner même si le connecteur est en panne pendant une période prolongée.  Cela ne modifie pas les exigences de conformité du connecteur.
+
+
+
+=== Administration Keystone disponible dans BlueXP
+
+La version bêta de NetApp Keystone dans BlueXP a ajouté l'accès à l'administration de Keystone .  Vous pouvez accéder à la page d'inscription pour la version bêta de NetApp Keystone à partir de la barre de navigation de gauche de BlueXP.
+
+
+
+=== Gestion des identités et des accès BlueXP (IAM)
+
+
+
+==== Nouveaux rôles de gestion du stockage
+
+Les rôles d’administrateur de stockage, de spécialiste de l’état du système et de visualiseur de stockage sont disponibles et peuvent être attribués aux utilisateurs.
+
+Ces rôles vous permettent de gérer qui dans votre organisation peut découvrir et gérer les ressources de stockage, ainsi que d'afficher les informations sur l'état du stockage et d'effectuer des mises à jour logicielles.
+
+Ces rôles sont pris en charge pour contrôler l’accès aux ressources de stockage suivantes :
+
+* Systèmes de la série E
+* Systèmes StorageGRID
+* Systèmes ONTAP sur site
+
+
+Vous pouvez également utiliser ces rôles pour contrôler l’accès aux services BlueXP suivants :
+
+* Mises à jour logicielles
+* Conseiller numérique
+* Résilience opérationnelle
+* Efficacité économique
+* Durabilité
+
+
+Les rôles suivants ont été ajoutés :
+
+* *Administrateur de stockage*
++
+Administrer l’état du stockage, la gouvernance et la découverte des ressources de stockage de l’organisation.  Ce rôle peut également effectuer des mises à jour logicielles sur les ressources de stockage.
+
+* *Spécialiste de la santé du système*
++
+Administrer la santé du stockage et la gouvernance des ressources de stockage de l’organisation.  Ce rôle peut également effectuer des mises à jour logicielles sur les ressources de stockage.  Ce rôle ne peut pas modifier ou supprimer les environnements de travail.
+
+* *Visionneuse de stockage*
++
+Afficher les informations sur l’état du stockage et les données de gouvernance.
+
++
+link:https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."^]
+
+

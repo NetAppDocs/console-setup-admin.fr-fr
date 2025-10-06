@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: task-sign-up-saas.html 
+keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login 
+summary: 'La console NetApp est accessible à partir d’une console Web.  Pour commencer à utiliser la console, votre première étape consiste à vous inscrire ou à vous connecter à l"aide de vos informations d"identification du site de support NetApp ou en créant une connexion à la console NetApp .' 
+---
+= Inscrivez-vous ou connectez-vous à la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La console NetApp est accessible à partir d’une console Web.  Pour commencer à utiliser la console, votre première étape consiste à vous inscrire ou à vous connecter à l'aide de vos informations d'identification du site de support NetApp ou en créant une connexion à la console NetApp .
+
+.À propos de cette tâche
+Lorsque vous accédez à la console pour la première fois, vous pouvez vous inscrire ou vous connecter en utilisant l’une des options suivantes :
+
+Connexion à la console NetApp:: Vous pouvez vous inscrire en créant un identifiant.  Cette méthode d'authentification nécessite de spécifier votre adresse email et un mot de passe.  Après avoir vérifié votre adresse e-mail, vous pouvez vous connecter puis créer une organisation, si vous n'en appartenez pas déjà une.
+Informations d'identification du site de support NetApp (NSS):: Si vous disposez déjà d'informations d'identification du site de support NetApp , vous n'avez pas besoin de vous inscrire à la console.  Vous vous connectez à l'aide de vos informations d'identification NSS, puis la console vous invite à créer une organisation, si vous n'en appartenez pas déjà à une.
++
+--
+Un code d'accès à usage unique (OTP) vous sera envoyé à l'adresse e-mail enregistrée.  Un nouvel OTP est généré à chaque tentative de connexion.
+
+--
+Connexion fédérée:: Si votre entreprise dispose déjà d'une instance de console NetApp , votre administrateur de console a peut-être configuré l'authentification unique pour se connecter à l'aide des informations d'identification de votre annuaire d'entreprise (identité fédérée).
++
+--
+link:concept-federation.html["Découvrez comment utiliser la fédération d'identité avec la console NetApp"] .
+
+--
+
+
+.Étapes
+. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["Console NetApp"^]
+. Si vous disposez d'un compte sur le site de support NetApp ou si vous avez déjà configuré la fédération d'identité, saisissez l'adresse e-mail associée à votre compte directement sur la page *Connexion*.
++
+Dans les deux cas, vous êtes inscrit à la console dans le cadre de cette connexion initiale.
+
+. Si vous souhaitez vous inscrire en créant une connexion à la console, sélectionnez *S'inscrire*.
++
+.. Sur la page *Inscription*, saisissez les informations requises et sélectionnez *Suivant*.
++
+Veuillez noter que seuls les caractères anglais sont autorisés dans le formulaire d'inscription.
+
+.. Consultez votre boîte de réception pour obtenir un e-mail de NetApp contenant des instructions pour vérifier votre adresse e-mail.
++
+Cette étape est nécessaire avant de pouvoir vous connecter à la console.
+
+
+
+. Après vous être connecté, consultez le contrat de licence utilisateur final et acceptez les conditions.
++
+Si votre compte utilisateur n’appartient pas déjà à une organisation de la console, vous serez invité à en créer une.
+
+. Sur la page *Bienvenue*, saisissez un nom pour votre organisation Console.
++
+La console définit une organisation comme l'élément de niveau supérieur dans la gestion des identités et des accès (IAM) de la console. link:concept-identity-and-access-management.html["En savoir plus sur IAM"] .
+
++
+Si votre entreprise possède déjà une organisation et que vous souhaitez la rejoindre, fermez la console et demandez à l'administrateur de l'organisation de vous associer à l'organisation.  Une fois ajouté, vous pouvez vous connecter et vous aurez accès à l'organisation de la console. link:task-iam-manage-members-permissions#add-members["Apprenez à ajouter des membres à une organisation existante"] .
+
+. Sélectionnez *Commençons*.
+

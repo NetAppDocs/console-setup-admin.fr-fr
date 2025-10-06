@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task-federation-verify-domain.html 
+keywords: federation, active directory federation services, adfs, ad fs, single sign-on, microsoft, federate, federated connection, SSO, identity federation, identity management, corporate identity 
+summary: 'Vous ne pouvez utiliser que des domaines vérifiés pour la fédération. Si vous souhaitez fédérer avec un domaine différent de votre domaine de messagerie, vous devez d"abord vérifier que vous êtes propriétaire du domaine.  Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.' 
+---
+= Vérifiez le domaine de messagerie pour votre connexion fédérée
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous souhaitez vous fédérer avec un domaine différent de votre domaine de messagerie, vous devez d'abord vérifier que vous êtes propriétaire du domaine.  Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.
+
+.Rôles requis
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+La vérification de votre domaine implique l'ajout d'un enregistrement TXT aux paramètres DNS de votre domaine.  Cet enregistrement est utilisé pour prouver que vous êtes propriétaire du domaine et permet à la console NetApp d'approuver le domaine pour la fédération.  Vous devrez peut-être vous coordonner avec votre administrateur informatique ou réseau pour terminer cette étape.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Fédération* pour afficher la page *Fédérations*.
+. Sélectionnez *Configurer une nouvelle fédération*.
+. Sélectionnez *Vérifier la propriété du domaine*.
+. Saisissez le domaine que vous souhaitez vérifier et sélectionnez *Continuer*.
+. Copiez l’enregistrement TXT fourni.
+. Accédez aux paramètres DNS de votre domaine et configurez la valeur TXT qui a été fournie en tant qu’enregistrement TXT pour votre domaine.  Travaillez avec votre administrateur informatique ou réseau si nécessaire.
+. Une fois l'enregistrement TXT ajouté, revenez à la console et sélectionnez *Vérifier*.
+

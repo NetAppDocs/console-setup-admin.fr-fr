@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: task-iam-switch-organizations-projects.html 
+keywords: switch organizations, switch projects, projects, organizations, change, switch, change organizations, change projects, iam, identity and access management, switch connectors 
+summary: 'Vous pouvez appartenir à plusieurs organisations de console ou disposer d"autorisations pour accéder à plusieurs projets ou agents au sein d"une organisation.  En cas de besoin, vous pouvez facilement basculer entre les organisations, les projets et les agents de console pour accéder aux ressources associées à cette organisation, ce projet ou cet agent.' 
+---
+= Basculer entre les organisations, les projets et les agents de la console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez appartenir à plusieurs organisations de console ou disposer d'autorisations pour accéder à plusieurs projets ou agents au sein d'une organisation.  En cas de besoin, vous pouvez facilement basculer entre les organisations, les projets et les agents de console pour accéder aux ressources associées à cette organisation, ce projet ou cet agent.
+
+
+TIP: Vous pouvez appartenir à plusieurs organisations si une autre organisation vous invite à la rejoindre ou si vous en créez une vous-même.  Vous pouvez créer une organisation supplémentaire en utilisant l'API. https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/post-organizations.html["Apprenez à créer une nouvelle organisation"^]
+
+
+
+== Basculer entre les organisations
+
+Si vous êtes membre de plusieurs organisations, vous pouvez basculer entre elles à tout moment.
+
+.Étapes
+. Dans l’en-tête supérieur de la console, sélectionnez *Organisation*.
++
+image:screenshot-iam-switch-organizations.png["Une capture d'écran de la bannière supérieure où vous pouvez sélectionner la liste déroulante Organisation, puis sélectionner une autre organisation."]
+
+. Si vous avez des organisations partenaires, sélectionnez l’onglet *Partenariat* pour afficher les organisations partenaires disponibles.
+
+
++ L'onglet *Partenariat* ne s'affiche pas si vous n'avez aucune organisation partenaire.
+
+. Sélectionnez une autre organisation, puis sélectionnez *Changer*.
+
+
++ Si vous avez des organisations partenaires, sélectionnez l’onglet *Partenariat* pour afficher les organisations partenaires disponibles.
+
+
+
+== Basculer entre les projets
+
+Si votre organisation comprend plusieurs projets et que vous avez accès à ces projets, vous pouvez basculer entre eux à tout moment.
+
+
+NOTE: Vous ne pouvez pas passer à un autre projet pendant que vous consultez l'une des pages *Identité et accès*.
+
+.Étapes
+. Dans l’en-tête supérieur de la console, sélectionnez *Projet*.
+. Parcourez les dossiers et les projets de votre organisation, sélectionnez le projet souhaité, puis sélectionnez *Basculer*.
++
+image:screenshot-iam-switch-projects-select.png["Une capture d'écran du menu Scope où vous pouvez sélectionner un nouveau projet."]
+
+
+
+
+
+== Basculer entre les agents de la console
+
+Si vous disposez de plusieurs agents de console, vous pouvez basculer entre eux pour voir les systèmes associés à un agent spécifique.
+
+.Étapes
+. Dans l’en-tête supérieur de la console, sélectionnez l’icône Agent.
+. Sélectionnez un autre agent, puis sélectionnez *Changer*.
+
+
+.Informations connexes
+link:task-iam-associate-connectors.html["Associer des agents à des dossiers et des projets"] .
+
+
+
+== Informations connexes
+
+* link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la console NetApp"]
+* link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
+* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
+

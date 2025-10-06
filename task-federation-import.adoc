@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: task-federation-import.html 
+keywords: federation, BlueXP, identity provider, IdP, single sign-on, SSO, verified domain, credentials, certificate, client secret, update, manage federations, security, compliance, user access, productivity, account management, authentication, access control, business continuity, 
+summary: 'Si vous avez déjà configuré la fédération via NetApp Cloud Central (une application externe à la console NetApp ), la page Fédération vous invite à importer votre connexion fédérée existante vers la console afin que vous puissiez la gérer dans la nouvelle interface.  Vous pourrez alors profiter des dernières améliorations sans avoir à recréer votre connexion fédérée.' 
+---
+= Importez votre fédération dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous avez déjà configuré la fédération via NetApp Cloud Central (une application externe à la console NetApp ), la page Fédération vous invite à importer votre connexion fédérée existante vers la console afin que vous puissiez la gérer dans la nouvelle interface.  Vous pourrez alors profiter des dernières améliorations sans avoir à recréer votre connexion fédérée.
+
+
+NOTE: Après avoir importé votre fédération existante, vous pouvez gérer la fédération à partir de la page *Fédérations*.link:task-federation-manage.html["En savoir plus sur la gestion des fédérations."]
+
+.Rôle requis
+Administrateur d'organisation ou administrateur de fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Fédération*.
+. Sélectionnez *Importer la fédération*.
+

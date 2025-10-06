@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-resources.html 
+keywords: resource, hierarchy, association, access, resource permissions, resource hierarchy, iam, identity and access management 
+summary: Gérez la hiérarchie des ressources de votre organisation en associant des ressources à des projets et des dossiers spécifiques. 
+---
+= Gérer la hiérarchie des ressources dans votre organisation NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous associez un membre à votre organisation, vous fournissez des autorisations au niveau de l'organisation, du dossier ou du projet.  Pour garantir que ces membres disposent des autorisations nécessaires pour accéder aux bonnes ressources, vous devez gérer la hiérarchie des ressources de votre organisation en associant les ressources à des projets et des dossiers spécifiques.  Une _ressource_ est un système de stockage ou un agent de console que la console gère déjà ou dont elle a connaissance.
+
+
+
+== Consultez les ressources de votre organisation
+
+Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Les ressources non découvertes sont des ressources de stockage identifiées mais pas encore ajoutées à la console.
+
+
+NOTE: REMARQUE : la page Ressources exclut les ressources Amazon FSx for NetApp ONTAP, car les utilisateurs ne peuvent pas les associer à un rôle.  Affichez-les sur la page Systèmes ou depuis Charges de travail.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Ressources*.
+. Sélectionnez *Recherche avancée et filtrage*.
+. Utilisez l’une des options disponibles pour trouver la ressource que vous recherchez :
++
+** *Rechercher par nom de ressource* : saisissez une chaîne de texte et sélectionnez *Ajouter*.
+** *Plateforme* : Sélectionnez une ou plusieurs plateformes, telles qu'Amazon Web Services.
+** *Ressources* : sélectionnez une ou plusieurs ressources, telles que Cloud Volumes ONTAP.
+** *Organisation, dossier ou projet* : sélectionnez l'organisation entière, un dossier spécifique ou un projet spécifique.
+
+
+. Sélectionnez *Rechercher*.
+
+
+
+
+== Associer une ressource à des dossiers et des projets
+
+Associez une ressource à un dossier ou à un projet pour la rendre disponible.
+
+.Avant de commencer
+Vous devez comprendre comment fonctionne l’association de ressources. link:concept-identity-and-access-management.html#resources["En savoir plus sur les ressources, notamment quand associer une ressource à un dossier"] .
+
+.Étapes
+. Depuis la page *Ressources*, accédez à une ressource dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Associer à des dossiers ou des projets*.
+. Sélectionnez un dossier ou un projet, puis sélectionnez *Accepter*.
+. Pour associer un dossier ou un projet supplémentaire, sélectionnez *Ajouter un dossier ou un projet*, puis sélectionnez le dossier ou le projet.
++
+Notez que vous ne pouvez sélectionner que les dossiers et les projets pour lesquels vous disposez des autorisations d'administrateur.
+
+. Sélectionnez *Associer les ressources*.
++
+** Si vous avez associé la ressource à des projets, les membres disposant d’autorisations pour ces projets ont désormais la possibilité d’accéder à la ressource depuis la console.
+** Si vous avez associé la ressource à un dossier, un _administrateur de dossier ou de projet_ peut désormais accéder à la ressource et l'associer à un projet dans le dossier. link:concept-identity-and-access-management.html#resources["En savoir plus sur l'association d'une ressource à un dossier"] .
+
+
+
+
+.Après avoir terminé
+Si vous découvrez une ressource à l’aide d’un agent de console, associez l’agent de console au projet pour accorder l’accès.  Dans le cas contraire, l’agent de console et sa ressource associée ne sont pas accessibles aux membres sans le rôle _Organization admin_.
+
+link:task-iam-associate-connectors.html["Découvrez comment associer un agent de console à un dossier ou à un projet"] .
+
+
+
+== Afficher les dossiers et les projets associés à une ressource
+
+Vous pouvez afficher les dossiers et les projets associés à une ressource particulière.
+
+
+NOTE: Si vous avez besoin de savoir quels membres de l'organisation ont accès à la ressource, vous pouvezlink:task-iam-manage-folders-projects.html#view-associated-resources-members["afficher les membres qui ont accès aux dossiers et projets associés à la ressource"] .
+
+.Étapes
+. Depuis la page *Ressources*, accédez à une ressource dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+
+
+L'exemple suivant montre une ressource associée à un projet.
+
+image:screenshot-iam-resource-details.png["Une capture d'écran de la page des détails des ressources qui montre une ressource associée à un projet directement sous l'organisation."]
+
+
+NOTE: Si vous devez déterminer quels membres de l’organisation ont accès à la ressource, vous pouvezlink:task-iam-manage-folders-projects.html#view-associated-resources-members["afficher les membres qui ont accès aux dossiers et projets associés à la ressource"] .
+
+
+
+== Supprimer une ressource d'un dossier ou d'un projet
+
+Pour supprimer une ressource d’un dossier ou d’un projet, vous devez supprimer l’association entre le dossier ou le projet et la ressource. Lorsque vous supprimez l’association, cela empêche les membres de gérer la ressource dans le dossier ou le projet.
+
+
+NOTE: Pour supprimer une ressource découverte de l'ensemble de l'organisation, supprimez le système de la page *Systèmes*.
+
+.Étapes
+. Depuis la page *Ressources*, accédez à une ressource dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Pour le dossier ou le projet pour lequel vous souhaitez supprimer la ressource, sélectionnezimage:icon-delete.png["Une icône d'une poubelle"]
+. Confirmez que vous souhaitez supprimer l'association en sélectionnant *Supprimer*.
+
+
+
+
+== Informations connexes
+
+* link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la console NetApp"]
+* link:task-iam-get-started.html["Démarrer avec l'identité et l'accès dans la console NetApp"]
+* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
+

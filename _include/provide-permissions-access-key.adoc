@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Agent.
+.. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+

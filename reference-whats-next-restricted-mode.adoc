@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: reference-whats-next-restricted-mode.html 
+keywords: restricted mode, what you can do 
+summary: Une fois que vous êtes opérationnel avec NetApp Console en mode restreint, vous pouvez commencer à utiliser les services pris en charge par le mode restreint. 
+---
+= Ce que vous pouvez faire ensuite (mode restreint)
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois que vous êtes opérationnel avec NetApp Console en mode restreint, vous pouvez commencer à utiliser les services pris en charge par le mode restreint.
+
+Pour obtenir de l'aide, reportez-vous à la documentation de ces services :
+
+* https://docs.netapp.com/us-en/bluexp-azure-netapp-files/index.html["Documentation Azure NetApp Files"^]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/index.html["Documents de sauvegarde et de récupération"^]
+* https://docs.netapp.com/us-en/bluexp-classification/index.html["Documents de classification"^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/index.html["Documentation Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/bluexp-digital-wallet/index.html["Documents sur le portefeuille numérique"^]
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/index.html["Documentation du cluster ONTAP sur site"^]
+* https://docs.netapp.com/us-en/bluexp-replication/index.html["Documents de réplication"^]
+
+
+.Informations connexes
+link:concept-modes.html["Modes de déploiement de la console NetApp"]

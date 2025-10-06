@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-partnerships-assign-users.html 
+keywords: switch organizations, switch projects, projects, organizations, change, switch, change organizations, change projects, iam, identity and access management, switch connectors 
+summary: 'Vous pouvez ajouter des utilisateurs à un partenariat en les ajoutant à l"organisation partenaire.  Une fois que vous avez ajouté des utilisateurs, l’organisation partenaire est chargée de leur attribuer des rôles pour des ressources particulières au sein de son organisation.' 
+---
+= Gérer les membres d'une organisation partenaire
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez ajouter des utilisateurs à un partenariat en les ajoutant à l'organisation partenaire.  Une fois que vous avez ajouté des utilisateurs, l’organisation partenaire est chargée de leur attribuer des rôles pour des ressources particulières au sein de son organisation.
+
+.Rôles requis
+Le rôle *Administrateur de partenariat* est requis pour créer et gérer des partenariats.  Le *spectateur de partenariats* peut consulter la page Partenariats.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+Vous pouvez supprimer des utilisateurs d’un partenariat à tout moment.  La suppression d’un utilisateur d’un partenariat révoque immédiatement son accès à toutes les ressources de l’organisation partenaire.
+
+
+
+== Ajouter des membres à un partenariat
+
+Lorsque vous ajoutez des membres à un partenariat, l'*administrateur du partenariat* de l'organisation partenaire doit leur attribuer des rôles pour des ressources particulières de son organisation avant qu'ils puissent accéder à ces ressources.
+
+Une fois que vous avez ajouté des membres à un partenariat, les membres s'affichent en tant que membres de l'organisation partenaire où le partenaire peut les affecter à des ressources.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Partenariats*.
+. Sélectionnez l'onglet *Partenariat reçu*.
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi auquel vous souhaitez adhérer et sélectionnez *Ajouter des membres*.
+. Choisissez un ou plusieurs membres à ajouter au partenariat et sélectionnez *Ajouter*.
+
+
+
+
+== Supprimer des membres d'un partenariat
+
+Vous pouvez supprimer des membres d’un partenariat à tout moment.  La suppression d’un utilisateur d’un partenariat révoque immédiatement son accès à toutes les ressources de l’organisation partenaire.
+
+Si vous souhaitez modifier le rôle d’un membre ou les ressources auxquelles il peut accéder, l’administrateur du partenariat de l’organisation partenaire doit effectuer ces modifications.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Partenariats*.
+. Sélectionnez l'onglet *Partenariat reçu*.
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du membre que vous souhaitez supprimer et sélectionnez *Supprimer l'association*.
+. Confirmez l'action en sélectionnant *Supprimer* dans la boîte de dialogue.
+
+
+
+
+== Afficher les informations de rôle d'un utilisateur
+
+Vous pouvez afficher le rôle qui a été attribué à un utilisateur et les ressources associées.
+
+Vous ne pouvez pas modifier le rôle associé à un utilisateur.  Si vous avez des questions sur les ressources ou le rôle fourni, contactez l’administrateur de l’organisation partenaire.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Partenariats*.
+. Sélectionnez l'onglet *Partenariat reçu*.
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet dans lequel vous souhaitez afficher le rôle attribué au membre et sélectionnez le numéro dans la colonne *Rôle*.
+

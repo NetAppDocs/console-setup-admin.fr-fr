@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: task-federation-manage.html 
+keywords: federation, BlueXP, identity provider, IdP, single sign-on, SSO, verified domain, credentials, certificate, client secret, update, manage federations, security, compliance, user access, productivity, account management, authentication, access control, business continuity 
+summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer dans la console NetApp .  Vous pouvez visualiser l"état de la connexion, l"activer ou la désactiver selon vos besoins.' 
+---
+= Gérer les fédérations dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez gérer votre fédération dans la console NetApp .  Vous pouvez le désactiver, mettre à jour les informations d'identification expirées, ainsi que le désactiver si vous n'en avez plus besoin.
+
+
+NOTE: Si vous avez configuré la fédération à l’aide de NetApp Cloud Central, importez-la via la page *Fédération* pour la gérer dans la console.link:task-federation-import.html["Apprenez à importer votre fédération"]
+
+Vous pouvez également ajouter un domaine vérifié à une fédération existante, ce qui vous permet d'utiliser plusieurs domaines pour votre connexion fédérée.
+
+
+NOTE: Les événements de gestion de fédération tels que l'activation, la désactivation et la mise à jour des fédérations s'affichent dans la chronologie.link:task-monitor-cm-operations.html["En savoir plus sur les opérations de surveillance dans la console NetApp ."]
+
+.Rôles requis
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+
+
+== Activer une fédération
+
+Si vous avez créé une fédération mais qu'elle n'est pas activée, vous pouvez l'activer via la page *Fédération*.  L'activation d'une fédération permet aux utilisateurs associés à la fédération de se connecter à la console à l'aide de leurs informations d'identification d'entreprise.  Créez et testez la fédération avec succès avant de l'activer.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Fédération*.
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté de la fédération que vous souhaitez activer et sélectionnez *Activer*.
+
+
+
+
+== Ajouter un domaine vérifié à une fédération existante
+
+Vous pouvez ajouter un domaine vérifié à une fédération existante dans la console pour utiliser plusieurs domaines avec le même fournisseur d'identité (IdP).
+
+Vous devez déjà avoir vérifié le domaine dans la console avant de pouvoir l'ajouter à une fédération.  Si vous n'avez pas encore vérifié le domaine, vous pouvez le faire en suivant les étapes décrites danslink:task-federation-verify-domain.html["Vérifiez votre domaine dans la console"] .
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Fédération*.
+. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Mettre à jour les domaines*.  La boîte de dialogue *Mettre à jour les domaines* affiche le domaine déjà associé à cette fédération.
+. Sélectionnez un domaine vérifié dans la liste des domaines disponibles.
+. Sélectionnez *Mettre à jour*. Les nouveaux utilisateurs de domaine peuvent obtenir un accès à la console fédérée dans un délai de 30 secondes.
+
+
+
+
+== Mise à jour d'une connexion fédérée expirant
+
+Vous pouvez mettre à jour les détails d'une fédération dans la console.  Par exemple, vous devrez mettre à jour la fédération si les informations d’identification telles qu’un certificat ou un secret client expirent.  Si nécessaire, mettez à jour la date de notification pour vous rappeler de mettre à jour la connexion avant son expiration.
+
+
+IMPORTANT: Mettez d’abord à jour la console avant de mettre à jour votre IdP pour éviter les problèmes de connexion.  Restez connecté à la console pendant le processus.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Fédération*.
+. Sélectionnez le menu actions (trois points verticaux) à côté de la fédération que vous souhaitez mettre à jour et sélectionnez *Mettre à jour la fédération*.
+. Mettez à jour les détails de la fédération si nécessaire.
+. Sélectionnez *Mettre à jour*.
+
+
+
+
+== Tester une fédération existante
+
+Testez la connexion d'une fédération existante pour vérifier qu'elle fonctionne.  Cela peut vous aider à identifier les problèmes liés à la fédération et à les résoudre.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Fédération*.
+. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Tester la connexion*.
+. Sélectionnez *Test*.  Le système vous invite à vous connecter avec vos identifiants d'entreprise.  Si la connexion réussit, vous êtes redirigé vers la console NetApp .  Si la connexion échoue, vous voyez un message d’erreur indiquant le problème avec la fédération.
+. Sélectionnez *Terminé* pour revenir à l’onglet *Fédération*.
+
+
+
+
+== Désactiver une fédération
+
+Si vous n’avez plus besoin d’une fédération, vous pouvez la désactiver.  Cela empêche les utilisateurs associés à la fédération de se connecter à la console à l’aide de leurs informations d’identification d’entreprise.  Vous pouvez réactiver la fédération plus tard si nécessaire.
+
+Désactivez une fédération avant de la supprimer, par exemple lors de la mise hors service de l'IdP ou de l'arrêt de la fédération.  Cela vous permet de le réactiver ultérieurement si nécessaire.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Fédération*.
+. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Désactiver*.
+
+
+
+
+== Supprimer une fédération
+
+Si vous n’avez plus besoin d’une fédération, vous pouvez la supprimer.  Cela supprime la fédération et empêche tous les utilisateurs associés à la fédération de se connecter à la console à l'aide de leurs informations d'identification d'entreprise.  Par exemple, si l’IdP est en cours de mise hors service ou si la fédération n’est plus nécessaire.
+
+Vous ne pouvez pas récupérer une fédération après l’avoir supprimée.  Vous devez créer une nouvelle fédération.
+
+
+IMPORTANT: Vous devez désactiver une fédération avant de pouvoir la supprimer.  Vous ne pouvez pas annuler la suppression d'une fédération après l'avoir supprimée.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès* .
+. Sélectionnez *Fédérations* pour afficher la page *Fédérations*.
+. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Supprimer*.
+

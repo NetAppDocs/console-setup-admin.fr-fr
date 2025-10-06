@@ -1,0 +1,822 @@
+---
+sidebar: sidebar 
+permalink: task-prepare-restricted-mode.html 
+keywords: restricted mode requirements, requirements, install options, restricted mode networking, dark site, restricted mode permissions, permissions for restricted mode, networking for restricted mode 
+summary: Préparez votre environnement avant de déployer la console NetApp en mode restreint.  Vous devez examiner les exigences de l’hôte, préparer la mise en réseau, configurer les autorisations, etc. 
+---
+= Préparez-vous au déploiement en mode restreint
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Préparez votre environnement avant de déployer la console NetApp en mode restreint.  Vous devez examiner les exigences de l’hôte, préparer la mise en réseau, configurer les autorisations, etc.
+
+
+
+== Étape 1 : Comprendre le fonctionnement du mode restreint
+
+Comprendre le fonctionnement de la console NetApp en mode restreint avant de commencer.
+
+Utilisez l'interface basée sur un navigateur disponible localement à partir de l'agent NetApp Console installé.  Vous ne pouvez pas accéder à la console NetApp à partir de la console Web fournie via la couche SaaS.
+
+De plus, toutes les fonctionnalités de la console et les services de données NetApp ne sont pas disponibles.
+
+link:concept-modes.html["Découvrez comment fonctionne le mode restreint"] .
+
+
+
+== Étape 2 : Examiner les options d’installation
+
+En mode restreint, vous ne pouvez installer l'agent de console que dans le cloud.  Les options d’installation suivantes sont disponibles :
+
+* Depuis la place de marché AWS
+* Depuis la place de marché Azure
+* Installation manuelle de l'agent de console sur votre propre hôte Linux exécuté dans AWS, Azure ou Google Cloud
+
+
+
+
+== Étape 3 : Examiner les exigences de l’hôte
+
+Un hôte doit répondre à des exigences spécifiques en matière de système d’exploitation, de RAM et de port pour exécuter l’agent de console.
+
+Lorsque vous déployez l’agent de console à partir d’AWS ou d’Azure Marketplace, l’image inclut les composants logiciels et de système d’exploitation requis.  Il vous suffit de choisir un type d’instance qui répond aux exigences en matière de CPU et de RAM.
+
+Hôte dédié:: L'agent de console n'est pas pris en charge sur un hôte partagé avec d'autres applications. L'hôte doit être un hôte dédié.  L'hôte peut être de n'importe quelle architecture répondant aux exigences de taille suivantes :
++
+--
+* CPU : 8 cœurs ou 8 vCPU
+* RAM : 32 Go
+* Espace disque : 165 Go sont recommandés pour l’hôte, avec les exigences de partition suivantes :
++
+** `/opt`: 120 Go d'espace doivent être disponibles
++
+L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
+
+** `/var`: 40 Go d'espace doivent être disponibles
++
+L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+
+
+
+
+
+--
+Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
+[[podman-versions]]Configuration requise pour le système d'exploitation et les conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
++
+--
+[cols="2a,2a,2a,2a,2a"]
+|===
+| Système opérateur | Versions de systèmes d'exploitation prises en charge | Versions d'agent prises en charge | Outil de conteneur requis | SELinux a 
+
+
+ a| 
+Red Hat Enterprise Linux
+ a| 
+9,1 à 9,4
+
+8,6 à 8,10
+
+* Versions en langue anglaise uniquement.
+* L'hôte doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, l'hôte ne peut pas accéder aux référentiels pour mettre à jour le logiciel tiers requis lors de l'installation de l'agent.
+
+ a| 
+3.9.50 ou version ultérieure avec la console en mode standard ou en mode restreint
+ a| 
+Podman version 4.6.1 ou 4.9.4
+
+<<podman-configuration,Afficher les exigences de configuration de Podman>> .
+ a| 
+Pris en charge en mode d'application ou en mode permissif
+
+* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
+
+
+
+
+ a| 
+Ubuntu
+ a| 
+24,04 LTS
+ a| 
+3.9.45 ou version ultérieure avec la console NetApp en mode standard ou en mode restreint
+ a| 
+Docker Engine 23.06 à 28.0.0.
+ a| 
+Non pris en charge
+
+
+
+ a| 
+22,04 LTS
+ a| 
+3.9.50 ou version ultérieure
+ a| 
+Docker Engine 23.0.6 à 28.0.0.
+ a| 
+Non pris en charge
+
+|===
+--
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
+Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons Standard_D8s_v3.
+Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons n2-standard-8.
++
+--
+L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]
+
+--
+Espace disque dans /opt:: 100 Go d'espace doivent être disponibles
++
+--
+L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
+
+--
+Espace disque dans /var:: 20 Go d'espace doivent être disponibles
++
+--
+L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+
+--
+
+
+
+
+== Étape 4 : installer Podman ou Docker Engine
+
+Pour installer manuellement l’agent de console, préparez l’hôte en installant Podman ou Docker Engine.
+
+Selon votre système d'exploitation, Podman ou Docker Engine est requis avant l'installation de l'agent.
+
+* Podman est requis pour Red Hat Enterprise Linux 8 et 9.
++
+<<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+* Docker Engine est requis pour Ubuntu.
++
+<<podman-versions,Afficher les versions de Docker Engine prises en charge>> .
+
+
+
+.Étapes
+[role="tabbed-block"]
+====
+.Podman
+--
+Suivez ces étapes pour installer et configurer Podman :
+
+* Activer et démarrer le service podman.socket
+* Installer Python 3
+* Installer le package podman-compose version 1.0.6
+* Ajoutez podman-compose à la variable d'environnement PATH
+* Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise Aardvark DNS au lieu de CNI
+
+
+
+NOTE: Ajustez le port aardvark-dns (par défaut : 53) après l’installation de l’agent pour éviter les conflits de port DNS.  Suivez les instructions pour configurer le port.
+
+.Étapes
+. Supprimez le package podman-docker s'il est installé sur l'hôte.
++
+[source, cli]
+----
+dnf remove podman-docker
+rm /var/run/docker.sock
+----
+. Installez Podman.
++
+Vous pouvez obtenir Podman à partir des référentiels officiels Red Hat Enterprise Linux.
+
++
+Pour Red Hat Enterprise Linux 9 :
+
++
+[source, cli]
+----
+sudo dnf install podman-2:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
++
+Pour Red Hat Enterprise Linux 8 :
+
++
+[source, cli]
+----
+sudo dnf install podman-3:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+. Activez et démarrez le service podman.socket.
++
+[source, cli]
+----
+sudo systemctl enable --now podman.socket
+----
+. Installez python3.
++
+[source, cli]
+----
+sudo dnf install python3
+----
+. Installez le package de référentiel EPEL s'il n'est pas déjà disponible sur votre système.
+. Si vous utilisez Red Hat Enterprise :
++
+Cette étape est nécessaire car podman-compose est disponible dans le référentiel Extra Packages for Enterprise Linux (EPEL).
+
++
+Pour Red Hat Enterprise Linux 9 :
+
++
+[source, cli]
+----
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+----
++
+Pour Red Hat Enterprise Linux 8 :
+
++
+[source, cli]
+----
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+----
+. Installez le package podman-compose 1.0.6.
++
+[source, cli]
+----
+sudo dnf install podman-compose-1.0.6
+----
++
+
+NOTE: En utilisant le `dnf install` la commande répond à l'exigence d'ajout de podman-compose à la variable d'environnement PATH.  La commande d'installation ajoute podman-compose à /usr/bin, qui est déjà inclus dans le `secure_path` option sur l'hôte.
+
+. Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise NetAvark avec Aardvark DNS au lieu de CNI.
++
+.. Vérifiez si votre networkBackend est défini sur CNI en exécutant la commande suivante :
++
+[source, cli]
+----
+podman info | grep networkBackend
+----
+.. Si le networkBackend est défini sur `CNI` , vous devrez le changer en `netavark` .
+.. Installer `netavark` et `aardvark-dns` en utilisant la commande suivante :
++
+[source, cli]
+----
+dnf install aardvark-dns netavark
+----
+.. Ouvrez le `/etc/containers/containers.conf` fichier et modifiez l'option network_backend pour utiliser « netavark » au lieu de « cni ».
+
+
++
+Si `/etc/containers/containers.conf` n'existe pas, effectuez les modifications de configuration pour `/usr/share/containers/containers.conf` .
+
+. Redémarrez podman.
++
+[source, cli]
+----
+systemctl restart podman
+----
+. Confirmez que networkBackend est désormais modifié en « netavark » à l'aide de la commande suivante :
++
+[source, cli]
+----
+podman info | grep networkBackend
+----
+
+
+--
+.Moteur Docker
+--
+Suivez la documentation de Docker pour installer Docker Engine.
+
+.Étapes
+. https://docs.docker.com/engine/install/["Afficher les instructions d'installation depuis Docker"^]
++
+Suivez les étapes pour installer une version de Docker Engine prise en charge.  N'installez pas la dernière version, car elle n'est pas prise en charge par la console.
+
+. Vérifiez que Docker est activé et en cours d’exécution.
++
+[source, cli]
+----
+sudo systemctl enable docker && sudo systemctl start docker
+----
+
+
+--
+====
+
+
+== Étape 5 : Préparer l’accès au réseau
+
+Configurez l’accès au réseau afin que l’agent de la console puisse gérer les ressources de votre cloud public.  En plus de disposer d’un réseau virtuel et d’un sous-réseau pour l’agent de console, vous devez vous assurer que les exigences suivantes sont respectées.
+
+Connexions aux réseaux cibles:: Assurez-vous que l’agent de console dispose d’une connexion réseau aux emplacements de stockage.  Par exemple, le VPC ou le VNet sur lequel vous prévoyez de déployer Cloud Volumes ONTAP, ou le centre de données où résident vos clusters ONTAP sur site.
+Préparer le réseau pour l'accès des utilisateurs à la console NetApp:: En mode restreint, les utilisateurs accèdent à la console à partir de la machine virtuelle de l'agent de console.  L'agent de console contacte quelques points de terminaison pour effectuer des tâches de gestion des données.  Ces points de terminaison sont contactés depuis l'ordinateur d'un utilisateur lors de l'exécution d'actions spécifiques à partir de la console.
+
+
+
+NOTE: Les agents de console antérieurs à la version 4.0.0 nécessitent des points de terminaison supplémentaires.  Si vous avez effectué une mise à niveau vers la version 4.0.0 ou une version ultérieure, vous pouvez supprimer les anciens points de terminaison de votre liste d'autorisation.link:reference-networking-saas-console-previous.html["En savoir plus sur l’accès réseau requis pour les versions antérieures à 4.0.0."]
+
++
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com | Pour fournir des fonctionnalités et des services au sein de la console NetApp . 
+
+
+| \ https://cdn.auth0.com \ https://services.cloud.netapp.com | Votre navigateur Web se connecte à ces points de terminaison pour une authentification utilisateur centralisée via la console NetApp . 
+|===
+Accès Internet sortant pour les opérations quotidiennes:: L'emplacement réseau de l'agent de console doit disposer d'un accès Internet sortant.  Il doit pouvoir accéder aux services SaaS de la console NetApp ainsi qu'aux points de terminaison au sein de votre environnement de cloud public respectif.
++
+--
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+*Environnements AWS*
+
+
+
+ a| 
+Services AWS (amazonaws.com) :
+
+* CloudFormation
+* Cloud de calcul élastique (EC2)
+* Gestion des identités et des accès (IAM)
+* Service de gestion des clés (KMS)
+* Service de jetons de sécurité (STS)
+* Service de stockage simple (S3)
+
+ a| 
+Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
+
+
+
+ a| 
+*Environnements Azure*
+
+
+
+ a| 
+\ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
+ a| 
+Pour gérer les ressources dans les régions publiques Azure.
+
+
+
+ a| 
+\ https://management.usgovcloudapi.net \ https://login.microsoftonline.us \ https://blob.core.usgovcloudapi.net \ https://core.usgovcloudapi.net
+ a| 
+Pour gérer les ressources dans les régions Azure Government.
+
+
+
+ a| 
+\ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn
+ a| 
+Pour gérer les ressources dans les régions Azure Chine.
+
+
+
+ a| 
+*Environnements Google Cloud*
+
+
+
+ a| 
+\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects
+ a| 
+Pour gérer les ressources dans Google Cloud.
+
+
+
+ a| 
+* Points de terminaison de la console NetApp *
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+
+
+Adresse IP publique dans Azure:: Si vous souhaitez utiliser une adresse IP publique avec la machine virtuelle de l’agent de console dans Azure, l’adresse IP doit utiliser une référence SKU de base pour garantir que la console utilise cette adresse IP publique.
++
+--
+image:screenshot-azure-sku.png["Une capture d’écran de la création d’une nouvelle adresse IP dans Azure qui vous permet de choisir Basique dans le champ SKU."]
+
+Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique.  Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échoueront.
+
+https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku["Documentation Azure : Référence IP publique"^]
+
+--
+
+
+Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et transparentes.  Si vous utilisez un proxy transparent, vous devez uniquement fournir le certificat du serveur proxy.  Si vous utilisez un proxy explicite, vous aurez également besoin de l'adresse IP et des informations d'identification.
++
+--
+* adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+--
+
+
+Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
++
+--
+* HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
+* SSH (22) n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+* Les connexions entrantes via le port 3128 sont requises si vous déployez des systèmes Cloud Volumes ONTAP dans un sous-réseau où une connexion Internet sortante n'est pas disponible.
++
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet sortante pour envoyer des messages AutoSupport , la console configure automatiquement ces systèmes pour utiliser un serveur proxy inclus avec l'agent de la console.  La seule exigence est de s’assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Vous devrez ouvrir ce port après avoir déployé l’agent de console.
+
+
+
+--
+
+
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
++
+--
+Si vous envisagez de créer un agent de console à partir de la place de marché de votre fournisseur de cloud, implémentez cette exigence de mise en réseau après avoir créé l'agent de console.
+
+--
+
+
+
+
+== Étape 6 : Préparer les autorisations cloud
+
+L'agent de console nécessite des autorisations de votre fournisseur de cloud pour déployer Cloud Volumes ONTAP dans un réseau virtuel et pour utiliser les services de données NetApp .  Vous devez configurer des autorisations auprès de votre fournisseur de cloud, puis associer ces autorisations à l’agent de la console.
+
+Pour afficher les étapes requises, choisissez l’option d’authentification à utiliser pour votre fournisseur de cloud.
+
+[role="tabbed-block"]
+====
+.Rôle AWS IAM
+--
+Utilisez un rôle IAM pour fournir des autorisations à l’agent de la console.
+
+Si vous créez l'agent de console à partir d'AWS Marketplace, vous êtes invité à sélectionner ce rôle IAM lorsque vous lancez l'instance EC2.
+
+Si vous installez manuellement l'agent de console sur votre propre hôte Linux, attachez le rôle à l'instance EC2.
+
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
++
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
+
+
+. Créer un rôle IAM :
++
+.. Sélectionnez *Rôles > Créer un rôle*.
+.. Sélectionnez *Service AWS > EC2*.
+.. Ajoutez des autorisations en joignant la politique que vous venez de créer.
+.. Terminez les étapes restantes pour créer le rôle.
+
+
+
+
+.Résultat
+Vous disposez désormais d’un rôle IAM pour l’instance EC2 de l’agent de console.
+
+--
+.Clé d'accès AWS
+--
+Configurez des autorisations et une clé d’accès pour un utilisateur IAM.  Vous devrez fournir à la console la clé d'accès AWS après avoir installé l'agent de la console et configuré la console.
+
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
++
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
++
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.
+
++
+Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+
+
+
+. Attachez les politiques à un utilisateur IAM.
++
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["Documentation AWS : Création de rôles IAM"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
+
+
+. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la console NetApp après avoir installé l'agent de console.
+
+
+--
+.Rôle Azure
+--
+Créez un rôle personnalisé Azure avec les autorisations requises.  Vous attribuerez ce rôle à la machine virtuelle de l’agent de console.
+
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+
+.Étapes
+. Si vous prévoyez d’installer manuellement le logiciel sur votre propre hôte, activez une identité gérée attribuée par le système sur la machine virtuelle afin de pouvoir fournir les autorisations Azure requises via un rôle personnalisé.
++
+https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm["Documentation Microsoft Azure : Configurer des identités gérées pour les ressources Azure sur une machine virtuelle à l'aide du portail Azure"^]
+
+. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour le connecteur"] et les enregistrer dans un fichier JSON.
+. Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
++
+Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser avec la console NetApp .
+
++
+*Exemple*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
++
+Les étapes suivantes décrivent comment créer le rôle à l’aide de Bash dans Azure Cloud Shell.
+
++
+.. Commencer https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] et choisissez l'environnement Bash.
+.. Téléchargez le fichier JSON.
++
+image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud Shell où vous pouvez choisir l’option de télécharger un fichier."]
+
+.. Utilisez l’interface de ligne de commande Azure pour créer le rôle personnalisé :
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
+
+
+
+
+--
+.Principal de service Azure
+--
+Créez et configurez un principal de service dans Microsoft Entra ID et obtenez les informations d’identification Azure dont la console a besoin.  Vous devez fournir ces informations d’identification à la console après avoir installé l’agent de la console.
+
+.Créer une application Microsoft Entra pour le contrôle d'accès basé sur les rôles
+. Assurez-vous que vous disposez des autorisations dans Azure pour créer une application Active Directory et attribuer l’application à un rôle.
++
+Pour plus de détails, reportez-vous à https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentation Microsoft Azure : autorisations requises"^]
+
+. Depuis le portail Azure, ouvrez le service *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsoft Azure."]
+
+. Dans le menu, sélectionnez *Inscriptions d'applications*.
+. Sélectionnez *Nouvelle inscription*.
+. Précisez les détails de l'application :
++
+** *Nom*: Saisissez un nom pour l'application.
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *URI de redirection*: Vous pouvez laisser ce champ vide.
+
+
+. Sélectionnez *S'inscrire*.
++
+Vous avez créé l’application AD et le principal de service.
+
+
+
+.Affecter l'application à un rôle
+. Créer un rôle personnalisé :
++
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+
++
+.. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour l'agent de la console"] et les enregistrer dans un fichier JSON.
+.. Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
++
+Vous devez ajouter l’ID de chaque abonnement Azure à partir duquel les utilisateurs créeront des systèmes Cloud Volumes ONTAP .
+
++
+*Exemple*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+.. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
++
+Les étapes suivantes décrivent comment créer le rôle à l’aide de Bash dans Azure Cloud Shell.
+
++
+*** Commencer https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] et choisissez l'environnement Bash.
+*** Téléchargez le fichier JSON.
++
+image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud Shell où vous pouvez choisir l’option de télécharger un fichier."]
+
+*** Utilisez l’interface de ligne de commande Azure pour créer le rôle personnalisé :
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
++
+Vous devriez maintenant avoir un rôle personnalisé appelé Opérateur de console que vous pouvez attribuer à la machine virtuelle de l’agent de console.
+
+
+
+
+
+. Affecter l'application au rôle :
++
+.. Depuis le portail Azure, ouvrez le service *Abonnements*.
+.. Sélectionnez l'abonnement.
+.. Sélectionnez *Contrôle d'accès (IAM) > Ajouter > Ajouter une attribution de rôle*.
+.. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et sélectionnez *Suivant*.
+.. Dans l'onglet *Membres*, procédez comme suit :
++
+*** Gardez *Utilisateur, groupe ou principal du service* sélectionné.
+*** Sélectionnez *Sélectionner les membres*.
++
+image:screenshot-azure-service-principal-role.png["Une capture d’écran du portail Azure qui affiche la page Membres lors de l’ajout d’un rôle à une application."]
+
+*** Recherchez le nom de l'application.
++
+Voici un exemple :
+
++
+image:screenshot_azure_service_principal_role.png["Une capture d’écran du portail Azure qui montre le formulaire Ajouter une attribution de rôle dans le portail Azure."]
+
+*** Sélectionnez l'application et sélectionnez *Sélectionner*.
+*** Sélectionnez *Suivant*.
+
+
+.. Sélectionnez *Réviser + attribuer*.
++
+Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
+
++
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+
+
+
+
+
+.Ajouter des autorisations à l'API de gestion des services Windows Azure
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Sélectionnez *Autorisations API > Ajouter une autorisation*.
+. Sous *API Microsoft*, sélectionnez *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif["Une capture d’écran du portail Azure qui affiche les autorisations de l’API Azure Service Management."]
+
+. Sélectionnez *Accéder à Azure Service Management en tant qu’utilisateurs de l’organisation*, puis sélectionnez *Ajouter des autorisations*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Une capture d’écran du portail Azure qui montre l’ajout des API Azure Service Management."]
+
+
+
+.Obtenir l'ID de l'application et l'ID du répertoire de l'application
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Copiez l'*ID d'application (client)* et l'*ID de répertoire (locataire)*.
++
+image:screenshot_azure_app_ids.gif["Une capture d'écran qui montre l'ID d'application (client) et l'ID de répertoire (locataire) pour une application dans Microsoft Entra IDy."]
+
++
+Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
+
+
+
+.Créer un secret client
+. Ouvrez le service *Microsoft Entra ID*.
+. Sélectionnez *Inscriptions d'applications* et sélectionnez votre application.
+. Sélectionnez *Certificats et secrets > Nouveau secret client*.
+. Fournissez une description du secret et une durée.
+. Sélectionnez *Ajouter*.
+. Copiez la valeur du secret client.
++
+image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azure qui affiche un secret client pour le principal du service Microsoft Entra."]
+
+
+
+.Résultat
+Votre principal de service est maintenant configuré et vous devez avoir copié l’ID de l’application (client), l’ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous ajoutez un compte Azure.
+
+--
+.Compte de service Google Cloud
+--
+Créez un rôle et appliquez-le à un compte de service que vous utiliserez pour l’instance de machine virtuelle de l’agent de console.
+
+.Étapes
+. Créer un rôle personnalisé dans Google Cloud :
++
+.. Créez un fichier YAML qui inclut les autorisations définies dans lelink:reference-permissions-gcp.html["Politique de l'agent de console pour Google Cloud"] .
+.. Depuis Google Cloud, activez Cloud Shell.
+.. Téléchargez le fichier YAML qui inclut les autorisations requises pour l’agent de la console.
+.. Créez un rôle personnalisé en utilisant le `gcloud iam roles create` commande.
++
+L'exemple suivant crée un rôle nommé « connecteur » au niveau du projet :
+
++
+[source, gcloud]
+----
+gcloud iam roles create connector --project=myproject --file=connector.yaml
+----
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["Documentation Google Cloud : Création et gestion de rôles personnalisés"^]
+
+
+
+. Créer un compte de service dans Google Cloud :
++
+.. Depuis le service IAM & Admin, sélectionnez *Comptes de service > Créer un compte de service*.
+.. Saisissez les détails du compte de service et sélectionnez *Créer et continuer*.
+.. Sélectionnez le rôle que vous venez de créer.
+.. Terminez les étapes restantes pour créer le rôle.
++
+https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Documentation Google Cloud : Création d'un compte de service"^]
+
+
+
+
+
+.Résultat
+Vous disposez désormais d’un compte de service que vous pouvez attribuer à l’instance de machine virtuelle de l’agent de console.
+
+--
+====
+
+
+== Étape 7 : Activer les API Google Cloud
+
+Plusieurs API sont nécessaires pour déployer Cloud Volumes ONTAP dans Google Cloud.
+
+.Étape
+. https://cloud.google.com/apis/docs/getting-started#enabling_apis["Activez les API Google Cloud suivantes dans votre projet"^]
++
+** API du gestionnaire de déploiement cloud V2
+** API de journalisation dans le cloud
+** API du gestionnaire de ressources cloud
+** API Compute Engine
+** API de gestion des identités et des accès (IAM)
+** API du service de gestion des clés cloud (KMS)
++
+(Requis uniquement si vous prévoyez d'utiliser NetApp Backup and Recovery avec des clés de chiffrement gérées par le client (CMEK))
+
+
+
+

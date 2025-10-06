@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard.html 
+keywords: bluexp, dashboard, console, home page 
+summary: Dans la console NetApp , vous pouvez afficher les métriques sur la page d’accueil. 
+---
+= Afficher les métriques sur la page d'accueil de la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La surveillance de l'état de votre parc de stockage garantit que vous êtes conscient des problèmes de protection du stockage et que vous pouvez prendre des mesures pour les résoudre.  À l'aide de la page d'accueil de la console NetApp , affichez l'état de vos sauvegardes et restaurations à partir de NetApp Backup and Recovery et le nombre de charges de travail exposées à un risque d'attaque par ransomware ou protégées comme indiqué par NetApp Ransomware Resilience.  Vous pouvez consulter la capacité de stockage des clusters individuels et Cloud Volumes ONTAP, les alertes ONTAP , la capacité de performances de stockage par cluster ou système Cloud Volumes ONTAP , les différents types de licences dont vous disposez, et bien plus encore.
+
+Tous les volets de la page d’accueil affichent les données au niveau de l’organisation.  Les volets Capacité de stockage et Performances de stockage affichent les systèmes associés aux projets auxquels l'utilisateur peut accéder en fonction des autorisations IAM.
+
+Le système actualise les données de la page d'accueil toutes les cinq minutes.  La mise en cache peut entraîner une différence entre les données de cette page et les valeurs réelles pendant 15 minutes maximum.
+
+
+NOTE: Des mesures précises sur la page d'accueil nécessitent des agents de console correctement dimensionnés et configurés.
+
+
+
+== Rôles de la console NetApp requis
+
+Chaque volet de la page d’accueil nécessite des rôles d’utilisateur différents :
+
+* *Volet Capacité de stockage* : Possibilité d'afficher la page Systèmes de la console NetApp
+* * Volet d'alertes ONTAP * : administrateur de dossier ou de projet, analyste du support opérationnel, administrateur d'organisation, visualiseur d'organisation, super administrateur, super visualiseur
+* *Volet Capacité de performances de stockage* : Possibilité d'afficher la page Systèmes de la console NetApp
+* *Volet Licences et abonnements* : Administrateur de dossier ou de projet, Administrateur d'organisation, Visualiseur d'organisation, Super administrateur, Super visualiseur
+* *Volet Résilience aux rançongiciels* : Administrateur de dossier ou de projet, Administrateur d'organisation, Administrateur de protection contre les rançongiciels, Visionneuse de protection contre les rançongiciels, Super administrateur, Super visionneuse
+* *Volet Sauvegarde et récupération* : Administrateur de sauvegarde et de récupération, Super administrateur de sauvegarde et de récupération, Visionneuse de sauvegarde et de récupération, Administrateur de clone de sauvegarde et de récupération, Administrateur de dossier ou de projet, Administrateur d'organisation, Administrateur de restauration de sauvegarde et de récupération, Super administrateur, Super visionneuse
+
+
+Si vous ne disposez pas des autorisations nécessaires pour accéder à un volet, celui-ci affiche un message indiquant que vous ne disposez pas des autorisations nécessaires pour l'utiliser.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès à la console NetApp ."] .
+
+.Étapes
+. Dans le menu de la console NetApp , sélectionnez *Accueil*.
++
+Si vous disposez du rôle d'administrateur d'organisation et qu'aucun agent ou système de stockage n'est configuré, la page d'accueil affiche les informations de démarrage.
+
++
+image:screenshot-home-greenfield.png["Page d'accueil de la console NetApp accueillant les nouveaux utilisateurs"]
+
++
+Si vous avez déjà configuré la console NetApp , qu'au moins un agent de console est activé et qu'au moins un cluster ou un système Cloud Volumes ONTAP a été ajouté sur cet agent, la page d'accueil affiche des mesures sur votre environnement de stockage.
+
++
+image:screenshot-home-metrics.png["Page d'accueil de la console NetApp affichant les métriques"]
+
+
+
+
+
+== Activer l'affichage des métriques sur la page d'accueil
+
+Vous pouvez voir les métriques sur la page d’accueil lorsque les conditions suivantes sont remplies :
+
+* Vous êtes connecté à une instance SaaS de la console NetApp .
+* Vous appartenez à une organisation disposant de ressources de stockage existantes (agent et cluster ou système Cloud Volumes ONTAP ).
+* Au moins un agent de console est activé.
+* Au moins un cluster ou un système Cloud Volumes ONTAP a été ajouté sur cet agent.
+
+
+Pour permettre aux métriques d’apparaître sur la page d’accueil, effectuez les tâches suivantes :
+
+* Activer au moins un agent de console.
+* Ajoutez au moins un cluster ou un Cloud Volumes ONTAP à l’aide de cet agent.
+
+
+
+
+== Afficher la capacité de stockage globale
+
+Le volet Capacité de stockage fournit les informations suivantes sur les clusters ONTAP et les systèmes Cloud Volumes ONTAP :
+
+* Nombre de systèmes ONTAP découverts dans la console
+* Nombre de systèmes Cloud Volumes ONTAP découverts dans la console
+* Utilisation de la capacité par cluster
+
+
+L'ordre des clusters ou des systèmes Cloud Volumes ONTAP est basé sur la quantité de capacité utilisée.  Le cluster ou le système avec la capacité la plus élevée apparaît en premier pour une identification facile.
+
+Les indicateurs d'avertissement s'affichent pour les clusters à 80 % de leur capacité, avec une mise à jour des données toutes les cinq minutes.
+
+
+TIP: Si vous avez plusieurs projets, vous pouvez voir des données différentes dans le volet Capacité de stockage par rapport à la page Systèmes.  Cela est dû au fait que la page Systèmes affiche des informations basées sur le niveau du projet, tandis que le volet Capacité de stockage affiche des informations au niveau de l'organisation.  De plus, les données de ce volet peuvent différer des valeurs réelles pendant un maximum de 15 minutes, car les données sont mises en cache pendant cette durée afin d'optimiser les performances.
+
+.Étapes
+. Dans le menu de la console NetApp , examinez le volet Capacité de stockage.
+. Dans le volet Capacité de stockage, sélectionnez *Afficher* pour accéder à la page Systèmes de console.
+. Sur la page Systèmes, sélectionnez le projet contenant le cluster que vous souhaitez afficher.
+. Sur la page Systèmes, sélectionnez un cluster pour afficher plus de détails sur ce cluster.
+
+
+
+
+== Afficher les alertes ONTAP
+
+Affichez les problèmes ou les risques potentiels dans vos environnements ONTAP sur site NetApp . Vous pouvez voir certaines alertes non EMS et certaines alertes EMS.
+
+Les données sont mises à jour toutes les 5 minutes.
+
+Vous pouvez voir les alertes ONTAP avec ces niveaux de gravité :
+
+* Primordial
+* Avertissement
+* Informatif
+
+
+Vous pouvez voir les alertes ONTAP pour ces zones d’impact :
+
+* Capacité
+* Performances
+* Protection
+* Disponibilité
+* Sécurité
+
+
+
+TIP: La mise en cache optimise les performances, mais peut entraîner une différence entre les données de ce volet et les valeurs réelles pendant 15 minutes maximum.
+
+*Systèmes pris en charge*
+
+* Un système NAS ou SAN ONTAP sur site est pris en charge.
+* Les systèmes Cloud Volumes ONTAP ne sont pas pris en charge.
+
+
+*Sources de données prises en charge*
+
+Afficher les alertes concernant certains événements qui se produisent dans ONTAP. Il s’agit d’une combinaison d’alertes EMS et basées sur des métriques.
+
+Pour plus de détails sur les alertes ONTAP , reportez-vous à https://docs.netapp.com/us-en/bluexp-alerts/index.html["À propos des alertes ONTAP"^] .
+
+Pour une liste des alertes que vous pourriez voir, reportez-vous à https://docs.netapp.com/us-en/bluexp-alerts/alerts-use-dashboard.html["Afficher les risques potentiels liés au stockage ONTAP"^] .
+
+.Étapes
+. Dans le menu de la console NetApp , examinez le volet Alertes ONTAP .
+. Vous pouvez également filtrer les alertes en sélectionnant le niveau de gravité ou modifier le filtre pour afficher les alertes en fonction de la zone d'impact.
+. Dans le volet Alertes ONTAP , sélectionnez *Afficher* pour accéder à la page Alertes de la console.
+
+
+
+
+== Afficher la capacité de performance de stockage
+
+Examinez la capacité de performances de stockage utilisée par cluster ou système Cloud Volumes ONTAP pour déterminer l’impact de la capacité de performances, de la latence et des IOPS sur vos charges de travail.  Par exemple, vous pourriez constater que vous devez déplacer les charges de travail pour minimiser la latence et maximiser les IOPS et le débit pour vos charges de travail critiques.
+
+Le système organise les clusters et les systèmes par capacité de performance, en répertoriant d'abord la capacité la plus élevée pour une identification facile.
+
+
+TIP: La mise en cache optimise les performances, mais peut entraîner une différence entre les données de ce volet et les valeurs réelles pendant 15 minutes maximum.
+
+.Étapes
+. Dans le menu de la console NetApp , examinez le volet Performances de stockage.
+. Dans le volet Performances de stockage, sélectionnez *Afficher* pour accéder à une page Performances qui répertorie tous les clusters et les données des systèmes Cloud Volumes ONTAP pour la capacité de performances, les IOPS et la latence.
+. Sélectionnez un cluster pour afficher ses détails dans le Gestionnaire système.
+
+
+
+
+== Afficher les licences et les abonnements dont vous disposez
+
+Consultez les informations suivantes dans le volet Licences et abonnements :
+
+* Le nombre total de licences et d’abonnements dont vous disposez.
+* Le nombre de chaque type de licence et d'abonnement dont vous disposez (licence directe, contrat annuel ou PAYGO).
+* Le nombre de licences et d'abonnements actifs, nécessitant une action ou approchant de l'expiration.
+* Le système affiche des indicateurs à côté des types de licences qui nécessitent une action ou qui sont sur le point d’expirer.
+
+
+Les données sont actualisées toutes les 5 minutes.
+
+
+TIP: La mise en cache optimise les performances, mais peut entraîner une différence entre les données de ce volet et les valeurs réelles pendant 15 minutes maximum.
+
+.Étapes
+. Dans le menu de la console NetApp , examinez le volet Licences et abonnements.
+. Dans le volet Licences et abonnements, sélectionnez *Afficher* pour accéder à la page Licences et abonnements de la console.
+
+
+
+
+== Afficher l'état de résilience aux ransomwares
+
+Découvrez si les charges de travail sont exposées à des attaques de ransomware ou protégées avec le service de données NetApp Ransomware Resilience.  Vous pouvez consulter la quantité totale de données protégées, afficher le nombre d’actions recommandées et afficher le nombre d’alertes liées à la protection contre les ransomwares.
+
+Les données sont actualisées toutes les 5 minutes et correspondent aux données affichées dans le tableau de bord de résilience NetApp Ransomware.
+
+https://docs.netapp.com/us-en/bluexp-ransomware-protection/concept-ransomware-protection.html["En savoir plus sur la résilience aux ransomwares de NetApp"^] .
+
+.Étapes
+. Dans le menu de la console NetApp , examinez le volet Résilience aux ransomwares.
+. Effectuez l’une des opérations suivantes dans le volet Résilience aux ransomwares :
++
+** Sélectionnez *Afficher* pour accéder au tableau de bord de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-ransomware-protection/rp-use-dashboard.html["Surveiller l'état de la charge de travail à l'aide du tableau de bord de résilience NetApp Ransomware"^] .
+** Consultez les « Actions recommandées » dans le tableau de bord de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-ransomware-protection/rp-use-dashboard.html["Consultez les recommandations de protection sur le tableau de bord de résilience NetApp Ransomware"^] .
+** Sélectionnez le lien Alertes pour consulter les alertes sur la page Alertes de résilience NetApp Ransomware.  Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-ransomware-protection/rp-use-alert.html["Gérez les alertes de ransomware détectées avec NetApp Ransomware Resilience"^] .
+
+
+
+
+
+
+== Afficher l'état de la sauvegarde et de la récupération
+
+Consultez l’état général de vos sauvegardes et restaurations à partir de NetApp Backup and Recovery.  Vous pouvez voir le nombre de ressources protégées et non protégées.  Vous pouvez également voir le pourcentage de sauvegardes et d’opérations de restauration pour la protection de vos charges de travail.  Un pourcentage plus élevé indique une meilleure protection des données.
+
+Les données sont actualisées toutes les 5 minutes.
+
+
+TIP: La mise en cache optimise les performances, mais peut entraîner une différence entre les données de ce volet et les valeurs réelles pendant 15 minutes maximum.
+
+.Étapes
+. Dans le menu de la console NetApp , examinez le volet Sauvegarde et récupération.
+. Sélectionnez *Afficher* pour accéder au tableau de bord de sauvegarde et de récupération NetApp . Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-backup-recovery/index.html["Documentation sur la sauvegarde et la restauration NetApp"^] .
+

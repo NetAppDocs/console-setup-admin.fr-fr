@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: task-partnerships-create.html 
+keywords: partner organizations, create partnership, MSPs, service provider access 
+summary: Créez des partenariats pour établir des connexions sécurisées et gérées entre votre organisation et des partenaires de confiance pour une gestion collaborative des ressources NetApp . 
+---
+= Gérer les partenariats dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Créez des partenariats pour établir des connexions sécurisées et gérées entre votre organisation et des partenaires de confiance pour une gestion collaborative des ressources NetApp .
+
+Les partenariats vous permettent de gérer en toute sécurité les ressources NetApp au-delà des frontières avec des relations basées sur les rôles dans la console.  L'organisation initiatrice accorde l'accès à ses ressources, tandis que l'organisation acceptante fournit les utilisateurs ou les comptes de service auxquels l'accès doit être accordé.  Les partenariats sont établis via un flux de travail en libre-service, donnant à l'organisation initiatrice un contrôle total sur les ressources partagées, les rôles attribués et la possibilité d'intégrer, de gérer ou de révoquer l'accès des partenaires selon les besoins.
+
+.Rôles requis
+Le rôle *Administrateur de partenariat* est requis pour créer et gérer des partenariats.  Le *spectateur de partenariats* peut consulter la page Partenariats.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+
+
+== Initier un partenariat organisationnel
+
+Vous pouvez demander un partenariat avec une autre organisation si vous connaissez son identifiant d'organisation.  L’organisme récepteur approuve la demande avant que le partenariat puisse se poursuivre.
+
+Avant de commencer, assurez-vous de disposer de l'ID d'organisation de l'organisation partenaire et que le rôle *Administrateur du partenariat* vous a été attribué.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez l'onglet *Partenariats*.
+. Sélectionnez *Ajouter un partenariat*.
+. Dans la boîte de dialogue *Créer un partenariat*, saisissez l'ID de l'organisation partenaire du partenaire demandé et sélectionnez *Ajouter*.
++
+La demande de partenariat est envoyée à l’organisme partenaire pour approbation.  Vous pouvez consulter l'état de la demande de partenariat sur la page *Partenariats*.
+
+
+
+
+
+== Approuver un partenariat d'organisation
+
+Une demande de partenariat d’organisation doit être acceptée par l’organisation réceptrice avant que le partenariat puisse se poursuivre.  Vous devez disposer du rôle *Administrateur de partenariat* pour approuver et gérer les partenariats.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Partenariats*.
+. Sélectionnez l'onglet *Partenariat reçu*.
+. Accédez au partenariat reçu que vous souhaitez approuver et sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Approuver*.
+. Vérifiez les détails du partenariat, y compris le nom et l’ID de l’organisation qui a demandé le partenariat et sélectionnez *Suivant*.
+. Facultatif, ajoutez les membres de l’organisation au partenariat et sélectionnez *Appliquer*.
++
+Vous pouvez ajouter des membres supplémentaires via la page *Partenariat* à tout moment.
+
++
+
+NOTE: Tous les membres que vous ajoutez deviennent visibles dans l’organisation du partenaire où le partenaire peut les affecter à des ressources.
+
+
+
+.Résultat
+Le partenariat que vous avez approuvé affiche désormais le statut *Établi*.  Les utilisateurs disposant des rôles *Administrateur de partenariat* ou *Observateur de partenariat* dans l'une ou l'autre organisation peuvent consulter le partenariat.
+
+
+
+== Afficher le statut du partenariat
+
+Consultez l'état de vos partenariats.
+
+.Rôle requis
+Administrateur de partenariat, visualiseur de partenariat.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez les *Partenariats*.
+. Sélectionnez soit l'onglet *Partenariats initiés* soit l'onglet *Partenariats reçus*.
+. Consultez le tableau respectif qui affiche les partenariats et leurs statuts.
+
+
+
+
+== Désactiver un partenariat d'organisation
+
+Vous devez être membre de l’organisation initiatrice pour désactiver un partenariat.  La désactivation d’un partenariat révoque immédiatement l’accès à toutes les ressources de votre organisation qui ont été partagées avec l’organisation partenaire.
+
+.Rôle requis
+Administrateur de partenariatlink:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez les *Partenariats*.
+. Sélectionnez soit l'onglet *Partenariats initiés*.
+. Consultez le tableau respectif qui affiche les partenariats et leurs statuts.
+. Accédez au partenariat initié que vous souhaitez désactiver et sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Désactiver*.
+

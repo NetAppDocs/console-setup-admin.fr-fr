@@ -1,0 +1,282 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-storage-roles.html 
+keywords: predefined roles, iam roles, organization admin, folder or project admin, identity and access management, access roles, admin 
+summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès aux fonctionnalités de gestion du stockage dans la console NetApp .  Vous pouvez attribuer aux utilisateurs un rôle administratif pour gérer le stockage ou un rôle de spectateur pour la surveillance. 
+---
+= Rôles d'accès au stockage pour la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès aux fonctionnalités de gestion du stockage dans la console NetApp .  Vous pouvez attribuer aux utilisateurs un rôle administratif pour gérer le stockage ou un rôle de spectateur pour la surveillance.
+
+
+NOTE: Ces rôles ne sont pas disponibles à partir de l’API de partenariat de la console NetApp .
+
+Les administrateurs peuvent attribuer des rôles de stockage aux utilisateurs pour les ressources et fonctionnalités de stockage suivantes :
+
+Ressources de stockage :
+
+* Clusters ONTAP sur site
+* StorageGRID
+* E-Series
+
+
+Services et fonctionnalités de la console :
+
+* Conseiller numérique
+* Mises à jour logicielles
+* Planification du cycle de vie
+* Durabilité
+
+
+.Exemple de rôles de stockage dans la console NetApp
+XYZ Corporation, une société multinationale, dispose d'une grande équipe d'ingénieurs et d'administrateurs de stockage.  Ils permettent à cette équipe de gérer les actifs de stockage pour leurs régions tout en limitant l'accès aux tâches principales de la console telles que la gestion des utilisateurs, la création d'agents et la gestion des licences.
+
+Au sein d'une équipe de 12 personnes, deux utilisateurs se voient attribuer le rôle *Storage viewer* qui leur permet de surveiller les ressources de stockage associées aux projets de console auxquels ils sont affectés.  Les neuf autres se voient attribuer le rôle *Administrateur de stockage* qui inclut la possibilité de gérer les mises à jour logicielles, d'accéder à ONTAP System Manager via la console, ainsi que de découvrir les ressources de stockage (ajouter des systèmes).  Une personne de l'équipe se voit attribuer le rôle de *Spécialiste de l'état du système* afin qu'elle puisse gérer l'état des ressources de stockage dans sa région, mais pas modifier ni supprimer de systèmes.  Cette personne peut également effectuer des mises à jour logicielles sur les ressources de stockage pour les projets qui lui sont attribués.
+
+L'organisation dispose de deux utilisateurs supplémentaires avec le rôle *Administrateur de l'organisation* qui peuvent gérer tous les aspects de la console, y compris la gestion des utilisateurs, la création d'agents et la gestion des licences, ainsi que de plusieurs utilisateurs avec le rôle *Administrateur de dossier ou de projet* qui peuvent effectuer des tâches d'administration de la console pour les dossiers et les projets auxquels ils sont affectés.
+
+Le tableau suivant présente les actions effectuées par chaque rôle de stockage.
+
+[cols="40,20a,20a,20a"]
+|===
+| Fonctionnalité et action | Administrateur de stockage | Spécialiste de la santé du système | Visionneuse de stockage 
+
+
+4+| *Gestion du stockage*: 
+
+
+| Découvrir de nouvelles ressources (créer des systèmes)  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Afficher les systèmes découverts  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Supprimer les systèmes de la console  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Modifier les systèmes  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| *Créer des agents*  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+4+| *Conseiller numérique* 
+
+
+| Afficher toutes les pages et fonctions  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+4+| *Licences et abonnements* 
+
+
+| Afficher toutes les pages et fonctions  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+4+| *Mises à jour logicielles* 
+
+
+| Afficher la page de destination et les recommandations  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Examiner les recommandations de versions potentielles et les principaux avantages  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Afficher les détails de mise à jour d'un cluster  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Exécutez les vérifications préalables à la mise à jour et téléchargez le plan de mise à niveau  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Installer les mises à jour logicielles  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+4+| *Planification du cycle de vie* 
+
+
+| Examiner l'état de la planification des capacités  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Choisissez l'action suivante (meilleure pratique, niveau)  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Hiérarchisez les données froides vers le stockage cloud et libérez de l'espace de stockage  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Configurer des rappels  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+4+| *Durabilité* 
+
+
+| Afficher le tableau de bord et les recommandations  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Télécharger les données du rapport  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Modifier le pourcentage d'atténuation du carbone  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Recommandations de correction  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Reporter les recommandations  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+4+| *Accès du gestionnaire système* 
+
+
+| Peut saisir des informations d'identification  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+4+| *Informations d'identification* 
+
+
+| Informations d'identification de l'utilisateur  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+|===

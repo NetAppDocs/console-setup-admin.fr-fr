@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: task-partnerships-work.html 
+keywords: partner organizations, create partnership, MSPs, service provider access 
+summary: 'Une fois qu"un rôle vous a été attribué dans une organisation partenaire, vous pouvez basculer vers cette organisation et effectuer les actions pour lesquelles vous êtes autorisé à effectuer.' 
+---
+= Travailler dans une organisation partenaire
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois qu'un rôle vous a été attribué dans une organisation partenaire, vous pouvez basculer vers cette organisation et effectuer les actions pour lesquelles vous êtes autorisé à effectuer.
+
+Utilisez le menu Organisation pour basculer entre vos organisations et toutes les organisations partenaires auxquelles vous avez accès.link:task-iam-switch-organizations-projects.html["Apprenez-en davantage sur le changement d’organisation et de projet."]
+
+Vous pourrez voir les ressources qui ont été partagées avec vous dans l'organisation partenaire et effectuer des actions en fonction du rôle qui vous a été attribué.  Travaillez avec votre administrateur de partenariat pour vous assurer que vous disposez du rôle approprié pour les ressources auxquelles vous devez accéder.

@@ -1,0 +1,91 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-roles.html 
+keywords: projects, access, resources, user roles, iam, identity and access management, folder, organization, permissions, roles, members, access roles 
+summary: 'Dans la console NetApp , vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu"ils doivent faire et où.' 
+---
+= Utiliser des rôles pour gérer l'accès des utilisateurs aux ressources de la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans la console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.
+
+Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs.  Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier.  Par exemple, vous pouvez attribuer à un utilisateur le rôle d’administrateur de protection contre les ransomwares pour un projet et le rôle d’administrateur SnapCenter pour un autre projet.  Alternativement, si un utilisateur a besoin du rôle d’administrateur de classification pour tous les projets d’un dossier spécifique, vous pouvez lui attribuer ce rôle au niveau du dossier.
+
+Utilisez des rôles d’accès pour attribuer l’accès aux ressources de stockage en fonction des tâches spécifiques que les utilisateurs doivent effectuer.  Par exemple, si un utilisateur doit interagir avec les services de protection contre les ransomwares, il doit disposer d'un rôle d'accès qui inclut des autorisations d'affichage ou d'administration pour le service de protection contre les ransomwares pour le projet pour lequel le rôle d'accès est accordé.
+
+Attribuez des rôles aux utilisateurs en fonction de votre stratégie IAM pour une sécurité renforcée.  Les rôles IAM garantissent que les utilisateurs disposent uniquement de l’accès dont ils ont besoin.
+
+
+NOTE: N'oubliez pas que vous ne pouvez pas accorder directement l'accès aux ressources.  Affectez d’abord les ressources aux projets.  Pensez à configurer votre hiérarchie de ressources avant d’attribuer l’accès aux utilisateurs.link:task-iam-manage-folders-projects.html["Apprenez à organiser vos ressources avec des dossiers et des projets."]
+
+
+
+== Afficher les rôles attribués à un membre
+
+Lorsque vous ajoutez un membre à votre organisation, vous êtes invité à lui attribuer un rôle.  Vous pouvez permettre aux membres de vérifier les rôles qui leur sont actuellement attribués.
+
+Si vous disposez du rôle _Administrateur de dossier ou de projet_, la page affiche tous les membres de l'organisation.  Cependant, vous ne pouvez afficher et gérer les autorisations des membres que pour les dossiers et les projets pour lesquels vous disposez d'autorisations. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet dans lequel vous souhaitez afficher le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle*.
+
+
+
+
+== Ajouter un rôle d'accès à un membre
+
+Vous attribuez généralement un rôle lorsque vous ajoutez un membre à votre organisation, mais vous pouvez le mettre à jour à tout moment en supprimant ou en ajoutant des rôles.
+
+Vous pouvez attribuer à un utilisateur un rôle d’accès pour votre organisation, votre dossier ou votre projet.
+
+Les membres peuvent avoir plusieurs rôles au sein du même projet et dans différents projets.  Par exemple, les petites organisations peuvent attribuer tous les rôles d’accès disponibles au même utilisateur, tandis que les grandes organisations peuvent demander aux utilisateurs d’effectuer des tâches plus spécialisées.  Vous pouvez également attribuer à un utilisateur le rôle d’administrateur de protection contre les ransomwares pour une organisation.  Dans cet exemple, l’utilisateur serait en mesure d’effectuer des tâches de protection contre les ransomwares sur tous les projets au sein de votre organisation.
+
+Votre stratégie de rôle d’accès doit s’aligner sur la manière dont vous avez organisé vos ressources NetApp .
+
+
+TIP: Un membre auquel est attribué le rôle d'administrateur d'organisation ne peut pas se voir attribuer de rôles supplémentaires.  Ils disposent déjà d’autorisations sur l’ensemble de l’organisation.  Un membre doté du rôle Dossier ou Projet ne peut se voir attribuer aucun autre rôle dans le dossier ou le projet où il possède déjà ce rôle.  Ces deux rôles donnent accès à tous les services dans le cadre qui leur est attribué.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du membre auquel vous souhaitez attribuer un rôle et sélectionnez *Ajouter un rôle*.
+. Pour ajouter un rôle, suivez les étapes dans la boîte de dialogue :
++
+** *Sélectionnez une organisation, un dossier ou un projet* : Choisissez le niveau de votre hiérarchie de ressources pour lequel le membre doit disposer d'autorisations.
++
+Si vous sélectionnez l’organisation ou un dossier, le membre aura des autorisations sur tout ce qui se trouve dans l’organisation ou le dossier.
+
+** *Sélectionnez une catégorie* : Choisissez une catégorie de rôle. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"^] .
+** Sélectionnez un *rôle* : choisissez un rôle qui fournit au membre des autorisations pour les ressources associées à l’organisation, au dossier ou au projet que vous avez sélectionné.
+** *Ajouter un rôle* : si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier, projet ou catégorie de rôle, puis sélectionnez une catégorie de rôle et un rôle correspondant.
+
+
+. Sélectionnez *Ajouter de nouveaux rôles*.
+
+
+
+
+== Modifier le rôle attribué à un membre
+
+Vous pouvez modifier les rôles attribués à un membre si vous devez ajuster l'accès d'un utilisateur.
+
+
+NOTE: Les utilisateurs doivent avoir au moins un rôle qui leur est attribué.  Vous ne pouvez pas supprimer tous les rôles d’un utilisateur.  Si vous devez supprimer tous les rôles, vous devez supprimer l’utilisateur de votre organisation.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet pour lequel vous souhaitez modifier le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle* pour afficher les rôles attribués à ce membre.
+. Vous pouvez modifier un rôle existant pour un membre ou supprimer un rôle.
++
+.. Pour modifier le rôle d'un membre, sélectionnez *Modifier* à côté du rôle que vous souhaitez modifier.  Vous ne pouvez modifier un rôle que pour un rôle appartenant à la même catégorie de rôle.  Par exemple, vous pouvez passer d’un rôle de service de données à un autre.  Confirmer le changement.
+.. Pour annuler l'attribution du rôle d'un membre, sélectionnezimage:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour désattribuer le rôle respectif au membre.  Il vous sera demandé de confirmer la suppression.
+
+
+

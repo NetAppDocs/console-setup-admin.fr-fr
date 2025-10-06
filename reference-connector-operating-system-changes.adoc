@@ -1,0 +1,168 @@
+---
+sidebar: sidebar 
+permalink: reference-connector-operating-system-changes.html 
+keywords: connector, operating systems, connector operating systems, os support, supported operating systems, rhel 8, rhel 9, red hat, docker, podman, agent 
+summary: 'NetApp ajoute et supprime parfois la prise en charge de l"agent de console sur des systèmes d"exploitation Linux spécifiques. Découvrez comment cette prise en charge affecte vos agents de console existants.' 
+---
+= Modifications apportées aux systèmes d'exploitation Linux pris en charge
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp ajoute et supprime parfois la prise en charge de l'agent de console sur des systèmes d'exploitation Linux spécifiques. Découvrez comment cette prise en charge affecte vos agents de console existants.
+
+
+
+== Systèmes d'exploitation pris en charge
+
+NetApp prend en charge l'agent avec les systèmes d'exploitation Linux suivants.
+
+[role="tabbed-block"]
+====
+.Mode standard
+--
+Installation manuelle::
++
+--
+* Ubuntu 24.04 LTS
+* Ubuntu 22.04 LTS
+* Red Hat Enterprise Linux
++
+** 8,6 à 8,10
+** 9,1 à 9,4
+
+
+
+
+--
+Déploiement à partir de la console NetApp:: Ubuntu 22.04 LTS
+Déploiement depuis AWS Marketplace:: Ubuntu 22.04 LTS
+Déploiement depuis la place de marché Azure:: Ubuntu 22.04 LTS
+
+
+--
+.Mode restreint
+--
+Installation manuelle::
++
+--
+* Ubuntu 24.04 LTS
+* Ubuntu 22.04 LTS
+* Red Hat Enterprise Linux
++
+** 8,6 à 8,10
+** 9,1 à 9,4
+
+
+
+
+--
+Déploiement depuis AWS Marketplace:: Ubuntu 22.04 LTS
+Déploiement depuis la place de marché Azure:: Ubuntu 22.04 LTS
+
+
+--
+.Mode privé
+--
+Installation manuelle::
++
+--
+* Ubuntu 22.04 LTS
+* Red Hat Enterprise Linux
++
+** 8,6 à 8,10
+** 9,1 à 9,4
+
+
+
+
+--
+
+
+--
+====
+
+
+== Prise en charge de RHEL 8 et 9
+
+Notez les points suivants concernant la prise en charge de RHEL 8 et 9 :
+
+Limites:: La classification des données NetApp est prise en charge si vous installez l'agent sur un hôte RHEL 8 ou 9 résidant sur site.  Cette option n'est pas prise en charge si l'hôte RHEL 8 ou 9 réside dans AWS, Azure ou Google Cloud.
+Outil d'orchestration de conteneurs:: Vous devez utiliser l’outil Podman comme outil d’orchestration de conteneur lors de l’installation de l’agent de console sur un hôte RHEL 8 ou 9.  Docker Engine n'est pas pris en charge avec RHEL 8 et 9.
+Mode de déploiement:: RHEL 8 et 9 sont pris en charge lors de l'utilisation de la console en mode standard et en mode restreint.
+Versions d'agent de console prises en charge:: NetApp prend en charge RHEL 8 et 9 à partir des versions suivantes de l'agent de console :
++
+--
+* 3.9.40 lors de l'utilisation de la console en mode standard ou en mode restreint
+
+
+--
+Nouvelles installations manuelles uniquement:: RHEL 8 et 9 sont pris en charge avec les _nouvelles_ installations d'agents lors de l'installation manuelle d'agents sur des hôtes exécutés sur vos locaux ou dans le cloud.
+Mises à niveau RHEL:: Si vous disposez d'un agent existant exécuté sur un hôte RHEL 7, NetApp ne prend pas en charge la mise à niveau du système d'exploitation RHEL 7 vers RHEL 8 ou 9. <<rhel-7-agent,En savoir plus sur les agents de console existants sur RHEL 7 ou CentOS 7>> .
+
+
+
+
+== Fin du support pour RHEL 7 et CentOS 7
+
+Le 30 juin 2024, RHEL 7 a atteint la fin de maintenance (EOM), tandis que CentOS 7 a atteint la fin de vie (EOL).  NetApp a interrompu la prise en charge des agents sur ces distributions Linux le 30 juin 2024.
+
+https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/rhel-7-end-of-maintenance["Red Hat : Ce qu'il faut savoir sur la fin de la maintenance de Red Hat Enterprise Linux 7"^]
+
+
+
+=== Agents de console existants sur RHEL 7 ou CentOS 7
+
+Si vous disposez d’un agent existant exécuté sur RHEL 7 ou CentOS 7, NetApp ne prend pas en charge la mise à niveau ou la conversion du système d’exploitation vers RHEL 8 ou 9.  Vous devez créer un nouvel agent sur un système d’exploitation pris en charge.
+
+. Configurer un hôte RHEL 8 ou 9.
+. Installez Podman.
+. Installer un _nouvel_ agent.
+. Configurez l'agent pour découvrir les systèmes que l'agent précédent gérait.
+
+
+
+
+== Informations connexes
+
+
+
+=== Comment démarrer avec RHEL 8 et 9
+
+Reportez-vous aux pages suivantes pour plus de détails sur les exigences de l'hôte, les exigences de Podman et les étapes d'installation de Podman et de Cagent :
+
+[role="tabbed-block"]
+====
+.Mode standard
+--
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installer et configurer un agent de console sur site"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-manual.html["Installer manuellement l'agent de console dans AWS"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-manual.html["Installer manuellement l'agent de console dans Azure"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-google-manual.html["Installer manuellement l'agent de console dans Google Cloud"]
+
+
+--
+.Mode restreint
+--
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-prepare-restricted-mode.html["Préparez-vous au déploiement en mode restreint"]
+
+--
+====
+
+
+=== Comment redécouvrir vos systèmes
+
+Reportez-vous aux pages suivantes pour redécouvrir vos systèmes après avoir déployé un nouvel agent de console.
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-adding-systems.html["Ajouter des systèmes Cloud Volumes ONTAP existants"^]
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Découvrez les clusters ONTAP sur site"^]
+* https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html["Créer ou découvrir un système FSx pour ONTAP"^]
+* https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-create-working-env.html["Créer un système de Azure NetApp Files"^]
+* https://docs.netapp.com/us-en/bluexp-e-series/task-discover-e-series.html["Découvrez les systèmes de la série E"^]
+* https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["Découvrez les systèmes StorageGRID"^]
+

@@ -1,0 +1,213 @@
+= BlueXP est désormais NetApp Console
+:allow-uri-read: 
+
+
+
+
+== BlueXP est désormais NetApp Console
+
+La console NetApp , construite sur la base BlueXP améliorée et restructurée, fournit une gestion centralisée du stockage NetApp et des services de données NetApp dans les environnements sur site et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
+
+
+
+=== Menus et pages de navigation
+
+NetApp a déplacé la plupart des options de menu vers le volet de navigation de gauche et a réorganisé les menus pour faciliter la navigation dans la console NetApp .
+
+
+
+==== Canvas est remplacé par la page Systèmes
+
+NetApp a renommé le Canvas en page *Systèmes*.  Accédez à la page *Système* à partir du menu *Stockage > Gestion*.
+
+image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-storage-mgmt.png["Une capture d'écran de la page des systèmes."]
+
+
+
+==== Menu de stockage étendu
+
+Le menu *Stockage* inclut également des *Alertes* pour afficher les alertes du système ONTAP et la *Planification du cycle de vie* (anciennement *Efficacité économique*) pour identifier les ressources inutilisées ou sous-utilisées.
+
+NetApp a également déplacé Keystone vers le menu *Stockage*, où vous pouvez gérer vos abonnements NetApp Keystone et afficher votre utilisation.
+
+image:https://docs.netapp.com/us-en/console-setup-admin/screenshot-storage-menu.png["Une capture d'écran du menu Stockage."]
+
+
+
+==== Menu d'administration
+
+Utilisez le menu *Administration* centralisé pour gérer la console NetApp , les cas d'assistance, les licences et les abonnements (anciennement appelé portefeuille numérique).
+
+image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-admin-menu.png["Une capture d'écran du menu Administration."]
+
+
+
+==== Menu santé
+
+Un menu *Santé* efficace comprend les *Mises à jour logicielles* où vous pouvez gérer les mises à jour du logiciel ONTAP , la *Durabilité* où vous pouvez surveiller votre impact environnemental et le * Digital Advisor* où vous pouvez obtenir des recommandations proactives pour optimiser votre environnement de stockage.
+
+image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-health-menu.png["Une capture d'écran du menu santé."]
+
+
+
+==== Menu de gouvernance
+
+Le menu *Gouvernance* inclut la *Classification des données* où vous pouvez gérer la classification et la conformité des données et le *Hub d'automatisation* où vous pouvez créer et gérer des flux de travail d'automatisation.
+
+image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-governance-menu.png["Une capture d'écran du menu Gouvernance."]
+
+
+
+=== Nommage plus intuitif des éléments, des services de données et des fonctionnalités
+
+NetApp a renommé plusieurs éléments, services de données et fonctionnalités pour clarifier leur objectif.  Les principaux changements incluent :
+
+[cols="10,24"]
+|===
+| *Nom précédent* | * Nom de la console NetApp * 
+
+
+| Connecteurs  a| 
+Agents de console.
+
+Affichez, ajoutez et gérez vos agents à partir du menu *Administration > Agents*.
+
+
+
+| Page de chronologie  a| 
+Page d'audit
+
+Afficher l'activité de la console d'audit à partir du menu *Administration > Audit*.
+
+
+
+| Environnements de travail  a| 
+Systèmes
+
+Affichez, ajoutez et gérez vos systèmes à partir du menu *Stockage > Gestion*.
+
+
+
+| Protection contre les ransomwares BlueXP  a| 
+Résilience aux ransomwares NetApp .
+
+Ransomware Resilience vous aide à protéger vos données et à récupérer rapidement après une attaque de ransomware.
+
+
+
+| Efficacité économique de BlueXP  a| 
+Planification du cycle de vie.
+
+La planification du cycle de vie vous aide à optimiser vos coûts de stockage en identifiant les ressources inutilisées et sous-utilisées.
+
+Accédez à la planification du cycle de vie à partir du menu *Stockage > Planification du cycle de vie*.
+
+
+
+| BlueXP digital wallet  a| 
+Licences et abonnements
+
+Accédez à vos licences et abonnements depuis le menu *Administration > Licences et abonnements*.
+
+|===
+
+
+=== Agents de console
+
+Accédez et gérez vos agents de console à partir du menu *Administration > Agents*.  NetApp a modifié la manière de sélectionner un agent de console pour la page *Systèmes* (anciennement le Canevas).  NetApp a remplacé le nom du menu Connecteur par une icôneimage:icon-agent.png["icône d'agent"] , vous permettant de sélectionner l'agent de console pour lequel vous souhaitez afficher les systèmes.
+
+image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-agent-icon-menu.png["Une capture d’écran qui montre l’icône pour sélectionner un agent de console."]
+
+Vous pouvez également gérer vos agents depuis le menu *Administration > Agents*.
+
+
+
+== Agent de console 4.0.0
+
+Cette version de l'agent de console inclut des améliorations de sécurité, des corrections de bogues et les nouvelles fonctionnalités suivantes.
+
+La version 4.0.0 est disponible pour le mode standard et le mode restreint.
+
+
+
+=== Consolidation et réduction des points de terminaison réseau requis
+
+NetApp a réduit les points de terminaison réseau requis pour la console et les agents de console, améliorant ainsi la sécurité et simplifiant le déploiement.  Il est important de noter que tous les déploiements antérieurs à la version 4.0.0 continuent d’être entièrement pris en charge.  Bien que les points de terminaison précédents restent disponibles pour les agents existants, NetApp recommande fortement de mettre à jour les règles de pare-feu vers les points de terminaison actuels après avoir confirmé la réussite des mises à niveau des agents.
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["En savoir plus sur les points de terminaison requis."]
+
+
+
+
+=== Prise en charge du déploiement VCenter des agents de console
+
+Vous pouvez déployer des agents de console dans des environnements VMware à l’aide d’un fichier OVA.  Le fichier OVA inclut une image de machine virtuelle préconfigurée avec un logiciel d'agent de console et des paramètres pour se connecter à la console NetApp .  Un téléchargement de fichier ou un déploiement d'URL est disponible directement depuis la console NetApp .link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem-ova.html["Découvrez comment déployer un agent de console dans les environnements VMware."]
+
+L'agent de console OVA pour VMware offre une image VM préconfigurée pour un déploiement rapide.
+
+
+
+=== Rapports de validation pour les déploiements d'agents ayant échoué
+
+Lorsque vous déployez un agent de console à partir de la console NetApp , vous avez désormais la possibilité de valider la configuration de l'agent.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport téléchargeable pour vous aider à résoudre le problème.
+
+
+
+=== Dépannage amélioré pour les agents de console
+
+L'agent de console a amélioré les messages d'erreur qui vous aident à mieux comprendre les problèmes.link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-connector.html["Découvrez comment dépanner les agents de la console."]
+
+
+
+== Console NetApp
+
+L’administration de la console NetApp inclut les nouvelles fonctionnalités suivantes :
+
+
+
+=== Tableau de bord de la page d'accueil
+
+Le tableau de bord de la page d'accueil de la console NetApp offre une visibilité en temps réel sur l'infrastructure de stockage avec des mesures de santé, de capacité, d'état de licence et de services de données.link:https://docs.netapp.com/us-en/console-setup-admin/task-dashboard.html["En savoir plus sur la page d'accueil."]
+
+
+
+=== Assistant NetApp
+
+Les nouveaux utilisateurs dotés du rôle d'administrateur d'organisation peuvent utiliser l'assistant NetApp pour configurer la console, notamment pour ajouter un agent, lier un compte de support NetApp et ajouter un système de stockage.link:https://docs.netapp.com/us-en/console-setup-admin/task-console-assistant.html["En savoir plus sur l'assistant NetApp ."]
+
+
+
+=== Authentification du compte de service
+
+La console NetApp prend en charge l'authentification du compte de service à l'aide d'un ID client généré par le système et d'un secret ou de JWT gérés par le client, permettant aux organisations de sélectionner l'approche la mieux adaptée à leurs exigences de sécurité et à leurs flux de travail d'intégration.  L'authentification client JWT par clé privée utilise une cryptographie asymétrique, offrant une sécurité plus forte que l'ID client traditionnel et les méthodes secrètes.  L'authentification client JWT par clé privée utilise une cryptographie asymétrique, gardant la clé privée sécurisée dans l'environnement du client, réduisant les risques de vol d'informations d'identification et améliorant la sécurité de votre pile d'automatisation et de vos applications clientes.link:https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html#service-account["Découvrez comment ajouter un compte de service."]
+
+
+
+=== Délais d'expiration de session
+
+Le système déconnecte les utilisateurs après 24 heures ou lorsqu'ils ferment leur navigateur Web.
+
+
+
+=== Soutien aux partenariats entre organisations
+
+Vous pouvez créer des partenariats dans la console NetApp qui permettent aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, ce qui facilite la collaboration et renforce la sécurité. link:https://docs.netapp.com/us-en/console-setup-admin/task-partnerships-create.html["Apprenez à gérer les partenariats"] .
+
+
+
+=== Rôles de super administrateur et de super spectateur
+
+Ajout des rôles *Super administrateur* et *Super spectateur*.  *Super administrateur* accorde un accès de gestion complet aux fonctionnalités de la console, au stockage et aux services de données.  *Super viewer* offre une visibilité en lecture seule aux auditeurs et aux parties prenantes.  Ces rôles sont utiles pour les petites équipes de membres seniors où un accès large est courant.  Pour une sécurité et une auditabilité améliorées, les organisations sont encouragées à utiliser l'accès *Super administrateur* avec parcimonie et à attribuer des rôles précis lorsque cela est possible.link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+
+
+=== Rôle supplémentaire de la résilience aux ransomwares
+
+Ajout du rôle *Administrateur du comportement utilisateur de Ransomware Resilience* et du rôle *Observateur du comportement utilisateur de Ransomware Resilience*.  Ces rôles permettent aux utilisateurs de configurer et d’afficher respectivement le comportement des utilisateurs et les données d’analyse.link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+
+
+=== Chat d'assistance supprimé
+
+NetApp a supprimé la fonctionnalité de chat d’assistance de la console NetApp .  Utilisez la page *Administration > Support* pour créer et gérer des cas d'assistance.

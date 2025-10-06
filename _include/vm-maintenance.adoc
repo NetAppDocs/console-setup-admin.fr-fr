@@ -1,0 +1,9 @@
+= 
+:allow-uri-read: 
+
+
+La maintenance du système d'exploitation sur l'hôte de l'agent de console est votre responsabilité (celle du client).  Par exemple, vous (client) devez appliquer les mises à jour de sécurité au système d'exploitation sur l'hôte de l'agent de console en suivant les procédures standard de votre entreprise pour la distribution du système d'exploitation.
+
+Notez que vous (client) n'avez pas besoin d'arrêter les services sur l'hôte Console gent lors de l'application de mises à jour de sécurité mineures.
+
+Si vous (client) devez arrêter puis démarrer la machine virtuelle de l'agent de console, vous devez le faire à partir de la console de votre fournisseur de cloud ou en utilisant les procédures standard de gestion sur site.

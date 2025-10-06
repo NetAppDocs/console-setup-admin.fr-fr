@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: reference-whats-next.html 
+keywords: standard mode, what you can do 
+summary: Maintenant que vous êtes connecté et que vous avez configuré la console NetApp en mode standard, les utilisateurs peuvent créer et découvrir des systèmes de stockage et utiliser les services de données NetApp . 
+---
+= Ce que vous pouvez faire ensuite (mode standard)
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Maintenant que vous êtes connecté et que vous avez configuré la console NetApp en mode standard, les utilisateurs peuvent créer et découvrir des systèmes de stockage et utiliser les services de données NetApp .
+
+
+TIP: Si vous avez installé un agent de console dans AWS, Microsoft Azure ou Google Cloud, la console découvre automatiquement des informations sur les compartiments Amazon S3, le stockage Azure Blob ou les compartiments Google Cloud Storage à l'emplacement où l'agent est installé.  Ces systèmes sont automatiquement ajoutés à la page *Systèmes*.
+
+Pour obtenir de l'aide, rendez-vous sur le https://docs.netapp.com/us-en/bluexp-family/["page d'accueil de la documentation de la console NetApp"^] pour afficher la documentation de la console NetApp .
+
+.Informations connexes
+link:concept-modes.html["Modes de déploiement de la console NetApp"]

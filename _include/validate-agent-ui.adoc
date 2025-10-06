@@ -1,0 +1,18 @@
+= 
+:allow-uri-read: 
+
+
+Si vous avez sélectionné la case à cocher *Valider la configuration de l'agent* sur la page *Réviser*, la console vérifie la configuration de l'agent de la console après sa création.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport téléchargeable pour vous aider à résoudre le problème.
+
+
+NOTE: Si la console déploie correctement l'agent, elle ne génère pas de rapport et une boîte de dialogue de confirmation s'affiche pour vérifier un déploiement réussi.
+
+.Étapes
+. Dans la boîte de dialogue *Échec du déploiement de l'agent*, sélectionnez *Télécharger le rapport* pour télécharger un fichier PDF contenant le rapport de validation.
+. Vous pouvez également sélectionner *Recommencer* pour revenir à l'assistant *Déployer l'agent* et réessayer.
++
+Vous devez recommencer l’ensemble du processus si vous souhaitez essayer de déployer à nouveau l’agent.
+
+
+
+Accéder au rapport et aux journaux depuis l'hôte de l'agent de la console

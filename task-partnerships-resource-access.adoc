@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: task-partnerships-resource-access.html 
+keywords: role-based access, partnership access, partner resources, resource access, grant acces, provide partner access, partnership organization 
+summary: 'Vous pouvez accorder l"accès aux utilisateurs du partenariat en leur attribuant des rôles spécifiques pour les dossiers et les projets au sein de votre organisation.' 
+---
+= Fournir un accès aux ressources aux utilisateurs du partenariat
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez accorder l'accès aux utilisateurs du partenariat en leur attribuant des rôles spécifiques pour les dossiers et les projets au sein de votre organisation.
+
+.Rôles requis
+Administrateur de partenariatlink:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+Une organisation partenaire doit d’abord ajouter des membres au partenariat avant que vous puissiez leur attribuer des rôles pour les ressources de votre organisation.link:task-partnerships-assign-users.html["Découvrez comment ajouter des membres à un partenariat."]
+
+
+
+== Comprendre les rôles des utilisateurs du partenariat
+
+Vous pouvez gérer les rôles des membres des organisations partenaires de la même manière que vous le faites pour les vôtres.  Cependant, tous les rôles ne sont pas disponibles pour les utilisateurs du partenariat.  En particulier, vous ne pouvez pas accorder aux utilisateurs partenaires un rôle autorisant les mises à jour logicielles.  La mise à jour du logiciel ONTAP nécessite généralement un accès direct au réseau.
+
+Vous pouvez attribuer les rôles suivants aux utilisateurs partenaires :
+
+* link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de l'organisation"]
+* link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de dossier ou de projet"]
+* link:reference-iam-platform-roles.html#federation-roles["Administrateur de la fédération"]
+* link:reference-iam-platform-roles.html#federation-roles["Téléspectateur de la Fédération"]
+* link:reference-iam-backup-rec-roles.html["Administrateur de sauvegarde et de récupération"]
+* link:reference-iam-backup-rec-roles.html["Visionneuse de sauvegarde"]
+* link:reference-iam-backup-rec-roles.html["Restaurer l'administrateur"]
+* link:reference-iam-backup-rec-roles.html["Cloner l'administrateur"]
+* link:reference-iam-disaster-rec-roles.html["Administrateur de reprise après sinistre"]
+* link:reference-iam-disaster-rec-roles.html["Administrateur de basculement de reprise après sinistre"]
+* link:reference-iam-disaster-rec-roles.html["Administrateur d'application de reprise après sinistre"]
+* link:reference-iam-disaster-rec-roles.html["Visionneuse de reprise après sinistre"]
+* link:reference-iam-storage-roles.html["Analyste de soutien aux opérations"]
+* link:reference-iam-predefined-roles.html["Visionneuse de classification"]
+
+
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles prédéfinis"]
+
+
+
+== Ajouter un rôle à un utilisateur partenaire
+
+Vous donnez accès aux ressources de votre organisation en ajoutant un rôle à un membre.  Lorsque vous attribuez un rôle, vous spécifiez une ressource et un rôle.  Vous pouvez attribuer plusieurs rôles à un utilisateur.
+
+Par exemple, si vous aviez deux projets et que vous souhaitiez que le même utilisateur ait le rôle d’administrateur de sauvegarde et de récupération pour les deux, vous devrez fournir le rôle à l’utilisateur pour chaque projet.  De même, si vous souhaitez attribuer à un utilisateur deux rôles différents pour le même projet, vous devrez attribuer chaque rôle séparément.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Partenariats*.
+. Sélectionnez l'onglet *Partenariat initié*.
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi que vous souhaitez afficher et sélectionnez *Afficher les détails*.
++
+La liste *Membre* affiche les membres que l'organisation partenaire a ajoutés au partenariat.
+
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du membre auquel vous souhaitez attribuer un rôle et sélectionnez *Ajouter un rôle*.
+. Pour ajouter un rôle, suivez les étapes dans la boîte de dialogue :
++
+** *Sélectionnez une organisation, un dossier ou un projet* : Choisissez le niveau de votre hiérarchie de ressources pour lequel le membre doit disposer d'autorisations.
++
+Si vous sélectionnez l’organisation ou un dossier, le membre aura des autorisations sur tout ce qui se trouve dans l’organisation ou le dossier.
+
+** *Sélectionnez une catégorie* : Choisissez une catégorie de rôle. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"^] .
+** Sélectionnez un *rôle* : choisissez un rôle qui fournit au membre des autorisations pour les ressources associées à l’organisation, au dossier ou au projet que vous avez sélectionné.
+** *Ajouter un rôle* : si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier, projet ou catégorie de rôle, puis sélectionnez une catégorie de rôle et un rôle correspondant.
+
+
+. Sélectionnez *Ajouter de nouveaux rôles*.
+
+
+
+
+== Modifier ou supprimer un rôle d'un utilisateur partenaire
+
+Vous pouvez modifier ou supprimer un rôle que vous avez attribué à un membre d’une organisation partenaire.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Partenariats*.
+. Sélectionnez l'onglet *Partenariat initié*.
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi que vous souhaitez afficher et sélectionnez *Afficher les détails*.
++
+La liste *Membre* affiche les membres que l'organisation partenaire a ajoutés au partenariat.
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet pour lequel vous souhaitez modifier le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle* pour afficher les rôles attribués à ce membre.
+. Vous pouvez modifier un rôle existant pour un membre ou supprimer un rôle.
++
+.. Pour modifier le rôle d'un membre, sélectionnez *Modifier* à côté du rôle que vous souhaitez modifier.  Vous ne pouvez modifier un rôle que pour un rôle appartenant à la même catégorie de rôle.  Par exemple, vous pouvez passer d’un rôle de service de données à un autre.  Confirmer le changement.
+.. Pour annuler l'attribution du rôle d'un membre, sélectionnezimage:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour désattribuer le rôle respectif au membre.  Il vous sera demandé de confirmer la suppression.
+
+
+

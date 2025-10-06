@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: task-maintain-connectors.html 
+keywords: agent operating system, agent maintenance, vm maintenance, os updates, operating system updates, stop agent, restart agent, notifications, agent health, agent disk space, agent cpu usage, agent ram usage, agent vm, agent ip address, agent uri, connector, connector health 
+summary: La maintenance du système d’exploitation sur l’hôte de l’agent est de votre responsabilité.  Par exemple, vous devez appliquer les mises à jour de sécurité au système d’exploitation sur l’hôte de l’agent de console en suivant les procédures standard de votre entreprise pour la distribution du système d’exploitation. 
+---
+= Maintenir la machine virtuelle de l'agent de console et le système d'exploitation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La maintenance du système d'exploitation sur l'hôte de l'agent de console est votre responsabilité (celle du client).  Par exemple, vous (le client) devez appliquer les mises à jour de sécurité au système d'exploitation sur l'hôte de l'agent en suivant les procédures standard de votre entreprise pour la distribution du système d'exploitation.
+
+
+TIP: Si vous avez déjà un agent, vous devez en être conscient.link:reference-connector-operating-system-changes.html["modifications apportées aux systèmes d'exploitation Linux pris en charge"] .
+
+
+
+== Correctifs du système d'exploitation et l'agent
+
+Appliquez les correctifs de sécurité du système d’exploitation sans arrêter les services hôtes de l’agent.
+
+
+
+== Type de machine virtuelle ou d'instance
+
+Si vous créez un agent de console à partir de la console, il déploie une instance de machine virtuelle dans votre fournisseur de cloud avec une configuration par défaut.  Après avoir créé l'agent, ne passez pas à une instance de machine virtuelle plus petite avec moins de CPU ou de RAM.
+
+Le tableau suivant répertorie les exigences en matière de CPU et de RAM :
+
+processeur:: 8 cœurs ou 8 vCPU
+BÉLIER:: 32 Go
+
+
+link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent"] .
+
+
+
+== Surveiller l'agent
+
+La console vous avertit lorsque la machine virtuelle de l'agent n'est pas saine, notamment en cas de problèmes d'espace disque, de RAM et de processeur.  Surveillez ces notifications dans le centre de notifications de la console ou configurez des notifications par e-mail.  Des augmentations occasionnelles de l'espace disque, de la mémoire ou de l'utilisation du processeur sont normales, mais si cela se produit fréquemment, vous devez prendre des mesures pour résoudre le problème.
+
+Par exemple, la console vous avertit lorsqu'une ressource d'agent (CPU, RAM ou espace disque) dépasse 90 % de sa capacité totale pendant 30 minutes consécutives.  Par la suite, si l’utilisation des ressources descend en dessous de ce seuil, la notification s’affiche comme résolue (verte) dans le Centre de notifications.
+
+
+NOTE: Travaillez avec le support NetApp si vous avez des questions sur la modification de votre machine virtuelle agent.
+
+link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#notification-center["Apprendre encore plus."^]
+
+[cols="47,47"]
+|===
+| Notification | Action nécessaire 
+
+
+| L'espace disque est trop élevé | link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Manager/How_to_resolve_disk_space_issues_on_BlueXP_connector_VM["Consultez l'article de la base de connaissances NetApp"^] . 
+
+
+| L'utilisation du processeur est trop élevée | Augmentez la taille du processeur de la machine virtuelle de l’agent dans votre fournisseur de cloud ou sur site, selon l’endroit où vous l’avez installé.  Vous pouvez également créer des agents supplémentaires et répartir la charge de travail sur plusieurs agents.  L'utilisation de la RAM peut varier en fonction de votre environnement, des charges de travail ONTAP , du nombre de systèmes Cloud Volumes ONTAP et des services de données que vous utilisez. 
+
+
+| L'utilisation de la RAM est trop élevée | Augmentez la RAM de la machine virtuelle de l’agent dans votre fournisseur de cloud ou sur site, selon l’endroit où vous l’avez installé.  Vous pouvez également créer des agents supplémentaires et répartir la charge de travail sur plusieurs agents.  L'utilisation de la RAM peut varier en fonction de votre environnement, des charges de travail ONTAP , du nombre de systèmes Cloud Volumes ONTAP et des services de données que vous utilisez. 
+|===
+
+
+== Arrêt et démarrage de la machine virtuelle de l'agent
+
+Si nécessaire, arrêtez et démarrez la machine virtuelle de l'agent à l'aide de la console de votre fournisseur de cloud ou des procédures standard sur site.
+
+link:concept-connectors.html#connectors-must-be-operational-at-all-times["Sachez que l'agent de la console doit être opérationnel à tout moment"] .
+
+
+
+== Se connecter à la machine virtuelle Linux
+
+Si vous devez vous connecter à la machine virtuelle Linux sur laquelle l’agent s’exécute, utilisez les options de connectivité de votre fournisseur de cloud.
+
+AWS:: Lorsque vous créez l'instance d'agent dans AWS, fournissez une clé d'accès AWS et une clé secrète.  Vous pouvez utiliser cette paire de clés pour vous connecter en SSH à l'instance.  Utilisez le nom d'utilisateur « ubuntu » pour l'instance Linux EC2.  Pour les agents créés avant mai 2023, utilisez le nom d'utilisateur « ec2-user ».
++
+--
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html["Documentation AWS : connectez-vous à votre instance Linux"^]
+
+--
+Azuré:: Lorsque vous créez la machine virtuelle de l’agent dans Azure, vous spécifiez un nom d’utilisateur et choisissez de vous authentifier avec un mot de passe ou une clé publique SSH.  Utilisez la méthode d’authentification que vous avez choisie pour vous connecter à la machine virtuelle.
++
+--
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys#ssh-into-your-vm["Azure Docs : Connectez-vous à votre machine virtuelle via SSH"^]
+
+--
+Google Cloud:: Vous ne pouvez pas spécifier de méthode d'authentification lorsque vous créez un agent dans Google Cloud.  Cependant, vous pouvez vous connecter à l'instance de machine virtuelle Linux à l'aide de la console Google Cloud ou de Google Cloud CLI (gcloud).
++
+--
+https://cloud.google.com/compute/docs/instances/connecting-to-instance["Google Cloud Docs : Se connecter aux machines virtuelles Linux"^]
+
+--
+
+
+
+
+== Modifier l'adresse IP d'un agent
+
+Vous pouvez modifier les adresses IP internes et publiques de l'instance d'agent attribuées par votre fournisseur de cloud si nécessaire.
+
+.Étapes
+. Suivez les instructions de votre fournisseur de cloud pour modifier l’adresse IP locale ou l’adresse IP publique (ou les deux) de l’instance de l’agent.
+. Redémarrez l’instance de l’agent pour enregistrer une nouvelle adresse IP publique auprès de la console.
+. Si vous avez modifié l'adresse IP privée, mettez à jour l'emplacement de sauvegarde des fichiers de configuration Cloud Volumes ONTAP afin que les sauvegardes soient envoyées à la nouvelle adresse IP privée sur l'agent.
++
+Mettez à jour l’emplacement de sauvegarde pour chaque système Cloud Volumes ONTAP .
+
++
+.. Depuis l'interface de ligne de commande Cloud Volumes ONTAP , définissez le niveau de privilège sur avancé :
++
+[source, cli]
+----
+set -privilege advanced
+----
+.. Exécutez la commande suivante pour afficher la cible de sauvegarde actuelle :
++
+[source, cli]
+----
+system configuration backup settings show
+----
+.. Exécutez la commande suivante pour mettre à jour l’adresse IP de la cible de sauvegarde :
++
+[source, cli]
+----
+system configuration backup settings modify -destination <target-location>
+----
+
+
+
+
+
+
+== Modifier les URI d'un agent
+
+Vous pouvez ajouter et supprimer l’identifiant de ressource uniforme (URI) d’un agent.
+
+.Étapes
+. Sélectionnez *Administration > Agents*.
+. Sur la page *Aperçu*, sélectionnez le menu d'action pour un agent de console et sélectionnez *Modifier l'agent*.
++
+L'agent de la console doit être actif pour pouvoir le modifier.
+
+. Développez la barre *URI de l'agent* pour afficher les URI de l'agent.
+. Ajoutez et supprimez des URI, puis sélectionnez *Appliquer*.
+

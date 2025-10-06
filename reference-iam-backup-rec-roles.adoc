@@ -1,0 +1,285 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-backup-rec-roles.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, roles, permissions, access control, role-based access control, rbac, role-based access 
+summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès à NetApp Backup and Recovery dans la console.  Les rôles de sauvegarde et de récupération vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de votre propre entreprise et de vos pratiques de gestion du stockage. 
+---
+= Rôles de sauvegarde et de récupération NetApp dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès à NetApp Backup and Recovery dans la console.  Les rôles de sauvegarde et de récupération vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de votre propre entreprise et de vos pratiques de gestion du stockage.
+
+La sauvegarde et la récupération utilisent les rôles suivants :
+
+* *Super administrateur de sauvegarde et de récupération* : Effectuer toutes les actions.
+* *Administrateur de sauvegarde et de récupération* : effectuez des sauvegardes sur des snapshots locaux, répliquez sur un stockage secondaire et sauvegardez sur un stockage d'objets.
+* *Administrateur de restauration de sauvegarde et de récupération* : Restaurer les charges de travail.
+* *Administrateur de clonage de sauvegarde et de récupération* : Cloner des applications et des données.
+* *Visionneuse de sauvegarde et de récupération* : affichez les informations de sauvegarde et de récupération.
+
+
+Le tableau suivant indique les actions que chaque rôle peut effectuer.
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| Fonctionnalité et action | Super administrateur de sauvegarde et de récupération | Administrateur de sauvegarde | Restaurer l'administrateur | Cloner l'administrateur | Téléspectateur 
+
+
+| Ajouter, modifier ou supprimer des hôtes | Oui | Non  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Installer des plugins | Oui | Non  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Ajouter des informations d'identification (hôte, instance, vCenter) | Oui | Non  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher le tableau de bord et tous les onglets | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Démarrer un essai gratuit | Oui | Non  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Lancer la découverte des charges de travail | Non | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Afficher les informations de licence | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Activer la licence | Oui | Non  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Voir les hôtes | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+6+| *Horaires*: 
+
+
+| Activer les horaires | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Suspendre les horaires | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+6+| *Politiques et protection*: 
+
+
+| Voir les plans de protection | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Créer, modifier ou supprimer des plans de protection | Oui | Oui  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Restaurer les charges de travail | Oui | Non  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Créer, diviser ou supprimer des clones | Oui | Non  a| 
+Non
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Créer, modifier ou supprimer une politique | Oui | Oui  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+6+| *Rapports*: 
+
+
+| Afficher les rapports | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Créer des rapports | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Supprimer les rapports | Oui | Non  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+6+| *Importer depuis SnapCenter et gérer l'hôte*: 
+
+
+| Afficher les données SnapCenter importées | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Importer des données depuis SnapCenter | Oui | Oui  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Gérer (migrer) l'hôte | Oui | Oui  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+6+| *Configurer les paramètres*: 
+
+
+| Configurer le répertoire des journaux | Oui | Oui  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Associer ou supprimer les informations d'identification d'instance | Oui | Oui  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+6+| *Seaux*: 
+
+
+| Afficher les compartiments de stockage | Oui | Oui  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Créer, modifier ou supprimer des buckets de stockage | Oui | Oui  a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+|===

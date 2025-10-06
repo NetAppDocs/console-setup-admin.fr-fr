@@ -1,0 +1,180 @@
+---
+sidebar: sidebar 
+permalink: task-monitor-cm-operations.html 
+keywords: administer, monitor, timeline, notifications, alerts, events, notification center, email, audit page, audit action 
+summary: 'Vous pouvez surveiller l’état des opérations effectuées par la console pour voir s’il existe des problèmes que vous devez résoudre.  Vous pouvez afficher l"état à partir de la page Audit, du Centre de notifications ou recevoir des notifications par e-mail.' 
+---
+= Surveiller les opérations de la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez surveiller l’état des opérations effectuées par la console pour voir s’il existe des problèmes que vous devez résoudre.  Vous pouvez afficher l'état à partir de la page Audit, du Centre de notifications ou recevoir des notifications par e-mail.
+
+Le tableau met en évidence les fonctionnalités de la page Audit et du Centre de notifications en les comparant.
+
+[cols="47,47"]
+|===
+| Centre de notifications | Page d'audit 
+
+
+| Affiche le statut de haut niveau des événements et des actions | Fournit des détails sur chaque événement ou action pour une enquête plus approfondie 
+
+
+| Affiche l'état de la session de connexion en cours (les informations n'apparaissent pas dans le centre de notifications après la déconnexion) | Conserve le statut du dernier mois 
+
+
+| Affiche uniquement les actions initiées dans l'interface utilisateur | Affiche toutes les actions de l'interface utilisateur ou des API 
+
+
+| Affiche les actions initiées par l'utilisateur | Affiche toutes les actions, qu'elles soient initiées par l'utilisateur ou par le système 
+
+
+| Filtrer les résultats par importance | Filtrer par service, action, utilisateur, statut, etc. 
+
+
+| Offre la possibilité d'envoyer des notifications par courrier électronique aux utilisateurs et à d'autres personnes | Aucune capacité de courrier électronique 
+|===
+
+
+== Auditer l'activité des utilisateurs à partir de la page Audit
+
+La page Audit affiche les actions que les utilisateurs ont effectuées pour gérer votre organisation ou votre compte.  Cela inclut des actions de gestion telles que l'association d'utilisateurs, la création de systèmes, la création d'agents, etc.
+
+Utilisez la page Audit pour identifier qui a effectué une action ou son statut.
+
+.Étapes
+. Sélectionnez *Administration > Audit*.
+. Utilisez les filtres au-dessus du tableau pour modifier les actions affichées dans le tableau.
++
+Par exemple, vous pouvez utiliser le filtre *Service* pour afficher les actions liées à un service spécifique, ou vous pouvez utiliser le filtre *Utilisateur* pour afficher les actions liées à un compte utilisateur spécifique.
+
+
+
+
+
+=== Téléchargez les journaux d'audit à partir de la page Audit
+
+Vous pouvez télécharger les journaux d’audit de la page Audit dans un fichier CSV.  Cela vous permet de conserver un enregistrement des actions effectuées par les utilisateurs dans votre organisation.  Le fichier CSV inclut toutes les colonnes du fichier CSV téléchargé, quels que soient les filtres ou les colonnes affichées sur la page Audit.
+
+.Étapes
+. Dans la page *Audit*, sélectionnez l’icône de téléchargement dans le coin supérieur droit du tableau.
+
+
+
+
+== Surveiller les activités à l'aide du centre de notifications
+
+Les notifications suivent les opérations de la console pour confirmer le succès.  Ils vous permettent d'afficher l'état de nombreuses actions de la console que vous avez lancées au cours de votre session de connexion actuelle.  Tous les services de la console ne signalent pas d’informations au centre de notifications.
+
+Vous pouvez afficher les notifications en sélectionnant la cloche de notification (image:icon_bell.png["cloche de notification"] ) dans la barre de menu.  La couleur de la petite bulle dans la cloche indique le niveau de gravité de notification le plus élevé qui est actif.  Donc, si vous voyez une bulle rouge, cela signifie qu'il y a une notification importante que vous devez consulter.
+
+Vous pouvez également configurer la console pour envoyer certains types de notifications par e-mail afin d'être informé des activités importantes du système même lorsque vous n'êtes pas connecté au système.  Les e-mails peuvent être envoyés à tous les utilisateurs faisant partie de votre organisation ou à tout autre destinataire devant être informé de certains types d'activité du système.  Découvrez comment<<Définir les paramètres de notification par e-mail,définir les paramètres de notification par e-mail>> .
+
+
+
+=== Comparaison du centre de notifications avec les alertes
+
+Le centre de notifications vous permet d'afficher l'état des opérations que vous avez lancées et de configurer des notifications d'alerte pour certains types d'activités système.  Parallèlement, les alertes vous permettent de visualiser les problèmes ou les risques potentiels dans votre environnement de stockage ONTAP liés à la capacité, à la disponibilité, aux performances, à la protection et à la sécurité.
+
+https://docs.netapp.com/us-en/bluexp-alerts/index.html["En savoir plus sur les alertes de la console NetApp"^]
+
+
+
+=== Types de notifications
+
+La console classe les notifications dans les catégories suivantes :
+
+[cols="20,60"]
+|===
+| Type de notification | Description 
+
+
+| Primordial | Un problème est survenu qui pourrait entraîner une interruption de service si des mesures correctives ne sont pas prises immédiatement. 
+
+
+| Erreur | Une action ou un processus s’est terminé par un échec, ou pourrait conduire à un échec si aucune mesure corrective n’est prise. 
+
+
+| Avertissement | Un problème dont vous devez être conscient pour vous assurer qu'il n'atteigne pas une gravité critique.  Les notifications de cette gravité n’entraînent pas d’interruption de service et une action corrective immédiate peut ne pas être nécessaire. 
+
+
+| Recommandation | Une recommandation système vous invitant à prendre une mesure pour améliorer le système ou un certain service ; par exemple : réduction des coûts, suggestion de nouveaux services, configuration de sécurité recommandée, etc. 
+
+
+| Information | Un message qui fournit des informations supplémentaires sur une action ou un processus. 
+
+
+| Succès | Une action ou un processus terminé avec succès. 
+|===
+
+
+=== Filtrer les notifications
+
+Par défaut, vous verrez toutes les notifications actives dans le centre de notifications.  Vous pouvez filtrer les notifications que vous voyez pour afficher uniquement celles qui sont importantes pour vous.  Vous pouvez filtrer par « Service » et par « Type » de notification.
+
+image:screenshot_notification_filters.png["Une capture d’écran montrant les deux types de filtres disponibles dans le centre de notifications."]
+
+Par exemple, si vous souhaitez voir uniquement les notifications « Erreur » et « Avertissement » pour les opérations de la console, sélectionnez ces entrées et vous ne verrez que ces types de notifications.
+
+
+
+=== Ignorer les notifications
+
+Vous pouvez supprimer les notifications de la page si vous n'avez plus besoin de les voir.  Vous pouvez ignorer les notifications individuellement ou toutes à la fois.
+
+Pour ignorer toutes les notifications, dans le centre de notifications, sélectionnezimage:button_3_vert_dots.png["une icône avec trois points verticaux"] et sélectionnez *Tout rejeter*.
+
+Pour ignorer des notifications individuelles, passez votre curseur sur la notification et sélectionnez *Ignorer*.
+
+
+
+=== Définir les paramètres de notification par e-mail
+
+Vous pouvez envoyer des types spécifiques de notifications par e-mail afin d'être informé des activités importantes du système, même lorsque vous n'êtes pas connecté. Les e-mails peuvent être envoyés à tous les utilisateurs qui font partie de votre organisation ou de votre compte, ou à tout autre destinataire qui doit être informé de certains types d'activité du système.
+
+[NOTE]
+====
+* La console envoie des notifications par e-mail pour l'agent, les licences et les abonnements, NetApp Copy and Sync et NetApp Backup and Recovery.
+* L'envoi de notifications par e-mail n'est pas pris en charge lorsque l'agent de console est installé sur un site sans accès Internet.
+
+
+====
+Les filtres que vous définissez dans le Centre de notifications ne déterminent pas les types de notifications que vous recevez par e-mail.  Par défaut, tout administrateur d'organisation recevra des e-mails pour toutes les notifications « Critiques » et « Recommandation ».  Ces notifications s'appliquent à tous les services : vous ne pouvez pas choisir de recevoir des notifications uniquement pour certains services, par exemple les agents ou NetApp Backup and Recovery.
+
+Tous les autres utilisateurs et destinataires sont configurés pour ne recevoir aucun e-mail de notification. Vous devrez donc configurer les paramètres de notification pour tous les utilisateurs supplémentaires.
+
+Vous devez disposer du rôle d’administrateur de l’organisation pour personnaliser les paramètres de notifications.
+
+.Étapes
+. Sélectionnez *Administration > Paramètres de notifications*.
+. Sélectionnez *Utilisateurs de l'organisation* ou *Destinataires supplémentaires*.
++
+La page *Destinataires supplémentaires* vous permet de configurer la console pour notifier les personnes membres de votre organisation Console.
+
+. Sélectionnez un ou plusieurs utilisateurs à partir de la page _Utilisateurs de l'organisation_ ou de la page _Destinataires supplémentaires_ et choisissez le type de notifications à envoyer :
++
+** Pour apporter des modifications à un seul utilisateur, sélectionnez le menu dans la colonne Notifications pour cet utilisateur, cochez les types de notifications à envoyer et sélectionnez *Appliquer*.
+** Pour apporter des modifications à plusieurs utilisateurs, cochez la case correspondant à chaque utilisateur, sélectionnez *Gérer les notifications par e-mail*, cochez les types de notifications à envoyer et sélectionnez *Appliquer*.
+
+
+
+
+
+
+=== Ajouter des destinataires de courrier électronique supplémentaires
+
+Les utilisateurs qui apparaissent sur la page _Utilisateurs de l'organisation_ sont renseignés automatiquement à partir des utilisateurs de votre organisation ou de votre compte.  Vous pouvez ajouter des adresses e-mail dans la page _Destinataires supplémentaires_ pour d'autres personnes ou groupes qui n'ont pas accès à la console, mais qui doivent être informés de certains types d'alertes et de notifications.
+
+.Étapes
+. Depuis la page *Paramètres de notifications*, sélectionnez *Ajouter de nouveaux destinataires*.
++
+image:screenshot-add-email-recipient.png["Une capture d'écran montrant comment ajouter de nouveaux destinataires de courrier électronique pour les alertes et les notifications."]
+
+. Saisissez le nom, l'adresse e-mail et sélectionnez les types de notifications que le destinataire recevra, puis sélectionnez *Ajouter un nouveau destinataire*.
+

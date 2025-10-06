@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: concept-accounts-azure.html 
+keywords: cloud provider accounts, azure, azure accounts, service principal, multiple accounts, permissions, policy, policies, subscriptions, credentials, marketplace subscription, replace subscription, subscription, bluexp 
+summary: Découvrez comment la console NetApp utilise les informations d’identification Azure pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs abonnements Azure.  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification Azure supplémentaires à la console. 
+---
+= En savoir plus sur les informations d'identification et les autorisations Azure dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Découvrez comment la console NetApp utilise les informations d’identification Azure pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs abonnements Azure.  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification Azure supplémentaires à la console.
+
+
+
+== Informations d'identification Azure initiales
+
+Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console.  Les autorisations requises sont répertoriées dans lelink:task-install-connector-azure-bluexp.html#connector-custom-role["Politique de déploiement d'agent pour Azure"] .
+
+Lorsque la console déploie la machine virtuelle de l'agent de console dans Azure, elle active un https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] sur la machine virtuelle, crée un rôle personnalisé et l'attribue à la machine virtuelle.  Le rôle fournit à la console les autorisations requises pour gérer les ressources et les processus au sein de cet abonnement Azure. link:reference-permissions-azure.html["Examiner comment la console utilise les autorisations"] .
+
+image:diagram_permissions_initial_azure.png["Une image conceptuelle qui montre la console déployant un agent de console dans un compte et un abonnement Azure.  Une identité gérée attribuée par le système est activée et un rôle personnalisé est attribué à la machine virtuelle de l’agent de console."]
+
+Si vous créez un nouveau système pour Cloud Volumes ONTAP, la console sélectionne ces informations d’identification Azure par défaut :
+
+image:screenshot_accounts_select_azure.gif["Une capture d'écran qui montre l'option Changer de compte dans la page Détails et informations d'identification."]
+
+Vous pouvez déployer tous vos systèmes Cloud Volumes ONTAP à l’aide des informations d’identification Azure initiales ou ajouter des informations d’identification supplémentaires.
+
+
+
+== Abonnements Azure supplémentaires pour une identité gérée
+
+L’identité gérée attribuée par le système à la machine virtuelle de l’agent de console est associée à l’abonnement dans lequel vous avez lancé l’agent de console.  Si vous souhaitez sélectionner un autre abonnement Azure, vous devezlink:task-adding-azure-accounts.html#associate-additional-azure-subscriptions-with-a-managed-identity["associer l'identité gérée à ces abonnements"] .
+
+
+
+== Informations d'identification Azure supplémentaires
+
+Si vous souhaitez utiliser différentes informations d'identification Azure avec la console, vous devez accorder les autorisations requises enlink:task-adding-azure-accounts.html["création et configuration d'un principal de service dans Microsoft Entra ID"] pour chaque compte Azure.  L'image suivante montre deux comptes supplémentaires, chacun configuré avec un principal de service et un rôle personnalisé qui fournit des autorisations :
+
+image:diagram_permissions_multiple_azure.png["Une image conceptuelle qui montre le compte Azure initial, qui reçoit des autorisations via un rôle personnalisé et une identité gérée, et deux comptes supplémentaires qui reçoivent des autorisations via un rôle personnalisé et un principal de service."]
+
+Vous voudriez alorslink:task-adding-azure-accounts.html#add-credentials-azure["ajouter les informations d'identification du compte à la console"] en fournissant des détails sur le principal du service AD.
+
+Par exemple, vous pouvez basculer entre les informations d’identification lors de la création d’un nouveau système Cloud Volumes ONTAP :
+
+image:screenshot_accounts_switch_azure.gif["Une capture d'écran qui montre la sélection entre les comptes de fournisseurs de cloud après avoir sélectionné Changer de compte dans la page Détails et informations d'identification."]
+
+
+
+== Informations d'identification et abonnements à la place de marché
+
+Les informations d’identification que vous ajoutez à un agent de console doivent être associées à un abonnement Azure Marketplace afin que vous puissiez payer Cloud Volumes ONTAP à un tarif horaire (PAYGO) ou des services de données NetApp ou via un contrat annuel.
+
+link:task-adding-azure-accounts.html#subscribe["Découvrez comment associer un abonnement Azure"] .
+
+Notez les points suivants concernant les informations d’identification Azure et les abonnements à la place de marché :
+
+* Vous ne pouvez associer qu'un seul abonnement Azure Marketplace à un ensemble d'informations d'identification Azure
+* Vous pouvez remplacer un abonnement de marché existant par un nouvel abonnement
+
+
+
+
+== FAQ
+
+La question suivante concerne les informations d’identification et les abonnements.
+
+
+
+=== Puis-je modifier l’abonnement Azure Marketplace pour les systèmes Cloud Volumes ONTAP ?
+
+Oui, tu peux.  Lorsque vous modifiez l’abonnement Azure Marketplace associé à un ensemble d’informations d’identification Azure, tous les systèmes Cloud Volumes ONTAP existants et nouveaux seront facturés sur le nouvel abonnement.
+
+link:task-adding-azure-accounts.html#subscribe["Découvrez comment associer un abonnement Azure"] .
+
+
+
+=== Puis-je ajouter plusieurs informations d’identification Azure, chacune avec des abonnements de marketplace différents ?
+
+Toutes les informations d’identification Azure appartenant au même abonnement Azure seront associées au même abonnement Azure Marketplace.
+
+Si vous disposez de plusieurs informations d’identification Azure appartenant à différents abonnements Azure, ces informations d’identification peuvent être associées au même abonnement Azure Marketplace ou à différents abonnements Marketplace.
+
+
+
+=== Puis-je déplacer des systèmes Cloud Volumes ONTAP existants vers un autre abonnement Azure ?
+
+Non, il n’est pas possible de déplacer les ressources Azure associées à votre système Cloud Volumes ONTAP vers un autre abonnement Azure.
+
+
+
+=== Comment fonctionnent les informations d’identification pour les déploiements sur le marché et les déploiements sur site ?
+
+Les sections ci-dessus décrivent la méthode de déploiement recommandée pour l'agent de console, qui provient de la console.  Vous pouvez également déployer un agent de console dans Azure à partir de la Place de marché Azure et installer le logiciel de l’agent de console sur votre propre hôte Linux.
+
+Si vous utilisez la Place de marché, vous pouvez fournir des autorisations en attribuant un rôle personnalisé à la machine virtuelle de l’agent de console et à une identité gérée attribuée par le système, ou vous pouvez utiliser un principal de service Microsoft Entra.
+
+Pour les déploiements sur site, vous ne pouvez pas configurer une identité gérée pour l’agent de console, mais vous pouvez fournir des autorisations à l’aide d’un principal de service.
+
+Pour savoir comment configurer les autorisations, reportez-vous aux pages suivantes :
+
+* Mode standard
++
+** link:task-install-connector-azure-marketplace.html#step-3-set-up-permissions["Configurer les autorisations pour un déploiement Azure Marketplace"]
+** link:task-install-connector-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
+
+
+* Mode restreint
++
+** link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Configurer les autorisations pour le mode restreint"]
+
+
+

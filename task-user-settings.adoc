@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: task-user-settings.html 
+keywords: user profile, mfa, change password, role, login, multi-factor, authentication, dark mode 
+summary: 'Dans la console, chaque utilisateur dispose d"un profil qui contient des informations sur l"utilisateur et ses paramètres. Vous pouvez afficher et modifier les paramètres de votre profil.' 
+---
+= Gérez les paramètres utilisateur de votre console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez modifier votre profil de console, notamment changer votre mot de passe, activer l'authentification multifacteur (MFA) et voir qui est votre administrateur de console.
+
+Dans la console, chaque utilisateur dispose d'un profil qui contient des informations sur l'utilisateur et ses paramètres. Vous pouvez afficher et modifier les paramètres de votre profil.
+
+
+
+== Changer votre nom d'affichage
+
+Vous pouvez modifier le nom d’affichage de votre console qui est utilisé pour vous identifier et qui est visible par les autres utilisateurs. Votre nom d'affichage n'est pas le même que votre nom d'utilisateur ou votre adresse e-mail, qui ne peuvent pas être modifiés.
+
+.Étapes
+. Sélectionnez l’icône de profil dans le coin supérieur droit de la console pour afficher le panneau des paramètres utilisateur.
+. Sélectionnez l’icône *Modifier* à côté de votre nom.
+. Saisissez votre nouveau nom d’affichage dans le champ *Nom*.
+
+
+
+
+== Configurer l'authentification multifacteur
+
+Configurez l’authentification multifacteur (MFA) pour améliorer la sécurité en exigeant une deuxième méthode de vérification.
+
+Les utilisateurs qui utilisent l’authentification unique avec un fournisseur d’identité externe ou le site de support NetApp ne peuvent pas activer MFA.  Si l’une de ces situations est vraie pour vous, vous ne verrez pas l’option permettant d’activer l’authentification multifacteur dans les paramètres de votre profil.
+
+N'activez pas MFA si votre compte utilisateur est utilisé pour l'accès à l'API.  L'authentification multifacteur arrête l'accès à l'API lorsqu'elle est activée pour un compte utilisateur.  Utilisez des comptes de service pour tous les accès API.
+
+.Avant de commencer
+* Vous devez déjà avoir téléchargé une application d’authentification, telle que Google Authenticator ou Microsoft Authenticator, sur votre appareil.
+* Vous aurez besoin de votre mot de passe pour configurer MFA.
+
+
+
+NOTE: Si vous n’avez pas accès à votre application d’authentification ou si vous perdez votre code de récupération, contactez l’administrateur de votre console pour obtenir de l’aide.
+
+.Étapes
+. Sélectionnez l’icône de profil dans le coin supérieur droit de la console pour afficher le panneau des paramètres utilisateur.
+. Sélectionnez *Configurer* à côté de l'en-tête *Authentification multifacteur*.
+. Suivez les instructions pour configurer MFA pour votre compte.
+. Une fois l'opération terminée, vous serez invité à enregistrer votre code de récupération.  Choisissez de copier le code ou de télécharger un fichier texte contenant le code.  Conservez ce code dans un endroit sûr.  Vous avez besoin du code de récupération si vous perdez l’accès à votre application d’authentification.
++
+Après avoir configuré l'authentification multifacteur, la console vous invite à saisir un code à usage unique depuis votre application d'authentification à chaque fois que vous vous connectez.
+
+
+
+
+
+== Régénérez votre code de récupération MFA
+
+Vous ne pouvez utiliser les codes de récupération qu'une seule fois.  Si vous utilisez ou perdez le vôtre, créez-en un nouveau.
+
+.Étapes
+. Sélectionnez l’icône de profil dans le coin supérieur droit de la console pour afficher le panneau des paramètres utilisateur.
+. Sélectionnerimage:icon-action.png["Une icône composée de trois points côte à côte"] à côté de l'en-tête *Authentification multifacteur*.
+. Sélectionnez *Régénérer le code de récupération*.
+. Copiez le code de récupération généré et enregistrez-le dans un endroit sûr.
+
+
+
+
+== Supprimez votre configuration MFA
+
+Pour arrêter d’utiliser l’authentification multifacteur (MFA) pour votre connexion, supprimez votre configuration MFA.  Cela supprime la nécessité de saisir un code à usage unique depuis votre application d'authentification lorsque vous vous connectez.
+
+
+NOTE: Si vous ne parvenez pas à accéder à votre application d’authentification ou à votre code de récupération, vous devrez contacter l’administrateur de votre organisation pour réinitialiser votre configuration MFA.
+
+.Étapes
+. Sélectionnez l’icône de profil dans le coin supérieur droit de la console pour afficher le panneau des paramètres utilisateur.
+. Sélectionnerimage:icon-action.png["Une icône composée de trois points côte à côte"] à côté de l'en-tête *Authentification multifacteur*.
+. Sélectionnez *Supprimer*.
+
+
+
+
+== Contactez l'administrateur de votre organisation
+
+Si vous devez contacter l’administrateur de votre organisation, vous pouvez lui envoyer un e-mail directement depuis la console.  L'administrateur gère les comptes utilisateurs et les autorisations au sein de votre organisation.
+
+
+NOTE: Vous devez disposer d'une application de messagerie par défaut configurée pour votre navigateur pour utiliser la fonctionnalité *Contacter les administrateurs*.
+
+.Étapes
+. Sélectionnez l’icône de profil dans le coin supérieur droit de la console pour afficher le panneau des paramètres utilisateur.
+. Sélectionnez *Contacter les administrateurs* pour envoyer un e-mail à l'administrateur de votre organisation.
+. Sélectionnez l’application de messagerie à utiliser.
+. Terminez l'e-mail et sélectionnez *Envoyer*.
+
+
+
+
+== Configurer le mode sombre (thème sombre)
+
+Vous pouvez configurer la console pour qu'elle s'affiche en mode sombre.
+
+.Étapes
+. Sélectionnez l’icône de profil dans le coin supérieur droit de la console pour afficher le panneau des paramètres utilisateur.
+. Déplacez le curseur *Thème sombre* pour l'activer.
+

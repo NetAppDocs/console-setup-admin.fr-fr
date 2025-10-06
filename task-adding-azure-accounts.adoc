@@ -1,0 +1,389 @@
+---
+sidebar: sidebar 
+permalink: task-adding-azure-accounts.html 
+keywords: permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine, create custom role, create azure custom role, azure custom role 
+summary: Ajoutez et gérez les informations d’identification Azure afin que la console NetApp dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos abonnements Azure.  Si vous gérez plusieurs abonnements Azure Marketplace, vous pouvez attribuer chacun d’eux à différentes informations d’identification Azure à partir de la page Informations d’identification. 
+---
+= Gérer les informations d'identification Azure et les abonnements à la place de marché pour la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ajoutez et gérez les informations d’identification Azure afin que la console NetApp dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos abonnements Azure.  Si vous gérez plusieurs abonnements Azure Marketplace, vous pouvez attribuer chacun d’eux à différentes informations d’identification Azure à partir de la page Informations d’identification.
+
+
+
+== Aperçu
+
+Il existe deux manières d’ajouter des abonnements et des informations d’identification Azure supplémentaires dans la console.
+
+. Associez des abonnements Azure supplémentaires à l’identité gérée Azure.
+. Pour déployer Cloud Volumes ONTAP à l’aide de différentes informations d’identification Azure, accordez des autorisations Azure à l’aide d’un principal de service et ajoutez ses informations d’identification à la console.
+
+
+
+
+== Associer des abonnements Azure supplémentaires à une identité gérée
+
+La console vous permet de choisir les informations d’identification Azure et l’abonnement Azure dans lesquels vous souhaitez déployer Cloud Volumes ONTAP.  Vous ne pouvez pas sélectionner un autre abonnement Azure pour le profil d'identité managé, sauf si vous l'associez https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée"^] avec ces abonnements.
+
+.À propos de cette tâche
+Une identité gérée estlink:concept-accounts-azure.html["le compte Azure initial"] lorsque vous déployez un agent de console à partir de la console.  Lorsque vous déployez l’agent de console, la console attribue le rôle d’opérateur de console à la machine virtuelle de l’agent de console.
+
+.Étapes
+. Connectez-vous au portail Azure.
+. Ouvrez le service *Abonnements*, puis sélectionnez l'abonnement dans lequel vous souhaitez déployer Cloud Volumes ONTAP.
+. Sélectionnez *Contrôle d'accès (IAM)*.
++
+.. Sélectionnez *Ajouter* > *Ajouter une attribution de rôle*, puis ajoutez les autorisations :
++
+*** Sélectionnez le rôle *Opérateur de console*.
++
+
+NOTE: L'opérateur de console est le nom par défaut fourni dans une stratégie d'agent de console.  Si vous avez choisi un nom différent pour le rôle, sélectionnez plutôt ce nom.
+
+*** Attribuer l'accès à une *machine virtuelle*.
+*** Sélectionnez l’abonnement dans lequel une machine virtuelle d’agent de console a été créée.
+*** Sélectionnez une machine virtuelle d’agent de console.
+*** Sélectionnez *Enregistrer*.
+
+
+
+
+. Répétez ces étapes pour des abonnements supplémentaires.
+
+
+.Résultat
+Lors de la création d’un nouveau système, vous pouvez désormais choisir parmi plusieurs abonnements Azure pour le profil d’identité géré.
+
+image:screenshot_accounts_switch_azure_subscription.gif["Une capture d’écran qui montre la possibilité de sélectionner plusieurs abonnements Azure lors de la sélection d’un compte de fournisseur Microsoft Azure."]
+
+
+
+== Ajouter des informations d’identification Azure supplémentaires à la console NetApp
+
+Lorsque vous déployez un agent de console à partir de la console, la console active une identité gérée attribuée par le système sur la machine virtuelle qui dispose des autorisations requises.  La console sélectionne ces informations d’identification Azure par défaut lorsque vous créez un nouveau système pour Cloud Volumes ONTAP.
+
+
+TIP: Un ensemble initial d’informations d’identification n’est pas ajouté si vous avez installé manuellement un logiciel d’agent de console sur un système existant. link:concept-accounts-azure.html["En savoir plus sur les informations d'identification et les autorisations Azure"] .
+
+Si vous souhaitez déployer Cloud Volumes ONTAP à l’aide de _différentes_ informations d’identification Azure, vous devez accorder les autorisations requises en créant et en configurant un principal de service dans Microsoft Entra ID pour chaque compte Azure.  Vous pouvez ensuite ajouter les nouvelles informations d’identification à la console.
+
+
+
+=== Accorder des autorisations Azure à l'aide d'un principal de service
+
+La console a besoin d’autorisations pour effectuer des actions dans Azure.  Vous pouvez accorder les autorisations requises à un compte Azure en créant et en configurant un principal de service dans Microsoft Entra ID et en obtenant les informations d’identification Azure dont la console a besoin.
+
+.À propos de cette tâche
+L’image suivante illustre comment la console obtient les autorisations pour effectuer des opérations dans Azure.  Un objet principal de service, lié à un ou plusieurs abonnements Azure, représente la console dans Microsoft Entra ID et est attribué à un rôle personnalisé qui autorise les autorisations requises.
+
+image:diagram_azure_authentication.png["Image conceptuelle qui montre la console obtenant l’authentification et l’autorisation de Microsoft Entra ID avant de pouvoir effectuer un appel API.  Dans Active Directory, le rôle de console définit les autorisations.  Il est lié à un ou plusieurs abonnements Azure et à un objet principal de service qui représente l’application Cloud Manger."]
+
+.Étapes
+. <<Créer une application Microsoft Entra>> .
+. <<Affecter l'application à un rôle>> .
+. <<Ajouter des autorisations à l'API de gestion des services Windows Azure>> .
+. <<Obtenir l'ID de l'application et l'ID du répertoire>> .
+. <<Créer un secret client>> .
+
+
+
+
+==== Créer une application Microsoft Entra
+
+Créez une application Microsoft Entra et un principal de service que la console peut utiliser pour le contrôle d’accès basé sur les rôles.
+
+.Étapes
+. Assurez-vous que vous disposez des autorisations dans Azure pour créer une application Active Directory et attribuer l’application à un rôle.
++
+Pour plus de détails, reportez-vous à https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentation Microsoft Azure : autorisations requises"^]
+
+. Depuis le portail Azure, ouvrez le service *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsoft Azure."]
+
+. Dans le menu, sélectionnez *Inscriptions d'applications*.
+. Sélectionnez *Nouvelle inscription*.
+. Précisez les détails de l'application :
++
+** *Nom*: Saisissez un nom pour l'application.
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *URI de redirection*: Vous pouvez laisser ce champ vide.
+
+
+. Sélectionnez *S'inscrire*.
++
+Vous avez créé l’application AD et le principal de service.
+
+
+
+
+
+==== Affecter l'application à un rôle
+
+Vous devez lier le principal du service à un ou plusieurs abonnements Azure et lui attribuer le rôle personnalisé « Opérateur de console » afin que la console dispose d’autorisations dans Azure.
+
+.Étapes
+. Créer un rôle personnalisé :
++
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+
++
+.. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour l'agent de la console"] et les enregistrer dans un fichier JSON.
+.. Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
++
+Vous devez ajouter l’ID de chaque abonnement Azure à partir duquel les utilisateurs créeront des systèmes Cloud Volumes ONTAP .
+
++
+*Exemple*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+.. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
++
+Les étapes suivantes décrivent comment créer le rôle à l’aide de Bash dans Azure Cloud Shell.
+
++
+*** Commencer https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] et choisissez l'environnement Bash.
+*** Téléchargez le fichier JSON.
++
+image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud Shell où vous pouvez choisir l’option de télécharger un fichier."]
+
+*** Utilisez l’interface de ligne de commande Azure pour créer le rôle personnalisé :
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
++
+Vous devriez maintenant avoir un rôle personnalisé appelé Opérateur de console que vous pouvez attribuer à la machine virtuelle de l’agent de console.
+
+
+
+
+
+. Affecter l'application au rôle :
++
+.. Depuis le portail Azure, ouvrez le service *Abonnements*.
+.. Sélectionnez l'abonnement.
+.. Sélectionnez *Contrôle d'accès (IAM) > Ajouter > Ajouter une attribution de rôle*.
+.. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et sélectionnez *Suivant*.
+.. Dans l'onglet *Membres*, procédez comme suit :
++
+*** Gardez *Utilisateur, groupe ou principal du service* sélectionné.
+*** Sélectionnez *Sélectionner les membres*.
++
+image:screenshot-azure-service-principal-role.png["Une capture d’écran du portail Azure qui affiche la page Membres lors de l’ajout d’un rôle à une application."]
+
+*** Recherchez le nom de l'application.
++
+Voici un exemple :
+
++
+image:screenshot_azure_service_principal_role.png["Une capture d’écran du portail Azure qui montre le formulaire Ajouter une attribution de rôle dans le portail Azure."]
+
+*** Sélectionnez l'application et sélectionnez *Sélectionner*.
+*** Sélectionnez *Suivant*.
+
+
+.. Sélectionnez *Réviser + attribuer*.
++
+Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
+
++
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+
+
+
+
+
+
+
+==== Ajouter des autorisations à l'API de gestion des services Windows Azure
+
+Vous devez attribuer les autorisations « API de gestion des services Windows Azure » au principal du service.
+
+.Étapes
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Sélectionnez *Autorisations API > Ajouter une autorisation*.
+. Sous *API Microsoft*, sélectionnez *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif["Une capture d’écran du portail Azure qui affiche les autorisations de l’API Azure Service Management."]
+
+. Sélectionnez *Accéder à Azure Service Management en tant qu’utilisateurs de l’organisation*, puis sélectionnez *Ajouter des autorisations*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Une capture d’écran du portail Azure qui montre l’ajout des API Azure Service Management."]
+
+
+
+
+
+==== Obtenir l'ID de l'application et l'ID du répertoire
+
+Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
+
+.Étapes
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Copiez l'*ID d'application (client)* et l'*ID de répertoire (locataire)*.
++
+image:screenshot_azure_app_ids.gif["Une capture d'écran qui montre l'ID d'application (client) et l'ID de répertoire (locataire) pour une application dans Microsoft Entra IDy."]
+
++
+Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
+
+
+
+
+
+==== Créer un secret client
+
+Créez un secret client et fournissez sa valeur à la console pour l’authentification avec Microsoft Entra ID.
+
+.Étapes
+. Ouvrez le service *Microsoft Entra ID*.
+. Sélectionnez *Inscriptions d'applications* et sélectionnez votre application.
+. Sélectionnez *Certificats et secrets > Nouveau secret client*.
+. Fournissez une description du secret et une durée.
+. Sélectionnez *Ajouter*.
+. Copiez la valeur du secret client.
++
+image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azure qui affiche un secret client pour le principal du service Microsoft Entra."]
+
+
+
+.Résultat
+Votre principal de service est maintenant configuré et vous devez avoir copié l'ID de l'application (client), l'ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous ajoutez un compte Azure.
+
+
+
+=== Ajoutez les informations d'identification à la console
+
+Après avoir fourni à un compte Azure les autorisations requises, vous pouvez ajouter les informations d’identification de ce compte à la console.  Cette étape vous permet de lancer Cloud Volumes ONTAP à l’aide de différentes informations d’identification Azure.
+
+.Avant de commencer
+Si vous venez de créer ces informations d'identification auprès de votre fournisseur de cloud, il faudra peut-être quelques minutes avant qu'elles soient disponibles pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
+
+.Avant de commencer
+Vous devez créer un agent de console avant de pouvoir modifier les paramètres de la console. link:concept-connectors.html#connector-installation["Apprenez à créer un agent de console"] .
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Microsoft Azure > Agent*.
+.. *Définir les informations d'identification* : saisissez les informations sur le principal du service Microsoft Entra qui accorde les autorisations requises :
++
+*** ID de l'application (client)
+*** ID du répertoire (locataire)
+*** Secret client
+
+
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+.Résultat
+Vous pouvez passer à un autre ensemble d'informations d'identification à partir de la page Détails et informations d'identification. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["lors de l'ajout d'un système à la console"^]
+
+image:screenshot_accounts_switch_azure.gif["Une capture d'écran qui montre la sélection entre les informations d'identification après avoir sélectionné Modifier les informations d'identification dans la page Détails et informations d'identification."]
+
+
+
+== Gérer les informations d'identification existantes
+
+Gérez les informations d’identification Azure que vous avez déjà ajoutées à la console en associant un abonnement Marketplace, en modifiant les informations d’identification et en les supprimant.
+
+
+
+=== Associer un abonnement Azure Marketplace aux informations d'identification
+
+Après avoir ajouté vos informations d’identification Azure à la console, vous pouvez associer un abonnement Azure Marketplace à ces informations d’identification.  Vous pouvez utiliser l'abonnement pour créer un système Cloud Volumes ONTAP à la carte et accéder aux services de données NetApp .
+
+Il existe deux scénarios dans lesquels vous pouvez associer un abonnement Azure Marketplace après avoir déjà ajouté les informations d'identification à la console :
+
+* Vous n’avez pas associé d’abonnement lorsque vous avez initialement ajouté les informations d’identification à la console.
+* Vous souhaitez modifier l’abonnement Azure Marketplace associé aux informations d’identification Azure.
++
+Le remplacement de l'abonnement actuel au marché le met à jour pour les systèmes Cloud Volumes ONTAP existants et nouveaux.
+
+
+
+.Étapes
+. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
++
+Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement à la place de marché à des informations d'identification associées à la console NetApp .
+
+. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les informations d’identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans la Place de marché Azure :
++
+.. Si vous y êtes invité, connectez-vous à votre compte Azure.
+.. Sélectionnez *S'abonner*.
+.. Remplissez le formulaire et sélectionnez *S'abonner*.
+.. Une fois le processus d'abonnement terminé, sélectionnez *Configurer le compte maintenant*.
++
+Vous serez redirigé vers la console NetApp .
+
+.. À partir de la page *Affectation d'abonnement* :
++
+*** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+*** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
+*** Sélectionnez *Enregistrer*.
++
+La vidéo suivante montre les étapes à suivre pour s'abonner à partir de la Place de marché Azure :
+
++
+.Abonnez-vous aux services intelligents NetApp depuis la place de marché Azure
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
+
+
+
+
+
+
+
+
+=== Modifier les informations d'identification
+
+Modifiez vos informations d’identification Azure dans la console.  Par exemple, vous pouvez mettre à jour le secret client si un nouveau secret a été créé pour l’application principale de service.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification, puis sélectionnez *Modifier les informations d’identification*.
+. Apportez les modifications requises, puis sélectionnez *Appliquer*.
+
+
+
+
+=== Supprimer les informations d'identification
+
+Si vous n’avez plus besoin d’un ensemble d’informations d’identification, vous pouvez les supprimer.  Vous ne pouvez supprimer que les informations d’identification qui ne sont pas associées à un système.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sur la page *Informations d'identification de l'organisation*, sélectionnez le menu d'action pour un ensemble d'informations d'identification, puis sélectionnez *Supprimer les informations d'identification*.
+. Sélectionnez *Supprimer* pour confirmer.
+

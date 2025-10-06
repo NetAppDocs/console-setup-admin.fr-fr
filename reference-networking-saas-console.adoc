@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: reference-networking-saas-console.html 
+keywords: networking, urls, endpoints, web browser, console, network, set up networking, bluexp 
+summary: 'La console NetApp , l"agent de la console NetApp et les services de données NetApp nécessitent un accès Internet sortant et la possibilité de contacter les points de terminaison nécessaires.' 
+---
+= Préparer l'accès réseau pour la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La console NetApp , l'agent de la console NetApp et les services de données NetApp nécessitent un accès Internet sortant et la possibilité de contacter les points de terminaison nécessaires.
+
+Vous devrez configurer l’accès au réseau pour les éléments suivants :
+
+* Ordinateurs qui accèdent à la console NetApp en tant que logiciel en tant que service (SaaS)
+* Emplacements réseau où vous déployez les agents de console que vous installez sur site ou dans le cloud.
+* Points de terminaison supplémentaires pour certains services de données NetApp , notamment Cloud Volumes ONTAP.
+
+
+
+NOTE: NetApp a réduit les points de terminaison réseau requis pour la console et les agents de console, améliorant ainsi la sécurité et simplifiant le déploiement.  Il est important de noter que tous les déploiements antérieurs à la version 4.0.0 continuent d’être entièrement pris en charge.  Bien que les points de terminaison précédents restent disponibles pour les agents existants, NetApp recommande fortement de mettre à jour les règles de pare-feu vers les points de terminaison actuels après avoir confirmé la réussite des mises à niveau des agents.link:reference-networking-saas-console-previous.html["Découvrez comment mettre à jour votre liste de points de terminaison."]
+
+
+
+== Points de terminaison contactés par la console NetApp
+
+Chaque ordinateur qui accède à la console NetApp doit disposer de connexions aux points de terminaison répertoriés ci-dessous.
+
+Le système contacte ces points de terminaison dans deux scénarios :
+
+* À partir d'un ordinateur accédant au https://console.netapp.com["Console NetApp"^] en tant que logiciel en tant que service (SaaS).
+* Depuis un ordinateur accédant directement à un hôte d'agent de console, soit pour se connecter et le configurer, soit pour accéder à la console à partir de l'hôte de l'agent.
+
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
+| \ https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp . 
+
+
+| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com | Pour fournir des fonctionnalités et des services au sein de la console NetApp . 
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+
+
+== Préparer la mise en réseau pour l'agent de la console
+
+Vous installez l’agent de console sur site ou dans le cloud, et il contacte les points de terminaison pour effectuer les actions initiées par la console.
+
+Les agents de console doivent avoir accès aux mêmes points de terminaison que la console NetApp , ainsi qu'à des points de terminaison supplémentaires en fonction de l'endroit où vous installez l'agent.
+
+Configurez l’accès au point de terminaison réseau avant d’installer l’agent de la console.
+
+* link:task-install-connector-aws-bluexp.html#networking-aws-agent["Configurer l'accès au réseau AWS pour un agent de console"]
+* link:task-install-connector-azure-bluexp.html#networking-azure-agent["Configurer l'accès au réseau Azure pour un agent de console"]
+* link:task-install-connector-google-bluexp-gcloud.html#networking-gcp-agent["Configurer l'accès au réseau Google Cloud pour un agent de console"]
+* link:task-install-connector-on-prem.html#network-access-agent["Configurer l'accès au réseau local pour un agent de console"]
+
+
+
+
+== Préparer la mise en réseau pour Cloud Volumes ONTAP
+
+Certains services de données NetApp ainsi que Cloud Volumes ONTAP nécessitent que l'agent dispose d'un accès Internet sortant supplémentaire.
+
+
+
+=== Points de terminaison pour Cloud Volumes ONTAP
+
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#outbound-internet-access-for-cloud-volumes-ontap-nodes["Points de terminaison pour Cloud Volumes ONTAP dans AWS"]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html["Points de terminaison pour Cloud Volumes ONTAP dans Azure"]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#outbound-internet-access["Points de terminaison pour Cloud Volumes ONTAP dans Google Cloud"]
+
+
+https://docs.netapp.com/us-en/data-services-family/["Reportez-vous à la documentation des services de données NetApp respectifs."^]

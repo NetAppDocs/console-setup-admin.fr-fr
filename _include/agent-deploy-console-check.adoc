@@ -1,0 +1,16 @@
+= 
+:allow-uri-read: 
+
+
+. Vérifiez vos sélections pour vérifier que votre configuration est correcte.
++
+.. La case à cocher *Valider la configuration de l'agent* est cochée par défaut pour que la console valide les exigences de connectivité réseau lors du déploiement.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport pour vous aider à résoudre le problème.  Si le déploiement réussit, aucun rapport n'est fourni.
+
+
++
+[]
+====
+Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case pour ignorer la vérification de validation.
+
+====
+

@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+Vous pouvez également accéder au rapport de validation au format JSON et aux journaux de configuration directement depuis l'hôte de l'agent de la console dans les répertoires suivants :
+
+[source, cli]
+----
+/tmp/netapp-console-agents/logs
+
+/tmp/netapp-console-agents/results.json
+
+----

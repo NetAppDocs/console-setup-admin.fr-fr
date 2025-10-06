@@ -1,0 +1,496 @@
+---
+sidebar: sidebar 
+permalink: task-install-restricted-mode.html 
+keywords: government region, gov, govcloud, connector, sovereign cloud 
+summary: Déployez l’agent de console en mode restreint afin de pouvoir utiliser la console NetApp avec une connectivité sortante limitée.  Pour commencer, installez l’agent de console, configurez la console en accédant à l’interface utilisateur qui s’exécute sur l’agent de console, puis fournissez les autorisations cloud que vous avez précédemment configurées. 
+---
+= Déployer l'agent de console en mode restreint
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Déployez l’agent de console en mode restreint afin de pouvoir utiliser la console NetApp avec une connectivité sortante limitée.  Pour commencer, installez l’agent de console, configurez la console en accédant à l’interface utilisateur qui s’exécute sur l’agent de console, puis fournissez les autorisations cloud que vous avez précédemment configurées.
+
+
+
+== Étape 1 : Installer l'agent de console
+
+Installez l'agent de console à partir de la place de marché de votre fournisseur de cloud ou manuellement sur un hôte Linux.
+
+[role="tabbed-block"]
+====
+.Place de marché commerciale AWS
+--
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Un VPC et un sous-réseau qui répondent aux exigences de mise en réseau.
++
+link:task-prepare-restricted-mode.html["En savoir plus sur les exigences de mise en réseau"]
+
+* Un rôle IAM avec une politique attachée qui inclut les autorisations requises pour l’agent de la console.
++
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations AWS"]
+
+* Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.
+* Une compréhension des exigences en matière de CPU et de RAM pour l’instance.
++
+link:task-prepare-restricted-mode.html#step-3-review-host-requirements["Examen des exigences de l'instance"] .
+
+* Une paire de clés pour l'instance EC2.
+
+
+.Étapes
+. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la console NetApp sur AWS Marketplace"^]
+. Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
+. Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
++
+Le processus d'abonnement peut prendre quelques minutes.
+
+. Une fois le processus d'abonnement terminé, sélectionnez *Continuer vers la configuration*.
+. Sur la page *Configurer ce logiciel*, assurez-vous d'avoir sélectionné la bonne région, puis sélectionnez *Continuer pour lancer*.
+. Sur la page *Lancer ce logiciel*, sous *Choisir une action*, sélectionnez *Lancer via EC2*, puis sélectionnez *Lancer*.
++
+Utilisez la console EC2 pour lancer l’instance et attacher un rôle IAM.  Cela n'est pas possible avec l'action *Lancer depuis le site Web*.
+
+. Suivez les instructions pour configurer et déployer l’instance :
++
+** *Nom et balises* : saisissez un nom et des balises pour l'instance.
+** *Images d'application et de système d'exploitation* : ignorez cette section.  L'AMI de l'agent de console est déjà sélectionné.
+** *Type d'instance* : Selon la disponibilité de la région, choisissez un type d'instance qui répond aux exigences de RAM et de CPU (t3.2xlarge est présélectionné et recommandé).
+** *Paire de clés (connexion)* : sélectionnez la paire de clés que vous souhaitez utiliser pour vous connecter en toute sécurité à l'instance.
+** *Paramètres réseau* : Modifiez les paramètres réseau selon vos besoins :
++
+*** Choisissez le VPC et le sous-réseau souhaités.
+*** Spécifiez si l’instance doit avoir une adresse IP publique.
+*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l’instance de l’agent de console : SSH, HTTP et HTTPS.
++
+link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour AWS"] .
+
+
+
+** *Configurer le stockage* : Conservez la taille et le type de disque par défaut pour le volume racine.
++
+Si vous souhaitez activer le chiffrement Amazon EBS sur le volume racine, sélectionnez *Avancé*, développez *Volume 1*, sélectionnez *Chiffré*, puis choisissez une clé KMS.
+
+** *Détails avancés* : Sous *Profil d’instance IAM*, choisissez le rôle IAM qui inclut les autorisations requises pour l’agent de la console.
+** *Résumé* : Consultez le résumé et sélectionnez *Lancer l'instance*.
+
+
+
+
+.Résultat
+AWS lance le logiciel avec les paramètres spécifiés.  L'instance de l'agent de console et le logiciel s'exécutent en environ cinq minutes.
+
+.Quelle est la prochaine étape ?
+Configurer la console NetApp .
+
+--
+.Place de marché AWS Gov
+--
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Un VPC et un sous-réseau qui répondent aux exigences de mise en réseau.
++
+link:task-prepare-restricted-mode.html["En savoir plus sur les exigences de mise en réseau"]
+
+* Un rôle IAM avec une politique attachée qui inclut les autorisations requises pour l’agent de la console.
++
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations AWS"]
+
+* Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.
+* Une paire de clés pour l'instance EC2.
+
+
+.Étapes
+. Accédez à l’offre d’agent NetApp Console sur AWS Marketplace.
++
+.. Ouvrez le service EC2 et sélectionnez *Lancer l'instance*.
+.. Sélectionnez *AWS Marketplace*.
+.. Recherchez la console NetApp et sélectionnez l’offre.
++
+image:screenshot-gov-cloud-mktp.png["Une capture d'écran qui montre l'offre NetApp Console après l'avoir recherchée sur AWS Marketplace"]
+
+.. Sélectionnez *Continuer*.
+
+
+. Suivez les instructions pour configurer et déployer l’instance :
++
+** *Choisissez un type d'instance* : Selon la disponibilité de la région, choisissez l'un des types d'instance pris en charge (t3.2xlarge est recommandé).
++
+link:task-prepare-restricted-mode.html["Examiner les exigences de l'instance"] .
+
+** *Configurer les détails de l'instance* : sélectionnez un VPC et un sous-réseau, choisissez le rôle IAM que vous avez créé à l'étape 1, activez la protection de terminaison (recommandée) et choisissez toute autre option de configuration qui répond à vos besoins.
++
+image:screenshot_aws_iam_role.gif["Une capture d’écran qui montre les champs de la page Configurer l’instance dans AWS.  Le rôle IAM que vous auriez dû créer à l’étape 1 est sélectionné."]
+
+** *Ajouter du stockage* : Conservez les options de stockage par défaut.
+** *Ajouter des balises* : saisissez des balises pour l'instance, si vous le souhaitez.
+** *Configurer le groupe de sécurité* : spécifiez les méthodes de connexion requises pour l’instance de l’agent de console : SSH, HTTP et HTTPS.
+** *Révision* : Vérifiez vos sélections et sélectionnez *Lancer*.
+
+
+
+
+.Résultat
+AWS lance le logiciel avec les paramètres spécifiés.  L'instance de l'agent de console et le logiciel s'exécutent en environ cinq minutes.
+
+.Quelle est la prochaine étape ?
+Configurer la console.
+
+--
+.Place de marché Azure Gov
+--
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Un réseau virtuel et un sous-réseau qui répondent aux exigences de mise en réseau.
++
+link:task-prepare-restricted-mode.html["En savoir plus sur les exigences de mise en réseau"]
+
+* Un rôle personnalisé Azure qui inclut les autorisations requises pour l’agent de la console.
++
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations Azure"]
+
+
+
+.Étapes
+. Accédez à la page de la machine virtuelle de l’agent de la console NetApp dans la Place de marché Azure.
++
+** https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["Page de la place de marché Azure pour les régions commerciales"^]
+** https://portal.azure.us/#create/netapp.netapp-oncommand-cloud-manageroccm-byol["Page de la place de marché Azure pour les régions Azure Government"^]
+
+
+. Sélectionnez *Obtenir maintenant* puis sélectionnez *Continuer*.
+. Depuis le portail Azure, sélectionnez *Créer* et suivez les étapes pour configurer la machine virtuelle.
++
+Notez les points suivants lorsque vous configurez la machine virtuelle :
+
++
+** *Taille de la VM* : Choisissez une taille de VM qui répond aux exigences de CPU et de RAM.  Nous recommandons Standard_D8s_v3.
+** *Disques* : L'agent de console peut fonctionner de manière optimale avec des disques HDD ou SSD.
+** *IP publique* : si vous souhaitez utiliser une adresse IP publique avec la machine virtuelle de l'agent de console, l'adresse IP doit utiliser un SKU de base pour garantir que la console utilise cette adresse IP publique.
++
+image:screenshot-azure-sku.png["Une capture d’écran de la création d’une nouvelle adresse IP dans Azure qui vous permet de choisir Basique dans le champ SKU."]
+
++
+Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique.  Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échoueront.
+
++
+https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku["Documentation Azure : Référence IP publique"^]
+
+** *Groupe de sécurité réseau* : l’agent de console nécessite des connexions entrantes utilisant SSH, HTTP et HTTPS.
++
+link:reference-ports-azure.html["Afficher les règles du groupe de sécurité pour Azure"] .
+
+** *Identité* : Sous *Gestion*, sélectionnez *Activer l'identité gérée attribuée par le système*.
++
+Ce paramètre est important car une identité gérée permet à la machine virtuelle de l’agent de console de s’identifier auprès de Microsoft Entra ID sans fournir d’informations d’identification. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["En savoir plus sur les identités gérées pour les ressources Azure"^] .
+
+
+
+. Sur la page *Réviser + créer*, vérifiez vos sélections et sélectionnez *Créer* pour démarrer le déploiement.
+
+
+.Résultat
+Azure déploie la machine virtuelle avec les paramètres spécifiés.  La machine virtuelle et le logiciel de l'agent de console devraient être exécutés dans environ cinq minutes.
+
+.Quelle est la prochaine étape ?
+Configurer la console NetApp .
+
+--
+.Installation manuelle
+--
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Privilèges root pour installer l'agent de la console.
+* Détails sur un serveur proxy, si un proxy est requis pour l'accès Internet à partir de l'agent de la console.
++
+Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.
+
+* Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.
+
+
+
+NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-connector-maint-console.html["Console de maintenance des agents"] .
+
+* Vous devez désactiver la vérification de configuration qui vérifie la connectivité sortante lors de l'installation.  L'installation manuelle échoue si cette vérification n'est pas désactivée.link:task-troubleshoot-connector.html["Découvrez comment désactiver les vérifications de configuration pour les installations manuelles."]
+* Selon votre système d'exploitation, Podman ou Docker Engine est requis avant d'installer l'agent de console.
+
+
+.À propos de cette tâche
+Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.
+
+.Étapes
+. Si les variables système _http_proxy_ ou _https_proxy_ sont définies sur l'hôte, supprimez-les :
++
+[source, cli]
+----
+unset http_proxy
+unset https_proxy
+----
++
+Si vous ne supprimez pas ces variables système, l'installation échoue.
+
+. Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] , puis copiez-le sur l'hôte Linux.
++
+Vous devez télécharger le programme d'installation de l'agent « en ligne » destiné à être utilisé sur votre réseau ou dans le cloud.
+
+. Attribuer des autorisations pour exécuter le script.
++
+[source, cli]
+----
+chmod +x NetApp_Console_Agent_Cloud_<version>
+----
++
+Où <version> est la version de l’agent de console que vous avez téléchargé.
+
+. Si vous effectuez l'installation dans un environnement Government Cloud, désactivez les vérifications de configuration.link:task-troubleshoot-connector.html#disable-config-check["Découvrez comment désactiver les vérifications de configuration pour les installations manuelles."]
+. Exécutez le script d'installation.
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
+----
++
+Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet.  Vous pouvez ajouter un proxy transparent ou explicite.  Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter.  Si vous disposez d'un serveur proxy, vous devrez saisir les paramètres comme indiqué.
+
++
+Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+----
++
+`--proxy`configure l'agent de console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
+
++
+** \http://adresse:port
+** \http://nom-d'utilisateur:mot-de-passe@adresse:port
+** \http://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://adresse:port
+** \https://nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
++
+Notez ce qui suit :
+
++
+*** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
+*** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour un \ comme indiqué ci-dessus.
+*** L'agent de console ne prend pas en charge les noms d'utilisateur ou les mots de passe qui incluent le caractère @.
+*** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le préfixant d'une barre oblique inverse : & ou !
++
+Par exemple:
+
++
+\http://bxpproxyuser:netapp1\!@adresse:3128
+
+
+
+
+
+
+
+`--cacert`spécifie un certificat signé par une autorité de certification à utiliser pour l'accès HTTPS entre l'agent de console et le serveur proxy.  Ce paramètre est requis pour les serveurs proxy HTTPS, les serveurs proxy d'interception et les serveurs proxy transparents.
+
++ Voici un exemple de configuration d'un serveur proxy transparent.  Lorsque vous configurez un proxy transparent, vous n'avez pas besoin de définir le serveur proxy.  Vous ajoutez uniquement un certificat signé par une autorité de certification à votre hôte d’agent de console :
+
++
+
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0 --cacert /tmp/cacert/certificate.cer
+----
+. Si vous avez utilisé Podman, vous devrez ajuster le port aardvark-dns.
++
+.. Connectez-vous en SSH à la machine virtuelle de l'agent de console.
+.. Ouvrez le fichier podman _/usr/share/containers/containers.conf_ et modifiez le port choisi pour le service DNS Aardvark.  Par exemple, changez-le en 54.
++
+[source, cli]
+----
+vi /usr/share/containers/containers.conf
+...
+# Port to use for dns forwarding daemon with netavark in rootful bridge
+# mode and dns enabled.
+# Using an alternate port might be useful if other DNS services should
+# run on the machine.
+#
+dns_bind_port = 54
+...
+Esc:wq
+----
+.. Redémarrez la machine virtuelle de l’agent de console.
+
+
+
+
+.Résultat
+L'agent de console est maintenant installé.  À la fin de l'installation, le service de l'agent de console (occm) redémarre deux fois si vous avez spécifié un serveur proxy.
+
+.Quelle est la prochaine étape ?
+Configurer la console NetApp .
+
+--
+====
+
+
+== Étape 2 : Configurer la console NetApp
+
+Lorsque vous accédez à la console pour la première fois, vous êtes invité à choisir une organisation pour l'agent de la console et devez activer le mode restreint.
+
+.Avant de commencer
+La personne qui configure l’agent de la console doit se connecter à la console à l’aide d’un identifiant qui n’appartient pas déjà à une organisation de la console.
+
+Si votre identifiant est associé à une autre organisation, vous devrez vous inscrire avec un nouvel identifiant.  Sinon, vous ne verrez pas l’option permettant d’activer le mode restreint sur l’écran de configuration.
+
+.Étapes
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à l’instance de l’agent de console et entrez l’URL suivante de l’agent de console que vous avez installé.
+. Inscrivez-vous ou connectez-vous à la console NetApp .
+. Une fois connecté, configurez la console :
++
+.. Entrez un nom pour l’agent de la console.
+.. Saisissez un nom pour une nouvelle organisation de console.
+.. Sélectionnez *Exécutez-vous dans un environnement sécurisé ?*
+.. Sélectionnez *Activer le mode restreint sur ce compte*.
++
+Notez que vous ne pouvez pas modifier ce paramètre une fois le compte créé.  Vous ne pouvez pas activer le mode restreint ultérieurement et vous ne pouvez pas le désactiver ultérieurement.
+
++
+Si vous avez déployé l'agent de console dans une région gouvernementale, la case à cocher est déjà activée et ne peut pas être modifiée.  Cela est dû au fait que le mode restreint est le seul mode pris en charge dans les régions gouvernementales.
+
+.. Sélectionnez *Commençons*.
+
+
+
+
+.Résultat
+L'agent de console est maintenant installé et configuré avec votre organisation de console.  Tous les utilisateurs doivent accéder à la console à l’aide de l’adresse IP de l’instance de l’agent de la console.
+
+.Quelle est la prochaine étape ?
+Fournissez à la console les autorisations que vous avez précédemment configurées.
+
+
+
+== Étape 3 : Accorder des autorisations à la console NetApp
+
+Si vous avez déployé l’agent de console à partir de la Place de marché Azure ou si vous avez installé manuellement le logiciel de l’agent de console, vous devez fournir les autorisations que vous avez précédemment configurées.
+
+Ces étapes ne s'appliquent pas si vous avez déployé l'agent de console à partir d'AWS Marketplace, car vous avez choisi le rôle IAM requis lors du déploiement.
+
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Apprenez à préparer les autorisations cloud"] .
+
+[role="tabbed-block"]
+====
+.Rôle AWS IAM
+--
+Attachez le rôle IAM que vous avez précédemment créé à l’instance EC2 sur laquelle vous avez installé l’agent de console.
+
+Ces étapes s’appliquent uniquement si vous avez installé manuellement l’agent de console dans AWS.  Pour les déploiements AWS Marketplace, vous avez déjà associé l’instance de l’agent de console à un rôle IAM qui inclut les autorisations requises.
+
+.Étapes
+. Accédez à la console Amazon EC2.
+. Sélectionnez *Instances*.
+. Sélectionnez l’instance de l’agent de console.
+. Sélectionnez *Actions > Sécurité > Modifier le rôle IAM*.
+. Sélectionnez le rôle IAM et sélectionnez *Mettre à jour le rôle IAM*.
+
+
+--
+.Clé d'accès AWS
+--
+Fournissez à la console NetApp la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Agent.
+.. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+--
+.Rôle Azure
+--
+Accédez au portail Azure et attribuez le rôle personnalisé Azure à la machine virtuelle de l’agent de console pour un ou plusieurs abonnements.
+
+.Étapes
+. Depuis le portail Azure, ouvrez le service *Abonnements* et sélectionnez votre abonnement.
++
+Il est important d'attribuer le rôle à partir du service *Abonnements* car cela spécifie la portée de l'attribution du rôle au niveau de l'abonnement.  La _scope_ définit l’ensemble des ressources auxquelles l’accès s’applique.  Si vous spécifiez une étendue à un niveau différent (par exemple, au niveau de la machine virtuelle), votre capacité à effectuer des actions à partir de la console NetApp sera affectée.
+
++
+https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview["Documentation Microsoft Azure : Comprendre la portée d'Azure RBAC"^]
+
+. Sélectionnez *Contrôle d'accès (IAM)* > *Ajouter* > *Ajouter une attribution de rôle*.
+. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et sélectionnez *Suivant*.
++
+
+NOTE: L'opérateur de console est le nom par défaut fourni dans la politique.  Si vous avez choisi un nom différent pour le rôle, sélectionnez plutôt ce nom.
+
+. Dans l'onglet *Membres*, procédez comme suit :
++
+.. Attribuer l'accès à une *identité gérée*.
+.. Sélectionnez *Sélectionner les membres*, sélectionnez l’abonnement dans lequel la machine virtuelle de l’agent de console a été créée, sous *Identité gérée*, choisissez *Machine virtuelle*, puis sélectionnez la machine virtuelle de l’agent de console.
+.. Sélectionnez *Sélectionner*.
+.. Sélectionnez *Suivant*.
+.. Sélectionnez *Réviser + attribuer*.
+.. Si vous souhaitez gérer des ressources dans des abonnements Azure supplémentaires, passez à cet abonnement, puis répétez ces étapes.
+
+
+
+
+--
+.Principal de service Azure
+--
+Fournissez à la console NetApp les informations d’identification du principal de service Azure que vous avez précédemment configuré.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Microsoft Azure > Agent*.
+.. *Définir les informations d'identification* : saisissez les informations sur le principal du service Microsoft Entra qui accorde les autorisations requises :
++
+*** ID de l'application (client)
+*** ID du répertoire (locataire)
+*** Secret client
+
+
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+.Résultat
+la console NetApp dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.
+
+--
+.Compte de service Google Cloud
+--
+Associez le compte de service à la machine virtuelle de l’agent de console.
+
+.Étapes
+. Accédez au portail Google Cloud et attribuez le compte de service à l’instance de machine virtuelle de l’agent de la console.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["Documentation Google Cloud : Modification du compte de service et des étendues d'accès pour une instance"^]
+
+. Si vous souhaitez gérer les ressources d’autres projets, accordez l’accès en ajoutant le compte de service avec le rôle d’agent de console à ce projet.  Vous devrez répéter cette étape pour chaque projet.
+
+
+--
+====

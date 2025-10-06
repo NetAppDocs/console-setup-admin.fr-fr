@@ -1,0 +1,65 @@
+= 
+:allow-uri-read: 
+
+
+.Étapes
+. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.  + nouvelle capture d'écran nécessaire (TS)image:screenshot_gcp_add_subscription.png["Une capture d’écran du menu d’action pour un ensemble d’informations d’identification existantes."]
+. Pour configurer un abonnement existant avec les informations d'identification sélectionnées, sélectionnez un projet et un abonnement Google Cloud dans la liste déroulante, puis sélectionnez *Configurer*.
++
+image:screenshot_gcp_associate.gif["Capture d'écran d'un projet Google Cloud et d'un abonnement sélectionnés pour les informations d'identification Google Cloud."]
+
+. Si vous n'avez pas encore d'abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans Google Cloud Marketplace.
++
+
+NOTE: Avant d'effectuer les étapes suivantes, assurez-vous que vous disposez des privilèges d'administrateur de facturation dans votre compte Google Cloud ainsi que d'une connexion à la console NetApp .
+
++
+.. Après avoir été redirigé vers le https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Page des services intelligents NetApp sur Google Cloud Marketplace"^] , assurez-vous que le bon projet est sélectionné dans le menu de navigation supérieur.
++
+image:screenshot_gcp_cvo_marketplace.png["Une capture d'écran de la page du marché Cloud Volumes ONTAP dans Google Cloud."]
+
+.. Sélectionnez *S'abonner*.
+.. Sélectionnez le compte de facturation approprié et acceptez les conditions générales.
+.. Sélectionnez *S'abonner*.
++
+Cette étape envoie votre demande de transfert à NetApp.
+
+.. Dans la boîte de dialogue contextuelle, sélectionnez *S'inscrire auprès de NetApp, Inc.*
++
+Cette étape doit être effectuée pour lier l'abonnement Google Cloud à votre organisation ou compte Console.  Le processus de liaison d'un abonnement n'est pas terminé tant que vous n'êtes pas redirigé depuis cette page et que vous ne vous connectez pas à la console.
+
++
+image:screenshot_gcp_marketplace_register.png["Une capture d'écran d'une fenêtre contextuelle d'inscription."]
+
+.. Suivez les étapes sur la page *Affectation d'abonnement* :
++
+
+NOTE: Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["la page Cloud Volumes ONTAP dans la console NetApp"^] plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.
+
++
+*** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+*** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
+*** Sélectionnez *Enregistrer*.
++
+La vidéo suivante montre les étapes à suivre pour s'abonner à partir de Google Cloud Marketplace :
+
++
+.Abonnez-vous à Google Cloud Marketplace
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
+
+
+.. Une fois ce processus terminé, revenez à la page Informations d’identification dans la console et sélectionnez ce nouvel abonnement.
++
+image:screenshot_gcp_associate.gif["Une capture d’écran de la page d’attribution d’abonnement."]
+
+
+
+

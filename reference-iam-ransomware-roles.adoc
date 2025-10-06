@@ -1,0 +1,468 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-ransomware-roles.html 
+keywords: predefined roles, iam roles, organization admin, folder or project admin, identity and access management, access roles, admin, 
+summary: 'dans NetApp Console, vous pouvez attribuer des rôles pour permettre aux utilisateurs d"accéder à NetApp Ransomware Resilience.' 
+---
+= Rôles d'accès à la résilience contre les ransomwares pour la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Les rôles de résilience aux ransomwares permettent aux utilisateurs d’accéder à NetApp Ransomware Resilience.  Les deux rôles sont administrateur de protection contre les ransomwares et visualiseur de protection contre les ransomwares.  La principale différence entre les deux rôles réside dans les actions qu’ils peuvent entreprendre dans Ransomware Resilience.
+
+Le tableau suivant montre les actions que chaque rôle peut effectuer.
+
+[cols="40,20a,20a,20a,20a"]
+|===
+| Fonctionnalité et action | Administrateur de la résilience aux ransomwares | Visionneuse de résilience aux ransomwares | Comportement utilisateur de Ransomware Resilience administrateur | Visualiseur de comportement utilisateur de Ransomware Resilience 
+
+
+| Afficher le tableau de bord et tous les onglets  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Sur le tableau de bord, mettre à jour le statut de la recommandation  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Démarrer un essai gratuit  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Lancer la découverte des charges de travail  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Initier la redécouverte des charges de travail  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Protéger* : 
+
+
+| Ajouter, modifier ou supprimer des plans de protection  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Protéger les charges de travail  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Identifier l'exposition aux données sensibles  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Liste des plans de protection et des détails  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Liste des groupes de protection  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher les détails du groupe de protection  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Créer, modifier ou supprimer un groupe de protection  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Télécharger les données  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Alertes* : 
+
+
+| Afficher les alertes et les détails des alertes  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Modifier le statut de l'incident  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Marquer l'alerte pour la récupération  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher les détails de l'incident  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Rejeter ou résoudre les incidents  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Bloquer l'utilisateur  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Obtenez la liste complète des fichiers concernés  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Télécharger les données d'alertes  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher les activités suspectes des utilisateurs  a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+5+| *Dans l'onglet Récupérer* : 
+
+
+| Télécharger les fichiers concernés  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Restaurer la charge de travail  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Télécharger les données de récupération  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Télécharger les rapports  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Paramètres* : 
+
+
+| Ajouter ou modifier des destinations de sauvegarde  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Lister les destinations de sauvegarde  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher les cibles SIEM connectées  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Ajouter ou modifier des cibles SIEM  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Configurer l'exercice de préparation  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Commencer l'exercice de préparation  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Exercice de préparation à la réinitialisation  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Modifier l'exercice de préparation  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Examen de l'état de préparation de l'exercice  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Mettre à jour la configuration de la découverte  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher la configuration de la découverte  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Configurer les paramètres de comportement suspect des utilisateurs  a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Rapports* : 
+
+
+| Télécharger les rapports  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+|===

@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-analyst-roles.html 
+keywords: predefined roles, iam roles, organization admin, folder or project admin, identity and access management, access roles, admin 
+summary: 'La gestion des identités et des accès de la console NetApp fournit un rôle d"analyste de support pour aider à la surveillance et aux cas de support.' 
+---
+= Rôle d'accès d'analyste de support opérationnel pour la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez attribuer le rôle suivant aux utilisateurs pour leur donner accès aux alertes et à la surveillance. Les utilisateurs disposant de ce rôle peuvent également ouvrir des cas d’assistance.
+
+
+
+== Analyste de soutien opérationnel
+
+[cols="1,2"]
+|===
+| Tâche | Peut effectuer 
+
+
+| Gérez vos propres informations d'identification utilisateur depuis Paramètres > Informations d'identification | Oui 
+
+
+| Voir les ressources découvertes | Oui 
+
+
+| Inscrivez-vous au support et soumettez des cas via la console | Oui 
+
+
+| Oui | Afficher la page d'audit et les notifications 
+
+
+| Oui | Afficher, télécharger et configurer les alertes 
+|===

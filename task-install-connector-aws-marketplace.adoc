@@ -1,0 +1,258 @@
+---
+sidebar: sidebar 
+permalink: task-install-connector-aws-marketplace.html 
+keywords: install connector, aws connector installation, aws connector, install connector in aws, bluexp, aws marketplace, manual install, create connector 
+summary: 'Pour créer un agent de console à partir d"AWS Marketplace, vous devez configurer votre réseau, préparer les autorisations AWS, vérifier les exigences de l"instance, puis créer l"agent de console.' 
+---
+= Créer un agent de console à partir d'AWS Marketplace
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous créez un agent de console dans AWS directement à partir d’AWS Marketplace.  Pour créer un agent de console à partir d'AWS Marketplace, vous devez configurer votre réseau, préparer les autorisations AWS, vérifier les exigences de l'instance, puis créer l'agent de console.
+
+.Avant de commencer
+* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
+
+
+
+
+== Étape 1 : Configurer le réseau
+
+Assurez-vous que l’emplacement réseau de l’agent de console répond aux exigences suivantes pour gérer les ressources de cloud hybride.
+
+VPC et sous-réseau:: Lorsque vous créez l’agent de console, vous devez spécifier le VPC et le sous-réseau où il doit résider.
+
+
+Connexions aux réseaux cibles:: L'agent de console nécessite une connexion réseau à l'emplacement où vous prévoyez de créer et de gérer des systèmes.  Par exemple, le réseau sur lequel vous prévoyez de créer des systèmes Cloud Volumes ONTAP ou un système de stockage dans votre environnement local.
+
+
+Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
+
+
+Points de terminaison contactés depuis l'agent de la console:: L'agent de console nécessite un accès Internet sortant pour contacter les points de terminaison suivants afin de gérer les ressources et les processus au sein de votre environnement de cloud public pour les opérations quotidiennes.
++
+--
+Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+Services AWS (amazonaws.com) :
+
+* CloudFormation
+* Cloud de calcul élastique (EC2)
+* Gestion des identités et des accès (IAM)
+* Service de gestion des clés (KMS)
+* Service de jetons de sécurité (STS)
+* Service de stockage simple (S3)
+
+ a| 
+Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+
+
+Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et transparentes.  Si vous utilisez un proxy transparent, vous devez uniquement fournir le certificat du serveur proxy.  Si vous utilisez un proxy explicite, vous aurez également besoin de l'adresse IP et des informations d'identification.
++
+--
+* adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+--
+
+
+Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
++
+--
+* HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
+* SSH (22) n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+* Les connexions entrantes via le port 3128 sont requises si vous déployez des systèmes Cloud Volumes ONTAP dans un sous-réseau où une connexion Internet sortante n'est pas disponible.
++
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet sortante pour envoyer des messages AutoSupport , la console configure automatiquement ces systèmes pour utiliser un serveur proxy inclus avec l'agent de la console.  La seule exigence est de s’assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Vous devrez ouvrir ce port après avoir déployé l’agent de console.
+
+
+
+--
+
+
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
++
+--
+Implémentez cet accès réseau après avoir créé l’agent de console.
+
+--
+
+
+
+
+== Étape 2 : configurer les autorisations AWS
+
+Pour préparer un déploiement sur une place de marché, créez des stratégies IAM dans AWS et attachez-les à un rôle IAM.  Lorsque vous créez l'agent de console à partir d'AWS Marketplace, vous êtes invité à sélectionner ce rôle IAM.
+
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
++
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
++
+Vous devrez peut-être créer une deuxième stratégie en fonction des services de données NetApp que vous prévoyez d’utiliser.  Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+
+
+
+. Créer un rôle IAM :
++
+.. Sélectionnez *Rôles > Créer un rôle*.
+.. Sélectionnez *Service AWS > EC2*.
+.. Ajoutez des autorisations en joignant la politique que vous venez de créer.
+.. Terminez les étapes restantes pour créer le rôle.
+
+
+
+
+.Résultat
+Vous disposez désormais d’un rôle IAM que vous pouvez associer à l’instance EC2 lors du déploiement à partir d’AWS Marketplace.
+
+
+
+== Étape 3 : Examiner les exigences de l'instance
+
+Lorsque vous créez l’agent de console, vous devez choisir un type d’instance EC2 qui répond aux exigences suivantes.
+
+processeur:: 8 cœurs ou 8 vCPU
+BÉLIER:: 32 Go
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
+
+
+
+
+== Étape 4 : Créer l’agent de console
+
+Créez l’agent de console directement à partir d’AWS Marketplace.
+
+.À propos de cette tâche
+La création de l’agent de console à partir d’AWS Marketplace déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut. link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Un VPC et un sous-réseau qui répondent aux exigences de mise en réseau.
+* Un rôle IAM avec une politique attachée qui inclut les autorisations requises pour l’agent de la console.
+* Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.
+* Une compréhension des exigences en matière de CPU et de RAM pour l’instance.
+* Une paire de clés pour l'instance EC2.
+
+
+.Étapes
+. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la console NetApp sur AWS Marketplace"^]
+. Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
+. Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
++
+Le processus d'abonnement peut prendre quelques minutes.
+
+. Une fois le processus d'abonnement terminé, sélectionnez *Continuer vers la configuration*.
+. Sur la page *Configurer ce logiciel*, assurez-vous d'avoir sélectionné la bonne région, puis sélectionnez *Continuer pour lancer*.
+. Sur la page *Lancer ce logiciel*, sous *Choisir une action*, sélectionnez *Lancer via EC2*, puis sélectionnez *Lancer*.
++
+Utilisez la console EC2 pour lancer l’instance et attacher un rôle IAM.  Cela n'est pas possible avec l'action *Lancer depuis le site Web*.
+
+. Suivez les instructions pour configurer et déployer l’instance :
++
+** *Nom et balises* : saisissez un nom et des balises pour l'instance.
+** *Images d'application et de système d'exploitation* : ignorez cette section.  L'AMI de l'agent de console est déjà sélectionné.
+** *Type d'instance* : Selon la disponibilité de la région, choisissez un type d'instance qui répond aux exigences de RAM et de CPU (t3.2xlarge est présélectionné et recommandé).
+** *Paire de clés (connexion)* : sélectionnez la paire de clés que vous souhaitez utiliser pour vous connecter en toute sécurité à l'instance.
+** *Paramètres réseau* : Modifiez les paramètres réseau selon vos besoins :
++
+*** Choisissez le VPC et le sous-réseau souhaités.
+*** Spécifiez si l’instance doit avoir une adresse IP publique.
+*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l’instance de l’agent de console : SSH, HTTP et HTTPS.
++
+link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour AWS"] .
+
+
+
+** *Configurer le stockage* : Conservez la taille et le type de disque par défaut pour le volume racine.
++
+Si vous souhaitez activer le chiffrement Amazon EBS sur le volume racine, sélectionnez *Avancé*, développez *Volume 1*, sélectionnez *Chiffré*, puis choisissez une clé KMS.
+
+** *Détails avancés* : Sous *Profil d’instance IAM*, choisissez le rôle IAM qui inclut les autorisations requises pour l’agent de la console.
+** *Résumé* : Consultez le résumé et sélectionnez *Lancer l'instance*.
++
+AWS lance l'agent de console avec les paramètres spécifiés et l'agent de console s'exécute en environ dix minutes.
+
+
+
++
+
+NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rapport pour vous aider à résoudre le problème.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à la machine virtuelle de l’agent de console et à l’URL de l’agent de console.
+. Après vous être connecté, configurez l’agent de la console :
++
+.. Spécifiez l’organisation de la console à associer à l’agent de la console.
+.. Entrez un nom pour le système.
+.. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
++
+Gardez le mode restreint désactivé pour utiliser la console en mode standard.  Vous devez activer le mode restreint uniquement si vous disposez d'un environnement sécurisé et souhaitez déconnecter ce compte des services backend de la console.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+
+.. Sélectionnez *Commençons*.
+
+
+
+
+.Résultat
+L'agent de console est maintenant installé et configuré avec votre organisation de console.
+
+Ouvrez un navigateur Web et accédez à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent Console avec la Console.
+
+Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un environnement de travail Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Apprenez à gérer les buckets S3 depuis la console NetApp"^]

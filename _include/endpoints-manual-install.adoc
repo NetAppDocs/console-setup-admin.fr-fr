@@ -1,0 +1,124 @@
+= 
+:allow-uri-read: 
+
+
+Points de terminaison contactés lors de l'installation manuelle:: Lorsque vous installez manuellement l'agent de console sur votre propre hôte Linux, le programme d'installation de l'agent de console nécessite l'accès aux URL suivantes pendant le processus d'installation :
+
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://mysupport.netapp.com |  
+
+
+| \ https://signin.b2c.netapp.com | (ce point de terminaison est l'URL CNAME pour \ https://mysupport.netapp.com ) 
+
+
+| \ https://cloudmanager.cloud.netapp.com/tenancy |  
+
+
+| \ https://stream.cloudmanager.cloud.netapp.com |  
+
+
+| \ https://production-artifacts.cloudmanager.cloud.netapp.com |  
+
+
+ a| 
+* Option 1 (recommandée) :
++
+** \ https://bluexpinfraprod.eastus2.data.azurecr.io
+** \ https://bluexpinfraprod.azurecr.io
+
+
+* Option 2 :
++
+** \https://*.blob.core.windows.net
+** \ https://cloudmanagerinfraprod.azurecr.io
+
+
+
+ a| 
+Pour obtenir des images, le programme d’installation doit accéder à l’un de ces deux ensembles de points de terminaison.  ^1^ Les points de terminaison répertoriés dans l'option 1 sont recommandés car ils sont plus sécurisés.  Nous vous recommandons de configurer votre pare-feu pour autoriser les points de terminaison répertoriés dans l'option 1, tout en interdisant les points de terminaison répertoriés dans l'option 2.  Notez les points suivants à propos de ces points de terminaison :
+
+* Les points de terminaison répertoriés dans l'option 1 sont pris en charge à partir de la version 3.9.47 de l'agent de console.  Il n’y a pas de compatibilité descendante avec les versions précédentes de l’agent de console.
+* L'agent de la console contacte d'abord les points de terminaison répertoriés dans l'option 2.  Si ces points de terminaison ne sont pas accessibles, l’agent de la console contacte automatiquement les points de terminaison répertoriés dans l’option 1.
+* Les points de terminaison de l’option 1 ne sont pas pris en charge si vous utilisez l’agent de console avec NetApp Backup and Recovery ou NetApp Ransomware Resilience.  Dans ce cas, vous pouvez interdire les points de terminaison répertoriés dans l'option 1, tout en autorisant les points de terminaison répertoriés dans l'option 2.
+
+
+|===
+Points de terminaison contactés lors de l'installation manuelle:: Lorsque vous installez manuellement l'agent de console sur votre propre hôte Linux, le programme d'installation de l'agent de console nécessite l'accès à plusieurs URL pendant le processus d'installation.
+
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://mysupport.netapp.com |  
+
+
+| \ https://signin.b2c.netapp.com | Ce point de terminaison est l'URL CNAME pour \ https://mysupport.netapp.com 
+
+
+| \ https://cloudmanager.cloud.netapp.com/tenancy |  
+
+
+| \ https://stream.cloudmanager.cloud.netapp.com |  
+
+
+| \ https://production-artifacts.cloudmanager.cloud.netapp.com |  
+
+
+2+| *Région gouvernementale AWS* Si vous installez l'agent de console dans une région gouvernementale AWS, le programme d'installation doit également accéder à ces points de terminaison : 
+
+
+ a| 
+\https://*.blob.core.windows.net
+ a| 
+
+
+
+ a| 
+\ https://cloudmanagerinfraprod.azurecr.io
+ a| 
+
+
+
+2+| *Région Azure Government* Si vous installez l'agent de console dans une région Azure Government, le programme d'installation doit également accéder à ces points de terminaison : 
+
+
+ a| 
+\https://*.blob.core.windows.net
+ a| 
+
+
+
+ a| 
+\ https://occmclientinfragov.azurecr.us
+ a| 
+
+
+
+2+| *Régions commerciales ou souveraines* Si vous installez l'agent de console dans une région commerciale ou une région souveraine, vous pouvez choisir entre deux ensembles de points de terminaison : 
+
+
+ a| 
+**Option 1 (recommandée) :** * \ https://bluexpinfraprod.eastus2.data.azurecr.io * \ https://bluexpinfraprod.azurecr.io
+
+**Option 2 :** * \https://*.blob.core.windows.net * \ https://cloudmanagerinfraprod.azurecr.io
+ a| 
+Les points de terminaison répertoriés dans l’option 1 sont recommandés car ils sont plus sécurisés.  Nous vous recommandons de configurer votre pare-feu pour autoriser les points de terminaison répertoriés dans l'option 1, tout en interdisant les points de terminaison répertoriés dans l'option 2.  Notez les points suivants à propos de ces points de terminaison :
+
+* Les points de terminaison répertoriés dans l'option 1 sont pris en charge à partir de la version 3.9.47 de l'agent de console.  Il n’y a pas de compatibilité descendante avec les versions précédentes de l’agent de console.
+* L'agent de la console contacte d'abord les points de terminaison répertoriés dans l'option 2.  Si ces points de terminaison ne sont pas accessibles, l’agent de la console contacte automatiquement les points de terminaison répertoriés dans l’option 1.
+* Les points de terminaison de l’option 1 ne sont pas pris en charge si vous utilisez l’agent de console avec NetApp Backup and Recovery ou NetApp Ransomware Resilience.  Dans ce cas, vous pouvez interdire les points de terminaison répertoriés dans l'option 1, tout en autorisant les points de terminaison répertoriés dans l'option 2.
+
+
+|===
++
+
+Les points de terminaison répertoriés dans l’option 1 sont recommandés car ils sont plus sécurisés.  Nous vous recommandons de configurer votre pare-feu pour autoriser les points de terminaison répertoriés dans l'option 1, tout en interdisant les points de terminaison répertoriés dans l'option 2.  Notez les points suivants concernant ces points de terminaison : ** Les points de terminaison répertoriés dans l’option 1 sont pris en charge à partir de la version 3.9.47 de l’agent de console.  Il n’y a pas de compatibilité descendante avec les versions précédentes de l’agent de console.  ** L’agent de la console contacte d’abord les points de terminaison répertoriés dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, l’agent de la console contacte automatiquement les points de terminaison répertoriés dans l’option 1.  ** Les points de terminaison de l’option 1 ne sont pas pris en charge si vous utilisez l’agent de console avec NetApp Backup and Recovery ou NetpApp Ransomware Resilience.  Dans ce cas, vous pouvez interdire les points de terminaison répertoriés dans l'option 1, tout en autorisant les points de terminaison répertoriés dans l'option 2.
+
+L'hôte peut essayer de mettre à jour les packages du système d'exploitation pendant l'installation.  L'hôte peut contacter différents sites de mise en miroir pour ces packages de système d'exploitation.

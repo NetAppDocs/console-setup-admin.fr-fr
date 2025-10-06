@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: task-federation-saml.html 
+keywords: federation, SAML protocol, SAML, federation services,  federate, federated connection, SSO, identity federation, identity management, corporate identity 
+summary: 'Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l’authentification unique (SSO) pour la console NetApp .  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.' 
+---
+= Fédérer avec un fournisseur d'identité SAML
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l’authentification unique (SSO) pour la console NEtApp.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.
+
+.Rôle requis
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+
+NOTE: Vous pouvez vous fédérer avec votre IdP d'entreprise ou avec le site de support NetApp .  Vous ne pouvez pas vous fédérer avec les deux.
+
+NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Vous devez d’abord configurer le fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services.  Ensuite, vous pouvez créer une connexion dans la console qui utilise la configuration du fournisseur d’identité.
+
+Vous pouvez configurer une connexion fédérée avec votre fournisseur SAML 2.0 pour activer l'authentification unique (SSO) pour la console.  Le processus implique la configuration de votre fournisseur pour qu’il fasse confiance à NetApp en tant que fournisseur de services, puis la création de la connexion dans la console.
+
+.Avant de commencer
+* Un compte IdP avec des privilèges administratifs est requis.  Coordonnez-vous avec votre administrateur IdP pour terminer les étapes.
+* Identifiez le domaine que vous souhaitez utiliser pour la fédération.  Vous pouvez utiliser votre domaine de messagerie ou un autre domaine que vous possédez.  Si vous souhaitez utiliser un domaine autre que votre domaine de messagerie, vous devez d’abord vérifier le domaine dans la console.  Vous pouvez le faire en suivant les étapes décrites dans lelink:task-federation-verify-domain.html["Vérifiez votre domaine dans la console NetApp"] sujet.
+
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Fédération* pour afficher la page *Fédérations*.
+. Sélectionnez *Configurer une nouvelle fédération*.
+. Entrez les détails de votre domaine :
++
+.. Choisissez si vous souhaitez utiliser un domaine vérifié ou votre domaine de messagerie.  Le domaine de messagerie est le domaine associé au compte avec lequel vous êtes connecté.
+.. Entrez le nom de la fédération que vous configurez.
+.. Si vous choisissez un domaine vérifié, sélectionnez le domaine dans la liste.
+
+
+. Sélectionnez *Suivant*.
+. Pour votre méthode de connexion, choisissez *Protocole* puis sélectionnez *Fournisseur d'identité SAML*.
+. Sélectionnez *Suivant*.
+. Configurez votre fournisseur d’identité SAML pour faire confiance à NetApp en tant que fournisseur de services.  Vous devez effectuer cette étape sur votre serveur fournisseur SAML.
++
+.. Assurez-vous que votre IdP possède l'attribut `email` définir sur l'adresse e-mail de l'utilisateur.  Ceci est nécessaire pour que la console identifie correctement les utilisateurs :
++
+[source, xml]
+----
+<saml:AttributeStatement xmlns:x500="urn:oasis:names:tc:SAML:2.0:profiles:attribute:X500" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <saml:Attribute Name="email" NameFormat="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">
+        <saml:AttributeValue xsi:type="xs:string">email@domain.com</saml:AttributeValue>
+    </saml:Attribute>
+</saml:AttributeStatement>
+----
+.. Utilisez les valeurs suivantes lors de l’enregistrement de votre application SAML auprès de la console :
++
+*** Pour l'*URL de réponse* ou l'*URL du service client d'assertion (ACS)*, utilisez `https://netapp-cloud-account.auth0.com/login/callback`
+*** Pour l'*URL de déconnexion*, utilisez `https://netapp-cloud-account.auth0.com/logout`
+*** Pour *ID d'audience/d'entité*, utilisez `urn:auth0:netapp-cloud-account:<fed-domain-name-saml>` où <fed-domain-name-saml> est le nom de domaine que vous souhaitez utiliser pour la fédération.  Par exemple, si votre domaine est `example.com` , l'ID d'audience/d'entité serait `urn:auth0:netapp-cloud-account:fed-example-com-samlp` .
+
+
+.. Après avoir créé la confiance, copiez les valeurs suivantes à partir de votre serveur fournisseur SAML :
++
+*** URL de connexion
+*** URL de déconnexion (facultatif)
+
+
+.. Téléchargez le certificat X.509 depuis le serveur de votre fournisseur SAML.  Il doit être au format PEM, CER ou CRT.
+
+
+. Revenez à la console et sélectionnez *Suivant* pour créer la connexion.
+. Créez la connexion avec SAML.
++
+.. Saisissez l'*URL de connexion* de votre serveur SAML.
+.. Téléchargez le certificat X.509 que vous avez téléchargé depuis le serveur de votre fournisseur SAML.
+.. Si vous le souhaitez, saisissez l'*URL de déconnexion* de votre serveur SAML.
+
+
+. Sélectionnez *Créer une connexion*.  Le système crée la connexion en quelques secondes.
+. Sélectionnez *Suivant*.
+. Sélectionnez *Tester la connexion* pour tester votre connexion.  Vous êtes dirigé vers une page de connexion pour votre serveur IdP.  Connectez-vous avec vos identifiants IdP pour terminer le test et revenez à la console pour activer la connexion.
+. Sélectionnez *Suivant*.
+. Sur la page *Activer la fédération*, vérifiez les détails de la fédération, puis sélectionnez *Activer la fédération*.
+. Sélectionnez *Terminer* pour terminer le processus.
+
+
+Une fois la fédération activée, les utilisateurs peuvent se connecter à la console NetApp à l’aide de leurs informations d’identification d’entreprise.

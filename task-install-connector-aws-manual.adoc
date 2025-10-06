@@ -1,0 +1,682 @@
+---
+sidebar: sidebar 
+permalink: task-install-connector-aws-manual.html 
+keywords: install connector, aws connector installation, aws connector, install connector in aws, bluexp, aws marketplace, manual install, create connector 
+summary: 'Vous pouvez installer manuellement un agent de console sur un hôte Linux exécuté dans AWS.  Pour installer manuellement l"agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l"hôte, configurer votre réseau, préparer les autorisations AWS, installer l"agent de console, puis fournir les autorisations que vous avez préparées.' 
+---
+= Installer manuellement l'agent de console dans AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez installer manuellement un agent de console sur un hôte Linux exécuté dans AWS.  Pour installer manuellement l'agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l'hôte, configurer votre réseau, préparer les autorisations AWS, installer l'agent de console, puis fournir les autorisations que vous avez préparées.
+
+.Avant de commencer
+* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
+
+
+
+
+== Étape 1 : Examiner les exigences de l'hôte
+
+Le logiciel de l'agent de console doit s'exécuter sur un hôte qui répond aux exigences spécifiques du système d'exploitation, de la RAM, des ports, etc.
+
+
+NOTE: L'agent de console réserve la plage UID et GID de 19 000 à 19 200.  Cette plage est fixe et ne peut pas être modifiée.  Si un logiciel tiers sur votre hôte utilise des UID ou des GID dans cette plage, l'installation de l'agent échouera.  NetApp recommande d'utiliser un hôte exempt de logiciels tiers pour éviter les conflits.
+
+Hôte dédié:: L'agent de console n'est pas pris en charge sur un hôte partagé avec d'autres applications. L'hôte doit être un hôte dédié.  L'hôte peut être de n'importe quelle architecture répondant aux exigences de taille suivantes :
++
+--
+* CPU : 8 cœurs ou 8 vCPU
+* RAM : 32 Go
+* Espace disque : 165 Go sont recommandés pour l’hôte, avec les exigences de partition suivantes :
++
+** `/opt`: 120 Go d'espace doivent être disponibles
++
+L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
+
+** `/var`: 40 Go d'espace doivent être disponibles
++
+L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+
+
+
+
+
+--
+Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
+[[podman-versions]]Configuration requise pour le système d'exploitation et les conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
++
+--
+[cols="2a,2a,2a,2a,2a"]
+|===
+| Système opérateur | Versions de systèmes d'exploitation prises en charge | Versions d'agent prises en charge | Outil de conteneur requis | SELinux a 
+
+
+ a| 
+Red Hat Enterprise Linux
+ a| 
+9,1 à 9,4
+
+8,6 à 8,10
+
+* Versions en langue anglaise uniquement.
+* L'hôte doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, l'hôte ne peut pas accéder aux référentiels pour mettre à jour le logiciel tiers requis lors de l'installation de l'agent.
+
+ a| 
+3.9.50 ou version ultérieure avec la console en mode standard ou en mode restreint
+ a| 
+Podman version 4.6.1 ou 4.9.4
+
+<<podman-configuration,Afficher les exigences de configuration de Podman>> .
+ a| 
+Pris en charge en mode d'application ou en mode permissif
+
+* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
+
+
+
+
+ a| 
+Ubuntu
+ a| 
+24,04 LTS
+ a| 
+3.9.45 ou version ultérieure avec la console NetApp en mode standard ou en mode restreint
+ a| 
+Docker Engine 23.06 à 28.0.0.
+ a| 
+Non pris en charge
+
+
+
+ a| 
+22,04 LTS
+ a| 
+3.9.50 ou version ultérieure
+ a| 
+Docker Engine 23.0.6 à 28.0.0.
+ a| 
+Non pris en charge
+
+|===
+--
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
+Paire de clés:: Lorsque vous créez l'agent de console, vous devez sélectionner une paire de clés EC2 à utiliser avec l'instance.
+Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est activé sur l'instance EC2 (il s'agit du paramètre par défaut pour les nouvelles instances EC2), vous devez modifier la limite de saut de réponse PUT sur l'instance à 3.  Si vous ne modifiez pas la limite sur l'instance EC2, vous recevrez une erreur d'initialisation de l'interface utilisateur lorsque vous tenterez de configurer l'agent.
++
+--
+* link:task-require-imdsv2.html["Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2"]
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-existing-instances.html#modify-PUT-response-hop-limit["Documentation AWS : Modifier la limite de saut de réponse PUT"^]
+
+
+--
+Espace disque dans /opt:: 100 Go d'espace doivent être disponibles
++
+--
+L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
+
+--
+Espace disque dans /var:: 20 Go d'espace doivent être disponibles
++
+--
+L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+
+--
+
+
+
+
+== Étape 2 : installer Podman ou Docker Engine
+
+Selon votre système d'exploitation, Podman ou Docker Engine est requis avant l'installation de l'agent.
+
+* Podman est requis pour Red Hat Enterprise Linux 8 et 9.
++
+<<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+* Docker Engine est requis pour Ubuntu.
++
+<<podman-versions,Afficher les versions de Docker Engine prises en charge>> .
+
+
+
+.Étapes
+[role="tabbed-block"]
+====
+.Podman
+--
+Suivez ces étapes pour installer et configurer Podman :
+
+* Activer et démarrer le service podman.socket
+* Installer Python 3
+* Installer le package podman-compose version 1.0.6
+* Ajoutez podman-compose à la variable d'environnement PATH
+* Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise Aardvark DNS au lieu de CNI
+
+
+
+NOTE: Ajustez le port aardvark-dns (par défaut : 53) après l’installation de l’agent pour éviter les conflits de port DNS.  Suivez les instructions pour configurer le port.
+
+.Étapes
+. Supprimez le package podman-docker s'il est installé sur l'hôte.
++
+[source, cli]
+----
+dnf remove podman-docker
+rm /var/run/docker.sock
+----
+. Installez Podman.
++
+Vous pouvez obtenir Podman à partir des référentiels officiels Red Hat Enterprise Linux.
+
++
+Pour Red Hat Enterprise Linux 9 :
+
++
+[source, cli]
+----
+sudo dnf install podman-2:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
++
+Pour Red Hat Enterprise Linux 8 :
+
++
+[source, cli]
+----
+sudo dnf install podman-3:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+. Activez et démarrez le service podman.socket.
++
+[source, cli]
+----
+sudo systemctl enable --now podman.socket
+----
+. Installez python3.
++
+[source, cli]
+----
+sudo dnf install python3
+----
+. Installez le package de référentiel EPEL s'il n'est pas déjà disponible sur votre système.
+. Si vous utilisez Red Hat Enterprise :
++
+Cette étape est nécessaire car podman-compose est disponible dans le référentiel Extra Packages for Enterprise Linux (EPEL).
+
++
+Pour Red Hat Enterprise Linux 9 :
+
++
+[source, cli]
+----
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+----
++
+Pour Red Hat Enterprise Linux 8 :
+
++
+[source, cli]
+----
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+----
+. Installez le package podman-compose 1.0.6.
++
+[source, cli]
+----
+sudo dnf install podman-compose-1.0.6
+----
++
+
+NOTE: En utilisant le `dnf install` la commande répond à l'exigence d'ajout de podman-compose à la variable d'environnement PATH.  La commande d'installation ajoute podman-compose à /usr/bin, qui est déjà inclus dans le `secure_path` option sur l'hôte.
+
+. Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise NetAvark avec Aardvark DNS au lieu de CNI.
++
+.. Vérifiez si votre networkBackend est défini sur CNI en exécutant la commande suivante :
++
+[source, cli]
+----
+podman info | grep networkBackend
+----
+.. Si le networkBackend est défini sur `CNI` , vous devrez le changer en `netavark` .
+.. Installer `netavark` et `aardvark-dns` en utilisant la commande suivante :
++
+[source, cli]
+----
+dnf install aardvark-dns netavark
+----
+.. Ouvrez le `/etc/containers/containers.conf` fichier et modifiez l'option network_backend pour utiliser « netavark » au lieu de « cni ».
+
+
++
+Si `/etc/containers/containers.conf` n'existe pas, effectuez les modifications de configuration pour `/usr/share/containers/containers.conf` .
+
+. Redémarrez podman.
++
+[source, cli]
+----
+systemctl restart podman
+----
+. Confirmez que networkBackend est désormais modifié en « netavark » à l'aide de la commande suivante :
++
+[source, cli]
+----
+podman info | grep networkBackend
+----
+
+
+--
+.Moteur Docker
+--
+Suivez la documentation de Docker pour installer Docker Engine.
+
+.Étapes
+. https://docs.docker.com/engine/install/["Afficher les instructions d'installation depuis Docker"^]
++
+Suivez les étapes pour installer une version de Docker Engine prise en charge.  N'installez pas la dernière version, car elle n'est pas prise en charge par la console.
+
+. Vérifiez que Docker est activé et en cours d’exécution.
++
+[source, cli]
+----
+sudo systemctl enable docker && sudo systemctl start docker
+----
+
+
+--
+====
+
+
+== Étape 3 : Configurer le réseau
+
+Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  La satisfaction de ces exigences permet à l’agent de console de gérer les ressources et les processus au sein de votre environnement de cloud hybride.
+
+Connexions aux réseaux cibles:: L'agent de console nécessite une connexion réseau à l'emplacement où vous prévoyez de créer et de gérer des systèmes.  Par exemple, le réseau sur lequel vous prévoyez de créer des systèmes Cloud Volumes ONTAP ou un système de stockage dans votre environnement local.
+
+
+Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
+
+
+Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la console Web NetApp::
++
+--
+Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
+
+link:reference-networking-saas-console.html["Préparer la mise en réseau pour la console NetApp"] .
+
+--
+
+
+Points de terminaison contactés depuis l'agent de la console:: L'agent de console nécessite un accès Internet sortant pour contacter les points de terminaison suivants afin de gérer les ressources et les processus au sein de votre environnement de cloud public pour les opérations quotidiennes.
++
+--
+Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+Services AWS (amazonaws.com) :
+
+* CloudFormation
+* Cloud de calcul élastique (EC2)
+* Gestion des identités et des accès (IAM)
+* Service de gestion des clés (KMS)
+* Service de jetons de sécurité (STS)
+* Service de stockage simple (S3)
+
+ a| 
+Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+
+
+Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et transparentes.  Si vous utilisez un proxy transparent, vous devez uniquement fournir le certificat du serveur proxy.  Si vous utilisez un proxy explicite, vous aurez également besoin de l'adresse IP et des informations d'identification.
++
+--
+* adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+--
+
+
+Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
++
+--
+* HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
+* SSH (22) n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+* Les connexions entrantes via le port 3128 sont requises si vous déployez des systèmes Cloud Volumes ONTAP dans un sous-réseau où une connexion Internet sortante n'est pas disponible.
++
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet sortante pour envoyer des messages AutoSupport , la console configure automatiquement ces systèmes pour utiliser un serveur proxy inclus avec l'agent de la console.  La seule exigence est de s’assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Vous devrez ouvrir ce port après avoir déployé l’agent de console.
+
+
+
+--
+
+
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+
+
+
+
+== Étape 4 : configurer les autorisations AWS pour la console
+
+Vous devez fournir des autorisations AWS à la console NetApp en utilisant l’une des options suivantes :
+
+* Option 1 : créez des stratégies IAM et attachez-les à un rôle IAM que vous pouvez associer à l’instance EC2.
+* Option 2 : fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
+
+
+Suivez les étapes pour préparer les autorisations pour la console.
+
+[role="tabbed-block"]
+====
+.Rôle IAM
+--
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
++
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
++
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.  Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+
+
+
+. Créer un rôle IAM :
++
+.. Sélectionnez *Rôles > Créer un rôle*.
+.. Sélectionnez *Service AWS > EC2*.
+.. Ajoutez des autorisations en joignant la politique que vous venez de créer.
+.. Terminez les étapes restantes pour créer le rôle.
+
+
+
+
+.Résultat
+Vous disposez désormais d’un rôle IAM que vous pouvez associer à l’instance EC2 après avoir installé l’agent de console.
+
+--
+.Clé d'accès AWS
+--
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
++
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
++
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.
+
++
+Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+
+
+
+. Attachez les politiques à un utilisateur IAM.
++
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["Documentation AWS : Création de rôles IAM"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
+
+
+. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la console NetApp après avoir installé l'agent de console.
+
+
+.Résultat
+Vous disposez désormais d’un utilisateur IAM disposant des autorisations requises et d’une clé d’accès que vous pouvez fournir à la console.
+
+--
+====
+
+
+== Étape 5 : Installer l’agent de console
+
+Une fois les prérequis terminés, vous pouvez installer manuellement le logiciel sur votre propre hôte Linux.
+
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Privilèges root pour installer l'agent de la console.
+* Détails sur un serveur proxy, si un proxy est requis pour l'accès Internet à partir de l'agent de la console.
++
+Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.
+
+* Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.
+
+
+
+NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-connector-maint-console.html["Console de maintenance des agents"] .
+
+.À propos de cette tâche
+Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.
+
+.Étapes
+. Si les variables système _http_proxy_ ou _https_proxy_ sont définies sur l'hôte, supprimez-les :
++
+[source, cli]
+----
+unset http_proxy
+unset https_proxy
+----
++
+Si vous ne supprimez pas ces variables système, l'installation échoue.
+
+. Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] , puis copiez-le sur l'hôte Linux.
++
+Vous devez télécharger le programme d'installation de l'agent « en ligne » destiné à être utilisé sur votre réseau ou dans le cloud.
+
+. Attribuer des autorisations pour exécuter le script.
++
+[source, cli]
+----
+chmod +x NetApp_Console_Agent_Cloud_<version>
+----
++
+Où <version> est la version de l’agent de console que vous avez téléchargé.
+
+. Si vous effectuez l'installation dans un environnement Government Cloud, désactivez les vérifications de configuration.link:task-troubleshoot-connector.html#disable-config-check["Découvrez comment désactiver les vérifications de configuration pour les installations manuelles."]
+. Exécutez le script d'installation.
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
+----
++
+Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet.  Vous pouvez ajouter un proxy transparent ou explicite.  Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter.  Si vous disposez d'un serveur proxy, vous devrez saisir les paramètres comme indiqué.
+
++
+Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+----
++
+`--proxy`configure l'agent de console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
+
++
+** \http://adresse:port
+** \http://nom-d'utilisateur:mot-de-passe@adresse:port
+** \http://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://adresse:port
+** \https://nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
++
+Notez ce qui suit :
+
++
+*** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
+*** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour un \ comme indiqué ci-dessus.
+*** L'agent de console ne prend pas en charge les noms d'utilisateur ou les mots de passe qui incluent le caractère @.
+*** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le préfixant d'une barre oblique inverse : & ou !
++
+Par exemple:
+
++
+\http://bxpproxyuser:netapp1\!@adresse:3128
+
+
+
+
+
+
+
+`--cacert`spécifie un certificat signé par une autorité de certification à utiliser pour l'accès HTTPS entre l'agent de console et le serveur proxy.  Ce paramètre est requis pour les serveurs proxy HTTPS, les serveurs proxy d'interception et les serveurs proxy transparents.
+
++ Voici un exemple de configuration d'un serveur proxy transparent.  Lorsque vous configurez un proxy transparent, vous n'avez pas besoin de définir le serveur proxy.  Vous ajoutez uniquement un certificat signé par une autorité de certification à votre hôte d’agent de console :
+
++
+
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0 --cacert /tmp/cacert/certificate.cer
+----
+. Si vous avez utilisé Podman, vous devrez ajuster le port aardvark-dns.
++
+.. Connectez-vous en SSH à la machine virtuelle de l'agent de console.
+.. Ouvrez le fichier podman _/usr/share/containers/containers.conf_ et modifiez le port choisi pour le service DNS Aardvark.  Par exemple, changez-le en 54.
++
+[source, cli]
+----
+vi /usr/share/containers/containers.conf
+...
+# Port to use for dns forwarding daemon with netavark in rootful bridge
+# mode and dns enabled.
+# Using an alternate port might be useful if other DNS services should
+# run on the machine.
+#
+dns_bind_port = 54
+...
+Esc:wq
+----
+.. Redémarrez la machine virtuelle de l’agent de console.
+
+
+. Attendez que l'installation soit terminée.
++
+À la fin de l'installation, le service de l'agent de console (occm) redémarre deux fois si vous avez spécifié un serveur proxy.
+
+
+
+
+NOTE: Si l'installation échoue, vous pouvez consulter le rapport d'installation et les journaux pour vous aider à résoudre les problèmes.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à la machine virtuelle de l’agent de console et entrez l’URL suivante :
++
+https://_ipaddress_[]
+
+. Après vous être connecté, configurez l’agent de la console :
++
+.. Spécifiez l’organisation à associer à l’agent de la console.
+.. Entrez un nom pour le système.
+.. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
++
+Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous ne devez activer le mode restreint que si vous disposez d'un environnement sécurisé et que vous souhaitez déconnecter ce compte des services backend.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+
+.. Sélectionnez *Commençons*.
+
+
+
+
+Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un système de stockage Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Découvrez comment gérer les buckets S3 à partir de NetApp ConsoleP"^]
+
+
+
+== Étape 6 : Accorder des autorisations à la console NetApp
+
+Maintenant que vous avez installé l'agent de console, vous devez fournir à la console les autorisations AWS que vous avez précédemment configurées.  L’octroi des autorisations permet à l’agent de la console de gérer vos données et votre infrastructure de stockage dans AWS.
+
+[role="tabbed-block"]
+====
+.Rôle IAM
+--
+Attachez le rôle IAM que vous avez précédemment créé à l’instance EC2 de l’agent de console.
+
+.Étapes
+. Accédez à la console Amazon EC2.
+. Sélectionnez *Instances*.
+. Sélectionnez l’instance de l’agent de console.
+. Sélectionnez *Actions > Sécurité > Modifier le rôle IAM*.
+. Sélectionnez le rôle IAM et sélectionnez *Mettre à jour le rôle IAM*.
+
+
+Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+
+--
+.Clé d'accès AWS
+--
+Fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
+
+.Étapes
+. Assurez-vous que l’agent de console correct est actuellement sélectionné dans la console.
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Agent.
+.. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+
+--
+====

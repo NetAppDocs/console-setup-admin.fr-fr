@@ -1,0 +1,151 @@
+= 
+:allow-uri-read: 
+
+
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Privilèges root pour installer l'agent de la console.
+* Détails sur un serveur proxy, si un proxy est requis pour l'accès Internet à partir de l'agent de la console.
++
+Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.
+
+* Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.
+
+
+
+NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-connector-maint-console.html["Console de maintenance des agents"] .
+
+.À propos de cette tâche
+Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.
+
+.Étapes
+. Si les variables système _http_proxy_ ou _https_proxy_ sont définies sur l'hôte, supprimez-les :
++
+[source, cli]
+----
+unset http_proxy
+unset https_proxy
+----
++
+Si vous ne supprimez pas ces variables système, l'installation échoue.
+
+. Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] , puis copiez-le sur l'hôte Linux.
++
+Vous devez télécharger le programme d'installation de l'agent « en ligne » destiné à être utilisé sur votre réseau ou dans le cloud.
+
+. Attribuer des autorisations pour exécuter le script.
++
+[source, cli]
+----
+chmod +x NetApp_Console_Agent_Cloud_<version>
+----
++
+Où <version> est la version de l’agent de console que vous avez téléchargé.
+
+. Si vous effectuez l'installation dans un environnement Government Cloud, désactivez les vérifications de configuration.link:task-troubleshoot-connector.html#disable-config-check["Découvrez comment désactiver les vérifications de configuration pour les installations manuelles."]
+. Exécutez le script d'installation.
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
+----
++
+Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet.  Vous pouvez ajouter un proxy transparent ou explicite.  Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter.  Si vous disposez d'un serveur proxy, vous devrez saisir les paramètres comme indiqué.
+
++
+Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+----
++
+`--proxy`configure l'agent de console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
+
++
+** \http://adresse:port
+** \http://nom-d'utilisateur:mot-de-passe@adresse:port
+** \http://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://adresse:port
+** \https://nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
++
+Notez ce qui suit :
+
++
+*** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
+*** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour un \ comme indiqué ci-dessus.
+*** L'agent de console ne prend pas en charge les noms d'utilisateur ou les mots de passe qui incluent le caractère @.
+*** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le préfixant d'une barre oblique inverse : & ou !
++
+Par exemple:
+
++
+\http://bxpproxyuser:netapp1\!@adresse:3128
+
+
+
+
+
+
+
+`--cacert`spécifie un certificat signé par une autorité de certification à utiliser pour l'accès HTTPS entre l'agent de console et le serveur proxy.  Ce paramètre est requis pour les serveurs proxy HTTPS, les serveurs proxy d'interception et les serveurs proxy transparents.
+
++ Voici un exemple de configuration d'un serveur proxy transparent.  Lorsque vous configurez un proxy transparent, vous n'avez pas besoin de définir le serveur proxy.  Vous ajoutez uniquement un certificat signé par une autorité de certification à votre hôte d’agent de console :
+
++
+
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0 --cacert /tmp/cacert/certificate.cer
+----
+. Si vous avez utilisé Podman, vous devrez ajuster le port aardvark-dns.
++
+.. Connectez-vous en SSH à la machine virtuelle de l'agent de console.
+.. Ouvrez le fichier podman _/usr/share/containers/containers.conf_ et modifiez le port choisi pour le service DNS Aardvark.  Par exemple, changez-le en 54.
++
+[source, cli]
+----
+vi /usr/share/containers/containers.conf
+...
+# Port to use for dns forwarding daemon with netavark in rootful bridge
+# mode and dns enabled.
+# Using an alternate port might be useful if other DNS services should
+# run on the machine.
+#
+dns_bind_port = 54
+...
+Esc:wq
+----
+.. Redémarrez la machine virtuelle de l’agent de console.
+
+
+
+
+. Attendez que l'installation soit terminée.
++
+À la fin de l'installation, le service de l'agent de console (occm) redémarre deux fois si vous avez spécifié un serveur proxy.
+
+
+
+
+NOTE: Si l'installation échoue, vous pouvez consulter le rapport d'installation et les journaux pour vous aider à résoudre les problèmes.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à la machine virtuelle de l’agent de console et entrez l’URL suivante :
++
+https://_ipaddress_[]
+
+. Après vous être connecté, configurez l’agent de la console :
++
+.. Spécifiez l’organisation à associer à l’agent de la console.
+.. Entrez un nom pour le système.
+.. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
++
+Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous ne devez activer le mode restreint que si vous disposez d'un environnement sécurisé et que vous souhaitez déconnecter ce compte des services backend.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+
+.. Sélectionnez *Commençons*.
+
+
+

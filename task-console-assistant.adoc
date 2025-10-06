@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: task-console-assistant.html 
+keywords: bluexp,netapp console,console assistant,assistant,setup assistant,get started,quick start,first time user,first time setup,setup wizard 
+summary: 'Si vous utilisez la console NetApp pour la première fois, l"assistant de console vous guide tout au long du processus de configuration initiale.  L"assistant vous aide à ajouter un compte de site de support NetApp (NSS), à ajouter un agent de console, à ajouter un cluster et à ajouter une licence ou un abonnement, ce qui facilite la prise en main de la gestion de vos données.' 
+---
+= Commencer à utiliser l'assistant de console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous utilisez la console NetApp pour la première fois avec le rôle d'administrateur d'organisation, vous pouvez utiliser l'assistant de console pour vous guider tout au long du processus de configuration initiale.  L'assistant vous aide à ajouter un compte de site de support NetApp (NSS), à ajouter un agent de console, à ajouter un cluster et à ajouter une licence ou un abonnement, ce qui facilite la prise en main de la gestion de vos données.
+
+
+
+== Rôles requis pour accéder à l'assistant de console
+
+L'assistant de console est uniquement disponible pour les utilisateurs disposant du rôle d'administrateur d'organisation.
+
+
+
+== Quand l'assistant de console apparaît-il ?
+
+L'assistant de console est disponible sur la page d'accueil de la console NetApp jusqu'à ce que les tâches de configuration obligatoires soient terminées.
+
+Utilisez l'Assistant pour effectuer ces tâches, dont certaines sont obligatoires :
+
+* Ajoutez un compte de site de support NetApp (NSS).
+* Connectez-vous à votre parc de stockage en déployant un agent de console (étape obligatoire).
+* Gérez votre système en ajoutant ou en découvrant un cluster (étape obligatoire).
+* Ajoutez un abonnement au marketplace ou une licence PAYGO.
+* Liens vers les services de données ouvertes.
+
+
+
+
+== Activer l'assistant de console
+
+Par défaut, la console NetApp affiche l'assistant de console sur la page d'accueil pour les nouveaux utilisateurs disposant du rôle d'administrateur d'organisation.
+
+
+TIP: Vous ne pouvez fermer l'assistant que lorsque vous ou quelqu'un d'autre avez terminé les éléments obligatoires.  Une fois les éléments obligatoires terminés, l’Assistant est fermé pour tous les utilisateurs de votre organisation et n’apparaît plus.
+
+
+
+== Utilisez l'assistant de console pour commencer
+
+L'assistant de console vous guide dans la configuration de votre environnement de console NetApp avec ces tâches :
+
+* Ajoutez un compte de site de support NetApp (NSS).
+* Connectez-vous à votre parc de stockage en déployant un agent de console, sur site ou dans le cloud.  Vous pouvez le déployer manuellement ou en téléchargeant un OVA.  Cette étape est obligatoire.
+* Gérez votre système en ajoutant ou en découvrant un cluster.  Cette étape est obligatoire.
+* Ajoutez un abonnement au marketplace ou une licence PAYGO.
+* En savoir plus sur les services de données NetApp .
+

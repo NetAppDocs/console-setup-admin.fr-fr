@@ -1,0 +1,512 @@
+---
+sidebar: sidebar 
+permalink: task-install-connector-azure-bluexp.html 
+keywords: install connector, azure connector installation, azure connector, install connector in azure, bluexp, create connector 
+summary: Pour créer un agent de console dans Azure à partir de la console NetApp , vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console. 
+---
+= Créer un agent de console dans Azure à partir de la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour créer un agent de console dans Azure à partir de la console NetApp , vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console.
+
+.Avant de commencer
+* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
+
+
+
+
+== Étape 1 : Configurer le réseau
+
+Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  Ces exigences permettent à l’agent de console de gérer les ressources du cloud hybride.
+
+région Azure:: Si vous utilisez Cloud Volumes ONTAP, l'agent de console doit être déployé dans la même région Azure que les systèmes Cloud Volumes ONTAP qu'il gère, ou dans la https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Paire de régions Azure"^] pour les systèmes Cloud Volumes ONTAP .  Cette exigence garantit qu’une connexion Azure Private Link est utilisée entre Cloud Volumes ONTAP et ses comptes de stockage associés.
++
+--
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-enabling-private-link.html["Découvrez comment Cloud Volumes ONTAP utilise un lien privé Azure"^]
+
+--
+
+
+VNet et sous-réseau:: Lorsque vous créez l’agent de console, vous devez spécifier le réseau virtuel et le sous-réseau sur lesquels il doit résider.
+
+
+Connexions aux réseaux cibles:: L'agent de console nécessite une connexion réseau à l'emplacement où vous prévoyez de créer et de gérer des systèmes.  Par exemple, le réseau sur lequel vous prévoyez de créer des systèmes Cloud Volumes ONTAP ou un système de stockage dans votre environnement local.
+
+
+Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
+
+
+Points de terminaison contactés depuis l'agent de la console:: L'agent de console nécessite un accès Internet sortant pour contacter les points de terminaison suivants afin de gérer les ressources et les processus au sein de votre environnement de cloud public pour les opérations quotidiennes.
++
+--
+Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+\ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
+ a| 
+Pour gérer les ressources dans les régions publiques Azure.
+
+
+
+ a| 
+\ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn
+ a| 
+Pour gérer les ressources dans les régions Azure Chine.
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+
+
+Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez la console NetApp Web fournie via la couche SaaS, elle contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données.  Cela inclut les points de terminaison contactés pour déployer l'agent de console à partir de la console.
++
+--
+link:reference-networking-saas-console.html["Afficher la liste des points de terminaison contactés depuis la console NetApp"] .
+
+--
+
+
+Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et transparentes.  Si vous utilisez un proxy transparent, vous devez uniquement fournir le certificat du serveur proxy.  Si vous utilisez un proxy explicite, vous aurez également besoin de l'adresse IP et des informations d'identification.
++
+--
+* adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+--
+
+
+Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
++
+--
+* HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
+* SSH (22) n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+* Les connexions entrantes via le port 3128 sont requises si vous déployez des systèmes Cloud Volumes ONTAP dans un sous-réseau où une connexion Internet sortante n'est pas disponible.
++
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet sortante pour envoyer des messages AutoSupport , la console configure automatiquement ces systèmes pour utiliser un serveur proxy inclus avec l'agent de la console.  La seule exigence est de s’assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Vous devrez ouvrir ce port après avoir déployé l’agent de console.
+
+
+
+--
+
+
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
++
+--
+Vous devez implémenter cette exigence de mise en réseau après avoir créé l’agent de console.
+
+--
+
+
+
+
+== Étape 2 : Créer une stratégie de déploiement d’agent de console (rôle personnalisé)
+
+Vous devez créer un rôle personnalisé disposant des autorisations nécessaires pour déployer l’agent de console dans Azure.
+
+Créez un rôle personnalisé Azure que vous pouvez attribuer à votre compte Azure ou à un principal de service Microsoft Entra.  La console s’authentifie auprès d’Azure et utilise ces autorisations pour créer l’instance de l’agent de la console en votre nom.
+
+La console déploie la machine virtuelle de l'agent de console dans Azure, active un https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] , crée le rôle requis et l'attribue à la machine virtuelle. link:reference-permissions-azure.html["Examiner comment la console utilise les autorisations"] .
+
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+
+.Étapes
+. Copiez les autorisations requises pour un nouveau rôle personnalisé dans Azure et enregistrez-les dans un fichier JSON.
++
+
+NOTE: Ce rôle personnalisé contient uniquement les autorisations nécessaires pour lancer la machine virtuelle de l’agent de console dans Azure à partir de la console.  N'utilisez pas cette politique pour d'autres situations.  Lorsque la console crée l’agent de console, elle applique un nouvel ensemble d’autorisations à la machine virtuelle de l’agent de console qui permet à l’agent de console de gérer les ressources Azure.
+
++
+[source, json]
+----
+{
+    "Name": "Azure SetupAsService",
+    "Actions": [
+        "Microsoft.Compute/disks/delete",
+        "Microsoft.Compute/disks/read",
+        "Microsoft.Compute/disks/write",
+        "Microsoft.Compute/locations/operations/read",
+        "Microsoft.Compute/operations/read",
+        "Microsoft.Compute/virtualMachines/instanceView/read",
+        "Microsoft.Compute/virtualMachines/read",
+        "Microsoft.Compute/virtualMachines/write",
+        "Microsoft.Compute/virtualMachines/delete",
+        "Microsoft.Compute/virtualMachines/extensions/write",
+        "Microsoft.Compute/virtualMachines/extensions/read",
+        "Microsoft.Compute/availabilitySets/read",
+        "Microsoft.Network/locations/operationResults/read",
+        "Microsoft.Network/locations/operations/read",
+        "Microsoft.Network/networkInterfaces/join/action",
+        "Microsoft.Network/networkInterfaces/read",
+        "Microsoft.Network/networkInterfaces/write",
+        "Microsoft.Network/networkInterfaces/delete",
+        "Microsoft.Network/networkSecurityGroups/join/action",
+        "Microsoft.Network/networkSecurityGroups/read",
+        "Microsoft.Network/networkSecurityGroups/write",
+        "Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",
+        "Microsoft.Network/virtualNetworks/read",
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+        "Microsoft.Network/virtualNetworks/subnets/read",
+        "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",
+        "Microsoft.Network/virtualNetworks/virtualMachines/read",
+        "Microsoft.Network/publicIPAddresses/write",
+        "Microsoft.Network/publicIPAddresses/read",
+        "Microsoft.Network/publicIPAddresses/delete",
+        "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        "Microsoft.Network/networkSecurityGroups/securityRules/write",
+        "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+        "Microsoft.Network/publicIPAddresses/join/action",
+        "Microsoft.Network/locations/virtualNetworkAvailableEndpointServices/read",
+        "Microsoft.Network/networkInterfaces/ipConfigurations/read",
+        "Microsoft.Resources/deployments/operations/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Resources/deployments/delete",
+        "Microsoft.Resources/deployments/cancel/action",
+        "Microsoft.Resources/deployments/validate/action",
+        "Microsoft.Resources/resources/read",
+        "Microsoft.Resources/subscriptions/operationresults/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/delete",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/write",
+        "Microsoft.Authorization/roleDefinitions/write",
+        "Microsoft.Authorization/roleAssignments/write",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
+        "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
+        "Microsoft.Network/networkSecurityGroups/delete",
+        "Microsoft.Storage/storageAccounts/delete",
+        "Microsoft.Storage/storageAccounts/write",
+        "Microsoft.Resources/deployments/write",
+        "Microsoft.Resources/deployments/operationStatuses/read",
+        "Microsoft.Authorization/roleAssignments/read"
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure SetupAsService",
+    "IsCustom": "true"
+}
+----
+. Modifiez le JSON en ajoutant votre ID d’abonnement Azure à l’étendue attribuable.
++
+*Exemple*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz"
+],
+----
+. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
++
+Les étapes suivantes décrivent comment créer le rôle à l’aide de Bash dans Azure Cloud Shell.
+
++
+.. Commencer https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^] et choisissez l'environnement Bash.
+.. Téléchargez le fichier JSON.
++
+image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud Shell où vous pouvez choisir l’option de télécharger un fichier."]
+
+.. Entrez la commande Azure CLI suivante :
++
+[source, azurecli]
+----
+az role definition create --role-definition Policy_for_Setup_As_Service_Azure.json
+----
+
+
++
+Vous disposez désormais d’un rôle personnalisé appelé _Azure SetupAsService_.  Vous pouvez appliquer ce rôle personnalisé à votre compte utilisateur ou à un principal de service.
+
+
+
+
+
+== Étape 3 : Configurer l’authentification
+
+Lors de la création de l’agent de console à partir de la console, vous devez fournir une connexion qui permet à la console de s’authentifier auprès d’Azure et de déployer la machine virtuelle.  Vous avez deux options :
+
+. Sign in avec votre compte Azure lorsque vous y êtes invité.  Ce compte doit disposer d’autorisations Azure spécifiques.  Il s'agit de l'option par défaut.
+. Fournissez des détails sur un principal de service Microsoft Entra.  Ce principal de service nécessite également des autorisations spécifiques.
+
+
+Suivez les étapes pour préparer l’une de ces méthodes d’authentification à utiliser avec la console.
+
+[role="tabbed-block"]
+====
+.Compte Azure
+--
+Attribuez le rôle personnalisé à l’utilisateur qui déploiera l’agent de la console à partir de la console.
+
+.Étapes
+. Dans le portail Azure, ouvrez le service *Abonnements* et sélectionnez l’abonnement de l’utilisateur.
+. Cliquez sur *Contrôle d'accès (IAM)*.
+. Cliquez sur *Ajouter* > *Ajouter une attribution de rôle*, puis ajoutez les autorisations :
++
+.. Sélectionnez le rôle *Azure SetupAsService* et cliquez sur *Suivant*.
++
+
+NOTE: Azure SetupAsService est le nom par défaut fourni dans la stratégie de déploiement de l’agent de console pour Azure.  Si vous avez choisi un nom différent pour le rôle, sélectionnez plutôt ce nom.
+
+.. Gardez *Utilisateur, groupe ou principal du service* sélectionné.
+.. Cliquez sur *Sélectionner les membres*, choisissez votre compte utilisateur et cliquez sur *Sélectionner*.
+.. Cliquez sur *Suivant*.
+.. Cliquez sur *Réviser + attribuer*.
+
+
+
+
+--
+.Principal de service
+--
+Au lieu de vous connecter avec votre compte Azure, vous pouvez fournir à la console les informations d’identification d’un principal de service Azure disposant des autorisations requises.
+
+Créez et configurez un principal de service dans Microsoft Entra ID et obtenez les informations d’identification Azure dont la console a besoin.
+
+.Créer une application Microsoft Entra pour le contrôle d'accès basé sur les rôles
+. Assurez-vous que vous disposez des autorisations dans Azure pour créer une application Active Directory et attribuer l’application à un rôle.
++
+Pour plus de détails, reportez-vous à https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentation Microsoft Azure : autorisations requises"^]
+
+. Depuis le portail Azure, ouvrez le service *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsoft Azure."]
+
+. Dans le menu, sélectionnez *Inscriptions d'applications*.
+. Sélectionnez *Nouvelle inscription*.
+. Précisez les détails de l'application :
++
+** *Nom*: Saisissez un nom pour l'application.
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *URI de redirection*: Vous pouvez laisser ce champ vide.
+
+
+. Sélectionnez *S'inscrire*.
++
+Vous avez créé l’application AD et le principal de service.
+
+
+
+.Attribuer le rôle personnalisé à l'application
+. Depuis le portail Azure, ouvrez le service *Abonnements*.
+. Sélectionnez l'abonnement.
+. Cliquez sur *Contrôle d'accès (IAM) > Ajouter > Ajouter une attribution de rôle*.
+. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et cliquez sur *Suivant*.
+. Dans l'onglet *Membres*, procédez comme suit :
++
+.. Gardez *Utilisateur, groupe ou principal du service* sélectionné.
+.. Cliquez sur *Sélectionner les membres*.
++
+image:screenshot-azure-service-principal-role.png["Une capture d’écran du portail Azure qui affiche la page Membres lors de l’ajout d’un rôle à une application."]
+
+.. Recherchez le nom de l'application.
++
+Voici un exemple :
+
++
+image:screenshot_azure_service_principal_role.png["Une capture d’écran du portail Azure qui montre le formulaire Ajouter une attribution de rôle dans le portail Azure."]
+
+.. Sélectionnez l'application et cliquez sur *Sélectionner*.
+.. Cliquez sur *Suivant*.
+
+
+. Cliquez sur *Réviser + attribuer*.
++
+Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
+
++
+Si vous souhaitez gérer des ressources dans plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Par exemple, la console vous permet de sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+
+
+
+.Ajouter des autorisations à l'API de gestion des services Windows Azure
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Sélectionnez *Autorisations API > Ajouter une autorisation*.
+. Sous *API Microsoft*, sélectionnez *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif["Une capture d’écran du portail Azure qui affiche les autorisations de l’API Azure Service Management."]
+
+. Sélectionnez *Accéder à Azure Service Management en tant qu’utilisateurs de l’organisation*, puis sélectionnez *Ajouter des autorisations*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif["Une capture d’écran du portail Azure qui montre l’ajout des API Azure Service Management."]
+
+
+
+.Obtenir l'ID de l'application et l'ID du répertoire de l'application
+. Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
+. Copiez l'*ID d'application (client)* et l'*ID de répertoire (locataire)*.
++
+image:screenshot_azure_app_ids.gif["Une capture d'écran qui montre l'ID d'application (client) et l'ID de répertoire (locataire) pour une application dans Microsoft Entra IDy."]
+
++
+Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
+
+
+
+.Créer un secret client
+. Ouvrez le service *Microsoft Entra ID*.
+. Sélectionnez *Inscriptions d'applications* et sélectionnez votre application.
+. Sélectionnez *Certificats et secrets > Nouveau secret client*.
+. Fournissez une description du secret et une durée.
+. Sélectionnez *Ajouter*.
+. Copiez la valeur du secret client.
++
+image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azure qui affiche un secret client pour le principal du service Microsoft Entra."]
+
+
+
+.Résultat
+Votre principal de service est maintenant configuré et vous devez avoir copié l'ID de l'application (client), l'ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous créez l’agent de console.
+
+--
+====
+
+
+== Étape 4 : Créer l’agent de console
+
+Créez l’agent de console directement à partir de la console NetApp .
+
+.À propos de cette tâche
+* La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+* Lorsque la console déploie l’agent de console, elle crée un rôle personnalisé et l’attribue à la machine virtuelle de l’agent de console.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources Azure.  Vous devez vous assurer que le rôle est maintenu à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. link:reference-permissions-azure.html["En savoir plus sur le rôle personnalisé de l'agent de console"] .
+
+
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Un abonnement Azure.
+* Un réseau virtuel et un sous-réseau dans la région Azure de votre choix.
+* Détails sur un serveur proxy, si votre organisation a besoin d'un proxy pour tout le trafic Internet sortant :
++
+** adresse IP
+** Informations d'identification
+** Certificat HTTPS
+
+
+* Une clé publique SSH, si vous souhaitez utiliser cette méthode d’authentification pour la machine virtuelle de l’agent de console.  L’autre option pour la méthode d’authentification est d’utiliser un mot de passe.
++
+https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect?tabs=Linux["En savoir plus sur la connexion à une machine virtuelle Linux dans Azure"^]
+
+* Si vous ne souhaitez pas que la console crée automatiquement un rôle Azure pour l'agent de la console, vous devrez créer le vôtre.link:reference-permissions-azure.html["en utilisant la politique sur cette page"] .
++
+Ces autorisations concernent l’instance de l’agent de console elle-même.  Il s’agit d’un ensemble d’autorisations différent de celui que vous avez précédemment configuré pour déployer la machine virtuelle de l’agent de console.
+
+
+
+.Étapes
+. Sélectionnez *Administration > Agents*.
+. Sur la page *Aperçu*, sélectionnez *Déployer l'agent > Azure*
+. Sur la page *Révision*, examinez les exigences de déploiement d’un agent.  Ces exigences sont également détaillées ci-dessus sur cette page.
+. Sur la page *Authentification de la machine virtuelle*, sélectionnez l'option d'authentification qui correspond à la façon dont vous configurez les autorisations Azure :
++
+** Sélectionnez *Connexion* pour vous connecter à votre compte Microsoft, qui devrait disposer des autorisations requises.
++
+Le formulaire est détenu et hébergé par Microsoft.  Vos informations d’identification ne sont pas fournies à NetApp.
+
++
+
+TIP: Si vous êtes déjà connecté à un compte Azure, la console utilise automatiquement ce compte.  Si vous possédez plusieurs comptes, vous devrez peut-être d'abord vous déconnecter pour vous assurer que vous utilisez le bon compte.
+
+** Sélectionnez *Principal du service Active Directory* pour saisir des informations sur le principal du service Microsoft Entra qui accorde les autorisations requises :
++
+*** ID de l'application (client)
+*** ID du répertoire (locataire)
+*** Secret client
+
+
+
+
++
+<<Étape 3 : Configurer l’authentification,Découvrez comment obtenir ces valeurs pour un principal de service>> .
+
+. Sur la page *Authentification de la machine virtuelle*, choisissez un abonnement Azure, un emplacement, un nouveau groupe de ressources ou un groupe de ressources existant, puis choisissez une méthode d’authentification pour la machine virtuelle de l’agent de console que vous créez.
++
+La méthode d’authentification de la machine virtuelle peut être un mot de passe ou une clé publique SSH.
+
++
+https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect?tabs=Linux["En savoir plus sur la connexion à une machine virtuelle Linux dans Azure"^]
+
+. Sur la page *Détails*, saisissez un nom pour l'instance, spécifiez les balises et choisissez si vous souhaitez que la console crée un nouveau rôle doté des autorisations requises ou si vous souhaitez sélectionner un rôle existant que vous avez configuré aveclink:reference-permissions-azure.html["les autorisations requises"] .
++
+Notez que vous pouvez choisir les abonnements Azure associés à ce rôle.  Chaque abonnement que vous choisissez fournit à l'agent de la console des autorisations pour gérer les ressources de cet abonnement (par exemple, Cloud Volumes ONTAP).
+
+. Sur la page *Réseau*, choisissez un réseau virtuel et un sous-réseau, activez ou non une adresse IP publique et spécifiez éventuellement une configuration proxy.
++
+** Sur la page *Groupe de sécurité*, choisissez de créer un nouveau groupe de sécurité ou de sélectionner un groupe de sécurité existant qui autorise les règles entrantes et sortantes requises.
++
+link:reference-ports-azure.html["Afficher les règles du groupe de sécurité pour Azure"] .
+
+
+
+. Vérifiez vos sélections pour vérifier que votre configuration est correcte.
++
+.. La case à cocher *Valider la configuration de l'agent* est cochée par défaut pour que la console valide les exigences de connectivité réseau lors du déploiement.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport pour vous aider à résoudre le problème.  Si le déploiement réussit, aucun rapport n'est fourni.
+
+
++
+[]
+====
+Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case pour ignorer la vérification de validation.
+
+====
+. Sélectionnez *Ajouter*.
++
+La console prépare l'instance en 10 minutes environ.  Restez sur la page jusqu’à ce que le processus soit terminé.
+
+
+
+.Résultat
+Une fois le processus terminé, l’agent de la console peut être utilisé à partir de la console.
+
+
+NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où vous avez créé l’agent de console, vous verrez un système de stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la console NetApp"^]

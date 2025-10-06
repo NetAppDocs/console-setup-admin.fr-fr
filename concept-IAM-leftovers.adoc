@@ -1,0 +1,171 @@
+= Organisation
+:allow-uri-read: 
+
+
+Les sections suivantes décrivent les différents composants de l’utilisation d’IAM dans BlueXP.
+
+Lorsque vous utilisez BlueXP IAM, vous gérerez les composants suivants :
+
+* L'organisation
+* Dossiers
+* Projets
+* Ressources
+* Membres
+* Rôles et autorisations
+* Connecteurs
+
+
+Les ressources BlueXP sont organisées hiérarchiquement :
+
+* L'organisation est le sommet de la hiérarchie.
+* Les dossiers sont des enfants de l'organisation ou d'un autre dossier.
+* Les projets sont des enfants de l'organisation ou d'un dossier.
+* Les ressources sont associées à un ou plusieurs dossiers ou projets.
+
+
+L’image suivante illustre cette hiérarchie à un niveau de base.
+
+image:diagram-iam-resource-hierarchy.png["Un diagramme conceptuel qui montre la hiérarchie des ressources pour BlueXP IAM : une organisation, des dossiers, des projets et des ressources."]
+
+
+
+=== Organisation
+
+Une _organisation_ est le niveau supérieur du système IAM de BlueXP et représente généralement votre entreprise.  Votre organisation se compose de dossiers, de projets, de membres, de rôles et de ressources.  Les connecteurs sont associés à des projets spécifiques de l'organisation.
+
+Lorsque vous vous inscrivez à BlueXP, vous êtes invité à créer une nouvelle organisation.
+
+
+
+=== Dossiers
+
+Un _dossier_ vous permet de regrouper des projets liés et de les séparer des autres projets de votre organisation.  Par exemple, un dossier peut représenter un emplacement géographique (UE ou États-Unis Est), un site (Londres ou Toronto) ou une unité commerciale (ingénierie ou marketing).
+
+Les dossiers peuvent contenir des projets, d’autres dossiers ou une combinaison des deux.
+
+
+
+=== Projets
+
+Un _projet_ représente un espace de travail dans BlueXP auquel les membres de l'organisation accèdent à partir du canevas BlueXP afin de gérer les ressources.  Par exemple, un projet peut inclure un système Cloud Volumes ONTAP , un cluster ONTAP sur site ou un système de fichiers FSx pour ONTAP .
+
+Une organisation peut avoir un ou plusieurs projets.  Un projet peut résider directement sous l’organisation ou dans un dossier.
+
+
+
+=== Ressources
+
+Une _ressource_ est un environnement de travail que vous avez créé ou découvert dans BlueXP.
+
+Lorsque vous créez ou découvrez une ressource, la ressource est associée au projet actuellement sélectionné.  C'est peut-être le seul projet auquel vous souhaitez associer cette ressource.  Mais vous pouvez choisir d’associer la ressource à des projets supplémentaires dans votre organisation.
+
+Par exemple, vous pouvez associer un système Cloud Volumes ONTAP à un projet supplémentaire ou à tous les projets de votre organisation.  La manière dont vous associez une ressource dépend des besoins de votre organisation.
+
+
+TIP: Vous pouvez également associer un connecteur à un autre dossier ou projet de votre organisation. <<Connecteurs,En savoir plus sur l'utilisation des connecteurs avec BlueXP IAM>> .
+
+
+
+==== Quand associer une ressource à un dossier
+
+Vous pouvez organiser vos ressources dans des dossiers lorsque vous avez besoin d'une séparation des responsabilités ou des ressources de stockage.
+
+Un _administrateur d'organisation_ peut associer une ressource à un dossier afin qu'un _administrateur de dossier ou de projet_ puisse ensuite associer cette ressource aux projets appropriés qui résident dans le dossier.
+
+Par exemple, disons que vous avez un dossier qui contient deux projets :
+
+image:diagram-iam-resource-association-folder-1.png["Un diagramme qui montre un dossier et deux projets qui résident dans le dossier : projet A et projet B."]
+
+L'administrateur de l'organisation peut associer une ressource au dossier :
+
+image:diagram-iam-resource-association-folder-2.png["Un diagramme qui montre un dossier, une ressource associée au dossier et deux projets qui résident dans le dossier : le projet A et le projet B."]
+
+L'association de la ressource au dossier ne rend pas automatiquement cette ressource accessible à partir de tous les projets du dossier.  Mais l'administrateur du dossier ou du projet peut alors décider pour quels projets cette ressource doit être mise à disposition.  Après avoir pris cette décision, l’administrateur peut alors associer la ressource aux bons projets.
+
+Dans cet exemple, l’administrateur associe la ressource au projet A :
+
+image:diagram-iam-resource-association-folder-3.png["Un diagramme qui montre un dossier, deux projets qui résident dans le dossier : le projet A et le projet B, et une ressource associée au projet A."]
+
+Les membres disposant d’autorisations pour le projet A peuvent désormais accéder à la ressource.
+
+
+
+=== Membres
+
+Les membres de votre organisation sont des comptes d’utilisateurs ou des comptes de service.  Un compte de service est généralement utilisé par une application pour effectuer des tâches spécifiques sans intervention humaine.
+
+Une organisation possède au moins un utilisateur avec le rôle _Administrateur de l'organisation_ (l'utilisateur qui crée l'organisation se voit automatiquement attribuer ce rôle).  Vous pouvez ajouter d’autres membres à l’organisation et attribuer différentes autorisations à différents niveaux de la hiérarchie des ressources.
+
+
+
+=== Rôles et autorisations
+
+Dans BlueXP IAM, vous n’accordez pas d’autorisations directement aux membres de l’organisation.  Au lieu de cela, vous attribuez à chaque membre un rôle.  Un rôle contient un ensemble d’autorisations qui permet à un membre d’effectuer des actions spécifiques à un niveau spécifique de la hiérarchie des ressources.
+
+En fournissant des autorisations à une partie spécifique de la hiérarchie des ressources, vous pouvez restreindre les droits d’accès uniquement aux ressources dont un membre a besoin pour effectuer ses tâches.
+
+
+
+==== Où vous pouvez attribuer des rôles dans la hiérarchie
+
+Lorsque vous associez un membre à un rôle, vous devez sélectionner l’organisation entière, un dossier spécifique ou un projet spécifique.  Le rôle que vous sélectionnez donne à un membre des autorisations sur les ressources de la partie sélectionnée de la hiérarchie.
+
+
+
+==== Héritage des rôles
+
+Lorsque vous attribuez un rôle, celui-ci est hérité dans la hiérarchie de l'organisation :
+
+Organisation:: Les rôles que vous accordez au niveau de l’organisation sont hérités par tous les dossiers, projets et ressources de l’organisation.  Cela signifie que le membre dispose d’autorisations sur tout dans l’organisation.
+Dossiers:: Les rôles que vous accordez au niveau du dossier sont hérités par tous les dossiers, projets et ressources du dossier.
++
+--
+Par exemple, si vous attribuez un rôle au niveau du dossier et que ce dossier contient trois projets, le membre disposera d’autorisations sur ces trois projets et toutes les ressources associées.
+
+--
+Projets:: Les rôles que vous accordez au niveau du projet sont hérités par toutes les ressources associées à ce projet.
+
+
+
+
+==== Rôles multiples
+
+Vous pouvez attribuer à chaque membre de l’organisation un rôle à différents niveaux de la hiérarchie de l’organisation.  Il peut s’agir du même rôle ou d’un rôle différent.  Par exemple, vous pouvez attribuer un rôle de membre A au projet 1 et au projet 2.  Ou vous pouvez attribuer un rôle de membre A pour le projet 1 et un rôle B pour le projet 2.
+
+
+
+==== Rôles d'accès
+
+BlueXP prend en charge plusieurs rôles d’accès que vous pouvez attribuer aux membres de votre organisation.
+
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+
+
+=== Connecteurs
+
+Lorsqu'un _administrateur d'organisation_ crée un connecteur, BlueXP associe automatiquement ce connecteur à l'organisation et au projet actuellement sélectionné.  L'administrateur de l'organisation a automatiquement accès à ce connecteur depuis n'importe où dans l'organisation.  Mais si vous avez d’autres membres dans votre organisation avec des rôles différents, ces membres ne peuvent accéder à ce connecteur qu’à partir du projet dans lequel il a été créé, sauf si vous associez ce connecteur à d’autres projets.
+
+Vous souhaiterez peut-être rendre un connecteur disponible pour être utilisé avec un autre projet dans les cas suivants :
+
+* Vous souhaitez autoriser les membres de votre organisation à utiliser un connecteur existant pour créer ou découvrir des environnements de travail supplémentaires dans un autre projet
+* Vous avez associé une ressource existante à un autre projet et cette ressource est gérée par un connecteur
++
+Si une ressource que vous avez associée à un projet supplémentaire est découverte à l’aide d’un connecteur BlueXP , vous devez également associer le connecteur au projet auquel la ressource est désormais associée.  Sinon, le connecteur et sa ressource associée ne sont pas accessibles depuis le canevas BlueXP par les membres qui n'ont pas le rôle _Administrateur de l'organisation_.
+
+
+
+Vous pouvez créer une association à partir de la page *Connecteurs* dans BlueXP IAM :
+
+* Associer un connecteur à un projet
++
+Lorsque vous associez un connecteur à un projet, ce connecteur est accessible depuis le canevas BlueXP lors de la visualisation du projet.
+
+* Associer un connecteur à un dossier
++
+L'association d'un connecteur à un dossier ne rend pas automatiquement ce connecteur accessible à partir de tous les projets du dossier.  Les membres de l'organisation ne peuvent pas accéder à un connecteur à partir d'un projet tant que vous n'avez pas associé le connecteur à ce projet spécifique.
+
++
+Un _administrateur d'organisation_ peut associer un connecteur à un dossier afin que l'_administrateur de dossier ou de projet_ puisse prendre la décision d'associer ce connecteur aux projets appropriés qui résident dans le dossier.
+
+

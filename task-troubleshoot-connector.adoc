@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: task-troubleshoot-connector.html 
+keywords: troubleshoot, system id, system ID, autosupport, asup, troubleshoot connector, download failure, cloud volumes ontap download failure, agent 
+summary: 'Pour résoudre les problèmes liés à un agent de console, vous pouvez collaborer avec le support NetApp , qui peut vous demander votre ID système, la version de l"agent ou les derniers messages AutoSupport .  Vous pouvez également consulter la base de connaissances NetApp pour résoudre les problèmes vous-même.' 
+---
+= Dépanner l'agent de la console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour résoudre les problèmes avec un agent de console, vous pouvez vérifier les problèmes vous-même ou travailler avec le support NetApp qui peut vous demander votre ID système, la version de l'agent ou les derniers messages AutoSupport .
+
+Si vous disposez d'un compte sur le site de support NetApp , vous pouvez également consulter lelink:https://kb.netapp.com/Cloud/BlueXP["Base de connaissances NetApp ."]
+
+
+
+== Messages d'erreur courants et résolutions
+
+Le tableau répertorie les messages d’erreur courants et leurs suggestions de résolution :
+
+[cols="19,27,27"]
+|===
+| Message d'erreur | Explication | Ce qu'il faut faire 
+
+
+ a| 
+Impossible de charger l'interface utilisateur de l'agent de la console
+ a| 
+L'installation de l'agent a échoué
+ a| 
+* Vérifiez que le service Service Manager est actif.
+* Vérifiez que tous les conteneurs sont en cours d’exécution.
+* Assurez-vous que votre pare-feu autorise l’accès au service sur le port 8888.
+* Si le problème persiste, contactez le support.
+
+
+
+
+ a| 
+Impossible d'accéder à l'interface utilisateur de l'agent NetApp
+ a| 
+Ce message apparaît lorsque vous essayez d'accéder à l'adresse IP d'un agent.  L'agent peut ne pas s'initialiser s'il ne dispose pas de l'accès réseau correct ou s'il est instable.
+ a| 
+* Connectez-vous à l'agent de la console.
+* Vérifiez que le service Service Manager
+* Vérifiez que l’agent dispose de l’accès réseau dont il a besoin.link:reference-networking-saas-console.html["En savoir plus sur les points de terminaison d’accès réseau requis."]
+
+
+
+
+ a| 
+Impossible de charger les paramètres de l'agent
+ a| 
+La console affiche ce message lorsque vous essayez d'accéder à la page des paramètres de l'agent.
+ a| 
+* Vérifiez si le conteneur OCCM est en cours d'exécution et fonctionne.
+* Si le problème persiste, contactez le support.
+
+
+
+
+ a| 
+Impossible de charger les informations de support pour l'agent.
+ a| 
+Ce message s'affiche si l'agent ne peut pas accéder à votre compte d'assistance.
+ a| 
+* *.
+
+|===
+
+
+== Vérifiez l'état de l'agent de la console
+
+Utilisez l’une des commandes suivantes pour vérifier votre agent de console.  Tous les services doivent avoir le statut _En cours d'exécution_.  Si ce n’est pas le cas, contactez le support NetApp .
+
+[NOTE]
+====
+Pour plus d'informations sur l'accès aux diagnostics de l'agent de la console, consultez les rubriques suivantes :
+
+* link:task-maintain-connectors.html#connect-linux-host["Vérifier l'état de l'agent de la console (pour les déploiements d'hôtes Linux)"]
+* link:task-agent-vm-config.html#connect-vcenter-host["Vérifier l'état de l'agent de la console (pour les déploiements VCenter)"]
+
+
+====
+Docker (pour les déploiements Ubuntu et VCenter)::
++
+--
+[source, cli]
+----
+docker ps -a
+----
+--
+Podman (pour les déploiements RedHat Enterprise Linux)::
++
+--
+[source, cli]
+----
+podman ps -a
+----
+--
+
+
+
+
+== Afficher la version de l'agent de la console
+
+Affichez la version de l'agent de la console pour confirmer la mise à niveau ou partagez-la avec votre représentant NetApp .
+
+.Étapes
+. Sélectionnez *Administration > Support > Agents*.
++
+La console affiche la version en haut de la page.
+
+
+
+
+
+== Vérifier l'accès au réseau
+
+Assurez-vous que l’agent de console dispose de l’accès réseau dont il a besoin.link:reference-networking-saas-console.html["En savoir plus sur les points d’accès réseau requis."]
+
+
+
+== Problèmes d'installation de l'agent de console
+
+Si l’installation échoue, consultez le rapport et les journaux pour résoudre les problèmes.
+
+Vous pouvez également accéder au rapport de validation au format JSON et aux journaux de configuration directement depuis l'hôte de l'agent de la console dans les répertoires suivants :
+
+[source, cli]
+----
+/tmp/netapp-console-agents/logs
+
+/tmp/netapp-console-agents/results.json
+
+----
+[IMPORTANT]
+====
+* Pour les nouveaux déploiements d’agents, NetApp vérifie les points de terminaison suivants :link:reference-networking-saas-console.html["répertorié ici"^] .  Cette vérification de configuration échoue avec une erreur si vous utilisez les points de terminaison précédents utilisés pour les mises à niveau,link:reference-networking-saas-console-previous.html["répertorié ici"] .  NetApp recommande de mettre à jour vos règles de pare-feu pour autoriser l'accès aux points de terminaison actuels et bloquer l'accès aux points de terminaison précédents dès que possible.link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre réseau"] .
+* Si vous mettez à jour les points de terminaison de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+====
+
+
+=== Désactiver les vérifications de configuration pour les installations manuelles
+
+Il peut arriver que vous ayez besoin de désactiver les contrôles de configuration qui vérifient la connectivité sortante lors de l'installation. Par exemple:
+
+* Lors de l'installation manuelle d'un agent dans votre environnement Government Cloud, vous devez désactiver les vérifications de configuration, sinon l'installation échouera.
+* Vous souhaiterez peut-être également désactiver ces vérifications si vous continuez à utiliser la liste de points de terminaison précédente pour les mises à niveau de l'agent.
+
+
+.Étapes
+Vous désactivez la vérification de configuration en définissant l'indicateur _skipConfigCheck_ dans le fichier _com/opt/application/netapp/service-manager-2/config.json_.  Par défaut, cet indicateur est défini sur faux et la vérification de configuration vérifie l'accès sortant pour l'agent.  Définissez cet indicateur sur vrai pour désactiver la vérification.  Vous devez être familiarisé avec la syntaxe JSON avant de terminer cette étape.
+
+Pour réactiver la vérification de configuration, procédez comme suit et définissez l'indicateur _skipConfigCheck_ sur false.
+
+.Étapes
+. Accédez à l’hôte de l’agent de la console en tant que root ou avec les privilèges sudo.
+. Créez une copie de sauvegarde du fichier _/opt/application/netapp/service-manager-2/config.json_ pour vous assurer de pouvoir annuler vos modifications.
+. Arrêtez le service Service Manager 2 en exécutant la commande suivante :
+
+
+[source, cli]
+----
+systemctl stop netapp-service-manager.service
+----
+. Modifiez le fichier _/opt/application/netapp/service-manager-2/config.json_ et remplacez la valeur de l'indicateur _skipConfigCheck_ par true.
++
+[source, json]
+----
+  "skipConfigCheck": true,
+----
+. Enregistrez votre fichier.
+. Redémarrez le service Service Manager 2 en exécutant la commande suivante :
++
+[source, cli]
+----
+systemctl restart netapp-service-manager.service
+----
+
+
+
+
+=== Échec de l'installation sur les points de terminaison utilisés pour les mises à niveau
+
+Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case *Configuration de l'agent de validation* ou ignorez la vérification de la configuration lors de l'installation dans un VCenter.
+
+NetApp recommande de mettre à jour vos règles de pare-feu pour autoriser l'accès aulink:reference-networking-saas-console.html["points finaux actuels"] dans les meilleurs délais. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour vos points de terminaison"] .
+
+Assurez-vous de vérifier que la seule erreur est liée aux points de terminaison précédents :
+
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
+
+
+S'il y a d'autres erreurs, vous devrez les résoudre avant de continuer.
+
+
+
+== Travailler avec le support NetApp
+
+Si vous n’avez pas réussi à résoudre les problèmes avec votre agent de console, vous pouvez contacter le support NetApp .  Le support NetApp peut vous demander l'ID de l'agent de console ou de lui envoyer les journaux de l'agent de console s'il ne les possède pas déjà.
+
+
+
+=== Rechercher l'ID de l'agent de la console
+
+Pour vous aider à démarrer, vous aurez peut-être besoin de l’ID système de votre agent de console.  L'ID est généralement utilisé à des fins de licence et de dépannage.
+
+.Étapes
+. Sélectionnez *Administration > Support > Agents*.
++
+Vous pouvez trouver l'ID système en haut de la page.
+
++
+*Exemple*
+
++
+image:screenshot-system-id.png["Une capture d’écran qui montre l’ID système qui apparaît dans le tableau de bord d’assistance."]
+
+. Survolez et cliquez sur l'ID pour le copier.
+
+
+
+
+=== Téléchargez ou envoyez un message AutoSupport
+
+Si vous rencontrez des problèmes, NetApp peut vous demander d'envoyer un message AutoSupport au support NetApp à des fins de dépannage.
+
+
+NOTE: La console NetApp prend jusqu'à cinq heures pour envoyer des messages AutoSupport en raison de l'équilibrage de charge.  Pour une communication urgente, téléchargez le fichier et envoyez-le manuellement.
+
+.Étapes
+. Sélectionnez *Administration > Support > Agents*.
+. Selon la manière dont vous devez envoyer les informations au support NetApp , choisissez l’une des options suivantes :
++
+.. Sélectionnez l’option permettant de télécharger le message AutoSupport sur votre ordinateur local.  Vous pouvez ensuite l’envoyer au support NetApp en utilisant la méthode de votre choix.
+.. Sélectionnez *Envoyer AutoSupport* pour envoyer directement le message au support NetApp .
+
+
+
+
+
+
+== Corriger les échecs de téléchargement lors de l'utilisation d'une passerelle Google Cloud NAT
+
+L'agent de console télécharge automatiquement les mises à jour logicielles pour Cloud Volumes ONTAP.  Votre configuration peut entraîner l'échec du téléchargement si elle utilise une passerelle NAT Google Cloud.  Vous pouvez corriger ce problème en limitant le nombre de parties dans lesquelles l’image du logiciel est divisée.  Cette étape doit être complétée en utilisant l'API.
+
+.Étape
+. Soumettez une requête PUT à /occm/config avec le JSON suivant comme corps :
++
+[source]
+----
+{
+  "maxDownloadSessions": 32
+}
+----
++
+La valeur de _maxDownloadSessions_ peut être 1 ou tout entier supérieur à 1.  Si la valeur est 1, l'image téléchargée ne sera pas divisée.
+
++
+Notez que 32 est une valeur d’exemple.  La valeur dépend de votre configuration NAT et du nombre de sessions simultanées.
+
+
+
+https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#occmconfig["En savoir plus sur l'appel d'API /occm/config"^]
+
+
+
+== Obtenez de l'aide auprès de la base de connaissances NetApp
+
+https://kb.netapp.com/Special:Search?path=Cloud%2FBlueXP&query=connector&type=wiki["Consultez les informations de dépannage créées par l'équipe de support NetApp"] .

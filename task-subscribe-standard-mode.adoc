@@ -1,0 +1,193 @@
+---
+sidebar: sidebar 
+permalink: task-subscribe-standard-mode.html 
+keywords: subscribe, subscription, marketplace subscription, paygo, contract, annual contract 
+summary: Abonnez-vous aux services de données NetApp depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire ou via un contrat annuel.  Si vous avez acheté une licence auprès de NetApp, vous devez également vous abonner à l’offre de la place de marché.  Votre licence est toujours facturée en premier, mais vous serez facturé au tarif horaire si vous dépassez votre capacité autorisée ou si la durée de la licence expire. 
+---
+= Abonnez-vous aux services intelligents NetApp (mode standard)
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Abonnez-vous aux services intelligents NetApp depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Si vous avez acheté une licence auprès de NetApp (BYOL), vous devez également vous abonner à l'offre de la place de marché.  Votre licence est toujours facturée en premier, mais vous serez facturé au tarif horaire si vous dépassez votre capacité autorisée ou si la durée de la licence expire.
+
+Un abonnement au marketplace permet de facturer les services de données NetApp suivants :
+
+* Sauvegarde et récupération NetApp
+* Cloud Volumes ONTAP
+* Hiérarchisation du cloud NetApp
+* Résilience aux ransomwares NetApp
+* Reprise après sinistre NetApp
+
+
+La classification des données NetApp est activée via votre abonnement, mais l'utilisation de la classification est gratuite.
+
+.Avant de commencer
+Vous devez déjà avoir déployé un agent de console pour vous abonner aux services de données.  Vous devez associer un abonnement au marché aux informations d’identification cloud connectées à un agent de console.
+
+[role="tabbed-block"]
+====
+.AWS
+--
+La vidéo suivante montre les étapes à suivre pour s'abonner à NetApp Intelligent Services depuis AWS Marketplace :
+
+.Abonnez-vous aux services intelligents NetApp depuis la place de marché AWS
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
+.Étapes
+. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
++
+Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement à la place de marché à des informations d'identification associées à la console NetApp .
+
++
+image:screenshot_aws_configure_subscription.png["Une capture d’écran du menu d’action pour un ensemble d’informations d’identification existantes."]
+
+. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les informations d'identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans AWS Marketplace :
++
+.. Sélectionnez *Afficher les options d'achat*.
+.. Sélectionnez *S'abonner*.
+.. Sélectionnez *Configurer votre compte*.
++
+Vous serez redirigé vers la console NetApp .
+
+.. À partir de la page *Affectation d'abonnement* :
++
+*** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+*** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
+*** Sélectionnez *Enregistrer*.
+
+
+
+
+
+
+--
+.Azuré
+--
+.Étapes
+. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
++
+Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement à la place de marché à des informations d'identification associées à la console NetApp .
+
+. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les informations d’identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans la Place de marché Azure :
++
+.. Si vous y êtes invité, connectez-vous à votre compte Azure.
+.. Sélectionnez *S'abonner*.
+.. Remplissez le formulaire et sélectionnez *S'abonner*.
+.. Une fois le processus d'abonnement terminé, sélectionnez *Configurer le compte maintenant*.
++
+Vous serez redirigé vers la console NetApp .
+
+.. À partir de la page *Affectation d'abonnement* :
++
+*** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+*** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
+*** Sélectionnez *Enregistrer*.
++
+La vidéo suivante montre les étapes à suivre pour s'abonner à partir de la Place de marché Azure :
+
++
+.Abonnez-vous aux services intelligents NetApp depuis la place de marché Azure
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
+
+
+
+
+
+
+--
+.Google Cloud
+--
+.Étapes
+. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.  + nouvelle capture d'écran nécessaire (TS)image:screenshot_gcp_add_subscription.png["Une capture d’écran du menu d’action pour un ensemble d’informations d’identification existantes."]
+. Pour configurer un abonnement existant avec les informations d'identification sélectionnées, sélectionnez un projet et un abonnement Google Cloud dans la liste déroulante, puis sélectionnez *Configurer*.
++
+image:screenshot_gcp_associate.gif["Capture d'écran d'un projet Google Cloud et d'un abonnement sélectionnés pour les informations d'identification Google Cloud."]
+
+. Si vous n'avez pas encore d'abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans Google Cloud Marketplace.
++
+
+NOTE: Avant d'effectuer les étapes suivantes, assurez-vous que vous disposez des privilèges d'administrateur de facturation dans votre compte Google Cloud ainsi que d'une connexion à la console NetApp .
+
++
+.. Après avoir été redirigé vers le https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Page des services intelligents NetApp sur Google Cloud Marketplace"^] , assurez-vous que le bon projet est sélectionné dans le menu de navigation supérieur.
++
+image:screenshot_gcp_cvo_marketplace.png["Une capture d'écran de la page du marché Cloud Volumes ONTAP dans Google Cloud."]
+
+.. Sélectionnez *S'abonner*.
+.. Sélectionnez le compte de facturation approprié et acceptez les conditions générales.
+.. Sélectionnez *S'abonner*.
++
+Cette étape envoie votre demande de transfert à NetApp.
+
+.. Dans la boîte de dialogue contextuelle, sélectionnez *S'inscrire auprès de NetApp, Inc.*
++
+Cette étape doit être effectuée pour lier l'abonnement Google Cloud à votre organisation ou compte Console.  Le processus de liaison d'un abonnement n'est pas terminé tant que vous n'êtes pas redirigé depuis cette page et que vous ne vous connectez pas à la console.
+
++
+image:screenshot_gcp_marketplace_register.png["Une capture d'écran d'une fenêtre contextuelle d'inscription."]
+
+.. Suivez les étapes sur la page *Affectation d'abonnement* :
++
+
+NOTE: Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["la page Cloud Volumes ONTAP dans la console NetApp"^] plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.
+
++
+*** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.
+*** Dans le champ *Remplacer l'abonnement existant*, choisissez si vous souhaitez remplacer automatiquement l'abonnement existant pour une organisation ou un compte par ce nouvel abonnement.
++
+La console remplace l’abonnement existant pour toutes les informations d’identification de l’organisation ou du compte par ce nouvel abonnement.  Si un ensemble d'informations d'identification n'a jamais été associé à un abonnement, ce nouvel abonnement ne sera pas associé à ces informations d'identification.
+
++
+Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
+
+*** Sélectionnez *Enregistrer*.
++
+La vidéo suivante montre les étapes à suivre pour s'abonner à partir de Google Cloud Marketplace :
+
++
+.Abonnez-vous à Google Cloud Marketplace
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
+
+
+.. Une fois ce processus terminé, revenez à la page Informations d’identification dans la console et sélectionnez ce nouvel abonnement.
++
+image:screenshot_gcp_associate.gif["Une capture d’écran de la page d’attribution d’abonnement."]
+
+
+
+
+
+--
+====
+.Informations connexes
+* https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-capacity-licenses.html["Gérer les licences BYOL basées sur la capacité pour Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Gérer les licences BYOL pour les services de données"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Gérer les informations d'identification et les abonnements AWS"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Gérer les informations d'identification et les abonnements Azure"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Gérer les informations d'identification et les abonnements Google Cloud"]
+

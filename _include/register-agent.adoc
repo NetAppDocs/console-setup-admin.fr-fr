@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+Connectez-vous à la console et associez l’agent de la console à votre organisation.  La manière dont vous vous connectez dépend du mode dans lequel vous utilisez la console.  Si vous utilisez la console en mode standard, vous vous connectez via le site Web SaaS.  Si vous utilisez la console en mode restreint ou privé, vous vous connectez localement à partir de l'hôte de l'agent de la console.
+
+.Étapes
+. Ouvrez un navigateur Web et entrez l’URL de l’hôte de l’agent de la console :
++
+L'URL de l'hôte de la console peut être un hôte local, une adresse IP privée ou une adresse IP publique, selon la configuration de l'hôte.  Par exemple, si l’agent de console se trouve dans le cloud public sans adresse IP publique, vous devez saisir une adresse IP privée provenant d’un hôte disposant d’une connexion à l’hôte de l’agent de console.
+
+. Inscrivez-vous ou connectez-vous.
+. Après vous être connecté, configurez la console :
++
+.. Spécifiez l’organisation de la console à associer à l’agent de la console.
+.. Entrez un nom pour le système.
+.. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
++
+Le mode restreint n’est pas pris en charge lorsque l’agent de console est installé sur site.
+
+.. Sélectionnez *Commençons*.
+
+
+

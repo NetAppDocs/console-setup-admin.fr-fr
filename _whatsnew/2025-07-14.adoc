@@ -1,0 +1,67 @@
+= Connecteur 3.9.54
+:allow-uri-read: 
+
+
+
+
+=== Connecteur 3.9.54
+
+Cette version du connecteur BlueXP inclut des améliorations de sécurité, des corrections de bogues et les nouvelles fonctionnalités suivantes :
+
+* Prise en charge des proxys transparents pour les connecteurs dédiés à la prise en charge des services Cloud Volumes ONTAP .link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["En savoir plus sur la configuration d’un proxy transparent."]
+* Possibilité d'utiliser des balises réseau pour aider à acheminer le trafic du connecteur lorsque le connecteur est déployé dans un environnement Google Cloud.
+* Notifications supplémentaires intégrées au produit pour la surveillance de l'état du connecteur, y compris l'utilisation du processeur et de la RAM.
+
+
+À l'heure actuelle, la version 3.9.54 est disponible pour le mode standard et le mode restreint.
+
+
+
+=== Gestion des identités et des accès BlueXP (IAM)
+
+La gestion des identités et des accès dans BlueXP offre désormais les fonctionnalités suivantes :
+
+* Prise en charge d'IAM en mode privé, vous permettant de gérer l'accès et les autorisations des utilisateurs pour les services et applications BlueXP .
+* Gestion simplifiée des fédérations d'identité, incluant une navigation plus facile, des options plus claires pour la configuration des connexions fédérées et une visibilité améliorée sur les fédérations existantes.
+* Rôles d'accès pour la BlueXP backup and recovery, la BlueXP disaster recovery et la gestion de la fédération.
+
+
+
+
+==== Prise en charge d'IAM en mode privé
+
+BlueXP prend désormais en charge IAM en mode privé, vous permettant de gérer l'accès et les autorisations des utilisateurs pour les services et applications BlueXP .  Cette amélioration permet aux clients en mode privé de tirer parti du contrôle d’accès basé sur les rôles (RBAC) pour une meilleure sécurité et conformité.
+
+link:https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#iam["En savoir plus sur IAM dans BlueXP."]
+
+
+
+==== Gestion simplifiée des fédérations d'identité
+
+BlueXP propose désormais une interface plus intuitive pour la gestion de la fédération d'identité. Cela inclut une navigation plus facile, des options plus claires pour la configuration des connexions fédérées et une meilleure visibilité sur les fédérations existantes.
+
+L'activation de l'authentification unique (SSO) via la fédération d'identité permet aux utilisateurs de se connecter à BlueXP avec leurs informations d'identification d'entreprise.  Cela améliore la sécurité, réduit l’utilisation des mots de passe et simplifie l’intégration.
+
+Vous serez invité à importer toutes les connexions fédérées existantes vers la nouvelle interface pour accéder aux nouvelles fonctionnalités de gestion.  Cela vous permet de profiter des dernières améliorations sans avoir à recréer vos connexions fédérées.link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-federation-import.html["En savoir plus sur l’importation de votre connexion fédérée existante vers BlueXP."]
+
+Une gestion améliorée de la fédération vous permet de :
+
+* Ajoutez plusieurs domaines vérifiés à une connexion fédérée, ce qui vous permet d'utiliser plusieurs domaines avec le même fournisseur d'identité (IdP).
+* Désactivez ou supprimez les connexions fédérées lorsque cela est nécessaire, ce qui vous donne le contrôle de l'accès et de la sécurité des utilisateurs.
+* Contrôlez l’accès à la gestion de la fédération avec les rôles IAM.
+
+
+link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-federation.html["En savoir plus sur la fédération d’identité dans BlueXP."]
+
+
+
+==== Nouveaux rôles d'accès pour la BlueXP backup and recovery, la BlueXP disaster recovery et la gestion de la fédération
+
+BlueXP prend désormais en charge l'utilisation des rôles IAM pour les fonctionnalités et services de données suivants :
+
+* BlueXP backup and recovery
+* BlueXP disaster recovery
+* Fédération
+
+
+link:https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur l’utilisation des rôles d’accès."]

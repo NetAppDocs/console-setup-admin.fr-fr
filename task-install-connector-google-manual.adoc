@@ -1,0 +1,702 @@
+---
+sidebar: sidebar 
+permalink: task-install-connector-google-manual.html 
+keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, manual install, create connector, gcp installation, gcp connector 
+summary: 'Pour installer manuellement l"agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l"hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la console, puis fournir les autorisations que vous avez préparées.' 
+---
+= Installer manuellement l'agent de console dans Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pour installer manuellement l'agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l'hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la console, puis fournir les autorisations que vous avez préparées.
+
+.Avant de commencer
+* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
+
+
+
+
+== Étape 1 : Examiner les exigences de l'hôte
+
+Le logiciel de l'agent de console doit s'exécuter sur un hôte qui répond aux exigences spécifiques du système d'exploitation, de la RAM, des ports, etc.
+
+
+NOTE: L'agent de console réserve la plage UID et GID de 19 000 à 19 200.  Cette plage est fixe et ne peut pas être modifiée.  Si un logiciel tiers sur votre hôte utilise des UID ou des GID dans cette plage, l'installation de l'agent échouera.  NetApp recommande d'utiliser un hôte exempt de logiciels tiers pour éviter les conflits.
+
+Hôte dédié:: L'agent de console n'est pas pris en charge sur un hôte partagé avec d'autres applications. L'hôte doit être un hôte dédié.  L'hôte peut être de n'importe quelle architecture répondant aux exigences de taille suivantes :
++
+--
+* CPU : 8 cœurs ou 8 vCPU
+* RAM : 32 Go
+* Espace disque : 165 Go sont recommandés pour l’hôte, avec les exigences de partition suivantes :
++
+** `/opt`: 120 Go d'espace doivent être disponibles
++
+L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
+
+** `/var`: 40 Go d'espace doivent être disponibles
++
+L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+
+
+
+
+
+--
+Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
+[[podman-versions]]Configuration requise pour le système d'exploitation et les conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
++
+--
+[cols="2a,2a,2a,2a,2a"]
+|===
+| Système opérateur | Versions de systèmes d'exploitation prises en charge | Versions d'agent prises en charge | Outil de conteneur requis | SELinux a 
+
+
+ a| 
+Red Hat Enterprise Linux
+ a| 
+9,1 à 9,4
+
+8,6 à 8,10
+
+* Versions en langue anglaise uniquement.
+* L'hôte doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, l'hôte ne peut pas accéder aux référentiels pour mettre à jour le logiciel tiers requis lors de l'installation de l'agent.
+
+ a| 
+3.9.50 ou version ultérieure avec la console en mode standard ou en mode restreint
+ a| 
+Podman version 4.6.1 ou 4.9.4
+
+<<podman-configuration,Afficher les exigences de configuration de Podman>> .
+ a| 
+Pris en charge en mode d'application ou en mode permissif
+
+* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
+
+
+
+
+ a| 
+Ubuntu
+ a| 
+24,04 LTS
+ a| 
+3.9.45 ou version ultérieure avec la console NetApp en mode standard ou en mode restreint
+ a| 
+Docker Engine 23.06 à 28.0.0.
+ a| 
+Non pris en charge
+
+
+
+ a| 
+22,04 LTS
+ a| 
+3.9.50 ou version ultérieure
+ a| 
+Docker Engine 23.0.6 à 28.0.0.
+ a| 
+Non pris en charge
+
+|===
+--
+Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons n2-standard-8.
++
+--
+L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]
+
+--
+Espace disque dans /opt:: 100 Go d'espace doivent être disponibles
++
+--
+L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
+
+--
+Espace disque dans /var:: 20 Go d'espace doivent être disponibles
++
+--
+L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+
+--
+
+
+
+
+== Étape 2 : installer Podman ou Docker Engine
+
+Selon votre système d'exploitation, Podman ou Docker Engine est requis avant l'installation de l'agent.
+
+* Podman est requis pour Red Hat Enterprise Linux 8 et 9.
++
+<<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+* Docker Engine est requis pour Ubuntu.
++
+<<podman-versions,Afficher les versions de Docker Engine prises en charge>> .
+
+
+
+.Étapes
+[role="tabbed-block"]
+====
+.Podman
+--
+Suivez ces étapes pour installer et configurer Podman :
+
+* Activer et démarrer le service podman.socket
+* Installer Python 3
+* Installer le package podman-compose version 1.0.6
+* Ajoutez podman-compose à la variable d'environnement PATH
+* Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise Aardvark DNS au lieu de CNI
+
+
+
+NOTE: Ajustez le port aardvark-dns (par défaut : 53) après l’installation de l’agent pour éviter les conflits de port DNS.  Suivez les instructions pour configurer le port.
+
+.Étapes
+. Supprimez le package podman-docker s'il est installé sur l'hôte.
++
+[source, cli]
+----
+dnf remove podman-docker
+rm /var/run/docker.sock
+----
+. Installez Podman.
++
+Vous pouvez obtenir Podman à partir des référentiels officiels Red Hat Enterprise Linux.
+
++
+Pour Red Hat Enterprise Linux 9 :
+
++
+[source, cli]
+----
+sudo dnf install podman-2:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
++
+Pour Red Hat Enterprise Linux 8 :
+
++
+[source, cli]
+----
+sudo dnf install podman-3:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+. Activez et démarrez le service podman.socket.
++
+[source, cli]
+----
+sudo systemctl enable --now podman.socket
+----
+. Installez python3.
++
+[source, cli]
+----
+sudo dnf install python3
+----
+. Installez le package de référentiel EPEL s'il n'est pas déjà disponible sur votre système.
+. Si vous utilisez Red Hat Enterprise :
++
+Cette étape est nécessaire car podman-compose est disponible dans le référentiel Extra Packages for Enterprise Linux (EPEL).
+
++
+Pour Red Hat Enterprise Linux 9 :
+
++
+[source, cli]
+----
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+----
++
+Pour Red Hat Enterprise Linux 8 :
+
++
+[source, cli]
+----
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+----
+. Installez le package podman-compose 1.0.6.
++
+[source, cli]
+----
+sudo dnf install podman-compose-1.0.6
+----
++
+
+NOTE: En utilisant le `dnf install` la commande répond à l'exigence d'ajout de podman-compose à la variable d'environnement PATH.  La commande d'installation ajoute podman-compose à /usr/bin, qui est déjà inclus dans le `secure_path` option sur l'hôte.
+
+. Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise NetAvark avec Aardvark DNS au lieu de CNI.
++
+.. Vérifiez si votre networkBackend est défini sur CNI en exécutant la commande suivante :
++
+[source, cli]
+----
+podman info | grep networkBackend
+----
+.. Si le networkBackend est défini sur `CNI` , vous devrez le changer en `netavark` .
+.. Installer `netavark` et `aardvark-dns` en utilisant la commande suivante :
++
+[source, cli]
+----
+dnf install aardvark-dns netavark
+----
+.. Ouvrez le `/etc/containers/containers.conf` fichier et modifiez l'option network_backend pour utiliser « netavark » au lieu de « cni ».
+
+
++
+Si `/etc/containers/containers.conf` n'existe pas, effectuez les modifications de configuration pour `/usr/share/containers/containers.conf` .
+
+. Redémarrez podman.
++
+[source, cli]
+----
+systemctl restart podman
+----
+. Confirmez que networkBackend est désormais modifié en « netavark » à l'aide de la commande suivante :
++
+[source, cli]
+----
+podman info | grep networkBackend
+----
+
+
+--
+.Moteur Docker
+--
+Suivez la documentation de Docker pour installer Docker Engine.
+
+.Étapes
+. https://docs.docker.com/engine/install/["Afficher les instructions d'installation depuis Docker"^]
++
+Suivez les étapes pour installer une version de Docker Engine prise en charge.  N'installez pas la dernière version, car elle n'est pas prise en charge par la console.
+
+. Vérifiez que Docker est activé et en cours d’exécution.
++
+[source, cli]
+----
+sudo systemctl enable docker && sudo systemctl start docker
+----
+
+
+--
+====
+
+
+== Étape 3 : Configurer le réseau
+
+Configurez votre réseau afin que l’agent de la console puisse gérer les ressources et les processus au sein de votre environnement cloud hybride.  Par exemple, vous devez vous assurer que les connexions sont disponibles pour les réseaux cibles et que l’accès Internet sortant est disponible.
+
+Connexions aux réseaux cibles:: L'agent de console nécessite une connexion réseau à l'emplacement où vous prévoyez de créer et de gérer des systèmes.  Par exemple, le réseau sur lequel vous prévoyez de créer des systèmes Cloud Volumes ONTAP ou un système de stockage dans votre environnement local.
+
+
+Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
+
+
+Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la console Web NetApp::
++
+--
+Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
+
+link:reference-networking-saas-console.html["Préparer la mise en réseau pour la console NetApp"] .
+
+--
+
+
+Points de terminaison contactés depuis l'agent de la console:: L'agent de console nécessite un accès Internet sortant pour contacter les points de terminaison suivants afin de gérer les ressources et les processus au sein de votre environnement de cloud public pour les opérations quotidiennes.
++
+--
+Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects
+ a| 
+Pour gérer les ressources dans Google Cloud.
+
+
+
+ a| 
+\ https://mysupport.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
+\ https://signin.b2c.netapp.com
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+
+
+
+ a| 
+\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+
+
+
+ a| 
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels.  Si vous utilisezlink:link:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue.  Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+|===
+--
+
+
+Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et transparentes.  Si vous utilisez un proxy transparent, vous devez uniquement fournir le certificat du serveur proxy.  Si vous utilisez un proxy explicite, vous aurez également besoin de l'adresse IP et des informations d'identification.
++
+--
+* adresse IP
+* Informations d'identification
+* Certificat HTTPS
+
+
+--
+
+
+Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
++
+--
+* HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
+* SSH (22) n'est nécessaire que si vous devez vous connecter à l'hôte pour le dépannage.
+* Les connexions entrantes via le port 3128 sont requises si vous déployez des systèmes Cloud Volumes ONTAP dans un sous-réseau où une connexion Internet sortante n'est pas disponible.
++
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet sortante pour envoyer des messages AutoSupport , la console configure automatiquement ces systèmes pour utiliser un serveur proxy inclus avec l'agent de la console.  La seule exigence est de s’assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Vous devrez ouvrir ce port après avoir déployé l’agent de console.
+
+
+
+--
+
+
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+
+
+
+
+== Étape 4 : Configurer les autorisations pour l’agent de la console
+
+Un compte de service Google Cloud est requis pour fournir à l'agent de la console les autorisations dont la console a besoin pour gérer les ressources dans Google Cloud.  Lorsque vous créez l’agent de console, vous devez associer ce compte de service à la machine virtuelle de l’agent de console.
+
+Il est de votre responsabilité de mettre à jour le rôle personnalisé à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.  Si de nouvelles autorisations sont requises, elles seront répertoriées dans les notes de version.
+
+.Étapes
+. Créer un rôle personnalisé dans Google Cloud :
++
+.. Créez un fichier YAML qui inclut le contenu dulink:reference-permissions-gcp.html["autorisations de compte de service pour l'agent de console"] .
+.. Depuis Google Cloud, activez Cloud Shell.
+.. Téléchargez le fichier YAML qui inclut les autorisations requises.
+.. Créez un rôle personnalisé en utilisant le `gcloud iam roles create` commande.
++
+L'exemple suivant crée un rôle nommé « connecteur » au niveau du projet :
+
++
+`gcloud iam roles create connector --project=myproject --file=connector.yaml`
+
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["Documentation Google Cloud : Création et gestion de rôles personnalisés"^]
+
+
+
+. Créez un compte de service dans Google Cloud et attribuez le rôle au compte de service :
++
+.. Depuis le service IAM & Admin, sélectionnez *Comptes de service > Créer un compte de service*.
+.. Saisissez les détails du compte de service et sélectionnez *Créer et continuer*.
+.. Sélectionnez le rôle que vous venez de créer.
+.. Terminez les étapes restantes pour créer le rôle.
++
+https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Documentation Google Cloud : Création d'un compte de service"^]
+
+
+
+. Si vous prévoyez de déployer des systèmes Cloud Volumes ONTAP dans des projets différents de celui dans lequel réside l'agent de console, vous devrez fournir au compte de service de l'agent de console un accès à ces projets.
++
+Par exemple, disons que l’agent de console se trouve dans le projet 1 et que vous souhaitez créer des systèmes Cloud Volumes ONTAP dans le projet 2.  Vous devrez accorder l’accès au compte de service dans le projet 2.
+
++
+.. Depuis le service IAM & Admin, sélectionnez le projet Google Cloud dans lequel vous souhaitez créer des systèmes Cloud Volumes ONTAP .
+.. Sur la page *IAM*, sélectionnez *Accorder l'accès* et fournissez les détails requis.
++
+*** Saisissez l’e-mail du compte de service de l’agent de la console.
+*** Sélectionnez le rôle personnalisé de l’agent de console.
+*** Sélectionnez *Enregistrer*.
+
+
+
+
++
+Pour plus de détails, reportez-vous à https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role["Documentation Google Cloud"^]
+
+
+
+
+
+== Étape 5 : Configurer les autorisations VPC partagées
+
+Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.
+
+Ce tableau est fourni à titre de référence et votre environnement doit refléter le tableau des autorisations une fois la configuration IAM terminée.
+
+.Afficher les autorisations VPC partagées
+[%collapsible]
+====
+[cols="10,10,10,18,18,34"]
+|===
+| Identité | Créateur | Hébergé dans | Autorisations du projet de service | Autorisations du projet hôte | But 
+
+
+| Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
+link:task-install-connector-google-bluexp-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
+ a| 
+compute.networkUser
+| Déploiement de l'agent dans le projet de service 
+
+
+| compte de service d'agent | Coutume | Projet de service  a| 
+link:reference-permissions-gcp.html["Politique de compte de service d'agent"]
+| compute.networkUser deploymentmanager.editor | Déploiement et maintenance de Cloud Volumes ONTAP et des services dans le projet de service 
+
+
+| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la console NetApp en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
+
+
+| Agent de service des API Google | Google Cloud | Projet de service  a| 
+Éditeur (par défaut)
+ a| 
+compute.networkUser
+| Interagit avec les API Google Cloud au nom du déploiement.  Permet à la console d'utiliser le réseau partagé. 
+
+
+| Compte de service par défaut de Google Compute Engine | Google Cloud | Projet de service  a| 
+Éditeur (par défaut)
+ a| 
+compute.networkUser
+| Déploie des instances Google Cloud et une infrastructure de calcul pour le compte du déploiement.  Permet à la console d'utiliser le réseau partagé. 
+|===
+Remarques :
+
+. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La console NetApp crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
+. firewall.create et firewall.delete ne sont requis que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  Ces autorisations résident dans le fichier .yaml du compte de console.  Si vous déployez une paire HA à l’aide d’un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3.  Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer des règles pour VPC0.
+. Pour la hiérarchisation du cloud, le compte de service de hiérarchisation doit avoir le rôle serviceAccount.user sur le compte de service, pas seulement au niveau du projet.  Actuellement, si vous attribuez serviceAccount.user au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec getIAMPolicy.
+
+
+====
+
+
+== Étape 6 : Activer les API Google Cloud
+
+Plusieurs API Google Cloud doivent être activées avant de pouvoir déployer des systèmes Cloud Volumes ONTAP dans Google Cloud.
+
+.Étape
+. Activez les API Google Cloud suivantes dans votre projet :
++
+** API du gestionnaire de déploiement cloud V2
+** API de journalisation dans le cloud
+** API du gestionnaire de ressources cloud
+** API Compute Engine
+** API de gestion des identités et des accès (IAM)
+** API du service de gestion des clés cloud (KMS)
++
+(Requis uniquement si vous prévoyez d'utiliser NetApp Backup and Recovery avec des clés de chiffrement gérées par le client (CMEK))
+
+
+
+
+
+https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentation Google Cloud : Activation des API"^]
+
+
+
+== Étape 7 : Installer l’agent de console
+
+Une fois les prérequis terminés, vous pouvez installer manuellement le logiciel sur votre propre hôte Linux.
+
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Privilèges root pour installer l'agent de la console.
+* Détails sur un serveur proxy, si un proxy est requis pour l'accès Internet à partir de l'agent de la console.
++
+Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.
+
+* Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.
+
+
+
+NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-connector-maint-console.html["Console de maintenance des agents"] .
+
+.À propos de cette tâche
+Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.
+
+.Étapes
+. Si les variables système _http_proxy_ ou _https_proxy_ sont définies sur l'hôte, supprimez-les :
++
+[source, cli]
+----
+unset http_proxy
+unset https_proxy
+----
++
+Si vous ne supprimez pas ces variables système, l'installation échoue.
+
+. Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] , puis copiez-le sur l'hôte Linux.
++
+Vous devez télécharger le programme d'installation de l'agent « en ligne » destiné à être utilisé sur votre réseau ou dans le cloud.
+
+. Attribuer des autorisations pour exécuter le script.
++
+[source, cli]
+----
+chmod +x NetApp_Console_Agent_Cloud_<version>
+----
++
+Où <version> est la version de l’agent de console que vous avez téléchargé.
+
+. Si vous effectuez l'installation dans un environnement Government Cloud, désactivez les vérifications de configuration.link:task-troubleshoot-connector.html#disable-config-check["Découvrez comment désactiver les vérifications de configuration pour les installations manuelles."]
+. Exécutez le script d'installation.
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
+----
++
+Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet.  Vous pouvez ajouter un proxy transparent ou explicite.  Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter.  Si vous disposez d'un serveur proxy, vous devrez saisir les paramètres comme indiqué.
+
++
+Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+
++
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+----
++
+`--proxy`configure l'agent de console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
+
++
+** \http://adresse:port
+** \http://nom-d'utilisateur:mot-de-passe@adresse:port
+** \http://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://adresse:port
+** \https://nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
++
+Notez ce qui suit :
+
++
+*** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
+*** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour un \ comme indiqué ci-dessus.
+*** L'agent de console ne prend pas en charge les noms d'utilisateur ou les mots de passe qui incluent le caractère @.
+*** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le préfixant d'une barre oblique inverse : & ou !
++
+Par exemple:
+
++
+\http://bxpproxyuser:netapp1\!@adresse:3128
+
+
+
+
+
+
+
+`--cacert`spécifie un certificat signé par une autorité de certification à utiliser pour l'accès HTTPS entre l'agent de console et le serveur proxy.  Ce paramètre est requis pour les serveurs proxy HTTPS, les serveurs proxy d'interception et les serveurs proxy transparents.
+
++ Voici un exemple de configuration d'un serveur proxy transparent.  Lorsque vous configurez un proxy transparent, vous n'avez pas besoin de définir le serveur proxy.  Vous ajoutez uniquement un certificat signé par une autorité de certification à votre hôte d’agent de console :
+
++
+
+[source, cli]
+----
+ ./NetApp_Console_Agent_Cloud_v4.0.0 --cacert /tmp/cacert/certificate.cer
+----
+. Si vous avez utilisé Podman, vous devrez ajuster le port aardvark-dns.
++
+.. Connectez-vous en SSH à la machine virtuelle de l'agent de console.
+.. Ouvrez le fichier podman _/usr/share/containers/containers.conf_ et modifiez le port choisi pour le service DNS Aardvark.  Par exemple, changez-le en 54.
++
+[source, cli]
+----
+vi /usr/share/containers/containers.conf
+...
+# Port to use for dns forwarding daemon with netavark in rootful bridge
+# mode and dns enabled.
+# Using an alternate port might be useful if other DNS services should
+# run on the machine.
+#
+dns_bind_port = 54
+...
+Esc:wq
+----
+.. Redémarrez la machine virtuelle de l’agent de console.
+
+
+. Attendez que l'installation soit terminée.
++
+À la fin de l'installation, le service de l'agent de console (occm) redémarre deux fois si vous avez spécifié un serveur proxy.
+
+
+
+
+NOTE: Si l'installation échoue, vous pouvez consulter le rapport d'installation et les journaux pour vous aider à résoudre les problèmes.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à la machine virtuelle de l’agent de console et entrez l’URL suivante :
++
+https://_ipaddress_[]
+
+. Après vous être connecté, configurez l’agent de la console :
++
+.. Spécifiez l’organisation à associer à l’agent de la console.
+.. Entrez un nom pour le système.
+.. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
++
+Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous ne devez activer le mode restreint que si vous disposez d'un environnement sécurisé et que vous souhaitez déconnecter ce compte des services backend.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+
+.. Sélectionnez *Commençons*.
+
+
++
+
+NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rapport pour vous aider à résoudre le problème.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+
+
+
+Si vous disposez de buckets Google Cloud Storage dans le même compte Google Cloud où vous avez créé l'agent de la console, vous verrez un système Google Cloud Storage apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-google-cloud-storage/index.html["Découvrez comment gérer Google Cloud Storage depuis la console NetApp"^]
+
+
+
+== Étape 8 : Accorder des autorisations à l'agent de console
+
+Vous devez fournir à l'agent de la console les autorisations Google Cloud que vous avez précédemment configurées.  L'octroi des autorisations permet à l'agent de la console de gérer vos données et votre infrastructure de stockage dans Google Cloud.
+
+.Étapes
+. Accédez au portail Google Cloud et attribuez le compte de service à l’instance de machine virtuelle de l’agent de la console.
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["Documentation Google Cloud : Modification du compte de service et des étendues d'accès pour une instance"^]
+
+. Si vous souhaitez gérer des ressources dans d'autres projets Google Cloud, accordez l'accès en ajoutant le compte de service avec le rôle d'agent de console à ce projet. Vous devrez répéter cette étape pour chaque projet.
+

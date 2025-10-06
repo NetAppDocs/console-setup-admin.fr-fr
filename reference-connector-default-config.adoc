@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: reference-connector-default-config.html 
+keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux, connector configuration, connector installation folder, connector folder, connector log, ubuntu, agent, agent installation folder, agent configuration 
+summary: 'Apprenez-en plus sur l"agent de console avant de le déployer.' 
+---
+= Configuration par défaut de l'agent de console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Apprenez-en plus sur la configuration de l’agent de console avant de le déployer.
+
+
+
+== Configuration par défaut avec accès Internet
+
+Les détails de configuration suivants s'appliquent si vous avez déployé un agent de console à partir de la console NetApp , à partir de la place de marché de votre fournisseur de cloud ou si vous avez installé manuellement un agent de console sur un hôte Linux local disposant d'un accès Internet.
+
+
+
+=== Détails AWS
+
+Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
+
+* Le type d'instance EC2 est t3.2xlarge.
+* Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
++
+Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.
+
+* L'installation inclut Docker Engine, qui est l'outil d'orchestration de conteneurs requis.
+* Le nom d'utilisateur de l'instance EC2 Linux est ubuntu (pour les agents créés avant mai 2023, le nom d'utilisateur était ec2-user).
+* Le disque système par défaut est un disque gp2 de 100 Gio.
+
+
+
+
+=== Détails Azure
+
+Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
+
+* Le type de machine virtuelle est Standard_D8s_v3.
+* Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
++
+Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.
+
+* L'installation inclut Docker Engine, qui est l'outil d'orchestration de conteneurs requis.
+* Le disque système par défaut est un disque SSD premium de 100 Gio.
+
+
+
+
+=== Détails de Google Cloud
+
+Si vous avez déployé un agent de console à partir de la console, notez les points suivants :
+
+* L'instance de VM est n2-standard-8.
+* Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
++
+Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.
+
+* L'installation inclut Docker Engine, qui est l'outil d'orchestration de conteneurs requis.
+* Le disque système par défaut est un disque persistant SSD de 100 Gio.
+
+
+
+
+=== Dossier d'installation
+
+Le dossier d’installation de l’agent se trouve à l’emplacement suivant :
+
+/opt/application/netapp/cloudmanager
+
+
+
+=== Fichiers journaux
+
+Les fichiers journaux sont contenus dans les dossiers suivants :
+
+* /opt/application/netapp/cloudmanager/log ou
+* /opt/application/netapp/service-manager-2/logs (à partir des nouvelles installations 3.9.23)
++
+Les journaux de ces dossiers fournissent des détails sur l’agent de la console.
+
+* /opt/application/netapp/cloudmanager/docker_occm/data/log
++
+Les journaux de ce dossier fournissent des détails sur les services cloud et le service de console qui s'exécute sur l'agent de console.
+
+
+
+
+
+=== Service d'agent de console
+
+* Le service d'agent de console est nommé occm.
+* Le service occm dépend du service MySQL.
++
+Si le service MySQL est en panne, le service occm l'est également.
+
+
+
+
+
+=== Ports
+
+L'agent utilise les ports suivants sur l'hôte Linux :
+
+* 80 pour l'accès HTTP
+* 443 pour l'accès HTTPS
+
+
+
+
+== Configuration par défaut sans accès Internet
+
+La configuration suivante s’applique si vous avez installé manuellement l’agent de console sur un hôte Linux local qui n’a pas accès à Internet. link:task-quick-start-private-mode.html["En savoir plus sur cette option d'installation"] .
+
+* Le dossier d’installation de l’agent se trouve à l’emplacement suivant :
++
+/opt/application/netapp/ds
+
+* Les fichiers journaux sont contenus dans les dossiers suivants :
++
+/var/lib/docker/volumes/ds_occmdata/_data/log
+
++
+Les journaux de ce dossier fournissent des détails sur l’agent de console et les images Docker.
+
+* Tous les services s'exécutent dans des conteneurs Docker
++
+Les services dépendent du service d'exécution Docker en cours d'exécution
+
+* L'agent utilise les ports suivants sur l'hôte Linux :
++
+** 80 pour l'accès HTTP
+** 443 pour l'accès HTTPS
+
+
+

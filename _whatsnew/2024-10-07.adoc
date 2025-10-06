@@ -1,0 +1,85 @@
+= Gestion des identités et des accès BlueXP
+:allow-uri-read: 
+
+
+
+
+=== Gestion des identités et des accès BlueXP
+
+La gestion des identités et des accès BlueXP (IAM) est un nouveau modèle de gestion des ressources et des accès qui remplace et améliore les fonctionnalités précédentes fournies par les comptes BlueXP lors de l'utilisation de BlueXP en mode standard.
+
+BlueXP IAM offre une gestion plus granulaire des ressources et des autorisations :
+
+* Une _organisation_ de niveau supérieur vous permet de gérer l'accès à vos différents _projets_.
+* Les _dossiers_ vous permettent de regrouper des projets liés.
+* La gestion améliorée des ressources vous permet d’associer une ressource à un ou plusieurs dossiers ou projets.
++
+Par exemple, vous pouvez associer un système Cloud Volumes ONTAP à plusieurs projets.
+
+* La gestion améliorée des accès vous permet d’attribuer un rôle aux membres à différents niveaux de la hiérarchie de l’organisation.
+
+
+Ces améliorations offrent un meilleur contrôle sur les actions que les utilisateurs peuvent effectuer et sur les ressources auxquelles ils peuvent accéder.
+
+.Comment BlueXP IAM affecte votre compte existant
+Lorsque vous vous connectez à BlueXP, vous remarquerez ces changements :
+
+* Votre _compte_ s'appelle désormais une _organisation_
+* Vos _espaces de travail_ s'appellent désormais _projets_
+* Les noms des rôles d'utilisateur ont changé :
++
+** _Administrateur du compte_ est désormais _Administrateur de l'organisation_
+** _Administrateur de l'espace de travail_ est désormais _Administrateur du dossier ou du projet_
+** _Visionneuse de conformité_ est désormais _Visionneuse de classification_
+
+
+* Sous Paramètres, vous pouvez accéder à la gestion des identités et des accès BlueXP pour profiter de ces améliorations
+
+
+Notez ce qui suit :
+
+* Aucun changement n’est apporté à vos utilisateurs ou environnements de travail existants.
+* Bien que les noms des rôles aient changé, il n’y a aucune différence du point de vue des autorisations.  Les utilisateurs continueront d’avoir accès aux mêmes environnements de travail qu’auparavant.
+* Il n'y a aucun changement dans la façon dont vous vous connectez à BlueXP.  BlueXP IAM fonctionne avec les connexions cloud NetApp , les informations d'identification du site de support NetApp et les connexions fédérées, tout comme les comptes BlueXP .
+* Si vous aviez plusieurs comptes BlueXP , vous avez désormais plusieurs organisations BlueXP .
+
+
+.API pour BlueXP IAM
+Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
+
+.Modes de déploiement pris en charge
+BlueXP IAM est pris en charge lors de l'utilisation de BlueXP en mode standard.  Si vous utilisez BlueXP en mode restreint ou en mode privé, vous continuerez à utiliser un _compte_ BlueXP pour gérer les espaces de travail, les utilisateurs et les ressources.
+
+.Où aller ensuite
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-identity-and-access-management.html["En savoir plus sur BlueXP IAM"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-iam-get-started.html["Démarrer avec BlueXP IAM"]
+
+
+
+
+=== Connecteur 3.9.45
+
+Cette version inclut une prise en charge étendue du système d'exploitation et des corrections de bogues.
+
+La version 3.9.45 est disponible pour le mode standard et le mode restreint.
+
+.Prise en charge d'Ubuntu 24.04 LTS
+À partir de la version 3.9.45, BlueXP prend désormais en charge les nouvelles installations du connecteur sur les hôtes Ubuntu 24.04 LTS lors de l'utilisation de BlueXP en mode standard ou en mode restreint.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-1-review-host-requirements["Afficher les exigences de l'hôte du connecteur"] .
+
+
+
+=== Prise en charge de SELinux avec les hôtes RHEL
+
+BlueXP prend désormais en charge le connecteur avec les hôtes Red Hat Enterprise Linux sur lesquels SELinux est activé en mode d'application ou en mode permissif.
+
+La prise en charge de SELinux commence avec la version 3.9.40 pour le mode standard et le mode restreint et avec la version 3.9.42 pour le mode privé.
+
+Veuillez noter les limitations suivantes :
+
+* BlueXP ne prend pas en charge SELinux avec les hôtes Ubuntu.
+* La gestion des systèmes Cloud Volumes ONTAP n'est pas prise en charge par les connecteurs sur lesquels SELinux est activé sur le système d'exploitation.
+
+
+https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux["En savoir plus sur SELinux"^]

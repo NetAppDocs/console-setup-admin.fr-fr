@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: task-uninstall-connector.html 
+keywords: uninstall, remove connector, uninstall connector, uninstall agent, remove agent 
+summary: 'Désinstallez un agent de console pour résoudre les problèmes ou pour le supprimer définitivement de l"hôte.  Les étapes à suivre dépendent du mode de déploiement que vous utilisez.  Une fois que vous avez supprimé un agent de console de votre environnement, vous pouvez le supprimer de la console.' 
+---
+= Désinstaller et supprimer un agent de console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Désinstallez un agent de console pour résoudre les problèmes ou pour le supprimer définitivement de l'hôte.  Les étapes à suivre dépendent du mode de déploiement que vous utilisez.  Une fois que vous avez supprimé un agent de console de votre environnement, vous pouvez le supprimer de la console.
+
+link:concept-modes.html["En savoir plus sur les modes de déploiement de la console NetApp"] .
+
+
+
+== Désinstaller l'agent lors de l'utilisation du mode standard ou restreint
+
+Si vous utilisez le mode standard ou le mode restreint (en d'autres termes, l'hôte de l'agent dispose d'une connectivité sortante), vous devez suivre les étapes ci-dessous pour désinstaller l'agent.
+
+.Étapes
+. Connectez-vous à la machine virtuelle Linux pour l’agent.
+. Depuis l’hôte Linux, exécutez le script de désinstallation :
++
+`/opt/application/netapp/service-manager-2/uninstall.sh [silent]`
+
++
+_silent_ exécute le script sans vous demander de confirmation.
+
+
+
+
+
+== Supprimer les agents de la console
+
+Si un agent de console est inactif, vous pouvez le supprimer de la liste des agents.  Vous pouvez le faire si vous supprimez la machine virtuelle de l’agent ou si vous désinstallez le logiciel de l’agent.
+
+Notez les points suivants concernant la suppression d’un agent de console :
+
+* Cette action ne supprime pas la machine virtuelle.
+* Cette action ne peut pas être annulée : une fois que vous avez supprimé un agent de console, vous ne pouvez pas le rajouter.
+
+
+.Étapes
+. Sélectionnez *Administration > Agents*.
+. Sur la page *Aperçu*, sélectionnez le menu d'action pour un agent inactif et sélectionnez *Supprimer l'agent*.
+. Saisissez le nom de l'agent pour confirmer, puis sélectionnez *Supprimer*.
+

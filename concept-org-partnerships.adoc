@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: concept-org-partnerships.html 
+keywords: identity federation, single sign-on, SSO, identity provider, IdP, SAML, Microsoft Entra ID, AD FS, PingFederate, ACS URL, Entity ID, user access, security, productivity, compliance, authentication, business continuity, account management, user experience, access control, workflow automation, credential management, login process, organization admin, bluexp, BlueXP 
+summary: 'La création de partenariats entre organisations dans la console NetApp permet aux partenaires de l"organisation de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, simplifiant ainsi la collaboration et améliorant la sécurité.' 
+---
+= Partenariats dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+En créant des partenariats entre les organisations, la console NetApp permet aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, simplifiant ainsi la collaboration et améliorant la sécurité.
+
+.Rôles requis
+Administrateur de partenariatlink:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+Les partenariats permettent une gestion sécurisée des ressources NetApp dans toutes les organisations à l’aide de relations basées sur les rôles dans la console.  L'organisation initiatrice accorde l'accès à ses ressources, tandis que l'organisation acceptante fournit les utilisateurs ou les comptes de service auxquels l'accès doit être accordé.  Les partenariats sont établis via un flux de travail en libre-service, donnant à l'organisation initiatrice un contrôle total sur les ressources partagées, les rôles attribués et la possibilité d'intégrer, de gérer ou de révoquer l'accès des partenaires selon les besoins.
+
+Les clients peuvent autoriser les MSP ou les revendeurs à gérer les environnements NetApp sans nécessiter de configurations compliquées.  Les clients peuvent contrôler les clusters auxquels les partenaires peuvent accéder et les rôles dont ils disposent, et peuvent révoquer l'accès à tout moment pour maintenir la sécurité et la conformité.
+
+En tant que partenaire, vous bénéficiez d'une visibilité et d'un contrôle centralisés sur les environnements clients.  Vous pouvez facilement basculer vers l'organisation d'un client pour gérer les ressources, exécuter des services de données et surveiller l'état dans des limites définies, réduisant ainsi les outils personnalisés et garantissant l'alignement avec les politiques de chaque client.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Attribuer à un ou plusieurs utilisateurs le rôle d'administrateur de partenariat
+Affectez un ou plusieurs utilisateurs dans les organisations initiatrices et réceptrices au rôle d'administrateur de partenariat pour créer et gérer des partenariats. Vous pouvez affecter le rôle de visualiseur de partenariat aux utilisateurs qui ont uniquement besoin de visualiser les partenariats et non de les gérer.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Partagez l'identifiant de votre organisation avec l'organisation initiatrice
+[role="quick-margin-para"]
+Pour initier un partenariat, l’initiateur doit connaître l’ID de l’organisation cible.  Seule l'organisation concernée peut accéder à cet ID d'organisation.  Partagez-le directement avec l’organisation initiatrice en dehors de la console NetApp par courrier électronique ou par une autre méthode.
+
+L'organisation initiatrice est l'organisation qui accorde l'accès à ses ressources.
+
+image:diagram-partnership-org-id.png["diagramme qui montre les organisations initiales"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"]Initier le partenariat au sein de la console NetApp
+[role="quick-margin-para"]
+L'organisation qui initie le partenariat le fait depuis la console NetApp en envoyant une demande de partenariat.
+
+image:diagram-partnership-accept.png["diagramme qui montre l'acceptation du partenariat"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"]Approuver le partenariat
+[role="quick-margin-para"]
+L’organisme récepteur doit accepter la demande.
+
+L’organisation réceptrice est l’organisation à laquelle l’accès aux ressources est accordé.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"]Affecter des utilisateurs au partenariat
+[role="quick-margin-para"]
+L'organisation réceptrice attribue des utilisateurs ou des comptes de service spécifiques de votre organisation au partenariat.  L’organisation initiatrice attribue des rôles à ces utilisateurs.
+
+image:diagram-partnership-add-user.png["diagramme qui montre les affectations des utilisateurs"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Six"]Accorder aux utilisateurs assignés l'accès aux ressources
+[role="quick-margin-para"]
+Si vous êtes l’organisation initiatrice, vous pouvez accorder l’accès à des ressources spécifiques aux utilisateurs qui ont été affectés au partenariat.  Vous pouvez révoquer l'accès à tout moment.
+
+Vous pouvez le faire en attribuant des rôles à des projets ou des dossiers particuliers au sein de votre organisation.
+
+image:diagram-partnership-resources.png["diagramme qui montre le partage des ressources"]

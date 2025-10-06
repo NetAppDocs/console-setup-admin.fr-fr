@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: task-configuring-proxy.html 
+keywords: proxy, proxy server, proxy, internet, HTTP, http, https, bluexp 
+summary: 'Si vos politiques d’entreprise exigent que vous utilisiez un serveur proxy pour toutes les communications vers Internet, vous devez configurer vos agents pour qu’ils utilisent ce serveur proxy.  Si vous n"avez pas configuré un agent de console pour utiliser un serveur proxy lors de l"installation, vous pouvez configurer l"agent de console pour utiliser ce serveur proxy à tout moment.' 
+---
+= Configurer un agent de console pour utiliser un serveur proxy
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vos politiques d’entreprise exigent que vous utilisiez un serveur proxy pour toutes les communications vers Internet, vous devez configurer vos agents pour qu’ils utilisent ce serveur proxy.  Si vous n'avez pas configuré un agent de console pour utiliser un serveur proxy lors de l'installation, vous pouvez configurer l'agent de console pour utiliser ce serveur proxy à tout moment.
+
+Le serveur proxy de l'agent permet l'accès Internet sortant sans IP publique ni passerelle NAT.  Le serveur proxy fournit une connectivité sortante uniquement pour l'agent de console, et non pour les systèmes Cloud Volumes ONTAP .
+
+Si les systèmes Cloud Volumes ONTAP ne disposent pas d'un accès Internet sortant, la console les configure pour utiliser le serveur proxy de l'agent de la console.  Vous devez vous assurer que le groupe de sécurité de l’agent de console autorise les connexions entrantes sur le port 3128.  Ouvrez ce port après avoir déployé l’agent de console.
+
+Si l'agent de console lui-même ne dispose pas d'une connexion Internet sortante, les systèmes Cloud Volumes ONTAP ne peuvent pas utiliser le serveur proxy configuré.
+
+
+
+== Configurations prises en charge
+
+* Les serveurs proxy transparents sont pris en charge pour les agents qui servent les systèmes Cloud Volumes ONTAP .  Si vous utilisez les services de données NetApp avec Cloud Volumes ONTAP, créez un agent dédié pour Cloud Volumes ONTAP où vous pouvez utiliser un serveur proxy transparent.
+* Les serveurs proxy explicites sont pris en charge avec tous les agents, y compris ceux qui gèrent les systèmes Cloud Volumes ONTAP et ceux qui gèrent les services de données NetApp .
+* HTTP et HTTPS.
+* Le serveur proxy peut résider dans le cloud ou dans votre réseau.
+
+
+
+IMPORTANT: Une fois que vous avez configuré un proxy, vous ne pouvez pas modifier le type de proxy.  Si vous devez modifier le type de proxy, supprimez l'agent de console et ajoutez un nouvel agent avec le nouveau type de proxy.
+
+
+
+== Activer un proxy explicite sur un agent de console
+
+Lorsque vous configurez un agent de console pour utiliser un serveur proxy, cet agent et les systèmes Cloud Volumes ONTAP qu'il gère (y compris les médiateurs HA) utilisent tous le serveur proxy.
+
+Cette opération redémarre l’agent de la console.  Vérifiez que l’agent de la console est inactif avant de continuer.
+
+.Étapes
+. Sélectionnez *Administration > Agents*.
+. Sur la page *Aperçu*, sélectionnez le menu d'action pour un agent de console et sélectionnez *Modifier l'agent*.
++
+L'agent de la console doit être actif pour pouvoir le modifier.
+
+. Sélectionnez *Configuration du proxy HTTP*.
+. Sélectionnez *Proxy explicite* dans le champ Type de configuration.
+. Sélectionnez *Activer le proxy*.
+. Spécifiez le serveur en utilisant la syntaxe http://_address:port_[] ou https://_address:port_[]
+. Spécifiez un nom d'utilisateur et un mot de passe si une authentification de base est requise pour le serveur.
++
+Notez ce qui suit :
+
++
+** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
+** Pour un utilisateur de domaine, vous devez saisir le code ASCII du \ comme suit : nom-de-domaine%92nom-d'utilisateur
++
+Par exemple : netapp%92proxy
+
+** La console ne prend pas en charge les mots de passe qui incluent le caractère @.
+
+
+. Sélectionnez *Enregistrer*.
+
+
+
+
+== Activer un proxy transparent pour un agent de console
+
+Seul Cloud Volumes ONTAP prend en charge l’utilisation d’un proxy transparent sur l’agent de la console.  Si vous utilisez des services de données NetApp en plus de Cloud Volumes ONTAP, vous devez créer un agent distinct à utiliser pour les services de données ou pour Cloud Volumes ONTAP.
+
+Avant d'activer un proxy transparent, assurez-vous que les exigences suivantes sont remplies :
+
+* L'agent est installé sur le même réseau que le serveur proxy transparent.
+* L'inspection TLS est activée sur le serveur proxy.
+* Vous disposez d'un certificat au format PEM qui correspond à celui utilisé sur le serveur proxy transparent.
+* Vous n'utilisez pas l'agent de console pour d'autres services de données NetApp que Cloud Volumes ONTAP.
+
+
+Pour configurer un agent existant afin d'utiliser un serveur proxy transparent, utilisez l'outil de maintenance de l'agent de console disponible via la ligne de commande sur l'hôte de l'agent de console.
+
+Lorsque vous configurez un serveur proxy, l’agent de la console redémarre.  Vérifiez que l’agent de la console est inactif avant de continuer.
+
+.Étapes
+Assurez-vous que vous disposez d’un fichier de certificat au format PEM pour le serveur proxy.  Si vous ne disposez pas de certificat, contactez votre administrateur réseau pour en obtenir un.
+
+. Ouvrez une interface de ligne de commande sur l’hôte de l’agent de console.
+. Accédez au répertoire de l’outil de maintenance de l’agent de console : `/opt/application/netapp/service-manager-2/agent-maint-console`
+. Exécutez la commande suivante pour activer le proxy transparent, où `/home/ubuntu/<certificate-file>.pem` est le répertoire et le fichier de certificat de nom que vous avez pour le serveur proxy :
++
+[source, CLI]
+----
+./agent-maint-console proxy add -c /home/ubuntu/<certificate-file>.pem
+----
++
+Assurez-vous que le fichier de certificat est au format PEM et réside dans le même répertoire que la commande ou spécifiez le chemin d'accès complet au fichier de certificat.
+
++
+[source, CLI]
+----
+./agent-maint-console proxy add -c /home/ubuntu/<certificate-file>.pem
+----
+
+
+
+
+=== Modifier le proxy transparent pour l'agent de la console
+
+Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent de console en utilisant le `proxy update` commande ou supprimez le serveur proxy transparent en utilisant le `proxy remove` commande.  Pour plus d'informations, consultez la documentation delink:reference-connector-maint-console.html["Console de maintenance des agents"] .
+
+
+IMPORTANT: Une fois que vous avez configuré un proxy, vous ne pouvez pas modifier le type de proxy.  Si vous devez modifier le type de proxy, supprimez l'agent de console et ajoutez un nouvel agent avec le nouveau type de proxy.
+
+
+
+== Mettre à jour le proxy de l'agent de console s'il perd l'accès à Internet
+
+Si la configuration proxy de votre réseau change, votre agent risque de perdre l’accès à Internet.  Par exemple, si quelqu’un modifie le mot de passe du serveur proxy ou met à jour le certificat.  Dans ce cas, vous devrez accéder directement à l'interface utilisateur depuis l'hôte de l'agent de la console et mettre à jour les paramètres.  Assurez-vous que vous disposez d’un accès réseau à l’hôte de l’agent de la console et que vous pouvez vous connecter à la console.
+
+
+
+== Activer le trafic API direct
+
+Si vous avez configuré un agent de console pour utiliser un serveur proxy, vous pouvez activer le trafic API direct sur l'agent de console afin d'envoyer des appels API directement aux services du fournisseur cloud sans passer par le proxy. Les agents exécutés dans AWS, Azure ou Google Cloud prennent en charge cette option.
+
+Si vous désactivez Azure Private Links avec Cloud Volumes ONTAP et utilisez des points de terminaison de service, activez le trafic API direct.  Sinon, le trafic ne sera pas acheminé correctement.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-enabling-private-link.html["En savoir plus sur l'utilisation d'un lien privé Azure ou de points de terminaison de service avec Cloud Volumes ONTAP"^]
+
+.Étapes
+. Sélectionnez *Administration > Agents*.
+. Sur la page *Aperçu*, sélectionnez le menu d'action pour un agent de console et sélectionnez *Modifier l'agent*.
++
+L'agent de la console doit être actif pour pouvoir le modifier.
+
+. Sélectionnez *Prendre en charge le trafic API direct*.
+. Cochez la case pour activer l'option, puis sélectionnez *Enregistrer*.
+

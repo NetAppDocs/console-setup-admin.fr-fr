@@ -1,0 +1,32 @@
+= 
+:allow-uri-read: 
+
+
+. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du membre auquel vous souhaitez attribuer un rôle et sélectionnez *Ajouter un rôle*.
+. Pour ajouter un rôle, suivez les étapes dans la boîte de dialogue :
++
+** *Sélectionnez une organisation, un dossier ou un projet* : Choisissez le niveau de votre hiérarchie de ressources pour lequel le membre doit disposer d'autorisations.
++
+Si vous sélectionnez l’organisation ou un dossier, le membre aura des autorisations sur tout ce qui se trouve dans l’organisation ou le dossier.
+
+** *Sélectionnez une catégorie* : Choisissez une catégorie de rôle. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"^] .
+** Sélectionnez un *rôle* : choisissez un rôle qui fournit au membre des autorisations pour les ressources associées à l’organisation, au dossier ou au projet que vous avez sélectionné.
+** *Ajouter un rôle* : si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier, projet ou catégorie de rôle, puis sélectionnez une catégorie de rôle et un rôle correspondant.
+
+
+. Sélectionnez *Ajouter de nouveaux rôles*.
+
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet pour lequel vous souhaitez modifier le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle* pour afficher les rôles attribués à ce membre.
+. Vous pouvez modifier un rôle existant pour un membre ou supprimer un rôle.
++
+.. Pour modifier le rôle d'un membre, sélectionnez *Modifier* à côté du rôle que vous souhaitez modifier.  Vous ne pouvez modifier un rôle que pour un rôle appartenant à la même catégorie de rôle.  Par exemple, vous pouvez passer d’un rôle de service de données à un autre.  Confirmer le changement.
+.. Pour annuler l'attribution du rôle d'un membre, sélectionnezimage:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour désattribuer le rôle respectif au membre.  Il vous sera demandé de confirmer la suppression.
+
+
+
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet dans lequel vous souhaitez afficher le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle*.
+

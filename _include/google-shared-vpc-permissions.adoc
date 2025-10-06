@@ -1,0 +1,52 @@
+= 
+:allow-uri-read: 
+
+
+Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.
+
+Ce tableau est fourni à titre de référence et votre environnement doit refléter le tableau des autorisations une fois la configuration IAM terminée.
+
+.Afficher les autorisations VPC partagées
+[%collapsible]
+====
+[cols="10,10,10,18,18,34"]
+|===
+| Identité | Créateur | Hébergé dans | Autorisations du projet de service | Autorisations du projet hôte | But 
+
+
+| Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
+link:task-install-connector-google-bluexp-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
+ a| 
+compute.networkUser
+| Déploiement de l'agent dans le projet de service 
+
+
+| compte de service d'agent | Coutume | Projet de service  a| 
+link:reference-permissions-gcp.html["Politique de compte de service d'agent"]
+| compute.networkUser deploymentmanager.editor | Déploiement et maintenance de Cloud Volumes ONTAP et des services dans le projet de service 
+
+
+| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la console NetApp en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
+
+
+| Agent de service des API Google | Google Cloud | Projet de service  a| 
+Éditeur (par défaut)
+ a| 
+compute.networkUser
+| Interagit avec les API Google Cloud au nom du déploiement.  Permet à la console d'utiliser le réseau partagé. 
+
+
+| Compte de service par défaut de Google Compute Engine | Google Cloud | Projet de service  a| 
+Éditeur (par défaut)
+ a| 
+compute.networkUser
+| Déploie des instances Google Cloud et une infrastructure de calcul pour le compte du déploiement.  Permet à la console d'utiliser le réseau partagé. 
+|===
+Remarques :
+
+. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La console NetApp crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
+. firewall.create et firewall.delete ne sont requis que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  Ces autorisations résident dans le fichier .yaml du compte de console.  Si vous déployez une paire HA à l’aide d’un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3.  Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer des règles pour VPC0.
+. Pour la hiérarchisation du cloud, le compte de service de hiérarchisation doit avoir le rôle serviceAccount.user sur le compte de service, pas seulement au niveau du projet.  Actuellement, si vous attribuez serviceAccount.user au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec getIAMPolicy.
+
+
+====

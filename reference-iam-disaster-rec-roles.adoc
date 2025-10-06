@@ -1,0 +1,262 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-disaster-rec-roles.html 
+keywords: disaster recovery, role-based access control, failover admin, replication plans, job- monitoring, business continuity, compliance- management, operational governance, access delegation, rbac, IAM roles 
+summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès à NetApp Disaster Recovery dans la console.  Les rôles de reprise après sinistre vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de votre propre entreprise et de vos pratiques de gestion du stockage. 
+---
+= Rôles de reprise après sinistre NetApp dans la console NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès à NetApp Disaster Recovery dans la console.  Les rôles de reprise après sinistre vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de votre propre entreprise et de vos pratiques de gestion du stockage.
+
+La reprise après sinistre utilise les rôles suivants :
+
+* *Administrateur de reprise après sinistre* : Effectuez toutes les actions.
+* *Administrateur de basculement de reprise après sinistre* : Effectuer le basculement et les migrations.
+* *Administrateur d'application de récupération après sinistre* : Créer des plans de réplication.  Modifier les plans de réplication.  Démarrer les tests de basculement.
+* *Visionneuse de récupération après sinistre* : Afficher uniquement les informations.
+
+
+Le tableau suivant indique les actions que chaque rôle peut effectuer.
+
+[cols="30,20a,20a,20a,20a"]
+|===
+| Fonctionnalité et action | Administrateur de reprise après sinistre | Administrateur de basculement de reprise après sinistre | Administrateur d'application de reprise après sinistre | Visionneuse de reprise après sinistre 
+
+
+| Afficher le tableau de bord et tous les onglets  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Démarrer un essai gratuit  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Lancer la découverte des charges de travail  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Afficher les informations de licence  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Activer la licence  a| 
+Oui
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Sites* : 
+
+
+| Voir les sites  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Ajouter, modifier ou supprimer des sites  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Plans de réplication* : 
+
+
+| Afficher les plans de réplication  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Afficher les détails du plan de réplication  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Créer ou modifier des plans de réplication  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Créer des rapports  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Voir les instantanés  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Effectuer des tests de basculement  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+
+
+| Effectuer des basculements  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Effectuer des restaurations automatiques  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Effectuer des migrations  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Groupes de ressources* : 
+
+
+| Afficher les groupes de ressources  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Créer, modifier ou supprimer des groupes de ressources  a| 
+Oui
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Non
+
+
+
+5+| *Dans l'onglet Suivi des tâches* : 
+
+
+| Voir les offres d'emploi  a| 
+Oui
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+| Annuler les emplois  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+
+|===
