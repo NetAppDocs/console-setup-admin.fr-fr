@@ -48,7 +48,7 @@ Le menu *Stockage* inclut également des *Alertes* pour afficher les alertes du 
 
 NetApp a également déplacé Keystone vers le menu *Stockage*, où vous pouvez gérer vos abonnements NetApp Keystone et afficher votre utilisation.
 
-image:https://docs.netapp.com/us-en/console-setup-admin/screenshot-storage-menu.png["Une capture d'écran du menu Stockage."]
+image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-storage-menu.png["Une capture d'écran du menu Stockage."]
 
 
 
