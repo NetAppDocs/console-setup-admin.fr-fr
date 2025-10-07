@@ -351,6 +351,13 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
 
 
  a| 
+\ https://support.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
+
+
+
+ a| 
 \ https://signin.b2c.netapp.com
  a| 
 Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .

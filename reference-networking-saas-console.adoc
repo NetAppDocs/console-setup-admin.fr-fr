@@ -46,6 +46,9 @@ Le système contacte ces points de terminaison dans deux scénarios :
 | \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
 
 
+| \ https://support.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
 | \ https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp . 
 
 
