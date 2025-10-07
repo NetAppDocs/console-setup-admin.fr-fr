@@ -31,6 +31,13 @@ Avant l’installation, assurez-vous que votre hôte de machine virtuelle répon
 
 Assurez-vous que votre machine hôte répond aux exigences d’installation avant d’installer l’agent de console.
 
+* CPU : 8 cœurs ou 8 vCPU
+* RAM : 32 Go
+* Espace disque : 165 Go (provisionnement épais)
+* vSphere 7.0 ou supérieur
+* Hôte ESXi 7.03 ou supérieur
+
+
 
 NOTE: Installez l’agent dans un environnement vCenter plutôt que directement sur un hôte ESXi.
 
