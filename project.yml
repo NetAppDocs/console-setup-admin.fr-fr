@@ -32,7 +32,7 @@ sidebar:
         url: "/concept-modes.html"
     - title: Démarrer avec l'assistant NetApp
       entries:
-      - title: Utiliser l'assistant NetApp
+      - title: Utiliser l'assistant de la console NetApp
         url: "/task-console-assistant.html"
     - title: Démarrer avec le mode standard
       entries:
@@ -209,7 +209,7 @@ sidebar:
       - title: Travailler avec plusieurs agents de console
         url: "/task-manage-multiple-connectors.html"
       - title: Dépanner l'agent de la console
-        url: "/task-troubleshoot-connector.html"
+        url: "/task-troubleshoot-agent.html"
       - title: Désinstaller et supprimer l'agent de la console
         url: "/task-uninstall-connector.html"
       - title: Configuration par défaut

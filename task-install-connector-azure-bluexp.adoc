@@ -90,6 +90,13 @@ Pour mettre à jour les informations d'identification du site de support NetApp 
 
 
  a| 
+\https:\\support.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP.
+
+
+
+ a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la console NetApp .
@@ -145,7 +152,7 @@ Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet s
 --
 
 
-Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
 +
 --
 Vous devez implémenter cette exigence de mise en réseau après avoir créé l’agent de console.
@@ -514,6 +521,6 @@ La console prépare l'instance en 10 minutes environ.  Restez sur la page jusqu�
 Une fois le processus terminé, l’agent de la console peut être utilisé à partir de la console.
 
 
-NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
 
 Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où vous avez créé l’agent de console, vous verrez un système de stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la console NetApp"^]

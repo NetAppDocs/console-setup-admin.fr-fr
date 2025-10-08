@@ -83,6 +83,13 @@ Pour mettre à jour les informations d'identification du site de support NetApp 
 
 
  a| 
+\https:\\support.netapp.com
+ a| 
+Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP.
+
+
+
+ a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la console NetApp .
@@ -130,7 +137,7 @@ Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet s
 --
 
 
-Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
 +
 --
 Implémentez cet accès réseau après avoir créé l’agent de console.
@@ -241,7 +248,7 @@ AWS lance l'agent de console avec les paramètres spécifiés et l'agent de cons
 
 +
 
-NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rapport pour vous aider à résoudre le problème.link:task-troubleshoot-connector.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
+NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rapport pour vous aider à résoudre le problème.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
 
 . Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à la machine virtuelle de l’agent de console et à l’URL de l’agent de console.
 . Après vous être connecté, configurez l’agent de la console :

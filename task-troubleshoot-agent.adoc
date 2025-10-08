@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-troubleshoot-connector.html 
+permalink: task-troubleshoot-agent.html 
 keywords: troubleshoot, system id, system ID, autosupport, asup, troubleshoot connector, download failure, cloud volumes ontap download failure, agent 
 summary: 'Pour résoudre les problèmes liés à un agent de console, vous pouvez collaborer avec le support NetApp , qui peut vous demander votre ID système, la version de l"agent ou les derniers messages AutoSupport .  Vous pouvez également consulter la base de connaissances NetApp pour résoudre les problèmes vous-même.' 
 ---

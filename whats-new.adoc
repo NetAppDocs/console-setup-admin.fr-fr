@@ -174,7 +174,7 @@ Lorsque vous déployez un agent de console à partir de la console NetApp , vous
 
 === Dépannage amélioré pour les agents de console
 
-L'agent de console a amélioré les messages d'erreur qui vous aident à mieux comprendre les problèmes.link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-connector.html["Découvrez comment dépanner les agents de la console."]
+L'agent de console a amélioré les messages d'erreur qui vous aident à mieux comprendre les problèmes.link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["Découvrez comment dépanner les agents de la console."]
 
 
 

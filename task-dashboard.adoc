@@ -33,7 +33,7 @@ Chaque volet de la page d’accueil nécessite des rôles d’utilisateur diffé
 * * Volet d'alertes ONTAP * : administrateur de dossier ou de projet, analyste du support opérationnel, administrateur d'organisation, visualiseur d'organisation, super administrateur, super visualiseur
 * *Volet Capacité de performances de stockage* : Possibilité d'afficher la page Systèmes de la console NetApp
 * *Volet Licences et abonnements* : Administrateur de dossier ou de projet, Administrateur d'organisation, Visualiseur d'organisation, Super administrateur, Super visualiseur
-* *Volet Résilience aux rançongiciels* : Administrateur de dossier ou de projet, Administrateur d'organisation, Administrateur de protection contre les rançongiciels, Visionneuse de protection contre les rançongiciels, Super administrateur, Super visionneuse
+* *Volet Résilience aux rançongiciels* : Administrateur de dossier ou de projet, Administrateur d'organisation, Administrateur Résilience aux rançongiciels, Visionneuse de résilience aux rançongiciels, Super administrateur, Super visionneuse
 * *Volet Sauvegarde et récupération* : Administrateur de sauvegarde et de récupération, Super administrateur de sauvegarde et de récupération, Visionneuse de sauvegarde et de récupération, Administrateur de clone de sauvegarde et de récupération, Administrateur de dossier ou de projet, Administrateur d'organisation, Administrateur de restauration de sauvegarde et de récupération, Super administrateur, Super visionneuse
 
 
@@ -194,7 +194,7 @@ Découvrez si les charges de travail sont exposées à des attaques de ransomwar
 
 Les données sont actualisées toutes les 5 minutes et correspondent aux données affichées dans le tableau de bord de résilience NetApp Ransomware.
 
-https://docs.netapp.com/us-en/bluexp-ransomware-protection/concept-ransomware-protection.html["En savoir plus sur la résilience aux ransomwares de NetApp"^] .
+https://docs.netapp.com/us-en/data-services-ransomware-resilience/concept-ransomware-resilience.html["En savoir plus sur la résilience aux ransomwares de NetApp"^] .
 
 .Étapes
 . Dans le menu de la console NetApp , examinez le volet Résilience aux ransomwares.
