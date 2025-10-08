@@ -69,7 +69,7 @@ Si vous disposez de plusieurs agents de console, vous pouvez basculer entre eux 
 
 
 .Informations connexes
-link:task-iam-associate-connectors.html["Associer des agents à des dossiers et des projets"] .
+link:task-iam-associate-agents.html["Associer des agents à des dossiers et des projets"] .
 
 
 

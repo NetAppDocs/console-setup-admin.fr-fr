@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-install-connector-google-manual.html 
-keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, manual install, create connector, gcp installation, gcp connector 
-summary: 'Pour installer manuellement l"agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l"hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la console, puis fournir les autorisations que vous avez préparées.' 
+permalink: task-install-agent-aws-manual.html 
+keywords: install connector, aws connector installation, aws connector, install connector in aws, bluexp, aws marketplace, manual install, create connector 
+summary: 'Vous pouvez installer manuellement un agent de console sur un hôte Linux exécuté dans AWS.  Pour installer manuellement l"agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l"hôte, configurer votre réseau, préparer les autorisations AWS, installer l"agent de console, puis fournir les autorisations que vous avez préparées.' 
 ---
-= Installer manuellement l'agent de console dans Google Cloud
+= Installer manuellement l'agent de console dans AWS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: 'Pour installer manuellement l"agent de console sur votre propre hôte 
 
 
 [role="lead"]
-Pour installer manuellement l'agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l'hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la console, puis fournir les autorisations que vous avez préparées.
+Vous pouvez installer manuellement un agent de console sur un hôte Linux exécuté dans AWS.  Pour installer manuellement l'agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l'hôte, configurer votre réseau, préparer les autorisations AWS, installer l'agent de console, puis fournir les autorisations que vous avez préparées.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -107,10 +107,14 @@ Non pris en charge
 
 |===
 --
-Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons n2-standard-8.
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
+Paire de clés:: Lorsque vous créez l'agent de console, vous devez sélectionner une paire de clés EC2 à utiliser avec l'instance.
+Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est activé sur l'instance EC2 (il s'agit du paramètre par défaut pour les nouvelles instances EC2), vous devez modifier la limite de saut de réponse PUT sur l'instance à 3.  Si vous ne modifiez pas la limite sur l'instance EC2, vous recevrez une erreur d'initialisation de l'interface utilisateur lorsque vous tenterez de configurer l'agent.
 +
 --
-L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]
+* link:task-require-imdsv2.html["Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2"]
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-existing-instances.html#modify-PUT-response-hop-limit["Documentation AWS : Modifier la limite de saut de réponse PUT"^]
+
 
 --
 Espace disque dans /opt:: 100 Go d'espace doivent être disponibles
@@ -296,7 +300,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 
 == Étape 3 : Configurer le réseau
 
-Configurez votre réseau afin que l’agent de la console puisse gérer les ressources et les processus au sein de votre environnement cloud hybride.  Par exemple, vous devez vous assurer que les connexions sont disponibles pour les réseaux cibles et que l’accès Internet sortant est disponible.
+Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  La satisfaction de ces exigences permet à l’agent de console de gérer les ressources et les processus au sein de votre environnement de cloud hybride.
 
 Connexions aux réseaux cibles:: L'agent de console nécessite une connexion réseau à l'emplacement où vous prévoyez de créer et de gérer des systèmes.  Par exemple, le réseau sur lequel vous prévoyez de créer des systèmes Cloud Volumes ONTAP ou un système de stockage dans votre environnement local.
 
@@ -325,9 +329,17 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 
  a| 
-\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects
+Services AWS (amazonaws.com) :
+
+* CloudFormation
+* Cloud de calcul élastique (EC2)
+* Gestion des identités et des accès (IAM)
+* Service de gestion des clés (KMS)
+* Service de jetons de sécurité (STS)
+* Service de stockage simple (S3)
+
  a| 
-Pour gérer les ressources dans Google Cloud.
+Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
 
 
 
@@ -412,140 +424,80 @@ Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analy
 
 
 
-== Étape 4 : Configurer les autorisations pour l’agent de la console
+== Étape 4 : configurer les autorisations AWS pour la console
 
-Un compte de service Google Cloud est requis pour fournir à l'agent de la console les autorisations dont la console a besoin pour gérer les ressources dans Google Cloud.  Lorsque vous créez l’agent de console, vous devez associer ce compte de service à la machine virtuelle de l’agent de console.
+Vous devez fournir des autorisations AWS à la console NetApp en utilisant l’une des options suivantes :
 
-Il est de votre responsabilité de mettre à jour le rôle personnalisé à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.  Si de nouvelles autorisations sont requises, elles seront répertoriées dans les notes de version.
+* Option 1 : créez des stratégies IAM et attachez-les à un rôle IAM que vous pouvez associer à l’instance EC2.
+* Option 2 : fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
 
+
+Suivez les étapes pour préparer les autorisations pour la console.
+
+[role="tabbed-block"]
+====
+.Rôle IAM
+--
 .Étapes
-. Créer un rôle personnalisé dans Google Cloud :
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
 +
-.. Créez un fichier YAML qui inclut le contenu dulink:reference-permissions-gcp.html["autorisations de compte de service pour l'agent de console"] .
-.. Depuis Google Cloud, activez Cloud Shell.
-.. Téléchargez le fichier YAML qui inclut les autorisations requises.
-.. Créez un rôle personnalisé en utilisant le `gcloud iam roles create` commande.
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
 +
-L'exemple suivant crée un rôle nommé « connecteur » au niveau du projet :
-
-+
-`gcloud iam roles create connector --project=myproject --file=connector.yaml`
-
-+
-https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["Documentation Google Cloud : Création et gestion de rôles personnalisés"^]
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.  Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
 
 
 
-. Créez un compte de service dans Google Cloud et attribuez le rôle au compte de service :
+. Créer un rôle IAM :
 +
-.. Depuis le service IAM & Admin, sélectionnez *Comptes de service > Créer un compte de service*.
-.. Saisissez les détails du compte de service et sélectionnez *Créer et continuer*.
-.. Sélectionnez le rôle que vous venez de créer.
+.. Sélectionnez *Rôles > Créer un rôle*.
+.. Sélectionnez *Service AWS > EC2*.
+.. Ajoutez des autorisations en joignant la politique que vous venez de créer.
 .. Terminez les étapes restantes pour créer le rôle.
+
+
+
+
+.Résultat
+Vous disposez désormais d’un rôle IAM que vous pouvez associer à l’instance EC2 après avoir installé l’agent de console.
+
+--
+.Clé d'accès AWS
+--
+.Étapes
+. Connectez-vous à la console AWS et accédez au service IAM.
+. Créer une politique:
 +
-https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Documentation Google Cloud : Création d'un compte de service"^]
-
-
-
-. Si vous prévoyez de déployer des systèmes Cloud Volumes ONTAP dans des projets différents de celui dans lequel réside l'agent de console, vous devrez fournir au compte de service de l'agent de console un accès à ces projets.
+.. Sélectionnez *Politiques > Créer une politique*.
+.. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
+.. Terminez les étapes restantes pour créer la politique.
 +
-Par exemple, disons que l’agent de console se trouve dans le projet 1 et que vous souhaitez créer des systèmes Cloud Volumes ONTAP dans le projet 2.  Vous devrez accorder l’accès au compte de service dans le projet 2.
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.
 
 +
-.. Depuis le service IAM & Admin, sélectionnez le projet Google Cloud dans lequel vous souhaitez créer des systèmes Cloud Volumes ONTAP .
-.. Sur la page *IAM*, sélectionnez *Accorder l'accès* et fournissez les détails requis.
+Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+
+
+
+. Attachez les politiques à un utilisateur IAM.
 +
-*** Saisissez l’e-mail du compte de service de l’agent de la console.
-*** Sélectionnez le rôle personnalisé de l’agent de console.
-*** Sélectionnez *Enregistrer*.
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["Documentation AWS : Création de rôles IAM"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
 
 
+. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la console NetApp après avoir installé l'agent de console.
 
 
-+
-Pour plus de détails, reportez-vous à https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single-role["Documentation Google Cloud"^]
+.Résultat
+Vous disposez désormais d’un utilisateur IAM disposant des autorisations requises et d’une clé d’accès que vous pouvez fournir à la console.
 
-
-
-
-
-== Étape 5 : Configurer les autorisations VPC partagées
-
-Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.
-
-Ce tableau est fourni à titre de référence et votre environnement doit refléter le tableau des autorisations une fois la configuration IAM terminée.
-
-.Afficher les autorisations VPC partagées
-[%collapsible]
-====
-[cols="10,10,10,18,18,34"]
-|===
-| Identité | Créateur | Hébergé dans | Autorisations du projet de service | Autorisations du projet hôte | But 
-
-
-| Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
-link:task-install-connector-google-bluexp-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
- a| 
-compute.networkUser
-| Déploiement de l'agent dans le projet de service 
-
-
-| compte de service d'agent | Coutume | Projet de service  a| 
-link:reference-permissions-gcp.html["Politique de compte de service d'agent"]
-| compute.networkUser deploymentmanager.editor | Déploiement et maintenance de Cloud Volumes ONTAP et des services dans le projet de service 
-
-
-| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la console NetApp en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
-
-
-| Agent de service des API Google | Google Cloud | Projet de service  a| 
-Éditeur (par défaut)
- a| 
-compute.networkUser
-| Interagit avec les API Google Cloud au nom du déploiement.  Permet à la console d'utiliser le réseau partagé. 
-
-
-| Compte de service par défaut de Google Compute Engine | Google Cloud | Projet de service  a| 
-Éditeur (par défaut)
- a| 
-compute.networkUser
-| Déploie des instances Google Cloud et une infrastructure de calcul pour le compte du déploiement.  Permet à la console d'utiliser le réseau partagé. 
-|===
-Remarques :
-
-. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La console NetApp crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
-. firewall.create et firewall.delete ne sont requis que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  Ces autorisations résident dans le fichier .yaml du compte de console.  Si vous déployez une paire HA à l’aide d’un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3.  Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer des règles pour VPC0.
-. Pour la hiérarchisation du cloud, le compte de service de hiérarchisation doit avoir le rôle serviceAccount.user sur le compte de service, pas seulement au niveau du projet.  Actuellement, si vous attribuez serviceAccount.user au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec getIAMPolicy.
-
-
+--
 ====
 
 
-== Étape 6 : Activer les API Google Cloud
-
-Plusieurs API Google Cloud doivent être activées avant de pouvoir déployer des systèmes Cloud Volumes ONTAP dans Google Cloud.
-
-.Étape
-. Activez les API Google Cloud suivantes dans votre projet :
-+
-** API du gestionnaire de déploiement cloud V2
-** API de journalisation dans le cloud
-** API du gestionnaire de ressources cloud
-** API Compute Engine
-** API de gestion des identités et des accès (IAM)
-** API du service de gestion des clés cloud (KMS)
-+
-(Requis uniquement si vous prévoyez d'utiliser NetApp Backup and Recovery avec des clés de chiffrement gérées par le client (CMEK))
-
-
-
-
-
-https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentation Google Cloud : Activation des API"^]
-
-
-
-== Étape 7 : Installer l’agent de console
+== Étape 5 : Installer l’agent de console
 
 Une fois les prérequis terminés, vous pouvez installer manuellement le logiciel sur votre propre hôte Linux.
 
@@ -561,7 +513,7 @@ Vous avez la possibilité de configurer un serveur proxy après l'installation, 
 
 
 
-NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-connector-maint-console.html["Console de maintenance des agents"] .
+NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console. Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-agent-maint-console.html["Console de maintenance des agents"] .
 
 .À propos de cette tâche
 Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.
@@ -693,24 +645,52 @@ Vous devez garder le mode restreint désactivé car ces étapes décrivent comme
 .. Sélectionnez *Commençons*.
 
 
-+
-
-NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rapport pour vous aider à résoudre le problème.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
 
 
-
-Si vous disposez de buckets Google Cloud Storage dans le même compte Google Cloud où vous avez créé l'agent de la console, vous verrez un système Google Cloud Storage apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-google-cloud-storage/index.html["Découvrez comment gérer Google Cloud Storage depuis la console NetApp"^]
+Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un système de stockage Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Découvrez comment gérer les buckets S3 à partir de NetApp ConsoleP"^]
 
 
 
-== Étape 8 : Accorder des autorisations à l'agent de console
+== Étape 6 : Accorder des autorisations à la console NetApp
 
-Vous devez fournir à l'agent de la console les autorisations Google Cloud que vous avez précédemment configurées.  L'octroi des autorisations permet à l'agent de la console de gérer vos données et votre infrastructure de stockage dans Google Cloud.
+Maintenant que vous avez installé l'agent de console, vous devez fournir à la console les autorisations AWS que vous avez précédemment configurées.  L’octroi des autorisations permet à l’agent de la console de gérer vos données et votre infrastructure de stockage dans AWS.
+
+[role="tabbed-block"]
+====
+.Rôle IAM
+--
+Attachez le rôle IAM que vous avez précédemment créé à l’instance EC2 de l’agent de console.
 
 .Étapes
-. Accédez au portail Google Cloud et attribuez le compte de service à l’instance de machine virtuelle de l’agent de la console.
+. Accédez à la console Amazon EC2.
+. Sélectionnez *Instances*.
+. Sélectionnez l’instance de l’agent de console.
+. Sélectionnez *Actions > Sécurité > Modifier le rôle IAM*.
+. Sélectionnez le rôle IAM et sélectionnez *Mettre à jour le rôle IAM*.
+
+
+Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+
+--
+.Clé d'accès AWS
+--
+Fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
+
+.Étapes
+. Assurez-vous que l’agent de console correct est actuellement sélectionné dans la console.
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
 +
-https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["Documentation Google Cloud : Modification du compte de service et des étendues d'accès pour une instance"^]
+.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Agent.
+.. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
 
-. Si vous souhaitez gérer des ressources dans d'autres projets Google Cloud, accordez l'accès en ajoutant le compte de service avec le rôle d'agent de console à ce projet. Vous devrez répéter cette étape pour chaque projet.
 
+
+
+Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+
+--
+====

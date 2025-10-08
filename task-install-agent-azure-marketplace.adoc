@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-install-connector-azure-marketplace.html 
+permalink: task-install-agent-azure-marketplace.html 
 keywords: install connector, azure connector installation, azure connector, install connector in azure, bluexp, create connector, marketplace, azure marketplace 
 summary: Pour créer un agent de console à partir de la Place de marché Azure, vous devez configurer votre réseau, préparer les autorisations Azure, examiner les exigences de l’instance, puis créer l’agent de console. 
 ---
@@ -17,7 +17,7 @@ summary: Pour créer un agent de console à partir de la Place de marché Azure,
 Vous pouvez créer un agent de console dans Azure directement à partir de la Place de marché Azure.  Pour créer un agent de console à partir de la Place de marché Azure, vous devez configurer votre réseau, préparer les autorisations Azure, examiner les exigences de l’instance, puis créer l’agent de console.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
 * Revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -376,7 +376,7 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 Lancez l’agent de console directement depuis la Place de marché Azure.
 
 .À propos de cette tâche
-La création de l’agent de console à partir de la Place de marché Azure configure une machine virtuelle avec une configuration par défaut. link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+La création de l’agent de console à partir de la Place de marché Azure configure une machine virtuelle avec une configuration par défaut. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
 
 .Avant de commencer
 Vous devriez avoir les éléments suivants :

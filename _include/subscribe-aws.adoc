@@ -7,7 +7,7 @@ La vidéo suivante montre les étapes à suivre pour s'abonner à NetApp Intelli
 .Abonnez-vous aux services intelligents NetApp depuis la place de marché AWS
 video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
 .Étapes
-. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Administration > Informations d'identification*.
 . Sélectionnez *Informations d'identification de l'organisation*.
 . Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
 +

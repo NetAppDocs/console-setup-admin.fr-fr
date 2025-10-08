@@ -20,7 +20,7 @@ Découvrez comment la console NetApp utilise les informations d’identification
 
 == Informations d'identification AWS initiales
 
-Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM.  La méthode d’authentification doit disposer des autorisations pour déployer la console dans AWS.  Les autorisations requises sont répertoriées dans le lien : task-install-connector-aws-the Console.html#console-permissions-aws[Politique de déploiement de l'agent pour AWS].
+Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM. La méthode d’authentification doit disposer des autorisations pour déployer la console dans AWS. Les autorisations requises sont répertoriées dans le lien : task-install-agent-aws-the Console.html#console-permissions-aws[Politique de déploiement de l'agent pour AWS].
 
 Lorsque la console lance l’instance de l’agent de console dans AWS, elle crée un rôle IAM et un profil d’instance pour l’instance.  Il attache également une politique qui fournit à l’agent de la console des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Examiner comment la console utilise les autorisations"] .
 
@@ -141,8 +141,8 @@ Pour savoir comment configurer les autorisations, reportez-vous aux pages suivan
 
 * Mode standard
 +
-** link:task-install-connector-aws-marketplace.html#step-2-set-up-aws-permissions["Configurer les autorisations pour un déploiement AWS Marketplace"]
-** link:task-install-connector-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
+** link:task-install-agent-aws-marketplace.html#step-2-set-up-aws-permissions["Configurer les autorisations pour un déploiement AWS Marketplace"]
+** link:task-install-agent-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
 
 
 * Mode restreint

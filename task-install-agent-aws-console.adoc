@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-install-connector-aws-bluexp.html 
+permalink: task-install-agent-aws-console.html 
 keywords: install connector, aws connector installation, aws connector, install connector in aws, bluexp, create connector 
 summary: Vous pouvez créer un agent de console dans AWS directement à partir de la console NetApp .  Avant de créer un agent de console dans AWS à partir de la console, vous devez configurer votre réseau et préparer les autorisations AWS. 
 ---
@@ -17,7 +17,7 @@ summary: Vous pouvez créer un agent de console dans AWS directement à partir d
 Vous pouvez créer un agent de console dans AWS directement à partir de la console NetApp .  Avant de créer un agent de console dans AWS à partir de la console, vous devez configurer votre réseau et préparer les autorisations AWS.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -289,7 +289,7 @@ Vous devriez maintenant avoir un rôle IAM disposant des autorisations requises 
 Créez l’agent de console directement à partir de la console Web.
 
 .À propos de cette tâche
-* La création de l’agent de console à partir de la console déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut.  Ne passez pas à une instance EC2 plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+* La création de l’agent de console à partir de la console déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut. Ne passez pas à une instance EC2 plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
 * Lorsque la console crée l’agent de console, elle crée un rôle IAM et un profil d’instance pour l’instance.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources AWS.  Assurez-vous que le rôle est mis à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions futures. link:reference-permissions-aws.html["En savoir plus sur la politique IAM pour l'agent de console"] .
 
 

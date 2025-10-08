@@ -304,7 +304,6 @@
   <block id="90589c47f06eb971d548591f23c285af" category="cell">Coutume</block>
   <block id="a546c9049428d60032b181f2f82657b4" category="cell">Projet de service</block>
   <block id="35294f1b614d05324fe6824b9051c99c" category="inline-link-macro">Politique de déploiement de l'agent</block>
-  <block id="42d40e4952b856c8ace120d5f8583eee" category="paragraph"><block ref="42d40e4952b856c8ace120d5f8583eee" category="inline-link-macro-rx"></block></block>
   <block id="40f49838c90873745fc1b1382a2c4b68" category="paragraph">compute.networkUser</block>
   <block id="269096cfe4db81a130833f69a820cb46" category="cell">Déploiement de l'agent dans le projet de service</block>
   <block id="14a07ec91e00fe2f922883e7ada7a6ca" category="cell">compte de service d'agent</block>
@@ -333,7 +332,6 @@
   <block id="4417d966b724524a7dd995ebe740c6cb" category="paragraph">Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.</block>
   <block id="a9f9e821b8a8692181584ef4520bb0f5" category="list-text">Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.</block>
   <block id="f055093e2366ca02aea03df7cfb1248e" category="inline-link-macro">Console de maintenance des agents</block>
-  <block id="fbcd7669a7a0c8cc9053c7c78029654b" category="admonition">Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur le<block ref="d3f69ee6935d5f5f8542f4da69ac2bb6" category="inline-link-macro-rx"></block> .</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">À propos de cette tâche</block>
   <block id="659f0b9a6a18db69662f4738cacedeb4" category="paragraph">Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.</block>
   <block id="16c184ab0a5376cef0ecef7f0da93ac2" category="list-text">Si les variables système _http_proxy_ ou _https_proxy_ sont définies sur l'hôte, supprimez-les :</block>
@@ -1125,7 +1123,6 @@
   <block id="e54158140168d6bfda7951dabc8a0468" category="doc">En savoir plus sur les informations d'identification et les autorisations AWS dans la console NetApp</block>
   <block id="64aa23be91006f71d837b2f3d1037b91" category="paragraph">Découvrez comment la console NetApp utilise les informations d’identification AWS pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements à la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs comptes AWS dans la console NetApp .  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification AWS supplémentaires.</block>
   <block id="9ef43b020d41cab5808d78fdf855c429" category="section-title">Informations d'identification AWS initiales</block>
-  <block id="e6cdf78e0e957711d61016a5e5be0c8e" category="paragraph">Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM.  La méthode d’authentification doit disposer des autorisations pour déployer la console dans AWS.  Les autorisations requises sont répertoriées dans le lien : task-install-connector-aws-the Console.html#console-permissions-aws[Politique de déploiement de l'agent pour AWS].</block>
   <block id="055263949ee2b6bf634a650444f9e58d" category="inline-link-macro">Examiner comment la console utilise les autorisations</block>
   <block id="9578371ace149ffae484a1e8a558e65f" category="paragraph">Lorsque la console lance l’instance de l’agent de console dans AWS, elle crée un rôle IAM et un profil d’instance pour l’instance.  Il attache également une politique qui fournit à l’agent de la console des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. <block ref="8e59a32a1f99b7e02222756f023f4cdb" category="inline-link-macro-rx"></block> .</block>
   <block id="873c2fb7e6de1298736591dfc041a312" category="inline-image-macro">Une image conceptuelle qui montre la console déployant l’agent de console dans un compte AWS.  Une politique IAM est attribuée à un rôle IAM, qui est attaché à l’instance de la console.</block>
@@ -1185,9 +1182,7 @@
   <block id="796c918f0fce99224fa4a1b54f518f96" category="paragraph">Pour savoir comment configurer les autorisations, reportez-vous aux pages suivantes :</block>
   <block id="53c512e9599c71e1a585d636a5229820" category="list-text">Mode standard</block>
   <block id="3f85a7bdf40074d6d7c5e25de7a35f3a" category="inline-link-macro">Configurer les autorisations pour un déploiement AWS Marketplace</block>
-  <block id="cd2bf2a9ec0f834a404adb2dff0bbe33" category="list-text"><block ref="cd2bf2a9ec0f834a404adb2dff0bbe33" category="inline-link-macro-rx"></block></block>
   <block id="ce811221f0cf50868c1d57fc933d7fc1" category="inline-link-macro">Configurer les autorisations pour les déploiements sur site</block>
-  <block id="6a20f7bea39d709e36e4109960a8e930" category="list-text"><block ref="6a20f7bea39d709e36e4109960a8e930" category="inline-link-macro-rx"></block></block>
   <block id="e429f30641aba9e1fc7f2090cc77ce40" category="list-text">Mode restreint</block>
   <block id="cb3ffce0d4b8f43b3d9f183b558cca41" category="inline-link-macro">Configurer les autorisations pour le mode restreint</block>
   <block id="9bf0216383a3ff083b86cdd433d2e65e" category="list-text"><block ref="9bf0216383a3ff083b86cdd433d2e65e" category="inline-link-macro-rx"></block></block>
@@ -1195,7 +1190,6 @@
   <block id="7192f06d0f10fc326466068ebdf43e86" category="doc">En savoir plus sur les informations d'identification et les autorisations Azure dans la console NetApp</block>
   <block id="08a6159f6d9d986210470d2ab6dff166" category="section-title">Informations d'identification Azure initiales</block>
   <block id="5c33ea5ded6381ee1c09e63b86ac25ed" category="inline-link-macro">Politique de déploiement d'agent pour Azure</block>
-  <block id="4fabf4035bcfca379eaa6831f4e3d010" category="paragraph">Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console.  Les autorisations requises sont répertoriées dans le<block ref="24c609a9fdf68daa95529043263ead79" category="inline-link-macro-rx"></block> .</block>
   <block id="1985b326c07cdcb2a260ae0c0c6fde8d" category="inline-link">identité gérée attribuée par le système</block>
   <block id="fc811f4efa4402b5437649164ea2dbb3" category="paragraph">Lorsque la console déploie la machine virtuelle de l'agent de console dans Azure, elle active un<block ref="3b529d5441a4ea26741352247ca08bac" category="inline-link-rx"></block> sur la machine virtuelle, crée un rôle personnalisé et l'attribue à la machine virtuelle.  Le rôle fournit à la console les autorisations requises pour gérer les ressources et les processus au sein de cet abonnement Azure. <block ref="4e8f46d45dc9a2f1f1b6f49a05e1acc0" category="inline-link-macro-rx"></block> .</block>
   <block id="480ce9346b68cbae4cd2960b3765eb04" category="inline-image-macro">Une image conceptuelle qui montre la console déployant un agent de console dans un compte et un abonnement Azure.  Une identité gérée attribuée par le système est activée et un rôle personnalisé est attribué à la machine virtuelle de l’agent de console.</block>
@@ -1231,7 +1225,6 @@
   <block id="c33ac28b474eaf103dc371d4dad649e5" category="paragraph">Si vous utilisez la Place de marché, vous pouvez fournir des autorisations en attribuant un rôle personnalisé à la machine virtuelle de l’agent de console et à une identité gérée attribuée par le système, ou vous pouvez utiliser un principal de service Microsoft Entra.</block>
   <block id="1f92e407b4c0475a97f268ddf5361a4c" category="paragraph">Pour les déploiements sur site, vous ne pouvez pas configurer une identité gérée pour l’agent de console, mais vous pouvez fournir des autorisations à l’aide d’un principal de service.</block>
   <block id="f4426e4062930abb33465fb5b79b35dc" category="inline-link-macro">Configurer les autorisations pour un déploiement Azure Marketplace</block>
-  <block id="d16dc391acdc52d611958fdd5ca48d52" category="list-text"><block ref="d16dc391acdc52d611958fdd5ca48d52" category="inline-link-macro-rx"></block></block>
   <block id="480c97395bf73b1326ca0221bb84f0ab" category="summary">Découvrez comment la console NetApp utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d'identification d'un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.</block>
   <block id="1fd4a2295cad602ba9d73683db88e799" category="doc">En savoir plus sur les projets et les autorisations Google Cloud</block>
   <block id="7c592b218a390e7d1c8bdbae8fbc794a" category="section-title">Projet et autorisations pour la console NetApp</block>
@@ -1244,7 +1237,6 @@
   <block id="1b33affeaa41a09a9f3a99d38d14376f" category="inline-image-macro">Une image conceptuelle illustrant les exigences d'autorisations pour les comptes Google et de service pour déployer Cloud Volumes ONTAP.</block>
   <block id="61ed3f7479580c6ad0ce86e9e6f3dd8d" category="paragraph"><block ref="61ed3f7479580c6ad0ce86e9e6f3dd8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="392cce9be5aaba5ccc4ab6924ab91b7b" category="inline-link-macro">Configurer les autorisations Google Cloud pour le mode standard</block>
-  <block id="c82ff510c21e67f73b0d32d9f389a2c8" category="list-text"><block ref="c82ff510c21e67f73b0d32d9f389a2c8" category="inline-link-macro-rx"></block></block>
   <block id="f602ddacd315e97a55613d5d087915db" category="paragraph">Lorsque vous déployez un agent de console dans Google Cloud, la console crée un ensemble d'informations d'identification par défaut pour le compte de service Google Cloud dans le projet dans lequel réside l'agent de console.  Ces informations d'identification doivent être associées à un abonnement Google Cloud Marketplace afin que vous puissiez payer les services de données Cloud Volumes ONTAP et NetApp .</block>
   <block id="09287a1087bc09afb8b07a6d1a5eae1e" category="inline-link-macro">Découvrez comment associer un abonnement Google Cloud Marketplace</block>
   <block id="7acdafee5614d2da4affd478462c535e" category="paragraph"><block ref="4394d3ef2937eb47839ebd4e9350c4a7" category="inline-link-macro-rx"></block> .</block>
@@ -1254,7 +1246,6 @@
   <block id="ebd7d1e81a9a2891e260eecaa709adbf" category="section-title">Projet pour Cloud Volumes ONTAP</block>
   <block id="baf581d10362cd2b4a862b9e83d0cfbb" category="paragraph">Cloud Volumes ONTAP peut résider dans le même projet que l'agent de console ou dans un projet différent.  Pour déployer Cloud Volumes ONTAP dans un autre projet, vous devez d’abord ajouter le compte de service et le rôle de l’agent de console à ce projet.</block>
   <block id="8bee474fd085c11334ab13b9c1a78d9e" category="inline-link-macro">Apprenez à configurer le compte de service</block>
-  <block id="bbba4a0b31f6e371c1e1df3ffeaf2850" category="list-text"><block ref="bbba4a0b31f6e371c1e1df3ffeaf2850" category="inline-link-macro-rx"></block></block>
   <block id="4ec920ccbe2fc417ccd7dcd957eb9653" category="inline-link">Découvrez comment déployer Cloud Volumes ONTAP dans Google Cloud et sélectionner un projet</block>
   <block id="486db18d2aa67b603506d28b5425dc88" category="list-text"><block ref="486db18d2aa67b603506d28b5425dc88" category="inline-link-rx"></block></block>
   <block id="1ffac481825810aa6d8bc2bbd6e9f0d5" category="summary">Un _agent de console_ est un logiciel NetApp exécuté sur votre réseau cloud ou sur votre réseau local.  Vous utilisez un agent de console pour connecter les services de console NetApp à vos environnements de stockage.</block>
@@ -1327,7 +1318,6 @@
   <block id="2c816b9bf7b9b3b6fa614eed25c47bad" category="inline-link-macro">Options d'installation de l'agent dans Google Cloud</block>
   <block id="c25970a47753b09b5f368b1a825af136" category="list-text"><block ref="c25970a47753b09b5f368b1a825af136" category="inline-link-macro-rx"></block></block>
   <block id="57d93d5e81bafd40970707a32bf098e7" category="inline-link-macro">Configurer les autorisations cloud pour les déploiements sur site</block>
-  <block id="4534d0aacb9b6c8187f921fbea9e7dcd" category="list-text"><block ref="4534d0aacb9b6c8187f921fbea9e7dcd" category="inline-link-macro-rx"></block></block>
   <block id="4b793f4b507e17e1b9daee24a7d317fe" category="paragraph">Pour afficher les autorisations exactes dont l'agent de la console a besoin pour les opérations quotidiennes, reportez-vous aux pages suivantes :</block>
   <block id="6f78686bae0992fab2bb708dad824db4" category="inline-link-macro">Découvrez comment l'agent de console utilise les autorisations AWS</block>
   <block id="6800cfbf3754d2e1b8c68543cde59cb1" category="list-text"><block ref="6800cfbf3754d2e1b8c68543cde59cb1" category="inline-link-macro-rx"></block></block>
@@ -1341,7 +1331,6 @@
   <block id="5ae32585fa310b47843d2bd6a91b4832" category="paragraph">En mode standard ou restreint, l'agent de la console se met à jour automatiquement s'il dispose d'un accès Internet.</block>
   <block id="28d40d49edc5d8557dfa8624f4921f55" category="section-title">Maintenance du système d'exploitation et des machines virtuelles</block>
   <block id="09ecb112c1af6628255a4b08c6a7cbed" category="inline-xref">L'agent de la console doit être opérationnel à tout moment</block>
-  <block id="f8c11c92cf22fcb0495ffbb48fe3b0fb" category="paragraph"><block ref="ffd5178d533700d08d69d42b52b64f9a" category="inline-xref-macro-rx"></block> .</block>
   <block id="7fcdcdc0f0f8f0d864eab57a6734f577" category="section-title">Systèmes et agents multiples</block>
   <block id="87e19ab0e91dd93d18077c642263f2d7" category="paragraph">Un agent peut gérer plusieurs systèmes et prendre en charge les services de données dans la console.  Vous pouvez utiliser un seul agent pour gérer plusieurs systèmes en fonction de la taille du déploiement et des services de données que vous utilisez.</block>
   <block id="d8466ae7920d413f334ecbe2662940d7" category="paragraph">Pour les déploiements à grande échelle, travaillez avec votre représentant NetApp pour dimensionner votre environnement.  Contactez le support NetApp si vous rencontrez des problèmes.</block>
@@ -1464,7 +1453,6 @@
   <block id="fd345e29cb62c01ba1d4171017902879" category="inline-link-macro">Gérer la hiérarchie des ressources dans votre organisation NetApp Console</block>
   <block id="471aa63a508cd0a524e051c1eee8bb18" category="list-text"><block ref="471aa63a508cd0a524e051c1eee8bb18" category="inline-link-macro-rx"></block></block>
   <block id="15f73bdf087fb0fd54c4481d4dc02d6c" category="inline-link-macro">Associer des agents à des dossiers et des projets</block>
-  <block id="bef5472a56f278957492e0caa5daa6ee" category="list-text"><block ref="bef5472a56f278957492e0caa5daa6ee" category="inline-link-macro-rx"></block></block>
   <block id="fcf7f94bff9ad201c2ad67548361caa3" category="inline-link-macro">Basculer entre les projets et les organisations de la console NetApp</block>
   <block id="cb4c504866718434ac51aadba7ecd536" category="list-text"><block ref="cb4c504866718434ac51aadba7ecd536" category="inline-link-macro-rx"></block></block>
   <block id="b2e7e5223ec4cb6c91429bf7de09474b" category="inline-link-macro">Renommez votre organisation NetApp Console</block>
@@ -1479,33 +1467,24 @@
   <block id="7ff9f8e2467774df163161a38d2d5040" category="doc">Options d'installation de l'agent de console dans AWS</block>
   <block id="b5afc81c4f24b143224e304b939a3f6c" category="paragraph">Les options d’installation suivantes sont disponibles :</block>
   <block id="b9dd01a6aae803f666e75d60b5cc37fe" category="inline-link-macro">Créez l'agent de console directement depuis la console</block>
-  <block id="dec60543b3c872bf4678e098bf8b34c0" category="list-text"><block ref="9836dd1a0e880b286ee17f24ef9b72d8" category="inline-link-macro-rx"></block>(c'est l'option standard)</block>
   <block id="f27c252d931beb3466d3231006b71803" category="paragraph">Cette action lance une instance EC2 exécutant Linux et le logiciel agent de console dans un VPC de votre choix.</block>
   <block id="1515391ee07716093ddb994cd9906006" category="inline-link-macro">Créer un agent de console à partir d'AWS Marketplace</block>
-  <block id="63d16e50767121dfdb5571f31cc3fa2f" category="list-text"><block ref="63d16e50767121dfdb5571f31cc3fa2f" category="inline-link-macro-rx"></block></block>
   <block id="b839e2143764191ce8726714fcf0e54c" category="paragraph">Cette action lance également une instance EC2 exécutant Linux et le logiciel agent de la console, mais le déploiement est lancé directement à partir d'AWS Marketplace, plutôt qu'à partir de la console.</block>
   <block id="7ec389ef03b4378689ec8afd5b977499" category="inline-link-macro">Téléchargez et installez manuellement le logiciel sur votre propre hôte Linux</block>
-  <block id="a0d5fffa896034a79c127d53a34685b7" category="list-text"><block ref="a0d5fffa896034a79c127d53a34685b7" category="inline-link-macro-rx"></block></block>
   <block id="a189e78df125d3702fb17473d7a17faa" category="paragraph">L’option d’installation que vous choisissez a un impact sur la manière dont vous vous préparez à l’installation.  Cela inclut la manière dont vous fournissez à la console les autorisations requises dont elle a besoin pour authentifier et gérer les ressources dans AWS.</block>
   <block id="f67190f28c8f18c6676794f4acd943fc" category="summary">Il existe plusieurs manières différentes de créer un agent de console dans Azure.  Le moyen le plus courant est d'accéder directement à partir de la console NetApp .</block>
   <block id="dcd94e7f09b8c058ae8084e8e5730bbb" category="doc">Options d'installation de l'agent de console dans Azure</block>
   <block id="f73d744dbe9e744eb8f73a3bab9f243e" category="inline-link-macro">Créer un agent de console directement à partir de la console NetApp</block>
-  <block id="3319d8a73f7275d2b326379baa4639b4" category="list-text"><block ref="c1f731be1bc48db64e71cd8627c6e815" category="inline-link-macro-rx"></block>(c'est l'option standard)</block>
   <block id="079e5f76242a76ddceeb5ae46398071c" category="paragraph">Cette action lance une machine virtuelle exécutant Linux et le logiciel agent de console dans un réseau virtuel de votre choix.</block>
   <block id="2dd5916ed68f963e9c5529d69a4de5fa" category="inline-link-macro">Créer un agent de console à partir de la place de marché Azure</block>
-  <block id="cbfffbec2ccf124f45cb3bf55408a096" category="list-text"><block ref="cbfffbec2ccf124f45cb3bf55408a096" category="inline-link-macro-rx"></block></block>
   <block id="cea96889fec9e311da2265fdf2e92490" category="paragraph">Cette action lance également une machine virtuelle exécutant Linux et le logiciel agent de la console, mais le déploiement est lancé directement à partir de la place de marché Azure, plutôt qu’à partir de la console.</block>
-  <block id="152e6840a2911cc120f143ff657bdc7e" category="list-text"><block ref="152e6840a2911cc120f143ff657bdc7e" category="inline-link-macro-rx"></block></block>
   <block id="320a91e2547bc28be93b76779dc849b4" category="paragraph">L’option d’installation que vous choisissez a un impact sur la manière dont vous vous préparez à l’installation.  Cela inclut la manière dont vous fournissez à l’agent de console les autorisations requises dont il a besoin pour authentifier et gérer les ressources dans Azure.</block>
   <block id="011286419a3e5b900c9f64647edebdf7" category="summary">Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d'accéder directement à partir de la console NetApp .</block>
   <block id="89facd2099770d471c8de70fdb5d0651" category="doc">Options d'installation de l'agent de console dans Google Cloud</block>
   <block id="0e60cc3f489de1661d16a80c2219b147" category="paragraph">Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d'accéder directement à partir de la console NetApp .  ---</block>
-  <block id="3a8fb6214df82cf0b456e76cbe8815f1" category="list-text"><block ref="da24dec5d5f3fc48efd4aac933839211" category="inline-link-macro-rx"></block>(c'est l'option standard)</block>
   <block id="efbe29648b3d8def21619f8bba35784f" category="paragraph">Cette action lance une instance de machine virtuelle exécutant Linux et le logiciel agent de console dans un VPC de votre choix.</block>
   <block id="f47b616e0890c8a8507745d52fc62533" category="inline-link-macro">Créer l'agent de console à l'aide de Google Platform</block>
-  <block id="7e678f9f1364b817a01c001dcb793c65" category="list-text"><block ref="7e678f9f1364b817a01c001dcb793c65" category="inline-link-macro-rx"></block></block>
   <block id="9f0f4ef7b4fff87cc68ce1185ff944ce" category="paragraph">Cette action lance également une instance de machine virtuelle exécutant Linux et le logiciel de l'agent de la console, mais le déploiement est lancé directement depuis Google Cloud, plutôt que depuis la console.</block>
-  <block id="ab98f632a22cf265a09e9110157eba1f" category="list-text"><block ref="ab98f632a22cf265a09e9110157eba1f" category="inline-link-macro-rx"></block></block>
   <block id="6ca5ab84f54829f432e3fc9d65f06d1c" category="paragraph">L’option d’installation que vous choisissez a un impact sur la manière dont vous vous préparez à l’installation.  Cela inclut la manière dont vous fournissez à la console les autorisations requises dont elle a besoin pour authentifier et gérer les ressources dans Google Cloud.</block>
   <block id="0899f83543ed0bdcc2e1e20f83558546" category="summary">La console NetApp propose plusieurs _modes de déploiement_ qui vous permettent de répondre à vos exigences commerciales et de sécurité. Le _mode standard_ exploite une couche de logiciel en tant que service (SaaS) pour fournir des fonctionnalités complètes, tandis que le _mode restreint_ et le _mode privé_ sont disponibles pour les organisations qui ont des restrictions de connectivité.</block>
   <block id="050bd8a4d093ad9b4ba1572b3fd77d0c" category="paragraph">La console NetApp propose plusieurs _modes de déploiement_ qui vous permettent de répondre à vos exigences commerciales et de sécurité.</block>
@@ -1559,11 +1538,8 @@
   <block id="7b0c55f247d6f53c6782615b53af4619" category="list-text">Communication sortante</block>
   <block id="c43c363ca98a3640bd064d1c0bd3a413" category="list-text">La connectivité est requise entre un agent de console et la couche SaaS de la console, les ressources accessibles au public de votre fournisseur de cloud et d'autres composants essentiels aux opérations quotidiennes.</block>
   <block id="9b5e57dc9b2aa6af73db773c627f993a" category="inline-link-macro">Points de terminaison qu'un agent contacte dans AWS</block>
-  <block id="c42790e5213a82292976f5c521d384e5" category="list-text"><block ref="c42790e5213a82292976f5c521d384e5" category="inline-link-macro-rx"></block></block>
   <block id="4858f9548af45fc4af93b80950e02dbf" category="inline-link-macro">Points de terminaison qu'un agent contacte dans Azure</block>
-  <block id="38aa2a3a75783061d308417558688769" category="list-text"><block ref="38aa2a3a75783061d308417558688769" category="inline-link-macro-rx"></block></block>
   <block id="01e5b09b5730088f2de0030cdb3a7862" category="inline-link-macro">Points de terminaison qu'un agent contacte dans Google Cloud</block>
-  <block id="1ecf84a1ffb6f20d673d2ecabce3da96" category="list-text"><block ref="1ecf84a1ffb6f20d673d2ecabce3da96" category="inline-link-macro-rx"></block></block>
   <block id="d6ec275d37a7d519496b7320d23bf53b" category="list-text">Emplacement pris en charge pour un agent</block>
   <block id="56818e4b6176dd9fb4526f26aabee766" category="list-text">En mode standard, un agent est pris en charge dans le cloud ou dans vos locaux.</block>
   <block id="fbc27e60b0428f5d4d0abe0fcff4f75d" category="list-text">Vous pouvez installer un agent en utilisant l’une des méthodes suivantes :</block>
@@ -1748,7 +1724,6 @@
   <block id="e386f797f1278a41cbdf60290772a272" category="list-text"><block ref="e386f797f1278a41cbdf60290772a272" category="inline-link-macro-rx"></block></block>
   <block id="b5d4f8f6ade5a4fbfeb3724b7bbc0b5e" category="paragraph">Un agent de console est nécessaire pour certaines fonctionnalités et services de données supplémentaires.  Il vous permet de gérer les ressources et les processus dans vos environnements sur site et dans le cloud.  Vous en avez besoin pour gérer certains systèmes (par exemple, Cloud Volumes ONTAP) et pour utiliser certains services de données NetApp .</block>
   <block id="919907c49b488683fa1ddd5c9088c12b" category="inline-link-macro">En savoir plus sur les agents de console</block>
-  <block id="a68642a7ade4333d4219aa580cea3a5c" category="paragraph"><block ref="4b4f0bafbdb20d9d8f8a468fa992856b" category="inline-link-macro-rx"></block> .</block>
   <block id="05cb21b1c0958252effc11eb9d437f38" category="section-title">Modes de déploiement</block>
   <block id="189b4f6eadcbbd36f0feb8dc1b8e1caf" category="paragraph">NetApp propose deux modes de déploiement pour la console NetApp : le _mode standard_ utilise une couche de logiciel en tant que service (SaaS) pour une fonctionnalité complète, tandis que le _mode restreint_ limite la connectivité sortante.</block>
   <block id="93ed0ac1db1f6b5a46cfc5e5f9034f18" category="inline-link-macro">Découvrez BlueXP (mode privé) pour les sites sans connexion Internet.</block>
@@ -1790,7 +1765,6 @@
   <block id="7c42c6e2f8295dada12f50f825327ddf" category="list-text">Le système d'exploitation de l'image est Ubuntu 22.04 LTS.</block>
   <block id="953e61420be6157aa122dfd3475d4070" category="paragraph">Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.</block>
   <block id="688aea6136f160e02c8d5bbec6894343" category="list-text">L'installation inclut Docker Engine, qui est l'outil d'orchestration de conteneurs requis.</block>
-  <block id="7f3b93b1ed83b943c21f5d8024ed1444" category="list-text">Le nom d'utilisateur de l'instance EC2 Linux est ubuntu (pour les agents créés avant mai 2023, le nom d'utilisateur était ec2-user).</block>
   <block id="efabd80ebdd217a47d9be936e5f0b8aa" category="list-text">Le disque système par défaut est un disque gp2 de 100 Gio.</block>
   <block id="b8c4a5bd8ed4eb470e80955a542dd4bf" category="section-title">Détails Azure</block>
   <block id="f637fe372218bb6ee39fd481301dc99f" category="list-text">Le type de machine virtuelle est Standard_D8s_v3.</block>
@@ -2329,13 +2303,9 @@
   <block id="79ad55cf82aac1a039766a722bd36b49" category="paragraph">Les agents de console doivent avoir accès aux mêmes points de terminaison que la console NetApp , ainsi qu'à des points de terminaison supplémentaires en fonction de l'endroit où vous installez l'agent.</block>
   <block id="8e67676c15ae2a94213bdd7971d44506" category="paragraph">Configurez l’accès au point de terminaison réseau avant d’installer l’agent de la console.</block>
   <block id="5eda3a7f9f9788e7beae44ca11c3fca1" category="inline-link-macro">Configurer l'accès au réseau AWS pour un agent de console</block>
-  <block id="e36ab6f1f66c90a8e643654e4229eea2" category="list-text"><block ref="e36ab6f1f66c90a8e643654e4229eea2" category="inline-link-macro-rx"></block></block>
   <block id="413296dfc7c1face41e185f79c4f8f7a" category="inline-link-macro">Configurer l'accès au réseau Azure pour un agent de console</block>
-  <block id="3dd2dea866a0ab6a5ae3b75ffb77d9c4" category="list-text"><block ref="3dd2dea866a0ab6a5ae3b75ffb77d9c4" category="inline-link-macro-rx"></block></block>
   <block id="6be29013501c644b088dfb30237d31df" category="inline-link-macro">Configurer l'accès au réseau Google Cloud pour un agent de console</block>
-  <block id="30dae547cc47aaa0019b4cb49e897579" category="list-text"><block ref="30dae547cc47aaa0019b4cb49e897579" category="inline-link-macro-rx"></block></block>
   <block id="f10bf17567a71d86b25d142d5d98b33b" category="inline-link-macro">Configurer l'accès au réseau local pour un agent de console</block>
-  <block id="71c15c3836e6f6563e5ad9f1ff544d48" category="list-text"><block ref="71c15c3836e6f6563e5ad9f1ff544d48" category="inline-link-macro-rx"></block></block>
   <block id="627545d3fae412b9188d4c9140899c75" category="section-title">Préparer la mise en réseau pour Cloud Volumes ONTAP</block>
   <block id="fd6e08319e0931b5b5ca23214370bc11" category="paragraph">Certains services de données NetApp ainsi que Cloud Volumes ONTAP nécessitent que l'agent dispose d'un accès Internet sortant supplémentaire.</block>
   <block id="3a10984b52469b032ed6d718a9e2670f" category="section-title">Points de terminaison pour Cloud Volumes ONTAP</block>
@@ -2818,7 +2788,6 @@
   <block id="7c803320cfc8e4215d4d26a0151ba1d0" category="cell">Déployer un agent de console à partir de la console</block>
   <block id="6bdd632a69530bf24f9d888defc43d4c" category="cell">L'utilisateur qui crée un agent de console à partir de la console a besoin d'autorisations spécifiques pour déployer l'instance dans AWS.</block>
   <block id="2d3fc94cd0898448a15e6e05f4098b6f" category="inline-link-macro">Configurer les autorisations AWS</block>
-  <block id="95d81e2f68fb04fddeae50ba5e3cb6fc" category="cell"><block ref="95d81e2f68fb04fddeae50ba5e3cb6fc" category="inline-link-macro-rx"></block></block>
   <block id="78b382509bdd4a7b6a4640d195cfbf2a" category="cell">Fournir des autorisations pour un agent de console</block>
   <block id="c9c719cb0217b958ec8c7414fa63880a" category="inline-link-macro">ajouter plus d'informations d'identification AWS à un agent de console</block>
   <block id="188679009280735826c6ea749302c194" category="cell">Lorsque la console déploie un agent de console, elle attache une stratégie à l'instance qui fournit les autorisations requises pour gérer les ressources et les processus de votre compte AWS.  Vous devez configurer la politique vous-même si vous déployez un agent de console à partir d'AWS Marketplace, si vous installez manuellement un agent de console ou si vous<block ref="dd68e1e1425f1a2836915a8e7efa1f0a" category="inline-link-macro-rx"></block> .  Vous devez également vous assurer que la politique est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.</block>
@@ -2858,7 +2827,6 @@
   <block id="e76758412e5a64841b8710e5fb81ab0c" category="section-title">Agent de console</block>
   <block id="5477f97a59a394df9523ff9145698f5e" category="cell">Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer une machine virtuelle d’agent de console dans Azure.</block>
   <block id="4275ae61422c34253a59329bd20a0449" category="inline-link-macro">Configurer les autorisations Azure</block>
-  <block id="97d45041217492c3fe9ac0d49a0674a5" category="cell"><block ref="97d45041217492c3fe9ac0d49a0674a5" category="inline-link-macro-rx"></block></block>
   <block id="610a789ea69218ae2657ee289d3ea1ab" category="paragraph">Lorsque la console déploie une machine virtuelle d’agent de console dans Azure, elle crée un rôle personnalisé qui fournit les autorisations requises pour gérer les ressources et les processus au sein de cet abonnement Azure.</block>
   <block id="410f33250f13598d6849ceba7b4120a3" category="inline-link-macro">ajouter plus d'informations d'identification Azure à un agent de console</block>
   <block id="e1e6784eb91937369cc77d605f81165a" category="paragraph">Vous devez configurer vous-même le rôle personnalisé si vous lancez un agent de console à partir de la place de marché, si vous installez manuellement un agent de console ou si vous<block ref="b386d5f716662b44565e96428cb16fbd" category="inline-link-macro-rx"></block> .</block>
@@ -2884,10 +2852,8 @@
   <block id="29979c57d65e0d9e92c7917a495cdb0b" category="paragraph">La console nécessite des autorisations Google Cloud pour un agent de console et pour des services individuels.</block>
   <block id="e31e5964808968a788e49e50220d6ef1" category="cell">L'utilisateur Google Cloud qui déploie un agent de console à partir de la console a besoin d'autorisations spécifiques pour déployer un agent de console dans Google Cloud.</block>
   <block id="6ba3cdd92c12894a3d208241e1aa4f37" category="inline-link-macro">Configurer les autorisations pour créer un agent de console</block>
-  <block id="fee2266ede7c0f9fc139c34347d8878f" category="cell"><block ref="fee2266ede7c0f9fc139c34347d8878f" category="inline-link-macro-rx"></block></block>
   <block id="fed7c7d3c9febb32111eed3404adf3f6" category="cell">Le compte de service d’une instance de machine virtuelle d’agent de console doit disposer d’autorisations spécifiques pour les opérations quotidiennes.  Vous devez associer le compte de service à un agent de console pendant le déploiement.  Vous devez également vous assurer que la politique est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.</block>
   <block id="1b29b6160eb822ba4beffa87a9ffbc2f" category="inline-link-macro">Configurer les autorisations pour un agent de console</block>
-  <block id="e666580d0c3c9a065bf3d7a5ed78f42f" category="cell"><block ref="e666580d0c3c9a065bf3d7a5ed78f42f" category="inline-link-macro-rx"></block></block>
   <block id="b5b529e8dc821910caacb50b880d2487" category="cell">Sauvegarder Cloud Volumes ONTAP sur Google Cloud</block>
   <block id="cd84e76d2557bd459057089ba5e1385c" category="inline-link">Sauvegardez les données Cloud Volumes ONTAP sur Google Cloud Storage avec Backup and Recovery</block>
   <block id="3b5162ff96cd00bbd1b1ad424d59bd8f" category="list-text"><block ref="3b5162ff96cd00bbd1b1ad424d59bd8f" category="inline-link-rx"></block></block>
@@ -3072,7 +3038,6 @@
   <block id="3d35bba2e5ea6e739fb94736dc402017" category="inline-link">Afficher les autorisations nécessaires pour FSx pour ONTAP</block>
   <block id="f36b248a3e4e722bcc9292d2e5151abc" category="list-text"><block ref="f36b248a3e4e722bcc9292d2e5151abc" category="inline-link-rx"></block></block>
   <block id="c19d1741d0fa79c8b012a7f8b068bc6c" category="inline-link-macro">Afficher la politique de déploiement de l'agent</block>
-  <block id="a554577f3ddd7cc055036191d9b710c3" category="list-text"><block ref="a554577f3ddd7cc055036191d9b710c3" category="inline-link-macro-rx"></block></block>
   <block id="884fd0826fb740e296bb4324a3742247" category="list-text">Copiez l’ARN du rôle IAM afin de pouvoir le coller dans la console à l’étape suivante.</block>
   <block id="d04fbc50c09432c35c0eb302581b70e6" category="inline-xref">Vous pouvez maintenant l'ajouter à la console</block>
   <block id="74b04ca811de14aef84fa666cae52e42" category="paragraph">Le rôle IAM dispose désormais des autorisations requises. <block ref="22c8d50e24c1ac21193395087b881b55" category="inline-xref-macro-rx"></block> .</block>
@@ -3093,7 +3058,6 @@
   <block id="1fa2cd673301895c14fbffad8568f063" category="list-text">Vous souhaitez modifier l’abonnement AWS Marketplace configuré avec les informations d’identification AWS.</block>
   <block id="891c56b3793d8bb2d83dc9db21c81e12" category="paragraph">Le remplacement de l'abonnement actuel au marché par un nouvel abonnement modifie l'abonnement au marché pour tous les systèmes Cloud Volumes ONTAP existants et tous les nouveaux systèmes.</block>
   <block id="17e922bee62498071d0b520a708ce7bc" category="inline-link-macro">Apprenez à créer un agent de console</block>
-  <block id="29813baaaf23132ecd02e348d3c08087" category="paragraph">Vous devez créer un agent de console avant de pouvoir configurer un abonnement. <block ref="e389d302df8d551d4b7fea0593f15ba1" category="inline-link-macro-rx"></block> .</block>
   <block id="d0ecf8e73b6ccfcf921b7f1d7a9f7aab" category="section-title">Associer un abonnement existant à votre organisation ou à votre compte</block>
   <block id="cfc7641b49b25d7474ae90431316dac4" category="paragraph">Lorsque vous vous abonnez à partir d'AWS Marketplace, la dernière étape du processus consiste à associer l'abonnement à votre organisation.  Si vous n’avez pas effectué cette étape, vous ne pourrez pas utiliser l’abonnement avec votre organisation ou votre compte.</block>
   <block id="de889eba177db53c06a02269626fde94" category="inline-link-macro">En savoir plus sur les modes de déploiement de la console</block>
@@ -3188,7 +3152,6 @@
   <block id="dd713f3b590ab5bec2d22f7058e33ab6" category="section-title">Ajoutez les informations d'identification à la console</block>
   <block id="55a1f4f70021eba45bccf8433f293097" category="paragraph">Après avoir fourni à un compte Azure les autorisations requises, vous pouvez ajouter les informations d’identification de ce compte à la console.  Cette étape vous permet de lancer Cloud Volumes ONTAP à l’aide de différentes informations d’identification Azure.</block>
   <block id="2b2280c2ccd1fc263667012c605a13ff" category="paragraph">Si vous venez de créer ces informations d'identification auprès de votre fournisseur de cloud, il faudra peut-être quelques minutes avant qu'elles soient disponibles pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.</block>
-  <block id="50009964278e49ea5cebe0363998055c" category="paragraph">Vous devez créer un agent de console avant de pouvoir modifier les paramètres de la console. <block ref="e389d302df8d551d4b7fea0593f15ba1" category="inline-link-macro-rx"></block> .</block>
   <block id="973a970f1b0256e7e155b0658f96de09" category="inline-link">lors de l'ajout d'un système à la console</block>
   <block id="dc626c8f4884c60a8a8e3e1710f896e4" category="paragraph">Vous pouvez passer à un autre ensemble d'informations d'identification à partir de la page Détails et informations d'identification.<block ref="e81400213d37156540a01916c36ea9d7" category="inline-link-rx"></block></block>
   <block id="66f9b6c415f38768cbdd702260d9c7a4" category="inline-image-macro">Une capture d'écran qui montre la sélection entre les informations d'identification après avoir sélectionné Modifier les informations d'identification dans la page Détails et informations d'identification.</block>
@@ -3382,7 +3345,6 @@
   <block id="b797d654931eeb3fd544b972b537bc1a" category="paragraph">Assurez-vous que le fichier de certificat est au format PEM et réside dans le même répertoire que la commande ou spécifiez le chemin d'accès complet au fichier de certificat.</block>
   <block id="76fe97fb8546b1f5923f0501c8e25ae0" category="section-title">Modifier le proxy transparent pour l'agent de la console</block>
   <block id="92621940050d65fc4b47ade313d8f178" category="inline-link-macro">Console de maintenance des agents</block>
-  <block id="f57d507a93c9d29097b93fdd95c0ac8e" category="paragraph">Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent de console en utilisant le<block ref="091092579ca8cede1b760e7c5a90a003" prefix=" " category="inline-code"></block> commande ou supprimez le serveur proxy transparent en utilisant le<block ref="ef5ebb9e0c08ee0463e7503ff1111f4c" prefix=" " category="inline-code"></block> commande.  Pour plus d'informations, consultez la documentation de<block ref="eb13597c0b0df7081c8b813033be9948" category="inline-link-macro-rx"></block> .</block>
   <block id="349027440539dc46278ee9e93260025d" category="section-title">Mettre à jour le proxy de l'agent de console s'il perd l'accès à Internet</block>
   <block id="71164e4bc7911ce651a366899f4f487b" category="paragraph">Si la configuration proxy de votre réseau change, votre agent risque de perdre l’accès à Internet.  Par exemple, si quelqu’un modifie le mot de passe du serveur proxy ou met à jour le certificat.  Dans ce cas, vous devrez accéder directement à l'interface utilisateur depuis l'hôte de l'agent de la console et mettre à jour les paramètres.  Assurez-vous que vous disposez d’un accès réseau à l’hôte de l’agent de la console et que vous pouvez vous connecter à la console.</block>
   <block id="54734e5bba3b83b2757e43d1ff24b2c4" category="section-title">Activer le trafic API direct</block>
@@ -3717,7 +3679,6 @@
   <block id="73b33e4d30bd646d12ad3465d1ae8b1b" category="paragraph">Associez les ressources de l'agent de console aux mêmes dossiers et projets à partir de la page *Ressources*.</block>
   <block id="b8b0c6cf6f3f89235f0deb7b0c6b01e0" category="inline-link-macro">Apprenez à associer une ressource à des dossiers et des projets</block>
   <block id="1d0aafa476757723426865415e3ee193" category="paragraph"><block ref="8a5d319849e62944ab4cf141ef41222a" category="inline-link-macro-rx"></block> .</block>
-  <block id="31d3d82d397fc18c3aaa7057132c469d" category="list-text"><block ref="31d3d82d397fc18c3aaa7057132c469d" category="inline-link-macro-rx"></block></block>
   <block id="1a5a9a56e04bbba24a4b989d5017d535" category="inline-link-macro">Démarrer avec l'identité et l'accès</block>
   <block id="411ec776ef98d4c711a192a4fe599e3b" category="list-text"><block ref="411ec776ef98d4c711a192a4fe599e3b" category="inline-link-macro-rx"></block></block>
   <block id="3721423bab8a75aede6f2f51e549eaeb" category="inline-link">En savoir plus sur l'API pour la gestion des identités et des accès</block>
@@ -3755,7 +3716,6 @@
   <block id="4430cefb38674d70ef9b7fe67aee23c8" category="inline-link-macro">Apprenez à gérer la hiérarchie des ressources de votre organisation</block>
   <block id="8387c3b8e8cca04d38e2ed26ff0cf701" category="list-text"><block ref="c02aea27d6ba71f8c3e62cb351aaf61e" category="inline-link-macro-rx"></block> .</block>
   <block id="b88780515e5cfdc8fbe51c7f44514c7a" category="inline-link-macro">Découvrez comment associer un agent de console à un dossier ou à un projet</block>
-  <block id="8b1d2ab0552c5d7793153d9fda3b575d" category="list-text"><block ref="51298227862ac5270d9350ee1061138a" category="inline-link-macro-rx"></block> .</block>
   <block id="0219628965579f3125a85333ababe4a8" category="inline-link-macro">En savoir plus sur la gestion des identités et des accès dans la console NetApp</block>
   <block id="e2a0d9cb668e6b8456f193f9e7481e9e" category="list-text"><block ref="e2a0d9cb668e6b8456f193f9e7481e9e" category="inline-link-macro-rx"></block></block>
   <block id="d74a08d7ee858b57e9e95937c86453c6" category="inline-link">En savoir plus sur l'API pour l'identité et l'accès</block>
@@ -3999,11 +3959,9 @@
   <block id="731810cbc475f1eaf952db0bad3000b2" category="paragraph">Si vous disposez de plusieurs agents de console, vous pouvez basculer entre eux pour voir les systèmes associés à un agent spécifique.</block>
   <block id="cf1ee1ecf7dc1f5756e2468d5b602933" category="list-text">Dans l’en-tête supérieur de la console, sélectionnez l’icône Agent.</block>
   <block id="798a2a9b64140e0f8f05fa5695aa1faf" category="list-text">Sélectionnez un autre agent, puis sélectionnez *Changer*.</block>
-  <block id="0231bca7fd6141f7407cb9d9d560078a" category="paragraph"><block ref="bef5472a56f278957492e0caa5daa6ee" category="inline-link-macro-rx"></block> .</block>
   <block id="4c2e9efea94172b6ed2675549b18aa3d" category="summary">Pour créer un agent de console dans Google Cloud à l'aide de Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l'agent de console.</block>
   <block id="133f87cfee7691c59e4aceff51289761" category="doc">Créer un agent de console à partir de Google Cloud</block>
   <block id="29c7d79b8474c98bbf8600f925dfb317" category="inline-link-macro">compréhension des agents de console</block>
-  <block id="843066b0b26b01552aee81f7ba5290b4" category="list-text">Vous devriez avoir un<block ref="f7d8e9900b5c0fd4ac9f76399f6a4468" category="inline-link-macro-rx"></block> .</block>
   <block id="035f13f16b03eaaa0e6f9e50510bada8" category="list-text">Vous devriez revoir<block ref="2c29232fcf7d2d4af34b1c675a642823" category="inline-link-macro-rx"></block> .</block>
   <block id="70d8bd725ea77c6a4b800edb3d5b9f5f" category="section-title">Étape 1 : Configurer le réseau</block>
   <block id="eaf8526751222fae318894a8fef05e01" category="paragraph">Configurez la mise en réseau pour permettre à l'agent de la console de gérer les ressources et de se connecter aux réseaux cibles et à Internet.</block>
@@ -4029,7 +3987,6 @@
   <block id="dcff4284c01f138cf8176af4247c8947" category="section-title">Étape 6 : Créer l’agent de console</block>
   <block id="3b5a2fd55c75af73b67a500b42f38800" category="paragraph">Créez un agent de console à l’aide de Google Cloud.</block>
   <block id="5f951668599865c2dd2220fcb0617434" category="inline-link-macro">En savoir plus sur la configuration par défaut de l'agent de console</block>
-  <block id="14c367c6bf7eb4dba010d14b0b178429" category="paragraph">La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud avec la configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="2047de3c536480efe35ce8e73257b12f" category="inline-link-macro-rx"></block> .</block>
   <block id="5afba04db223b94ef6f22bee25e70fdc" category="list-text">Les autorisations Google Cloud requises pour créer l’agent de console et un compte de service pour la machine virtuelle de l’agent de console.</block>
   <block id="482049a2c27830202c448327d329f378" category="list-text">Un VPC et un sous-réseau qui répondent aux exigences de mise en réseau.</block>
   <block id="ec2ce152b3b60e3721ae091911de473d" category="list-text">Une compréhension des exigences des instances de VM.</block>
@@ -4144,7 +4101,6 @@
   <block id="24ec0b6e7c909c10633ec52c6523f771" category="section-title">Ajouter les informations d'identification du fournisseur de cloud à la console</block>
   <block id="3812e8779179a58315ca409176c5ff21" category="summary">Vous pouvez créer un agent de console dans AWS directement à partir de la console NetApp .  Avant de créer un agent de console dans AWS à partir de la console, vous devez configurer votre réseau et préparer les autorisations AWS.</block>
   <block id="59451d5b1be51c2e522deb585360baaf" category="doc">Créer un agent de console dans AWS à partir de la console NetApp</block>
-  <block id="65fcedafc44bafe57ddc9dda9f3916e4" category="list-text">Vous devriez avoir un<block ref="f7d8e9900b5c0fd4ac9f76399f6a4468" category="inline-link-macro-rx"></block> .</block>
   <block id="ece2bb18919ce5ae01a5179cefd722b3" category="section-title">Étape 1 : Configurer la mise en réseau pour déployer un agent de console dans AWS</block>
   <block id="3622d53137f09c5a1f41ab1c1500f461" category="paragraph">Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  Ces exigences permettent à l’agent de console de gérer les ressources et les processus dans votre cloud hybride.</block>
   <block id="dc648d2a312f61564f5f6beb2e95a5cc" category="paragraph">Vous devrez implémenter cette exigence de mise en réseau après avoir créé l’agent de console.</block>
@@ -4177,7 +4133,6 @@
   <block id="bbba7638debc60d9989ee9d0b3f92713" category="paragraph">Vous devriez maintenant avoir un rôle IAM disposant des autorisations requises ou un utilisateur IAM disposant des autorisations requises.  Lorsque vous créez l'agent de console à partir de la console, vous pouvez fournir des informations sur le rôle ou les clés d'accès.</block>
   <block id="a5d705a0b67c1b72cfaf22a7b055e724" category="section-title">Étape 3 : Créer l’agent de console</block>
   <block id="7b4df00b5341d82974a20ef2b057b05e" category="paragraph">Créez l’agent de console directement à partir de la console Web.</block>
-  <block id="3a3ad28d80adde83edab00e55fcdf72b" category="list-text">La création de l’agent de console à partir de la console déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut.  Ne passez pas à une instance EC2 plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="2047de3c536480efe35ce8e73257b12f" category="inline-link-macro-rx"></block> .</block>
   <block id="5b648a602c64391c13459b2242feaccf" category="inline-link-macro">En savoir plus sur la politique IAM pour l'agent de console</block>
   <block id="8cfa8205571c02f754f7ea3ea367085f" category="list-text">Lorsque la console crée l’agent de console, elle crée un rôle IAM et un profil d’instance pour l’instance.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources AWS.  Assurez-vous que le rôle est mis à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions futures. <block ref="5fa58f5972b383411e34ca4f11e8af66" category="inline-link-macro-rx"></block> .</block>
   <block id="aca02eea323174e41d57225a762eb959" category="list-text">Une méthode d’authentification AWS : soit un rôle IAM, soit des clés d’accès pour un utilisateur IAM avec les autorisations requises.</block>
@@ -4242,7 +4197,6 @@
   <block id="7727085a11ad593ea85a877494c0300d" category="paragraph">Lorsque vous créez l’agent de console, vous devez choisir un type d’instance EC2 qui répond aux exigences suivantes.</block>
   <block id="2f5d6361fbfb946bee7b93c607c82dbf" category="section-title">Étape 4 : Créer l’agent de console</block>
   <block id="7ce6d0fa19c62bc73b780577239dfa5c" category="paragraph">Créez l’agent de console directement à partir d’AWS Marketplace.</block>
-  <block id="091db0baf055116249f5d476b68a65fe" category="paragraph">La création de l’agent de console à partir d’AWS Marketplace déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut. <block ref="2047de3c536480efe35ce8e73257b12f" category="inline-link-macro-rx"></block> .</block>
   <block id="d2b67faa3e0b0b15c349fce572e8015b" category="list-text">Un rôle IAM avec une politique attachée qui inclut les autorisations requises pour l’agent de la console.</block>
   <block id="dfcbfa4ce7dbf520f2b737359dfbc591" category="list-text">Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.</block>
   <block id="64f210f4d96dcba2f41cec7b537055f7" category="list-text">Une compréhension des exigences en matière de CPU et de RAM pour l’instance.</block>
@@ -4291,7 +4245,6 @@
   <block id="7fd3a2f847442f1829a5feb65ce7371f" category="paragraph">Si vous souhaitez gérer des ressources dans plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Par exemple, la console vous permet de sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.</block>
   <block id="83ca0f5121c5559891bda5c75bb2d780" category="paragraph">Votre principal de service est maintenant configuré et vous devez avoir copié l'ID de l'application (client), l'ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous créez l’agent de console.</block>
   <block id="01ca28b962699e0ada79cd7421185fc0" category="paragraph">Créez l’agent de console directement à partir de la console NetApp .</block>
-  <block id="498ccd410a5deaaf8222ace3b4e54701" category="list-text">La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="2047de3c536480efe35ce8e73257b12f" category="inline-link-macro-rx"></block> .</block>
   <block id="fa6a784a765b60a3f4d7ea2abcd313a9" category="inline-link-macro">En savoir plus sur le rôle personnalisé de l'agent de console</block>
   <block id="1e9748fc886eb11aef3357bbc0ff9344" category="list-text">Lorsque la console déploie l’agent de console, elle crée un rôle personnalisé et l’attribue à la machine virtuelle de l’agent de console.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources Azure.  Vous devez vous assurer que le rôle est maintenu à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. <block ref="4d87df92bbe36cebc9c881eff30738dd" category="inline-link-macro-rx"></block> .</block>
   <block id="cec61994be2c9633fc4acb202e4b9c41" category="list-text">Un abonnement Azure.</block>
@@ -4349,7 +4302,6 @@
   <block id="b4e73984d2c68b6a9184a535a057e186" category="list-text">Option 2 : fournissez à la console les informations d’identification d’un principal de service Azure disposant des autorisations requises.</block>
   <block id="b3f9ca2d8c527306b939437d5e906c93" category="paragraph">Suivez ces étapes pour configurer les autorisations pour la console.</block>
   <block id="c3cfed29f34a317879c52ce038fd0be1" category="paragraph">Lancez l’agent de console directement depuis la Place de marché Azure.</block>
-  <block id="c8e8313e02515879db4b39ba9ff2bc2d" category="paragraph">La création de l’agent de console à partir de la Place de marché Azure configure une machine virtuelle avec une configuration par défaut. <block ref="2047de3c536480efe35ce8e73257b12f" category="inline-link-macro-rx"></block> .</block>
   <block id="2e3183c78635488e77f6125a1a2ebd13" category="list-text">Accédez à la page de la machine virtuelle de l’agent de la console NetApp dans la Place de marché Azure.</block>
   <block id="0c5f74a83e5cbc5c6c230dd0caf096f7" category="inline-link">Page de la place de marché Azure pour les régions commerciales</block>
   <block id="5fb9ace1b2fee444b848b1ad1c5d886c" category="paragraph"><block ref="5fb9ace1b2fee444b848b1ad1c5d886c" category="inline-link-rx"></block></block>
@@ -4381,7 +4333,6 @@
   <block id="f603ec935847895eb8636f656a2ae53f" category="list-text">Attribuez ce rôle personnalisé à l’utilisateur qui déploiera l’agent de la console à partir de la console ou à l’aide de gcloud.</block>
   <block id="c7a43cd5aa692ccab9fe9ec5162d50ad" category="paragraph">Vous devez activer plusieurs API Google Cloud avant de déployer l'agent de console et Cloud Volumes ONTAP.</block>
   <block id="061388a938fd64eb5c4e7136956bbd01" category="paragraph">Créez un agent de console directement depuis la console.</block>
-  <block id="a13efeac37bc729d1b9ca426b28462df" category="paragraph">La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="2047de3c536480efe35ce8e73257b12f" category="inline-link-macro-rx"></block> .</block>
   <block id="ee011866b8623b71b582287613b814bc" category="list-text">Sur la page *Aperçu*, sélectionnez *Déployer l'agent &gt; Google Cloud*</block>
   <block id="cec29f07fe09b750feee9ec4b4ef3ca7" category="list-text">Sur la page *Déploiement d'un agent*, examinez les détails concernant ce dont vous aurez besoin.  Vous avez deux options :</block>
   <block id="15de410cab5b286c0cff40620cbbc2f8" category="list-text">Sélectionnez *Continuer* pour préparer le déploiement à l’aide du guide intégré au produit.  Chaque étape du guide intégré au produit inclut les informations contenues sur cette page de la documentation.</block>
@@ -4569,14 +4520,12 @@
   <block id="6148da760abfb5167327e2dbd67b1724" category="doc">Maintenir la machine virtuelle de l'agent de console et le système d'exploitation</block>
   <block id="5279ec16620bed638d689fb55a687bf8" category="paragraph">La maintenance du système d'exploitation sur l'hôte de l'agent de console est votre responsabilité (celle du client).  Par exemple, vous (le client) devez appliquer les mises à jour de sécurité au système d'exploitation sur l'hôte de l'agent en suivant les procédures standard de votre entreprise pour la distribution du système d'exploitation.</block>
   <block id="32ecd7116f82d32fc86313604d074f12" category="inline-link-macro">modifications apportées aux systèmes d'exploitation Linux pris en charge</block>
-  <block id="27e4fc9f9a7de50489293effdbe1fa28" category="admonition">Si vous avez déjà un agent, vous devez en être conscient.<block ref="bd6e461b9eed09ced9eb75610086f8d1" category="inline-link-macro-rx"></block> .</block>
   <block id="35379aa08313c0fa9274fecfc86b4cc0" category="section-title">Correctifs du système d'exploitation et l'agent</block>
   <block id="e841c125c9e210ed4ede7a3ae1c5ada8" category="paragraph">Appliquez les correctifs de sécurité du système d’exploitation sans arrêter les services hôtes de l’agent.</block>
   <block id="d54ab8a1d5dd0b1066137c76d5021844" category="section-title">Type de machine virtuelle ou d'instance</block>
   <block id="d69b367407abdea589b8942156f4e07a" category="paragraph">Si vous créez un agent de console à partir de la console, il déploie une instance de machine virtuelle dans votre fournisseur de cloud avec une configuration par défaut.  Après avoir créé l'agent, ne passez pas à une instance de machine virtuelle plus petite avec moins de CPU ou de RAM.</block>
   <block id="d6ca9eb671a9ff98d68b7f7acaf8ec88" category="paragraph">Le tableau suivant répertorie les exigences en matière de CPU et de RAM :</block>
   <block id="a97c9ede934c84f0e97d896b05cd1ae0" category="inline-link-macro">En savoir plus sur la configuration par défaut de l'agent</block>
-  <block id="db5b25e2af4a6cbb3caeea7b25cbe8d1" category="paragraph"><block ref="aa3c75334683a941ae8b4c190e094f84" category="inline-link-macro-rx"></block> .</block>
   <block id="3eecd3f04a3aed6d69a686b8c6860e44" category="section-title">Surveiller l'agent</block>
   <block id="317906a769f89601a484794c64e9042d" category="paragraph">La console vous avertit lorsque la machine virtuelle de l'agent n'est pas saine, notamment en cas de problèmes d'espace disque, de RAM et de processeur.  Surveillez ces notifications dans le centre de notifications de la console ou configurez des notifications par e-mail.  Des augmentations occasionnelles de l'espace disque, de la mémoire ou de l'utilisation du processeur sont normales, mais si cela se produit fréquemment, vous devez prendre des mesures pour résoudre le problème.</block>
   <block id="1ea31e4b3b5747148fd4f93da267694f" category="paragraph">Par exemple, la console vous avertit lorsqu'une ressource d'agent (CPU, RAM ou espace disque) dépasse 90 % de sa capacité totale pendant 30 minutes consécutives.  Par la suite, si l’utilisation des ressources descend en dessous de ce seuil, la notification s’affiche comme résolue (verte) dans le Centre de notifications.</block>
@@ -4594,7 +4543,6 @@
   <block id="0d75592eefb72eac4699a1f49bd7769a" category="section-title">Arrêt et démarrage de la machine virtuelle de l'agent</block>
   <block id="665e5fcb7c888a6273d0761790d05ed5" category="paragraph">Si nécessaire, arrêtez et démarrez la machine virtuelle de l'agent à l'aide de la console de votre fournisseur de cloud ou des procédures standard sur site.</block>
   <block id="fab2977be6b57a804b266fd2b7996179" category="inline-link-macro">Sachez que l'agent de la console doit être opérationnel à tout moment</block>
-  <block id="690945cd7ba0bbf602bcb532ed522e1e" category="paragraph"><block ref="c3124849c68d8fc946d5c43e8be73cee" category="inline-link-macro-rx"></block> .</block>
   <block id="92ca244e2f6af5665f270d0017a9ee62" category="section-title">Se connecter à la machine virtuelle Linux</block>
   <block id="fa108fef79d6a7f6c45e6265a7c8ce18" category="paragraph">Si vous devez vous connecter à la machine virtuelle Linux sur laquelle l’agent s’exécute, utilisez les options de connectivité de votre fournisseur de cloud.</block>
   <block id="31f62e7fcca679aa981e1ea0a7e5abfa" category="list-text">Lorsque vous créez l'instance d'agent dans AWS, fournissez une clé d'accès AWS et une clé secrète.  Vous pouvez utiliser cette paire de clés pour vous connecter en SSH à l'instance.  Utilisez le nom d'utilisateur « ubuntu » pour l'instance Linux EC2.  Pour les agents créés avant mai 2023, utilisez le nom d'utilisateur « ec2-user ».</block>
@@ -4648,7 +4596,6 @@
   <block id="b38724d5be0fd1e27cb2f48b33b593fb" category="paragraph">Les utilisateurs sont invités à saisir leurs informations d’identification ONTAP pour accéder à ONTAP System Manager pour le cluster.  Les utilisateurs peuvent choisir d'enregistrer ces informations d'identification dans la console, ce qui signifie qu'ils ne seront pas invités à les saisir à chaque fois.  Les informations d'identification de l'utilisateur ne sont visibles que par l'utilisateur concerné et peuvent être gérées à partir de la page Informations d'identification de l'utilisateur.</block>
   <block id="bbfd8836af38790512652680bc39a97e" category="paragraph-title">Avec un agent de console</block>
   <block id="cad21b2f1f29d6af5059830617c87d42" category="paragraph">Par défaut, les utilisateurs ne sont pas invités à saisir leurs informations d’identification ONTAP pour accéder à ONTAP System Manager.  Cependant, un administrateur de console (avec le rôle d’administrateur d’organisation) peut configurer la console pour inviter les utilisateurs à saisir leurs informations d’identification ONTAP .  Lorsque ce paramètre est activé, les utilisateurs doivent saisir leurs informations d'identification ONTAP à chaque fois.</block>
-  <block id="efd19a04c99c31329dfaad38a02c2181" category="paragraph"><block ref="efd19a04c99c31329dfaad38a02c2181" category="inline-link-macro-rx"></block></block>
   <block id="4cdcf6b8fd95bbaa7cf27e4443c7681b" category="section-title">Informations d'identification NSS</block>
   <block id="8004db986a284e5dcad9f3e77eaac162" category="paragraph">Les informations d'identification NSS associées à votre connexion à la console NetApp permettent l'enregistrement du support, la gestion des cas et l'accès à Digital Advisor.</block>
   <block id="87396783ee7caf6faefec85c9bb63c87" category="list-text">Lorsque vous accédez à *Support &gt; Ressources* et que vous vous inscrivez à l'assistance, vous êtes invité à associer les informations d'identification NSS à votre connexion.</block>
@@ -4909,7 +4856,6 @@
   <block id="920d0c5e78f6b6572b89d526a296d06b" category="summary">Commencez à utiliser la console NetApp en mode restreint en préparant votre environnement et en déployant l’agent de la console.</block>
   <block id="af2c4df7e8660cdabd8fc59a2aa0aaf1" category="doc">Démarrage du flux de travail (mode restreint)</block>
   <block id="c31816e89acef282910453c5620f26f4" category="inline-link-macro">modes de déploiement</block>
-  <block id="463607e512069b418940a921afdec8b0" category="paragraph">Le mode restreint est généralement utilisé par les gouvernements étatiques et locaux et les entreprises réglementées, y compris les déploiements dans les régions AWS GovCloud et Azure Government.  Avant de commencer, assurez-vous d'avoir une bonne compréhension de<block ref="f3ace5a930cbd0beeeadc55a7b354ad6" category="inline-link-macro-rx"></block> et<block ref="dd9572e43b86cdf1b1d508e121fd732e" category="inline-link-macro-rx"></block> .</block>
   <block id="27677c533249219197c5933410713055" category="inline-link-macro">Préparez-vous au déploiement</block>
   <block id="1308ae14263d9629eb12e11bd10db155" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="f826f61970c0735d0b0624264426b512" category="inline-link-macro-rx"></block></block>
   <block id="eb762959fcc0cce31949abce6f8eb1c1" category="list-text">Préparez un hôte Linux dédié qui répond aux exigences en matière de CPU, de RAM, d’espace disque, d’outil d’orchestration de conteneurs, etc.</block>
@@ -4925,7 +4871,6 @@
   <block id="d1d624aaa80d4b95ecda4ca00906004a" category="paragraph">Facultatif : abonnez-vous à NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Les services intelligents NetApp incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La classification des données NetApp est incluse dans votre abonnement sans frais supplémentaires.</block>
   <block id="6d4ac1cbd4bd47313400a32115439002" category="summary">Commencez à utiliser la console NetApp en mode standard en préparant la mise en réseau pour la console, en vous inscrivant et en créant un compte, et éventuellement en créant un agent de console.</block>
   <block id="2c4bc70d5e888213a3bca35048028c96" category="doc">Démarrage du flux de travail (mode standard)</block>
-  <block id="472f4090016d7915074142e6d5d460f4" category="paragraph">En mode standard, vous accédez à une console Web hébergée en tant que produit SaaS (Software-as-a-service) de NetApp.  Avant de commencer, assurez-vous de bien comprendre<block ref="dd9572e43b86cdf1b1d508e121fd732e" category="inline-link-macro-rx"></block> et<block ref="f3ace5a930cbd0beeeadc55a7b354ad6" category="inline-link-macro-rx"></block> .</block>
   <block id="4a5cd58a00c166a3e1b93ea2c38ae5db" category="inline-link-macro">Préparer le réseau pour l'utilisation de la console NetApp</block>
   <block id="4170442d537b0bcdcf26afecc0b46214" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="81434ae0997d25fd3bf3ebcd9de42f03" category="inline-link-macro-rx"></block></block>
   <block id="6c6992d5903cf814577c44cbe3ed58b0" category="paragraph">Les ordinateurs qui accèdent à la console NetApp doivent disposer de connexions à des points de terminaison spécifiques.  Si votre réseau restreint l’accès sortant, vous devez vous assurer que ces points de terminaison sont autorisés.</block>
@@ -4934,12 +4879,10 @@
   <block id="8859695a85afcf4d196795433a572988" category="inline-link">Console NetApp</block>
   <block id="a40400c6f5bf51aa4e7aaaedbf791535" category="paragraph">Aller à la<block ref="193ae139051d487c450de046f6bd2645" category="inline-link-rx"></block> et inscrivez-vous.  Vous aurez la possibilité de créer une organisation, mais vous devez ignorer cette étape si votre entreprise possède déjà une organisation existante.</block>
   <block id="d1e788bf754c3b9d70eae673330792e2" category="inline-link-macro">Découvrez ce que vous pouvez faire sans agent de console</block>
-  <block id="a5c7973c0be27e7b56c02a85eb3be100" category="paragraph">À ce stade, vous êtes connecté et pouvez commencer à gérer le stockage et à utiliser des services tels que Digital Advisor, Amazon FSx for ONTAP, Azure NetApp Files, etc. <block ref="af44a419176c69e173521af92c5d972c" category="inline-link-macro-rx"></block> .</block>
   <block id="48700fa46e521cfa608d334472b68ef1" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>Créer un agent de console</block>
   <block id="8f012b04ed4896873993ff7252418ca4" category="paragraph">Les fonctionnalités avancées de gestion du stockage et certains services de données NetApp nécessitent l'installation d'un agent de console.  L'agent de console permet à la console de gérer les ressources et les processus au sein de votre environnement cloud hybride.</block>
   <block id="ce207d705a8165045c7d26c1fa5fe273" category="paragraph">Vous pouvez créer un agent de console dans votre réseau cloud ou sur site.</block>
   <block id="380e8dcf837dc4b4a9dfb71ed62ffe17" category="inline-link-macro">En savoir plus sur les cas où les agents de console sont requis et leur fonctionnement</block>
-  <block id="b22dc2a1ee2f65dc4276f3451f89a5d2" category="list-text"><block ref="b22dc2a1ee2f65dc4276f3451f89a5d2" category="inline-link-macro-rx"></block></block>
   <block id="cf4709f0b7fac7a7e67b98f5cea5e8a8" category="inline-link-macro">Découvrez comment créer un agent de console dans AWS</block>
   <block id="012b4e372603f0b395e9a87c7432c3b7" category="list-text"><block ref="012b4e372603f0b395e9a87c7432c3b7" category="inline-link-macro-rx"></block></block>
   <block id="60b9309b830edf5f54f76fa4664a972b" category="inline-link-macro">Découvrez comment créer un agent de console dans Azure</block>
@@ -4947,7 +4890,6 @@
   <block id="bc618e169a194e52cf3cda45248d2233" category="inline-link-macro">Découvrez comment créer un agent de console dans Google Cloud</block>
   <block id="b0a30fdadf738e65e6490f50bac8c5b1" category="list-text"><block ref="b0a30fdadf738e65e6490f50bac8c5b1" category="inline-link-macro-rx"></block></block>
   <block id="01539f3bb82319392680d2729edcc784" category="inline-link-macro">Découvrez comment créer un agent de console sur site</block>
-  <block id="222db7e15c2b2d0d532700022907f63a" category="list-text"><block ref="222db7e15c2b2d0d532700022907f63a" category="inline-link-macro-rx"></block></block>
   <block id="546d7695c99c2937a5bfae3cd6cf8da5" category="paragraph">Pour utiliser NetApp Intelligent Data Services pour la gestion du stockage et des données dans Google Cloud, assurez-vous que l'agent de la console s'exécute dans Google Cloud.</block>
   <block id="f21c11580c94835481d6c035b85f4b79" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> <block ref="60a7e52b5f1dace8fe7cd5fadf089cd0" category="inline-link-macro-rx"></block></block>
   <block id="3a9162a1dd41f82eb4f6e7242b11328b" category="paragraph">Inscrivez-vous aux services intelligents NetApp via votre fournisseur de cloud pour payer à l'heure (PAYGO) ou via un contrat annuel.  Les services intelligents NetApp incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La classification des données NetApp est incluse dans votre abonnement sans frais supplémentaires.</block>
@@ -5132,7 +5074,6 @@
   <block id="f1250585f9c248976b034c285b91672c" category="paragraph">Utilisez l’une des commandes suivantes pour vérifier votre agent de console.  Tous les services doivent avoir le statut _En cours d'exécution_.  Si ce n’est pas le cas, contactez le support NetApp .</block>
   <block id="0960e06fac3e48e6403802fb4aa8fbde" category="paragraph">Pour plus d'informations sur l'accès aux diagnostics de l'agent de la console, consultez les rubriques suivantes :</block>
   <block id="a25b82d4083e9054d77530a1b1771861" category="inline-link-macro">Vérifier l'état de l'agent de la console (pour les déploiements d'hôtes Linux)</block>
-  <block id="9d234fb83c9099ade4512a750ec868b2" category="list-text"><block ref="9d234fb83c9099ade4512a750ec868b2" category="inline-link-macro-rx"></block></block>
   <block id="bf25f8db77ad355d69bc02d42fae9f4d" category="inline-link-macro">Vérifier l'état de l'agent de la console (pour les déploiements VCenter)</block>
   <block id="8775ad30be432ac72bc04b0163c4716f" category="list-text"><block ref="8775ad30be432ac72bc04b0163c4716f" category="inline-link-macro-rx"></block></block>
   <block id="22e75fa70d8a01a79302df0514996aee" category="list-text">Docker (pour les déploiements Ubuntu et VCenter)</block>
@@ -5476,7 +5417,6 @@
   <block id="c8fa489b70f23c314b0b945db2384452" category="sidebar">Maintenir un agent installé sur VCenter</block>
   <block id="70328d3965555bdfe7c71386e9e25887" category="sidebar">Installer un certificat signé par une autorité de certification pour l'accès à la console Web</block>
   <block id="417a7f2f69f19fbcd309a4694944397e" category="sidebar">Exiger l'utilisation d'IMDSv2 sur les instances EC2</block>
-  <block id="71ae02c171873e7af0f7b72300d1da9b" category="sidebar">Gérer les mises à niveau des connecteurs</block>
   <block id="e5c32965ed32649bcfd48bc8b138f3d2" category="sidebar">Désinstaller et supprimer l'agent de la console</block>
   <block id="7c584a16cbf4210dc0a344179e274e09" category="sidebar">Configuration par défaut</block>
   <block id="8f235a758f8b25f9b4ff4eddf53e6c5e" category="sidebar">Appliquer les autorisations ONTAP dans la console NetApp</block>
@@ -5569,4 +5509,64 @@
   <block id="d06ce875f1b2887cbc5d87b38e0d0d44" category="list-text">Vous devez désactiver la vérification de configuration qui vérifie la connectivité sortante lors de l'installation. L'installation manuelle échoue si cette vérification n'est pas désactivée.<block ref="90428b1442632a8a73b6f9660fa083c4" category="inline-link-macro-rx"></block></block>
   <block id="3bc0e23bd46bad08da1876b2cc4430a7" category="sidebar">Utiliser l'assistant de la console NetApp</block>
   <block id="14a5258ed6e53fde9968f99c48b5072e" category="sidebar">Démarrer avec l'assistant de la console NetApp</block>
+  <block id="55b83b7bea13907c0b624a32a6799b79" category="paragraph"><block ref="55b83b7bea13907c0b624a32a6799b79" category="inline-link-macro-rx"></block></block>
+  <block id="4439aaaad475e34c70f12f09ad6165d9" category="admonition">Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console. Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur le<block ref="0f8b8c9e4ded9a5f5a72925670422347" category="inline-link-macro-rx"></block> .</block>
+  <block id="ba29ba5428e515700911cad0530da473" category="paragraph">Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM. La méthode d’authentification doit disposer des autorisations pour déployer la console dans AWS. Les autorisations requises sont répertoriées dans le lien : task-install-agent-aws-the Console.html#console-permissions-aws[Politique de déploiement de l'agent pour AWS].</block>
+  <block id="a137f604e6a7f24aa4c6910a9cf84195" category="list-text"><block ref="a137f604e6a7f24aa4c6910a9cf84195" category="inline-link-macro-rx"></block></block>
+  <block id="245ff1ee18f9fd1fbf4af2b4a03d7c95" category="list-text"><block ref="245ff1ee18f9fd1fbf4af2b4a03d7c95" category="inline-link-macro-rx"></block></block>
+  <block id="bb3fc7e54cf135053eb820e0008efc8b" category="paragraph">Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console. Les autorisations requises sont répertoriées dans le<block ref="ab1809f94c72613cceb39967d5fc5be7" category="inline-link-macro-rx"></block> .</block>
+  <block id="98faa0bd253708350eda28057b888356" category="list-text"><block ref="98faa0bd253708350eda28057b888356" category="inline-link-macro-rx"></block></block>
+  <block id="2565c19f0836899779db19a140e2fada" category="list-text"><block ref="2565c19f0836899779db19a140e2fada" category="inline-link-macro-rx"></block></block>
+  <block id="1833b862078dbb4dc1ea1c935b25b75f" category="list-text"><block ref="1833b862078dbb4dc1ea1c935b25b75f" category="inline-link-macro-rx"></block></block>
+  <block id="2dabf3ef50b23a394a532c8641ffbc97" category="list-text"><block ref="2dabf3ef50b23a394a532c8641ffbc97" category="inline-link-macro-rx"></block></block>
+  <block id="2686a2ef3c47d0e0eafe183d768a5487" category="paragraph"><block ref="f653f7d16df54a3c9e88f23235c315ba" category="inline-xref-macro-rx"></block> .</block>
+  <block id="58b4c1c7f9a637ac28d3e6f5fb5503dc" category="list-text"><block ref="58b4c1c7f9a637ac28d3e6f5fb5503dc" category="inline-link-macro-rx"></block></block>
+  <block id="22ca43ce5c5a872fcead2b9795d43ce4" category="list-text"><block ref="4cac40a6f38a644ae4e3211385f3144e" category="inline-link-macro-rx"></block>(c'est l'option standard)</block>
+  <block id="b0a755c889be10fff38496428b62e124" category="list-text"><block ref="b0a755c889be10fff38496428b62e124" category="inline-link-macro-rx"></block></block>
+  <block id="ce8b5514801557c28339a07e7885738d" category="list-text"><block ref="ce8b5514801557c28339a07e7885738d" category="inline-link-macro-rx"></block></block>
+  <block id="4d116474327ab97148d8a69fd11379ea" category="list-text"><block ref="e0fdd18000ece681beed8a0793eff329" category="inline-link-macro-rx"></block>(c'est l'option standard)</block>
+  <block id="b54d9f5a24d2e6b2b731b2862685ce97" category="list-text"><block ref="b54d9f5a24d2e6b2b731b2862685ce97" category="inline-link-macro-rx"></block></block>
+  <block id="9e0a66536136cc55db9b005faf3fa26e" category="list-text"><block ref="9e0a66536136cc55db9b005faf3fa26e" category="inline-link-macro-rx"></block></block>
+  <block id="1a208b984fe61bb9d1e4e6b026e30354" category="list-text"><block ref="84693cca73c9981e6b563eb4572174e7" category="inline-link-macro-rx"></block>(c'est l'option standard)</block>
+  <block id="952e50ce3636bd2393f109405c59b8c0" category="list-text"><block ref="952e50ce3636bd2393f109405c59b8c0" category="inline-link-macro-rx"></block></block>
+  <block id="0eef87956979cf6724fcf06a20f2e4eb" category="list-text"><block ref="0eef87956979cf6724fcf06a20f2e4eb" category="inline-link-macro-rx"></block></block>
+  <block id="8339e7865f160190422328b59c08ee1e" category="list-text"><block ref="8339e7865f160190422328b59c08ee1e" category="inline-link-macro-rx"></block></block>
+  <block id="ca2c93873fc0182f513cf7a270f04ef3" category="list-text"><block ref="ca2c93873fc0182f513cf7a270f04ef3" category="inline-link-macro-rx"></block></block>
+  <block id="982bddeed9f81544f50291e3d6a924ce" category="list-text"><block ref="982bddeed9f81544f50291e3d6a924ce" category="inline-link-macro-rx"></block></block>
+  <block id="9e97ec538c2df79d1e5e48262f80e2f3" category="paragraph"><block ref="a0861367aee4f711e39ff50c5df170be" category="inline-link-macro-rx"></block> .</block>
+  <block id="8061654f55b31a1347dadde5417b3bbe" category="list-text">Le nom d'utilisateur de l'instance EC2 Linux est ubuntu (pour les agents créés avant mai 2023, le nom d'utilisateur est ec2-user).</block>
+  <block id="fe65e3a837dc9a3749e87481b67ff0fb" category="list-text"><block ref="fe65e3a837dc9a3749e87481b67ff0fb" category="inline-link-macro-rx"></block></block>
+  <block id="64594581e02e022dfc201735b71465f0" category="list-text"><block ref="64594581e02e022dfc201735b71465f0" category="inline-link-macro-rx"></block></block>
+  <block id="4b93f2e9726ccb43bb5df85b409d91b3" category="list-text"><block ref="4b93f2e9726ccb43bb5df85b409d91b3" category="inline-link-macro-rx"></block></block>
+  <block id="c918e5911e84e6725906f864a7cf4ed3" category="list-text"><block ref="c918e5911e84e6725906f864a7cf4ed3" category="inline-link-macro-rx"></block></block>
+  <block id="e1ab6ce5f78b6cffa4cb98b58c75ca74" category="cell"><block ref="e1ab6ce5f78b6cffa4cb98b58c75ca74" category="inline-link-macro-rx"></block></block>
+  <block id="7b4bc41ae2fa01b87cf543c93930cc32" category="cell"><block ref="7b4bc41ae2fa01b87cf543c93930cc32" category="inline-link-macro-rx"></block></block>
+  <block id="e33d05694ffbef46c07ae36b71e76f96" category="cell"><block ref="e33d05694ffbef46c07ae36b71e76f96" category="inline-link-macro-rx"></block></block>
+  <block id="ab7e7f2c26e8446e9290f7e7714458a2" category="cell"><block ref="ab7e7f2c26e8446e9290f7e7714458a2" category="inline-link-macro-rx"></block></block>
+  <block id="6acff1832d6612cd1afefaf53c386a82" category="list-text"><block ref="6acff1832d6612cd1afefaf53c386a82" category="inline-link-macro-rx"></block></block>
+  <block id="261ff42fc8f9c0d862eeaad9e733fb30" category="paragraph">Vous devez créer un agent de console avant de pouvoir configurer un abonnement. <block ref="5464fa3cf6630a16780c24b91f4e9a76" category="inline-link-macro-rx"></block> .</block>
+  <block id="87cbeaae871cc7df1e298bd3bfa87377" category="paragraph">Vous devez créer un agent de console avant de pouvoir modifier les paramètres de la console. <block ref="5464fa3cf6630a16780c24b91f4e9a76" category="inline-link-macro-rx"></block> .</block>
+  <block id="20257cdf81419bff017c7b16260ebb25" category="paragraph">Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent de console en utilisant le<block ref="091092579ca8cede1b760e7c5a90a003" prefix=" " category="inline-code"></block> commande ou supprimez le serveur proxy transparent en utilisant le<block ref="ef5ebb9e0c08ee0463e7503ff1111f4c" prefix=" " category="inline-code"></block> commande. Pour plus d'informations, consultez la documentation de<block ref="9370e1eb4855e9767e8414447e836404" category="inline-link-macro-rx"></block> .</block>
+  <block id="7e7a15f5baa7bdfc36453fafb5dc4deb" category="list-text"><block ref="7e7a15f5baa7bdfc36453fafb5dc4deb" category="inline-link-macro-rx"></block></block>
+  <block id="d612e8a0318223d9dd349c48eb63e0fc" category="list-text"><block ref="a6db5244ec8666b2e12c38c770923c31" category="inline-link-macro-rx"></block> .</block>
+  <block id="52b5b2b5dbfa5254101b42416d1a8773" category="paragraph"><block ref="58b4c1c7f9a637ac28d3e6f5fb5503dc" category="inline-link-macro-rx"></block> .</block>
+  <block id="5f551ddf859b1d7525a5d87169b1c520" category="list-text">Vous devriez avoir un<block ref="d16111ab8ba33a1610fbb17fe340b992" category="inline-link-macro-rx"></block> .</block>
+  <block id="6b02626fac3ccb06150290f9d284c115" category="list-text">La création de l’agent de console à partir de la console déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut. Ne passez pas à une instance EC2 plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="29c6b59463611f41ce7d1e55e2554b51" category="inline-link-macro-rx"></block> .</block>
+  <block id="7f7be9819517a18b53d1f2709c7bd3cd" category="paragraph">La création de l’agent de console à partir d’AWS Marketplace déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut. <block ref="29c6b59463611f41ce7d1e55e2554b51" category="inline-link-macro-rx"></block> .</block>
+  <block id="8c14986031b117b1d7341aff8d3a3b3f" category="list-text">La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="29c6b59463611f41ce7d1e55e2554b51" category="inline-link-macro-rx"></block> .</block>
+  <block id="8eef864079a40c4447df38dbce0d23d6" category="paragraph">La création de l’agent de console à partir de la Place de marché Azure configure une machine virtuelle avec une configuration par défaut. <block ref="29c6b59463611f41ce7d1e55e2554b51" category="inline-link-macro-rx"></block> .</block>
+  <block id="d1f00850b9389d111947a36ca0d9068b" category="paragraph">La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud à l’aide d’une configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="29c6b59463611f41ce7d1e55e2554b51" category="inline-link-macro-rx"></block> .</block>
+  <block id="59f043795dea8adedffde70f225f6c29" category="list-text">Vous devriez avoir un<block ref="d16111ab8ba33a1610fbb17fe340b992" category="inline-link-macro-rx"></block> .</block>
+  <block id="c3c58c9797adc5c532aba5f3dd5a1887" category="paragraph">La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud avec la configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. <block ref="29c6b59463611f41ce7d1e55e2554b51" category="inline-link-macro-rx"></block> .</block>
+  <block id="b1b07a21d749d47b74e5826a57b17eaf" category="admonition">Si vous avez déjà un agent, vous devez en être conscient.<block ref="8d716f5c1f2e0c5f076bb39a15dd1a47" category="inline-link-macro-rx"></block> .</block>
+  <block id="4203742da4cdc7c1dd82452f22078923" category="paragraph"><block ref="6644ee05b73ff616838ce63980e80332" category="inline-link-macro-rx"></block> .</block>
+  <block id="d9ae58af06fdcaab9da3f43fe827c682" category="paragraph"><block ref="b4ea7ed3eae261783526e5f0a6706763" category="inline-link-macro-rx"></block> .</block>
+  <block id="e6021c3af6909757e25569099fa4e00a" category="paragraph"><block ref="e6021c3af6909757e25569099fa4e00a" category="inline-link-macro-rx"></block></block>
+  <block id="73766a81edee1e1df062cc59ac68494e" category="paragraph">Le mode restreint est généralement utilisé par les gouvernements étatiques et locaux et les entreprises réglementées, y compris les déploiements dans les régions AWS GovCloud et Azure Government. Avant de commencer, assurez-vous d'avoir une bonne compréhension de<block ref="4beb4752043a55296423922b143dd023" category="inline-link-macro-rx"></block> et<block ref="dd9572e43b86cdf1b1d508e121fd732e" category="inline-link-macro-rx"></block> .</block>
+  <block id="f17ca32b513f955e12b0e36662eed21b" category="paragraph">En mode standard, vous accédez à une console Web hébergée en tant que produit SaaS (Software-as-a-service) de NetApp. Avant de commencer, assurez-vous de bien comprendre<block ref="dd9572e43b86cdf1b1d508e121fd732e" category="inline-link-macro-rx"></block> et<block ref="4beb4752043a55296423922b143dd023" category="inline-link-macro-rx"></block> .</block>
+  <block id="6e4c4444e6f5b58ee31bcd6f7fcef10d" category="paragraph">À ce stade, vous êtes connecté et pouvez commencer à gérer le stockage et à utiliser des services tels que Digital Advisor, Amazon FSx for ONTAP, Azure NetApp Files, etc. <block ref="d15147d8429817c45cc619fa49c43b04" category="inline-link-macro-rx"></block> .</block>
+  <block id="098431f8f7d03f0246ab27988862dd14" category="list-text"><block ref="098431f8f7d03f0246ab27988862dd14" category="inline-link-macro-rx"></block></block>
+  <block id="bac5c4edb29e43518e1f2b0b721fb1d5" category="list-text"><block ref="bac5c4edb29e43518e1f2b0b721fb1d5" category="inline-link-macro-rx"></block></block>
+  <block id="fb418088b41b8e87851b52debc27d47c" category="list-text"><block ref="fb418088b41b8e87851b52debc27d47c" category="inline-link-macro-rx"></block></block>
+  <block id="c33d6b870a4603154aa9aca1e2bdc138" category="sidebar">Gérer les mises à niveau des agents</block>
 </blocks>

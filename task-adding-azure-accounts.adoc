@@ -276,7 +276,7 @@ Après avoir fourni à un compte Azure les autorisations requises, vous pouvez a
 Si vous venez de créer ces informations d'identification auprès de votre fournisseur de cloud, il faudra peut-être quelques minutes avant qu'elles soient disponibles pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
 
 .Avant de commencer
-Vous devez créer un agent de console avant de pouvoir modifier les paramètres de la console. link:concept-connectors.html#connector-installation["Apprenez à créer un agent de console"] .
+Vous devez créer un agent de console avant de pouvoir modifier les paramètres de la console. link:concept-agents.html#agent-installation["Apprenez à créer un agent de console"] .
 
 .Étapes
 . Sélectionnez *Administration > Informations d'identification*.
@@ -323,7 +323,7 @@ Le remplacement de l'abonnement actuel au marché le met à jour pour les systè
 
 
 .Étapes
-. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Administration > Informations d'identification*.
 . Sélectionnez *Informations d'identification de l'organisation*.
 . Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
 +

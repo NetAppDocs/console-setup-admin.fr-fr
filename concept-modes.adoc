@@ -97,9 +97,9 @@ La console fonctionne comme suit en mode standard :
 Communication sortante:: La connectivité est requise entre un agent de console et la couche SaaS de la console, les ressources accessibles au public de votre fournisseur de cloud et d'autres composants essentiels aux opérations quotidiennes.
 +
 --
-* link:task-install-connector-aws-bluexp.html#networking-aws-agent["Points de terminaison qu'un agent contacte dans AWS"]
-* link:task-install-connector-azure-bluexp.html#networking-azure-agent["Points de terminaison qu'un agent contacte dans Azure"]
-* link:task-install-connector-google-bluexp-gcloud.html#networking-gcp-agent["Points de terminaison qu'un agent contacte dans Google Cloud"]
+* link:task-install-agent-aws-console.html#networking-aws-agent["Points de terminaison qu'un agent contacte dans AWS"]
+* link:task-install-agent-azure-console.html#networking-azure-agent["Points de terminaison qu'un agent contacte dans Azure"]
+* link:task-install-agent-google-console-gcloud.html#networking-gcp-agent["Points de terminaison qu'un agent contacte dans Google Cloud"]
 
 
 --

@@ -3,7 +3,7 @@
 
 
 .Étapes
-. Sélectionnez *Administration > *Informations d'identification*.
+. Sélectionnez *Administration > Informations d'identification*.
 . Sélectionnez *Informations d'identification de l'organisation*.
 . Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
 +

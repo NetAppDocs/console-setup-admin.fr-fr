@@ -81,10 +81,10 @@ Les agents de console doivent avoir accès aux mêmes points de terminaison que 
 
 Configurez l’accès au point de terminaison réseau avant d’installer l’agent de la console.
 
-* link:task-install-connector-aws-bluexp.html#networking-aws-agent["Configurer l'accès au réseau AWS pour un agent de console"]
-* link:task-install-connector-azure-bluexp.html#networking-azure-agent["Configurer l'accès au réseau Azure pour un agent de console"]
-* link:task-install-connector-google-bluexp-gcloud.html#networking-gcp-agent["Configurer l'accès au réseau Google Cloud pour un agent de console"]
-* link:task-install-connector-on-prem.html#network-access-agent["Configurer l'accès au réseau local pour un agent de console"]
+* link:task-install-agent-aws-console.html#networking-aws-agent["Configurer l'accès au réseau AWS pour un agent de console"]
+* link:task-install-agent-azure-console.html#networking-azure-agent["Configurer l'accès au réseau Azure pour un agent de console"]
+* link:task-install-agent-google-console-gcloud.html#networking-gcp-agent["Configurer l'accès au réseau Google Cloud pour un agent de console"]
+* link:task-install-agent-on-prem.html#network-access-agent["Configurer l'accès au réseau local pour un agent de console"]
 
 
 

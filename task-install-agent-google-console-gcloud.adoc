@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-install-connector-google-bluexp-gcloud.html 
+permalink: task-install-agent-google-console-gcloud.html 
 keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, create connector, gcp installation, gcp connector 
 summary: 'Pour créer un agent de console dans Google Cloud à partir de NetApp Consoel ou en utilisant Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l"agent de console.' 
 ---
@@ -17,7 +17,7 @@ summary: 'Pour créer un agent de console dans Google Cloud à partir de NetApp 
 Vous pouvez créer un agent de console dans Google Cloud à partir de la console.  Vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l'agent de la console.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -313,7 +313,7 @@ Ce tableau est fourni à titre de référence et votre environnement doit reflé
 
 
 | Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
-link:task-install-connector-google-bluexp-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
+link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
  a| 
 compute.networkUser
 | Déploiement de l'agent dans le projet de service 
@@ -379,7 +379,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentation 
 Créez un agent de console directement depuis la console.
 
 .À propos de cette tâche
-La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud à l’aide d’une configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
 
 .Avant de commencer
 Vous devriez avoir les éléments suivants :

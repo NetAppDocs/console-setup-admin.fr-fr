@@ -20,7 +20,7 @@ Découvrez comment la console NetApp utilise les informations d’identification
 
 == Informations d'identification Azure initiales
 
-Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console.  Les autorisations requises sont répertoriées dans lelink:task-install-connector-azure-bluexp.html#connector-custom-role["Politique de déploiement d'agent pour Azure"] .
+Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console. Les autorisations requises sont répertoriées dans lelink:task-install-agent-azure-console.html#agent-custom-role["Politique de déploiement d'agent pour Azure"] .
 
 Lorsque la console déploie la machine virtuelle de l'agent de console dans Azure, elle active un https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] sur la machine virtuelle, crée un rôle personnalisé et l'attribue à la machine virtuelle.  Le rôle fournit à la console les autorisations requises pour gérer les ressources et les processus au sein de cet abonnement Azure. link:reference-permissions-azure.html["Examiner comment la console utilise les autorisations"] .
 
@@ -108,8 +108,8 @@ Pour savoir comment configurer les autorisations, reportez-vous aux pages suivan
 
 * Mode standard
 +
-** link:task-install-connector-azure-marketplace.html#step-3-set-up-permissions["Configurer les autorisations pour un déploiement Azure Marketplace"]
-** link:task-install-connector-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
+** link:task-install-agent-azure-marketplace.html#step-3-set-up-permissions["Configurer les autorisations pour un déploiement Azure Marketplace"]
+** link:task-install-agent-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
 
 
 * Mode restreint

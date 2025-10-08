@@ -67,7 +67,7 @@ Notez que vous ne pouvez sélectionner que les dossiers et les projets pour lesq
 .Après avoir terminé
 Si vous découvrez une ressource à l’aide d’un agent de console, associez l’agent de console au projet pour accorder l’accès.  Dans le cas contraire, l’agent de console et sa ressource associée ne sont pas accessibles aux membres sans le rôle _Organization admin_.
 
-link:task-iam-associate-connectors.html["Découvrez comment associer un agent de console à un dossier ou à un projet"] .
+link:task-iam-associate-agents.html["Découvrez comment associer un agent de console à un dossier ou à un projet"] .
 
 
 

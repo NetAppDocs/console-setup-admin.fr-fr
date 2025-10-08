@@ -24,7 +24,7 @@ Le rôle personnalisé indiqué ci-dessous fournit les autorisations dont un age
 
 Vous devrez appliquer ce rôle personnalisé à un compte de service qui est attaché à la machine virtuelle de l’agent de console.
 
-* link:task-install-connector-google-bluexp-gcloud.html#agent-permissions-google["Configurer les autorisations Google Cloud pour le mode standard"]
+* link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Configurer les autorisations Google Cloud pour le mode standard"]
 * link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Configurer les autorisations pour le mode restreint"]
 
 

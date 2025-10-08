@@ -15,7 +15,7 @@ Ce tableau est fourni à titre de référence et votre environnement doit reflé
 
 
 | Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
-link:task-install-connector-google-bluexp-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
+link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
  a| 
 compute.networkUser
 | Déploiement de l'agent dans le projet de service 

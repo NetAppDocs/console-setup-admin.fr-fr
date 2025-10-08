@@ -28,8 +28,8 @@ Vous devrez vous assurer que le rôle est à jour à mesure que de nouvelles aut
 
 * Pour consulter les instructions étape par étape pour utiliser ces politiques, reportez-vous aux pages suivantes :
 +
-** link:task-install-connector-azure-marketplace.html#step-3-set-up-permissions["Configurer les autorisations pour un déploiement Azure Marketplace"]
-** link:task-install-connector-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
+** link:task-install-agent-azure-marketplace.html#step-3-set-up-permissions["Configurer les autorisations pour un déploiement Azure Marketplace"]
+** link:task-install-agent-on-prem.html#agent-permission-aws-azure["Configurer les autorisations pour les déploiements sur site"]
 ** link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Configurer les autorisations pour le mode restreint"]
 
 

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-uninstall-connector.html 
+permalink: task-uninstall-agent.html 
 keywords: uninstall, remove connector, uninstall connector, uninstall agent, remove agent 
 summary: 'Désinstallez un agent de console pour résoudre les problèmes ou pour le supprimer définitivement de l"hôte.  Les étapes à suivre dépendent du mode de déploiement que vous utilisez.  Une fois que vous avez supprimé un agent de console de votre environnement, vous pouvez le supprimer de la console.' 
 ---

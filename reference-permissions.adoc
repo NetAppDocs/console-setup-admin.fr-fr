@@ -31,7 +31,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 | But | Description | Lien 
 
 
-| Déployer un agent de console à partir de la console | L'utilisateur qui crée un agent de console à partir de la console a besoin d'autorisations spécifiques pour déployer l'instance dans AWS. | link:task-install-connector-aws-bluexp.html#aws-permissions-agent["Configurer les autorisations AWS"] 
+| Déployer un agent de console à partir de la console | L'utilisateur qui crée un agent de console à partir de la console a besoin d'autorisations spécifiques pour déployer l'instance dans AWS. | link:task-install-agent-aws-console.html#aws-permissions-agent["Configurer les autorisations AWS"] 
 
 
 | Fournir des autorisations pour un agent de console | Lorsque la console déploie un agent de console, elle attache une stratégie à l'instance qui fournit les autorisations requises pour gérer les ressources et les processus de votre compte AWS.  Vous devez configurer la politique vous-même si vous déployez un agent de console à partir d'AWS Marketplace, si vous installez manuellement un agent de console ou si vouslink:task-adding-aws-accounts.html#add-credentials-agent-aws["ajouter plus d'informations d'identification AWS à un agent de console"] .  Vous devez également vous assurer que la politique est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. | link:reference-permissions-aws.html["Autorisations AWS pour un agent de console"] 
@@ -112,7 +112,7 @@ La console nécessite des autorisations Azure pour un agent de console et pour d
 | But | Description | Lien 
 
 
-| Déployer un agent de console à partir de la console | Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer une machine virtuelle d’agent de console dans Azure. | link:task-install-connector-azure-bluexp.html#connector-custom-role["Configurer les autorisations Azure"] 
+| Déployer un agent de console à partir de la console | Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer une machine virtuelle d’agent de console dans Azure. | link:task-install-agent-azure-console.html#agent-custom-role["Configurer les autorisations Azure"] 
 
 
 | Fournir des autorisations pour un agent de console  a| 
@@ -174,10 +174,10 @@ La console nécessite des autorisations Google Cloud pour un agent de console et
 | But | Description | Lien 
 
 
-| Déployer un agent de console à partir de la console | L'utilisateur Google Cloud qui déploie un agent de console à partir de la console a besoin d'autorisations spécifiques pour déployer un agent de console dans Google Cloud. | link:task-install-connector-google-bluexp-gcloud.html#console-permissions-google["Configurer les autorisations pour créer un agent de console"] 
+| Déployer un agent de console à partir de la console | L'utilisateur Google Cloud qui déploie un agent de console à partir de la console a besoin d'autorisations spécifiques pour déployer un agent de console dans Google Cloud. | link:task-install-agent-google-console-gcloud.html#console-permissions-google["Configurer les autorisations pour créer un agent de console"] 
 
 
-| Fournir des autorisations pour un agent de console | Le compte de service d’une instance de machine virtuelle d’agent de console doit disposer d’autorisations spécifiques pour les opérations quotidiennes.  Vous devez associer le compte de service à un agent de console pendant le déploiement.  Vous devez également vous assurer que la politique est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. | link:task-install-connector-google-bluexp-gcloud.html#console-permissions-google["Configurer les autorisations pour un agent de console"] 
+| Fournir des autorisations pour un agent de console | Le compte de service d’une instance de machine virtuelle d’agent de console doit disposer d’autorisations spécifiques pour les opérations quotidiennes.  Vous devez associer le compte de service à un agent de console pendant le déploiement.  Vous devez également vous assurer que la politique est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. | link:task-install-agent-google-console-gcloud.html#console-permissions-google["Configurer les autorisations pour un agent de console"] 
 |===
 
 

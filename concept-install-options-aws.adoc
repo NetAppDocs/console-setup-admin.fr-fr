@@ -18,15 +18,15 @@ Il existe plusieurs manières différentes de créer un agent de console dans AW
 
 Les options d’installation suivantes sont disponibles :
 
-* link:task-install-connector-aws-bluexp.html["Créez l'agent de console directement depuis la console"](c'est l'option standard)
+* link:task-install-agent-aws-console.html["Créez l'agent de console directement depuis la console"](c'est l'option standard)
 +
 Cette action lance une instance EC2 exécutant Linux et le logiciel agent de console dans un VPC de votre choix.
 
-* link:task-install-connector-aws-marketplace.html["Créer un agent de console à partir d'AWS Marketplace"]
+* link:task-install-agent-aws-marketplace.html["Créer un agent de console à partir d'AWS Marketplace"]
 +
 Cette action lance également une instance EC2 exécutant Linux et le logiciel agent de la console, mais le déploiement est lancé directement à partir d'AWS Marketplace, plutôt qu'à partir de la console.
 
-* link:task-install-connector-aws-manual.html["Téléchargez et installez manuellement le logiciel sur votre propre hôte Linux"]
+* link:task-install-agent-aws-manual.html["Téléchargez et installez manuellement le logiciel sur votre propre hôte Linux"]
 
 
 L’option d’installation que vous choisissez a un impact sur la manière dont vous vous préparez à l’installation.  Cela inclut la manière dont vous fournissez à la console les autorisations requises dont elle a besoin pour authentifier et gérer les ressources dans AWS.

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-install-connector-azure-bluexp.html 
+permalink: task-install-agent-azure-console.html 
 keywords: install connector, azure connector installation, azure connector, install connector in azure, bluexp, create connector 
 summary: Pour créer un agent de console dans Azure à partir de la console NetApp , vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console. 
 ---
@@ -17,7 +17,7 @@ summary: Pour créer un agent de console dans Azure à partir de la console NetA
 Pour créer un agent de console dans Azure à partir de la console NetApp , vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-connectors.html["compréhension des agents de console"] .
+* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -429,7 +429,7 @@ Votre principal de service est maintenant configuré et vous devez avoir copié 
 Créez l’agent de console directement à partir de la console NetApp .
 
 .À propos de cette tâche
-* La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-connector-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+* La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
 * Lorsque la console déploie l’agent de console, elle crée un rôle personnalisé et l’attribue à la machine virtuelle de l’agent de console.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources Azure.  Vous devez vous assurer que le rôle est maintenu à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. link:reference-permissions-azure.html["En savoir plus sur le rôle personnalisé de l'agent de console"] .
 
 

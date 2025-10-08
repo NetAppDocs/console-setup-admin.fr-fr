@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: reference-connector-operating-system-changes.html 
+permalink: reference-agent-operating-system-changes.html 
 keywords: connector, operating systems, connector operating systems, os support, supported operating systems, rhel 8, rhel 9, red hat, docker, podman, agent 
 summary: 'NetApp ajoute et supprime parfois la prise en charge de l"agent de console sur des systèmes d"exploitation Linux spécifiques. Découvrez comment cette prise en charge affecte vos agents de console existants.' 
 ---

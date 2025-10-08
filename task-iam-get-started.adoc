@@ -56,7 +56,7 @@ L'ajout ou la découverte d'un système dans la console associe automatiquement 
 
 [role="quick-margin-list"]
 * link:task-iam-manage-resources.html["Apprenez à gérer la hiérarchie des ressources de votre organisation"] .
-* link:task-iam-associate-connectors.html["Découvrez comment associer un agent de console à un dossier ou à un projet"] .
+* link:task-iam-associate-agents.html["Découvrez comment associer un agent de console à un dossier ou à un projet"] .
 
 
 .Informations connexes

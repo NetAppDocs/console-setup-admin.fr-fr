@@ -83,7 +83,7 @@ Utilisez l’une des commandes suivantes pour vérifier votre agent de console. 
 ====
 Pour plus d'informations sur l'accès aux diagnostics de l'agent de la console, consultez les rubriques suivantes :
 
-* link:task-maintain-connectors.html#connect-linux-host["Vérifier l'état de l'agent de la console (pour les déploiements d'hôtes Linux)"]
+* link:task-maintain-agents.html#connect-linux-host["Vérifier l'état de l'agent de la console (pour les déploiements d'hôtes Linux)"]
 * link:task-agent-vm-config.html#connect-vcenter-host["Vérifier l'état de l'agent de la console (pour les déploiements VCenter)"]
 
 
