@@ -288,10 +288,10 @@ La version 3.9.54 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.54, 3.9.53 | Aller à la https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#connector-3-9-50["Quoi de neuf dans la page BlueXP"^] et reportez-vous aux modifications incluses pour les versions 3.9.54 et 3.9.53. 
 
 
-| Sauvegarde et récupération | 28 juillet 2025 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et se référer aux modifications incluses dans la version de juillet 2025. 
+| Sauvegarde et récupération | 28 juillet 2025 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et se référer aux modifications incluses dans la version de juillet 2025. 
 
 
-| Classification | 14 juillet 2025 (version 1.45) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] . 
+| Classification | 14 juillet 2025 (version 1.45) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] . 
 |===
 Pour plus de détails sur le mode privé, y compris comment effectuer une mise à niveau, reportez-vous à ce qui suit :
 
@@ -463,10 +463,10 @@ La version 3.9.52 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.52, 3.9.51 | Aller à la https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#connector-3-9-50["Quoi de neuf dans la page du connecteur BlueXP"] et reportez-vous aux modifications incluses pour les versions 3.9.52 et 3.9.50. 
 
 
-| Sauvegarde et récupération | 12 mai 2025 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de mai 2025. 
+| Sauvegarde et récupération | 12 mai 2025 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de mai 2025. 
 
 
-| Classification | 12 mai 2025 (version 1.43) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans les versions 1.38 à 1.371.41. 
+| Classification | 12 mai 2025 (version 1.43) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans les versions 1.38 à 1.371.41. 
 |===
 Pour plus de détails sur le mode privé, y compris comment effectuer une mise à niveau, reportez-vous à ce qui suit :
 
@@ -602,10 +602,10 @@ La version 3.9.50 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.50, 3.9.49 | Aller à la https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#connector-3-9-50["Quoi de neuf dans la page du connecteur BlueXP"] et reportez-vous aux modifications incluses pour les versions 3.9.50 et 3.9.49. 
 
 
-| Sauvegarde et récupération | 17 mars 2025 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de mars 2024. 
+| Sauvegarde et récupération | 17 mars 2025 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de mars 2024. 
 
 
-| Classification | 10 mars 2025 (version 1.41) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans les versions 1.38 à 1.371.41. 
+| Classification | 10 mars 2025 (version 1.41) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans les versions 1.38 à 1.371.41. 
 |===
 Pour plus de détails sur le mode privé, y compris comment effectuer une mise à niveau, reportez-vous à ce qui suit :
 
@@ -693,10 +693,10 @@ La version 3.9.48 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.48 | Aller à la https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#connector-3-9-48["Quoi de neuf dans la page du connecteur BlueXP"] et reportez-vous aux modifications incluses pour les versions 3.9.48. 
 
 
-| Sauvegarde et récupération | 21 février 2025 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de février 2025. 
+| Sauvegarde et récupération | 21 février 2025 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de février 2025. 
 
 
-| Classification | 22 janvier 2025 (version 1.39) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans la version 1.39. 
+| Classification | 22 janvier 2025 (version 1.39) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans la version 1.39. 
 |===
 
 
@@ -769,7 +769,7 @@ Notez ce qui suit :
 
 
 .API pour BlueXP IAM
-Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
+Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
 
 .Modes de déploiement pris en charge
 BlueXP IAM est pris en charge lors de l'utilisation de BlueXP en mode standard et restreint.  Si vous utilisez BlueXP en mode privé, vous continuerez à utiliser un _compte_ BlueXP pour gérer les espaces de travail, les utilisateurs et les ressources.
@@ -790,10 +790,10 @@ La version 3.9.48 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.48 | Aller à la https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#connector-3-9-48["Quoi de neuf dans la page du connecteur BlueXP"] et reportez-vous aux modifications incluses pour les versions 3.9.48. 
 
 
-| Sauvegarde et récupération | 21 février 2025 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de février 2025. 
+| Sauvegarde et récupération | 21 février 2025 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de février 2025. 
 
 
-| Classification | 22 janvier 2025 (version 1.39) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans la version 1.39. 
+| Classification | 22 janvier 2025 (version 1.39) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans la version 1.39. 
 |===
 
 
@@ -913,16 +913,16 @@ La version 3.9.46 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.46 | Améliorations mineures de sécurité et corrections de bugs 
 
 
-| Sauvegarde et récupération | 22 novembre 2024 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et se référer aux modifications incluses dans la version de novembre 2024 
+| Sauvegarde et récupération | 22 novembre 2024 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et se référer aux modifications incluses dans la version de novembre 2024 
 
 
-| Classification | 4 novembre 2024 (version 1.37) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et se référer aux modifications incluses dans les versions 1.32 à 1.37 
+| Classification | 4 novembre 2024 (version 1.37) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et se référer aux modifications incluses dans les versions 1.32 à 1.37 
 
 
-| Gestion des Cloud Volumes ONTAP | 11 novembre 2024 | Aller à la https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Quoi de neuf avec la page de gestion de Cloud Volumes ONTAP"^] et se référer aux modifications incluses dans les versions d'octobre 2024 et de novembre 2024 
+| Gestion des Cloud Volumes ONTAP | 11 novembre 2024 | Aller à la https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["Quoi de neuf avec la page de gestion de Cloud Volumes ONTAP"^] et se référer aux modifications incluses dans les versions d'octobre 2024 et de novembre 2024 
 
 
-| Gestion des clusters ONTAP sur site | 26 novembre 2024 | Aller à la https://docs.netapp.com/us-en/bluexp-ontap-onprem/whats-new.html["Quoi de neuf avec la page de gestion des clusters ONTAP sur site ?"^] et se référer aux modifications incluses dans la version de novembre 2024 
+| Gestion des clusters ONTAP sur site | 26 novembre 2024 | Aller à la https://docs.netapp.com/us-en/storage-management-ontap-onprem/whats-new.html["Quoi de neuf avec la page de gestion des clusters ONTAP sur site ?"^] et se référer aux modifications incluses dans la version de novembre 2024 
 |===
 Bien que le BlueXP digital wallet et la BlueXP replication soient également inclus dans le mode privé, il n'y a aucun changement par rapport à la version précédente du mode privé.
 
@@ -1010,7 +1010,7 @@ Notez ce qui suit :
 
 
 .API pour BlueXP IAM
-Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
+Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
 
 .Modes de déploiement pris en charge
 BlueXP IAM est pris en charge lors de l'utilisation de BlueXP en mode standard.  Si vous utilisez BlueXP en mode restreint ou en mode privé, vous continuerez à utiliser un _compte_ BlueXP pour gérer les espaces de travail, les utilisateurs et les ressources.
@@ -1092,9 +1092,9 @@ Pour en savoir plus sur ce qui est inclus dans les versions de ces composants et
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#9-september-2024["Quoi de neuf dans la version de septembre 2024 du Connecteur"]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#8-august-2024["Quoi de neuf dans la version d'août 2024 du Connecteur"]
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf avec la BlueXP backup and recovery"^]
-* https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf avec la BlueXP classification"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf avec la BlueXP backup and recovery"^]
+* https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf avec la BlueXP classification"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["Nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
 
 
 Pour plus de détails sur le mode privé, y compris comment effectuer une mise à niveau, reportez-vous à ce qui suit :
@@ -1293,9 +1293,9 @@ Pour en savoir plus sur ce qui est inclus dans les versions de ces services Blue
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["En savoir plus sur le mode privé"]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Découvrez comment démarrer avec BlueXP en mode privé"]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Découvrez comment mettre à niveau le connecteur lors de l'utilisation du mode privé"]
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Découvrez les nouveautés de la BlueXP backup and recovery"^]
-* https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Découvrez les nouveautés de la BlueXP classification"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Découvrez les nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Découvrez les nouveautés de la BlueXP backup and recovery"^]
+* https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Découvrez les nouveautés de la BlueXP classification"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["Découvrez les nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
 
 
 
@@ -1394,9 +1394,9 @@ Pour en savoir plus sur ce qui est inclus dans les versions de ces services Blue
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["En savoir plus sur le mode privé"]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Découvrez comment démarrer avec BlueXP en mode privé"]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Découvrez comment mettre à niveau le connecteur lors de l'utilisation du mode privé"]
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Découvrez les nouveautés de la BlueXP backup and recovery"^]
-* https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Découvrez les nouveautés de la BlueXP classification"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Découvrez les nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Découvrez les nouveautés de la BlueXP backup and recovery"^]
+* https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Découvrez les nouveautés de la BlueXP classification"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["Découvrez les nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
 
 
 
@@ -1433,5 +1433,5 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-operating-s
 Dans la version 3.9.38, nous avons mis à jour la politique de connecteur pour AWS pour inclure l'autorisation « ec2:DescribeAvailabilityZones ». Cette autorisation est désormais requise pour prendre en charge les zones locales AWS avec Cloud Volumes ONTAP.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["Afficher les autorisations AWS pour le connecteur"] .
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["En savoir plus sur la prise en charge des zones locales AWS"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["En savoir plus sur la prise en charge des zones locales AWS"^]
 

@@ -239,5 +239,5 @@ Les exemples suivants décrivent comment vous pouvez utiliser IAM pour gérer vo
 * link:task-iam-rename-organization.html["Renommez votre organisation NetApp Console"]
 * link:task-iam-audit-actions-timeline.html["Surveiller ou auditer l'activité IAM"]
 * link:reference-iam-predefined-roles.html["Rôles d'accès à la console NetApp"]
-* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour NetApp Console IAM"^]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour NetApp Console IAM"^]
 

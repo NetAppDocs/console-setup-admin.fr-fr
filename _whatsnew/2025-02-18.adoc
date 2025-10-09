@@ -18,8 +18,8 @@ La version 3.9.48 inclut des mises à jour des composants et services BlueXP sui
 | Connecteur | 3.9.48 | Aller à la https://docs.netapp.com/us-en/bluexp-setup-admin/whats-new.html#connector-3-9-48["Quoi de neuf dans la page du connecteur BlueXP"] et reportez-vous aux modifications incluses pour les versions 3.9.48. 
 
 
-| Sauvegarde et récupération | 21 février 2025 | Aller à la https://docs.netapp.com/us-en/bluexp-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de février 2025. 
+| Sauvegarde et récupération | 21 février 2025 | Aller à la https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Quoi de neuf dans la page de BlueXP backup and recovery ?"^] et reportez-vous aux modifications incluses dans la version de février 2025. 
 
 
-| Classification | 22 janvier 2025 (version 1.39) | Aller à la https://docs.netapp.com/us-en/bluexp-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans la version 1.39. 
+| Classification | 22 janvier 2025 (version 1.39) | Aller à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Quoi de neuf dans la page de BlueXP classification"^] et reportez-vous aux modifications incluses dans la version 1.39. 
 |===

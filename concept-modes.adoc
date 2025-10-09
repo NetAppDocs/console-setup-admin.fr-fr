@@ -164,7 +164,7 @@ Gestion du stockage et services de données pris en charge:: Les services de sto
 | Azure NetApp Files | Support complet 
 
 
-| Sauvegarde et récupération | Pris en charge dans les régions gouvernementales et les régions commerciales avec mode restreint. Non pris en charge dans les régions souveraines avec mode restreint. En mode restreint, NetApp Backup and Recovery prend en charge la sauvegarde et la restauration des données de volume ONTAP uniquement. https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données ONTAP"^] La sauvegarde et la restauration des données d'application et des données de machine virtuelle ne sont pas prises en charge. 
+| Sauvegarde et récupération | Pris en charge dans les régions gouvernementales et les régions commerciales avec mode restreint. Non pris en charge dans les régions souveraines avec mode restreint. En mode restreint, NetApp Backup and Recovery prend en charge la sauvegarde et la restauration des données de volume ONTAP uniquement. https://docs.netapp.com/us-en/data-services-disaster-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données ONTAP"^] La sauvegarde et la restauration des données d'application et des données de machine virtuelle ne sont pas prises en charge. 
 
 
 | Classification des données NetApp  a| 
@@ -256,7 +256,7 @@ Notez que certains services peuvent être pris en charge avec des limitations.  
 | StorageGRID | Non 
 
 
-.9+| *Services de données* | Sauvegarde et récupération NetApp | Ouihttps://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
+.9+| *Services de données* | Sauvegarde et récupération NetApp | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
 
 
 | Classification des données NetApp | Oui 

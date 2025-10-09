@@ -47,5 +47,5 @@ link:task-iam-manage-resources.html#associate-resource["Apprenez à associer une
 * link:concept-agents.html["En savoir plus sur les agents de la console NetApp"]
 * link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès de la console NetApp"]
 * link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
-* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour la gestion des identités et des accès"^]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour la gestion des identités et des accès"^]
 

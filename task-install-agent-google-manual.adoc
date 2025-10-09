@@ -699,7 +699,7 @@ NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rappor
 
 
 
-Si vous disposez de buckets Google Cloud Storage dans le même compte Google Cloud où vous avez créé l'agent de la console, vous verrez un système Google Cloud Storage apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-google-cloud-storage/index.html["Découvrez comment gérer Google Cloud Storage depuis la console NetApp"^]
+Si vous disposez de buckets Google Cloud Storage dans le même compte Google Cloud où vous avez créé l'agent de la console, vous verrez un système Google Cloud Storage apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/storage-management-google-cloud-storage/index.html["Découvrez comment gérer Google Cloud Storage depuis la console NetApp"^]
 
 
 

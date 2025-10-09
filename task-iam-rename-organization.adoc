@@ -65,5 +65,5 @@ image:screenshot-iam-project-id.png["Une capture d'écran du tableau des dossier
 .Informations connexes
 * link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès"]
 * link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
-* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
 

@@ -56,6 +56,6 @@ Vous pouvez gérer un système avec plusieurs agents de console en même temps �
 Pour éviter les problèmes de conflit, seul l'agent de la console principale doit être défini sur *Mode automatique*.
 
 +
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-settings.html["En savoir plus sur le mode de gestion de la capacité"^]
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-capacity-settings.html["En savoir plus sur le mode de gestion de la capacité"^]
 
 

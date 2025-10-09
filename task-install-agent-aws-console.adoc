@@ -353,4 +353,4 @@ Une fois le processus terminé, l’agent de la console peut être utilisé à p
 
 NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
 
-Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un environnement de travail Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Apprenez à gérer les buckets S3 depuis la console NetApp"^]
+Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un environnement de travail Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Apprenez à gérer les buckets S3 depuis la console NetApp"^]

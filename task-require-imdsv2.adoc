@@ -34,7 +34,7 @@ IMDSv2 offre une protection renforcée contre les vulnérabilités. https://aws.
 
 Le service de métadonnées d'instance (IMDS) est activé comme suit sur les instances EC2 :
 
-* Pour les nouveaux déploiements d'agents de console à partir de la console ou à l'aide https://docs.netapp.com/us-en/bluexp-automation/automate/overview.html["Scripts Terraform"^] IMDSv2 est activé par défaut sur l'instance EC2.
+* Pour les nouveaux déploiements d'agents de console à partir de la console ou à l'aide https://docs.netapp.com/us-en/console-automation/automate/overview.html["Scripts Terraform"^] IMDSv2 est activé par défaut sur l'instance EC2.
 * Si vous lancez une nouvelle instance EC2 dans AWS, puis installez manuellement le logiciel de l’agent de la console, IMDSv2 est également activé par défaut.
 * Si vous lancez l’agent de console depuis AWS Marketplace, IMDSv1 est activé par défaut.  Vous pouvez configurer manuellement IMDSv2 sur l'instance EC2.
 * Pour les agents de console existants, IMDSv1 est toujours pris en charge, mais vous pouvez configurer manuellement IMDSv2 sur l'instance EC2 si vous préférez.
@@ -88,7 +88,7 @@ NOTE: Le `http-tokens` les paramètres définissent IMDSv2 comme requis.  Quand 
 
 
 .. Répétez ces étapes pour les autres instances Cloud Volumes ONTAP , y compris le médiateur HA.
-.. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-state.html["Arrêter et démarrer les instances Cloud Volumes ONTAP"^]
+.. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-state.html["Arrêter et démarrer les instances Cloud Volumes ONTAP"^]
 
 
 

@@ -647,7 +647,7 @@ Vous devez garder le mode restreint désactivé car ces étapes décrivent comme
 
 
 
-Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un système de stockage Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Découvrez comment gérer les buckets S3 à partir de NetApp ConsoleP"^]
+Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un système de stockage Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Découvrez comment gérer les buckets S3 à partir de NetApp ConsoleP"^]
 
 
 

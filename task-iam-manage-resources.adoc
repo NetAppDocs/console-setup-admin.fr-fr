@@ -110,5 +110,5 @@ NOTE: Pour supprimer une ressource découverte de l'ensemble de l'organisation, 
 
 * link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la console NetApp"]
 * link:task-iam-get-started.html["Démarrer avec l'identité et l'accès dans la console NetApp"]
-* https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
 

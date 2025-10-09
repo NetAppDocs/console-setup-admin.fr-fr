@@ -82,7 +82,7 @@ Vous pouvez également configurer la console pour envoyer certains types de noti
 
 Le centre de notifications vous permet d'afficher l'état des opérations que vous avez lancées et de configurer des notifications d'alerte pour certains types d'activités système.  Parallèlement, les alertes vous permettent de visualiser les problèmes ou les risques potentiels dans votre environnement de stockage ONTAP liés à la capacité, à la disponibilité, aux performances, à la protection et à la sécurité.
 
-https://docs.netapp.com/us-en/bluexp-alerts/index.html["En savoir plus sur les alertes de la console NetApp"^]
+https://docs.netapp.com/us-en/console-alerts/index.html["En savoir plus sur les alertes de la console NetApp"^]
 
 
 

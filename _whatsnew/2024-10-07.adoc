@@ -45,7 +45,7 @@ Notez ce qui suit :
 
 
 .API pour BlueXP IAM
-Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/bluexp-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
+Cette modification introduit une nouvelle API pour BlueXP IAM, mais elle est rétrocompatible avec l’API de location précédente. https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour BlueXP IAM"^]
 
 .Modes de déploiement pris en charge
 BlueXP IAM est pris en charge lors de l'utilisation de BlueXP en mode standard.  Si vous utilisez BlueXP en mode restreint ou en mode privé, vous continuerez à utiliser un _compte_ BlueXP pour gérer les espaces de travail, les utilisateurs et les ressources.

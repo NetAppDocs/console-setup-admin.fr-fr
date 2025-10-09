@@ -45,7 +45,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 | But | Description | Lien 
 
 
-| Sauvegardez les clusters ONTAP sur site sur Amazon S3 avec NetApp Backup and Recovery | Lors de l'activation des sauvegardes sur vos volumes ONTAP , NetApp Backup and Recovery vous invite à saisir une clé d'accès et un secret pour un utilisateur IAM disposant d'autorisations spécifiques. | https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-onprem-aws.html["Configurer les autorisations S3 pour les sauvegardes"^] 
+| Sauvegardez les clusters ONTAP sur site sur Amazon S3 avec NetApp Backup and Recovery | Lors de l'activation des sauvegardes sur vos volumes ONTAP , NetApp Backup and Recovery vous invite à saisir une clé d'accès et un secret pour un utilisateur IAM disposant d'autorisations spécifiques. | https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-onprem-aws.html["Configurer les autorisations S3 pour les sauvegardes"^] 
 |===
 
 
@@ -56,7 +56,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 | But | Description | Lien 
 
 
-| Fournir des autorisations pour les nœuds Cloud Volumes ONTAP | Un rôle IAM doit être attaché à chaque nœud Cloud Volumes ONTAP dans AWS.  Il en va de même pour le médiateur HA.  L'option par défaut consiste à laisser la console créer les rôles IAM pour vous, mais vous pouvez utiliser les vôtres lors de la création du système dans la console. | https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-iam-roles.html["Apprenez à configurer vous-même les rôles IAM"^] 
+| Fournir des autorisations pour les nœuds Cloud Volumes ONTAP | Un rôle IAM doit être attaché à chaque nœud Cloud Volumes ONTAP dans AWS.  Il en va de même pour le médiateur HA.  L'option par défaut consiste à laisser la console créer les rôles IAM pour vous, mais vous pouvez utiliser les vôtres lors de la création du système dans la console. | https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-set-up-iam-roles.html["Apprenez à configurer vous-même les rôles IAM"^] 
 |===
 
 
@@ -67,13 +67,13 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 | But | Description | Lien 
 
 
-| Déployer le courtier de données dans AWS | Le compte utilisateur AWS que vous utilisez pour déployer le courtier de données doit disposer d’autorisations spécifiques. | https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#permissions-required-to-deploy-the-data-broker-in-aws["Autorisations requises pour déployer le courtier de données dans AWS"^] 
+| Déployer le courtier de données dans AWS | Le compte utilisateur AWS que vous utilisez pour déployer le courtier de données doit disposer d’autorisations spécifiques. | https://docs.netapp.com/us-en/data-services-copy-sync/task-installing-aws.html#permissions-required-to-deploy-the-data-broker-in-aws["Autorisations requises pour déployer le courtier de données dans AWS"^] 
 
 
-| Fournir des autorisations au courtier de données | Lorsque NetApp Copy and Sync déploie le courtier de données, il crée un rôle IAM pour l'instance du courtier de données.  Vous pouvez déployer le courtier de données à l’aide de votre propre rôle IAM, si vous préférez. | https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#requirements-to-use-your-own-iam-role-with-the-aws-data-broker["Conditions requises pour utiliser votre propre rôle IAM avec le courtier de données AWS"^] 
+| Fournir des autorisations au courtier de données | Lorsque NetApp Copy and Sync déploie le courtier de données, il crée un rôle IAM pour l'instance du courtier de données.  Vous pouvez déployer le courtier de données à l’aide de votre propre rôle IAM, si vous préférez. | https://docs.netapp.com/us-en/data-services-copy-sync/task-installing-aws.html#requirements-to-use-your-own-iam-role-with-the-aws-data-broker["Conditions requises pour utiliser votre propre rôle IAM avec le courtier de données AWS"^] 
 
 
-| Activer l'accès AWS pour un courtier de données installé manuellement | Si vous utilisez le courtier de données avec une relation de synchronisation qui inclut un bucket S3, vous devez préparer l'hôte Linux pour l'accès AWS.  Lorsque vous installez le courtier de données, vous devez fournir des clés AWS pour un utilisateur IAM disposant d'un accès programmatique et d'autorisations spécifiques. | https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#enabling-access-to-aws["Activation de l'accès à AWS"^] 
+| Activer l'accès AWS pour un courtier de données installé manuellement | Si vous utilisez le courtier de données avec une relation de synchronisation qui inclut un bucket S3, vous devez préparer l'hôte Linux pour l'accès AWS.  Lorsque vous installez le courtier de données, vous devez fournir des clés AWS pour un utilisateur IAM disposant d'un accès programmatique et d'autorisations spécifiques. | https://docs.netapp.com/us-en/data-services-copy-sync/task-installing-linux.html#enabling-access-to-aws["Activation de l'accès à AWS"^] 
 |===
 
 
@@ -84,7 +84,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 | But | Description | Lien 
 
 
-| Créer et gérer FSx pour ONTAP | Pour créer ou gérer un système Amazon FSx for NetApp ONTAP , vous devez ajouter des informations d'identification AWS à la console en fournissant l'ARN d'un rôle IAM qui donne à la console les autorisations nécessaires. | https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Découvrez comment configurer les informations d'identification AWS pour FSx"^] 
+| Créer et gérer FSx pour ONTAP | Pour créer ou gérer un système Amazon FSx for NetApp ONTAP , vous devez ajouter des informations d'identification AWS à la console en fournissant l'ARN d'un rôle IAM qui donne à la console les autorisations nécessaires. | https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Découvrez comment configurer les informations d'identification AWS pour FSx"^] 
 |===
 
 
@@ -141,12 +141,12 @@ Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder Cloud Volumes 
 * Vous souhaitez utiliser des clés de chiffrement gérées par le client (CMEK)
 
  a| 
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-cvo-azure.html["Sauvegardez les données Cloud Volumes ONTAP sur le stockage Azure Blob avec Backup and Recovery"^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-cvo-azure.html["Sauvegardez les données Cloud Volumes ONTAP sur le stockage Azure Blob avec Backup and Recovery"^]
 
 
 
 
-| Sauvegarder les clusters ONTAP locaux sur le stockage blob Azure | Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder des clusters ONTAP sur site, vous devez ajouter des autorisations à un agent de console afin d'utiliser la fonctionnalité « Rechercher et restaurer ». | https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-onprem-azure.html["Sauvegardez les données ONTAP locales sur le stockage Azure Blob avec Backup and Recovery"^] 
+| Sauvegarder les clusters ONTAP locaux sur le stockage blob Azure | Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder des clusters ONTAP sur site, vous devez ajouter des autorisations à un agent de console afin d'utiliser la fonctionnalité « Rechercher et restaurer ». | https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-onprem-azure.html["Sauvegardez les données ONTAP locales sur le stockage Azure Blob avec Backup and Recovery"^] 
 |===
 
 
@@ -157,7 +157,7 @@ Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder Cloud Volumes 
 | But | Description | Lien 
 
 
-| Déployer le courtier de données dans Azure | Le compte d’utilisateur Azure que vous utilisez pour déployer le courtier de données doit disposer des autorisations requises. | https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-azure.html#permissions-required-to-deploy-the-data-broker-in-azure["Autorisations requises pour déployer le courtier de données dans Azure"^] 
+| Déployer le courtier de données dans Azure | Le compte d’utilisateur Azure que vous utilisez pour déployer le courtier de données doit disposer des autorisations requises. | https://docs.netapp.com/us-en/data-services-copy-sync/task-installing-azure.html#permissions-required-to-deploy-the-data-broker-in-azure["Autorisations requises pour déployer le courtier de données dans Azure"^] 
 |===
 
 
@@ -195,13 +195,13 @@ Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder Cloud Volumes 
 * Vous souhaitez utiliser des clés de chiffrement gérées par le client (CMEK)
 
  a| 
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-cvo-gcp.html["Sauvegardez les données Cloud Volumes ONTAP sur Google Cloud Storage avec Backup and Recovery"^]
-* https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-cvo-gcp.html["Autorisations pour les CMEK"^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-cvo-gcp.html["Sauvegardez les données Cloud Volumes ONTAP sur Google Cloud Storage avec Backup and Recovery"^]
+* https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-cvo-gcp.html["Autorisations pour les CMEK"^]
 
 
 
 
-| Sauvegarder les clusters ONTAP sur site sur Google Cloud | Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder des clusters ONTAP sur site, vous devez ajouter des autorisations à un agent de console afin d'utiliser la fonctionnalité « Rechercher et restaurer ». | https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-onprem-gcp.html["Sauvegardez les données ONTAP sur site sur Google Cloud Storage avec Backup and Recovery"^] 
+| Sauvegarder les clusters ONTAP sur site sur Google Cloud | Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder des clusters ONTAP sur site, vous devez ajouter des autorisations à un agent de console afin d'utiliser la fonctionnalité « Rechercher et restaurer ». | https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-onprem-gcp.html["Sauvegardez les données ONTAP sur site sur Google Cloud Storage avec Backup and Recovery"^] 
 |===
 
 
@@ -212,10 +212,10 @@ Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder Cloud Volumes 
 | But | Description | Lien 
 
 
-| Déployer le courtier de données dans Google Cloud | Assurez-vous que l’utilisateur Google Cloud qui déploie le courtier de données dispose des autorisations requises. | https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-to-deploy-the-data-broker-in-google-cloud["Autorisations requises pour déployer le courtier de données dans Google Cloud"^] 
+| Déployer le courtier de données dans Google Cloud | Assurez-vous que l’utilisateur Google Cloud qui déploie le courtier de données dispose des autorisations requises. | https://docs.netapp.com/us-en/data-services-copy-sync/task-installing-gcp.html#permissions-required-to-deploy-the-data-broker-in-google-cloud["Autorisations requises pour déployer le courtier de données dans Google Cloud"^] 
 
 
-| Activer l'accès à Google Cloud pour un courtier de données installé manuellement | Si vous prévoyez d'utiliser le courtier de données avec une relation de synchronisation qui inclut un bucket Google Cloud Storage, vous devez préparer l'hôte Linux pour l'accès à Google Cloud.  Lorsque vous installez le courtier de données, vous devez fournir une clé pour un compte de service disposant d'autorisations spécifiques. | https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#enabling-access-to-google-cloud["Activation de l'accès à Google Cloud"^] 
+| Activer l'accès à Google Cloud pour un courtier de données installé manuellement | Si vous prévoyez d'utiliser le courtier de données avec une relation de synchronisation qui inclut un bucket Google Cloud Storage, vous devez préparer l'hôte Linux pour l'accès à Google Cloud.  Lorsque vous installez le courtier de données, vous devez fournir une clé pour un compte de service disposant d'autorisations spécifiques. | https://docs.netapp.com/us-en/data-services-copy-sync/task-installing-linux.html#enabling-access-to-google-cloud["Activation de l'accès à Google Cloud"^] 
 |===
 
 
@@ -232,7 +232,7 @@ La console nécessite des autorisations StorageGRID pour deux services.
 | But | Description | Lien 
 
 
-| Sauvegarder les clusters ONTAP sur site sur StorageGRID | Lorsque vous préparez StorageGRID comme cible de sauvegarde pour les clusters ONTAP , NetApp Backup and Recovery vous invite à saisir une clé d'accès et un secret pour un utilisateur IAM disposant d'autorisations spécifiques. | https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-onprem-storagegrid.html["Préparez StorageGRID comme cible de sauvegarde"^] 
+| Sauvegarder les clusters ONTAP sur site sur StorageGRID | Lorsque vous préparez StorageGRID comme cible de sauvegarde pour les clusters ONTAP , NetApp Backup and Recovery vous invite à saisir une clé d'accès et un secret pour un utilisateur IAM disposant d'autorisations spécifiques. | https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-onprem-storagegrid.html["Préparez StorageGRID comme cible de sauvegarde"^] 
 |===
 
 
@@ -243,5 +243,5 @@ La console nécessite des autorisations StorageGRID pour deux services.
 | But | Description | Lien 
 
 
-| Hiérarchiser les clusters ONTAP sur site vers StorageGRID | Lorsque vous configurez NetApp Cloud Tiering sur StorageGRID, vous devez fournir à Cloud Tiering une clé d'accès S3 et une clé secrète.  La hiérarchisation du cloud utilise les clés pour accéder à vos buckets. | https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-backup-onprem-storagegrid.html["Préparer la hiérarchisation vers StorageGRID"^] 
+| Hiérarchiser les clusters ONTAP sur site vers StorageGRID | Lorsque vous configurez NetApp Cloud Tiering sur StorageGRID, vous devez fournir à Cloud Tiering une clé d'accès S3 et une clé secrète.  La hiérarchisation du cloud utilise les clés pour accéder à vos buckets. | https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-onprem-storagegrid.html["Préparer la hiérarchisation vers StorageGRID"^] 
 |===

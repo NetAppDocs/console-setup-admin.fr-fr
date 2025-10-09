@@ -32,7 +32,7 @@ L’ajout de nouvelles informations d’identification AWS à la console fournit
 
 * Ajouter les informations d'identification AWS à la console pour FSx pour ONTAP
 +
-Ajoutez de nouvelles informations d’identification AWS à la console pour créer et gérer FSx pour ONTAP. https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Découvrez comment configurer les autorisations pour FSx pour ONTAP"^]
+Ajoutez de nouvelles informations d’identification AWS à la console pour créer et gérer FSx pour ONTAP. https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Découvrez comment configurer les autorisations pour FSx pour ONTAP"^]
 
 
 
@@ -194,7 +194,7 @@ Se référer à link:https://docs.aws.amazon.com/IAM/latest/UserGuide/access_pol
 
 ** Créez une politique qui inclut les autorisations requises pour créer un agent de console.
 +
-*** https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Afficher les autorisations nécessaires pour FSx pour ONTAP"^]
+*** https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Afficher les autorisations nécessaires pour FSx pour ONTAP"^]
 *** link:task-install-agent-aws-console.html#aws-permissions-agent["Afficher la politique de déploiement de l'agent"]
 
 
@@ -233,7 +233,7 @@ image:screenshot-settings-icon-organization.png["Une capture d’écran qui mont
 
 == Ajouter des informations d'identification à la console pour Amazon FSx for ONTAP
 
-Pour plus de détails, reportez-vous à la https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["la documentation de la console pour Amazon FSx pour ONTAP"^]
+Pour plus de détails, reportez-vous à la https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["la documentation de la console pour Amazon FSx pour ONTAP"^]
 
 
 

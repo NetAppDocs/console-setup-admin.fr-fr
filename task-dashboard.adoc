@@ -137,9 +137,9 @@ TIP: La mise en cache optimise les performances, mais peut entraîner une diffé
 
 Afficher les alertes concernant certains événements qui se produisent dans ONTAP. Il s’agit d’une combinaison d’alertes EMS et basées sur des métriques.
 
-Pour plus de détails sur les alertes ONTAP , reportez-vous à https://docs.netapp.com/us-en/bluexp-alerts/index.html["À propos des alertes ONTAP"^] .
+Pour plus de détails sur les alertes ONTAP , reportez-vous à https://docs.netapp.com/us-en/console-alerts/index.html["À propos des alertes ONTAP"^] .
 
-Pour une liste des alertes que vous pourriez voir, reportez-vous à https://docs.netapp.com/us-en/bluexp-alerts/alerts-use-dashboard.html["Afficher les risques potentiels liés au stockage ONTAP"^] .
+Pour une liste des alertes que vous pourriez voir, reportez-vous à https://docs.netapp.com/us-en/console-alerts/alerts-use-dashboard.html["Afficher les risques potentiels liés au stockage ONTAP"^] .
 
 .Étapes
 . Dans le menu de la console NetApp , examinez le volet Alertes ONTAP .
@@ -200,9 +200,9 @@ https://docs.netapp.com/us-en/data-services-ransomware-resilience/concept-ransom
 . Dans le menu de la console NetApp , examinez le volet Résilience aux ransomwares.
 . Effectuez l’une des opérations suivantes dans le volet Résilience aux ransomwares :
 +
-** Sélectionnez *Afficher* pour accéder au tableau de bord de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-ransomware-protection/rp-use-dashboard.html["Surveiller l'état de la charge de travail à l'aide du tableau de bord de résilience NetApp Ransomware"^] .
-** Consultez les « Actions recommandées » dans le tableau de bord de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-ransomware-protection/rp-use-dashboard.html["Consultez les recommandations de protection sur le tableau de bord de résilience NetApp Ransomware"^] .
-** Sélectionnez le lien Alertes pour consulter les alertes sur la page Alertes de résilience NetApp Ransomware.  Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-ransomware-protection/rp-use-alert.html["Gérez les alertes de ransomware détectées avec NetApp Ransomware Resilience"^] .
+** Sélectionnez *Afficher* pour accéder au tableau de bord de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/data-services-ransomware-resilience/rp-use-dashboard.html["Surveiller l'état de la charge de travail à l'aide du tableau de bord de résilience NetApp Ransomware"^] .
+** Consultez les « Actions recommandées » dans le tableau de bord de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/data-services-ransomware-resilience/rp-use-dashboard.html["Consultez les recommandations de protection sur le tableau de bord de résilience NetApp Ransomware"^] .
+** Sélectionnez le lien Alertes pour consulter les alertes sur la page Alertes de résilience NetApp Ransomware. Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/data-services-ransomware-resilience/rp-use-alert.html["Gérez les alertes de ransomware détectées avec NetApp Ransomware Resilience"^] .
 
 
 
@@ -220,5 +220,5 @@ TIP: La mise en cache optimise les performances, mais peut entraîner une diffé
 
 .Étapes
 . Dans le menu de la console NetApp , examinez le volet Sauvegarde et récupération.
-. Sélectionnez *Afficher* pour accéder au tableau de bord de sauvegarde et de récupération NetApp . Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/bluexp-backup-recovery/index.html["Documentation sur la sauvegarde et la restauration NetApp"^] .
+. Sélectionnez *Afficher* pour accéder au tableau de bord de sauvegarde et de récupération NetApp . Pour plus de détails, reportez-vous à https://docs.netapp.com/us-en/data-services-backup-recovery/index.html["Documentation sur la sauvegarde et la restauration NetApp"^] .
 

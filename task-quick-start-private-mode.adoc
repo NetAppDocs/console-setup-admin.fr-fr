@@ -64,7 +64,7 @@ Notez que certains services peuvent être pris en charge avec des limitations.
 .15+| *Services* | Alertes | Non 
 
 
-| Sauvegarde et récupération | Ouihttps://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
+| Sauvegarde et récupération | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
 
 
 | Classification | Oui 
