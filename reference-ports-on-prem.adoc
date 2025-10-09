@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-ports-on-prem.html 
-keywords: networking, network, requirements, ports, on-prem, linux, http, https, bluexp 
+keywords: networking, network, requirements, ports, on-prem, linux, http, https, bluexp, console agent, console 
 summary: 'L"agent de console utilise les ports _inbound_ lorsqu"il est installé manuellement sur un hôte Linux local.  Consultez ces ports à des fins de planification.' 
 ---
 = Ports pour l'agent de console sur site

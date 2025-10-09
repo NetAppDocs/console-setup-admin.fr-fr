@@ -83,7 +83,7 @@ Pour mettre à jour les informations d'identification du site de support NetApp 
 
 
  a| 
-\https:\\support.netapp.com
+\ https://support.netapp.com
  a| 
 Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP.
 
