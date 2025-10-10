@@ -15,7 +15,7 @@ image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsof
 . Précisez les détails de l'application :
 +
 ** *Nom*: Saisissez un nom pour l'application.
-** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la NetApp Console).
 ** *URI de redirection*: Vous pouvez laisser ce champ vide.
 
 
@@ -98,7 +98,7 @@ image:screenshot_azure_service_principal_role.png["Une capture d’écran du por
 Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
 
 +
-Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la NetApp Console, vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
 
 
 

@@ -148,7 +148,7 @@ Accédez aux outils de diagnostic pour résoudre les problèmes avec l’agent d
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
 . Entrer `3` pour afficher le menu Support et Diagnostics.
-. Entrer `1` pour accéder aux outils de diagnostic et suivre les invites à l'écran. + Par exemple, vous pouvez vérifier que tous les services d’agent sont en cours d’exécution. link:task-troubleshoot-agent.html#check-agent-status["Vérifiez l'état de l'agent de la console"^] .
+. Entrer `1` pour accéder aux outils de diagnostic et suivre les instructions à l'écran.  + Par exemple, vous pouvez vérifier que tous les services d’agent sont en cours d’exécution. link:task-troubleshoot-agent.html#check-agent-status["Vérifiez l'état de l'agent de la console"^] .
 
 
 

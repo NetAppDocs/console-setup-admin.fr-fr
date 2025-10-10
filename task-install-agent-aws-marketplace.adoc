@@ -78,7 +78,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -92,7 +92,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -207,7 +207,7 @@ Vous devriez avoir les éléments suivants :
 
 
 .Étapes
-. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la console NetApp sur AWS Marketplace"^]
+. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^]
 . Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
 . Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
 +
@@ -229,7 +229,7 @@ Utilisez la console EC2 pour lancer l’instance et attacher un rôle IAM.  Cela
 +
 *** Choisissez le VPC et le sous-réseau souhaités.
 *** Spécifiez si l’instance doit avoir une adresse IP publique.
-*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l’instance de l’agent de console : SSH, HTTP et HTTPS.
+*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l'instance de l'agent de console : SSH, HTTP et HTTPS.
 +
 link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour AWS"] .
 
@@ -257,7 +257,7 @@ NOTE: Si l'installation échoue, vous pouvez consulter les journaux et un rappor
 .. Entrez un nom pour le système.
 .. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
 +
-Gardez le mode restreint désactivé pour utiliser la console en mode standard.  Vous devez activer le mode restreint uniquement si vous disposez d'un environnement sécurisé et souhaitez déconnecter ce compte des services backend de la console.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+Gardez le mode restreint désactivé pour utiliser la console en mode standard.  Vous devez activer le mode restreint uniquement si vous disposez d'un environnement sécurisé et souhaitez déconnecter ce compte des services backend de la console.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la NetApp Console en mode restreint"] .
 
 .. Sélectionnez *Commençons*.
 
@@ -267,6 +267,6 @@ Gardez le mode restreint désactivé pour utiliser la console en mode standard. 
 .Résultat
 L'agent de console est maintenant installé et configuré avec votre organisation de console.
 
-Ouvrez un navigateur Web et accédez à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent Console avec la Console.
+Ouvrez un navigateur Web et accédez à la https://console.netapp.com["NetApp Console"^] pour commencer à utiliser l'agent Console avec la Console.
 
-Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un environnement de travail Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Apprenez à gérer les buckets S3 depuis la console NetApp"^]
+Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un environnement de travail Amazon S3 apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Apprenez à gérer les buckets S3 depuis la NetApp Console"^]

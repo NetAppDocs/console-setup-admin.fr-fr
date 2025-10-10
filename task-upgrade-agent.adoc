@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-upgrade-agent.html 
 keywords: upgrade, manual upgrade, agent upgrade, manual agent upgrade, upgrade agent manually, private mode upgrade, offline upgrade, upgrade private mode, connector upgrade, agent upgrade 
-summary: 'Lorsque vous utilisez le mode standard ou le mode restreint, la console NetApp met automatiquement à niveau votre agent de console vers la dernière version, à condition que l"agent de console dispose d"un accès Internet sortant pour obtenir la mise à jour logicielle.' 
+summary: 'Lorsque vous utilisez le mode standard ou le mode restreint, la NetApp Console met automatiquement à niveau votre agent de console vers la dernière version, à condition que l"agent de console dispose d"un accès Internet sortant pour obtenir la mise à jour logicielle.' 
 ---
 = Gérer les mises à niveau de l'agent de la console
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Lorsque vous utilisez le mode standard ou le mode restreint, la consol
 
 
 [role="lead"]
-Lorsque vous utilisez le mode standard ou le mode restreint, la console NetApp met automatiquement à niveau votre agent de console vers la dernière version, à condition que l'agent de console dispose d'un accès Internet sortant pour obtenir la mise à jour logicielle.
+Lorsque vous utilisez le mode standard ou le mode restreint, la NetApp Console met automatiquement à niveau votre agent de console vers la dernière version, à condition que l'agent de console dispose d'un accès Internet sortant pour obtenir la mise à jour logicielle.
 
 Si vous devez gérer manuellement le moment où l'agent de console est mis à niveau, vous pouvez désactiver les mises à niveau automatiques pour le mode standard ou le mode restreint.
 
@@ -90,7 +90,7 @@ _
 
 == Mettre à niveau l'agent de la console
 
-L'agent de la console doit redémarrer pendant le processus de mise à niveau afin que la console NetApp ne soit pas disponible pendant la mise à niveau.
+L'agent de la console doit redémarrer pendant le processus de mise à niveau afin que la NetApp Console ne soit pas disponible pendant la mise à niveau.
 
 .Étapes
 . Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] .

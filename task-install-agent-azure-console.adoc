@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-install-agent-azure-console.html 
 keywords: install connector, azure connector installation, azure connector, install connector in azure, bluexp, create connector 
-summary: Pour créer un agent de console dans Azure à partir de la console NetApp , vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console. 
+summary: Pour créer un agent de console dans Azure à partir de la NetApp Console, vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console. 
 ---
-= Créer un agent de console dans Azure à partir de la console NetApp
+= Créer un agent de console dans Azure à partir de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Pour créer un agent de console dans Azure à partir de la console NetA
 
 
 [role="lead"]
-Pour créer un agent de console dans Azure à partir de la console NetApp , vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console.
+Pour créer un agent de console dans Azure à partir de la NetApp Console, vous devez configurer votre réseau, préparer les autorisations Azure, puis créer l’agent de console.
 
 .Avant de commencer
 * Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
@@ -85,7 +85,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -99,7 +99,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -119,7 +119,7 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 --
 
 
-Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez la console NetApp Web fournie via la couche SaaS, elle contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données.  Cela inclut les points de terminaison contactés pour déployer l'agent de console à partir de la console.
+Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez la NetApp Console Web fournie via la couche SaaS, elle contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données.  Cela inclut les points de terminaison contactés pour déployer l'agent de console à partir de la console.
 +
 --
 link:reference-networking-saas-console.html["Afficher la liste des points de terminaison contactés depuis la console NetApp"] .
@@ -339,7 +339,7 @@ image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsof
 . Précisez les détails de l'application :
 +
 ** *Nom*: Saisissez un nom pour l'application.
-** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la NetApp Console).
 ** *URI de redirection*: Vous pouvez laisser ce champ vide.
 
 
@@ -381,7 +381,7 @@ Si vous souhaitez gérer des ressources dans plusieurs abonnements Azure, vous d
 
 
 
-.Ajouter des autorisations à l'API de gestion des services Windows Azure
+.Ajouter des autorisations à l'API Windows Azure Service Management
 . Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
 . Sélectionnez *Autorisations API > Ajouter une autorisation*.
 . Sous *API Microsoft*, sélectionnez *Azure Service Management*.
@@ -426,10 +426,10 @@ Votre principal de service est maintenant configuré et vous devez avoir copié 
 
 == Étape 4 : Créer l’agent de console
 
-Créez l’agent de console directement à partir de la console NetApp .
+Créez l’agent de console directement à partir de la NetApp Console.
 
 .À propos de cette tâche
-* La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+* La création de l’agent de console à partir de la console déploie une machine virtuelle dans Azure à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
 * Lorsque la console déploie l’agent de console, elle crée un rôle personnalisé et l’attribue à la machine virtuelle de l’agent de console.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources Azure.  Vous devez vous assurer que le rôle est maintenu à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures. link:reference-permissions-azure.html["En savoir plus sur le rôle personnalisé de l'agent de console"] .
 
 
@@ -523,4 +523,4 @@ Une fois le processus terminé, l’agent de la console peut être utilisé à p
 
 NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
 
-Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où vous avez créé l’agent de console, vous verrez un système de stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la console NetApp"^]
+Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où vous avez créé l’agent de console, vous verrez un système de stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la NetApp Console"^]

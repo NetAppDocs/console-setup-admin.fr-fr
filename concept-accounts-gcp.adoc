@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-accounts-gcp.html 
 keywords: cloud provider accounts, gcp, gcp accounts, google cloud platform, google accounts, google cloud platform accounts, permissions, project, google cloud project, credential, bluexp 
-summary: 'Découvrez comment la console NetApp utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d"identification d"un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.' 
+summary: 'Découvrez comment la NetApp Console utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d"identification d"un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.' 
 ---
 = En savoir plus sur les projets et les autorisations Google Cloud
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: 'Découvrez comment la console NetApp utilise les informations d’iden
 
 
 [role="lead"]
-Découvrez comment la console NetApp utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d'identification d'un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.
+Découvrez comment la NetApp Console utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d'identification d'un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.
 
 
 
-== Projet et autorisations pour la console NetApp
+== Projet et autorisations pour la NetApp Console
 
 Avant de pouvoir utiliser la console pour gérer les ressources de votre projet Google Cloud, vous devez d’abord déployer un agent de console.  L'agent ne peut pas être exécuté dans vos locaux ou chez un autre fournisseur de cloud.
 
@@ -57,7 +57,7 @@ Notez les points suivants concernant les informations d’identification Google 
 
 == Projet pour Cloud Volumes ONTAP
 
-Cloud Volumes ONTAP peut résider dans le même projet que l'agent de console ou dans un projet différent.  Pour déployer Cloud Volumes ONTAP dans un autre projet, vous devez d’abord ajouter le compte de service et le rôle de l’agent de console à ce projet.
+Cloud Volumes ONTAP peut résider dans le même projet que l'agent de la console ou dans un projet différent.  Pour déployer Cloud Volumes ONTAP dans un autre projet, vous devez d’abord ajouter le compte de service et le rôle de l’agent de console à ce projet.
 
 * link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Apprenez à configurer le compte de service"]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Découvrez comment déployer Cloud Volumes ONTAP dans Google Cloud et sélectionner un projet"^]

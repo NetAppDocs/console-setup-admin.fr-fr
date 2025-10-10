@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-permissions-azure.html 
 keywords: permissions, azure, azure permissions, bluexp 
-summary: Lorsque la console NetApp lance un agent de console dans Azure, elle attache un rôle personnalisé à la machine virtuelle qui fournit à l’agent des autorisations pour gérer les ressources et les processus au sein de cet abonnement Azure.  L’agent utilise les autorisations pour effectuer des appels d’API vers plusieurs services Azure. 
+summary: Lorsque la NetApp Console lance un agent de console dans Azure, elle attache un rôle personnalisé à la machine virtuelle qui fournit à l’agent des autorisations pour gérer les ressources et les processus au sein de cet abonnement Azure.  L’agent utilise les autorisations pour effectuer des appels d’API vers plusieurs services Azure. 
 ---
 = Autorisations Azure pour l'agent de console
 :hardbreaks:
@@ -14,15 +14,15 @@ summary: Lorsque la console NetApp lance un agent de console dans Azure, elle at
 
 
 [role="lead"]
-Lorsque la console NetApp lance un agent de console dans Azure, elle attache un rôle personnalisé à la machine virtuelle qui fournit à l’agent des autorisations pour gérer les ressources et les processus au sein de cet abonnement Azure.  L’agent utilise les autorisations pour effectuer des appels d’API vers plusieurs services Azure.
+Lorsque la NetApp Console lance un agent de console dans Azure, elle attache un rôle personnalisé à la machine virtuelle qui fournit à l’agent des autorisations pour gérer les ressources et les processus au sein de cet abonnement Azure.  L’agent utilise les autorisations pour effectuer des appels d’API vers plusieurs services Azure.
 
 La nécessité ou non de créer ce rôle personnalisé pour l'agent dépend de la manière dont vous l'avez déployé.
 
-.Déploiement à partir de la console NetApp
+.Déploiement à partir de la NetApp Console
 Lorsque vous utilisez la console pour déployer la machine virtuelle de l'agent dans Azure, cela active une https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] sur la machine virtuelle, crée un rôle personnalisé et l'attribue à la machine virtuelle.  Le rôle fournit à la console les autorisations requises pour gérer les ressources et les processus au sein de cet abonnement Azure.  Les autorisations du rôle sont maintenues à jour lorsque l'agent est mis à niveau.  Vous n'avez pas besoin de créer ce rôle pour l'agent ni de gérer les mises à jour.
 
 .Déploiement manuel ou à partir de la place de marché Azure
-Lorsque vous déployez l’agent à partir de la Place de marché Azure ou si vous installez manuellement l’agent sur un hôte Linux, vous devez configurer vous-même le rôle personnalisé et conserver ses autorisations avec toutes les modifications.
+Lorsque vous déployez l’agent à partir d’Azure Marketplace ou si vous installez manuellement l’agent sur un hôte Linux, vous devez configurer vous-même le rôle personnalisé et conserver ses autorisations avec toutes les modifications.
 
 Vous devrez vous assurer que le rôle est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.  Si de nouvelles autorisations sont requises, elles seront répertoriées dans les notes de version.
 
@@ -194,9 +194,9 @@ L'agent effectue les requêtes API suivantes lorsque vous utilisez NetApp Data C
 
 
 
-=== Sauvegarde et récupération NetApp
+=== NetApp Backup and Recovery
 
-L'agent de console effectue les requêtes API suivantes pour NetApp Backup and Recovery :
+L'agent de console effectue les requêtes API suivantes pour NetApp Backup and Recovery:
 
 * Microsoft.Storage/storageAccounts/listkeys/action
 * Microsoft.Storage/storageAccounts/lecture
@@ -242,7 +242,7 @@ L'agent effectue les requêtes API suivantes lorsque vous utilisez la fonctionna
 
 
 
-=== Classification des données NetApp
+=== NetApp Data Classification
 
 L'agent effectue les requêtes API suivantes lorsque vous utilisez la classification des données.
 

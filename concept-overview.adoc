@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-overview.html 
 keywords: overview, concepts, features, use case, cloud manager, bluexp, how bluexp works, supported cloud providers, cloud providers, hyperscalers, aws, google, how NetApp Console works 
-summary: 'La console NetApp fournit une gestion centralisée des services de stockage et de données NetApp dans les environnements locaux et cloud à l"échelle de l"entreprise.' 
+summary: 'La NetApp Console fournit une gestion centralisée des services de stockage et de données NetApp dans les environnements locaux et cloud à l"échelle de l"entreprise.' 
 ---
-= En savoir plus sur la console NetApp
+= En savoir plus sur la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'La console NetApp fournit une gestion centralisée des services de sto
 
 
 [role="lead"]
-La console NetApp offre une gestion centralisée du stockage NetApp et des services de données NetApp dans les environnements locaux et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
+La NetApp Console offre une gestion centralisée du stockage NetApp et des NetApp Data Services dans les environnements locaux et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
 
 Il s'agit d'une plate-forme disponible en tant que service (SaaS) qui fournit la gestion du stockage, la mobilité des données, la protection des données, ainsi que l'analyse et le contrôle des données.  Les capacités de gestion sont fournies via une console Web et des API.
 
@@ -82,23 +82,23 @@ La console fournit des services de données pour sécuriser et maintenir la disp
 
 Alertes de stockage:: Affichez les problèmes liés à la capacité, à la disponibilité, aux performances, à la protection et à la sécurité dans votre environnement ONTAP .
 Centre d'automatisation:: Utilisez des solutions scriptées pour automatiser le déploiement et l’intégration des produits et services NetApp .
-Sauvegarde et récupération NetApp:: Sauvegardez et restaurez les données dans le cloud et sur site.
-Classification des données NetApp:: Préparez vos données d'application et vos environnements cloud à la confidentialité.
-Copie et synchronisation NetApp:: Synchronisez les données entre les magasins de données sur site et dans le cloud.
+NetApp Backup and Recovery:: Sauvegardez et restaurez les données dans le cloud et sur site.
+NetApp Data Classification:: Préparez vos données d'application et vos environnements cloud à la confidentialité.
+NetApp Copy and Sync:: Synchronisez les données entre les magasins de données sur site et dans le cloud.
 Conseiller numérique NetApp (Active IQ):: Utilisez l’analyse prédictive et le support proactif pour optimiser votre infrastructure de données.
-Licences et abonnements:: Gérez et surveillez vos licences et abonnements.
-Reprise après sinistre NetApp:: Protégez les charges de travail VMware sur site à l’aide de VMware Cloud sur Amazon FSx for ONTAP comme site de reprise après sinistre.
+Licenses and subscriptions:: Gérez et surveillez vos licences et abonnements.
+NetApp Disaster Recovery:: Protégez les charges de travail VMware sur site à l’aide de VMware Cloud sur Amazon FSx for ONTAP comme site de reprise après sinistre.
 Planification du cycle de vie:: Identifiez les clusters présentant une faible capacité actuelle ou prévue et mettez en œuvre une hiérarchisation des données ou des recommandations de capacité supplémentaires.
-Résilience aux ransomwares NetApp:: Détectez les anomalies pouvant entraîner des attaques de ransomware.  Protégez et récupérez les charges de travail.
-Réplication NetApp:: Répliquez les données entre les systèmes de stockage pour prendre en charge la sauvegarde et la reprise après sinistre.
+NetApp Ransomware Resilience:: Détectez les anomalies pouvant entraîner des attaques de ransomware.  Protégez et récupérez les charges de travail.
+NetApp Replication:: Répliquez les données entre les systèmes de stockage pour prendre en charge la sauvegarde et la reprise après sinistre.
 Mises à jour logicielles:: Automatisez l’évaluation, la planification et l’exécution des mises à niveau ONTAP .
 Tableau de bord de durabilité:: Analysez la durabilité de vos systèmes de stockage.
-Hiérarchisation du cloud NetApp:: Étendez votre stockage ONTAP sur site au cloud.
-Mise en cache des volumes NetApp:: Créez un volume de cache inscriptible pour accélérer l’accès aux données ou décharger le trafic des volumes fortement consultés.
+NetApp Cloud Tiering:: Étendez votre stockage ONTAP sur site au cloud.
+NetApp Volume Caching:: Créez un volume de cache inscriptible pour accélérer l’accès aux données ou décharger le trafic des volumes fortement consultés.
 Charges de travail NetApp:: Concevez, configurez et exploitez des charges de travail clés à l'aide d' Amazon FSx for NetApp ONTAP.
 
 
-https://www.netapp.com/bluexp/["En savoir plus sur la console NetApp et les services de données disponibles"^]
+https://www.netapp.com/bluexp/["En savoir plus sur la NetApp Console et les services de données disponibles"^]
 
 
 
@@ -110,13 +110,13 @@ La console vous permet de gérer le stockage cloud et d'utiliser les services cl
 
 == Coût
 
-L'utilisation de la console NetApp est gratuite.  Vous encourez des frais si vous déployez des agents de console dans le cloud ou si vous utilisez le mode restreint déployé dans le cloud.  Certains services de données NetApp entraînent des coûts.https://bluexp.netapp.com/pricing["En savoir plus sur les tarifs des services de données NetApp"^]
+L'utilisation de la NetApp Console est gratuite.  Vous encourez des frais si vous déployez des agents de console dans le cloud ou si vous utilisez le mode restreint déployé dans le cloud.  Certains services de données NetApp entraînent des coûts.https://bluexp.netapp.com/pricing["En savoir plus sur les tarifs des services de données NetApp"^]
 
 
 
-== Comment fonctionne la console NetApp
+== Comment fonctionne la NetApp Console
 
-La console NetApp est une console Web fournie via la couche SaaS, un système de gestion des ressources et des accès, des agents de console qui gèrent les systèmes de stockage et activent les services de données NetApp , ainsi que différents modes de déploiement pour répondre aux besoins de votre entreprise.
+La NetApp Console est une console Web fournie via la couche SaaS, un système de gestion des ressources et des accès, des agents de console qui gèrent les systèmes de stockage et activent les services de données NetApp , ainsi que différents modes de déploiement pour répondre aux besoins de votre entreprise.
 
 
 
@@ -134,7 +134,7 @@ La console fournit une gestion des identités et des accès (IAM) pour la gestio
 * Les _dossiers_ vous permettent de regrouper des projets liés
 * La gestion des ressources vous permet d'associer une ressource à un ou plusieurs dossiers ou projets
 * La gestion des accès vous permet d'attribuer un rôle aux membres à différents niveaux de la hiérarchie de l'organisation
-* link:concept-identity-and-access-management.html["En savoir plus sur IAM dans la console NetApp"]
+* link:concept-identity-and-access-management.html["En savoir plus sur IAM dans la NetApp Console"]
 
 
 
@@ -149,9 +149,9 @@ link:concept-agents.html["En savoir plus sur les agents de console"] .
 
 === Modes de déploiement
 
-NetApp propose deux modes de déploiement pour la console NetApp : le _mode standard_ utilise une couche de logiciel en tant que service (SaaS) pour une fonctionnalité complète, tandis que le _mode restreint_ limite la connectivité sortante.
+NetApp propose deux modes de déploiement pour la NetApp Console: le _mode standard_ utilise une couche de logiciel en tant que service (SaaS) pour une fonctionnalité complète, tandis que le _mode restreint_ limite la connectivité sortante.
 
-NetApp continue de proposer BlueXP pour les sites qui n’ont pas besoin de connectivité sortante.  BlueXP est disponible uniquement en mode privé.link:task-quick-start-private-mode.html["Découvrez BlueXP (mode privé) pour les sites sans connexion Internet."]
+NetApp continue de proposer BlueXP pour les sites qui n’ont pas besoin de connectivité sortante.  BlueXP est disponible en mode privé uniquement.link:task-quick-start-private-mode.html["Découvrez BlueXP (mode privé) pour les sites sans connexion Internet."]
 
 link:concept-modes.html["En savoir plus sur les modes de déploiement"] .
 

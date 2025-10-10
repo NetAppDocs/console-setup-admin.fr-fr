@@ -4,7 +4,7 @@ permalink: reference-limitations.html
 keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, BlueXP, Cloud Volumes ONTAP, days, running, Connectors should remain running, imdsv2, https tokens, agents should remain running, Console agent 
 summary: 'Les limitations connues identifient les plates-formes, les appareils ou les fonctions qui ne sont pas pris en charge par cette version du produit ou qui n"interagissent pas correctement avec elle. Examinez attentivement ces limitations.' 
 ---
-= Limitations connues de la console NetApp
+= Limitations connues de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -26,7 +26,7 @@ Ces limitations sont spécifiques à la configuration de la console NEtApp et à
 
 === Conflit possible avec les adresses IP dans la plage 172
 
-La console NetApp déploie un agent avec deux interfaces dont les adresses IP sont comprises dans les plages 172.17.0.0/16 et 172.18.0.0/16.
+La NetApp Console déploie un agent avec deux interfaces dont les adresses IP sont comprises dans les plages 172.17.0.0/16 et 172.18.0.0/16.
 
 Si votre réseau dispose d’un sous-réseau configuré avec l’une de ces plages, vous risquez de rencontrer des échecs de connectivité depuis la console.  Par exemple, la découverte de clusters ONTAP sur site dans la console peut échouer.
 

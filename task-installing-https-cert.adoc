@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-installing-https-cert.html 
 keywords: https certificate, certificate, adding, installing, ca, certificate authority, format, encoding, restricted mode, access 
-summary: Installez un certificat signé par une autorité de certification pour l’accès utilisateur à la console Web lors de l’utilisation de la console NetApp en mode restreint. 
+summary: Installez un certificat signé par une autorité de certification pour l’accès utilisateur à la console Web lors de l’utilisation de la NetApp Console en mode restreint. 
 ---
 = Installer un certificat signé par une autorité de certification pour l'accès à la console Web
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Installez un certificat signé par une autorité de certification pour 
 
 
 [role="lead"]
-Lorsque vous utilisez la console NetApp en mode restreint, l'interface utilisateur est accessible à partir de la machine virtuelle de l'agent de console déployée dans votre région cloud ou sur site.  Par défaut, la console utilise un certificat SSL auto-signé pour fournir un accès HTTPS sécurisé à la console Web exécutée sur l'agent de console.
+Lorsque vous utilisez la NetApp Console en mode restreint, l'interface utilisateur est accessible à partir de la machine virtuelle de l'agent de console déployée dans votre région cloud ou sur site.  Par défaut, la console utilise un certificat SSL auto-signé pour fournir un accès HTTPS sécurisé à la console Web exécutée sur l'agent de console.
 
 Si votre entreprise l’exige, vous pouvez installer un certificat signé par une autorité de certification (CA), qui offre une meilleure protection de sécurité qu’un certificat auto-signé.  Une fois le certificat installé, la console utilise le certificat signé par une autorité de certification lorsque les utilisateurs accèdent à la console Web.
 
@@ -29,7 +29,7 @@ Vous pouvez installer le certificat en utilisant l’une des options suivantes 
 
 * Générez une demande de signature de certificat (CSR) à partir de la console, soumettez la demande de certificat à une autorité de certification, puis installez le certificat signé par l'autorité de certification sur l'agent de la console.
 +
-La paire de clés que la console utilise pour générer le CSR est stockée en interne sur l'agent de la console.  La console récupère automatiquement la même paire de clés (clé privée) lorsque vous installez le certificat sur l'agent de la console.
+La paire de clés utilisée par la console pour générer le CSR est stockée en interne sur l'agent de la console.  La console récupère automatiquement la même paire de clés (clé privée) lorsque vous installez le certificat sur l'agent de la console.
 
 * Installez un certificat signé par une autorité de certification que vous possédez déjà.
 +

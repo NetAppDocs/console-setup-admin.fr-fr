@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-ports-aws.html 
 keywords: ports, security group, http, https, inbound, outbound 
-summary: Le groupe de sécurité AWS pour l’agent de console nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation. 
+summary: Le groupe de sécurité AWS pour l’agent de console nécessite des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation. 
 ---
 = Règles du groupe de sécurité de l'agent de console dans AWS
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Le groupe de sécurité AWS pour l’agent de console nécessite des r�
 
 
 [role="lead"]
-Le groupe de sécurité AWS pour l'agent nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation.
+Le groupe de sécurité AWS pour l'agent nécessite des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation.
 
 
 
@@ -35,7 +35,7 @@ Le groupe de sécurité AWS pour l'agent nécessite des règles entrantes et sor
 
 
 
-| HTTPS | 443 | Fournit un accès HTTPS à l'interface utilisateur locale et aux connexions à partir de l'instance de classification des données NetApp 
+| HTTPS | 443 | Fournit un accès HTTPS à l'interface utilisateur locale et aux connexions à partir de l'instance de NetApp Data Classification 
 
 
 | TCP | 3128 | Fournit à Cloud Volumes ONTAP un accès Internet.  Vous devez ouvrir manuellement ce port après le déploiement. 

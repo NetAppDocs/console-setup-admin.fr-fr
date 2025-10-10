@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-quick-start-restricted-mode.html 
 keywords: quick start, restricted mode quick start, govcloud, government, aws gov, azure gov 
-summary: Commencez à utiliser la console NetApp en mode restreint en préparant votre environnement et en déployant l’agent de la console. 
+summary: Commencez à utiliser la NetApp Console en mode restreint en préparant votre environnement et en déployant l’agent de la console. 
 ---
 = Démarrage du flux de travail (mode restreint)
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Commencez à utiliser la console NetApp en mode restreint en préparant
 
 
 [role="lead"]
-Commencez à utiliser la console NetApp en mode restreint en préparant votre environnement et en déployant l’agent de la console.
+Commencez à utiliser la NetApp Console en mode restreint en préparant votre environnement et en déployant l’agent de la console.
 
-Le mode restreint est généralement utilisé par les gouvernements étatiques et locaux et les entreprises réglementées, y compris les déploiements dans les régions AWS GovCloud et Azure Government. Avant de commencer, assurez-vous d'avoir une bonne compréhension delink:concept-agents.html["Agents de console"] etlink:concept-modes.html["modes de déploiement"] .
+Le mode restreint est généralement utilisé par les gouvernements étatiques et locaux et les entreprises réglementées, y compris les déploiements dans les régions AWS GovCloud et Azure Government.  Avant de commencer, assurez-vous d'avoir une bonne compréhension delink:concept-agents.html["Agents de console"] etlink:concept-modes.html["modes de déploiement"] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"] link:task-prepare-restricted-mode.html["Préparez-vous au déploiement"]
 [role="quick-margin-list"]
@@ -28,10 +28,10 @@ Le mode restreint est généralement utilisé par les gouvernements étatiques e
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] link:task-install-restricted-mode.html["Déployer l'agent de console"]
 [role="quick-margin-list"]
 . Installez l'agent de console à partir de la place de marché de votre fournisseur de cloud ou en installant manuellement le logiciel sur votre propre hôte Linux.
-. Configurez la console NetApp en ouvrant un navigateur Web et en saisissant l’adresse IP de l’hôte Linux.
+. Configurez la NetApp Console en ouvrant un navigateur Web et en saisissant l’adresse IP de l’hôte Linux.
 . Fournissez à l’agent de console les autorisations que vous avez précédemment configurées.
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] link:task-subscribe-restricted-mode.html["Abonnez-vous aux services intelligents NetApp (facultatif)"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] link:task-subscribe-restricted-mode.html["Abonnez-vous aux NetApp Intelligent Services (facultatif)"]
 [role="quick-margin-para"]
-Facultatif : abonnez-vous à NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Les services intelligents NetApp incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La classification des données NetApp est incluse dans votre abonnement sans frais supplémentaires.
+Facultatif : abonnez-vous à NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Les NetApp Intelligent Services incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La NetApp Data Classification est incluse dans votre abonnement sans frais supplémentaires.

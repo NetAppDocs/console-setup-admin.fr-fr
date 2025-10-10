@@ -4,7 +4,7 @@ permalink: task-user-settings.html
 keywords: user profile, mfa, change password, role, login, multi-factor, authentication, dark mode 
 summary: 'Dans la console, chaque utilisateur dispose d"un profil qui contient des informations sur l"utilisateur et ses paramètres. Vous pouvez afficher et modifier les paramètres de votre profil.' 
 ---
-= Gérez les paramètres utilisateur de votre console NetApp
+= Gérez les paramètres utilisateur de votre NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

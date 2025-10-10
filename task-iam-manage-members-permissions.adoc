@@ -4,7 +4,7 @@ permalink: task-iam-manage-members-permissions.html
 keywords: user, service account, member, role, permissions, organization, project, folder, iam, identity and access management 
 summary: Gérez les membres de votre organisation pour fournir des autorisations à différents niveaux de la hiérarchie des ressources de votre organisation. 
 ---
-= Ajouter des membres et des comptes de service à la console NetApp
+= Ajouter des membres et des comptes de service à la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -37,7 +37,7 @@ _L'administrateur du dossier ou du projet_ peut afficher tous les membres sur la
 
 Vous pouvez ajouter deux types de membres à votre organisation : un compte utilisateur et un compte de service. Les applications utilisent des comptes de service pour effectuer des tâches API sans intervention humaine.  Une personne utilise généralement un compte utilisateur pour se connecter et gérer les ressources.
 
-Les utilisateurs doivent s'inscrire à la console NetApp avant de pouvoir les ajouter à une organisation ou leur attribuer un rôle.  Vous créez des comptes de service directement depuis la console.
+Les utilisateurs doivent s'inscrire à la NetApp Console avant de pouvoir les ajouter à une organisation ou leur attribuer un rôle.  Vous créez des comptes de service directement depuis la console.
 
 Pour gérer les utilisateurs et leurs autorisations, vous devez disposer du rôle *Administrateur de l'organisation* ou du rôle *Administrateur de dossier ou de projet*.  N'oubliez pas que les utilisateurs disposant du rôle *Administrateur de dossier ou de projet* ne peuvent gérer que les membres du dossier ou des projets pour lesquels ils disposent des autorisations d'administrateur.
 
@@ -45,15 +45,15 @@ Pour gérer les utilisateurs et leurs autorisations, vous devez disposer du rôl
 
 === Ajouter un compte utilisateur
 
-Bien que les utilisateurs s'inscrivent eux-mêmes à la console NetApp , ils doivent être explicitement ajoutés à une organisation ou à des dossiers ou projets spécifiques pour accéder aux ressources de la console.
+Bien que les utilisateurs s'inscrivent eux-mêmes à la NetApp Console , ils doivent être explicitement ajoutés à une organisation ou à des dossiers ou projets spécifiques pour accéder aux ressources de la console.
 
 .Étapes
-. Diriger l'utilisateur vers la visite https://console.netapp.com/["Console NetApp"^] pour s'inscrire.
+. Diriger l'utilisateur vers la visite https://console.netapp.com/["NetApp Console"^] pour s'inscrire.
 +
 Une fois que les utilisateurs se sont inscrits, ils remplissent la page *Inscription*, vérifient leur courrier électronique et se connectent. Si la console invite les utilisateurs à créer une organisation, ils la ferment et vous informent de la création de leur compte.  Vous pouvez ensuite ajouter l’utilisateur à votre organisation existante.
 
 +
-link:task-sign-up-saas.html["Découvrez comment vous inscrire à la console NetApp"] .
+link:task-sign-up-saas.html["Découvrez comment vous inscrire à la NetApp Console"] .
 
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Membres*.
@@ -77,7 +77,7 @@ link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès
 . Facultatif : sélectionnez un rôle ou un projet supplémentaire.  Si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation ou accorder à l'utilisateur des rôles supplémentaires dans la zone sélectionnée, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier ou projet ou une catégorie de rôle différente, puis choisissez un rôle.
 . Sélectionnez *Ajouter*.
 +
-La console envoie à l'utilisateur un e-mail avec des instructions.
+La console envoie à l'utilisateur un e-mail contenant des instructions.
 
 
 

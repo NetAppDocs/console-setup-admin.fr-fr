@@ -4,7 +4,7 @@ permalink: task-partnerships-create.html
 keywords: partner organizations, create partnership, MSPs, service provider access 
 summary: Créez des partenariats pour établir des connexions sécurisées et gérées entre votre organisation et des partenaires de confiance pour une gestion collaborative des ressources NetApp . 
 ---
-= Gérer les partenariats dans la console NetApp
+= Gérer les partenariats dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -77,7 +77,7 @@ Administrateur de partenariat, visualiseur de partenariat.link:reference-iam-pre
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez les *Partenariats*.
 . Sélectionnez soit l'onglet *Partenariats initiés* soit l'onglet *Partenariats reçus*.
-. Consultez le tableau respectif qui affiche les partenariats et leurs statuts.
+. Consultez le tableau correspondant qui affiche les partenariats et leurs statuts.
 
 
 
@@ -93,6 +93,6 @@ Administrateur de partenariatlink:reference-iam-predefined-roles.html["En savoir
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez les *Partenariats*.
 . Sélectionnez soit l'onglet *Partenariats initiés*.
-. Consultez le tableau respectif qui affiche les partenariats et leurs statuts.
+. Consultez le tableau correspondant qui affiche les partenariats et leurs statuts.
 . Accédez au partenariat initié que vous souhaitez désactiver et sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Désactiver*.
 

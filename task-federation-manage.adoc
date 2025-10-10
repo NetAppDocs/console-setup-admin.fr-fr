@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-federation-manage.html 
 keywords: federation, BlueXP, identity provider, IdP, single sign-on, SSO, verified domain, credentials, certificate, client secret, update, manage federations, security, compliance, user access, productivity, account management, authentication, access control, business continuity 
-summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer dans la console NetApp .  Vous pouvez visualiser l"état de la connexion, l"activer ou la désactiver selon vos besoins.' 
+summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer dans la NetApp Console.  Vous pouvez visualiser l"état de la connexion, l"activer ou la désactiver selon vos besoins.' 
 ---
-= Gérer les fédérations dans la console NetApp
+= Gérer les fédérations dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer d
 
 
 [role="lead"]
-Vous pouvez gérer votre fédération dans la console NetApp .  Vous pouvez le désactiver, mettre à jour les informations d'identification expirées, ainsi que le désactiver si vous n'en avez plus besoin.
+Vous pouvez gérer votre fédération dans la NetApp Console.  Vous pouvez le désactiver, mettre à jour les informations d'identification expirées, ainsi que le désactiver si vous n'en avez plus besoin.
 
 
 NOTE: Si vous avez configuré la fédération à l’aide de NetApp Cloud Central, importez-la via la page *Fédération* pour la gérer dans la console.link:task-federation-import.html["Apprenez à importer votre fédération"]
@@ -22,7 +22,7 @@ NOTE: Si vous avez configuré la fédération à l’aide de NetApp Cloud Centra
 Vous pouvez également ajouter un domaine vérifié à une fédération existante, ce qui vous permet d'utiliser plusieurs domaines pour votre connexion fédérée.
 
 
-NOTE: Les événements de gestion de fédération tels que l'activation, la désactivation et la mise à jour des fédérations s'affichent dans la chronologie.link:task-monitor-cm-operations.html["En savoir plus sur les opérations de surveillance dans la console NetApp ."]
+NOTE: Les événements de gestion de fédération tels que l'activation, la désactivation et la mise à jour des fédérations s'affichent dans la chronologie.link:task-monitor-cm-operations.html["En savoir plus sur les opérations de surveillance dans la NetApp Console."]
 
 .Rôles requis
 Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
@@ -82,7 +82,7 @@ Testez la connexion d'une fédération existante pour vérifier qu'elle fonction
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez l'onglet *Fédération*.
 . Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Tester la connexion*.
-. Sélectionnez *Test*.  Le système vous invite à vous connecter avec vos identifiants d'entreprise.  Si la connexion réussit, vous êtes redirigé vers la console NetApp .  Si la connexion échoue, vous voyez un message d’erreur indiquant le problème avec la fédération.
+. Sélectionnez *Test*.  Le système vous invite à vous connecter avec vos identifiants d'entreprise.  Si la connexion réussit, vous êtes redirigé vers la NetApp Console.  Si la connexion échoue, vous voyez un message d’erreur indiquant le problème avec la fédération.
 . Sélectionnez *Terminé* pour revenir à l’onglet *Fédération*.
 
 

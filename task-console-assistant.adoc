@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-console-assistant.html 
 keywords: bluexp,netapp console,console assistant,assistant,setup assistant,get started,quick start,first time user,first time setup,setup wizard 
-summary: 'Si vous utilisez la console NetApp pour la première fois, l"assistant de la console vous guide tout au long du processus de configuration initiale.  L"assistant vous aide à ajouter un compte NetApp Support Site (NSS), à ajouter un agent de console, à ajouter un cluster et à ajouter une licence ou un abonnement, ce qui facilite la prise en main de la gestion de vos données.' 
+summary: 'Si vous utilisez la NetApp Console pour la première fois, l"assistant de la console vous guide tout au long du processus de configuration initiale.  L"assistant vous aide à ajouter un compte NetApp Support Site (NSS), à ajouter un agent de console, à ajouter un cluster et à ajouter une licence ou un abonnement, ce qui facilite la prise en main de la gestion de vos données.' 
 ---
-= Commencer à utiliser l'assistant de la console NetApp
+= Commencer à utiliser l'assistant de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Si vous utilisez la console NetApp pour la première fois, l"assistant
 
 
 [role="lead"]
-Si vous utilisez la console NetApp pour la première fois avec le rôle d'administrateur d'organisation, vous pouvez utiliser l'assistant de la console pour vous guider tout au long du processus de configuration initiale.  L'assistant vous aide à ajouter un compte NetApp Support Site (NSS), à ajouter un agent de console, à ajouter un cluster et à ajouter une licence ou un abonnement, ce qui facilite la prise en main de la gestion de vos données.
+Si vous utilisez la NetApp Console pour la première fois avec le rôle d'administrateur d'organisation, vous pouvez utiliser l'assistant de la console pour vous guider tout au long du processus de configuration initiale.  L'assistant vous aide à ajouter un compte NetApp Support Site (NSS), à ajouter un agent de console, à ajouter un cluster et à ajouter une licence ou un abonnement, ce qui facilite la prise en main de la gestion de vos données.
 
 
 
@@ -26,7 +26,7 @@ L'assistant de console est uniquement disponible pour les utilisateurs disposant
 
 == Quand l’assistant de la console apparaît-il ?
 
-L'assistant de console est disponible sur la page d'accueil de la console NetApp jusqu'à ce que les tâches de configuration obligatoires soient terminées.
+L'assistant de console est disponible sur la page d'accueil de la NetApp Console jusqu'à ce que les tâches de configuration obligatoires soient terminées.
 
 Utilisez l'assistant pour effectuer ces tâches, dont certaines sont obligatoires :
 
@@ -41,7 +41,7 @@ Utilisez l'assistant pour effectuer ces tâches, dont certaines sont obligatoire
 
 == Activer l'assistant de la console
 
-Par défaut, la console NetApp affiche l'assistant de console sur la page d'accueil pour les nouveaux utilisateurs disposant du rôle d'administrateur d'organisation.
+Par défaut, la NetApp Console affiche l'assistant de console sur la page d'accueil pour les nouveaux utilisateurs disposant du rôle d'administrateur d'organisation.
 
 
 TIP: Vous ne pouvez supprimer l'assistant que lorsque vous ou quelqu'un d'autre avez terminé les éléments obligatoires.  Une fois les éléments obligatoires terminés, l’assistant est fermé pour tous les utilisateurs de votre organisation et n’apparaît plus.
@@ -50,7 +50,7 @@ TIP: Vous ne pouvez supprimer l'assistant que lorsque vous ou quelqu'un d'autre 
 
 == Utilisez l'assistant de console pour commencer
 
-L'assistant de console vous guide dans la configuration de votre environnement de console NetApp avec ces tâches :
+L'assistant de console vous guide dans la configuration de votre environnement de NetApp Console avec ces tâches :
 
 * Ajoutez un compte de site de support NetApp (NSS).
 * Connectez-vous à votre parc de stockage en déployant un agent de console, sur site ou dans le cloud.  Vous pouvez le déployer manuellement ou en téléchargeant un OVA.  Cette étape est obligatoire.

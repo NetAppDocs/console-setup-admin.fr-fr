@@ -4,7 +4,7 @@ permalink: task-adding-nss-accounts.html
 keywords: adding, creating, netapp support site account, nss, update account, update nss account, update nss credentials, delete nss account, remove nss account, change working environment, working environment nss, digital wallet, license, change system, system nss, licenses and subscriptions 
 summary: Associez un compte de site de support NetApp à votre organisation NetApp Console pour activer les flux de travail clés pour Cloud Volumes ONTAP.  Ces informations d’identification NSS sont associées à l’ensemble de l’organisation. 
 ---
-= Gérer les informations d'identification NSS associées à la console NetApp
+= Gérer les informations d'identification NSS associées à la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -26,7 +26,7 @@ L'association des informations d'identification du site de support NetApp à vot
 
 * Déploiement de Cloud Volumes ONTAP lorsque vous apportez votre propre licence (BYOL)
 +
-Il est nécessaire de fournir votre compte NSS pour que la console puisse télécharger votre clé de licence et activer l'abonnement pour la durée que vous avez achetée. Cela inclut les mises à jour automatiques pour les renouvellements de mandat.
+Il est nécessaire de fournir votre compte NSS pour que la console puisse télécharger votre clé de licence et activer l'abonnement pour la durée que vous avez achetée.  Cela inclut les mises à jour automatiques pour les renouvellements de mandat.
 
 * Enregistrement des systèmes Cloud Volumes ONTAP à paiement à l'utilisation
 +
@@ -60,12 +60,12 @@ NOTE: NetApp utilise Microsoft Entra ID comme fournisseur d’identité pour les
 Une fois la connexion réussie, NetApp stockera le nom d'utilisateur NSS.
 
 +
-Il s’agit d’un identifiant généré par le système qui correspond à votre e-mail. Sur la page *Gestion NSS*, vous pouvez afficher votre e-mail à partir duimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-nss-menu.png["Une icône de trois points horizontaux"] menu.
+Il s’agit d’un identifiant généré par le système qui correspond à votre e-mail.  Sur la page *Gestion NSS*, vous pouvez afficher votre e-mail à partir duimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-nss-menu.png["Une icône de trois points horizontaux"] menu.
 
 +
 ** Si vous avez besoin d'actualiser vos jetons d'identification de connexion, il existe également une option *Mettre à jour les informations d'identification* dans leimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-nss-menu.png["Une icône de trois points horizontaux"] menu.
 +
-L'utilisation de cette option vous invite à vous reconnecter. Notez que le jeton de ces comptes expire après 90 jours. Une notification sera publiée pour vous en informer.
+L'utilisation de cette option vous invite à vous reconnecter.  Notez que le jeton de ces comptes expire après 90 jours.  Une notification sera publiée pour vous en informer.
 
 
 
@@ -150,7 +150,7 @@ TIP: Lorsque vous accédez à la page de gestion NSS, la console génère un jet
 
 Supprimez tous les comptes NSS que vous ne souhaitez plus utiliser avec la console.
 
-Vous ne pouvez pas supprimer un compte actuellement associé à un système Cloud Volumes ONTAP .  Vous devez d’abord<<attach-system-nss-account,attacher ces systèmes à un compte NSS différent>> .
+Vous ne pouvez pas supprimer un compte actuellement associé à un système Cloud Volumes ONTAP .  Vous devez d’abord<<attach-system-nss-account,attacher ces systèmes à un autre compte NSS>> .
 
 .Étapes
 . Dans *Administration > Support*.

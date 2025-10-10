@@ -5,7 +5,7 @@
 . Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour le connecteur"] et les enregistrer dans un fichier JSON.
 . Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
 +
-Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser avec la console NetApp .
+Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser avec la NetApp Console.
 
 +
 *Exemple*

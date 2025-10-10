@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-iam-platform-roles.html 
 keywords: predefined roles, iam roles, organization admin, folder or project admin, classification viewer, snapcenter admin, role, iam role, admin, iam, identity and access management, bluexp 
-summary: Attribuez des rôles de plateforme aux utilisateurs pour accorder des autorisations de gestion de la console NetApp , attribuer des rôles, ajouter des utilisateurs, créer des agents de console et gérer les fédérations. 
+summary: Attribuez des rôles de plateforme aux utilisateurs pour accorder des autorisations de gestion de la NetApp Console, attribuer des rôles, ajouter des utilisateurs, créer des agents de console et gérer les fédérations. 
 ---
 = Rôles d'accès à la plateforme NetApp Console
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Attribuez des rôles de plateforme aux utilisateurs pour accorder des a
 
 
 [role="lead"]
-Attribuez des rôles de plateforme aux utilisateurs pour accorder des autorisations de gestion de la console NetApp , attribuer des rôles, ajouter des utilisateurs, créer des agents de console et gérer les fédérations.
+Attribuez des rôles de plateforme aux utilisateurs pour accorder des autorisations de gestion de la NetApp Console, attribuer des rôles, ajouter des utilisateurs, créer des agents de console et gérer les fédérations.
 
 .Exemple de rôles organisationnels pour une grande organisation multinationale
 XYZ Corporation organise l'accès au stockage des données par région (Amérique du Nord, Europe et Asie-Pacifique), offrant un contrôle régional avec une surveillance centralisée.
@@ -127,12 +127,12 @@ Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de c
 
 == Rôles de super administrateur et de spectateur
 
-Le rôle *Super administrateur* offre un accès complet pour gérer les fonctionnalités de la console, le stockage et les services de données.  Ce rôle convient à ceux qui supervisent l’administration et la gouvernance.  En revanche, le rôle *Super visualiseur* offre un accès en lecture seule, idéal pour les auditeurs ou les parties prenantes qui ont besoin de visibilité sans apporter de modifications.
+Le rôle *Super administrateur* offre un accès complet pour gérer les fonctionnalités de la console, le stockage et les services de données.  Ce rôle convient à ceux qui supervisent l’administration et la gouvernance.  En revanche, le rôle *Super spectateur* offre un accès en lecture seule, idéal pour les auditeurs ou les parties prenantes qui ont besoin de visibilité sans apporter de modifications.
 
 Les organisations doivent utiliser l'accès *Super administrateur* avec parcimonie afin de minimiser les risques de sécurité et de se conformer au principe du moindre privilège.  La plupart des organisations devraient attribuer des rôles précis avec uniquement les autorisations nécessaires pour réduire les risques et améliorer l’auditabilité.
 
 .Exemple de super rôles
-ABC Corporation dispose d'une petite équipe de cinq personnes qui utilisent la console NetApp pour les services de données et la gestion du stockage.  Au lieu de distribuer plusieurs rôles, ils attribuent le rôle de *Super administrateur* à deux membres seniors de l'équipe qui gèrent toutes les tâches administratives, y compris la gestion des utilisateurs et la configuration des ressources.  Les trois membres restants de l'équipe se voient attribuer le rôle de *Super visualiseur*, leur permettant de surveiller l'état du stockage et l'état du service de données sans pouvoir modifier les paramètres.
+ABC Corporation dispose d'une petite équipe de cinq personnes qui utilisent la NetApp Console pour les services de données et la gestion du stockage.  Au lieu de distribuer plusieurs rôles, ils attribuent le rôle de *Super administrateur* à deux membres seniors de l'équipe qui gèrent toutes les tâches administratives, y compris la gestion des utilisateurs et la configuration des ressources.  Les trois membres restants de l'équipe se voient attribuer le rôle de *Super visualiseur*, leur permettant de surveiller l'état du stockage et l'état du service de données sans pouvoir modifier les paramètres.
 
 [cols="2,1"]
 |===

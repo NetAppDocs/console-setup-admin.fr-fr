@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-federation.html 
 keywords: identity federation, single sign-on, SSO, identity provider, IdP, SAML, Microsoft Entra ID, AD FS, PingFederate, ACS URL, Entity ID, user access, security, productivity, compliance, authentication, business continuity, account management, user experience, access control, workflow automation, credential management, login process, organization admin, bluexp, BlueXP 
-summary: La fédération d’identité permet l’authentification unique avec la console NetApp afin que les utilisateurs puissent se connecter à l’aide des informations d’identification de votre identité d’entreprise.  Pour commencer, passez en revue le processus de configuration. 
+summary: La fédération d’identité permet l’authentification unique avec la NetApp Console afin que les utilisateurs puissent se connecter à l’aide des informations d’identification de votre identité d’entreprise.  Pour commencer, passez en revue le processus de configuration. 
 ---
-= Activer l'authentification unique en utilisant la fédération d'identité avec la console NetApp
+= Activer l'authentification unique en utilisant la fédération d'identité avec la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: La fédération d’identité permet l’authentification unique avec l
 
 
 [role="lead"]
-L'authentification unique (fédération) simplifie le processus de connexion et améliore la sécurité en permettant aux utilisateurs de se connecter à la console NetApp à l'aide de leurs informations d'identification d'entreprise.  Vous pouvez activer l'authentification unique (SSO) avec votre fournisseur d'identité (IdP) ou avec le site de support NetApp .
+L'authentification unique (fédération) simplifie le processus de connexion et améliore la sécurité en permettant aux utilisateurs de se connecter à la NetApp Console à l'aide de leurs informations d'identification d'entreprise.  Vous pouvez activer l'authentification unique (SSO) avec votre fournisseur d'identité (IdP) ou avec le site de support NetApp .
 
 .Rôle requis
 Administrateur d'organisation, administrateur de fédération, visualiseur de fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
@@ -63,7 +63,7 @@ NetApp prend en charge les protocoles et fournisseurs d’identité suivants pou
 
 
 
-=== Fédération avec le flux de travail de la console NetApp
+=== Fédération avec le flux de travail de la NetApp Console
 
 NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Vous devez d’abord configurer le fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services.  Ensuite, vous pouvez créer une connexion dans la console qui utilise la configuration du fournisseur d’identité.
 

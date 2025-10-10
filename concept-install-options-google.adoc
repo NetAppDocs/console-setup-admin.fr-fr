@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-install-options-google.html 
 keywords: install connector google cloud, google cloud install connector, connector google cloud, google cloud connector, install connector gcp, gcp install connector, connector gcp, gcp connector, installation options, manual install 
-summary: 'Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d"accéder directement à partir de la console NetApp .' 
+summary: 'Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d"accéder directement à partir de la NetApp Console .' 
 ---
 = Options d'installation de l'agent de console dans Google Cloud
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Il existe plusieurs manières différentes de créer un agent de conso
 
 
 [role="lead"]
-Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d'accéder directement à partir de la console NetApp .  ---
+Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d'accéder directement à partir de la NetApp Console .  ---
 
 Les options d’installation suivantes sont disponibles :
 

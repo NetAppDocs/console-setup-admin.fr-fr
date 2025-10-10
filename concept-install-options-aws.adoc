@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-install-options-aws.html 
 keywords: install connector aws, aws install connector, connector aws, aws connector, installation options, aws marketplace, manual install, deploy 
-summary: 'Il existe plusieurs manières différentes de créer un agent de console dans AWS.  Le moyen le plus courant est d"accéder directement à partir de la console NetApp .' 
+summary: 'Il existe plusieurs manières différentes de créer un agent de console dans AWS.  Le moyen le plus courant est d"accéder directement à partir de la NetApp Console .' 
 ---
 = Options d'installation de l'agent de console dans AWS
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Il existe plusieurs manières différentes de créer un agent de conso
 
 
 [role="lead"]
-Il existe plusieurs manières différentes de créer un agent de console dans AWS.  Le moyen le plus courant est d'accéder directement à partir de la console NetApp .
+Il existe plusieurs manières différentes de créer un agent de console dans AWS.  Le moyen le plus courant est d'accéder directement à partir de la NetApp Console .
 
 Les options d’installation suivantes sont disponibles :
 

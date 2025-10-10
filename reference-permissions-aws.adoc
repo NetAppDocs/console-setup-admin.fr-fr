@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-permissions-aws.html 
 keywords: permissions, actions, aws, aws permissions, top secret, secret, aws top secret, aws secret, aws govcloud, govcloud, govcloud permissions, secret permissions, top secret permissions 
-summary: 'Lorsque la console NetApp lance l"instance de l"agent dans AWS, elle attache une stratégie à l"instance qui fournit à l"agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS.  L"agent utilise les autorisations pour effectuer des appels d"API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion des clés, etc.' 
+summary: 'Lorsque la NetApp Console lance l"instance de l"agent dans AWS, elle attache une stratégie à l"instance qui fournit à l"agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS.  L"agent utilise les autorisations pour effectuer des appels d"API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion des clés, etc.' 
 ---
 = Autorisations AWS pour l'agent de la console
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Lorsque la console NetApp lance l"instance de l"agent dans AWS, elle a
 
 
 [role="lead"]
-Lorsque la console NetApp lance une instance d'agent de console dans AWS, elle attache une stratégie à l'instance qui fournit à l'agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS.  L'agent utilise les autorisations pour effectuer des appels d'API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion des clés (KMS), etc.
+Lorsque la NetApp Console lance une instance d'agent de console dans AWS, elle attache une stratégie à l'instance qui fournit à l'agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS.  L'agent utilise les autorisations pour effectuer des appels d'API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion de clés (KMS), etc.
 
 
 
@@ -757,7 +757,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
 
 == Comment les autorisations AWS sont utilisées
 
-Les sections suivantes décrivent comment les autorisations sont utilisées pour chaque service de gestion ou de données de la console NetApp .  Ces informations peuvent être utiles si les politiques de votre entreprise stipulent que les autorisations ne sont accordées qu'en cas de besoin.
+Les sections suivantes décrivent comment les autorisations sont utilisées pour chaque service de gestion ou de données de la NetApp Console .  Ces informations peuvent être utiles si les politiques de votre entreprise stipulent que les autorisations ne sont accordées qu'en cas de besoin.
 
 
 
@@ -805,7 +805,7 @@ s3 : Obtenir la configuration du chiffrement
 
 
 
-=== Sauvegarde et récupération NetApp
+=== NetApp Backup and Recovery
 
 L'agent effectue les requêtes API suivantes pour gérer les sauvegardes dans Amazon S3 :
 
@@ -892,7 +892,7 @@ L'agent effectue les requêtes API suivantes si vous utilisez un compte AWS diff
 
 === Classification
 
-L'agent effectue les requêtes API suivantes pour déployer la classification des données NetApp :
+L'agent effectue les requêtes API suivantes pour déployer la NetApp Data Classification:
 
 * ec2 : Décrire les instances
 * ec2 : Décrire l'état de l'instance
@@ -920,7 +920,7 @@ L'agent effectue les requêtes API suivantes pour déployer la classification de
 * ec2 : Décrire les associations de profils d'instance Iam
 
 
-L'agent effectue les requêtes API suivantes pour analyser les compartiments S3 lorsque vous utilisez la classification des données NetApp :
+L'agent effectue les requêtes API suivantes pour analyser les compartiments S3 lorsque vous utilisez la NetApp Data Classification:
 
 * iam:Ajouter un rôle au profil d'instance
 * ec2 : AssociateIamInstanceProfile
@@ -1098,7 +1098,7 @@ L'agent effectue les requêtes API suivantes pour déployer et gérer Cloud Volu
 | Capturez la console Cloud Volumes ONTAP , qui est attachée aux messages AutoSupport | ec2 : Obtenir la sortie de la console | Oui | Oui | Non 
 
 
-| Obtenez la liste des paires de clés disponibles | ec2 : Décrire les paires de clés | Oui | Non | Non 
+| Obtenir la liste des paires de clés disponibles | ec2 : Décrire les paires de clés | Oui | Non | Non 
 
 
 | Obtenez la liste des régions AWS disponibles | ec2 : Décrire les régions | Oui | Oui | Non 
@@ -1215,7 +1215,7 @@ Au fur et à mesure que des autorisations sont ajoutées et supprimées, nous le
 
 === 9 septembre 2024
 
-Les autorisations ont été supprimées de la politique n° 2 pour les régions standard, car la console NetApp ne prend plus en charge la mise en cache de périphérie NetApp , la découverte et la gestion des clusters Kubernetes.
+Les autorisations ont été supprimées de la politique n° 2 pour les régions standard, car la NetApp Console ne prend plus en charge la mise en cache de périphérie NetApp , la découverte et la gestion des clusters Kubernetes.
 
 .Afficher les autorisations qui ont été supprimées de la politique
 [%collapsible]
@@ -1282,6 +1282,6 @@ kms : générer une clé de données sans texte brut
 
 === 14 février 2023
 
-L'autorisation suivante est désormais requise pour NetApp Cloud Tiering :
+L'autorisation suivante est désormais requise pour NetApp Cloud Tiering:
 
 ec2 : Décrire les points de terminaison Vpc

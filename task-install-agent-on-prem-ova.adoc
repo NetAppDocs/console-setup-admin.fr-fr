@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-install-agent-on-prem-ova.html 
 keywords: install agent, on prem agent installation, on prem connector, vmware, OVA, manual install 
-summary: 'Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.  Le téléchargement ou l"URL OVA est disponible via la console NetApp .' 
+summary: 'Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.  Le téléchargement ou l"URL OVA est disponible via la NetApp Console.' 
 ---
 = Installer un agent de console sur site à l'aide de VCenter
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour 
 
 
 [role="lead"]
-Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.  Le téléchargement ou l'URL OVA est disponible via la console NetApp .
+Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.  Le téléchargement ou l'URL OVA est disponible via la NetApp Console.
 
 
 NOTE: Lorsque vous installez un agent de console avec vos outils VCenter, vous pouvez utiliser la console Web de la machine virtuelle pour effectuer des tâches de maintenance.link:task-agent-vm-config.html["En savoir plus sur la console VM pour l’agent."]
@@ -53,7 +53,7 @@ Connexions aux réseaux cibles:: L'agent de console nécessite une connexion ré
 Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
 
 
-Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la console Web NetApp::
+Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la NetApp Console::
 +
 --
 Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
@@ -122,7 +122,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -136,7 +136,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -197,7 +197,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -211,7 +211,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -296,7 +296,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
 ** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
 
 
-. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la console NetApp après avoir installé l'agent de console.
+. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la NetApp Console après avoir installé l'agent de console.
 
 
 .Résultat
@@ -321,7 +321,7 @@ image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsof
 . Précisez les détails de l'application :
 +
 ** *Nom*: Saisissez un nom pour l'application.
-** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la NetApp Console).
 ** *URI de redirection*: Vous pouvez laisser ce champ vide.
 
 
@@ -405,13 +405,13 @@ image:screenshot_azure_service_principal_role.png["Une capture d’écran du por
 Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
 
 +
-Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la NetApp Console, vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
 
 
 
 
 
-.Ajouter des autorisations à l'API de gestion des services Windows Azure
+.Ajouter des autorisations à l'API Windows Azure Service Management
 . Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
 . Sélectionnez *Autorisations API > Ajouter une autorisation*.
 . Sous *API Microsoft*, sélectionnez *Azure Service Management*.
@@ -453,13 +453,13 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 
 == Installer un agent de console dans votre environnement VCenter
 
-NetApp prend en charge l’installation de l’agent de console dans votre environnement VCenter.  Le fichier OVA inclut une image VM préconfigurée que vous pouvez déployer dans votre environnement VMware.  Un téléchargement de fichier ou un déploiement d'URL est disponible directement depuis la console NetApp .  Il comprend le logiciel agent de console et un certificat auto-signé.
+NetApp prend en charge l’installation de l’agent de console dans votre environnement VCenter.  Le fichier OVA inclut une image VM préconfigurée que vous pouvez déployer dans votre environnement VMware.  Un téléchargement de fichier ou un déploiement d'URL est disponible directement depuis la NetApp Console.  Il comprend le logiciel agent de console et un certificat auto-signé.
 
 
 
 === Téléchargez l'OVA ou copiez l'URL
 
-Téléchargez l'OVA ou copiez l'URL de l'OVA directement depuis la console NetApp .
+Téléchargez l'OVA ou copiez l'URL de l'OVA directement depuis la NetApp Console.
 
 . Sélectionnez *Administration > Agents*.
 . Sur la page *Aperçu*, sélectionnez *Déployer l'agent > Sur site*.
@@ -510,7 +510,7 @@ Connectez-vous à votre environnement VCenter pour déployer l'agent.
 
 *** *Mot de passe de maintenance* : Définissez le mot de passe pour le `maint` utilisateur qui permet l'accès à la console de maintenance de l'agent.
 *** *Serveurs NTP* : spécifiez un ou plusieurs serveurs NTP pour la synchronisation horaire.
-*** *Nom d'hôte* : définissez le nom d'hôte pour cette machine virtuelle.  Il ne doit pas inclure le domaine de recherche.  Par exemple, un FQDN de console10.searchdomain.company.com doit être saisi sous la forme console10.
+*** *Nom d'hôte* : définissez le nom d'hôte pour cette machine virtuelle.  Il ne doit pas inclure le domaine de recherche.  Par exemple, un FQDN de console10.searchdomain.company.com doit être saisi comme console10.
 *** *DNS principal* : spécifiez le serveur DNS principal à utiliser pour la résolution de noms.
 *** *DNS secondaire* : spécifiez le serveur DNS secondaire à utiliser pour la résolution de noms.
 *** Domaines de recherche : spécifiez le nom de domaine de recherche à utiliser lors de la résolution du nom d’hôte.  Par exemple, si le nom de domaine complet est console10.searchdomain.company.com, saisissez searchdomain.company.com.
@@ -534,7 +534,7 @@ NOTE: Si le déploiement échoue, vous pouvez accéder au rapport de validation 
 
 
 
-== Enregistrer l'agent de console auprès de la console NetApp
+== Enregistrer l'agent de console auprès de la NetApp Console
 
 Connectez-vous à la console et associez l’agent de la console à votre organisation.  La manière dont vous vous connectez dépend du mode dans lequel vous utilisez la console.  Si vous utilisez la console en mode standard, vous vous connectez via le site Web SaaS.  Si vous utilisez la console en mode restreint ou privé, vous vous connectez localement à partir de l'hôte de l'agent de la console.
 
@@ -583,7 +583,7 @@ Si vous venez de créer ces informations d'identification AWS, leur disponibilit
 
 
 
-Vous pouvez désormais accéder à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+Vous pouvez désormais accéder à la https://console.netapp.com["NetApp Console"^] pour commencer à utiliser l'agent de console.
 
 --
 .Azuré
@@ -610,7 +610,7 @@ Si vous venez de créer ces informations d’identification Azure, leur disponib
 
 
 .Résultat
-L’agent de console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.  Vous pouvez désormais accéder à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+L’agent de console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.  Vous pouvez désormais accéder à la https://console.netapp.com["NetApp Console"^] pour commencer à utiliser l'agent de console.
 
 --
 ====

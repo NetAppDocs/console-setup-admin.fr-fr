@@ -4,7 +4,7 @@ permalink: task-monitor-cm-operations.html
 keywords: administer, monitor, timeline, notifications, alerts, events, notification center, email, audit page, audit action 
 summary: 'Vous pouvez surveiller l’état des opérations effectuées par la console pour voir s’il existe des problèmes que vous devez résoudre.  Vous pouvez afficher l"état à partir de la page Audit, du Centre de notifications ou recevoir des notifications par e-mail.' 
 ---
-= Surveiller les opérations de la console NetApp
+= Surveiller les opérations de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -58,7 +58,7 @@ Par exemple, vous pouvez utiliser le filtre *Service* pour afficher les actions 
 
 
 
-=== Téléchargez les journaux d'audit à partir de la page Audit
+=== Téléchargez les journaux d'audit depuis la page Audit
 
 Vous pouvez télécharger les journaux d’audit de la page Audit dans un fichier CSV.  Cela vous permet de conserver un enregistrement des actions effectuées par les utilisateurs dans votre organisation.  Le fichier CSV inclut toutes les colonnes du fichier CSV téléchargé, quels que soient les filtres ou les colonnes affichées sur la page Audit.
 
@@ -82,7 +82,7 @@ Vous pouvez également configurer la console pour envoyer certains types de noti
 
 Le centre de notifications vous permet d'afficher l'état des opérations que vous avez lancées et de configurer des notifications d'alerte pour certains types d'activités système.  Parallèlement, les alertes vous permettent de visualiser les problèmes ou les risques potentiels dans votre environnement de stockage ONTAP liés à la capacité, à la disponibilité, aux performances, à la protection et à la sécurité.
 
-https://docs.netapp.com/us-en/console-alerts/index.html["En savoir plus sur les alertes de la console NetApp"^]
+https://docs.netapp.com/us-en/console-alerts/index.html["En savoir plus sur les alertes de la NetApp Console"^]
 
 
 

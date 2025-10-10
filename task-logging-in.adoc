@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-logging-in.html 
 keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account 
-summary: La manière dont vous vous connectez à la console NetApp dépend du mode de déploiement que vous utilisez. 
+summary: La manière dont vous vous connectez à la NetApp Console dépend du mode de déploiement que vous utilisez. 
 ---
-= Connectez-vous à la console NetApp
+= Connectez-vous à la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: La manière dont vous vous connectez à la console NetApp dépend du mo
 
 
 [role="lead"]
-La manière dont vous vous connectez à la console NetApp dépend du mode de déploiement que vous utilisez.
+La manière dont vous vous connectez à la NetApp Console dépend du mode de déploiement que vous utilisez.
 
 Vous êtes automatiquement déconnecté après 24 heures ou si vous fermez votre navigateur.
 
@@ -24,10 +24,10 @@ link:concept-modes.html["En savoir plus sur les modes de déploiement de la cons
 ====
 .Mode standard
 --
-Après vous être inscrit à la console NetApp , vous pouvez vous connecter à partir de la console Web pour commencer à gérer vos données et votre infrastructure de stockage.
+Après vous être inscrit à la NetApp Console, vous pouvez vous connecter à partir de la console Web pour commencer à gérer vos données et votre infrastructure de stockage.
 
 .À propos de cette tâche
-Vous pouvez vous connecter à la console NetApp en utilisant l’une des options suivantes :
+Vous pouvez vous connecter à la NetApp Console en utilisant l’une des options suivantes :
 
 * Vos informations d'identification du site de support NetApp (NSS) existantes
 * Un compte NetApp Console utilisant votre adresse e-mail et un mot de passe
@@ -38,7 +38,7 @@ Vous pouvez utiliser l’authentification unique pour vous connecter à l’aide
 
 
 .Étapes
-. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["Console NetApp"]
+. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["NetApp Console"]
 . Sur la page *Connexion*, saisissez l'adresse e-mail associée à votre connexion.
 . Selon la méthode d'authentification associée à votre connexion, vous serez invité à saisir vos identifiants :
 +
@@ -60,7 +60,7 @@ Lorsque vous utilisez la console en mode restreint, vous devez vous connecter à
 .À propos de cette tâche
 La console prend en charge la connexion avec l’une des options suivantes en mode restreint :
 
-* Une connexion à la console NetApp à l'aide de votre adresse e-mail et d'un mot de passe
+* Une connexion à la NetApp Console à l'aide de votre adresse e-mail et d'un mot de passe
 * Une connexion fédérée
 +
 Vous pouvez utiliser l’authentification unique pour vous connecter à l’aide des informations d’identification de votre annuaire d’entreprise (identité fédérée). link:concept-federation.html["Apprenez à utiliser la fédération d'identité"] .

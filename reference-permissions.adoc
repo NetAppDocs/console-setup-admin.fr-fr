@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-permissions.html 
 keywords: permissions, actions 
-summary: Pour utiliser les fonctionnalités et services de la console NetApp , vous devez fournir des autorisations afin que la console puisse effectuer des opérations dans votre environnement cloud.  Utilisez les liens sur cette page pour accéder rapidement aux autorisations dont vous avez besoin en fonction de votre objectif. 
+summary: Pour utiliser les fonctionnalités et services de la NetApp Console , vous devez fournir des autorisations afin que la console puisse effectuer des opérations dans votre environnement cloud.  Utilisez les liens sur cette page pour accéder rapidement aux autorisations dont vous avez besoin en fonction de votre objectif. 
 ---
-= Résumé des autorisations pour la console NetApp
+= Résumé des autorisations pour la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Pour utiliser les fonctionnalités et services de la console NetApp , v
 
 
 [role="lead"]
-Pour utiliser les fonctionnalités et services de la console NetApp , vous devez fournir des autorisations afin que la console puisse effectuer des opérations dans votre environnement cloud.  Utilisez les liens sur cette page pour accéder rapidement aux autorisations dont vous avez besoin en fonction de votre objectif.
+Pour utiliser les fonctionnalités et services de la NetApp Console , vous devez fournir des autorisations afin que la console puisse effectuer des opérations dans votre environnement cloud.  Utilisez les liens sur cette page pour accéder rapidement aux autorisations dont vous avez besoin en fonction de votre objectif.
 
 
 
 == Autorisations AWS
 
-La console NetApp nécessite des autorisations AWS pour un agent de console et pour des services individuels.
+La NetApp Console nécessite des autorisations AWS pour un agent de console et pour des services individuels.
 
 
 
@@ -38,7 +38,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 |===
 
 
-=== Sauvegarde et récupération NetApp
+=== NetApp Backup and Recovery
 
 [cols="20,60,20"]
 |===
@@ -60,7 +60,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 |===
 
 
-=== Copie et synchronisation NetApp
+=== NetApp Copy and Sync
 
 [cols="20,60,20"]
 |===
@@ -88,7 +88,7 @@ La console NetApp nécessite des autorisations AWS pour un agent de console et p
 |===
 
 
-=== Hiérarchisation du cloud NetApp
+=== NetApp Cloud Tiering
 
 [cols="20,60,20"]
 |===
@@ -127,7 +127,7 @@ link:reference-permissions-azure.html["Autorisations Azure pour un agent de cons
 |===
 
 
-=== Sauvegarde et récupération NetApp
+=== NetApp Backup and Recovery
 
 [cols="20,60,20"]
 |===
@@ -181,7 +181,7 @@ La console nécessite des autorisations Google Cloud pour un agent de console et
 |===
 
 
-=== Sauvegarde et récupération NetApp
+=== NetApp Backup and Recovery
 
 [cols="20,60,20"]
 |===
@@ -205,7 +205,7 @@ Lorsque vous utilisez NetApp Backup and Recovery pour sauvegarder Cloud Volumes 
 |===
 
 
-=== Copie et synchronisation NetApp
+=== NetApp Copy and Sync
 
 [cols="20,60,20"]
 |===
@@ -225,7 +225,7 @@ La console nécessite des autorisations StorageGRID pour deux services.
 
 
 
-=== Sauvegarde et récupération NetApp
+=== NetApp Backup and Recovery
 
 [cols="20,60,20"]
 |===
@@ -236,7 +236,7 @@ La console nécessite des autorisations StorageGRID pour deux services.
 |===
 
 
-=== Hiérarchisation du cloud NetApp
+=== NetApp Cloud Tiering
 
 [cols="20,60,20"]
 |===

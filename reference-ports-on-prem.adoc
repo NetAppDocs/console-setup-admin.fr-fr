@@ -16,7 +16,7 @@ summary: 'L"agent de console utilise les ports _inbound_ lorsqu"il est installé
 [role="lead"]
 L'agent de console utilise les ports _inbound_ lorsqu'il est installé manuellement sur un hôte Linux local.  Consultez ces ports à des fins de planification.
 
-Ces règles entrantes s’appliquent à tous les modes de déploiement de la console NetApp .
+Ces règles entrantes s’appliquent à tous les modes de déploiement de la NetApp Console .
 
 [cols="10,10,80"]
 |===

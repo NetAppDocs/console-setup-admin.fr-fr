@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-accounts-azure.html 
 keywords: cloud provider accounts, azure, azure accounts, service principal, multiple accounts, permissions, policy, policies, subscriptions, credentials, marketplace subscription, replace subscription, subscription, bluexp 
-summary: Découvrez comment la console NetApp utilise les informations d’identification Azure pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs abonnements Azure.  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification Azure supplémentaires à la console. 
+summary: Découvrez comment la NetApp Console utilise les informations d’identification Azure pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs abonnements Azure.  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification Azure supplémentaires à la console. 
 ---
-= En savoir plus sur les informations d'identification et les autorisations Azure dans la console NetApp
+= En savoir plus sur les informations d'identification et les autorisations Azure dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Découvrez comment la console NetApp utilise les informations d’ident
 
 
 [role="lead"]
-Découvrez comment la console NetApp utilise les informations d’identification Azure pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs abonnements Azure.  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification Azure supplémentaires à la console.
+Découvrez comment la NetApp Console utilise les informations d’identification Azure pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d’identification d’un ou plusieurs abonnements Azure.  Par exemple, vous souhaiterez peut-être savoir quand ajouter des informations d’identification Azure supplémentaires à la console.
 
 
 
 == Informations d'identification Azure initiales
 
-Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console. Les autorisations requises sont répertoriées dans lelink:task-install-agent-azure-console.html#agent-custom-role["Politique de déploiement d'agent pour Azure"] .
+Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console.  Les autorisations requises sont répertoriées dans lelink:task-install-agent-azure-console.html#agent-custom-role["Politique de déploiement d'agent pour Azure"] .
 
 Lorsque la console déploie la machine virtuelle de l'agent de console dans Azure, elle active un https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] sur la machine virtuelle, crée un rôle personnalisé et l'attribue à la machine virtuelle.  Le rôle fournit à la console les autorisations requises pour gérer les ressources et les processus au sein de cet abonnement Azure. link:reference-permissions-azure.html["Examiner comment la console utilise les autorisations"] .
 

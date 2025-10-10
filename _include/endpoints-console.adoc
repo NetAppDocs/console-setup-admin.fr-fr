@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la console Web NetApp::
+Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la NetApp Console::
 +
 --
 Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.

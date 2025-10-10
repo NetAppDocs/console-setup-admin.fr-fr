@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-iam-keystone-roles.html 
 keywords: predefined roles, iam roles, organization admin, folder or project admin, identity and access management, access roles, admin 
-summary: La gestion des identités et des accès de la console NetApp fournit deux rôles Keystone que vous pouvez attribuer aux membres de votre organisation. 
+summary: La gestion des identités et des accès de la NetApp Console fournit deux rôles Keystone que vous pouvez attribuer aux membres de votre organisation. 
 ---
-= Rôles d'accès Keystone dans la console NetApp
+= Rôles d'accès Keystone dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,7 +16,7 @@ summary: La gestion des identités et des accès de la console NetApp fournit de
 [role="lead"]
 Les rôles Keystone donnent accès aux tableaux de bord Keystone et permettent aux utilisateurs de visualiser et de gérer leur abonnement Keystone .  Il existe deux rôles Keystone : administrateur Keystone et visualiseur Keystone .  La principale différence entre les deux rôles réside dans les actions qu’ils peuvent entreprendre dans Keystone.  Le rôle d’administrateur Keystone est le seul rôle autorisé à créer des demandes de service ou à modifier des abonnements.
 
-.Exemple de rôles Keystone dans la console NetApp
+.Exemple de rôles Keystone dans la NetApp Console
 La société XYZ dispose de quatre ingénieurs de stockage de différents départements qui consultent les informations d'abonnement Keystone .  Bien que tous ces utilisateurs doivent surveiller l’abonnement Keystone , seul le chef d’équipe est autorisé à faire des demandes de service.  Trois membres de l'équipe se voient attribuer le rôle de * visualiseur Keystone *, tandis que le chef d'équipe se voit attribuer le rôle d'* administrateur Keystone * afin qu'il existe un point de contrôle sur les demandes de service pour l'entreprise.
 
 Le tableau suivant indique les actions que chaque rôle Keystone peut effectuer.
@@ -91,7 +91,7 @@ Oui
 
 
 
-3+| *Licences et abonnements*: 
+3+| * Licenses and subscriptions*: 
 
 
 | Peut afficher les licences et les abonnements  a| 

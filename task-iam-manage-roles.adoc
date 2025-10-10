@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-iam-manage-roles.html 
 keywords: projects, access, resources, user roles, iam, identity and access management, folder, organization, permissions, roles, members, access roles 
-summary: 'Dans la console NetApp , vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu"ils doivent faire et où.' 
+summary: 'Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu"ils doivent faire et où.' 
 ---
-= Utiliser des rôles pour gérer l'accès des utilisateurs aux ressources de la console NetApp
+= Utiliser des rôles pour gérer l'accès des utilisateurs aux ressources de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

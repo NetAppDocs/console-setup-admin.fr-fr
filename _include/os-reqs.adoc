@@ -37,7 +37,7 @@ NOTE: L'agent de console réserve la plage UID et GID de 19 000 à 19 200.  Ce
 Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
 
 
-[[podman-versions]]Configuration requise pour le système d'exploitation et les conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
+[[podman-versions]]Exigences relatives au système d'exploitation et aux conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
 +
 --
 [cols="2a,2a,2a,2a,2a"]
@@ -74,7 +74,7 @@ Ubuntu
  a| 
 24,04 LTS
  a| 
-3.9.45 ou version ultérieure avec la console NetApp en mode standard ou en mode restreint
+3.9.45 ou version ultérieure avec la NetApp Console en mode standard ou en mode restreint
  a| 
 Docker Engine 23.06 à 28.0.0.
  a| 
@@ -95,7 +95,7 @@ Non pris en charge
 --
 
 
-[[podman-versions]]Configuration requise pour le système d'exploitation et les conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode privé.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
+[[podman-versions]]Exigences relatives au système d'exploitation et aux conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode privé.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
 +
 --
 [cols="2a,2a,2a,2a,2a"]

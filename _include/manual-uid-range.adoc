@@ -125,7 +125,7 @@ https://_ipaddress_[]
 .. Entrez un nom pour le système.
 .. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
 +
-Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous devez activer le mode restreint uniquement si vous disposez d'un environnement sécurisé et souhaitez déconnecter ce compte des services backend de la console.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous devez activer le mode restreint uniquement si vous disposez d'un environnement sécurisé et souhaitez déconnecter ce compte des services backend de la console.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la NetApp Console en mode restreint"] .
 
 .. Sélectionnez *Commençons*.
 

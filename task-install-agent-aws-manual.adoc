@@ -51,7 +51,7 @@ L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont a
 
 --
 Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
-[[podman-versions]]Configuration requise pour le système d'exploitation et les conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
+[[podman-versions]]Exigences relatives au système d'exploitation et aux conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
 +
 --
 [cols="2a,2a,2a,2a,2a"]
@@ -88,7 +88,7 @@ Ubuntu
  a| 
 24,04 LTS
  a| 
-3.9.45 ou version ultérieure avec la console NetApp en mode standard ou en mode restreint
+3.9.45 ou version ultérieure avec la NetApp Console en mode standard ou en mode restreint
  a| 
 Docker Engine 23.06 à 28.0.0.
  a| 
@@ -174,7 +174,7 @@ rm /var/run/docker.sock
 ----
 . Installez Podman.
 +
-Vous pouvez obtenir Podman à partir des référentiels officiels Red Hat Enterprise Linux.
+Vous pouvez obtenir Podman à partir des référentiels officiels de Red Hat Enterprise Linux.
 
 +
 Pour Red Hat Enterprise Linux 9 :
@@ -308,7 +308,7 @@ Connexions aux réseaux cibles:: L'agent de console nécessite une connexion ré
 Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
 
 
-Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la console Web NetApp::
+Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la NetApp Console::
 +
 --
 Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
@@ -360,7 +360,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -374,7 +374,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -426,7 +426,7 @@ Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analy
 
 == Étape 4 : configurer les autorisations AWS pour la console
 
-Vous devez fournir des autorisations AWS à la console NetApp en utilisant l’une des options suivantes :
+Vous devez fournir des autorisations AWS à la NetApp Console en utilisant l’une des options suivantes :
 
 * Option 1 : créez des stratégies IAM et attachez-les à un rôle IAM que vous pouvez associer à l’instance EC2.
 * Option 2 : fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
@@ -446,7 +446,7 @@ Suivez les étapes pour préparer les autorisations pour la console.
 .. Sélectionnez *JSON* et copiez et collez le contenu dulink:reference-permissions-aws.html["Politique IAM pour l'agent de console"] .
 .. Terminez les étapes restantes pour créer la politique.
 +
-Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième stratégie.  Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
+Selon les services de données NetApp que vous prévoyez d’utiliser, vous devrez peut-être créer une deuxième politique.  Pour les régions standard, les autorisations sont réparties sur deux politiques.  Deux politiques sont requises en raison d'une limite de taille maximale de caractères pour les politiques gérées dans AWS. link:reference-permissions-aws.html["En savoir plus sur les stratégies IAM pour l'agent de console"] .
 
 
 
@@ -487,7 +487,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
 ** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Documentation AWS : Ajout et suppression de stratégies IAM"^]
 
 
-. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la console NetApp après avoir installé l'agent de console.
+. Assurez-vous que l'utilisateur dispose d'une clé d'accès que vous pouvez ajouter à la NetApp Console après avoir installé l'agent de console.
 
 
 .Résultat
@@ -513,7 +513,7 @@ Vous avez la possibilité de configurer un serveur proxy après l'installation, 
 
 
 
-NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console. Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-agent-maint-console.html["Console de maintenance des agents"] .
+NOTE: Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur lelink:reference-agent-maint-console.html["Console de maintenance des agents"] .
 
 .À propos de cette tâche
 Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.
@@ -640,7 +640,7 @@ https://_ipaddress_[]
 .. Entrez un nom pour le système.
 .. Sous *Exécutez-vous dans un environnement sécurisé ?*, gardez le mode restreint désactivé.
 +
-Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous ne devez activer le mode restreint que si vous disposez d'un environnement sécurisé et que vous souhaitez déconnecter ce compte des services backend.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la console NetApp en mode restreint"] .
+Vous devez garder le mode restreint désactivé car ces étapes décrivent comment utiliser la console en mode standard.  Vous devez activer le mode restreint uniquement si vous disposez d'un environnement sécurisé et souhaitez déconnecter ce compte des services backend.  Si c'est le cas,link:task-quick-start-restricted-mode.html["suivez les étapes pour démarrer avec la NetApp Console en mode restreint"] .
 
 .. Sélectionnez *Commençons*.
 
@@ -651,7 +651,7 @@ Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez 
 
 
 
-== Étape 6 : Accorder des autorisations à la console NetApp
+== Étape 6 : Accorder des autorisations à la NetApp Console
 
 Maintenant que vous avez installé l'agent de console, vous devez fournir à la console les autorisations AWS que vous avez précédemment configurées.  L’octroi des autorisations permet à l’agent de la console de gérer vos données et votre infrastructure de stockage dans AWS.
 
@@ -669,7 +669,7 @@ Attachez le rôle IAM que vous avez précédemment créé à l’instance EC2 de
 . Sélectionnez le rôle IAM et sélectionnez *Mettre à jour le rôle IAM*.
 
 
-Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+Aller à la https://console.netapp.com["NetApp Console"^] pour commencer à utiliser l'agent de console.
 
 --
 .Clé d'accès AWS
@@ -690,7 +690,7 @@ Fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposan
 
 
 
-Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+Aller à la https://console.netapp.com["NetApp Console"^] pour commencer à utiliser l'agent de console.
 
 --
 ====

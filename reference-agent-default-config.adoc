@@ -20,7 +20,7 @@ Apprenez-en plus sur la configuration de l’agent de console avant de le déplo
 
 == Configuration par défaut avec accès Internet
 
-Les détails de configuration suivants s'appliquent si vous avez déployé un agent de console à partir de la console NetApp , à partir de la place de marché de votre fournisseur de cloud ou si vous avez installé manuellement un agent de console sur un hôte Linux local disposant d'un accès Internet.
+Les détails de configuration suivants s'appliquent si vous avez déployé un agent de console à partir de la NetApp Console, à partir de la place de marché de votre fournisseur de cloud ou si vous avez installé manuellement un agent de console sur un hôte Linux local disposant d'un accès Internet.
 
 
 

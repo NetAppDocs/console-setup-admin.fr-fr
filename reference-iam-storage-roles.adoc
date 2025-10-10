@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-iam-storage-roles.html 
 keywords: predefined roles, iam roles, organization admin, folder or project admin, identity and access management, access roles, admin 
-summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès aux fonctionnalités de gestion du stockage dans la console NetApp .  Vous pouvez attribuer aux utilisateurs un rôle administratif pour gérer le stockage ou un rôle de spectateur pour la surveillance. 
+summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès aux fonctionnalités de gestion du stockage dans la NetApp Console.  Vous pouvez attribuer aux utilisateurs un rôle administratif pour gérer le stockage ou un rôle de spectateur pour la surveillance. 
 ---
-= Rôles d'accès au stockage pour la console NetApp
+= Rôles d'accès au stockage pour la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur do
 
 
 [role="lead"]
-Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès aux fonctionnalités de gestion du stockage dans la console NetApp .  Vous pouvez attribuer aux utilisateurs un rôle administratif pour gérer le stockage ou un rôle de spectateur pour la surveillance.
+Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès aux fonctionnalités de gestion du stockage dans la NetApp Console.  Vous pouvez attribuer aux utilisateurs un rôle administratif pour gérer le stockage ou un rôle de spectateur pour la surveillance.
 
 
-NOTE: Ces rôles ne sont pas disponibles à partir de l’API de partenariat de la console NetApp .
+NOTE: Ces rôles ne sont pas disponibles à partir de l’API de partenariat de la NetApp Console .
 
 Les administrateurs peuvent attribuer des rôles de stockage aux utilisateurs pour les ressources et fonctionnalités de stockage suivantes :
 
@@ -36,7 +36,7 @@ Services et fonctionnalités de la console :
 * Durabilité
 
 
-.Exemple de rôles de stockage dans la console NetApp
+.Exemple de rôles de stockage dans la NetApp Console
 XYZ Corporation, une société multinationale, dispose d'une grande équipe d'ingénieurs et d'administrateurs de stockage.  Ils permettent à cette équipe de gérer les actifs de stockage pour leurs régions tout en limitant l'accès aux tâches principales de la console telles que la gestion des utilisateurs, la création d'agents et la gestion des licences.
 
 Au sein d'une équipe de 12 personnes, deux utilisateurs se voient attribuer le rôle *Storage viewer* qui leur permet de surveiller les ressources de stockage associées aux projets de console auxquels ils sont affectés.  Les neuf autres se voient attribuer le rôle *Administrateur de stockage* qui inclut la possibilité de gérer les mises à jour logicielles, d'accéder à ONTAP System Manager via la console, ainsi que de découvrir les ressources de stockage (ajouter des systèmes).  Une personne de l'équipe se voit attribuer le rôle de *Spécialiste de l'état du système* afin qu'elle puisse gérer l'état des ressources de stockage dans sa région, mais pas modifier ni supprimer de systèmes.  Cette personne peut également effectuer des mises à jour logicielles sur les ressources de stockage pour les projets qui lui sont attribués.
@@ -110,7 +110,7 @@ Oui
 
 
 
-4+| *Licences et abonnements* 
+4+| * Licenses and subscriptions* 
 
 
 | Afficher toutes les pages et fonctions  a| 

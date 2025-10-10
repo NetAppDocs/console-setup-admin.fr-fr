@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-iam-manage-folders-projects.html 
 keywords: folders, projects, resource hierarchy, create folders, create projects, iam, identity and access management, project id 
-summary: 'au sein de la console NetApp , l"utilisation de la gestion des identités et des accès vous permet de représenter une hiérarchie complète des ressources à l"aide de dossiers et de projets.' 
+summary: 'au sein de la NetApp Console, l"utilisation de la gestion des identités et des accès vous permet de représenter une hiérarchie complète des ressources à l"aide de dossiers et de projets.' 
 ---
-= Organisez vos ressources de la console NetApp avec des dossiers et des projets
+= Organisez vos ressources de la NetApp Console avec des dossiers et des projets
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'au sein de la console NetApp , l"utilisation de la gestion des identit
 
 
 [role="lead"]
-Dans la console NetApp , vous organisez vos ressources NetApp à l'aide de projets et de dossiers.  Un _projet_ représente un espace de travail dans la console auquel les membres de l'organisation accèdent pour gérer les _ressources_ (par exemple, un système Cloud Volumes ONTAP ).  Un _dossier_ regroupe des projets liés.  Après avoir organisé vos ressources en dossiers et projets, vous pouvez accorder un accès granulaire aux ressources en fournissant aux membres de l’organisation des autorisations sur des dossiers et des projets spécifiques.
+Dans la NetApp Console, vous organisez vos ressources NetApp à l’aide de projets et de dossiers.  Un _projet_ représente un espace de travail dans la console auquel les membres de l'organisation accèdent pour gérer les _ressources_ (par exemple, un système Cloud Volumes ONTAP ).  Un _dossier_ regroupe des projets liés.  Après avoir organisé vos ressources en dossiers et projets, vous pouvez accorder un accès granulaire aux ressources en fournissant aux membres de l’organisation des autorisations sur des dossiers et des projets spécifiques.
 
 
 
@@ -22,7 +22,7 @@ Dans la console NetApp , vous organisez vos ressources NetApp à l'aide de proje
 
 Lorsque vous créez votre organisation, elle comprend un seul projet.  Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets associés.
 
-La hiérarchie des ressources de votre organisation peut comporter jusqu'à sept niveaux, avec des dossiers imbriqués sur six niveaux de profondeur et des projets au septième.
+La hiérarchie des ressources de votre organisation peut comporter jusqu'à sept niveaux, avec des dossiers imbriqués à six niveaux de profondeur et des projets au septième.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
@@ -138,7 +138,7 @@ image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier
 
 Modifiez l'accès des membres pour garantir que les bons membres peuvent accéder aux ressources associées.
 
-L’accès des membres fourni à un niveau hiérarchique supérieur ne peut pas être modifié à des niveaux inférieurs.  Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l'accès.  Alternativement, vous pouvezlink:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"] .
+L'accès des membres fourni à un niveau hiérarchique supérieur ne peut pas être modifié à des niveaux inférieurs.  Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l’accès.  Alternativement, vous pouvezlink:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"] .
 
 link:concept-identity-and-access-management.html#role-inheritance["En savoir plus sur l'héritage des rôles"] .
 
@@ -159,7 +159,7 @@ link:concept-identity-and-access-management.html#role-inheritance["En savoir plu
 
 == Informations connexes
 
-* link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la console NetApp"]
+* link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la NetApp Console"]
 * link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
 * https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API d'identité et d'accès"]
 

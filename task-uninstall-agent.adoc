@@ -16,7 +16,7 @@ summary: 'Désinstallez un agent de console pour résoudre les problèmes ou pou
 [role="lead"]
 Désinstallez un agent de console pour résoudre les problèmes ou pour le supprimer définitivement de l'hôte.  Les étapes à suivre dépendent du mode de déploiement que vous utilisez.  Une fois que vous avez supprimé un agent de console de votre environnement, vous pouvez le supprimer de la console.
 
-link:concept-modes.html["En savoir plus sur les modes de déploiement de la console NetApp"] .
+link:concept-modes.html["En savoir plus sur les modes de déploiement de la NetApp Console"] .
 
 
 

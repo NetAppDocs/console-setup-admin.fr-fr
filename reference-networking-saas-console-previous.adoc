@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-networking-saas-console-previous.html 
 keywords: networking, urls, endpoints, web browser, console, network, set up networking, bluexp 
-summary: Lorsque vous vous connectez et utilisez la console Web, celle-ci contacte plusieurs points de terminaison pour terminer les actions que vous lancez.  Les ordinateurs qui accèdent à la console NetApp doivent disposer de connexions à ces points de terminaison. 
+summary: Lorsque vous vous connectez et utilisez la console Web, celle-ci contacte plusieurs points de terminaison pour terminer les actions que vous lancez.  Les ordinateurs qui accèdent à la NetApp Console doivent disposer de connexions à ces points de terminaison. 
 ---
 = Points d'accès réseau requis pour la version 3.9.55 et les versions antérieures
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Lorsque vous vous connectez et utilisez la console Web, celle-ci contac
 
 
 [role="lead"]
-Cette rubrique détaille l'accès réseau requis pour les versions du mode standard de la console NetApp antérieures à la version 4.0.0 de la console NetApp , l'agent de la console NetApp et l'accès Internet sortant des services de données NetApp et la possibilité de contacter les points de terminaison nécessaires.  Vous devez vous assurer que la console et tous les agents que vous installez disposent du bon accès réseau pour fonctionner.
+Cette rubrique détaille l'accès réseau requis pour les versions du mode standard de la NetApp Console antérieures à la version 4.0.0 de la NetApp Console, l'agent de la NetApp Console et l'accès Internet sortant des services de données NetApp et la possibilité de contacter les points de terminaison nécessaires.  Vous devez vous assurer que la console et tous les agents que vous installez disposent du bon accès réseau pour fonctionner.
 
-Vous devrez configurer l'accès réseau pour les ordinateurs qui accèdent à la console NetApp en tant que logiciel en tant que service (SaaS) et pour tous les agents de console que vous installez sur site ou dans le cloud.  Vous pouvez également avoir besoin de points de terminaison supplémentaires pour certains services de données NetApp , notamment Cloud Volumes ONTAP.
+Vous devrez configurer l'accès réseau pour les ordinateurs qui accèdent à la NetApp Console en tant que logiciel en tant que service (SaaS) et pour tous les agents de console que vous installez sur site ou dans le cloud.  Vous pouvez également avoir besoin de points de terminaison supplémentaires pour certains services de données NetApp , notamment Cloud Volumes ONTAP.
 
 
 
@@ -47,13 +47,13 @@ systemctl status netapp-service-manager.service
 
 
 
-== Points de terminaison contactés par la console NetApp
+== Points de terminaison contactés par la NetApp Console
 
-Chaque ordinateur qui accède à la console NetApp doit disposer de connexions aux points de terminaison répertoriés ci-dessous.
+Chaque ordinateur qui accède à la NetApp Console doit disposer de connexions aux points de terminaison répertoriés ci-dessous.
 
 Le système contacte ces points de terminaison dans deux scénarios :
 
-* À partir d'un ordinateur accédant au https://console.netapp.com["Console NetApp"^] en tant que logiciel en tant que service (SaaS).
+* À partir d'un ordinateur accédant au https://console.netapp.com["NetApp Console"^] en tant que logiciel en tant que service (SaaS).
 * Depuis un ordinateur accédant directement à un hôte agent, soit pour se connecter et le configurer, soit pour accéder à la console depuis l'hôte agent.
 
 
@@ -65,7 +65,7 @@ Le système contacte ces points de terminaison dans deux scénarios :
 | \ https://support.netapp.com \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
 
 
-| \https://\*.api.bluexp.netapp.com \ https://api.bluexp.netapp.com \https://*.cloudmanager.cloud.netapp.com \ https://cloudmanager.cloud.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com | Pour fournir des fonctionnalités et des services au sein de la console NetApp . 
+| \https://\*.api.bluexp.netapp.com \ https://api.bluexp.netapp.com \https://*.cloudmanager.cloud.netapp.com \ https://cloudmanager.cloud.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
 
 
  a| 
@@ -97,7 +97,7 @@ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre
 
 Vous installez l’agent de console sur site ou dans le cloud, et il contacte les points de terminaison pour effectuer les actions initiées par la console.
 
-Les agents de console doivent accéder aux mêmes points de terminaison que la console NetApp , ainsi qu'à des points de terminaison supplémentaires si vous déployez l'agent chez votre fournisseur de cloud.
+Les agents de console doivent accéder aux mêmes points de terminaison que la NetApp Console, ainsi qu'à des points de terminaison supplémentaires si vous déployez l'agent chez votre fournisseur de cloud.
 
 
 
@@ -217,7 +217,7 @@ Pour obtenir des images pour les mises à niveau de l'agent de console.
 NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
 
 * À partir de la version 3.9.47 de l'agent de console, le système prend en charge les points de terminaison répertoriés dans l'option 1.  Les versions précédentes de l’agent de console ne prennent pas en charge la compatibilité descendante.
-* L’agent de la console contacte d’abord les points de terminaison dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* L’agent de console contacte d’abord les points de terminaison dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
 * Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
 
 

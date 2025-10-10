@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, enhancements, fixes, connectors, bluexp, iam, notice, releases' 
-summary: 'Découvrez les nouveautés des fonctionnalités d"administration de la console NetApp : IAM, agents de console, informations d"identification du fournisseur de cloud, etc.' 
+summary: 'Découvrez les nouveautés des fonctionnalités d"administration de la NetApp Console : IAM, agents de console, informations d"identification du fournisseur de cloud, etc.' 
 ---
 = Quoi de neuf
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Découvrez les nouveautés des fonctionnalités d"administration de la
 
 
 [role="lead"]
-Découvrez les nouveautés des fonctionnalités d'administration de la console NetApp : gestion des identités et des accès (IAM), agents de console, informations d'identification du fournisseur de cloud, etc.
+Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Console : gestion des identités et des accès (IAM), agents de console, informations d'identification du fournisseur de cloud, etc.
 
 
 
@@ -24,13 +24,13 @@ Découvrez les nouveautés des fonctionnalités d'administration de la console N
 
 == BlueXP est désormais NetApp Console
 
-La console NetApp , construite sur la base BlueXP améliorée et restructurée, fournit une gestion centralisée du stockage NetApp et des services de données NetApp dans les environnements sur site et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
+La NetApp Console, construite sur la base BlueXP améliorée et restructurée, fournit une gestion centralisée du stockage NetApp et des NetApp Data Services dans les environnements sur site et dans le cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
 
 
 
 === Menus et pages de navigation
 
-NetApp a déplacé la plupart des options de menu vers le volet de navigation de gauche et a réorganisé les menus pour faciliter la navigation dans la console NetApp .
+NetApp a déplacé la plupart des options de menu vers le volet de navigation de gauche et a réorganisé les menus pour faciliter la navigation dans la NetApp Console.
 
 
 
@@ -54,7 +54,7 @@ image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-storage
 
 ==== Menu d'administration
 
-Utilisez le menu *Administration* centralisé pour gérer la console NetApp , les cas d'assistance, les licences et les abonnements (anciennement appelé portefeuille numérique).
+Utilisez le menu *Administration* centralisé pour gérer la NetApp Console, les cas d'assistance, les licences et les abonnements (anciennement appelé portefeuille numérique).
 
 image:https://docs.netapp.com/us-en/console-setup-admin/media/screenshot-admin-menu.png["Une capture d'écran du menu Administration."]
 
@@ -82,7 +82,7 @@ NetApp a renommé plusieurs éléments, services de données et fonctionnalités
 
 [cols="10,24"]
 |===
-| *Nom précédent* | * Nom de la console NetApp * 
+| *Nom précédent* | * Nom de la NetApp Console * 
 
 
 | Connecteurs  a| 
@@ -107,7 +107,7 @@ Affichez, ajoutez et gérez vos systèmes à partir du menu *Stockage > Gestion*
 
 
 | Protection contre les ransomwares BlueXP  a| 
-Résilience aux ransomwares NetApp .
+NetApp Ransomware Resilience.
 
 Ransomware Resilience vous aide à protéger vos données et à récupérer rapidement après une attaque de ransomware.
 
@@ -123,9 +123,9 @@ Accédez à la planification du cycle de vie à partir du menu *Stockage > Plani
 
 
 | BlueXP digital wallet  a| 
-Licences et abonnements
+Licenses and subscriptions
 
-Accédez à vos licences et abonnements depuis le menu *Administration > Licences et abonnements*.
+Accédez à vos licences et abonnements depuis le menu *Administration > Licenses and subscriptions*.
 
 |===
 
@@ -160,7 +160,7 @@ NetApp a réduit les points de terminaison réseau requis pour la console et les
 
 === Prise en charge du déploiement VCenter des agents de console
 
-Vous pouvez déployer des agents de console dans des environnements VMware à l’aide d’un fichier OVA.  Le fichier OVA inclut une image de machine virtuelle préconfigurée avec un logiciel d'agent de console et des paramètres pour se connecter à la console NetApp .  Un téléchargement de fichier ou un déploiement d'URL est disponible directement depuis la console NetApp .link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem-ova.html["Découvrez comment déployer un agent de console dans les environnements VMware."]
+Vous pouvez déployer des agents de console dans des environnements VMware à l’aide d’un fichier OVA.  Le fichier OVA inclut une image VM préconfigurée avec le logiciel agent de console et les paramètres pour se connecter à la NetApp Console.  Un téléchargement de fichier ou un déploiement d'URL est disponible directement depuis la NetApp Console.link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem-ova.html["Découvrez comment déployer un agent de console dans les environnements VMware."]
 
 L'agent de console OVA pour VMware offre une image VM préconfigurée pour un déploiement rapide.
 
@@ -168,7 +168,7 @@ L'agent de console OVA pour VMware offre une image VM préconfigurée pour un d�
 
 === Rapports de validation pour les déploiements d'agents ayant échoué
 
-Lorsque vous déployez un agent de console à partir de la console NetApp , vous avez désormais la possibilité de valider la configuration de l'agent.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport téléchargeable pour vous aider à résoudre le problème.
+Lorsque vous déployez un agent de console à partir de la NetApp Console, vous avez désormais la possibilité de valider la configuration de l'agent.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport téléchargeable pour vous aider à résoudre le problème.
 
 
 
@@ -178,9 +178,9 @@ L'agent de console a amélioré les messages d'erreur qui vous aident à mieux c
 
 
 
-== Console NetApp
+== NetApp Console
 
-L’administration de la console NetApp inclut les nouvelles fonctionnalités suivantes :
+L’administration de la NetApp Console inclut les nouvelles fonctionnalités suivantes :
 
 
 
@@ -192,13 +192,13 @@ Le tableau de bord de la page d'accueil de la console NetApp offre une visibilit
 
 === Assistant NetApp
 
-Les nouveaux utilisateurs dotés du rôle d'administrateur d'organisation peuvent utiliser l'assistant NetApp pour configurer la console, notamment pour ajouter un agent, lier un compte de support NetApp et ajouter un système de stockage.link:https://docs.netapp.com/us-en/console-setup-admin/task-console-assistant.html["En savoir plus sur l'assistant NetApp ."]
+Les nouveaux utilisateurs dotés du rôle d'administrateur d'organisation peuvent utiliser l'assistant NetApp pour configurer la console, notamment en ajoutant un agent, en associant un compte de support NetApp et en ajoutant un système de stockage.link:https://docs.netapp.com/us-en/console-setup-admin/task-console-assistant.html["En savoir plus sur l'assistant NetApp ."]
 
 
 
 === Authentification du compte de service
 
-La console NetApp prend en charge l'authentification du compte de service à l'aide d'un ID client généré par le système et d'un secret ou de JWT gérés par le client, permettant aux organisations de sélectionner l'approche la mieux adaptée à leurs exigences de sécurité et à leurs flux de travail d'intégration.  L'authentification client JWT par clé privée utilise une cryptographie asymétrique, offrant une sécurité plus forte que l'ID client traditionnel et les méthodes secrètes.  L'authentification client JWT par clé privée utilise une cryptographie asymétrique, gardant la clé privée sécurisée dans l'environnement du client, réduisant les risques de vol d'informations d'identification et améliorant la sécurité de votre pile d'automatisation et de vos applications clientes.link:https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html#service-account["Découvrez comment ajouter un compte de service."]
+La NetApp Console prend en charge l'authentification du compte de service à l'aide d'un ID client généré par le système et d'un secret ou de JWT gérés par le client, permettant aux organisations de sélectionner l'approche la mieux adaptée à leurs exigences de sécurité et à leurs flux de travail d'intégration.  L'authentification client JWT par clé privée utilise une cryptographie asymétrique, offrant une sécurité plus forte que l'ID client traditionnel et les méthodes secrètes.  L'authentification client JWT par clé privée utilise la cryptographie asymétrique, gardant la clé privée sécurisée dans l'environnement du client, réduisant les risques de vol d'informations d'identification et améliorant la sécurité de votre pile d'automatisation et de vos applications clientes.link:https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html#service-account["Découvrez comment ajouter un compte de service."]
 
 
 
@@ -210,7 +210,7 @@ Le système déconnecte les utilisateurs après 24 heures ou lorsqu'ils ferment 
 
 === Soutien aux partenariats entre organisations
 
-Vous pouvez créer des partenariats dans la console NetApp qui permettent aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, ce qui facilite la collaboration et renforce la sécurité. link:https://docs.netapp.com/us-en/console-setup-admin/task-partnerships-create.html["Apprenez à gérer les partenariats"] .
+Vous pouvez créer des partenariats dans la NetApp Console qui permettent aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, ce qui facilite la collaboration et renforce la sécurité. link:https://docs.netapp.com/us-en/console-setup-admin/task-partnerships-create.html["Apprenez à gérer les partenariats"] .
 
 
 
@@ -228,7 +228,7 @@ Ajout du rôle *Administrateur du comportement utilisateur de Ransomware Resilie
 
 === Chat d'assistance supprimé
 
-NetApp a supprimé la fonctionnalité de chat d’assistance de la console NetApp .  Utilisez la page *Administration > Support* pour créer et gérer des cas d'assistance.
+NetApp a supprimé la fonctionnalité de chat d'assistance de la NetApp Console.  Utilisez la page *Administration > Support* pour créer et gérer des cas d'assistance.
 
 
 

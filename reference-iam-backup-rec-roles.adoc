@@ -4,7 +4,7 @@ permalink: reference-iam-backup-rec-roles.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, roles, permissions, access control, role-based access control, rbac, role-based access 
 summary: Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès à NetApp Backup and Recovery dans la console.  Les rôles de sauvegarde et de récupération vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de votre propre entreprise et de vos pratiques de gestion du stockage. 
 ---
-= Rôles de sauvegarde et de récupération NetApp dans la console NetApp
+= Rôles de NetApp Backup and Recovery dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,20 +18,20 @@ Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner acc�
 
 Le service utilise les rôles suivants qui sont spécifiques à NetApp Backup and Recovery.
 
-* *Super administrateur de sauvegarde et de récupération* : effectuez toutes les actions dans NetApp Backup and Recovery.
+* *Super administrateur de sauvegarde et de récupération* : effectuez toutes les actions dans NetApp Backup and Recovery.
 * *Administrateur de sauvegarde et de récupération de sauvegarde* : effectuez des sauvegardes sur des snapshots locaux, répliquez sur un stockage secondaire et sauvegardez sur des actions de stockage d'objets dans NetApp Backup and Recovery.
 * *Administrateur de restauration de sauvegarde et de récupération* : Restaurez les charges de travail à l'aide de NetApp Backup and Recovery.
 * *Administrateur de clonage de sauvegarde et de récupération* : Clonez des applications et des données à l'aide de NetApp Backup and Recovery.
-* *Visionneuse de sauvegarde et de récupération* : affichez les informations dans NetApp Backup and Recovery, mais n'effectuez aucune action.
+* *Visionneuse de sauvegarde et de récupération* : affichez les informations dans NetApp Backup and Recovery, mais n'effectuez aucune action.
 
 
-Pour plus de détails sur tous les rôles d’accès à la console NetApp , consultez https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["la documentation de configuration et d'administration de la console"^] .
+Pour plus de détails sur tous les rôles d’accès à la NetApp Console , consultez https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["la documentation de configuration et d'administration de la console"^] .
 
 
 
 == Rôles utilisés pour les actions courantes
 
-Le tableau suivant indique les actions que chaque rôle de sauvegarde et de récupération NetApp peut effectuer pour toutes les charges de travail.
+Le tableau suivant indique les actions que chaque rôle de NetApp Backup and Recovery peut effectuer pour toutes les charges de travail.
 
 [cols="20,20,15,15a,15a,15a"]
 |===
@@ -299,7 +299,7 @@ Le tableau suivant indique les actions que chaque rôle NetApp Backup and Recove
 
 === Charges de travail Kubernetes
 
-Ce tableau indique les actions que chaque rôle de sauvegarde et de récupération NetApp peut effectuer pour les actions spécifiques aux charges de travail Kubernetes.
+Ce tableau indique les actions que chaque rôle de NetApp Backup and Recovery peut effectuer pour les actions spécifiques aux charges de travail Kubernetes.
 
 [cols="20,20,15,15a,15a"]
 |===

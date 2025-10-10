@@ -114,7 +114,7 @@ Lorsque vous associez un membre à un rôle, vous devez sélectionner l’organi
 
 ==== Héritage des rôles
 
-Lorsque vous attribuez un rôle, celui-ci est hérité dans la hiérarchie de l'organisation :
+Lorsque vous attribuez un rôle, celui-ci est hérité dans la hiérarchie de l’organisation :
 
 Organisation:: Les rôles que vous accordez au niveau de l’organisation sont hérités par tous les dossiers, projets et ressources de l’organisation.  Cela signifie que le membre dispose d’autorisations sur tout dans l’organisation.
 Dossiers:: Les rôles que vous accordez au niveau du dossier sont hérités par tous les dossiers, projets et ressources du dossier.

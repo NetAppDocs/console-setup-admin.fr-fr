@@ -66,7 +66,7 @@ La console affiche ce message lorsque vous essayez d'accéder à la page des par
 
 
  a| 
-Impossible de charger les informations de support pour l'agent.
+Impossible de charger les informations d'assistance pour l'agent.
  a| 
 Ce message s'affiche si l'agent ne peut pas accéder à votre compte d'assistance.
  a| 
@@ -207,7 +207,7 @@ S'il y a d'autres erreurs, vous devrez les résoudre avant de continuer.
 
 == Travailler avec le support NetApp
 
-Si vous n’avez pas réussi à résoudre les problèmes avec votre agent de console, vous pouvez contacter le support NetApp .  Le support NetApp peut vous demander l'ID de l'agent de console ou de lui envoyer les journaux de l'agent de console s'il ne les possède pas déjà.
+Si vous n’avez pas pu résoudre les problèmes avec votre agent de console, vous pouvez contacter le support NetApp .  Le support NetApp peut vous demander l'ID de l'agent de console ou de lui envoyer les journaux de l'agent de console s'il ne les possède pas déjà.
 
 
 
@@ -236,7 +236,7 @@ image:screenshot-system-id.png["Une capture d’écran qui montre l’ID systèm
 Si vous rencontrez des problèmes, NetApp peut vous demander d'envoyer un message AutoSupport au support NetApp à des fins de dépannage.
 
 
-NOTE: La console NetApp prend jusqu'à cinq heures pour envoyer des messages AutoSupport en raison de l'équilibrage de charge.  Pour une communication urgente, téléchargez le fichier et envoyez-le manuellement.
+NOTE: La NetApp Console prend jusqu'à cinq heures pour envoyer des messages AutoSupport en raison de l'équilibrage de charge.  Pour une communication urgente, téléchargez le fichier et envoyez-le manuellement.
 
 .Étapes
 . Sélectionnez *Administration > Support > Agents*.
@@ -271,7 +271,7 @@ Notez que 32 est une valeur d’exemple.  La valeur dépend de votre configurati
 
 
 
-https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig["En savoir plus sur l'appel d'API /occm/config"^]
+https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig["En savoir plus sur l'appel API /occm/config"^]
 
 
 

@@ -19,7 +19,7 @@ Si vous souhaitez vous fédérer avec un domaine différent de votre domaine de 
 .Rôles requis
 Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
-La vérification de votre domaine implique l'ajout d'un enregistrement TXT aux paramètres DNS de votre domaine.  Cet enregistrement est utilisé pour prouver que vous êtes propriétaire du domaine et permet à la console NetApp d'approuver le domaine pour la fédération.  Vous devrez peut-être vous coordonner avec votre administrateur informatique ou réseau pour terminer cette étape.
+La vérification de votre domaine implique l'ajout d'un enregistrement TXT aux paramètres DNS de votre domaine.  Cet enregistrement est utilisé pour prouver que vous êtes propriétaire du domaine et permet à la NetApp Console d'approuver le domaine pour la fédération.  Vous devrez peut-être vous coordonner avec votre administrateur informatique ou réseau pour terminer cette étape.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.

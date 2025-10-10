@@ -13,10 +13,10 @@ image:screenshot_gcp_associate.gif["Capture d'écran d'un projet Google Cloud et
 . Si vous n'avez pas encore d'abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans Google Cloud Marketplace.
 +
 
-NOTE: Avant d'effectuer les étapes suivantes, assurez-vous que vous disposez des privilèges d'administrateur de facturation dans votre compte Google Cloud ainsi que d'une connexion à la console NetApp .
+NOTE: Avant d'effectuer les étapes suivantes, assurez-vous que vous disposez des privilèges d'administrateur de facturation dans votre compte Google Cloud ainsi que d'une connexion à la NetApp Console .
 
 +
-.. Après avoir été redirigé vers le https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Page des services intelligents NetApp sur Google Cloud Marketplace"^] , assurez-vous que le bon projet est sélectionné dans le menu de navigation supérieur.
+.. Après avoir été redirigé vers le https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Page des NetApp Intelligent Services sur Google Cloud Marketplace"^] , assurez-vous que le bon projet est sélectionné dans le menu de navigation supérieur.
 +
 image:screenshot_gcp_cvo_marketplace.png["Une capture d'écran de la page du marché Cloud Volumes ONTAP dans Google Cloud."]
 
@@ -36,7 +36,7 @@ image:screenshot_gcp_marketplace_register.png["Une capture d'écran d'une fenêt
 .. Suivez les étapes sur la page *Affectation d'abonnement* :
 +
 
-NOTE: Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["la page Cloud Volumes ONTAP dans la console NetApp"^] plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.
+NOTE: Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["la page Cloud Volumes ONTAP dans la NetApp Console"^] plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.
 
 +
 *** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.

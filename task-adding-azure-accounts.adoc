@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-adding-azure-accounts.html 
 keywords: permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine, create custom role, create azure custom role, azure custom role 
-summary: Ajoutez et gérez les informations d’identification Azure afin que la console NetApp dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos abonnements Azure.  Si vous gérez plusieurs abonnements Azure Marketplace, vous pouvez attribuer chacun d’eux à différentes informations d’identification Azure à partir de la page Informations d’identification. 
+summary: Ajoutez et gérez les informations d’identification Azure afin que la NetApp Console dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos abonnements Azure.  Si vous gérez plusieurs abonnements Azure Marketplace, vous pouvez attribuer chacun d’eux à différentes informations d’identification Azure à partir de la page Informations d’identification. 
 ---
-= Gérer les informations d'identification Azure et les abonnements à la place de marché pour la console NetApp
+= Gérer les informations d'identification Azure et les abonnements à la place de marché pour la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Ajoutez et gérez les informations d’identification Azure afin que la
 
 
 [role="lead"]
-Ajoutez et gérez les informations d’identification Azure afin que la console NetApp dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos abonnements Azure.  Si vous gérez plusieurs abonnements Azure Marketplace, vous pouvez attribuer chacun d’eux à différentes informations d’identification Azure à partir de la page Informations d’identification.
+Ajoutez et gérez les informations d’identification Azure afin que la NetApp Console dispose des autorisations nécessaires pour déployer et gérer les ressources cloud dans vos abonnements Azure.  Si vous gérez plusieurs abonnements Azure Marketplace, vous pouvez attribuer chacun d’eux à différentes informations d’identification Azure à partir de la page Informations d’identification.
 
 
 
@@ -30,7 +30,7 @@ Il existe deux manières d’ajouter des abonnements et des informations d’ide
 
 == Associer des abonnements Azure supplémentaires à une identité gérée
 
-La console vous permet de choisir les informations d’identification Azure et l’abonnement Azure dans lesquels vous souhaitez déployer Cloud Volumes ONTAP.  Vous ne pouvez pas sélectionner un autre abonnement Azure pour le profil d'identité managé, sauf si vous l'associez https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée"^] avec ces abonnements.
+La console vous permet de choisir les informations d’identification Azure et l’abonnement Azure dans lesquels vous souhaitez déployer Cloud Volumes ONTAP.  Vous ne pouvez pas sélectionner un autre abonnement Azure pour le profil d'identité managée, sauf si vous l'associez https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée"^] avec ces abonnements.
 
 .À propos de cette tâche
 Une identité gérée estlink:concept-accounts-azure.html["le compte Azure initial"] lorsque vous déployez un agent de console à partir de la console.  Lorsque vous déployez l’agent de console, la console attribue le rôle d’opérateur de console à la machine virtuelle de l’agent de console.
@@ -65,7 +65,7 @@ image:screenshot_accounts_switch_azure_subscription.gif["Une capture d’écran 
 
 
 
-== Ajouter des informations d’identification Azure supplémentaires à la console NetApp
+== Ajouter des informations d’identification Azure supplémentaires à la NetApp Console
 
 Lorsque vous déployez un agent de console à partir de la console, la console active une identité gérée attribuée par le système sur la machine virtuelle qui dispose des autorisations requises.  La console sélectionne ces informations d’identification Azure par défaut lorsque vous créez un nouveau système pour Cloud Volumes ONTAP.
 
@@ -88,7 +88,7 @@ image:diagram_azure_authentication.png["Image conceptuelle qui montre la console
 .Étapes
 . <<Créer une application Microsoft Entra>> .
 . <<Affecter l'application à un rôle>> .
-. <<Ajouter des autorisations à l'API de gestion des services Windows Azure>> .
+. <<Ajouter des autorisations à l'API Windows Azure Service Management>> .
 . <<Obtenir l'ID de l'application et l'ID du répertoire>> .
 . <<Créer un secret client>> .
 
@@ -113,7 +113,7 @@ image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsof
 . Précisez les détails de l'application :
 +
 ** *Nom*: Saisissez un nom pour l'application.
-** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la NetApp Console).
 ** *URI de redirection*: Vous pouvez laisser ce champ vide.
 
 
@@ -203,7 +203,7 @@ image:screenshot_azure_service_principal_role.png["Une capture d’écran du por
 Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
 
 +
-Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la NetApp Console, vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
 
 
 
@@ -211,7 +211,7 @@ Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnemen
 
 
 
-==== Ajouter des autorisations à l'API de gestion des services Windows Azure
+==== Ajouter des autorisations à l'API Windows Azure Service Management
 
 Vous devez attribuer les autorisations « API de gestion des services Windows Azure » au principal du service.
 
@@ -313,7 +313,7 @@ Gérez les informations d’identification Azure que vous avez déjà ajoutées 
 
 Après avoir ajouté vos informations d’identification Azure à la console, vous pouvez associer un abonnement Azure Marketplace à ces informations d’identification.  Vous pouvez utiliser l'abonnement pour créer un système Cloud Volumes ONTAP à la carte et accéder aux services de données NetApp .
 
-Il existe deux scénarios dans lesquels vous pouvez associer un abonnement Azure Marketplace après avoir déjà ajouté les informations d'identification à la console :
+Il existe deux scénarios dans lesquels vous pouvez associer un abonnement Azure Marketplace après avoir ajouté les informations d'identification à la console :
 
 * Vous n’avez pas associé d’abonnement lorsque vous avez initialement ajouté les informations d’identification à la console.
 * Vous souhaitez modifier l’abonnement Azure Marketplace associé aux informations d’identification Azure.
@@ -327,7 +327,7 @@ Le remplacement de l'abonnement actuel au marché le met à jour pour les systè
 . Sélectionnez *Informations d'identification de l'organisation*.
 . Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.
 +
-Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement à la place de marché à des informations d'identification associées à la console NetApp .
+Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement au marché aux informations d'identification associées à la NetApp Console.
 
 . Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
 . Pour associer les informations d’identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans la Place de marché Azure :
@@ -337,7 +337,7 @@ Vous devez sélectionner les informations d’identification associées à un ag
 .. Remplissez le formulaire et sélectionnez *S'abonner*.
 .. Une fois le processus d'abonnement terminé, sélectionnez *Configurer le compte maintenant*.
 +
-Vous serez redirigé vers la console NetApp .
+Vous serez redirigé vers la NetApp Console.
 
 .. À partir de la page *Affectation d'abonnement* :
 +
@@ -354,7 +354,7 @@ Pour toutes les autres organisations ou comptes, vous devrez associer manuelleme
 La vidéo suivante montre les étapes à suivre pour s'abonner à partir de la Place de marché Azure :
 
 +
-.Abonnez-vous aux services intelligents NetApp depuis la place de marché Azure
+.Abonnez-vous aux NetApp Intelligent Services depuis la place de marché Azure
 video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
 
 

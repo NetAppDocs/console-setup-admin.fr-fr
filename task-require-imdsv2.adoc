@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-require-imdsv2.html 
 keywords: managing connectors, uninstall connector, switch connectors, switch between connectors, local interface, local connector, local cloud manager, local ui, go to local ui 
-summary: 'La console NetApp prend en charge IMDSv2 avec l"agent de console et avec Cloud Volumes ONTAP.  Dans la plupart des cas, IMDSv2 est automatiquement configuré sur les nouvelles instances EC2.  IMDSv1 a été activé avant mars 2024.  Si vos politiques de sécurité l"exigent, vous devrez peut-être configurer manuellement IMDSv2 sur vos instances EC2.' 
+summary: 'La NetApp Console prend en charge IMDSv2 avec l"agent de console et avec Cloud Volumes ONTAP.  Dans la plupart des cas, IMDSv2 est automatiquement configuré sur les nouvelles instances EC2.  IMDSv1 a été activé avant mars 2024.  Si vos politiques de sécurité l"exigent, vous devrez peut-être configurer manuellement IMDSv2 sur vos instances EC2.' 
 ---
 = Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: 'La console NetApp prend en charge IMDSv2 avec l"agent de console et av
 
 
 [role="lead"]
-La console NetApp prend en charge le service de métadonnées d'instance Amazon EC2 version 2 (IMDSv2) avec l'agent de console et avec Cloud Volumes ONTAP (y compris le médiateur pour les déploiements HA).  Dans la plupart des cas, IMDSv2 est automatiquement configuré sur les nouvelles instances EC2.  IMDSv1 a été activé avant mars 2024.  Si vos politiques de sécurité l'exigent, vous devrez peut-être configurer manuellement IMDSv2 sur vos instances EC2.
+La NetApp Console prend en charge le service de métadonnées d'instance Amazon EC2 version 2 (IMDSv2) avec l'agent de console et avec Cloud Volumes ONTAP (y compris le médiateur pour les déploiements HA).  Dans la plupart des cas, IMDSv2 est automatiquement configuré sur les nouvelles instances EC2.  IMDSv1 a été activé avant mars 2024.  Si vos politiques de sécurité l'exigent, vous devrez peut-être configurer manuellement IMDSv2 sur vos instances EC2.
 
 .Avant de commencer
 * La version de l'agent de console doit être 3.9.38 ou ultérieure.
 * Cloud Volumes ONTAP doit exécuter l’une des versions suivantes :
 +
-** 9.12.1 P2 (ou tout patch ultérieur)
+** 9.12.1 P2 (ou tout correctif ultérieur)
 ** 9.13.0 P4 (ou tout correctif ultérieur)
 ** 9.13.1 ou toute version ultérieure à cette version
 

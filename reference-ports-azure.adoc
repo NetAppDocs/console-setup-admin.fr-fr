@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-ports-azure.html 
 keywords: ports, security group, http, https, inbound, outbound 
-summary: 'Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d"installation, vous devez configurer ce groupe de sécurité manuellement.' 
+summary: 'Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d"installation, vous devez configurer ce groupe de sécurité manuellement.' 
 ---
 = Règles du groupe de sécurité de l'agent de console dans Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Le groupe de sécurité Azure pour l’agent nécessite des règles en
 
 
 [role="lead"]
-Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et sortantes.  La console NetApp crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d'installation, vous devez configurer ce groupe de sécurité manuellement.
+Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d'installation, vous devez configurer ce groupe de sécurité manuellement.
 
 
 
@@ -35,10 +35,10 @@ Le groupe de sécurité Azure pour l’agent nécessite des règles entrantes et
 
 
 
-| HTTPS | 443 | Fournit un accès HTTPS depuis les navigateurs Web clients à l'interface utilisateur locale et des connexions depuis l'instance de classification des données NetApp 
+| HTTPS | 443 | Fournit un accès HTTPS depuis les navigateurs Web clients à l'interface utilisateur locale et des connexions depuis l'instance de NetApp Data Classification 
 
 
-| TCP | 3128 | Fournit à Cloud Volumes ONTAP un accès Internet pour envoyer des messages AutoSupport au support NetApp . Vous devez ouvrir manuellement ce port après le déploiement. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-verify-autosupport.html["Découvrez comment l'agent est utilisé comme proxy pour les messages AutoSupport"^] 
+| TCP | 3128 | Fournit à Cloud Volumes ONTAP un accès Internet pour envoyer des messages AutoSupport au support NetApp .  Vous devez ouvrir manuellement ce port après le déploiement. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-verify-autosupport.html["Découvrez comment l'agent est utilisé comme proxy pour les messages AutoSupport"^] 
 |===
 
 
@@ -76,7 +76,7 @@ NOTE: L'adresse IP source est l'hôte de l'agent.
 | Service | Protocole | Port | Destination | But 
 
 
-| Appels API et AutoSupport | HTTPS | 443 | Gestion de cluster Internet sortant et ONTAP LIF | Appels d'API vers Azure, vers ONTAP, vers la classification des données NetApp et envoi de messages AutoSupport à NetApp 
+| Appels API et AutoSupport | HTTPS | 443 | Gestion de cluster Internet sortant et ONTAP LIF | Appels d'API vers Azure, vers ONTAP, vers NetApp Data Classification et envoi de messages AutoSupport à NetApp 
 
 
 | Appels d'API | TCP | 8080 | Classification des données | Sonder l'instance de classification des données pendant le déploiement 

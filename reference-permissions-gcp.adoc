@@ -14,7 +14,7 @@ summary: 'L"agent de console nécessite des autorisations pour effectuer des act
 
 
 [role="lead"]
-La console NetApp nécessite des autorisations pour effectuer des actions dans Google Cloud.  Ces autorisations sont incluses dans un rôle personnalisé fourni par NetApp.  Vous devez comprendre ce que l’agent fait avec ces autorisations.
+La NetApp Console nécessite des autorisations pour effectuer des actions dans Google Cloud.  Ces autorisations sont incluses dans un rôle personnalisé fourni par NetApp.  Vous devez comprendre ce que l’agent fait avec ces autorisations.
 
 
 
@@ -230,7 +230,7 @@ includedPermissions:
 | - compute.networks.updatePolicy | Pour appliquer des règles de pare-feu sur les VPC et les sous-réseaux pour une paire HA. 
 
 
-| - compute.subnetworks.use - compute.subnetworks.useExternalIp - compute.instances.addAccessConfig | Pour activer la classification des données NetApp . 
+| - compute.subnetworks.use - compute.subnetworks.useExternalIp - compute.instances.addAccessConfig | Pour activer la NetApp Data Classification. 
 
 
 | - compute.instanceGroups.get - compute.addresses.get - compute.instances.updateNetworkInterface | Pour créer et gérer des machines virtuelles de stockage sur des paires Cloud Volumes ONTAP HA. 

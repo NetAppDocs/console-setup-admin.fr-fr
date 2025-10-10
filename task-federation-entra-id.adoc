@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-federation-entra-id.html 
 keywords: Microsoft Entra ID, BlueXP, federation, single sign-on, SSO, identity provider, IdP, service provider-initiated SSO, domain verification, client secret, redirect URL, organization admin, 
-summary: 'Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour activer l’authentification unique (SSO) pour la console NetApp .  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.' 
+summary: 'Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour activer l"authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.' 
 ---
-= Fédérer la console NetApp avec Microsoft Entra ID
+= Fédérer la NetApp Console avec Microsoft Entra ID
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour acti
 
 
 [role="lead"]
-Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour activer l’authentification unique (SSO) pour la console NetApp .  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.
+Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour activer l'authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.
 
 .Rôles requis
 Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
@@ -28,7 +28,7 @@ Vous pouvez configurer une connexion fédérée avec Microsoft Entra ID pour act
 
 .Avant de commencer
 * Un compte IdP avec des privilèges administratifs est requis.  Coordonnez-vous avec votre administrateur IdP pour terminer les étapes.
-* Identifiez le domaine que vous souhaitez utiliser pour la fédération.  Vous pouvez utiliser votre domaine de messagerie ou un autre domaine que vous possédez.  Si vous souhaitez utiliser un domaine autre que votre domaine de messagerie, vous devez d’abord vérifier le domaine dans la console.  Vous pouvez le faire en suivant les étapes décrites dans lelink:task-federation-verify-domain.html["Vérifiez votre domaine dans la console NetApp"] sujet.
+* Identifiez le domaine que vous souhaitez utiliser pour la fédération.  Vous pouvez utiliser votre domaine de messagerie ou un autre domaine que vous possédez.  Si vous souhaitez utiliser un domaine autre que votre domaine de messagerie, vous devez d’abord vérifier le domaine dans la console.  Vous pouvez le faire en suivant les étapes décrites dans lelink:task-federation-verify-domain.html["Vérifiez votre domaine dans la NetApp Console"] sujet.
 
 
 .Étapes
@@ -96,4 +96,4 @@ Vous pouvez configurer une connexion fédérée avec Microsoft Entra ID pour act
 . Sélectionnez *Terminer* pour terminer le processus.
 
 
-Une fois la fédération activée, les utilisateurs peuvent se connecter à la console NetApp à l’aide de leurs informations d’identification d’entreprise.
+Une fois la fédération activée, les utilisateurs peuvent se connecter à la NetApp Console à l’aide de leurs informations d’identification d’entreprise.

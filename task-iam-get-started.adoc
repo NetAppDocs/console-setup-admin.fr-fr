@@ -4,7 +4,7 @@ permalink: task-iam-get-started.html
 keywords: iam, quick start, get started, get started with iam, identity and access management 
 summary: 'Pour commencer à gérer les identités et les accès dans NetApp Console, personnalisez la hiérarchie de l"organisation, ajoutez des membres supplémentaires, ajoutez ou découvrez des ressources et associez ces ressources à des projets.' 
 ---
-= Démarrer avec l'identité et l'accès dans la console NetApp
+= Démarrer avec l'identité et l'accès dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Pour commencer à gérer les identités et les accès dans NetApp Cons
 
 
 [role="lead"]
-Lorsque vous vous inscrivez à la console NetApp , vous êtes invité à créer une nouvelle organisation.  L'organisation comprend un membre (un administrateur d'organisation) et un projet par défaut.  Pour configurer la gestion des identités et des accès (IAM) afin de répondre aux besoins de votre entreprise, vous devrez personnaliser la hiérarchie de votre organisation, ajouter des membres supplémentaires, ajouter ou découvrir des ressources et associer ces ressources à l'ensemble de votre hiérarchie.
+Lorsque vous vous inscrivez à la NetApp Console, vous êtes invité à créer une nouvelle organisation.  L'organisation comprend un membre (un administrateur d'organisation) et un projet par défaut.  Pour configurer la gestion des identités et des accès (IAM) afin de répondre aux besoins de votre entreprise, vous devrez personnaliser la hiérarchie de votre organisation, ajouter des membres supplémentaires, ajouter ou découvrir des ressources et associer ces ressources à l'ensemble de votre hiérarchie.
 
 Vous devez disposer des autorisations *Administrateur d'organisation* pour administrer l'identité et l'accès de l'ensemble de votre organisation.  Si vous disposez des autorisations *Administrateur de dossier ou de projet*, vous ne pouvez administrer que les dossiers et les projets pour lesquels vous disposez des autorisations.
 
@@ -36,7 +36,7 @@ link:task-iam-manage-members-permissions.html["Apprenez à gérer les membres et
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"]Ajouter ou découvrir des ressources
 [role="quick-margin-para"]
-Ajoutez ou découvrez des ressources (systèmes) dans la console.  Les membres de l’organisation gèrent les systèmes à partir d’un projet.
+Ajoutez ou découvrez des ressources (systèmes) dans la console.  Les membres de l’organisation gèrent les systèmes au sein d’un projet.
 
 [role="quick-margin-para"]
 Apprenez à créer ou à découvrir des ressources :
@@ -60,6 +60,6 @@ L'ajout ou la découverte d'un système dans la console associe automatiquement 
 
 
 .Informations connexes
-* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès dans la console NetApp"]
+* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès dans la NetApp Console"]
 * https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
 

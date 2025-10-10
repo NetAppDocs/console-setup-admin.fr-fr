@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-networking-saas-console.html 
 keywords: networking, urls, endpoints, web browser, console, network, set up networking, bluexp 
-summary: 'La console NetApp , l"agent de la console NetApp et les services de données NetApp nécessitent un accès Internet sortant et la possibilité de contacter les points de terminaison nécessaires.' 
+summary: 'La NetApp Console, l"agent de la NetApp Console et les services de données NetApp nécessitent un accès Internet sortant et la possibilité de contacter les points de terminaison nécessaires.' 
 ---
-= Préparer l'accès réseau pour la console NetApp
+= Préparer l'accès réseau pour la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 'La console NetApp , l"agent de la console NetApp et les services de do
 
 
 [role="lead"]
-La console NetApp , l'agent de la console NetApp et les services de données NetApp nécessitent un accès Internet sortant et la possibilité de contacter les points de terminaison nécessaires.
+La NetApp Console, l'agent de la NetApp Console et les services de données NetApp nécessitent un accès Internet sortant et la possibilité de contacter les points de terminaison nécessaires.
 
 Vous devrez configurer l’accès au réseau pour les éléments suivants :
 
-* Ordinateurs qui accèdent à la console NetApp en tant que logiciel en tant que service (SaaS)
+* Ordinateurs qui accèdent à la NetApp Console en tant que logiciel en tant que service (SaaS)
 * Emplacements réseau où vous déployez les agents de console que vous installez sur site ou dans le cloud.
 * Points de terminaison supplémentaires pour certains services de données NetApp , notamment Cloud Volumes ONTAP.
 
@@ -28,13 +28,13 @@ NOTE: NetApp a réduit les points de terminaison réseau requis pour la console 
 
 
 
-== Points de terminaison contactés par la console NetApp
+== Points de terminaison contactés par la NetApp Console
 
-Chaque ordinateur qui accède à la console NetApp doit disposer de connexions aux points de terminaison répertoriés ci-dessous.
+Chaque ordinateur qui accède à la NetApp Console doit disposer de connexions aux points de terminaison répertoriés ci-dessous.
 
 Le système contacte ces points de terminaison dans deux scénarios :
 
-* À partir d'un ordinateur accédant au https://console.netapp.com["Console NetApp"^] en tant que logiciel en tant que service (SaaS).
+* À partir d'un ordinateur accédant au https://console.netapp.com["NetApp Console"^] en tant que logiciel en tant que service (SaaS).
 * Depuis un ordinateur accédant directement à un hôte d'agent de console, soit pour se connecter et le configurer, soit pour accéder à la console à partir de l'hôte de l'agent.
 
 
@@ -49,13 +49,13 @@ Le système contacte ces points de terminaison dans deux scénarios :
 | \ https://support.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
 
 
-| \ https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp . 
+| \ https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console. 
 
 
 | \ https://support.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP. 
 
 
-| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com | Pour fournir des fonctionnalités et des services au sein de la console NetApp . 
+| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
 
 
  a| 
@@ -77,14 +77,14 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 
 Vous installez l’agent de console sur site ou dans le cloud, et il contacte les points de terminaison pour effectuer les actions initiées par la console.
 
-Les agents de console doivent avoir accès aux mêmes points de terminaison que la console NetApp , ainsi qu'à des points de terminaison supplémentaires en fonction de l'endroit où vous installez l'agent.
+Les agents de console doivent avoir accès aux mêmes points de terminaison que la NetApp Console, ainsi qu'à des points de terminaison supplémentaires en fonction de l'endroit où vous installez l'agent.
 
 Configurez l’accès au point de terminaison réseau avant d’installer l’agent de la console.
 
 * link:task-install-agent-aws-console.html#networking-aws-agent["Configurer l'accès au réseau AWS pour un agent de console"]
 * link:task-install-agent-azure-console.html#networking-azure-agent["Configurer l'accès au réseau Azure pour un agent de console"]
 * link:task-install-agent-google-console-gcloud.html#networking-gcp-agent["Configurer l'accès au réseau Google Cloud pour un agent de console"]
-* link:task-install-agent-on-prem.html#network-access-agent["Configurer l'accès au réseau local pour un agent de console"]
+* link:task-install-agent-on-prem.html#network-access-agent["Configurer l'accès au réseau sur site pour un agent de console"]
 
 
 

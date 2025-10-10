@@ -4,7 +4,7 @@ permalink: task-install-agent-google-console-gcloud.html
 keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, create connector, gcp installation, gcp connector 
 summary: 'Pour créer un agent de console dans Google Cloud à partir de NetApp Consoel ou en utilisant Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l"agent de console.' 
 ---
-= Créer un agent de console dans Google Cloud à partir de la console NetApp
+= Créer un agent de console dans Google Cloud à partir de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -70,7 +70,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -84,7 +84,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -104,7 +104,7 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 --
 
 
-Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez la console NetApp Web fournie via la couche SaaS, elle contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données.  Cela inclut les points de terminaison contactés pour déployer l'agent de console à partir de la console.
+Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez la NetApp Console Web fournie via la couche SaaS, elle contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données.  Cela inclut les points de terminaison contactés pour déployer l'agent de console à partir de la console.
 +
 --
 link:reference-networking-saas-console.html["Afficher la liste des points de terminaison contactés depuis la console NetApp"] .
@@ -298,7 +298,7 @@ Pour plus de détails, reportez-vous à https://cloud.google.com/iam/docs/granti
 
 
 
-== Étape 4 : configurer les autorisations VPC partagées
+== Étape 4 : Configurer les autorisations VPC partagées
 
 Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.
 
@@ -313,7 +313,7 @@ Ce tableau est fourni à titre de référence et votre environnement doit reflé
 
 
 | Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
-link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
+link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politique de déploiement des agents"]
  a| 
 compute.networkUser
 | Déploiement de l'agent dans le projet de service 
@@ -324,7 +324,7 @@ link:reference-permissions-gcp.html["Politique de compte de service d'agent"]
 | compute.networkUser deploymentmanager.editor | Déploiement et maintenance de Cloud Volumes ONTAP et des services dans le projet de service 
 
 
-| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la console NetApp en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
+| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la NetApp Console en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
 
 
 | Agent de service des API Google | Google Cloud | Projet de service  a| 
@@ -342,7 +342,7 @@ compute.networkUser
 |===
 Remarques :
 
-. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La console NetApp crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
+. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La NetApp Console crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
 . firewall.create et firewall.delete ne sont requis que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  Ces autorisations résident dans le fichier .yaml du compte de console.  Si vous déployez une paire HA à l’aide d’un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3.  Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer des règles pour VPC0.
 . Pour la hiérarchisation du cloud, le compte de service de hiérarchisation doit avoir le rôle serviceAccount.user sur le compte de service, pas seulement au niveau du projet.  Actuellement, si vous attribuez serviceAccount.user au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec getIAMPolicy.
 
@@ -379,7 +379,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentation 
 Créez un agent de console directement depuis la console.
 
 .À propos de cette tâche
-La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud à l’aide d’une configuration par défaut. Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
+La création de l’agent de console déploie une instance de machine virtuelle dans Google Cloud à l’aide d’une configuration par défaut.  Ne passez pas à une instance de machine virtuelle plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
 
 .Avant de commencer
 Vous devriez avoir les éléments suivants :

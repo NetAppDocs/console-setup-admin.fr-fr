@@ -41,7 +41,7 @@ rm /var/run/docker.sock
 ----
 . Installez Podman.
 +
-Vous pouvez obtenir Podman à partir des référentiels officiels Red Hat Enterprise Linux.
+Vous pouvez obtenir Podman à partir des référentiels officiels de Red Hat Enterprise Linux.
 
 +
 Pour Red Hat Enterprise Linux 9 :

@@ -4,7 +4,7 @@ permalink: task-adding-gcp-accounts.html
 keywords: permissions, gcp, marketplace, gcp subscription, subscription, gcp marketplace, subscribe, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys, bluexp 
 summary: 'Vous pouvez gérer les informations d"identification Google Cloud associées à l"instance de machine virtuelle de l"agent de la console en associant un abonnement à la place de marché et en résolvant les problèmes du processus d"abonnement.  Ces deux tâches garantissent que vous pouvez utiliser votre abonnement au marché pour payer les services de données.' 
 ---
-= Gérer les informations d'identification et les abonnements Google Cloud pour la console NetApp
+= Gérer les informations d'identification et les abonnements Google Cloud pour la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,10 +35,10 @@ image:screenshot_gcp_associate.gif["Capture d'écran d'un projet Google Cloud et
 . Si vous n'avez pas encore d'abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans Google Cloud Marketplace.
 +
 
-NOTE: Avant d'effectuer les étapes suivantes, assurez-vous que vous disposez des privilèges d'administrateur de facturation dans votre compte Google Cloud ainsi que d'une connexion à la console NetApp .
+NOTE: Avant d'effectuer les étapes suivantes, assurez-vous que vous disposez des privilèges d'administrateur de facturation dans votre compte Google Cloud ainsi que d'une connexion à la NetApp Console .
 
 +
-.. Après avoir été redirigé vers le https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Page des services intelligents NetApp sur Google Cloud Marketplace"^] , assurez-vous que le bon projet est sélectionné dans le menu de navigation supérieur.
+.. Après avoir été redirigé vers le https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Page des NetApp Intelligent Services sur Google Cloud Marketplace"^] , assurez-vous que le bon projet est sélectionné dans le menu de navigation supérieur.
 +
 image:screenshot_gcp_cvo_marketplace.png["Une capture d'écran de la page du marché Cloud Volumes ONTAP dans Google Cloud."]
 
@@ -58,7 +58,7 @@ image:screenshot_gcp_marketplace_register.png["Une capture d'écran d'une fenêt
 .. Suivez les étapes sur la page *Affectation d'abonnement* :
 +
 
-NOTE: Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["la page Cloud Volumes ONTAP dans la console NetApp"^] plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.
+NOTE: Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["la page Cloud Volumes ONTAP dans la NetApp Console"^] plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.
 
 +
 *** Sélectionnez les organisations ou les comptes de la console auxquels vous souhaitez associer cet abonnement.

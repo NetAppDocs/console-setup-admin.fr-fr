@@ -85,7 +85,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://signin.b2c.netapp.com
  a| 
-Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la console NetApp .
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
@@ -99,7 +99,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
  a| 
 \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
  a| 
-Pour fournir des fonctionnalités et des services au sein de la console NetApp .
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
@@ -189,7 +189,7 @@ https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azur
 . Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour le connecteur"] et les enregistrer dans un fichier JSON.
 . Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
 +
-Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser avec la console NetApp .
+Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser avec la NetApp Console.
 
 +
 *Exemple*
@@ -241,7 +241,7 @@ image:screenshot_azure_ad.png["Affiche le service Active Directory dans Microsof
 . Précisez les détails de l'application :
 +
 ** *Nom*: Saisissez un nom pour l'application.
-** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la console NetApp ).
+** *Type de compte* : sélectionnez un type de compte (n'importe lequel fonctionnera avec la NetApp Console).
 ** *URI de redirection*: Vous pouvez laisser ce champ vide.
 
 
@@ -325,13 +325,13 @@ image:screenshot_azure_service_principal_role.png["Une capture d’écran du por
 Le principal du service dispose désormais des autorisations Azure requises pour déployer l’agent de la console.
 
 +
-Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la console NetApp , vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
+Si vous souhaitez déployer Cloud Volumes ONTAP à partir de plusieurs abonnements Azure, vous devez lier le principal de service à chacun de ces abonnements.  Dans la NetApp Console, vous pouvez sélectionner l’abonnement que vous souhaitez utiliser lors du déploiement de Cloud Volumes ONTAP.
 
 
 
 
 
-.Ajouter des autorisations à l'API de gestion des services Windows Azure
+.Ajouter des autorisations à l'API Windows Azure Service Management
 . Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
 . Sélectionnez *Autorisations API > Ajouter une autorisation*.
 . Sous *API Microsoft*, sélectionnez *Azure Service Management*.
@@ -401,7 +401,7 @@ Ces autorisations concernent l’instance de l’agent de console elle-même.  I
 
 
 .Étapes
-. Accédez à la page de la machine virtuelle de l’agent de la console NetApp dans la Place de marché Azure.
+. Accédez à la page de la machine virtuelle de l’agent de la NetApp Console dans la Place de marché Azure.
 +
 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["Page de la place de marché Azure pour les régions commerciales"^]
 
@@ -468,7 +468,7 @@ Accédez au portail Azure et attribuez le rôle personnalisé Azure à la machin
 .Étapes
 . Depuis le portail Azure, ouvrez le service *Abonnements* et sélectionnez votre abonnement.
 +
-Il est important d'attribuer le rôle à partir du service *Abonnements* car cela spécifie la portée de l'attribution du rôle au niveau de l'abonnement.  La _scope_ définit l’ensemble des ressources auxquelles l’accès s’applique.  Si vous spécifiez une étendue à un niveau différent (par exemple, au niveau de la machine virtuelle), votre capacité à effectuer des actions à partir de la console NetApp sera affectée.
+Il est important d'attribuer le rôle à partir du service *Abonnements* car cela spécifie la portée de l'attribution du rôle au niveau de l'abonnement.  La _scope_ définit l’ensemble des ressources auxquelles l’accès s’applique.  Si vous spécifiez une étendue à un niveau différent (par exemple, au niveau de la machine virtuelle), votre capacité à effectuer des actions à partir de la NetApp Console sera affectée.
 
 +
 https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview["Documentation Microsoft Azure : Comprendre la portée d'Azure RBAC"^]
@@ -492,7 +492,7 @@ NOTE: L'opérateur de console est le nom par défaut fourni dans la politique.  
 
 
 .Quelle est la prochaine étape ?
-Aller à la https://console.netapp.com["Console NetApp"^] pour commencer à utiliser l'agent de console.
+Aller à la https://console.netapp.com["NetApp Console"^] pour commencer à utiliser l'agent de console.
 
 --
 .Principal de service

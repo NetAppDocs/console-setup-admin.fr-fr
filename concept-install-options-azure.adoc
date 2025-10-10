@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-install-options-azure.html 
 keywords: install connector azure, azure install connector, connector azure, azure connector, installation options, azure marketplace, manual install 
-summary: 'Il existe plusieurs manières différentes de créer un agent de console dans Azure.  Le moyen le plus courant est d"accéder directement à partir de la console NetApp .' 
+summary: 'Il existe plusieurs manières différentes de créer un agent de console dans Azure.  Le moyen le plus courant est d"accéder directement à partir de la NetApp Console .' 
 ---
 = Options d'installation de l'agent de console dans Azure
 :hardbreaks:
@@ -14,17 +14,17 @@ summary: 'Il existe plusieurs manières différentes de créer un agent de conso
 
 
 [role="lead"]
-Il existe plusieurs manières différentes de créer un agent de console dans Azure.  Le moyen le plus courant est d'accéder directement à partir de la console NetApp .
+Il existe plusieurs manières différentes de créer un agent de console dans Azure.  Le moyen le plus courant est d'accéder directement à partir de la NetApp Console .
 
 Les options d’installation suivantes sont disponibles :
 
-* link:task-install-agent-azure-console.html["Créer un agent de console directement à partir de la console NetApp"](c'est l'option standard)
+* link:task-install-agent-azure-console.html["Créer un agent de console directement à partir de la NetApp Console"](c'est l'option standard)
 +
 Cette action lance une machine virtuelle exécutant Linux et le logiciel agent de console dans un réseau virtuel de votre choix.
 
 * link:task-install-agent-azure-marketplace.html["Créer un agent de console à partir de la place de marché Azure"]
 +
-Cette action lance également une machine virtuelle exécutant Linux et le logiciel agent de la console, mais le déploiement est lancé directement à partir de la place de marché Azure, plutôt qu’à partir de la console.
+Cette action lance également une machine virtuelle exécutant Linux et le logiciel agent de la console, mais le déploiement est lancé directement à partir de la Place de marché Azure, plutôt qu’à partir de la console.
 
 * link:task-install-agent-azure-manual.html["Téléchargez et installez manuellement le logiciel sur votre propre hôte Linux"]
 

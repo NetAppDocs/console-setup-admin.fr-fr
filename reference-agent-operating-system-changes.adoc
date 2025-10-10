@@ -40,7 +40,7 @@ Installation manuelle::
 
 
 --
-Déploiement à partir de la console NetApp:: Ubuntu 22.04 LTS
+Déploiement à partir de la NetApp Console:: Ubuntu 22.04 LTS
 Déploiement depuis AWS Marketplace:: Ubuntu 22.04 LTS
 Déploiement depuis la place de marché Azure:: Ubuntu 22.04 LTS
 
@@ -92,7 +92,7 @@ Installation manuelle::
 
 Notez les points suivants concernant la prise en charge de RHEL 8 et 9 :
 
-Limites:: La classification des données NetApp est prise en charge si vous installez l'agent sur un hôte RHEL 8 ou 9 résidant sur site.  Cette option n'est pas prise en charge si l'hôte RHEL 8 ou 9 réside dans AWS, Azure ou Google Cloud.
+Limites:: La NetApp Data Classification est prise en charge si vous installez l'agent sur un hôte RHEL 8 ou 9 résidant sur site.  Cette option n'est pas prise en charge si l'hôte RHEL 8 ou 9 réside dans AWS, Azure ou Google Cloud.
 Outil d'orchestration de conteneurs:: Vous devez utiliser l’outil Podman comme outil d’orchestration de conteneur lors de l’installation de l’agent de console sur un hôte RHEL 8 ou 9.  Docker Engine n'est pas pris en charge avec RHEL 8 et 9.
 Mode de déploiement:: RHEL 8 et 9 sont pris en charge lors de l'utilisation de la console en mode standard et en mode restreint.
 Versions d'agent de console prises en charge:: NetApp prend en charge RHEL 8 et 9 à partir des versions suivantes de l'agent de console :

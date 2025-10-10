@@ -15,7 +15,7 @@ Ce tableau est fourni à titre de référence et votre environnement doit reflé
 
 
 | Compte Google pour déployer l'agent | Coutume | Projet de service  a| 
-link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politique de déploiement de l'agent"]
+link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Politique de déploiement des agents"]
  a| 
 compute.networkUser
 | Déploiement de l'agent dans le projet de service 
@@ -26,7 +26,7 @@ link:reference-permissions-gcp.html["Politique de compte de service d'agent"]
 | compute.networkUser deploymentmanager.editor | Déploiement et maintenance de Cloud Volumes ONTAP et des services dans le projet de service 
 
 
-| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la console NetApp en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
+| Compte de service Cloud Volumes ONTAP | Coutume | Projet de service | Membre storage.admin : compte de service de la NetApp Console en tant que serviceAccount.user | S/O | (Facultatif) Pour NetApp Cloud Tiering et NetApp Backup and Recovery 
 
 
 | Agent de service des API Google | Google Cloud | Projet de service  a| 
@@ -44,7 +44,7 @@ compute.networkUser
 |===
 Remarques :
 
-. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La console NetApp crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
+. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La NetApp Console crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
 . firewall.create et firewall.delete ne sont requis que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  Ces autorisations résident dans le fichier .yaml du compte de console.  Si vous déployez une paire HA à l’aide d’un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3.  Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer des règles pour VPC0.
 . Pour la hiérarchisation du cloud, le compte de service de hiérarchisation doit avoir le rôle serviceAccount.user sur le compte de service, pas seulement au niveau du projet.  Actuellement, si vous attribuez serviceAccount.user au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec getIAMPolicy.
 

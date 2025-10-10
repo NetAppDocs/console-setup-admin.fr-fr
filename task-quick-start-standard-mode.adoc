@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-quick-start-standard-mode.html 
 keywords: quick start, standard mode quick start 
-summary: Commencez à utiliser la console NetApp en mode standard en préparant la mise en réseau pour la console, en vous inscrivant et en créant un compte, et éventuellement en créant un agent de console. 
+summary: Commencez à utiliser la NetApp Console en mode standard en préparant la mise en réseau pour la console, en vous inscrivant et en créant un compte, et éventuellement en créant un agent de console. 
 ---
 = Démarrage du flux de travail (mode standard)
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Commencez à utiliser la console NetApp en mode standard en préparant 
 
 
 [role="lead"]
-Commencez à utiliser la console NetApp en mode standard en préparant la mise en réseau pour la console, en vous inscrivant et en créant un compte, et éventuellement en créant un agent de console.
+Commencez à utiliser la NetApp Console en mode standard en préparant la mise en réseau pour la console, en vous inscrivant et en créant un compte, et éventuellement en créant un agent de console.
 
-En mode standard, vous accédez à une console Web hébergée en tant que produit SaaS (Software-as-a-service) de NetApp. Avant de commencer, assurez-vous de bien comprendrelink:concept-modes.html["modes de déploiement"] etlink:concept-agents.html["Agents de console"] .
+En mode standard, vous accédez à une console Web hébergée en tant que produit SaaS (Software-as-a-service) de NetApp.  Avant de commencer, assurez-vous de bien comprendrelink:concept-modes.html["modes de déploiement"] etlink:concept-agents.html["Agents de console"] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"] link:reference-networking-saas-console.html["Préparer le réseau pour l'utilisation de la console NetApp"]
 [role="quick-margin-para"]
@@ -47,6 +47,6 @@ Vous pouvez créer un agent de console dans votre réseau cloud ou sur site.
 [role="quick-margin-para"]
 Pour utiliser NetApp Intelligent Data Services pour la gestion du stockage et des données dans Google Cloud, assurez-vous que l'agent de la console s'exécute dans Google Cloud.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] link:task-subscribe-standard-mode.html["Abonnez-vous aux services intelligents NetApp (facultatif)"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] link:task-subscribe-standard-mode.html["Abonnez-vous aux NetApp Intelligent Services (facultatif)"]
 [role="quick-margin-para"]
-Inscrivez-vous aux services intelligents NetApp via votre fournisseur de cloud pour payer à l'heure (PAYGO) ou via un contrat annuel.  Les services intelligents NetApp incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La classification des données NetApp est incluse dans votre abonnement sans frais supplémentaires.
+Inscrivez-vous aux NetApp Intelligent Services via votre fournisseur de cloud pour payer à l'heure (PAYGO) ou via un contrat annuel.  Les NetApp Intelligent Services incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La NetApp Data Classification est incluse dans votre abonnement sans frais supplémentaires.

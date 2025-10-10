@@ -2,4 +2,4 @@
 :allow-uri-read: 
 
 
-Abonnez-vous aux services intelligents NetApp depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Si vous avez acheté une licence auprès de NetApp (BYOL), vous devez également vous abonner à l'offre de la place de marché.  Votre licence est toujours facturée en premier, mais vous serez facturé au tarif horaire si vous dépassez votre capacité autorisée ou si la durée de la licence expire.
+Abonnez-vous aux NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Si vous avez acheté une licence auprès de NetApp (BYOL), vous devez également vous abonner à l'offre de la place de marché.  Votre licence est toujours facturée en premier, mais vous serez facturé au tarif horaire si vous dépassez votre capacité autorisée ou si la durée de la licence expire.

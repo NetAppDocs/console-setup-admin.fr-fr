@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-federation-saml.html 
 keywords: federation, SAML protocol, SAML, federation services,  federate, federated connection, SSO, identity federation, identity management, corporate identity 
-summary: 'Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l’authentification unique (SSO) pour la console NetApp .  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.' 
+summary: 'Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l"authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.' 
 ---
 = Fédérer avec un fournisseur d'identité SAML
 :hardbreaks:
@@ -28,7 +28,7 @@ Vous pouvez configurer une connexion fédérée avec votre fournisseur SAML 2.0 
 
 .Avant de commencer
 * Un compte IdP avec des privilèges administratifs est requis.  Coordonnez-vous avec votre administrateur IdP pour terminer les étapes.
-* Identifiez le domaine que vous souhaitez utiliser pour la fédération.  Vous pouvez utiliser votre domaine de messagerie ou un autre domaine que vous possédez.  Si vous souhaitez utiliser un domaine autre que votre domaine de messagerie, vous devez d’abord vérifier le domaine dans la console.  Vous pouvez le faire en suivant les étapes décrites dans lelink:task-federation-verify-domain.html["Vérifiez votre domaine dans la console NetApp"] sujet.
+* Identifiez le domaine que vous souhaitez utiliser pour la fédération.  Vous pouvez utiliser votre domaine de messagerie ou un autre domaine que vous possédez.  Si vous souhaitez utiliser un domaine autre que votre domaine de messagerie, vous devez d’abord vérifier le domaine dans la console.  Vous pouvez le faire en suivant les étapes décrites dans lelink:task-federation-verify-domain.html["Vérifiez votre domaine dans la NetApp Console"] sujet.
 
 
 .Étapes
@@ -89,4 +89,4 @@ Vous pouvez configurer une connexion fédérée avec votre fournisseur SAML 2.0 
 . Sélectionnez *Terminer* pour terminer le processus.
 
 
-Une fois la fédération activée, les utilisateurs peuvent se connecter à la console NetApp à l’aide de leurs informations d’identification d’entreprise.
+Une fois la fédération activée, les utilisateurs peuvent se connecter à la NetApp Console à l’aide de leurs informations d’identification d’entreprise.

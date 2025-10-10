@@ -3,7 +3,7 @@
 
 
 .Étapes
-. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la console NetApp sur AWS Marketplace"^]
+. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^]
 . Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
 . Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
 +
@@ -25,7 +25,7 @@ Utilisez la console EC2 pour lancer l’instance et attacher un rôle IAM.  Cela
 +
 *** Choisissez le VPC et le sous-réseau souhaités.
 *** Spécifiez si l’instance doit avoir une adresse IP publique.
-*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l’instance de l’agent de console : SSH, HTTP et HTTPS.
+*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l'instance de l'agent de console : SSH, HTTP et HTTPS.
 +
 link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour AWS"] .
 

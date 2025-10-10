@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: Documentation de configuration et d'administration de la console NetApp
+  title: Documentation de configuration et d'administration de la NetApp Console
   summary: Commencez à utiliser NetApp Console pour pouvoir commencer à créer, protéger
     et gérer les données dans vos environnements sur site et cloud.  Une fois la configuration
     terminée, vous pouvez contrôler l'accès à vos ressources à l'aide de la gestion
@@ -16,7 +16,7 @@ indexpage:
   tiles:
   - title: Commencer
     links:
-    - title: En savoir plus sur la console NetApp
+    - title: En savoir plus sur la NetApp Console
       url: concept-overview.html
     - title: En savoir plus sur les modes de déploiement
       url: concept-modes.html
@@ -87,9 +87,9 @@ indexpage:
       url: task-install-agent-on-prem-ova.html
   - title: Blogs et communauté
     links:
-    - title: Console NetApp
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: Services de données NetApp
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: Communauté NetApp
       url: https://community.netapp.com/

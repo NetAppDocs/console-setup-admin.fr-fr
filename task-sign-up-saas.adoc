@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-sign-up-saas.html 
 keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login 
-summary: 'La console NetApp est accessible à partir d’une console Web.  Pour commencer à utiliser la console, votre première étape consiste à vous inscrire ou à vous connecter à l"aide de vos informations d"identification du site de support NetApp ou en créant une connexion à la console NetApp .' 
+summary: 'La NetApp Console est accessible à partir d’une console Web.  Pour commencer à utiliser la console, votre première étape consiste à vous inscrire ou à vous connecter à l"aide de vos informations d"identification du site de support NetApp ou en créant une connexion à la NetApp Console .' 
 ---
-= Inscrivez-vous ou connectez-vous à la console NetApp
+= Inscrivez-vous ou connectez-vous à la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,28 +14,28 @@ summary: 'La console NetApp est accessible à partir d’une console Web.  Pour 
 
 
 [role="lead"]
-La console NetApp est accessible à partir d’une console Web.  Pour commencer à utiliser la console, votre première étape consiste à vous inscrire ou à vous connecter à l'aide de vos informations d'identification du site de support NetApp ou en créant une connexion à la console NetApp .
+La NetApp Console est accessible à partir d’une console Web.  Pour commencer à utiliser la console, votre première étape consiste à vous inscrire ou à vous connecter à l'aide de vos informations d'identification du site de support NetApp ou en créant une connexion à la NetApp Console .
 
 .À propos de cette tâche
 Lorsque vous accédez à la console pour la première fois, vous pouvez vous inscrire ou vous connecter en utilisant l’une des options suivantes :
 
-Connexion à la console NetApp:: Vous pouvez vous inscrire en créant un identifiant.  Cette méthode d'authentification nécessite de spécifier votre adresse email et un mot de passe.  Après avoir vérifié votre adresse e-mail, vous pouvez vous connecter puis créer une organisation, si vous n'en appartenez pas déjà une.
+Connexion à la NetApp Console:: Vous pouvez vous inscrire en créant un identifiant.  Cette méthode d'authentification nécessite de spécifier votre adresse email et un mot de passe.  Après avoir vérifié votre adresse e-mail, vous pouvez vous connecter puis créer une organisation, si vous n'en appartenez pas déjà une.
 Informations d'identification du site de support NetApp (NSS):: Si vous disposez déjà d'informations d'identification du site de support NetApp , vous n'avez pas besoin de vous inscrire à la console.  Vous vous connectez à l'aide de vos informations d'identification NSS, puis la console vous invite à créer une organisation, si vous n'en appartenez pas déjà à une.
 +
 --
 Un code d'accès à usage unique (OTP) vous sera envoyé à l'adresse e-mail enregistrée.  Un nouvel OTP est généré à chaque tentative de connexion.
 
 --
-Connexion fédérée:: Si votre entreprise dispose déjà d'une instance de console NetApp , votre administrateur de console a peut-être configuré l'authentification unique pour se connecter à l'aide des informations d'identification de votre annuaire d'entreprise (identité fédérée).
+Connexion fédérée:: Si votre entreprise dispose déjà d'une instance de NetApp Console , votre administrateur de console a peut-être configuré l'authentification unique pour se connecter à l'aide des informations d'identification de votre annuaire d'entreprise (identité fédérée).
 +
 --
-link:concept-federation.html["Découvrez comment utiliser la fédération d'identité avec la console NetApp"] .
+link:concept-federation.html["Découvrez comment utiliser la fédération d'identité avec la NetApp Console"] .
 
 --
 
 
 .Étapes
-. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["Console NetApp"^]
+. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["NetApp Console"^]
 . Si vous disposez d'un compte sur le site de support NetApp ou si vous avez déjà configuré la fédération d'identité, saisissez l'adresse e-mail associée à votre compte directement sur la page *Connexion*.
 +
 Dans les deux cas, vous êtes inscrit à la console dans le cadre de cette connexion initiale.

@@ -28,4 +28,4 @@ Pour obtenir de l'aide, reportez-vous à la documentation de ces services :
 
 
 .Informations connexes
-link:concept-modes.html["Modes de déploiement de la console NetApp"]
+link:concept-modes.html["Modes de déploiement de la NetApp Console"]
