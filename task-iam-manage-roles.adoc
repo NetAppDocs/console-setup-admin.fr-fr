@@ -16,9 +16,9 @@ summary: 'Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisate
 [role="lead"]
 Dans la console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.
 
-Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs.  Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier.  Par exemple, vous pouvez attribuer à un utilisateur le rôle d’administrateur de protection contre les ransomwares pour un projet et le rôle d’administrateur SnapCenter pour un autre projet.  Alternativement, si un utilisateur a besoin du rôle d’administrateur de classification pour tous les projets d’un dossier spécifique, vous pouvez lui attribuer ce rôle au niveau du dossier.
+Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs. Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier. Par exemple, vous pouvez attribuer à un utilisateur le rôle d’administrateur Ransomware Resilience pour un projet et le rôle d’administrateur SnapCenter pour un autre projet. Alternativement, si un utilisateur a besoin du rôle d’administrateur de classification pour tous les projets d’un dossier spécifique, vous pouvez lui attribuer ce rôle au niveau du dossier.
 
-Utilisez des rôles d’accès pour attribuer l’accès aux ressources de stockage en fonction des tâches spécifiques que les utilisateurs doivent effectuer.  Par exemple, si un utilisateur doit interagir avec les services de protection contre les ransomwares, il doit disposer d'un rôle d'accès qui inclut des autorisations d'affichage ou d'administration pour le service de protection contre les ransomwares pour le projet pour lequel le rôle d'accès est accordé.
+Utilisez des rôles d’accès pour attribuer l’accès aux ressources de stockage en fonction des tâches spécifiques que les utilisateurs doivent effectuer. Par exemple, si un utilisateur doit interagir avec Ransomware Resilience, il doit disposer d'un rôle d'accès qui inclut des autorisations d'affichage ou d'administration pour Ransomware Resilience pour le projet pour lequel le rôle d'accès est accordé.
 
 Attribuez des rôles aux utilisateurs en fonction de votre stratégie IAM pour une sécurité renforcée.  Les rôles IAM garantissent que les utilisateurs disposent uniquement de l’accès dont ils ont besoin.
 
@@ -45,7 +45,7 @@ Vous attribuez généralement un rôle lorsque vous ajoutez un membre à votre o
 
 Vous pouvez attribuer à un utilisateur un rôle d’accès pour votre organisation, votre dossier ou votre projet.
 
-Les membres peuvent avoir plusieurs rôles au sein du même projet et dans différents projets.  Par exemple, les petites organisations peuvent attribuer tous les rôles d’accès disponibles au même utilisateur, tandis que les grandes organisations peuvent demander aux utilisateurs d’effectuer des tâches plus spécialisées.  Vous pouvez également attribuer à un utilisateur le rôle d’administrateur de protection contre les ransomwares pour une organisation.  Dans cet exemple, l’utilisateur serait en mesure d’effectuer des tâches de protection contre les ransomwares sur tous les projets au sein de votre organisation.
+Les membres peuvent avoir plusieurs rôles au sein du même projet et dans différents projets. Par exemple, les petites organisations peuvent attribuer tous les rôles d’accès disponibles au même utilisateur, tandis que les grandes organisations peuvent demander aux utilisateurs d’effectuer des tâches plus spécialisées. Vous pouvez également attribuer à un utilisateur le rôle d’administrateur Ransomware Resilience pour une organisation.  Dans cet exemple, l’utilisateur serait en mesure d’effectuer des tâches de résilience aux ransomwares sur tous les projets au sein de votre organisation.
 
 Votre stratégie de rôle d’accès doit s’aligner sur la manière dont vous avez organisé vos ressources NetApp .
 

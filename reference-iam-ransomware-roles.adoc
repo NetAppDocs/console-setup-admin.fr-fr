@@ -14,7 +14,15 @@ summary: 'dans NetApp Console, vous pouvez attribuer des rôles pour permettre a
 
 
 [role="lead"]
-Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience.  Les deux rôles sont administrateur de protection contre les ransomwares et visualiseur de protection contre les ransomwares.  La principale différence entre les deux rôles réside dans les actions qu’ils peuvent entreprendre dans Ransomware Resilience.
+Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience. Ransomware Resilience prend en charge les rôles suivants :
+
+* Administrateur de la résilience aux ransomwares
+* Visionneuse de résilience aux ransomwares
+* Comportement utilisateur de Ransomware Resilience administrateur
+* Visualiseur de comportement utilisateur de Ransomware Resilience
+
+
+Les rôles confèrent différents accès aux paramètres et aux actions.  Pour configurer ou afficher une activité de comportement utilisateur suspecte, vous devez utiliser l’un des rôles de comportement utilisateur.
 
 Le tableau suivant montre les actions que chaque rôle peut effectuer.
 

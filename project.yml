@@ -154,7 +154,7 @@ sidebar:
             url: "/reference-iam-backup-rec-roles.html"
           - title: Rôles de reprise après sinistre
             url: "/reference-iam-disaster-rec-roles.html"
-          - title: Rôles de protection contre les ransomwares
+          - title: Rôles de résilience aux ransomwares
             url: "/reference-iam-ransomware-roles.html"
     - title: Organisations partenaires
       entries:

@@ -1298,7 +1298,6 @@
   <block id="c7a576f5db262c0475afa4a53822979e" category="list-text">Efficacité économique ^1^</block>
   <block id="390e388eccc77b388b4d54d73b76f902" category="list-text">Compartiments de stockage Google Cloud</block>
   <block id="016d4dd0efd43648613b0639e13ba2c7" category="list-text">Intégration du cluster ONTAP sur site avec les services de données NetApp</block>
-  <block id="cf399270632323e6349a7298f0e7eb09" category="list-text">Résilience aux ransomwares NetApp</block>
   <block id="a94a2dfcff08cd86c973716edaf32722" category="list-text">NetApp Cloud Tiering</block>
   <block id="6f267103f7f652e22e0ead9f66014cd4" category="list-text">NetApp Volume Caching</block>
   <block id="06f4d4213c3d87db39929c4ce6ffcc0f" category="paragraph">^1^ Vous pouvez accéder à ces services sans agent de console, mais un agent de console est requis pour lancer des actions.</block>
@@ -2214,7 +2213,6 @@
   <block id="065933ac7339c32c2a386f3f69e4fd61" category="list-text"><block ref="065933ac7339c32c2a386f3f69e4fd61" category="inline-link-macro-rx"></block></block>
   <block id="470bbf3695958272c2830107baeb6411" category="summary">dans NetApp Console, vous pouvez attribuer des rôles pour permettre aux utilisateurs d'accéder à NetApp Ransomware Resilience.</block>
   <block id="5f87170a21a0b0d135060af816ac1433" category="doc">Rôles d'accès à la résilience contre les ransomwares pour la NetApp Console</block>
-  <block id="9d9ae6ee36b5e9aae30cd19d4d3c6b92" category="paragraph">Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience.  Les deux rôles sont administrateur de protection contre les ransomwares et visualiseur de protection contre les ransomwares.  La principale différence entre les deux rôles réside dans les actions qu’ils peuvent entreprendre dans Ransomware Resilience.</block>
   <block id="e6d88107afe61c1a78c0dac0689d8fac" category="paragraph">Le tableau suivant montre les actions que chaque rôle peut effectuer.</block>
   <block id="2961ef9224153d664a9bde6ee6ef2570" category="cell">Sur le tableau de bord, mettre à jour le statut de la recommandation</block>
   <block id="bb73fa2a07d0c544491039dc1ffed7b8" category="cell">Initier la redécouverte des charges de travail</block>
@@ -4005,8 +4003,6 @@
   <block id="cf3b3d414366a26f5b43041b5056897c" category="summary">Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.</block>
   <block id="14750286cb2a5a61bf62b65d9b9d2112" category="doc">Utiliser des rôles pour gérer l'accès des utilisateurs aux ressources de la NetApp Console</block>
   <block id="5f24947dab075e3413b914aa36df023a" category="paragraph">Dans la console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.</block>
-  <block id="e5bb4954536b904550d932928f88306d" category="paragraph">Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs.  Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier.  Par exemple, vous pouvez attribuer à un utilisateur le rôle d’administrateur de protection contre les ransomwares pour un projet et le rôle d’administrateur SnapCenter pour un autre projet.  Alternativement, si un utilisateur a besoin du rôle d’administrateur de classification pour tous les projets d’un dossier spécifique, vous pouvez lui attribuer ce rôle au niveau du dossier.</block>
-  <block id="982e57f560511ceb443082e656219246" category="paragraph">Utilisez des rôles d’accès pour attribuer l’accès aux ressources de stockage en fonction des tâches spécifiques que les utilisateurs doivent effectuer.  Par exemple, si un utilisateur doit interagir avec les services de protection contre les ransomwares, il doit disposer d'un rôle d'accès qui inclut des autorisations d'affichage ou d'administration pour le service de protection contre les ransomwares pour le projet pour lequel le rôle d'accès est accordé.</block>
   <block id="61258c54d2a7f09077a72a4eeb56874d" category="paragraph">Attribuez des rôles aux utilisateurs en fonction de votre stratégie IAM pour une sécurité renforcée.  Les rôles IAM garantissent que les utilisateurs disposent uniquement de l’accès dont ils ont besoin.</block>
   <block id="3908f1e42aa5b81b8316befd30a6965d" category="inline-link-macro">Apprenez à organiser vos ressources avec des dossiers et des projets.</block>
   <block id="ecdeffad8e53c7c9b1fb61f02a3cb5d1" category="admonition">N'oubliez pas que vous ne pouvez pas accorder directement l'accès aux ressources.  Affectez d’abord les ressources aux projets.  Pensez à configurer votre hiérarchie de ressources avant d’attribuer l’accès aux utilisateurs.<block ref="122b4639308e055d5bdfeb8a65e1794d" category="inline-link-macro-rx"></block></block>
@@ -4016,7 +4012,6 @@
   <block id="12815307393fa19648b391d49b4282e4" category="section-title">Ajouter un rôle d'accès à un membre</block>
   <block id="9a9b4b286a389bc98dfdeb3214c134a1" category="paragraph">Vous attribuez généralement un rôle lorsque vous ajoutez un membre à votre organisation, mais vous pouvez le mettre à jour à tout moment en supprimant ou en ajoutant des rôles.</block>
   <block id="ba364a79f6fbfab0c8591198ecfd87cc" category="paragraph">Vous pouvez attribuer à un utilisateur un rôle d’accès pour votre organisation, votre dossier ou votre projet.</block>
-  <block id="9e9b03c43a95d80b4d040ec538e41373" category="paragraph">Les membres peuvent avoir plusieurs rôles au sein du même projet et dans différents projets.  Par exemple, les petites organisations peuvent attribuer tous les rôles d’accès disponibles au même utilisateur, tandis que les grandes organisations peuvent demander aux utilisateurs d’effectuer des tâches plus spécialisées.  Vous pouvez également attribuer à un utilisateur le rôle d’administrateur de protection contre les ransomwares pour une organisation.  Dans cet exemple, l’utilisateur serait en mesure d’effectuer des tâches de protection contre les ransomwares sur tous les projets au sein de votre organisation.</block>
   <block id="7a43b6f649f8cf73a12056888057076b" category="paragraph">Votre stratégie de rôle d’accès doit s’aligner sur la manière dont vous avez organisé vos ressources NetApp .</block>
   <block id="20c36cd6c77d407b6118c77ebe403934" category="admonition">Un membre auquel est attribué le rôle d'administrateur d'organisation ne peut pas se voir attribuer de rôles supplémentaires.  Ils disposent déjà d’autorisations sur l’ensemble de l’organisation.  Un membre doté du rôle Dossier ou Projet ne peut se voir attribuer aucun autre rôle dans le dossier ou le projet où il possède déjà ce rôle.  Ces deux rôles donnent accès à tous les services dans le cadre qui leur est attribué.</block>
   <block id="068135177d9d1843118236d5f10dc5b7" category="section-title">Modifier le rôle attribué à un membre</block>
@@ -4978,7 +4973,6 @@
   <block id="99cee3b8f810202d675de978cef4f9da" category="cell">Oui<block ref="514d17d2eb0e043089e13542661abd63" category="inline-link-rx"></block></block>
   <block id="e216b7a924341f796bca310d1d812baf" category="cell">Copier et synchroniser</block>
   <block id="645a84975202e30700b572b49a5ee29d" category="cell">Reprise après sinistre</block>
-  <block id="7478f8f98c41fc2f5747e6f31892fe6f" category="cell">Protection contre les ransomwares</block>
   <block id="ff45d71e69fb5930de79de7c94326d7b" category="cell">Mise en cache des volumes</block>
   <block id="35ccbae2ce9b9594b9af9196a3bed361" category="cell">Usine de charge de travail</block>
   <block id="3d1f92a565d3b1a61880236e33c49bf3" category="cell">Chronologie</block>
@@ -5531,7 +5525,6 @@
   <block id="35cbd88f43ce85ef7ed6866daa2c6066" category="sidebar">Rôles des services de données</block>
   <block id="38dd106db79e0463f64b237d9de58a8e" category="sidebar">Rôles de sauvegarde et de récupération</block>
   <block id="2879d04f18c304fb2a3d5cf00deff6e2" category="sidebar">Rôles de reprise après sinistre</block>
-  <block id="0310ff69ee2ad8b9fa1fbf2f23946a8e" category="sidebar">Rôles de protection contre les ransomwares</block>
   <block id="4dd7bf281f080fe43c775a741f9f2cc1" category="sidebar">Organisations partenaires</block>
   <block id="d6cca643be1ccfaa32ccfdc068061f15" category="sidebar">En savoir plus sur les partenariats organisationnels</block>
   <block id="d88a163f40de4d60f08d7006db6dbc69" category="sidebar">Créer un partenariat organisationnel</block>
@@ -5564,4 +5557,11 @@
   <block id="abfd94e3956e611a257a32b0f396af25" category="sidebar">Règles de pare-feu de l'agent de console dans Google Cloud</block>
   <block id="e4c0002e4f9f19273bc004922899fb85" category="sidebar">Accès réseau à la console (hérité)</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Connaissances et soutien</block>
+  <block id="253b718b7b0bb8f190e2ebe1c721295e" category="paragraph">Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience. Ransomware Resilience prend en charge les rôles suivants :</block>
+  <block id="b7055c90f2b38b6e2d3cddd08ec5c936" category="paragraph">Les rôles confèrent différents accès aux paramètres et aux actions.  Pour configurer ou afficher une activité de comportement utilisateur suspecte, vous devez utiliser l’un des rôles de comportement utilisateur.</block>
+  <block id="f75989b6aa2a7a3c16b04e40aebffd8f" category="paragraph">Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs. Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier. Par exemple, vous pouvez attribuer à un utilisateur le rôle d’administrateur Ransomware Resilience pour un projet et le rôle d’administrateur SnapCenter pour un autre projet. Alternativement, si un utilisateur a besoin du rôle d’administrateur de classification pour tous les projets d’un dossier spécifique, vous pouvez lui attribuer ce rôle au niveau du dossier.</block>
+  <block id="e55d79a6c1774cf0f39d67ca04d67bc0" category="paragraph">Utilisez des rôles d’accès pour attribuer l’accès aux ressources de stockage en fonction des tâches spécifiques que les utilisateurs doivent effectuer. Par exemple, si un utilisateur doit interagir avec Ransomware Resilience, il doit disposer d'un rôle d'accès qui inclut des autorisations d'affichage ou d'administration pour Ransomware Resilience pour le projet pour lequel le rôle d'accès est accordé.</block>
+  <block id="e6bf2bfbd541e12c3cb2fca42df08ed3" category="paragraph">Les membres peuvent avoir plusieurs rôles au sein du même projet et dans différents projets. Par exemple, les petites organisations peuvent attribuer tous les rôles d’accès disponibles au même utilisateur, tandis que les grandes organisations peuvent demander aux utilisateurs d’effectuer des tâches plus spécialisées. Vous pouvez également attribuer à un utilisateur le rôle d’administrateur Ransomware Resilience pour une organisation.  Dans cet exemple, l’utilisateur serait en mesure d’effectuer des tâches de résilience aux ransomwares sur tous les projets au sein de votre organisation.</block>
+  <block id="c36b12344113082dcf8a9786e36a3536" category="cell">Résilience aux ransomwares</block>
+  <block id="16a7e3e925ade6eef4533f96172d423f" category="sidebar">Rôles de résilience aux ransomwares</block>
 </blocks>

@@ -85,7 +85,7 @@ Notez que certains services peuvent être pris en charge avec des limitations.
 | Efficacité économique | Non 
 
 
-| Protection contre les ransomwares | Non 
+| Résilience aux ransomwares | Non 
 
 
 | Réplication | Oui 
