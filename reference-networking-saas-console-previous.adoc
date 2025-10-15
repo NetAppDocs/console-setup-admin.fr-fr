@@ -225,3 +225,38 @@ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre
 
 
 == Points de terminaison d'agent sur site
+
+[cols="2*"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://support.netapp.com \ https://mysupport.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp . 
+
+
+| \https://\*.api.bluexp.netapp.com \ https://api.bluexp.netapp.com \https://*.cloudmanager.cloud.netapp.com \ https://cloudmanager.cloud.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
+
+
+ a| 
+Choisissez entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée)
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2, sauf si vous utilisez Ransomware Resilience ou Backup and Recovery.  Notez les points suivants à propos de ces points de terminaison :
+
+* Les points de terminaison de l'option 1 sont pris en charge dans la version 3.9.47 et supérieure.  Les versions antérieures à la version 3.9.47 ne prennent pas en charge la compatibilité descendante.
+* L'agent de console initie d'abord le contact avec les points de terminaison de l'option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+|===
