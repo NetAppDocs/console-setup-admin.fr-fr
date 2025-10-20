@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-iam-ransomware-roles.html 
 keywords: predefined roles, iam roles, organization admin, folder or project admin, identity and access management, access roles, admin, 
-summary: 'Ransomware Resilience propose différents rôles d"utilisateur pour gérer l"accès aux privilèges, aux actions et aux rapports.' 
+summary: 'Ransomware Resilience propose différents rôles d"utilisateur pour gérer l"accès aux paramètres, aux actions et aux rapports.' 
 ---
 = Rôles d'accès à la résilience contre les ransomwares pour la NetApp Console
 :hardbreaks:
@@ -16,17 +16,28 @@ summary: 'Ransomware Resilience propose différents rôles d"utilisateur pour g�
 [role="lead"]
 Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience. Ransomware Resilience prend en charge les rôles suivants :
 
-* Administrateur de la résilience aux ransomwares
-* Visionneuse de résilience aux ransomwares
-* Comportement utilisateur de Ransomware Resilience administrateur
-* Visualiseur de comportement utilisateur de Ransomware Resilience
+**Rôles de base**
+
+* Administrateur de la résilience aux ransomwares : configurez les paramètres de résilience aux ransomwares ; examinez et répondez aux alertes de chiffrement.
+* Visionneuse de résilience aux ransomwares : affichez les incidents de chiffrement, les rapports et les paramètres de découverte
 
 
-Les rôles confèrent différents niveaux d’accès aux paramètres et aux actions.
+**Rôles d'activité de comportement de l'utilisateur**link:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["Détection d'activité utilisateur suspecte"^] les alertes offrent une visibilité sur les données telles que les événements d'activité des fichiers ; ces alertes incluent les noms de fichiers et les actions de fichiers (telles que la lecture, l'écriture, la suppression, le renommage) effectuées par l'utilisateur.  Pour limiter la visibilité de ces données, seuls les utilisateurs disposant de ces rôles peuvent gérer ou visualiser ces alertes.
 
-Les actions disponibles pour les rôles d'administrateur du comportement utilisateur et de visualiseur du comportement utilisateur de Ransomware Resilience sont limitées à link:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["activité suspecte de l'utilisateur"^]. Ces rôles sont conçus pour être ajoutés aux rôles d’administrateur ou de spectateur de Ransomware Resilience. Pour configurer les paramètres de comportement utilisateur suspect et répondre aux alertes, un utilisateur doit disposer du rôle d'administrateur du comportement utilisateur Ransomware Resilience. Pour afficher uniquement les alertes de comportement utilisateur suspect, un utilisateur doit disposer du rôle d'observateur de comportement utilisateur Ransomware Resilience.
+* Administrateur du comportement utilisateur de Ransomware Resilience - Activez la détection d'activité utilisateur suspecte, enquêtez et répondez aux alertes d'activité utilisateur suspecte
+* Visualiseur de comportement utilisateur Ransomware Resilience : affichez les alertes d'activité utilisateur suspecte
 
-Le tableau suivant différencie les actions disponibles pour les rôles d’administrateur et de visualiseur de Ransomware Resilience.
+
+
+NOTE: Les rôles de comportement utilisateur ne sont pas des rôles autonomes ; ils sont conçus pour être ajoutés aux rôles d’administrateur ou de spectateur de Ransomware Resilience. Pour plus d'informations, voir <<Rôles de comportement des utilisateurs>>.
+
+Consultez les tableaux suivants pour des descriptions détaillées de chaque rôle.
+
+
+
+== Rôles de base
+
+Le tableau suivant décrit les actions disponibles pour les rôles d’administrateur et de visualiseur de Ransomware Resilience.
 
 [cols="40,20a,20a"]
 |===
@@ -71,7 +82,7 @@ Non
 3+| *Dans l'onglet Protéger* : 
 
 
-| Ajouter, modifier ou supprimer des plans de protection  a| 
+| Ajouter, modifier ou supprimer des plans de protection pour les politiques de _chiffrement_  a| 
 Oui
  a| 
 Non
@@ -85,7 +96,7 @@ Non
 
 
 
-| Identifier l'exposition aux données sensibles  a| 
+| Identifier l'exposition aux données sensibles grâce à la classification des données  a| 
 Oui
  a| 
 Non
@@ -113,7 +124,7 @@ Oui
 
 
 
-| Créer, modifier ou supprimer un groupe de protection  a| 
+| Créer, modifier ou supprimer des groupes de protection  a| 
 Oui
  a| 
 Non
@@ -130,64 +141,57 @@ Oui
 3+| *Dans l'onglet Alertes* : 
 
 
-| Afficher les alertes et les détails des alertes  a| 
+| Afficher les alertes de chiffrement et les détails des alertes  a| 
 Oui
  a| 
 Oui
 
 
 
-| Modifier le statut de l'incident  a| 
-Oui
- a| 
-Non
-
-
-
-| Marquer l'alerte pour la récupération  a| 
+| Modifier le statut de l'incident de chiffrement  a| 
 Oui
  a| 
 Non
 
 
 
-| Afficher les détails de l'incident  a| 
-Oui
- a| 
-Oui
-
-
-
-| Rejeter ou résoudre les incidents  a| 
+| Marquer l'alerte de chiffrement pour la récupération  a| 
 Oui
  a| 
 Non
 
 
 
-| Bloquer l'utilisateur  a| 
-Oui
- a| 
-Non
-
-
-
-| Obtenez la liste complète des fichiers concernés  a| 
-Oui
- a| 
-Non
-
-
-
-| Télécharger les données d'alertes  a| 
+| Afficher les détails de l'incident de chiffrement  a| 
 Oui
  a| 
 Oui
 
 
 
-| Afficher les activités suspectes des utilisateurs  a| 
+| Ignorer ou résoudre les incidents de chiffrement  a| 
+Oui
+ a| 
 Non
+
+
+
+| Obtenez la liste complète des fichiers impactés par l'événement de chiffrement  a| 
+Oui
+ a| 
+Non
+
+
+
+| Télécharger les données d'alertes d'événements de chiffrement  a| 
+Oui
+ a| 
+Oui
+
+
+
+| Bloquer l'utilisateur (avec la configuration de l'agent Workload Security)  a| 
+Oui
  a| 
 Non
 
@@ -196,28 +200,28 @@ Non
 3+| *Dans l'onglet Récupérer* : 
 
 
-| Télécharger les fichiers concernés  a| 
+| Télécharger les fichiers impactés par l'événement de chiffrement  a| 
 Oui
  a| 
 Non
 
 
 
-| Restaurer la charge de travail  a| 
+| Restaurer la charge de travail à partir d'un événement de chiffrement  a| 
 Oui
  a| 
 Non
 
 
 
-| Télécharger les données de récupération  a| 
+| Télécharger les données de récupération à partir de l'événement de chiffrement  a| 
 Oui
  a| 
 Oui
 
 
 
-| Télécharger les rapports  a| 
+| Télécharger les rapports d'événements de chiffrement  a| 
 Oui
  a| 
 Oui
@@ -262,21 +266,7 @@ Non
 
 
 
-| Commencer l'exercice de préparation  a| 
-Oui
- a| 
-Non
-
-
-
-| Exercice de préparation à la réinitialisation  a| 
-Oui
- a| 
-Non
-
-
-
-| Modifier l'exercice de préparation  a| 
+| Démarrer, réinitialiser ou modifier l'exercice de préparation  a| 
 Oui
  a| 
 Non
@@ -304,17 +294,155 @@ Oui
 
 
 
-| Configurer les paramètres de comportement suspect des utilisateurs  a| 
-Non
+3+| *Dans l'onglet Rapports* : 
+
+
+| Télécharger les rapports  a| 
+Oui
+ a| 
+Oui
+
+|===
+
+
+== Rôles de comportement des utilisateurs
+
+Pour configurer les paramètres de comportement utilisateur suspect et répondre aux alertes, un utilisateur doit disposer du rôle d'administrateur du comportement utilisateur Ransomware Resilience. Pour afficher uniquement les alertes de comportement utilisateur suspect, un utilisateur doit disposer du rôle d'observateur de comportement utilisateur Ransomware Resilience.
+
+Les rôles de comportement des utilisateurs doivent être conférés aux utilisateurs disposant de privilèges d'administrateur ou de spectateur Ransomware Resilience existants qui ont besoin d'accéder àlink:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["paramètres et alertes d'activité utilisateur suspecte"^] .  Un utilisateur disposant du rôle d’administrateur Ransomware Resilience, par exemple, doit recevoir le rôle d’administrateur du comportement utilisateur Ransomware Resilience pour configurer les agents d’activité utilisateur et bloquer ou débloquer les utilisateurs.  Le rôle d’administrateur du comportement utilisateur de Ransomware Resilience ne doit pas être conféré à un visualiseur de Ransomware Resilience.
+
+Le tableau suivant décrit les actions disponibles pour les rôles d'administrateur et de spectateur du comportement utilisateur de Ransomware Resilience.
+
+[cols="40,20a,20a"]
+|===
+| Fonctionnalité et action | Comportement utilisateur de Ransomware Resilience administrateur | Visualiseur de comportement utilisateur de Ransomware Resilience 
+
+
+3+| *Dans l'onglet Paramètres* : 
+
+
+| Créer, modifier ou supprimer un agent d'activité utilisateur  a| 
+Oui
  a| 
 Non
 
 
 
-3+| *Dans l'onglet Rapports* : 
+| Créer ou supprimer un connecteur d'annuaire utilisateur  a| 
+Oui
+ a| 
+Non
 
 
-| Télécharger les rapports  a| 
+
+| Mettre en pause ou reprendre la collecte de données  a| 
+Oui
+ a| 
+Non
+
+
+
+| Exécuter un exercice de préparation aux violations de données  a| 
+Oui
+ a| 
+Non
+
+
+
+3+| *Dans l'onglet Protéger* : 
+
+
+| Ajouter, modifier ou supprimer des plans de protection pour les politiques de _comportement utilisateur suspect_  a| 
+Oui
+ a| 
+Non
+
+
+
+3+| *Dans l'onglet Alertes* : 
+
+
+| Afficher les alertes d'activité des utilisateurs et les détails des alertes  a| 
+Oui
+ a| 
+Oui
+
+
+
+| Modifier le statut de l'incident d'activité de l'utilisateur  a| 
+Oui
+ a| 
+Non
+
+
+
+| Marquer l'alerte d'activité de l'utilisateur pour la récupération  a| 
+Oui
+ a| 
+Non
+
+
+
+| Afficher les détails des incidents liés à l'activité de l'utilisateur  a| 
+Oui
+ a| 
+Oui
+
+
+
+| Rejeter ou résoudre les incidents d'activité des utilisateurs  a| 
+Oui
+ a| 
+Non
+
+
+
+| Obtenez la liste complète des fichiers impactés par l'utilisateur suspect  a| 
+Oui
+ a| 
+Oui
+
+
+
+| Télécharger les données d'alertes d'événements d'activité utilisateur  a| 
+Oui
+ a| 
+Oui
+
+
+
+| Bloquer ou débloquer l'utilisateur  a| 
+Oui
+ a| 
+Non
+
+
+
+3+| *Dans l'onglet Récupérer* : 
+
+
+| Télécharger les fichiers impactés par l'événement d'activité utilisateur  a| 
+Oui
+ a| 
+Non
+
+
+
+| Restaurer la charge de travail à partir d'un événement d'activité utilisateur  a| 
+Oui
+ a| 
+Non
+
+
+
+| Télécharger les données de récupération à partir de l'événement d'activité de l'utilisateur  a| 
+Oui
+ a| 
+Oui
+
+
+
+| Télécharger les rapports d'événements d'activité utilisateur  a| 
 Oui
  a| 
 Oui
