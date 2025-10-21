@@ -14,7 +14,7 @@ summary: 'L"agent de console nécessite des autorisations pour effectuer des act
 
 
 [role="lead"]
-La NetApp Console nécessite des autorisations pour effectuer des actions dans Google Cloud.  Ces autorisations sont incluses dans un rôle personnalisé fourni par NetApp.  Vous devez comprendre ce que l’agent fait avec ces autorisations.
+L'agent de la console nécessite des autorisations pour effectuer des actions dans Google Cloud. Ces autorisations sont incluses dans un rôle personnalisé fourni par NetApp. Vous devez comprendre ce que l’agent fait avec ces autorisations.
 
 
 
@@ -33,7 +33,7 @@ Vous devez également vous assurer que le rôle est à jour à mesure que de nou
 [source, yaml]
 ----
 title: NetApp Console agent
-description: Permissions for the service account associated with the Console agent instance.
+description: Permissions for the service account associated with the Console agent.
 stage: GA
 includedPermissions:
 - iam.serviceAccounts.actAs

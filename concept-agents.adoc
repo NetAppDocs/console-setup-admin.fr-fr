@@ -136,7 +136,7 @@ Vous pouvez installer un agent de console directement depuis la console, depuis 
 
 == Autorisations Cloud
 
-Vous avez besoin d’autorisations spécifiques pour créer l’agent de console directement à partir de la NetApp Console et d’un autre ensemble d’autorisations pour l’instance de l’agent de console elle-même.  Si vous créez l’agent de console dans AWS ou Azure directement à partir de la console, la console crée l’agent de console avec les autorisations dont elle a besoin.
+Vous avez besoin d’autorisations spécifiques pour créer l’agent de console directement à partir de la NetApp Console et d’un autre ensemble d’autorisations pour l’agent de console lui-même. Si vous créez l’agent de console dans AWS ou Azure directement à partir de la console, la console crée l’agent de console avec les autorisations dont elle a besoin.
 
 Lorsque vous utilisez la console en mode standard, la manière dont vous fournissez les autorisations dépend de la manière dont vous prévoyez de créer l'agent de la console.
 

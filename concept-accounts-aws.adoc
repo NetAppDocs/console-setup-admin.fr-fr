@@ -20,11 +20,11 @@ Découvrez comment la NetApp Console utilise les informations d’identification
 
 == Informations d'identification AWS initiales
 
-Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM.  La méthode d’authentification doit disposer des autorisations pour déployer la console dans AWS.  Les autorisations requises sont répertoriées dans le lien : task-install-agent-aws-the Console.html#console-permissions-aws[Politique de déploiement de l'agent pour AWS].
+Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM. La méthode d’authentification doit disposer des autorisations pour déployer la console dans AWS. Les autorisations requises sont répertoriées dans le lien : task-install-agent-aws-the Console.html#aws-permissions-agent[Politique de déploiement de l'agent pour AWS].
 
-Lorsque la console lance l’instance de l’agent de console dans AWS, elle crée un rôle IAM et un profil d’instance pour l’instance.  Il attache également une politique qui fournit à l’agent de la console des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Examiner comment la console utilise les autorisations"] .
+Lorsque la console lance l’agent de console dans AWS, elle crée un rôle IAM et un profil pour l’agent. Il attache également une politique qui fournit à l’agent de la console des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Vérifiez comment l'agent utilise les autorisations"].
 
-image:diagram_permissions_initial_aws.png["Une image conceptuelle qui montre la console déployant l’agent de console dans un compte AWS.  Une politique IAM est attribuée à un rôle IAM, qui est attaché à l’instance de la console."]
+image:diagram_permissions_initial_aws.png["Une image conceptuelle qui montre la console déployant l’agent de console dans un compte AWS. Une politique IAM est attribuée à un rôle IAM, qui est attaché à la console."]
 
 Si vous ajoutez un nouveau système Cloud Volumes ONTAP , la console sélectionne ces informations d’identification AWS par défaut :
 
@@ -99,7 +99,7 @@ Les questions suivantes concernent les informations d’identification et les ab
 
 === Comment puis-je faire pivoter mes informations d’identification AWS en toute sécurité ?
 
-Comme décrit dans les sections ci-dessus, la console vous permet de fournir des informations d'identification AWS de plusieurs manières : un rôle IAM associé à l'instance de l'agent de la console, en assumant un rôle IAM dans un compte approuvé ou en fournissant des clés d'accès AWS.
+Comme décrit dans les sections ci-dessus, la console vous permet de fournir des informations d'identification AWS de plusieurs manières : un rôle IAM associé à l'agent de la console, en assumant un rôle IAM dans un compte approuvé ou en fournissant des clés d'accès AWS.
 
 Avec les deux premières options, la console utilise le service AWS Security Token pour obtenir des informations d’identification temporaires qui changent constamment.  Ce processus est la meilleure pratique : il est automatique et sécurisé.
 

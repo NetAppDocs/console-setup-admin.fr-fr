@@ -159,7 +159,7 @@ Vous devez implémenter cette exigence de mise en réseau après avoir créé l�
 
 Vous devez créer un rôle personnalisé disposant des autorisations nécessaires pour déployer l’agent de console dans Azure.
 
-Créez un rôle personnalisé Azure que vous pouvez attribuer à votre compte Azure ou à un principal de service Microsoft Entra.  La console s’authentifie auprès d’Azure et utilise ces autorisations pour créer l’instance de l’agent de la console en votre nom.
+Créez un rôle personnalisé Azure que vous pouvez attribuer à votre compte Azure ou à un principal de service Microsoft Entra. La console s’authentifie auprès d’Azure et utilise ces autorisations pour créer l’agent de console en votre nom.
 
 La console déploie la machine virtuelle de l'agent de console dans Azure, active un https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] , crée le rôle requis et l'attribue à la machine virtuelle. link:reference-permissions-azure.html["Examiner comment la console utilise les autorisations"] .
 
@@ -444,7 +444,7 @@ https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect?tabs=L
 
 * Si vous ne souhaitez pas que la console crée automatiquement un rôle Azure pour l'agent de la console, vous devrez créer le vôtre.link:reference-permissions-azure.html["en utilisant la politique sur cette page"] .
 +
-Ces autorisations concernent l’instance de l’agent de console elle-même.  Il s’agit d’un ensemble d’autorisations différent de celui que vous avez précédemment configuré pour déployer la machine virtuelle de l’agent de console.
+Ces autorisations concernent l’agent de console lui-même. Il s’agit d’un ensemble d’autorisations différent de celui que vous avez précédemment configuré pour déployer la machine virtuelle de l’agent de console.
 
 
 
@@ -481,7 +481,7 @@ La méthode d’authentification de la machine virtuelle peut être un mot de pa
 +
 https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect?tabs=Linux["En savoir plus sur la connexion à une machine virtuelle Linux dans Azure"^]
 
-. Sur la page *Détails*, saisissez un nom pour l'instance, spécifiez les balises et choisissez si vous souhaitez que la console crée un nouveau rôle doté des autorisations requises ou si vous souhaitez sélectionner un rôle existant que vous avez configuré aveclink:reference-permissions-azure.html["les autorisations requises"] .
+. Sur la page *Détails*, saisissez un nom pour l'agent, spécifiez les balises et choisissez si vous souhaitez que la console crée un nouveau rôle doté des autorisations requises ou si vous souhaitez sélectionner un rôle existant que vous avez configuré aveclink:reference-permissions-azure.html["les autorisations requises"] .
 +
 Notez que vous pouvez choisir les abonnements Azure associés à ce rôle.  Chaque abonnement que vous choisissez fournit à l'agent de la console des autorisations pour gérer les ressources de cet abonnement (par exemple, Cloud Volumes ONTAP).
 
@@ -506,7 +506,7 @@ Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html
 ====
 . Sélectionnez *Ajouter*.
 +
-La console prépare l'instance en 10 minutes environ.  Restez sur la page jusqu’à ce que le processus soit terminé.
+La console prépare l'agent en 10 minutes environ. Restez sur la page jusqu’à ce que le processus soit terminé.
 
 
 
@@ -516,4 +516,4 @@ Une fois le processus terminé, l’agent de la console peut être utilisé à p
 
 NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
 
-Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où vous avez créé l’agent de console, vous verrez un système de stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la NetApp Console"^]
+Si vous disposez d’un stockage Blob Azure dans le même compte Azure où vous avez créé l’agent de console, vous verrez le stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la NetApp Console"^]

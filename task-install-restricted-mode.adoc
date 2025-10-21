@@ -38,9 +38,9 @@ link:task-prepare-restricted-mode.html["En savoir plus sur les exigences de mise
 link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations AWS"]
 
 * Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.
-* Une compréhension des exigences en matière de CPU et de RAM pour l’instance.
+* Une compréhension des exigences en matière de CPU et de RAM pour l'agent.
 +
-link:task-prepare-restricted-mode.html#step-3-review-host-requirements["Examen des exigences de l'instance"] .
+link:task-prepare-restricted-mode.html#step-3-review-host-requirements["Examen des exigences des agents"].
 
 * Une paire de clés pour l'instance EC2.
 
@@ -85,7 +85,7 @@ Si vous souhaitez activer le chiffrement Amazon EBS sur le volume racine, sélec
 
 
 .Résultat
-AWS lance le logiciel avec les paramètres spécifiés.  L'instance de l'agent de console et le logiciel s'exécutent en environ cinq minutes.
+AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.
 
 .Quelle est la prochaine étape ?
 Configurer la NetApp Console.
@@ -139,7 +139,7 @@ image:screenshot_aws_iam_role.gif["Une capture d’écran qui montre les champs 
 
 
 .Résultat
-AWS lance le logiciel avec les paramètres spécifiés.  L'instance de l'agent de console et le logiciel s'exécutent en environ cinq minutes.
+AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.
 
 .Quelle est la prochaine étape ?
 Configurer la console.
@@ -180,7 +180,7 @@ Notez les points suivants lorsque vous configurez la machine virtuelle :
 image:screenshot-azure-sku.png["Une capture d’écran de la création d’une nouvelle adresse IP dans Azure qui vous permet de choisir Basique dans le champ SKU."]
 
 +
-Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique.  Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échoueront.
+Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique. Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échouent.
 
 +
 https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku["Documentation Azure : Référence IP publique"^]

@@ -420,7 +420,7 @@ Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html
 ====
 . Sélectionnez *Ajouter*.
 +
-L'instance est prête dans environ 10 minutes ; restez sur la page jusqu'à ce que le processus soit terminé.
+L'agent est prêt dans environ 10 minutes ; restez sur la page jusqu'à ce que le processus soit terminé.
 
 
 

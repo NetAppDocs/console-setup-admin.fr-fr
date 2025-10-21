@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-permissions-aws.html 
 keywords: permissions, actions, aws, aws permissions, top secret, secret, aws top secret, aws secret, aws govcloud, govcloud, govcloud permissions, secret permissions, top secret permissions 
-summary: 'Lorsque la NetApp Console lance l"instance de l"agent dans AWS, elle attache une stratégie à l"instance qui fournit à l"agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS.  L"agent utilise les autorisations pour effectuer des appels d"API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion des clés, etc.' 
+summary: 'Lorsque la NetApp Console lance l"agent dans AWS, elle attache une stratégie à l"agent qui fournit à l"agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. L"agent utilise les autorisations pour effectuer des appels d"API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion des clés, etc.' 
 ---
 = Autorisations AWS pour l'agent de la console
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Lorsque la NetApp Console lance l"instance de l"agent dans AWS, elle a
 
 
 [role="lead"]
-Lorsque la NetApp Console lance une instance d'agent de console dans AWS, elle attache une stratégie à l'instance qui fournit à l'agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS.  L'agent utilise les autorisations pour effectuer des appels d'API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion de clés (KMS), etc.
+Lorsque la NetApp Console lance un agent de console dans AWS, elle attache une stratégie à l'agent qui fournit à l'agent des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. L'agent utilise les autorisations pour effectuer des appels d'API vers plusieurs services AWS, notamment EC2, S3, CloudFormation, IAM, le service de gestion de clés (KMS), etc.
 
 
 
@@ -1026,7 +1026,7 @@ L'agent effectue les requêtes API suivantes pour déployer et gérer Cloud Volu
 | Étiquetez les ressources avec les balises « WorkingEnvironment » et « WorkingEnvironmentId » qui sont utilisées pour la maintenance et l'allocation des coûts | ec2:Créer des balises | Oui | Oui | Non 
 
 
-.6+| Gérer les volumes EBS que Cloud Volumes ONTAP utilise comme stockage back-end | ec2:Créer un volume | Oui | Oui | Non 
+.6+| Gérer les volumes EBS que Cloud Volumes ONTAP utilise comme stockage backend | ec2:Créer un volume | Oui | Oui | Non 
 
 
 | ec2 : Décrire les volumes | Oui | Oui | Oui 

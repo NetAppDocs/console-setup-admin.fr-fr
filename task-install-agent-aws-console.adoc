@@ -150,13 +150,13 @@ Vous devrez implémenter cette exigence de mise en réseau après avoir créé l
 
 == Étape 2 : configurer les autorisations AWS pour l’agent de la console
 
-La console doit s’authentifier auprès d’AWS avant de pouvoir déployer l’instance de l’agent de console dans votre VPC.  Vous pouvez choisir l’une de ces méthodes d’authentification :
+La console doit s'authentifier auprès d'AWS avant de pouvoir déployer l'agent de console dans votre VPC. Vous pouvez choisir l’une de ces méthodes d’authentification :
 
 * Laissez la console assumer un rôle IAM disposant des autorisations requises
 * Fournissez une clé d'accès AWS et une clé secrète pour un utilisateur IAM disposant des autorisations requises
 
 
-Quelle que soit l’option choisie, la première étape consiste à créer une politique IAM.  Cette politique contient uniquement les autorisations nécessaires pour lancer l’instance de l’agent de console dans AWS à partir de la console.
+Quelle que soit l’option choisie, la première étape consiste à créer une politique IAM. Cette politique contient uniquement les autorisations nécessaires pour lancer l’agent de console dans AWS à partir de la console.
 
 Si nécessaire, vous pouvez restreindre la politique IAM en utilisant l'IAM `Condition` élément. https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html["Documentation AWS : élément de condition"^]
 
@@ -166,7 +166,7 @@ Si nécessaire, vous pouvez restreindre la politique IAM en utilisant l'IAM `Con
 . Sélectionnez *JSON*.
 . Copiez et collez la politique suivante :
 +
-Cette politique contient uniquement les autorisations nécessaires pour lancer l’instance de l’agent de console dans AWS à partir de la console.  Lorsque la console crée l'agent de console, elle applique un nouvel ensemble d'autorisations à l'instance de l'agent de console qui permet à l'agent de console de gérer les ressources AWS. link:reference-permissions-aws.html["Afficher les autorisations requises pour l'instance de l'agent de console elle-même"] .
+Cette politique contient uniquement les autorisations nécessaires pour lancer l’agent de console dans AWS à partir de la console.  Lorsque la console crée l'agent de console, elle applique un nouvel ensemble d'autorisations à l'agent de console qui permet à l'agent de console de gérer les ressources AWS. link:reference-permissions-aws.html["Afficher les autorisations requises pour l'agent de la console lui-même"].
 
 +
 [source, json]
@@ -283,7 +283,7 @@ Créez l’agent de console directement à partir de la console Web.
 
 .À propos de cette tâche
 * La création de l’agent de console à partir de la console déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut.  Ne passez pas à une instance EC2 plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
-* Lorsque la console crée l’agent de console, elle crée un rôle IAM et un profil d’instance pour l’instance.  Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources AWS.  Assurez-vous que le rôle est mis à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions futures. link:reference-permissions-aws.html["En savoir plus sur la politique IAM pour l'agent de console"] .
+* Lorsque la console crée l’agent de console, elle crée un rôle IAM et un profil pour l’agent. Ce rôle inclut des autorisations qui permettent à l’agent de la console de gérer les ressources AWS. Assurez-vous que le rôle est mis à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions futures. link:reference-permissions-aws.html["En savoir plus sur la politique IAM pour l'agent de console"].
 
 
 .Avant de commencer
@@ -309,13 +309,13 @@ TIP: Si vous choisissez *Assumer le rôle*, vous pouvez créer le premier ensemb
 
 . Sur la page *Détails*, fournissez des détails sur l’agent de la console.
 +
-** Entrez un nom pour l’instance.
-** Ajoutez des balises personnalisées (métadonnées) à l'instance.
+** Entrez un nom.
+** Ajouter des balises personnalisées (métadonnées).
 ** Choisissez si vous souhaitez que la console crée un nouveau rôle doté des autorisations requises ou si vous souhaitez sélectionner un rôle existant que vous avez configuré aveclink:reference-permissions-aws.html["les autorisations requises"] .
 ** Choisissez si vous souhaitez crypter les disques EBS de l'agent de console.  Vous avez la possibilité d’utiliser la clé de chiffrement par défaut ou d’utiliser une clé personnalisée.
 
 
-. Sur la page *Réseau*, spécifiez un VPC, un sous-réseau et une paire de clés pour l'instance, choisissez d'activer ou non une adresse IP publique et spécifiez éventuellement une configuration de proxy.
+. Sur la page *Réseau*, spécifiez un VPC, un sous-réseau et une paire de clés pour l'agent, choisissez d'activer ou non une adresse IP publique et spécifiez éventuellement une configuration de proxy.
 +
 Assurez-vous que vous disposez de la paire de clés correcte pour accéder à la machine virtuelle de l’agent de console.  Sans une paire de clés, vous ne pouvez pas y accéder.
 
@@ -336,7 +336,7 @@ Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html
 ====
 . Sélectionnez *Ajouter*.
 +
-La console prépare l'instance en 10 minutes environ.  Restez sur la page jusqu’à ce que le processus soit terminé.
+La console déploie l'agent en 10 minutes environ. Restez sur la page jusqu’à ce que le processus soit terminé.
 
 
 
