@@ -76,19 +76,15 @@ La console remplace l’abonnement existant pour toutes les informations d’ide
 Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
 
 *** Sélectionnez *Enregistrer*.
-+
-La vidéo suivante montre les étapes à suivre pour s'abonner à partir de Google Cloud Marketplace :
-
-+
-.Abonnez-vous à Google Cloud Marketplace
-video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
 
 
-.. Une fois ce processus terminé, revenez à la page Informations d’identification dans la console et sélectionnez ce nouvel abonnement.
+
+
+
+
+. Une fois ce processus terminé, revenez à la page Informations d’identification dans la console et sélectionnez ce nouvel abonnement.
 +
 image:screenshot_gcp_associate.gif["Une capture d’écran de la page d’attribution d’abonnement."]
-
-
 
 
 

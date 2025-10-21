@@ -30,12 +30,6 @@ La console remplace l’abonnement existant pour toutes les informations d’ide
 Pour toutes les autres organisations ou comptes, vous devrez associer manuellement l'abonnement en répétant ces étapes.
 
 *** Sélectionnez *Enregistrer*.
-+
-La vidéo suivante montre les étapes à suivre pour s'abonner à partir de la Place de marché Azure :
-
-+
-.Abonnez-vous aux NetApp Intelligent Services depuis la place de marché Azure
-video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
 
 
 
