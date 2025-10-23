@@ -311,6 +311,9 @@ Pour configurer les paramètres de comportement utilisateur suspect et répondre
 
 Les rôles de comportement des utilisateurs doivent être conférés aux utilisateurs disposant de privilèges d'administrateur ou de spectateur Ransomware Resilience existants qui ont besoin d'accéder àlink:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["paramètres et alertes d'activité utilisateur suspecte"^] .  Un utilisateur disposant du rôle d’administrateur Ransomware Resilience, par exemple, doit recevoir le rôle d’administrateur du comportement utilisateur Ransomware Resilience pour configurer les agents d’activité utilisateur et bloquer ou débloquer les utilisateurs.  Le rôle d’administrateur du comportement utilisateur de Ransomware Resilience ne doit pas être conféré à un visualiseur de Ransomware Resilience.
 
+
+NOTE: Pour activer la détection d’activité utilisateur suspecte, vous devez disposer du rôle d’administrateur de l’organisation de la console.
+
 Le tableau suivant décrit les actions disponibles pour les rôles d'administrateur et de spectateur du comportement utilisateur de Ransomware Resilience.
 
 [cols="40,20a,20a"]

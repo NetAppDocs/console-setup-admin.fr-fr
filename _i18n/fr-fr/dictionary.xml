@@ -572,8 +572,6 @@
   <block id="b4b78d037549f1e53319a933fd923727" category="list-text">Après vous être connecté, configurez la console :</block>
   <block id="fa4a4ed3171c9645519ee525ed212db9" category="list-text">Spécifiez l’organisation de la console à associer à l’agent de la console.</block>
   <block id="d1caa1543690181f63b8c0e0933c0c49" category="paragraph">Le mode restreint n’est pas pris en charge lorsque l’agent de console est installé sur site.</block>
-  <block id="af60e7ca775342cbe207d574ae3a82ef" category="paragraph">La vidéo suivante montre les étapes à suivre pour s'abonner à NetApp Intelligent Services depuis AWS Marketplace :</block>
-  <block id="1cfe9a2e660a541826be5b5cc3018fdd" category="video-title">Abonnez-vous aux NetApp Intelligent Services depuis la place de marché AWS</block>
   <block id="aaf23e1cf00fee0789e1c392da395cc9" category="list-text">Sélectionnez le menu d’action pour un ensemble d’informations d’identification associées à un agent de console, puis sélectionnez *Configurer l’abonnement*.</block>
   <block id="601c60f4bc1d60fb12bbba2d26b90b33" category="paragraph">Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement au marché aux informations d'identification associées à la NetApp Console.</block>
   <block id="0d28acbceed906f52a206d0f3fb0add2" category="inline-image-macro">Une capture d’écran du menu d’action pour un ensemble d’informations d’identification existantes.</block>
@@ -593,8 +591,6 @@
   <block id="7dffa6296286b12f66d638f53340316c" category="list-text">Si vous y êtes invité, connectez-vous à votre compte Azure.</block>
   <block id="9dc9a5b2f23fe90a0fd71125f3034dfd" category="list-text">Remplissez le formulaire et sélectionnez *S'abonner*.</block>
   <block id="3221538307211e131f96e1a83b1a5235" category="list-text">Une fois le processus d'abonnement terminé, sélectionnez *Configurer le compte maintenant*.</block>
-  <block id="89d8b3b4c08395fc5dbef0d35cb50529" category="paragraph">La vidéo suivante montre les étapes à suivre pour s'abonner à partir de la Place de marché Azure :</block>
-  <block id="930540e35d6a8bd81f5882c46e1f93c2" category="video-title">Abonnez-vous aux NetApp Intelligent Services depuis la place de marché Azure</block>
   <block id="ef5d79e3ae5671ca28e5f6e3b02eed27" category="list-text">Pour configurer un abonnement existant avec les informations d'identification sélectionnées, sélectionnez un projet et un abonnement Google Cloud dans la liste déroulante, puis sélectionnez *Configurer*.</block>
   <block id="fff6f5125be05a94543d2e88dbd30b27" category="inline-image-macro">Capture d'écran d'un projet Google Cloud et d'un abonnement sélectionnés pour les informations d'identification Google Cloud.</block>
   <block id="cab980518d03aa36afc924b709828a6e" category="paragraph"><block ref="cab980518d03aa36afc924b709828a6e" category="inline-image-macro-rx" type="image"></block></block>
@@ -613,8 +609,6 @@
   <block id="825c72d4114a9a71a355213f6b79c642" category="list-text">Suivez les étapes sur la page *Affectation d'abonnement* :</block>
   <block id="58575503869d282abe104097770af48c" category="inline-link">la page Cloud Volumes ONTAP dans la NetApp Console</block>
   <block id="f363e3b5ffcff31a7405fb7c63982e48" category="admonition">Si quelqu'un de votre organisation possède déjà un abonnement au marché à partir de votre compte de facturation, vous serez redirigé vers<block ref="eeda9d490d323c6921491a4ef94ce954" category="inline-link-rx"></block> plutôt.  Si cela est inattendu, contactez votre équipe commerciale NetApp .  Google n'autorise qu'un seul abonnement par compte de facturation Google.</block>
-  <block id="a6b7d96f53186edb463f8f8611f97cd9" category="paragraph">La vidéo suivante montre les étapes à suivre pour s'abonner à partir de Google Cloud Marketplace :</block>
-  <block id="c9b7d3dfb0a91a99ab5deba597b6741a" category="video-title">Abonnez-vous à Google Cloud Marketplace</block>
   <block id="a5a1d94d16067bff86c06d08991b799b" category="list-text">Une fois ce processus terminé, revenez à la page Informations d’identification dans la console et sélectionnez ce nouvel abonnement.</block>
   <block id="467e5d6bbcd0ea531c8f7285b69e29ee" category="inline-image-macro">Une capture d’écran de la page d’attribution d’abonnement.</block>
   <block id="60d2ed6f6e1774535b6e69274800381d" category="paragraph"><block ref="60d2ed6f6e1774535b6e69274800381d" category="inline-image-macro-rx" type="image"></block></block>
@@ -5602,4 +5596,5 @@
   <block id="8a62551759227881974703cf10bfc946" category="paragraph"><block ref="e2790838ef7051b1907224142bc33625" category="inline-link-macro-rx"></block>.</block>
   <block id="446a691d3cf6457cb60610b81794fdbc" category="paragraph">AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.</block>
   <block id="118b5697b68c5f4ada51d65dffac2674" category="paragraph">Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique. Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échouent.</block>
+  <block id="d1cb423c9810b1ddd65eea821845fff2" category="admonition">Pour activer la détection d’activité utilisateur suspecte, vous devez disposer du rôle d’administrateur de l’organisation de la console.</block>
 </blocks>
