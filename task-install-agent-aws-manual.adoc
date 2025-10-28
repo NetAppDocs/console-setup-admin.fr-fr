@@ -50,6 +50,7 @@ L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont a
 
 
 --
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande t3.2xlarge.
 Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
 [[podman-versions]]Exigences relatives au système d'exploitation et aux conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
 +
@@ -107,7 +108,6 @@ Non pris en charge
 
 |===
 --
-Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
 Paire de clés:: Lorsque vous créez l'agent de console, vous devez sélectionner une paire de clés EC2 à utiliser avec l'instance.
 Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est activé sur l'instance EC2 (il s'agit du paramètre par défaut pour les nouvelles instances EC2), vous devez modifier la limite de saut de réponse PUT sur l'instance à 3.  Si vous ne modifiez pas la limite sur l'instance EC2, vous recevrez une erreur d'initialisation de l'interface utilisateur lorsque vous tenterez de configurer l'agent.
 +
@@ -115,18 +115,6 @@ Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est ac
 * link:task-require-imdsv2.html["Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2"]
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-existing-instances.html#modify-PUT-response-hop-limit["Documentation AWS : Modifier la limite de saut de réponse PUT"^]
 
-
---
-Espace disque dans /opt:: 100 Go d'espace doivent être disponibles
-+
---
-L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
-
---
-Espace disque dans /var:: 20 Go d'espace doivent être disponibles
-+
---
-L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
 
 --
 

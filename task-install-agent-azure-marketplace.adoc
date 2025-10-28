@@ -153,7 +153,7 @@ Lorsque vous créez l’agent de console, choisissez un type de machine virtuell
 
 processeur:: 8 cœurs ou 8 vCPU
 BÉLIER:: 32 Go
-Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons Standard_D8s_v3.
+Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande Standard_D8s_v3.
 
 
 
@@ -209,7 +209,7 @@ image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud 
 +
 [source, azurecli]
 ----
-az role definition create --role-definition Connector_Policy.json
+az role definition create --role-definition agent_Policy.json
 ----
 
 
@@ -280,7 +280,7 @@ image:screenshot_azure_shell_upload.png["Une capture d’écran d’Azure Cloud 
 +
 [source, azurecli]
 ----
-az role definition create --role-definition Connector_Policy.json
+az role definition create --role-definition agent_Policy.json
 ----
 +
 Vous devriez maintenant avoir un rôle personnalisé appelé Opérateur de console que vous pouvez attribuer à la machine virtuelle de l’agent de console.

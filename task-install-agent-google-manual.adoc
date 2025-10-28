@@ -50,6 +50,12 @@ L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont a
 
 
 --
+Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande n2-standard-8.
++
+--
+L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]
+
+--
 Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
 [[podman-versions]]Exigences relatives au système d'exploitation et aux conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
 +
@@ -107,22 +113,10 @@ Non pris en charge
 
 |===
 --
-Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons n2-standard-8.
+Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande n2-standard-8.
 +
 --
 L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]
-
---
-Espace disque dans /opt:: 100 Go d'espace doivent être disponibles
-+
---
-L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire et son contenu.
-
---
-Espace disque dans /var:: 20 Go d'espace doivent être disponibles
-+
---
-L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
 
 --
 

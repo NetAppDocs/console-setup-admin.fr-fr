@@ -177,7 +177,7 @@ Lorsque vous créez l’agent de console, vous devez choisir un type d’instanc
 
 processeur:: 8 cœurs ou 8 vCPU
 BÉLIER:: 32 Go
-Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande t3.2xlarge.
 
 
 

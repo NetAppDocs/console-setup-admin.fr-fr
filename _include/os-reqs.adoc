@@ -148,7 +148,7 @@ processeur:: 8 cœurs ou 8 vCPU
 BÉLIER:: 32 Go
 
 
-Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons t3.2xlarge.
+Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande t3.2xlarge.
 
 
 Paire de clés:: Lorsque vous créez l'agent de console, vous devez sélectionner une paire de clés EC2 à utiliser avec l'instance.
@@ -164,10 +164,10 @@ Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est ac
 --
 
 
-Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons Standard_D8s_v3.
+Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande Standard_D8s_v3.
 
 
-Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM ci-dessus.  Nous recommandons n2-standard-8.
+Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande n2-standard-8.
 +
 --
 L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]

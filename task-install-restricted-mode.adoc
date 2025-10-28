@@ -380,7 +380,7 @@ Fournissez à la console les autorisations que vous avez précédemment configur
 
 
 
-== Étape 3 : Accorder des autorisations à la NetApp Console
+== Étape 3 : Accorder des autorisations à l’agent de la console
 
 Si vous avez déployé l’agent de console à partir de la Place de marché Azure ou si vous avez installé manuellement le logiciel de l’agent de console, vous devez fournir les autorisations que vous avez précédemment configurées.
 
