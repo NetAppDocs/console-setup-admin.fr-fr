@@ -1012,7 +1012,6 @@
   <block id="e95d0df05962f4456b8b569c54b396c6" category="paragraph">La version 4.0.0 est disponible pour le mode standard et le mode restreint.</block>
   <block id="5412276bd0dd11677309c5862e9a5a84" category="section-title">Consolidation et réduction des points de terminaison réseau requis</block>
   <block id="d0994d4e248da3f28077f3de0aa07b31" category="paragraph">NetApp a réduit les points de terminaison réseau requis pour la console et les agents de console, améliorant ainsi la sécurité et simplifiant le déploiement.  Il est important de noter que tous les déploiements antérieurs à la version 4.0.0 continuent d’être entièrement pris en charge.  Bien que les points de terminaison précédents restent disponibles pour les agents existants, NetApp recommande fortement de mettre à jour les règles de pare-feu vers les points de terminaison actuels après avoir confirmé la réussite des mises à niveau des agents.</block>
-  <block id="cca12c7916c4a96b099460567ed56f7b" category="list-text"><block ref="8aad0fd6d4c3bc8fa0ee8715b00de090" category="inline-link-macro-rx"></block> .</block>
   <block id="8880ac717c8ca7c5aacda1dbf0aa76b4" category="inline-link-macro">En savoir plus sur les points de terminaison requis.</block>
   <block id="a65e1c365f170de138a296cb93571b83" category="list-text"><block ref="a65e1c365f170de138a296cb93571b83" category="inline-link-macro-rx"></block></block>
   <block id="dcd681e02807cfe12b61283485a64b57" category="section-title">Prise en charge du déploiement VCenter des agents de console</block>
@@ -5547,7 +5546,6 @@
   <block id="446a691d3cf6457cb60610b81794fdbc" category="paragraph">AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.</block>
   <block id="118b5697b68c5f4ada51d65dffac2674" category="paragraph">Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique. Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échouent.</block>
   <block id="d1cb423c9810b1ddd65eea821845fff2" category="admonition">Pour activer la détection d’activité utilisateur suspecte, vous devez disposer du rôle d’administrateur de l’organisation de la console.</block>
-  <block id="148a5defddc98b9d994f39780f74e348" category="cell">*Points finaux précédents*</block>
   <block id="c563d78603e1e09616c6c043a19061ba" category="cell">*Points de terminaison pour 4.0.0 et versions ultérieures*</block>
   <block id="1463a95efc33a52765f03569e1e39a10" category="cell">*But*</block>
   <block id="3b02fb538695ecfedde92943f6fd865e" category="paragraph">Pour obtenir une licence et contacter le support NetApp .</block>
@@ -5599,4 +5597,7 @@
   <block id="a64b4879b658ef7dd1a5bf863f66e510" category="section-title">Les points de terminaison du fournisseur de cloud ont contacté l'agent de la console</block>
   <block id="334af2b72c201a4f9aea3650a21ea8ec" category="paragraph">Configurez l’accès au point de terminaison du réseau du fournisseur de cloud avant d’installer l’agent de la console.</block>
   <block id="9ccb545b97d1ad0ce41d2577f6ae2e82" category="section-title">Étape 3 : Accorder des autorisations à l’agent de la console</block>
+  <block id="9c4179cb78e78f8bd52b0a9525df84e3" category="cell">*Points de terminaison pour la version 3.9.55 et les versions antérieures*</block>
+  <block id="af1ce09274091f662d34169f09b1482e" category="inline-link-macro">Découvrez comment mettre à jour votre liste de points de terminaison et consultez une comparaison.</block>
+  <block id="87bf0287482e9096c75805420a81b7ea" category="list-text"><block ref="eaf36d8f2aa9f00c9dd600ce08237a22" category="inline-link-macro-rx"></block>.</block>
 </blocks>

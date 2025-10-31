@@ -123,7 +123,7 @@ a| Si l'agent de console se trouve dans une région commerciale ou une région s
 
 [cols="3*"]
 |===
-| *Points finaux précédents* | *Points de terminaison pour 4.0.0 et versions ultérieures* | *But* 
+| *Points de terminaison pour la version 3.9.55 et les versions antérieures* | *Points de terminaison pour 4.0.0 et versions ultérieures* | *But* 
 
 
  a| 

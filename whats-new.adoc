@@ -152,7 +152,7 @@ La version 4.0.0 est disponible pour le mode standard et le mode restreint.
 
 NetApp a réduit les points de terminaison réseau requis pour la console et les agents de console, améliorant ainsi la sécurité et simplifiant le déploiement.  Il est important de noter que tous les déploiements antérieurs à la version 4.0.0 continuent d’être entièrement pris en charge.  Bien que les points de terminaison précédents restent disponibles pour les agents existants, NetApp recommande fortement de mettre à jour les règles de pare-feu vers les points de terminaison actuels après avoir confirmé la réussite des mises à niveau des agents.
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console-previous.html#update-endpoint-list["Découvrez comment mettre à jour votre liste de points de terminaison et consultez une comparaison."].
 * link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["En savoir plus sur les points de terminaison requis."]
 
 

@@ -35,7 +35,7 @@ NetApp recommande de mettre à jour les règles de pare-feu pour utiliser la lis
 
 [cols="3*"]
 |===
-| *Points finaux précédents* | *Points de terminaison pour 4.0.0 et versions ultérieures* | *But* 
+| *Points de terminaison pour la version 3.9.55 et les versions antérieures* | *Points de terminaison pour 4.0.0 et versions ultérieures* | *But* 
 
 
  a| 
