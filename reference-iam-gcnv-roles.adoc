@@ -19,5 +19,5 @@ Vous pouvez attribuer le rôle suivant aux utilisateurs pour leur donner accès 
 Google Cloud NetApp Volumes utilise le rôle suivant :
 
 * * Administrateur Google Cloud NetApp Volumes * : découvrez et gérez les Google Cloud NetApp Volumes dans la console.
-* * Utilisateur de Google Cloud NetApp Volumes * : Consultez Google Cloud NetApp Volumes dans la console.
+* * Visionneuse de Google Cloud NetApp Volumes * : Affichez les Google Cloud NetApp Volumes dans la console.
 
