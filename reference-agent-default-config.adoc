@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-agent-default-config.html 
 keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux, connector configuration, connector installation folder, connector folder, connector log, ubuntu, agent, agent installation folder, agent configuration 
-summary: 'Apprenez-en plus sur l"agent de console avant de le déployer.' 
+summary: 'Apprenez-en davantage sur l"agent Console avant de le déployer.' 
 ---
 = Configuration par défaut de l'agent de console
 :hardbreaks:
@@ -24,7 +24,7 @@ Les détails de configuration suivants s'appliquent si vous avez déployé un ag
 
 
 
-=== Détails AWS
+=== Détails de la machine virtuelle de l'agent de console pour AWS
 
 Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
 
@@ -40,7 +40,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 
 
 
-=== Détails Azure
+=== Détails de la machine virtuelle de l'agent de console pour Azure
 
 Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
 
@@ -55,7 +55,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 
 
 
-=== Détails de Google Cloud
+=== Détails de la machine virtuelle de l'agent de console pour Google Cloud
 
 Si vous avez déployé un agent de console à partir de la console, notez les points suivants :
 
@@ -72,9 +72,9 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 
 === Dossier d'installation
 
-Le dossier d’installation de l’agent se trouve à l’emplacement suivant :
+Le dossier d'installation de l'agent se trouve à l'emplacement suivant :
 
-/opt/application/netapp/cloudmanager
+`/opt/application/netapp/cloudmanager`
 
 
 
@@ -82,12 +82,12 @@ Le dossier d’installation de l’agent se trouve à l’emplacement suivant :
 
 Les fichiers journaux sont contenus dans les dossiers suivants :
 
-* /opt/application/netapp/cloudmanager/log ou
-* /opt/application/netapp/service-manager-2/logs (à partir des nouvelles installations 3.9.23)
+* `/opt/application/netapp/cloudmanager/log` ou
+* `/opt/application/netapp/service-manager-2/logs` (à partir des nouvelles installations 3.9.23)
 +
 Les journaux de ces dossiers fournissent des détails sur l’agent de la console.
 
-* /opt/application/netapp/cloudmanager/docker_occm/data/log
+* `/opt/application/netapp/cloudmanager/docker_occm/data/log`
 +
 Les journaux de ce dossier fournissent des détails sur les services cloud et le service de console qui s'exécute sur l'agent de console.
 
@@ -120,13 +120,13 @@ L'agent utilise les ports suivants sur l'hôte Linux :
 
 La configuration suivante s’applique si vous avez installé manuellement l’agent de console sur un hôte Linux local qui n’a pas accès à Internet. link:task-quick-start-private-mode.html["En savoir plus sur cette option d'installation"] .
 
-* Le dossier d’installation de l’agent se trouve à l’emplacement suivant :
+* Le dossier d'installation de l'agent se trouve à l'emplacement suivant :
 +
-/opt/application/netapp/ds
+`/opt/application/netapp/ds`
 
 * Les fichiers journaux sont contenus dans les dossiers suivants :
 +
-/var/lib/docker/volumes/ds_occmdata/_data/log
+`/var/lib/docker/volumes/ds_occmdata/_data/log`
 
 +
 Les journaux de ce dossier fournissent des détails sur l’agent de console et les images Docker.

@@ -36,7 +36,7 @@ Voir l'article de la base de connaissanceslink:https://kb.netapp.com/Advice_and_
 
 === Le décryptage SSL n'est pas pris en charge
 
-La console ne prend pas en charge les configurations de pare-feu pour lesquelles le décryptage SSL est activé.  Si le décryptage SSL est activé, des messages d'erreur s'affichent dans la console et l'instance de l'agent s'affiche comme inactive.
+La console ne prend pas en charge les configurations de pare-feu pour lesquelles le décryptage SSL est activé. Si le décryptage SSL est activé, des messages d'erreur apparaissent dans la console et l'instance de l'agent s'affiche comme *Déconnectée*.
 
 Pour une sécurité renforcée, vous avez la possibilité delink:task-installing-https-cert.html["installer un certificat HTTPS signé par une autorité de certification (CA)"] .
 

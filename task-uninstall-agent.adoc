@@ -39,7 +39,7 @@ _silent_ exécute le script sans vous demander de confirmation.
 
 == Supprimer les agents de la console
 
-Si un agent de console est inactif, vous pouvez le supprimer de la liste des agents.  Vous pouvez le faire si vous supprimez la machine virtuelle de l’agent ou si vous désinstallez le logiciel de l’agent.
+Si vous avez supprimé une machine virtuelle d'agent ou désinstallé l'agent, vous devez la retirer de la liste des agents dans la console. Après la suppression d'une machine virtuelle d'agent ou la désinstallation du logiciel d'agent, l'agent affiche l'état *Déconnecté* dans la console.
 
 Notez les points suivants concernant la suppression d’un agent de console :
 
@@ -49,6 +49,6 @@ Notez les points suivants concernant la suppression d’un agent de console :
 
 .Étapes
 . Sélectionnez *Administration > Agents*.
-. Sur la page *Aperçu*, sélectionnez le menu d'action pour un agent inactif et sélectionnez *Supprimer l'agent*.
+. Sur la page *Aperçu*, sélectionnez le menu d'actions d'un agent déconnecté et sélectionnez *Supprimer l'agent*.
 . Saisissez le nom de l'agent pour confirmer, puis sélectionnez *Supprimer*.
 

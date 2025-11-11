@@ -1,0 +1,26 @@
+= Agent de console 4.1.0
+:allow-uri-read: 
+
+
+
+
+== Agent de console 4.1.0
+
+Cette version de l'agent Console inclut des améliorations de sécurité, des corrections de bugs et les fonctionnalités suivantes :
+
+La version 4.1.0 est disponible pour le mode standard et le mode restreint.
+
+.Indicateurs d'état d'agent renommés
+Les indicateurs d'état de l'agent de la console ont été renommés de *Actif* et *Inactif* à *Connecté* et *Déconnecté* afin de rendre leur fonction plus claire.
+
+.Prise en charge de Red Hat Enterprise Linux (RHEL) 9.6 et de Podman 5.4.0
+L'agent Console prend désormais en charge RHEL 9.6 et Podman 5.4.0. De plus, lors de l'utilisation de RHEL 9 et versions supérieures, NetApp prend en charge podman-compose 1.5.0.
+
+
+
+== Administration de la NetApp Console
+
+Cette version comprend les éléments suivants :
+
+.Nouvelle adresse e-mail pour les notifications de la NetApp Console
+L'adresse e-mail qui envoie les notifications de NetApp Console a changé et est désormais *service@console.netapp.com* au lieu de *service@console.bluexp.netapp.com*. NetApp recommande de mettre à jour vos règles de messagerie pour autoriser *service@console.netapp.com* afin de continuer à recevoir les notifications par e-mail de NetApp Console .
