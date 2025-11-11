@@ -131,7 +131,7 @@ Non, il n'est pas possible de déplacer les ressources AWS associées à votre s
 
 === Comment fonctionnent les informations d’identification pour les déploiements sur le marché et les déploiements sur site ?
 
-Les sections ci-dessus décrivent la méthode de déploiement recommandée pour l'agent de console, qui provient de la console.  Vous pouvez également déployer un agent dans AWS à partir d'AWS Marketplace et installer manuellement le logiciel de l'agent de la console sur votre propre hôte Linux.
+Les sections ci-dessus décrivent la méthode de déploiement recommandée pour l'agent de console, qui provient de la console. Vous pouvez également déployer un agent sur AWS depuis AWS Marketplace et installer manuellement le logiciel agent Console sur votre propre hôte Linux ou dans votre vCenter.
 
 Si vous utilisez la Marketplace, les autorisations sont fournies de la même manière.  Il vous suffit de créer et de configurer manuellement le rôle IAM, puis de fournir des autorisations pour tous les comptes supplémentaires.
 

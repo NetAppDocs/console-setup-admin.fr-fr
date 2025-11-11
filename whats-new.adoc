@@ -22,7 +22,7 @@ Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Co
 
 
 
-== Agent de console 4.1.0
+=== Agent de console 4.1.0
 
 Cette version de l'agent Console inclut des améliorations de sécurité, des corrections de bugs et les fonctionnalités suivantes :
 
@@ -36,7 +36,7 @@ L'agent Console prend désormais en charge RHEL 9.6 et Podman 5.4.0. De plus, lo
 
 
 
-== Administration de la NetApp Console
+=== Administration de la NetApp Console
 
 Cette version comprend les éléments suivants :
 
