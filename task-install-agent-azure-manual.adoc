@@ -53,18 +53,41 @@ L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont a
 Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande Standard_D8s_v3.
 Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un système d'exploitation pris en charge est requis.
 [[podman-versions]]Exigences relatives au système d'exploitation et aux conteneurs:: L'agent de console est pris en charge avec les systèmes d'exploitation suivants lors de l'utilisation de la console en mode standard ou en mode restreint.  Un outil d’orchestration de conteneurs est requis avant d’installer l’agent.
-+
---
+
+
 [cols="2a,2a,2a,2a,2a"]
 |===
-| Système opérateur | Versions de systèmes d'exploitation prises en charge | Versions d'agent prises en charge | Outil de conteneur requis | SELinux a 
+| Système opérateur | Versions de systèmes d'exploitation prises en charge | Versions d'agent prises en charge | Outil de conteneur requis | SELinux 
 
 
  a| 
 Red Hat Enterprise Linux
+
+
+
+ a| 
  a| 
 9,1 à 9,4
 
+* Versions en langue anglaise uniquement.
+* L'hôte doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, l'hôte ne peut pas accéder aux référentiels pour mettre à jour le logiciel tiers requis lors de l'installation de l'agent.
+
+ a| 
+3.9.50 ou version ultérieure avec la console en mode standard ou en mode restreint
+ a| 
+Podman version 5.4.0 avec podman-compose 1.5.0.
+
+<<podman-configuration,Afficher les exigences de configuration de Podman>> .
+ a| 
+Pris en charge en mode d'application ou en mode permissif
+
+* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
+
+
+
+
+ a| 
+ a| 
 8,6 à 8,10
 
 * Versions en langue anglaise uniquement.
@@ -86,6 +109,10 @@ Pris en charge en mode d'application ou en mode permissif
 
  a| 
 Ubuntu
+
+
+
+ a| 
  a| 
 24,04 LTS
  a| 
@@ -98,6 +125,7 @@ Non pris en charge
 
 
  a| 
+ a| 
 22,04 LTS
  a| 
 3.9.50 ou version ultérieure
@@ -107,9 +135,6 @@ Docker Engine 23.0.6 à 28.0.0.
 Non pris en charge
 
 |===
---
-
-
 
 
 == Étape 2 : installer Podman ou Docker Engine
