@@ -14,7 +14,7 @@ La version 4.1.0 est disponible pour le mode standard et le mode restreint.
 Les indicateurs d'état de l'agent de la console ont été renommés de *Actif* et *Inactif* à *Connecté* et *Déconnecté* afin de rendre leur fonction plus claire.
 
 .Prise en charge de Red Hat Enterprise Linux (RHEL) 9.6 et de Podman 5.4.0
-L'agent Console prend désormais en charge RHEL 9.6 et Podman 5.4.0. De plus, lors de l'utilisation de RHEL 9 et versions supérieures, NetApp prend en charge podman-compose 1.5.0.
+Lors de l'installation manuelle d'un agent Console, celui-ci prend désormais en charge RHEL 9.6 avec Podman 5.4.0. De plus, lors de l'utilisation de RHEL 9 et versions supérieures, NetApp prend en charge podman-compose 1.5.0. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html["Consultez les exigences du système d'exploitation"].
 
 
 
