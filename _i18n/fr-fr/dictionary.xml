@@ -5563,12 +5563,6 @@
   <block id="b3df2aaed88f61f572a7284cb28844ec" category="inline-link-macro">Consultez les exigences du système d'exploitation</block>
   <block id="43a9602052a44f890e2bbc95a0205a46" category="paragraph">Lors de l'installation manuelle d'un agent Console, celui-ci prend désormais en charge RHEL 9.6 avec Podman 5.4.0. De plus, lors de l'utilisation de RHEL 9 et versions supérieures, NetApp prend en charge podman-compose 1.5.0. <block ref="dd394ea917033ddbf269729b5d828637" category="inline-link-macro-rx"></block>.</block>
   <block id="823f8bc81b61298de6fde6292c77465f" category="list-text">Redécouvrez les systèmes.</block>
-  <block id="0d23055c9cd9e24b47c678ce2ce12890" category="doc">Port à utiliser pour le démon de transfert DNS avec Netavark dans le pont racine</block>
-  <block id="a4a1852476f94952d74e4b8343a1caa2" category="paragraph">vi /usr/share/containers/containers.conf</block>
-  <block id="d5b159520f19881fc40a4bd748f62fc6" category="section-title">Mode et DNS activés.</block>
-  <block id="b1a96ed8e5a02719308e8b11ad1f055b" category="section-title">L'utilisation d'un port alternatif pourrait s'avérer utile si d'autres services DNS devaient</block>
-  <block id="090648da33ae39ea5780d1a31fb1c849" category="section-title">exécuter sur la machine.</block>
-  <block id="876565374bfaef3930e6f9d90f47177b" category="paragraph"># dns_bind_port = 54</block>
   <block id="f20af7c9fe0c9b9091735f55df3a51e1" category="list-text">Si vous créez un agent Console dans une région AWS standard directement depuis la Console, celle-ci applique automatiquement les politiques à l'agent.</block>
   <block id="8a2272b9faf18eb35a631e80900ec216" category="section-title">Autorisations héritées pour la sauvegarde et la récupération</block>
   <block id="cf1f3a91d24e23f8dd4687e01a5c8192" category="paragraph">Vous n'avez besoin des autorisations suivantes que si vous avez activé les fonctionnalités d'indexation héritées avant la sortie de l'indexation v2 :</block>
@@ -5600,4 +5594,8 @@
   <block id="04a0a4e163c04f3082e39c4a05b56121" category="paragraph">L'ajout des identifiants AWS permet de créer un agent de console.</block>
   <block id="325cf27c7a62fb4beb8b270094e56814" category="paragraph">Vous devez associer les informations d'identification que vous ajoutez à un agent de console à un abonnement AWS Marketplace pour payer Cloud Volumes ONTAP à un tarif horaire (PAYGO) et d'autres services de données NetApp ou par le biais d'un contrat annuel. <block ref="ec04a55c38de32bb88fa7b4155061e7c" category="inline-link-macro-rx"></block>.</block>
   <block id="349b76807d98d4378df29b585951b7a4" category="summary">Découvrez les configurations par défaut de l'agent Console pour les déploiements standard (avec accès Internet) sur AWS, Azure et Google Cloud, ainsi que pour les déploiements restreints (sans accès Internet) dans les environnements sur site.</block>
+  <block id="95df10d2ac630ff125b089e1f8e0e67f" category="paragraph">Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet. Vous pouvez ajouter un proxy transparent ou explicite. Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter. Si vous disposez d'un serveur proxy, vous devrez saisir les paramètres comme indiqué.</block>
+  <block id="64de7c6251637d266e8df72d8ab7c1d3" category="paragraph">--proxy configure l'agent de console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :</block>
+  <block id="9d9d85de516d17d89215c336041bd69c" category="paragraph">--cacert spécifie un certificat signé par une autorité de certification à utiliser pour l'accès HTTPS entre l'agent de console et le serveur proxy. Ce paramètre est requis pour les serveurs proxy HTTPS, les serveurs proxy d'interception et les serveurs proxy transparents.</block>
+  <block id="fa5c0c80d3dab7b433f9ebd1f6d0e8db" category="paragraph">Voici un exemple de configuration d'un serveur proxy transparent. Lorsque vous configurez un proxy transparent, vous n'avez pas besoin de définir le serveur proxy. Vous ajoutez uniquement un certificat signé par une autorité de certification à votre hôte d’agent de console :</block>
 </blocks>
