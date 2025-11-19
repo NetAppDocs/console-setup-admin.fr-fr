@@ -35,142 +35,43 @@ Vous devrez vous assurer que le rôle est à jour à mesure que de nouvelles aut
 
 
 
+Voici une stratégie personnalisée pour la sauvegarde et la restauration qui utilise le minimum d'autorisations et la portée la plus restreinte possible :
+
 [source, json]
 ----
 {
-    "Name": "Console Operator",
-    "Actions": [
-                    "Microsoft.Compute/disks/delete",
-                    "Microsoft.Compute/disks/read",
-                    "Microsoft.Compute/disks/write",
-                    "Microsoft.Compute/locations/operations/read",
-                    "Microsoft.Compute/locations/vmSizes/read",
-                    "Microsoft.Resources/subscriptions/locations/read",
-                    "Microsoft.Compute/operations/read",
-                    "Microsoft.Compute/virtualMachines/instanceView/read",
-                    "Microsoft.Compute/virtualMachines/powerOff/action",
-                    "Microsoft.Compute/virtualMachines/read",
-                    "Microsoft.Compute/virtualMachines/restart/action",
-                    "Microsoft.Compute/virtualMachines/deallocate/action",
-                    "Microsoft.Compute/virtualMachines/start/action",
-                    "Microsoft.Compute/virtualMachines/vmSizes/read",
-                    "Microsoft.Compute/virtualMachines/write",
-                    "Microsoft.Compute/images/read",
-                    "Microsoft.Network/locations/operationResults/read",
-                    "Microsoft.Network/locations/operations/read",
-                    "Microsoft.Network/networkInterfaces/read",
-                    "Microsoft.Network/networkInterfaces/write",
-                    "Microsoft.Network/networkInterfaces/join/action",
-                    "Microsoft.Network/networkSecurityGroups/read",
-                    "Microsoft.Network/networkSecurityGroups/write",
-                    "Microsoft.Network/networkSecurityGroups/join/action",
-                    "Microsoft.Network/virtualNetworks/read",
-                    "Microsoft.Network/virtualNetworks/checkIpAddressAvailability/read",
-                    "Microsoft.Network/virtualNetworks/subnets/read",
-                    "Microsoft.Network/virtualNetworks/subnets/write",
-                    "Microsoft.Network/virtualNetworks/subnets/virtualMachines/read",
-                    "Microsoft.Network/virtualNetworks/virtualMachines/read",
-                    "Microsoft.Network/virtualNetworks/subnets/join/action",
-                    "Microsoft.Resources/deployments/operations/read",
-                    "Microsoft.Resources/deployments/read",
-                    "Microsoft.Resources/deployments/write",
-                    "Microsoft.Resources/resources/read",
-                    "Microsoft.Resources/subscriptions/operationresults/read",
-                    "Microsoft.Resources/subscriptions/resourceGroups/delete",
-                    "Microsoft.Resources/subscriptions/resourceGroups/read",
-                    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
-                    "Microsoft.Resources/subscriptions/resourceGroups/write",
-                    "Microsoft.Storage/checknameavailability/read",
-                    "Microsoft.Storage/operations/read",
-                    "Microsoft.Storage/storageAccounts/listkeys/action",
-                    "Microsoft.Storage/storageAccounts/read",
-                    "Microsoft.Storage/storageAccounts/delete",
-                    "Microsoft.Storage/storageAccounts/write",
-                    "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-                    "Microsoft.Storage/storageAccounts/listAccountSas/action",
-                    "Microsoft.Storage/usages/read",
-                    "Microsoft.Compute/snapshots/write",
-                    "Microsoft.Compute/snapshots/read",
-                    "Microsoft.Compute/availabilitySets/write",
-                    "Microsoft.Compute/availabilitySets/read",
-                    "Microsoft.Compute/disks/beginGetAccess/action",
-                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
-                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write",
-                    "Microsoft.Network/loadBalancers/read",
-                    "Microsoft.Network/loadBalancers/write",
-                    "Microsoft.Network/loadBalancers/delete",
-                    "Microsoft.Network/loadBalancers/backendAddressPools/read",
-                    "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
-                    "Microsoft.Network/loadBalancers/loadBalancingRules/read",
-                    "Microsoft.Network/loadBalancers/probes/read",
-                    "Microsoft.Network/loadBalancers/probes/join/action",
-                    "Microsoft.Authorization/locks/*",
-                    "Microsoft.Network/routeTables/join/action",
-                    "Microsoft.NetApp/netAppAccounts/read",
-                    "Microsoft.NetApp/netAppAccounts/capacityPools/read",
-                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
-                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",
-                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
-                    "Microsoft.Network/privateEndpoints/write",
-                    "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
-                    "Microsoft.Storage/storageAccounts/privateEndpointConnections/read",
-                    "Microsoft.Storage/storageAccounts/managementPolicies/read",
-                    "Microsoft.Storage/storageAccounts/managementPolicies/write",
-                    "Microsoft.Network/privateEndpoints/read",
-                    "Microsoft.Network/privateDnsZones/write",
-                    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
-                    "Microsoft.Network/virtualNetworks/join/action",
-                    "Microsoft.Network/privateDnsZones/A/write",
-                    "Microsoft.Network/privateDnsZones/read",
-                    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
-                    "Microsoft.Resources/deployments/operationStatuses/read",
-                    "Microsoft.Insights/Metrics/Read",
-                    "Microsoft.Compute/virtualMachines/extensions/write",
-                    "Microsoft.Compute/virtualMachines/extensions/delete",
-                    "Microsoft.Compute/virtualMachines/extensions/read",
-                    "Microsoft.Compute/virtualMachines/delete",
-                    "Microsoft.Network/networkInterfaces/delete",
-                    "Microsoft.Network/networkSecurityGroups/delete",
-                    "Microsoft.Resources/deployments/delete",
-                    "Microsoft.Compute/diskEncryptionSets/read",
-                    "Microsoft.Compute/snapshots/delete",
-                    "Microsoft.Network/privateEndpoints/delete",
-                    "Microsoft.Compute/availabilitySets/delete",
-                    "Microsoft.KeyVault/vaults/read",
-                    "Microsoft.KeyVault/vaults/accessPolicies/write",
-                    "Microsoft.Compute/diskEncryptionSets/write",
-                    "Microsoft.KeyVault/vaults/deploy/action",
-                    "Microsoft.Compute/diskEncryptionSets/delete",
-                    "Microsoft.Resources/tags/read",
-                    "Microsoft.Resources/tags/write",
-                    "Microsoft.Resources/tags/delete",
-                    "Microsoft.Network/applicationSecurityGroups/write",
-                    "Microsoft.Network/applicationSecurityGroups/read",
-                    "Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action",
-                    "Microsoft.Network/networkSecurityGroups/securityRules/write",
-                    "Microsoft.Network/applicationSecurityGroups/delete",
-                    "Microsoft.Network/networkSecurityGroups/securityRules/delete",
-                    "Microsoft.Synapse/workspaces/write",
-                    "Microsoft.Synapse/workspaces/read",
-                    "Microsoft.Synapse/workspaces/delete",
-                    "Microsoft.Synapse/register/action",
-                    "Microsoft.Synapse/checkNameAvailability/action",
-                    "Microsoft.Synapse/workspaces/operationStatuses/read",
-                    "Microsoft.Synapse/workspaces/firewallRules/read",
-                    "Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
-                    "Microsoft.Synapse/workspaces/operationResults/read",
-                    "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action",
-                    "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
-                    "Microsoft.Compute/images/write",
-                    "Microsoft.Network/loadBalancers/frontendIPConfigurations/read",
-                    "Microsoft.Compute/virtualMachineScaleSets/write",
-                    "Microsoft.Compute/virtualMachineScaleSets/read",
-                    "Microsoft.Compute/virtualMachineScaleSets/delete"
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionGuid}",
+  "properties": {
+    "roleName": "Custom Role",
+    "description": "Minimal permissions required for Backup and Recovery.",
+    "assignableScopes": [
+      "/subscriptions/{subscriptionId}",
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupNameContainingConnectorAndStorageAccount}",
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupNameContainingConnectorAndStorageAccount}/providers/Microsoft.Storage/storageAccounts/{storageAccountNameWithObjectLockPreprovisioned}"
     ],
-    "NotActions": [],
-    "AssignableScopes": [],
-    "Description": "Console Permissions",
-    "IsCustom": "true"
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Storage/storageAccounts/listkeys/action",
+          "Microsoft.Storage/storageAccounts/read",
+          "Microsoft.Storage/storageAccounts/write",
+          "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+          "Microsoft.Storage/storageAccounts/listAccountSas/action",
+          "Microsoft.Resources/subscriptions/locations/read",
+          "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+          "Microsoft.Resources/subscriptions/resourceGroups/write",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Storage/storageAccounts/managementPolicies/read",
+          "Microsoft.Storage/storageAccounts/managementPolicies/write",
+          "Microsoft.Authorization/locks/write",
+          "Microsoft.Authorization/locks/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
 }
 ----
 
@@ -194,39 +95,50 @@ L'agent effectue les requêtes API suivantes lorsque vous utilisez NetApp Data C
 
 
 
-=== NetApp Backup and Recovery
+=== Autorisations minimales de NetApp Backup and Recovery
 
-L'agent de console effectue les requêtes API suivantes pour NetApp Backup and Recovery:
+L'agent de la console effectue les requêtes API suivantes pour les fonctionnalités de base de NetApp Backup and Recovery :
 
 * Microsoft.Storage/storageAccounts/listkeys/action
 * Microsoft.Storage/storageAccounts/lecture
 * Microsoft.Storage/storageAccounts/write
 * Microsoft.Storage/storageAccounts/blobServices/containers/read
 * Microsoft.Storage/storageAccounts/listAccountSas/action
-* Microsoft.KeyVault/vaults/lecture
-* Microsoft.KeyVault/vaults/accessPolicies/write
-* Microsoft.Network/networkInterfaces/lecture
 * Microsoft.Ressources/abonnements/emplacements/lecture
-* Microsoft.Network/virtualNetworks/lecture
-* Microsoft.Network/virtualNetworks/sous-réseaux/lecture
 * Microsoft.Resources/abonnements/resourceGroups/read
 * Microsoft.Resources/abonnements/groupes de ressources/ressources/lecture
 * Microsoft.Resources/abonnements/resourceGroups/write
-* Microsoft.Autorisation/locks/*
-* Microsoft.Network/privateEndpoints/écriture
-* Microsoft.Network/privateEndpoints/lecture
-* Microsoft.Network/privateDnsZones/virtualNetworkLinks/écriture
-* Microsoft.Network/virtualNetworks/join/action
-* Microsoft.Network/privateDnsZones/A/écriture
-* Microsoft.Network/privateDnsZones/lecture
-* Microsoft.Network/privateDnsZones/virtualNetworkLinks/lecture
-* Microsoft.Network/networkInterfaces/supprimer
-* Microsoft.Network/networkSecurityGroups/supprimer
-* Microsoft.Resources/deployments/delete
+* Microsoft.Storage/storageAccounts/managementPolicies/lecture
+* Microsoft.Storage/storageAccounts/managementPolicies/write
+* Microsoft.Authorization/locks/write
+* Microsoft.Authorization/locks/read
+
+
+
+
+=== Autorisations supplémentaires de sauvegarde et de restauration
+
+L'agent de la console effectue les requêtes API suivantes pour les opérations avancées de sauvegarde et de récupération, ainsi que pour les fonctionnalités de recherche et de restauration. Ces autorisations permettent la gestion du réseau, des coffres-forts de clés et des identités gérées :
+
+* Microsoft.KeyVault/vaults/accessPolicies/write
+* Microsoft.KeyVault/vaults/lecture
 * Microsoft.ManagedIdentity/userAssignedIdentities/assign/action
+* Microsoft.Network/networkInterfaces/supprimer
+* Microsoft.Network/networkInterfaces/lecture
+* Microsoft.Network/networkSecurityGroups/supprimer
+* Microsoft.Network/privateDnsZones/lecture
+* Microsoft.Network/privateDnsZones/écriture
+* Microsoft.Network/privateEndpoints/lecture
+* Microsoft.Network/privateEndpoints/écriture
+* Microsoft.Network/virtualNetworks/join/action
+* Microsoft.Resources/deployments/delete
 
 
-L'agent effectue les requêtes API suivantes lorsque vous utilisez la fonctionnalité Rechercher et restaurer :
+
+
+=== Autorisations héritées pour la sauvegarde et la récupération
+
+L'agent effectue les requêtes API suivantes lorsque vous utilisez la fonctionnalité Rechercher et restaurer. Vous n'avez besoin de ces autorisations que si vous avez activé les fonctionnalités d'indexation héritées avant la sortie de l'indexation v2 :
 
 * Microsoft.Synapse/espaces de travail/écriture
 * Microsoft.Synapse/espaces de travail/lecture
@@ -731,6 +643,169 @@ L'agent de la console effectue les demandes d'API suivantes pour les opérations
 == Journal des modifications
 
 Au fur et à mesure que des autorisations sont ajoutées et supprimées, nous les noterons dans les sections ci-dessous.
+
+
+
+=== 11 novembre 2025
+
+Les autorisations suivantes ont été supprimées de l'exemple de rôle JSON afin que celui-ci reflète les autorisations minimales requises pour la sauvegarde et la restauration :
+
+[%collapsible]
+====
+* Microsoft.Compute/disks/delete
+* Microsoft.Compute/disques/lecture
+* Microsoft.Compute/disques/écriture
+* Microsoft.Compute/locations/operations/read
+* Microsoft.Compute/locations/vmSizes/lecture
+* Microsoft.Compute/opérations/lecture
+* Microsoft.Compute/virtualMachines/instanceView/read
+* Microsoft.Compute/virtualMachines/powerOff/action
+* Microsoft.Compute/virtualMachines/read
+* Microsoft.Compute/virtualMachines/restart/action
+* Microsoft.Compute/virtualMachines/deallocate/action
+* Microsoft.Compute/virtualMachines/start/action
+* Microsoft.Compute/virtualMachines/vmSizes/lecture
+* Microsoft.Compute/virtualMachines/write
+* Microsoft.Compute/images/read
+* Microsoft.Network/locations/operationResults/lecture
+* Microsoft.Network/locations/operations/read
+* Microsoft.Network/networkInterfaces/lecture
+* Microsoft.Network/networkInterfaces/write
+* Microsoft.Network/networkInterfaces/join/action
+* Microsoft.Network/networkSecurityGroups/lecture
+* Microsoft.Network/networkSecurityGroups/écriture
+* Microsoft.Network/networkSecurityGroups/join/action
+* Microsoft.Network/virtualNetworks/lecture
+* Microsoft.Network/virtualNetworks/checkIpAddressAvailability/lecture
+* Microsoft.Network/virtualNetworks/sous-réseaux/lecture
+* Microsoft.Network/virtualNetworks/sous-réseaux/écriture
+* Microsoft.Network/virtualNetworks/subnets/virtualMachines/read
+* Microsoft.Network/virtualNetworks/virtualMachines/lecture
+* Microsoft.Network/virtualNetworks/sous-réseaux/join/action
+* Microsoft.Ressources/déploiements/opérations/lecture
+* Microsoft.Ressources/déploiements/lecture
+* Microsoft.Ressources/déploiements/écriture
+* Microsoft.Resources/ressources/lire
+* Microsoft.Resources/subscriptions/operationresults/read
+* Microsoft.Resources/subscriptions/resourceGroups/delete
+* Microsoft.Storage/checknameavailability/lecture
+* Microsoft.Storage/opérations/lecture
+* Microsoft.Storage/storageAccounts/supprimer
+* Microsoft.Storage/usages/lecture
+* Microsoft.Compute/snapshots/write
+* Microsoft.Compute/snapshots/read
+* Microsoft.Compute/availabilitySets/write
+* Microsoft.Compute/availabilitySets/lecture
+* Microsoft.Compute/disques/beginGetAccess/action
+* Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read
+* Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write
+* Microsoft.Network/loadBalancers/lecture
+* Microsoft.Network/loadBalancers/write
+* Microsoft.Network/loadBalancers/supprimer
+* Microsoft.Network/loadBalancers/backendAddressPools/lecture
+* Microsoft.Network/loadBalancers/backendAddressPools/join/action
+* Microsoft.Network/loadBalancers/loadBalancingRules/lecture
+* Microsoft.Network/loadBalancers/sondes/lecture
+* Microsoft.Network/loadBalancers/probes/join/action
+* Microsoft.Autorisation/locks/*
+* Microsoft.Network/routeTables/join/action
+* NetApp/netAppAccounts/read
+* NetApp/netAppAccounts/capacityPools/read
+* NetApp/netAppAccounts/capacityPools/volumes/write
+* NetApp/netAppAccounts/capacityPools/volumes/read
+* NetApp/netAppAccounts/capacityPools/volumes/delete
+* Microsoft.Network/privateEndpoints/écriture
+* Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action
+* Microsoft.Storage/storageAccounts/privateEndpointConnections/lecture
+* Microsoft.Network/privateEndpoints/lecture
+* Microsoft.Network/privateDnsZones/écriture
+* Microsoft.Network/privateDnsZones/virtualNetworkLinks/écriture
+* Microsoft.Network/virtualNetworks/join/action
+* Microsoft.Network/privateDnsZones/A/écriture
+* Microsoft.Network/privateDnsZones/lecture
+* Microsoft.Network/privateDnsZones/virtualNetworkLinks/lecture
+* Microsoft.Resources/deployments/operationStatuses/lecture
+* Microsoft.Insights/Metrics/Read
+* Microsoft.Compute/virtualMachines/extensions/write
+* Microsoft.Compute/virtualMachines/extensions/delete
+* Microsoft.Compute/virtualMachines/extensions/read
+* Microsoft.Compute/virtualMachines/delete
+* Microsoft.Network/networkInterfaces/supprimer
+* Microsoft.Network/networkSecurityGroups/supprimer
+* Microsoft.Resources/deployments/delete
+* Microsoft.Compute/diskEncryptionSets/lecture
+* Microsoft.Compute/snapshots/delete
+* Microsoft.Network/privateEndpoints/supprimer
+* Microsoft.Compute/availabilitySets/delete
+* Microsoft.KeyVault/vaults/lecture
+* Microsoft.KeyVault/vaults/accessPolicies/write
+* Microsoft.Compute/diskEncryptionSets/écriture
+* Microsoft.KeyVault/vaults/deploy/action
+* Microsoft.Compute/diskEncryptionSets/delete
+* Microsoft.Ressources/tags/lecture
+* Microsoft.Ressources/tags/write
+* Microsoft.Ressources/tags/supprimer
+* Microsoft.Network/applicationSecurityGroups/écriture
+* Microsoft.Network/applicationSecurityGroups/lecture
+* Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action
+* Microsoft.Network/networkSecurityGroups/securityRules/écriture
+* Microsoft.Network/applicationSecurityGroups/supprimer
+* Microsoft.Network/networkSecurityGroups/securityRules/supprimer
+* Microsoft.Synapse/espaces de travail/écriture
+* Microsoft.Synapse/espaces de travail/lecture
+* Microsoft.Synapse/espaces de travail/supprimer
+* Microsoft.Synapse/register/action
+* Microsoft.Synapse/checkNameAvailability/action
+* Microsoft.Synapse/workspaces/operationStatuses/lecture
+* Microsoft.Synapse/workspaces/firewallRules/lecture
+* Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action
+* Microsoft.Synapse/workspaces/operationResults/lecture
+* Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action
+* Microsoft.ManagedIdentity/userAssignedIdentities/assign/action
+* Microsoft.Compute/images/write
+* Microsoft.Network/loadBalancers/frontendIPConfigurations/lecture
+* Microsoft.Compute/virtualMachineScaleSets/write
+* Microsoft.Compute/virtualMachineScaleSets/lecture
+* Microsoft.Compute/virtualMachineScaleSets/supprimer
+
+
+====
+Les autorisations suivantes ont été ajoutées à l'exemple de rôle JSON :
+
+* Microsoft.Authorization/locks/write
+* Microsoft.Authorization/locks/read
+
+
+Les autorisations suivantes ne sont plus nécessaires pour la sauvegarde et la restauration, sauf si vous utilisez l'indexation héritée :
+
+* Microsoft.Synapse/espaces de travail/écriture
+* Microsoft.Synapse/espaces de travail/lecture
+* Microsoft.Synapse/espaces de travail/supprimer
+* Microsoft.Synapse/register/action
+* Microsoft.Synapse/checkNameAvailability/action
+* Microsoft.Synapse/workspaces/operationStatuses/lecture
+* Microsoft.Synapse/workspaces/firewallRules/lecture
+* Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action
+* Microsoft.Synapse/workspaces/operationResults/lecture
+* Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action
+
+
+Les autorisations suivantes ont été déplacées vers la section « Autorisations supplémentaires de sauvegarde et de restauration » car elles ne sont pas nécessaires pour une configuration minimale :
+
+* Microsoft.Storage/storageAccounts/listkeys/action
+* Microsoft.Storage/storageAccounts/lecture
+* Microsoft.Storage/storageAccounts/write
+* Microsoft.Storage/storageAccounts/blobServices/containers/read
+* Microsoft.Storage/storageAccounts/listAccountSas/action
+* Microsoft.Ressources/abonnements/emplacements/lecture
+* Microsoft.Resources/abonnements/resourceGroups/read
+* Microsoft.Resources/abonnements/groupes de ressources/ressources/lecture
+* Microsoft.Resources/abonnements/resourceGroups/write
+* Microsoft.Storage/storageAccounts/managementPolicies/lecture
+* Microsoft.Storage/storageAccounts/managementPolicies/write
+* Microsoft.Authorization/locks/write
+* Microsoft.Authorization/locks/read
+
 
 
 

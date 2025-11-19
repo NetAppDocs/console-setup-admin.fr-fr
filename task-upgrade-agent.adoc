@@ -68,7 +68,7 @@ Pour réactiver la mise à niveau automatique, procédez comme suit et définiss
 +
 [source, json]
 ----
-  "isUpgradeDisabled": true,
+  "isUpgradeDisabled": true
 ----
 . Enregistrez votre fichier.
 . Redémarrez le service Service Manager 2 en exécutant la commande suivante :
@@ -77,12 +77,11 @@ Pour réactiver la mise à niveau automatique, procédez comme suit et définiss
 ----
 systemctl restart netapp-service-manager.service
 ----
-. Exécutez la commande suivante et vérifiez que l'état de l'agent indique _actif (en cours d'exécution)_ : _
+. Exécutez la commande suivante et vérifiez que l'état de l'agent affiche _actif (en cours d'exécution)_ :
 +
 [source, cli]
 ----
 systemctl status netapp-service-manager.service
-_
 ----
 
 

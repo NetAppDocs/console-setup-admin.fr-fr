@@ -114,27 +114,28 @@ Mettez à jour l’emplacement de sauvegarde pour chaque système Cloud Volumes 
 
 +
 .. Depuis l'interface de ligne de commande Cloud Volumes ONTAP , définissez le niveau de privilège sur avancé :
-+
-[source, cli]
+
+
+
+
+[listing]
 ----
 set -privilege advanced
 ----
-.. Exécutez la commande suivante pour afficher la cible de sauvegarde actuelle :
-+
-[source, cli]
+. Exécutez la commande suivante pour afficher la cible de sauvegarde actuelle :
+
+
+[listing]
 ----
 system configuration backup settings show
 ----
-.. Exécutez la commande suivante pour mettre à jour l’adresse IP de la cible de sauvegarde :
-+
-[source, cli]
+. Exécutez la commande suivante pour mettre à jour l’adresse IP de la cible de sauvegarde :
+
+
+[listing]
 ----
 system configuration backup settings modify -destination <target-location>
 ----
-
-
-
-
 
 
 == Modifier les URI d'un agent

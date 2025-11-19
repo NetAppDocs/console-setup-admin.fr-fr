@@ -194,6 +194,7 @@ Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser
 "/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
 "/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+]
 ----
 . Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
 +
@@ -265,6 +266,7 @@ Vous devez ajouter l’ID de chaque abonnement Azure à partir duquel les utilis
 "/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
 "/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+]
 ----
 .. Utilisez le fichier JSON pour créer un rôle personnalisé dans Azure.
 +

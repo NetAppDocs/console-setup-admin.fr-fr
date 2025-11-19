@@ -176,7 +176,7 @@ systemctl stop netapp-service-manager.service
 +
 [source, json]
 ----
-  "skipConfigCheck": true,
+  "skipConfigCheck": true
 ----
 . Enregistrez votre fichier.
 . Redémarrez le service Service Manager 2 en exécutant la commande suivante :
