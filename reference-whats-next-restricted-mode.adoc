@@ -20,7 +20,7 @@ Pour obtenir de l'aide, reportez-vous à la documentation de ces services :
 
 * https://docs.netapp.com/us-en/storage-management-azure-netapp-files/index.html["Documentation Azure NetApp Files"^]
 * https://docs.netapp.com/us-en/data-services-backup-recovery/index.html["Documents de sauvegarde et de récupération"^]
-* https://docs.netapp.com/us-en/data-services-data-classification/index.html["Documents de classification"^]
+* https://docs.netapp.com/us-en/data-services-data-classification/index.html["Documents sur la classification des données"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/index.html["Documentation Cloud Volumes ONTAP"^]
 * https://docs.netapp.com/us-en/console-licenses-subscriptions/index.html["Documents sur le portefeuille numérique"^]
 * https://docs.netapp.com/us-en/storage-management-ontap-onprem/index.html["Documentation du cluster ONTAP sur site"^]

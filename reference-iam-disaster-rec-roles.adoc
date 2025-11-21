@@ -16,10 +16,10 @@ Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner acc�
 
 La reprise après sinistre utilise les rôles suivants :
 
-* *Administrateur de reprise après sinistre* : Effectuez toutes les actions.
-* *Administrateur de basculement de reprise après sinistre* : Effectuer le basculement et les migrations.
-* *Administrateur d'application de récupération après sinistre* : Créer des plans de réplication.  Modifier les plans de réplication.  Démarrer les tests de basculement.
-* *Visionneuse de récupération après sinistre* : Afficher uniquement les informations.
+* *Administrateur de la reprise après sinistre* : Effectuez les actions nécessaires.
+* *Administrateur de basculement en cas de sinistre* : Effectuer des basculements et des migrations.
+* *Administrateur de l'application de reprise après sinistre* : Créer des plans de réplication. Modifier les plans de réplication. Démarrer les tests de basculement.
+* *Visionneuse de reprise après sinistre* : Affichage des informations uniquement.
 
 
 Le tableau suivant indique les actions que chaque rôle peut effectuer.
