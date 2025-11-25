@@ -139,7 +139,7 @@ includedPermissions:
 ----
 
 
-== Comment les autorisations Google Cloud sont utilisées
+== Utilisation des autorisations Google Cloud pour Cloud Volumes ONTAP
 
 [cols="5*"]
 |===

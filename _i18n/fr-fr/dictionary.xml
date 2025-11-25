@@ -2612,7 +2612,6 @@
   <block id="48f3320f6327aedea52854dfcbcf31d9" category="paragraph">Le rôle personnalisé indiqué ci-dessous fournit les autorisations dont un agent de console a besoin pour gérer les ressources et les processus au sein de votre réseau Google Cloud.</block>
   <block id="82a6f573069dcbf74094644066f00ff8" category="paragraph">Vous devrez appliquer ce rôle personnalisé à un compte de service qui est attaché à la machine virtuelle de l’agent de console.</block>
   <block id="4560d9b851db1f575c8bd1ba53369c0a" category="paragraph">Vous devez également vous assurer que le rôle est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.  Si de nouvelles autorisations sont requises, elles seront répertoriées dans les notes de version.</block>
-  <block id="823b2e7894c2b52c1e9adc9ea10b9be5" category="section-title">Comment les autorisations Google Cloud sont utilisées</block>
   <block id="06df33001c1d7187fdd81ea1f5b277aa" category="cell">Actions</block>
   <block id="f66d598893a55fa43b7676b10c66160f" category="cell">Pour créer et gérer des disques pour Cloud Volumes ONTAP.</block>
   <block id="e9047288d907d41dac5645fd341a761c" category="cell">Pour créer des règles de pare-feu pour Cloud Volumes ONTAP.</block>
@@ -5659,4 +5658,5 @@
   <block id="2632bb82f2d43ffb72d31ea06ed68352" category="list-text">Installez EPEL pour obtenir podman-compose.</block>
   <block id="3c7d277b4a6a1367e3f2567411648df9" category="paragraph">Installez une version compatible de Docker Engine en suivant les étapes suivantes. N’installez pas la dernière version, car la console ne la prend pas en charge.</block>
   <block id="18ecbdaa6bb0f123dda150b973bd53b7" category="list-text">Si vous utilisez Red Hat Enterprise 9.1 à 9.6 :</block>
+  <block id="c54ef5e116598334892682d82cbec3e0" category="section-title">Utilisation des autorisations Google Cloud pour Cloud Volumes ONTAP</block>
 </blocks>
