@@ -14,7 +14,7 @@ summary: 'La création de partenariats entre organisations dans la NetApp Consol
 
 
 [role="lead"]
-En créant des partenariats entre les organisations, la NetApp Console permet aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, simplifiant ainsi la collaboration et améliorant la sécurité.
+La création de partenariats entre organisations dans la NetApp Console permet aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, rationalisant ainsi la collaboration et renforçant la sécurité.
 
 .Rôles requis
 Administrateur de partenariatlink:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]

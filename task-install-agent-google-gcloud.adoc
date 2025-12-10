@@ -47,7 +47,7 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 
  a| 
-\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects
+\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \// https://config.googleapis.com/v1/projects
  a| 
 Pour gérer les ressources dans Google Cloud.
 
@@ -149,12 +149,16 @@ Configurez les autorisations pour que l’utilisateur Google Cloud puisse déplo
 +
 .. Créez un fichier YAML qui inclut les autorisations suivantes :
 +
+[%collapsible]
+====
 [source, yaml]
 ----
 title: Console agent deployment policy
-description: Permissions for the user who deploys the NetApp Console agent
+description: Permissions for the user who deploys the Console agent
 stage: GA
 includedPermissions:
+
+- cloudbuild.builds.get
 - compute.disks.create
 - compute.disks.get
 - compute.disks.list
@@ -192,6 +196,19 @@ includedPermissions:
 - compute.zoneOperations.get
 - compute.zones.get
 - compute.zones.list
+- *config.deployments.create*
+- *config.operations.get*
+- *config.deployments.delete*
+- *config.deployments.deleteState*
+- *config.deployments.get*
+- *config.deployments.getState*
+- *config.deployments.list*
+- *config.deployments.update*
+- *config.deployments.updateState*
+- *config.previews.get*
+- *config.previews.list*
+- *config.revisions.get*
+- *config.resources.list*
 - deploymentmanager.compositeTypes.get
 - deploymentmanager.compositeTypes.list
 - deploymentmanager.deployments.create
@@ -210,8 +227,18 @@ includedPermissions:
 - deploymentmanager.types.list
 - resourcemanager.projects.get
 - compute.instances.setServiceAccount
+- *iam.serviceAccounts.actAs*
+- *iam.serviceAccounts.create*
 - iam.serviceAccounts.list
+- *iam.serviceAccountKeys.create*
+- *storage.buckets.create*
+- *storage.buckets.get*
+- *storage.objects.create*
+- *storage.folders.create*
+- *storage.objects.list*
+
 ----
+====
 .. Depuis Google Cloud, activez Cloud Shell.
 .. Téléchargez le fichier YAML qui inclut les autorisations requises.
 .. Créez un rôle personnalisé en utilisant le `gcloud iam roles create` commande.
@@ -248,10 +275,10 @@ Il est de votre responsabilité de mettre à jour le rôle personnalisé à mesu
 .. Téléchargez le fichier YAML qui inclut les autorisations requises.
 .. Créez un rôle personnalisé en utilisant le `gcloud iam roles create` commande.
 +
-L'exemple suivant crée un rôle nommé « connecteur » au niveau du projet :
+L'exemple suivant crée un rôle nommé « agent » au niveau du projet :
 
 +
-`gcloud iam roles create connector --project=myproject --file=connector.yaml`
+`gcloud iam roles create connector --project=myproject --file=agent.yaml`
 
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["Documentation Google Cloud : Création et gestion de rôles personnalisés"^]
@@ -350,6 +377,7 @@ Activez plusieurs API Google Cloud avant de déployer l’agent de console et Cl
 .Étape
 . Activez les API Google Cloud suivantes dans votre projet :
 +
+** API Cloud Infrastructure Manager
 ** API du gestionnaire de déploiement cloud V2
 ** API de journalisation dans le cloud
 ** API du gestionnaire de ressources cloud

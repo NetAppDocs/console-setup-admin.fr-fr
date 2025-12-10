@@ -22,6 +22,13 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 | Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
 
+| Amazon FsX pour NetApp ONTAP:
+
+* api.workloads.netapp.com
+
+
+| La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP .
+
 | \ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
 
 | Pour gérer les ressources dans les régions publiques Azure.
@@ -38,7 +45,7 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 | Pour gérer les ressources dans les régions Azure Chine.
 
-| \ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects
+| \ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \// https://config.googleapis.com/v1/projects
 
 | Pour gérer les ressources dans Google Cloud.
 

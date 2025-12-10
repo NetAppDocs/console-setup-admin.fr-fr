@@ -106,6 +106,16 @@ Pour gérer les ressources AWS.  Le point de terminaison dépend de votre régio
 
 
  a| 
+Amazon FSX pour NetApp ONTAP:
+
+* api.workloads.netapp.com
+
+ a| 
+La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP .
+
+
+
+ a| 
 \ https://mysupport.netapp.com
  a| 
 Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .

@@ -20,18 +20,18 @@ Dans la NetApp Console, vous organisez vos ressources NetApp à l’aide de proj
 
 == Ajouter un dossier ou un projet
 
-Lorsque vous créez votre organisation, elle comprend un seul projet.  Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets associés.
+Lorsque vous créez votre organisation, elle comprend un seul projet. Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets connexes.
 
-La hiérarchie des ressources de votre organisation peut comporter jusqu'à sept niveaux, avec des dossiers imbriqués à six niveaux de profondeur et des projets au septième.
+Vous pouvez créer jusqu'à sept niveaux de dossiers et de projets dans la structure des ressources de votre organisation.  Créez des dossiers imbriqués pour construire une structure hiérarchique pour votre organisation.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Organisation*.
 . Depuis la page *Organisation*, sélectionnez *Ajouter un dossier ou un projet*.
 . Sélectionnez *Dossier* ou *Projet*.
-. Fournissez des détails sur le dossier ou le projet :
+. Saisissez les détails du dossier ou du projet :
 +
-** *Nom et emplacement* : saisissez un nom et choisissez un emplacement dans la hiérarchie pour le dossier ou le projet.  Un dossier ou un projet peut être directement sous l'organisation ou à l'intérieur d'un dossier.
+** *Nom et emplacement* : saisissez un nom et choisissez un emplacement dans la hiérarchie pour le dossier ou le projet. Placez un dossier ou un projet sous l'organisation ou à l'intérieur d'un autre dossier.
 ** *Ressources* : Sélectionnez les ressources que vous souhaitez associer à ce dossier ou projet.
 +
 Vous pouvez sélectionner des ressources associées au dossier parent ou au projet.
@@ -41,7 +41,7 @@ link:concept-identity-and-access-management.html#associate-resource-folder["Appr
 
 ** *Accès* : Affichez les membres qui auront accès au dossier ou au projet en fonction des autorisations existantes déjà définies dans votre hiérarchie de ressources.
 +
-Sélectionnez *Ajouter un membre* pour attribuer l'accès et un rôle à des membres supplémentaires. Un rôle définit les autorisations dont disposent les membres pour le dossier ou le projet.
+Sélectionnez *Ajouter un membre* pour lui attribuer un accès et un rôle.
 
 +
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
@@ -68,10 +68,7 @@ Si nécessaire, vous pouvez modifier le nom de vos dossiers et projets.
 
 Supprimez les dossiers et les projets dont vous n’avez plus besoin.
 
-.Avant de commencer
-* Assurez-vous que le dossier ou le projet n’a aucune ressource associée. <<modify-resources,Apprenez à dissocier les ressources>> .
-* Assurez-vous que le dossier ou le projet n’a aucune ressource associée.
-
+Avant de supprimer un dossier ou un projet, assurez-vous qu'il ne contient aucune ressource. <<modify-resources,Apprenez comment supprimer des ressources>>.
 
 .Étapes
 . Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône avec trois points"] puis sélectionnez *Supprimer*.
@@ -119,7 +116,7 @@ Dans le tableau, la colonne *Statut* identifie les ressources associées au doss
 +
 image:screenshot-iam-associate-resources.png["Une capture d'écran de la page Modifier le projet qui montre l'option Associer des ressources disponible après avoir sélectionné des ressources qui ne sont pas actuellement associées."]
 
-. Sélectionnez *Appliquer*
+. Sélectionnez *Appliquer*.
 
 
 
@@ -136,9 +133,9 @@ image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier
 
 == Modifier l'accès des membres à un dossier ou à un projet
 
-Modifiez l'accès des membres pour garantir que les bons membres peuvent accéder aux ressources associées.
+Modifier les droits d'accès des membres pour contrôler l'accès aux ressources.
 
-L'accès des membres fourni à un niveau hiérarchique supérieur ne peut pas être modifié à des niveaux inférieurs.  Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l’accès.  Alternativement, vous pouvezlink:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"] .
+Vous ne pouvez pas modifier l'accès des membres aux niveaux inférieurs si celui-ci est hérité d'un niveau hiérarchique supérieur. Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l’accès.  Vous pouvez également : link:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"].
 
 link:concept-identity-and-access-management.html#role-inheritance["En savoir plus sur l'héritage des rôles"] .
 

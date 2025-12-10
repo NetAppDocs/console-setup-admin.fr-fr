@@ -37,16 +37,12 @@ Vous pouvez attribuer les rôles suivants aux utilisateurs partenaires :
 * link:reference-iam-backup-rec-roles.html["Visionneuse de sauvegarde"]
 * link:reference-iam-backup-rec-roles.html["Restaurer l'administrateur"]
 * link:reference-iam-backup-rec-roles.html["Cloner l'administrateur"]
-* link:reference-iam-predefined-roles.html["Visionneuse de classification des données"]
 * link:reference-iam-disaster-rec-roles.html["Administrateur de reprise après sinistre"]
 * link:reference-iam-disaster-rec-roles.html["Administrateur de basculement de reprise après sinistre"]
 * link:reference-iam-disaster-rec-roles.html["Administrateur d'application de reprise après sinistre"]
 * link:reference-iam-disaster-rec-roles.html["Visionneuse de reprise après sinistre"]
 * link:reference-iam-storage-roles.html["Analyste de soutien aux opérations"]
-* link:reference-iam-ransomware-roles.html["Administrateur de la résilience aux ransomwares"]
-* link:reference-iam-ransomware-roles.html["Visionneuse de résilience aux ransomwares"]
-* link:reference-iam-ransomware-roles.html#user-behavior-roles["Comportement utilisateur de Ransomware Resilience administrateur"]
-* link:reference-iam-ransomware-roles.html#user-behavior-roles["Visualiseur de comportement utilisateur de Ransomware Resilience"]
+* link:reference-iam-predefined-roles.html["Visionneuse de classification"]
 
 
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles prédéfinis"]

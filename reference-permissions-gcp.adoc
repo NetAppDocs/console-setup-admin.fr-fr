@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-permissions-gcp.html 
-keywords: permissions, gcp, gcp permissions, bluexp 
+keywords: permissions, gcp, gcp permissions, bluexp, console agent 
 summary: 'L"agent de console nécessite des autorisations pour effectuer des actions chez votre fournisseur de cloud.  Ces autorisations sont incluses dans les politiques fournies par NetApp.  Vous devez comprendre ce que l’agent fait avec ces autorisations.' 
 ---
 = Autorisations Google Cloud pour l'agent de la console
@@ -18,17 +18,117 @@ L'agent de la console nécessite des autorisations pour effectuer des actions da
 
 
 
+== Autorisations du compte utilisateur Google Cloud
+
+Le rôle personnalisé ci-dessous confère à un utilisateur Google Cloud les autorisations nécessaires pour déployer un agent.  Attribuez ce rôle personnalisé à l'utilisateur qui déploiera l'agent.
+
+.Afficher les autorisations du compte utilisateur Google Cloud
+[%collapsible]
+====
+[source, yaml]
+----
+title: Console agent deployment policy
+description: Permissions for the user who deploys the Console agent
+stage: GA
+includedPermissions:
+
+- cloudbuild.builds.get
+- compute.disks.create
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+- compute.globalOperations.get
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+- compute.instances.attachDisk
+- compute.instances.create
+- compute.instances.get
+- compute.instances.list
+- compute.instances.setDeletionProtection
+- compute.instances.setLabels
+- compute.instances.setMachineType
+- compute.instances.setMetadata
+- compute.instances.setTags
+- compute.instances.start
+- compute.instances.updateDisplayDevice
+- compute.machineTypes.get
+- compute.networks.get
+- compute.networks.list
+- compute.networks.updatePolicy
+- compute.projects.get
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+- *config.deployments.create*
+- *config.operations.get*
+- *config.deployments.delete*
+- *config.deployments.deleteState*
+- *config.deployments.get*
+- *config.deployments.getState*
+- *config.deployments.list*
+- *config.deployments.update*
+- *config.deployments.updateState*
+- *config.previews.get*
+- *config.previews.list*
+- *config.revisions.get*
+- *config.resources.list*
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+- resourcemanager.projects.get
+- compute.instances.setServiceAccount
+- *iam.serviceAccounts.actAs*
+- *iam.serviceAccounts.create*
+- iam.serviceAccounts.list
+- *iam.serviceAccountKeys.create*
+- *storage.buckets.create*
+- *storage.buckets.get*
+- *storage.objects.create*
+- *storage.folders.create*
+- *storage.objects.list*
+
+----
+====
+
+
 == Autorisations du compte de service
 
-Le rôle personnalisé indiqué ci-dessous fournit les autorisations dont un agent de console a besoin pour gérer les ressources et les processus au sein de votre réseau Google Cloud.
+Le rôle personnalisé ci-dessous confère au compte de service Google Cloud associé à l'agent Console les autorisations nécessaires pour gérer les ressources et les processus de votre réseau Google Cloud.
 
-Vous devrez appliquer ce rôle personnalisé à un compte de service qui est attaché à la machine virtuelle de l’agent de console.
+Appliquez ce rôle personnalisé à un compte de service associé à la machine virtuelle de l'agent de console.
 
 * link:task-install-agent-google-console-gcloud.html#agent-permissions-google["Configurer les autorisations Google Cloud pour le mode standard"]
 * link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Configurer les autorisations pour le mode restreint"]
 
 
-Vous devez également vous assurer que le rôle est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.  Si de nouvelles autorisations sont requises, elles seront répertoriées dans les notes de version.
+.Afficher les autorisations du compte de service Google
+[%collapsible]
+====
+Veillez à ce que le rôle soit à jour, car de nouvelles autorisations sont ajoutées ou supprimées dans les versions ultérieures.  Le journal des modifications répertorie toutes les nouvelles autorisations requises.link:reference-permissions-gcp.html#gcp-permissions-change-log["Consultez le journal des modifications des autorisations Google"] link:task-adding-gcp-accounts.html["Consultez la procédure pour ajouter des comptes de service Google Cloud."]
 
 [source, yaml]
 ----
@@ -36,13 +136,46 @@ title: NetApp Console agent
 description: Permissions for the service account associated with the Console agent.
 stage: GA
 includedPermissions:
-- iam.serviceAccounts.actAs
+- *cloudbuild.builds.get*
+- *cloudbuild.connections.list*
+- *cloudbuild.repositories.accessReadToken*
+- *cloudbuild.repositories.list*
+- *cloudquotas.quotas.get*
+- cloudkms.cryptoKeys.getIamPolicy
+- cloudkms.cryptoKeys.setIamPolicy
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.setIamPolicy
+- *config.artifacts.import*
+- *config.deployments.create*
+- *config.deployments.delete*
+- *config.deployments.deleteState*
+- *config.deployments.get*
+- *config.deployments.getLock*
+- *config.deployments.getState*
+- *config.deployments.update*
+- *config.deployments.updateState*
+- *config.previews.upload*
+- *config.revisions.get*
+- *config.revisions.getState*
+- *config.deployments.getLock*
+- *config.deployments.list*
+- *config.deployments.lock*
+- *config.operations.get*
+- *config.previews.get*
+- *config.previews.list*
+- *config.resources.list*
 - compute.regionBackendServices.create
 - compute.regionBackendServices.get
 - compute.regionBackendServices.list
+- *compute.regionBackendServices.update*
 - compute.networks.updatePolicy
+- *compute.addresses.createInternal*
+- *compute.addresses.deleteInternal*
+- *compute.addresses.list*
+- *compute.addresses.setLabels*
+- *compute.addresses.useInternal*
 - compute.backendServices.create
-- compute.addresses.list
 - compute.disks.create
 - compute.disks.createSnapshot
 - compute.disks.delete
@@ -54,7 +187,15 @@ includedPermissions:
 - compute.firewalls.delete
 - compute.firewalls.get
 - compute.firewalls.list
+- *compute.forwardingRules.create*
+- *compute.forwardingRules.delete*
+- *compute.forwardingRules.get*
+- *compute.forwardingRules.setLabels*
 - compute.globalOperations.get
+- *compute.healthChecks.create*
+- *compute.healthChecks.delete*
+- *compute.healthChecks.get*
+- *compute.healthChecks.useReadOnly*
 - compute.images.get
 - compute.images.getFromFamily
 - compute.images.list
@@ -75,15 +216,26 @@ includedPermissions:
 - compute.instances.start
 - compute.instances.stop
 - compute.instances.updateDisplayDevice
+- *compute.instances.use*
+- *compute.instanceGroups.create*
+- *compute.instanceGroups.delete*
 - compute.instanceGroups.get
+- *compute.instanceGroups.update*
+- *compute.instanceGroups.use*
 - compute.addresses.get
 - compute.instances.updateNetworkInterface
+- compute.instances.setMinCpuPlatform
 - compute.machineTypes.get
 - compute.networks.get
 - compute.networks.list
 - compute.projects.get
 - compute.regions.get
 - compute.regions.list
+- *compute.regionBackendServices.delete*
+- *compute.regionBackendServices.use*
+- *compute.resourcePolicies.create*
+- *compute.resourcePolicies.delete*
+- *compute.resourcePolicies.get*
 - compute.snapshots.create
 - compute.snapshots.delete
 - compute.snapshots.get
@@ -115,35 +267,98 @@ includedPermissions:
 - deploymentmanager.types.list
 - logging.logEntries.list
 - logging.privateLogEntries.list
+- *logging.logEntries.create*
+- *logging.logEntries.route*
+- monitoring.timeSeries.list
 - resourcemanager.projects.get
 - storage.buckets.create
 - storage.buckets.delete
 - storage.buckets.get
 - storage.buckets.list
+- *storage.objects.create*
+- *storage.objects.delete*
+- *storage.objects.update*
 - cloudkms.cryptoKeyVersions.useToEncrypt
 - cloudkms.cryptoKeys.get
 - cloudkms.cryptoKeys.list
 - cloudkms.keyRings.list
 - storage.buckets.update
+- iam.serviceAccounts.actAs
+- *iam.serviceAccounts.create*
+- *iam.serviceAccounts.get*
 - iam.serviceAccounts.getIamPolicy
 - iam.serviceAccounts.list
+- *iam.serviceAccountKeys.create*
 - storage.objects.get
-- storage.objects.list
-- monitoring.timeSeries.list
 - storage.buckets.getIamPolicy
-- cloudkms.cryptoKeys.getIamPolicy
-- cloudkms.cryptoKeys.setIamPolicy
-- cloudkms.keyRings.get
-- cloudkms.keyRings.getIamPolicy
-- cloudkms.keyRings.setIamPolicy
+
+
+
 ----
+====
 
 
-== Utilisation des autorisations Google Cloud pour Cloud Volumes ONTAP
+== Comment les autorisations Google Cloud sont utilisées
 
+L'agent Console utilise les autorisations du rôle personnalisé pour gérer les ressources Cloud Volumes ONTAP et les processus de services de données NetApp sur votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.
+
+
+
+=== Autorisations utilisées pour Cloud Volumes ONTAP
+
+L'agent Console utilise les autorisations du rôle personnalisé pour gérer les ressources et les processus Cloud Volumes ONTAP de votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.
+
+.Autorisations pour Cloud Volumes ONTAP
+[%collapsible]
+====
 [cols="5*"]
 |===
 | Actions | But | Utilisé pour le déploiement ? | Utilisé pour les opérations quotidiennes ? | Utilisé pour la suppression ? 
+
+
+| *config.deployments.create* .15+| Pour déployer l'instance de machine virtuelle Cloud Volumes ONTAP à l'aide de Google Cloud Infrastructure Manager. | Oui | Non | Non 
+
+
+| *config.deployments.delete* | Non | Non | Oui 
+
+
+| *config.deployments.deleteState* | Non | Non | Oui 
+
+
+| *config.deployments.get* | Non | Oui | Non 
+
+
+| *config.deployments.getLock* | Non | Oui | Non 
+
+
+| *config.deployments.getState* | Non | Oui | Non 
+
+
+| *config.deployments.list* | Non | Oui | Non 
+
+
+| *config.deployments.lock* | Non | Oui | Non 
+
+
+| *config.deployments.update* | Non | Oui | Non 
+
+
+| *config.deployments.updateState* | Non | Oui | Non 
+
+
+| *config.operations.get* | Non | Oui | Non 
+
+
+| *config.previews.get* | Non | Oui | Non 
+
+
+| *config.previews.list* | Non | Oui | Non 
+
+
+| *config.resources.list* | Non | Oui | Non 
+
+
+| *config.revisions.get* | Non | Oui | Non 
 
 
 | calculer.disques.créer .7+| Pour créer et gérer des disques pour Cloud Volumes ONTAP. | Oui | Oui | Non 
@@ -179,7 +394,31 @@ includedPermissions:
 | liste des pare-feu | Oui | Oui | Non 
 
 
-| calculer.globalOperations.get . | Pour obtenir l'état des opérations. | Oui | Oui | Non 
+| *compute.forwardingRules.create* | Créez des règles de transfert pour le routage du trafic vers les services backend. | Non | Oui | Non 
+
+
+| *compute.forwardingRules.delete* | Supprimer les règles de transfert existantes. | Non | Oui | Non 
+
+
+| *compute.forwardingRules.get* | Récupérer les détails des règles de redirection existantes. | Non | Oui | Non 
+
+
+| *compute.forwardingRules.setLabels* | Définir ou mettre à jour les étiquettes des règles de transfert pour l'organisation. | Non | Oui | Non 
+
+
+| calculer.globalOperations.get | Pour obtenir l'état des opérations. | Oui | Oui | Non 
+
+
+| *compute.healthChecks.create* .4+| Créer et gérer des contrôles d'intégrité pour surveiller l'état des services backend. | Non | Oui | Non 
+
+
+| *compute.healthChecks.delete* | Non | Oui | Non 
+
+
+| *compute.healthChecks.get* | Non | Oui | Non 
+
+
+| *compute.healthChecks.useReadOnly* | Non | Oui | Non 
 
 
 | calculer.images.obtenir .4+| Pour obtenir des images pour les instances de VM. | Oui | Non | Non 
@@ -242,10 +481,22 @@ includedPermissions:
 | calculer.instances.updateDisplayDevice | Oui | Oui | Non 
 
 
+| *compute.instances.use* | Utiliser des instances de machines virtuelles (opérations de démarrage, d'arrêt et de connexion). | Non | Oui | Non 
+
+
 | calculer.machineTypes.get | Pour obtenir le nombre de cœurs afin de vérifier les quotas. | Oui | Non | Non 
 
 
 | calculer.projets.obtenir | Pour soutenir des projets multiples. | Oui | Non | Non 
+
+
+| *compute.resourcePolicies.create* .3+| Créer et gérer des politiques de ressources pour la gestion automatisée des ressources. | Non | Oui | Non 
+
+
+| *compute.resourcePolicies.delete* | Non | Oui | Non 
+
+
+| *compute.resourcePolicies.get* | Non | Oui | Non 
 
 
 | calculer.instantanés.créer .5+| Pour créer et gérer des instantanés de disque persistants. | Oui | Oui | Non 
@@ -344,6 +595,12 @@ includedPermissions:
 | logging.privateLogEntries.list | Oui | Oui | Non 
 
 
+| *logging.logEntries.create* .2+| Créer et acheminer les entrées de journal à des fins de surveillance, de débogage et d'audit. | Oui | Oui | Non 
+
+
+| *logging.logEntries.route* | Oui | Oui | Non 
+
+
 | resourcemanager.projects.get | Pour soutenir des projets multiples. | Oui | Oui | Non 
 
 
@@ -362,7 +619,7 @@ includedPermissions:
 | mise à jour des buckets de stockage | Non | Oui | Non 
 
 
-| cloudkms.cryptoKeyVersions.useToEncrypt .4+| Pour utiliser les clés de chiffrement gérées par le client à partir du service Cloud Key Management avec Cloud Volumes ONTAP. | Oui | Oui | Non 
+| cloudkms.cryptoKeyVersions.useToEncrypt .5+| Pour utiliser les clés de chiffrement gérées par le client à partir du service Cloud Key Management avec Cloud Volumes ONTAP. | Oui | Oui | Non 
 
 
 | cloudkms.cryptoKeys.get | Oui | Oui | Non 
@@ -374,16 +631,31 @@ includedPermissions:
 | cloudkms.keyRings.list | Oui | Oui | Non 
 
 
+| *cloudbuild.builds.get* | Oui | Non | Non 
+
+
 | compute.instances.setServiceAccount .6+| Pour définir un compte de service sur l’instance Cloud Volumes ONTAP .  Ce compte de service fournit des autorisations pour la hiérarchisation des données vers un bucket Google Cloud Storage. | Oui | Oui | Non 
 
 
 | je suis.comptesdeservice.agirEnTantQue | Oui | Non | Non 
 
 
+| *iam.serviceAccounts.create* | Oui | Non | Non 
+
+
 | iam.serviceAccounts.getIamPolicy | Oui | Oui | Non 
 
 
 | liste des comptes de service iam | Oui | Oui | Non 
+
+
+| *iam.serviceAccountKeys.create* | Oui | Non | Non 
+
+
+| création d'objets de stockage .4+| Créez et gérez des objets (fichiers) dans un bucket Google Cloud Storage. | Oui | Oui | Non 
+
+
+| suppression des objets de stockage | Non | Non | Oui 
 
 
 | storage.objects.get | Oui | Oui | Non 
@@ -395,22 +667,43 @@ includedPermissions:
 | liste des adresses calculées | Pour récupérer les adresses dans une région lors du déploiement d'une paire HA. | Oui | Non | Non 
 
 
-| calculer.backendServices.créer .4+| Pour configurer un service backend pour distribuer le trafic dans une paire HA. | Oui | Non | Non 
+| *compute.addresses.createInternal* | Créer des adresses IP internes au sein du réseau VPC pour l'allocation des ressources. | Non | Oui | Non 
 
 
-| calculer.regionBackendServices.créer | Oui | Non | Non 
+| *compute.addresses.deleteInternal* | Suppression des adresses IP internes pour le nettoyage des ressources. | Non | Oui | Non 
+
+
+| *compute.addresses.setLabels* | Mettre à jour les étiquettes de la ressource Adresse. | Non | Oui | Non 
+
+
+| *compute.addresses.useInternal* | Utilisez les adresses IP internes pour les communications réseau. | Non | Oui | Non 
+
+
+| calculer.backendServices.créer | Pour configurer un service backend pour distribuer le trafic dans une paire HA. | Oui | Non | Non 
+
+
+| calculer.regionBackendServices.créer .6+| Créer et gérer les services backend pour le routage du trafic. | Oui | Non | Non 
+
+
+| *compute.regionBackendServices.delete* | Non | Oui | Non 
 
 
 | compute.regionBackendServices.get | Oui | Non | Non 
 
 
+| *compute.regionBackendServices.update* | Oui | Oui | Non 
+
+
 | compute.regionBackendServices.list | Oui | Non | Non 
+
+
+| *compute.regionBackendServices.use* | Non | Oui | Non 
 
 
 | compute.networks.updatePolicy | Pour appliquer des règles de pare-feu sur les VPC et les sous-réseaux pour une paire HA. | Oui | Non | Non 
 
 
-| calculer.instanceGroups.get .3+| Pour créer et gérer des machines virtuelles de stockage sur des paires Cloud Volumes ONTAP HA. | Oui | Oui | Non 
+| calculer.instanceGroups.get .7+| Pour créer et gérer des machines virtuelles de stockage sur des paires Cloud Volumes ONTAP HA. | Oui | Oui | Non 
 
 
 | calculer.adresses.obtenir | Oui | Oui | Non 
@@ -419,15 +712,33 @@ includedPermissions:
 | compute.instances.updateNetworkInterface | Oui | Oui | Non 
 
 
+| *compute.instanceGroups.create* | Non | Oui | Non 
+
+
+| *compute.instanceGroups.delete* | Non | Oui | Non 
+
+
+| *compute.instanceGroups.update* | Non | Oui | Non 
+
+
+| *compute.instanceGroups.use* | Non | Oui | Non 
+
+
 | monitoring.timeSeries.list .2+| Pour découvrir des informations sur les buckets Google Cloud Storage. | Oui | Oui | Non 
 
 
 | storage.buckets.getIamPolicy | Oui | Oui | Non 
 |===
+====
 
 
 === Autorisations utilisées pour NetApp Backup and Recovery
 
+L'agent de la console utilise les autorisations du rôle personnalisé pour gérer les ressources et les processus NetApp Backup and Recovery sur votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.
+
+.Afficher les autorisations pour NetApp Backup and Recovery
+[%collapsible]
+====
 [cols="5*"]
 |===
 
@@ -447,10 +758,16 @@ includedPermissions:
 
 | Pour sélectionner vos propres clés gérées par le client dans l'assistant d'activation de NetApp Backup and Recovery au lieu d'utiliser les clés de chiffrement par défaut gérées par Google. | Oui | Oui | Non 
 |===
+====
 
 
 === Autorisations utilisées pour la NetApp Data Classification
 
+L'agent de la console utilise les autorisations du rôle personnalisé pour gérer les ressources et les processus de NetApp Data Classification sur votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.
+
+.Autorisations d'affichage pour la NetApp Data Classification
+[%collapsible]
+====
 [cols="5*"]
 |===
 
@@ -465,21 +782,113 @@ includedPermissions:
 
 | Pour activer la NetApp Data Classification. | Oui | Non | Non 
 |===
+====
 
 
 == Journal des modifications
 
-Au fur et à mesure que des autorisations sont ajoutées et supprimées, nous les noterons dans les sections ci-dessous.
+Les autorisations ajoutées et supprimées sont indiquées ci-dessous.
 
 
 
-=== 26/11/2025
+=== 8 décembre 2025
+
+NetApp passe de Google Cloud Deployment Manager à Google Cloud Infrastructure Manager (IM) pour déployer et exécuter l'agent Console dans Google Cloud.  Les autorisations suivantes ont été ajoutées pour prendre en charge cette modification.
+
+Les autorisations supplémentaires suivantes sont requises pour l'utilisateur Google Cloud qui déploie l'agent :
+
+* storage.buckets.create
+* storage.buckets.get
+* création d'objets de stockage
+* storage.folders.create
+* liste des objets de stockage
+* je suis.compte_de_service.agir_en
+* config.déploiements.créer
+* config.operations.get
+
+
+Les autorisations supplémentaires suivantes sont requises pour le compte de service Google Cloud utilisé pour les opérations quotidiennes :
+
+* cloudbuild.connections.list
+* cloudbuild.repositories.accessReadToken
+* cloudbuild.repositories.list
+* cloudquotas.quotas.get
+* config.artifacts.import
+* config.deployments.deleteState
+* config.deployments.getLock
+* config.deployments.getState
+* config.deployments.updateState
+* config.previews.upload
+* config.revisions.getState
+* logging.logEntries.create
+* création d'objets de stockage
+* suppression des objets de stockage
+* mise à jour des objets de stockage
+* iam.serviceAccounts.get
+
+
+Les autorisations supplémentaires suivantes sont requises pour déployer Cloud Volumes ONTAP:
+
+* cloudbuild.builds.get
+* config.deployments.delete
+* config.deployments.deleteState
+* config.deployments.get
+* config.deployments.getState
+* config.déploiements.liste
+* config.déploiements.mise à jour
+* config.deployments.updateState
+* config.previews.get
+* config.previews.list
+* config.revisions.get
+* config.resources.list
+* iam.serviceAccountKeys.create
+* je suis.comptesdeservice.créer
+
+
+Les autorisations supplémentaires suivantes sont requises pour le compte de service utilisé pour les opérations quotidiennes de Cloud Volumes ONTAP.
+
+* calculer.adresses.créerInterne
+* calculer.adresses.supprimerInterne
+* calculer.adresses.setLabels
+* calculer.adresses.utiliserInterne
+* calculer.forwardingRules.créer
+* calculer.forwardingRules.delete
+* calculer.forwardingRules.get
+* calculer.forwardingRules.setLabels
+* calculer.healthChecks.créer
+* calculer.healthChecks.supprimer
+* calculer.healthChecks.get
+* calculer.healthChecks.useReadOnly
+* calculer.instanceGroups.créer
+* calculer.instanceGroups.supprimer
+* calculer.instanceGroups.update
+* calculer.instanceGroups.utiliser
+* calculer.instances.utiliser
+* compute.regionBackendServices.delete
+* calculer.regionBackendServices.update
+* compute.regionBackendServices.use
+* calculer.resourcePolicies.créer
+* calculer.resourcePolicies.supprimer
+* calculer.resourcePolicies.get
+* logging.logEntries.route
+* config.déploiements.créer
+* config.deployments.delete
+* config.deployments.get
+* config.déploiements.mise à jour
+* config.revisions.get
+* config.déploiements.lock
+* config.operations.get
+
+
+
+
+=== 26 novembre 2025
 
 Les autorisations ont été mises à jour afin de clarifier leur utilisation, mais aucune autorisation n'a été ajoutée ni supprimée. Trois colonnes ont été ajoutées pour indiquer si chaque autorisation est utilisée pour le déploiement, les opérations quotidiennes ou la suppression. En outre, certaines autorisations sont segmentées en fonction de leur utilisation pour la NetApp Data Classification et la NetApp Backup and Recovery.
 
 
 
-=== 06/02/2023
+=== 06 février 2023
 
 L'autorisation suivante a été ajoutée à cette politique :
 
@@ -492,7 +901,7 @@ Cette autorisation est requise pour Cloud Volumes ONTAP.
 
 === 27/01/2023
 
-Les autorisations suivantes ont été ajoutées à la politique :
+Les autorisations suivantes ont été ajoutées à cette politique :
 
 * cloudkms.cryptoKeys.getIamPolicy
 * cloudkms.cryptoKeys.setIamPolicy

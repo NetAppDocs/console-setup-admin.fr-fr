@@ -101,7 +101,7 @@ Les questions suivantes concernent les informations d’identification et les ab
 
 Comme décrit dans les sections ci-dessus, la console vous permet de fournir des informations d'identification AWS de plusieurs manières : un rôle IAM associé à l'agent de la console, en assumant un rôle IAM dans un compte approuvé ou en fournissant des clés d'accès AWS.
 
-Avec les deux premières options, la console utilise le service AWS Security Token pour obtenir des informations d’identification temporaires qui changent constamment.  Ce processus est la meilleure pratique : il est automatique et sécurisé.
+Avec les deux premières options, la console utilise le service AWS Security Token pour obtenir des informations d’identification temporaires qui changent constamment. Ce processus représente la meilleure pratique : il est automatique et sécurisé.
 
 Si vous fournissez à la console des clés d'accès AWS, vous devez faire tourner les clés en les mettant à jour dans la console à intervalles réguliers.  Il s’agit d’un processus entièrement manuel.
 

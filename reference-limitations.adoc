@@ -16,7 +16,7 @@ summary: 'Les limitations connues identifient les plates-formes, les appareils o
 [role="lead"]
 Les limitations connues identifient les plates-formes, les appareils ou les fonctions qui ne sont pas pris en charge par cette version du produit ou qui n'interagissent pas correctement avec elle. Examinez attentivement ces limitations.
 
-Ces limitations sont spécifiques à la configuration de la console NEtApp et à l'administration : l'agent, la plateforme SaaS (logiciel en tant que service), etc.
+Ces limitations sont spécifiques à la configuration et à l'administration de la NetApp Console : l'agent, la plateforme logicielle en tant que service (SaaS), et plus encore.
 
 
 

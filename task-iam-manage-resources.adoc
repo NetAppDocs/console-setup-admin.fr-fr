@@ -20,16 +20,16 @@ Lorsque vous associez un membre à votre organisation, vous fournissez des autor
 
 == Consultez les ressources de votre organisation
 
-Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Les ressources non découvertes sont des ressources de stockage identifiées mais pas encore ajoutées à la console.
+Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Le système détecte les ressources de stockage et les marque comme non découvertes jusqu'à ce que vous les ajoutiez à la console.
 
 
-NOTE: REMARQUE : la page Ressources exclut les ressources Amazon FSx for NetApp ONTAP, car les utilisateurs ne peuvent pas les associer à un rôle.  Affichez-les sur la page Systèmes ou depuis Charges de travail.
+NOTE: La page Ressources exclut les ressources Amazon FSx for NetApp ONTAP car les utilisateurs ne peuvent pas les associer à un rôle.  Consultez-les sur la page *Systèmes* ou depuis la section Charges de travail.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Ressources*.
 . Sélectionnez *Recherche avancée et filtrage*.
-. Utilisez l’une des options disponibles pour trouver la ressource que vous recherchez :
+. Utilisez les options disponibles pour trouver une ressource :
 +
 ** *Rechercher par nom de ressource* : saisissez une chaîne de texte et sélectionnez *Ajouter*.
 ** *Plateforme* : Sélectionnez une ou plusieurs plateformes, telles qu'Amazon Web Services.
@@ -87,7 +87,7 @@ L'exemple suivant montre une ressource associée à un projet.
 image:screenshot-iam-resource-details.png["Une capture d'écran de la page des détails des ressources qui montre une ressource associée à un projet directement sous l'organisation."]
 
 
-NOTE: Si vous devez déterminer quels membres de l’organisation ont accès à la ressource, vous pouvezlink:task-iam-manage-folders-projects.html#view-associated-resources-members["afficher les membres qui ont accès aux dossiers et projets associés à la ressource"] .
+NOTE: Pour voir quels membres de l'organisation ont accès à la ressource,link:task-iam-manage-folders-projects.html#view-associated-resources-members["Afficher les membres ayant accès aux dossiers et projets associés"] .
 
 
 
@@ -96,7 +96,7 @@ NOTE: Si vous devez déterminer quels membres de l’organisation ont accès à 
 Pour supprimer une ressource d’un dossier ou d’un projet, vous devez supprimer l’association entre le dossier ou le projet et la ressource. Lorsque vous supprimez l’association, cela empêche les membres de gérer la ressource dans le dossier ou le projet.
 
 
-NOTE: Pour supprimer une ressource découverte de l'ensemble de l'organisation, supprimez le système de la page *Systèmes*.
+NOTE: Pour supprimer une ressource détectée de l'ensemble de l'organisation, accédez à la page *Systèmes* et supprimez le système.
 
 .Étapes
 . Depuis la page *Ressources*, accédez à une ressource dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.

@@ -3,10 +3,14 @@
 
 
 . Sélectionnez *Suivant*.
-. Sélectionnez *Tester la connexion* pour tester votre connexion.  Vous êtes dirigé vers une page de connexion pour votre serveur IdP.  Connectez-vous avec vos identifiants IdP pour terminer le test et revenez à la console pour activer la connexion.
-. Sélectionnez *Suivant*.
-. Sur la page *Activer la fédération*, vérifiez les détails de la fédération, puis sélectionnez *Activer la fédération*.
+. . Sélectionnez *Tester la connexion* pour tester votre connexion. Vous êtes dirigé vers une page de connexion pour votre serveur IdP. Connectez-vous avec vos identifiants IdP.  Une fois connecté, retournez à la console pour activer la connexion.
+. Dans la console, sélectionnez *Suivant* pour consulter la page récapitulative.
+. Configurer les notifications.
++
+Choisissez entre sept jours ou 30 jours.  Le système envoie par courriel des notifications d'expiration et les affiche dans la console à tout utilisateur ayant les rôles suivants : super administrateur, administrateur d'organisation, administrateur de fédération et visionneur de fédération.
+
+. Vérifiez les détails de la fédération, puis sélectionnez *Activer la fédération*.
 . Sélectionnez *Terminer* pour terminer le processus.
 
 
-Une fois la fédération activée, les utilisateurs peuvent se connecter à la NetApp Console à l’aide de leurs informations d’identification d’entreprise.
+Une fois la fédération activée, les utilisateurs se connectent à la NetApp Console à l'aide de leurs identifiants d'entreprise.

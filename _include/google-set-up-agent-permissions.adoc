@@ -14,10 +14,10 @@ Il est de votre responsabilité de mettre à jour le rôle personnalisé à mesu
 .. Téléchargez le fichier YAML qui inclut les autorisations requises.
 .. Créez un rôle personnalisé en utilisant le `gcloud iam roles create` commande.
 +
-L'exemple suivant crée un rôle nommé « connecteur » au niveau du projet :
+L'exemple suivant crée un rôle nommé « agent » au niveau du projet :
 
 +
-`gcloud iam roles create connector --project=myproject --file=connector.yaml`
+`gcloud iam roles create connector --project=myproject --file=agent.yaml`
 
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["Documentation Google Cloud : Création et gestion de rôles personnalisés"^]

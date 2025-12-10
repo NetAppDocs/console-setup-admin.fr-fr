@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Hôte dédié:: L'agent de console n'est pas pris en charge sur un hôte partagé avec d'autres applications. L'hôte doit être un hôte dédié.  L'hôte peut être de n'importe quelle architecture répondant aux exigences de taille suivantes :
+Hôte dédié:: L'agent Console nécessite un hôte dédié.  Toute architecture est prise en charge si elle répond aux exigences de taille suivantes :
 +
 --
 * CPU : 8 cœurs ou 8 vCPU
@@ -15,7 +15,7 @@ L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire e
 
 ** `/var`: 40 Go d'espace doivent être disponibles
 +
-L'agent de console nécessite cet espace dans `/var` car Docker ou Podman sont architecturés pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` annuaire.  Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+L'agent Console a besoin de cet espace dans `/var` car Podman ou Docker sont conçus pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` répertoire et `/var/lib/docker` pour Docker. Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
 
 
 
@@ -182,7 +182,6 @@ Non pris en charge
 |===
 Remarques :
 
-. La gestion des systèmes Cloud Volumes ONTAP n'est pas prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
 . L'agent de console est pris en charge sur les versions en anglais de ces systèmes d'exploitation.
 . Pour RHEL, l'hôte doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, l'hôte ne peut pas accéder aux référentiels pour mettre à jour le logiciel tiers requis lors de l'installation de l'agent.
 
@@ -200,7 +199,7 @@ Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU 
 Paire de clés:: Lorsque vous créez l'agent de console, vous devez sélectionner une paire de clés EC2 à utiliser avec l'instance.
 
 
-Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est activé sur l'instance EC2 (il s'agit du paramètre par défaut pour les nouvelles instances EC2), vous devez modifier la limite de saut de réponse PUT sur l'instance à 3.  Si vous ne modifiez pas la limite sur l'instance EC2, vous recevrez une erreur d'initialisation de l'interface utilisateur lorsque vous tenterez de configurer l'agent.
+Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est activé (paramètre par défaut pour les nouvelles instances EC2), définissez la limite de sauts de réponse PUT sur 3.  Sinon, le système affichera une erreur d'initialisation de l'interface utilisateur lors de la configuration de l'agent.
 +
 --
 * link:task-require-imdsv2.html["Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2"]
@@ -213,7 +212,7 @@ Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2:: Si IMDSv2 est ac
 Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande Standard_D8s_v3.
 
 
-Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande n2-standard-8.
+Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM. NetApp recommande n2-standard-8.
 +
 --
 L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]

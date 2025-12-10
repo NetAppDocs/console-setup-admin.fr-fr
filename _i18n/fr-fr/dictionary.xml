@@ -173,7 +173,6 @@
   <block id="4e223f64569ea1042cb81c1032cff1f8" category="paragraph">| Pour gérer les ressources dans les régions Azure Government.</block>
   <block id="2b7f6d951b3a705af72cb63a7d0788dd" category="paragraph">| \ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn</block>
   <block id="6fc418bd4d8d26d716d678ffb2c516e9" category="paragraph">| Pour gérer les ressources dans les régions Azure Chine.</block>
-  <block id="1e20d05d6d0ad597892e7e3d08324340" category="paragraph">| \ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects</block>
   <block id="641d1f191c2b819061a8e9b6046fdbeb" category="paragraph">| Pour gérer les ressources dans Google Cloud.</block>
   <block id="c642b24062280a73e940087788371986" category="paragraph">| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com | Pour fournir des fonctionnalités et des services dans la NetApp Console.</block>
   <block id="4600c0d23dfe95b8db6f735a4b192742" category="paragraph">a| \ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io a| Pour obtenir des images pour les mises à niveau de l'agent de console.</block>
@@ -238,10 +237,7 @@
   <block id="8f93743fbd54f532def6ac1dbad2311c" category="list-text">Un compte IdP avec des privilèges administratifs est requis.  Coordonnez-vous avec votre administrateur IdP pour terminer les étapes.</block>
   <block id="6b46a604d63ba159459b8912d7a91a98" category="inline-link-macro">Vérifiez votre domaine dans la NetApp Console</block>
   <block id="323b172f396879dcec7aaeccff2097c0" category="list-text">Identifiez le domaine que vous souhaitez utiliser pour la fédération.  Vous pouvez utiliser votre domaine de messagerie ou un autre domaine que vous possédez.  Si vous souhaitez utiliser un domaine autre que votre domaine de messagerie, vous devez d’abord vérifier le domaine dans la console.  Vous pouvez le faire en suivant les étapes décrites dans le<block ref="a68d68e2e08ca1853c0f2263bccee217" category="inline-link-macro-rx"></block> sujet.</block>
-  <block id="1f6f159c41e8184975acbe6c7565ebfd" category="list-text">Sélectionnez *Tester la connexion* pour tester votre connexion.  Vous êtes dirigé vers une page de connexion pour votre serveur IdP.  Connectez-vous avec vos identifiants IdP pour terminer le test et revenez à la console pour activer la connexion.</block>
-  <block id="f0761ff93e66859d8caa58e0c31e7b93" category="list-text">Sur la page *Activer la fédération*, vérifiez les détails de la fédération, puis sélectionnez *Activer la fédération*.</block>
   <block id="c27bc1dfe805a5825a9acbc35c1a7070" category="list-text">Sélectionnez *Terminer* pour terminer le processus.</block>
-  <block id="862a4be632d4835e1b078c54f61faa22" category="paragraph">Une fois la fédération activée, les utilisateurs peuvent se connecter à la NetApp Console à l’aide de leurs informations d’identification d’entreprise.</block>
   <block id="f9e5e080572c03ab317bbccdc54d6420" category="list-text">Entrez les détails de votre domaine :</block>
   <block id="9532d6ece2fef47ed8c4e96a717a9d5a" category="list-text">Choisissez si vous souhaitez utiliser un domaine vérifié ou votre domaine de messagerie.  Le domaine de messagerie est le domaine associé au compte avec lequel vous êtes connecté.</block>
   <block id="7418fbd49ebe84785dec096769ba5b4d" category="list-text">Entrez le nom de la fédération que vous configurez.</block>
@@ -266,8 +262,6 @@
   <block id="49cfb78048f1f3515483265f3346abf2" category="list-text">Depuis Google Cloud, activez Cloud Shell.</block>
   <block id="58ffd52090b3c8f5d53c7a41dce5badd" category="list-text">Téléchargez le fichier YAML qui inclut les autorisations requises.</block>
   <block id="e53a12ca8bd24ad75a525265c644c5c7" category="list-text">Créez un rôle personnalisé en utilisant le<block ref="46cbf543e45ddd605bb826dcc9a3c498" prefix=" " category="inline-code"></block> commande.</block>
-  <block id="60696c8c3376d314543ef1f6c5dd3364" category="paragraph">L'exemple suivant crée un rôle nommé « connecteur » au niveau du projet :</block>
-  <block id="faa2f324a4d310b356e12aa82056254e" category="paragraph"><block ref="c95ec05c4ecf0f3a1ae9ac9ed3381eba" prefix="" category="inline-code"></block></block>
   <block id="bddcef6ecce1c29406e404e0432421e3" category="inline-link">Documentation Google Cloud : Création et gestion de rôles personnalisés</block>
   <block id="df04ae29fdadbced9cd2cbe7c3037ab8" category="paragraph"><block ref="df04ae29fdadbced9cd2cbe7c3037ab8" category="inline-link-rx"></block></block>
   <block id="2afbc6cdafdfd50d0796ff7ccdc0fd3e" category="list-text">Créez un compte de service dans Google Cloud et attribuez le rôle au compte de service :</block>
@@ -290,7 +284,6 @@
   <block id="a586afd44f6b4a0aadf87baaebfe958b" category="list-text">Créez un fichier YAML qui inclut les autorisations définies dans le<block ref="5fa46f1796046b3ca5c88fd6f18f408a" category="inline-link-macro-rx"></block> .</block>
   <block id="dea708cc736d31b65dc27e1f81cc0f15" category="list-text">Téléchargez le fichier YAML qui inclut les autorisations requises pour l’agent de la console.</block>
   <block id="bd67573655874b669c5ced800e8181a2" category="list-text">Créer un compte de service dans Google Cloud :</block>
-  <block id="9ed3505a9736251271f6b1b08b3433f5" category="paragraph">Vous disposez désormais d’un compte de service que vous pouvez attribuer à l’instance de machine virtuelle de l’agent de console.</block>
   <block id="258ec60588311e40d9028ecd4b015f8a" category="paragraph">Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.</block>
   <block id="d723567d50507549f1f0eed5e785438e" category="paragraph">Ce tableau est fourni à titre de référence et votre environnement doit refléter le tableau des autorisations une fois la configuration IAM terminée.</block>
   <block id="658340d0aa3e36a759f733841569dc13" category="example-title">Afficher les autorisations VPC partagées</block>
@@ -332,7 +325,6 @@
   <block id="4417d966b724524a7dd995ebe740c6cb" category="paragraph">Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.</block>
   <block id="a9f9e821b8a8692181584ef4520bb0f5" category="list-text">Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.</block>
   <block id="f055093e2366ca02aea03df7cfb1248e" category="inline-link-macro">Console de maintenance des agents</block>
-  <block id="4439aaaad475e34c70f12f09ad6165d9" category="admonition">Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console.  Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur le<block ref="0f8b8c9e4ded9a5f5a72925670422347" category="inline-link-macro-rx"></block> .</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">À propos de cette tâche</block>
   <block id="659f0b9a6a18db69662f4738cacedeb4" category="paragraph">Le programme d'installation disponible sur le site de support NetApp peut être une version antérieure.  Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.</block>
   <block id="16c184ab0a5376cef0ecef7f0da93ac2" category="list-text">Si les variables système _http_proxy_ ou _https_proxy_ sont définies sur l'hôte, supprimez-les :</block>
@@ -436,7 +428,6 @@
   <block id="9c0e62a86b9fe558cad9c4d280ea439d" category="list-text">Activer NTP</block>
   <block id="62286fee1b0c285ac291bc232fe7f74f" category="inline-link">En savoir plus sur la classification des données NetApp</block>
   <block id="c2fc633e22b03955b13beee2049ac471" category="list-text">Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes.<block ref="95ad16386ae4ac759ff3f180dcafce84" category="inline-link-rx"></block></block>
-  <block id="da9c5bf0a2786648e8cd1c7f9b39bd31" category="list-text">L'agent de console n'est pas pris en charge sur un hôte partagé avec d'autres applications. L'hôte doit être un hôte dédié.  L'hôte peut être de n'importe quelle architecture répondant aux exigences de taille suivantes :</block>
   <block id="df4af5ebfed55f726690fe09695fb1fa" category="list-text">CPU : 8 cœurs ou 8 vCPU</block>
   <block id="357a496c919d7b340d6f4582397b89b5" category="list-text">RAM : 32 Go</block>
   <block id="69fc366414a2e0b9932f47f1ac056ee7" category="list-text">Espace disque : 165 Go sont recommandés pour l’hôte, avec les exigences de partition suivantes :</block>
@@ -482,7 +473,6 @@
   <block id="607262a04e5c4340fc8d641e874a5695" category="paragraph">3.9.29 ou version ultérieure</block>
   <block id="a3336db0e9f7b6341a12794c144076b6" category="paragraph">Docker Engine 23.0.6 à 26.0.0</block>
   <block id="5556c95763913c6cfa8f61d9cab4f4f2" category="paragraph">26.0.0 est pris en charge avec les installations _new_ agent 3.9.44 ou ultérieures</block>
-  <block id="2482bd6110246df30d07035a37ec9284" category="list-text">La gestion des systèmes Cloud Volumes ONTAP n'est pas prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.</block>
   <block id="afaf0577b469adb0296b4fcfa6f2af91" category="list-text">L'agent de console est pris en charge sur les versions en anglais de ces systèmes d'exploitation.</block>
   <block id="31acdb1c0f97e43347645b47a1cb7ad5" category="list-text">Pour RHEL, l'hôte doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, l'hôte ne peut pas accéder aux référentiels pour mettre à jour le logiciel tiers requis lors de l'installation de l'agent.</block>
   <block id="2b55387dd066c5bac646ac61543d152d" category="list-text">processeur</block>
@@ -493,7 +483,6 @@
   <block id="6cd56a4cc4ddbbfd2bc9d57de5d788aa" category="list-text">Paire de clés</block>
   <block id="56ff78b5911451c928f64308fe1d80b3" category="list-text">Lorsque vous créez l'agent de console, vous devez sélectionner une paire de clés EC2 à utiliser avec l'instance.</block>
   <block id="c8e7383477673ee726b6ba29dc487444" category="list-text">Limite de saut de réponse PUT lors de l'utilisation d'IMDSv2</block>
-  <block id="6072a0c0865bf8071e3960e01a77d5f4" category="list-text">Si IMDSv2 est activé sur l'instance EC2 (il s'agit du paramètre par défaut pour les nouvelles instances EC2), vous devez modifier la limite de saut de réponse PUT sur l'instance à 3.  Si vous ne modifiez pas la limite sur l'instance EC2, vous recevrez une erreur d'initialisation de l'interface utilisateur lorsque vous tenterez de configurer l'agent.</block>
   <block id="98dddf7eafbbdfa88756d62945237473" category="inline-link-macro">Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2</block>
   <block id="8d8efedf65fe740dfe59c5779c9d745c" category="list-text"><block ref="8d8efedf65fe740dfe59c5779c9d745c" category="inline-link-macro-rx"></block></block>
   <block id="75c0fbf84b1614b17a984df62bf849f6" category="inline-link">Documentation AWS : Modifier la limite de saut de réponse PUT</block>
@@ -944,7 +933,6 @@
   <block id="0b0a6d9ce7462fc9a218e93ccbee32e7" category="section-title">Menus et pages de navigation</block>
   <block id="7ceea4a6639fef28fae4477857f229e5" category="paragraph">NetApp a déplacé la plupart des options de menu vers le volet de navigation de gauche et a réorganisé les menus pour faciliter la navigation dans la NetApp Console.</block>
   <block id="4fa56c3d158c844dc75b2826ee4c98d0" category="section-title">Canvas est remplacé par la page Systèmes</block>
-  <block id="e98962c5bb7d0d1afd483518e730b4c8" category="paragraph">NetApp a renommé le Canvas en page *Systèmes*.  Accédez à la page *Système* à partir du menu *Stockage &gt; Gestion*.</block>
   <block id="ddd56b1479dbec10cfb6fc0a3a8afe57" category="inline-image-macro">Une capture d'écran de la page des systèmes.</block>
   <block id="028a5defa734a1e5527100ece8ea2e66" category="paragraph"><block ref="028a5defa734a1e5527100ece8ea2e66" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e6ee78fd171283b1b449978ae0c73e06" category="section-title">Menu de stockage étendu</block>
@@ -1136,7 +1124,6 @@
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="section-title">FAQ</block>
   <block id="d33d86c6f3f99b3b9b1b988bde0679bd" category="paragraph">Les questions suivantes concernent les informations d’identification et les abonnements.</block>
   <block id="70bfaa19a89e29bf0fc2b34b8f3150ba" category="section-title">Comment puis-je faire pivoter mes informations d’identification AWS en toute sécurité ?</block>
-  <block id="3f306aaee2a65dfda1ad13f709a0b4ae" category="paragraph">Avec les deux premières options, la console utilise le service AWS Security Token pour obtenir des informations d’identification temporaires qui changent constamment.  Ce processus est la meilleure pratique : il est automatique et sécurisé.</block>
   <block id="0756a90a4a5e55dd02063c7dc80562de" category="paragraph">Si vous fournissez à la console des clés d'accès AWS, vous devez faire tourner les clés en les mettant à jour dans la console à intervalles réguliers.  Il s’agit d’un processus entièrement manuel.</block>
   <block id="c32ecd65cd5790ceb41fc1ef7d6a6e7d" category="section-title">Puis-je modifier l’abonnement AWS Marketplace pour les systèmes Cloud Volumes ONTAP ?</block>
   <block id="469da6edf5632bcbb4aae525bd58406a" category="paragraph">Oui, tu peux.  Lorsque vous modifiez l'abonnement AWS Marketplace associé à un ensemble d'informations d'identification, tous les systèmes Cloud Volumes ONTAP existants et nouveaux sont facturés sur le nouvel abonnement.</block>
@@ -1617,7 +1604,6 @@
   <block id="eda63b570db82e05c2fd7b5f0c3bb20f" category="cell">Audit</block>
   <block id="6c781c37150950b9639b1a88927fa671" category="summary">La création de partenariats entre organisations dans la NetApp Console permet aux partenaires de l'organisation de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, simplifiant ainsi la collaboration et améliorant la sécurité.</block>
   <block id="48b10af85ea37189fccab5406ba059ed" category="doc">Partenariats dans la NetApp Console</block>
-  <block id="7fa861748c4d1659172de0b58f97b1f9" category="paragraph">En créant des partenariats entre les organisations, la NetApp Console permet aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, simplifiant ainsi la collaboration et améliorant la sécurité.</block>
   <block id="8f032c748fc26fa9d1200f8efa6a0d8c" category="paragraph-title">Rôles requis</block>
   <block id="8dab33dda3f37e096d3ad18f7ab81434" category="paragraph">Administrateur de partenariat<block ref="8f129ac67aaaf533c741c49d131f7a5d" category="inline-link-macro-rx"></block></block>
   <block id="324861aee136989b2cba2eb117747e57" category="paragraph">Les partenariats permettent une gestion sécurisée des ressources NetApp dans toutes les organisations à l’aide de relations basées sur les rôles dans la console.  L'organisation initiatrice accorde l'accès à ses ressources, tandis que l'organisation acceptante fournit les utilisateurs ou les comptes de service auxquels l'accès doit être accordé.  Les partenariats sont établis via un flux de travail en libre-service, donnant à l'organisation initiatrice un contrôle total sur les ressources partagées, les rôles attribués et la possibilité d'intégrer, de gérer ou de révoquer l'accès des partenaires selon les besoins.</block>
@@ -1775,19 +1761,12 @@
   <block id="590b2ea5933ad8ead3c9a15a914f1a9c" category="list-text">Tous les services s'exécutent dans des conteneurs Docker</block>
   <block id="f76b4c57c56377745199382d59cdeed3" category="paragraph">Les services dépendent du service d'exécution Docker en cours d'exécution</block>
   <block id="846c386cf81542225b98b6f2bb22ac66" category="summary">Vous pouvez utiliser la console de maintenance de l'agent de console pour configurer un agent de console afin d'utiliser un serveur proxy transparent.</block>
-  <block id="201ded18828aa36cabf001ad5b286fef" category="doc">Console de maintenance de l'agent de console</block>
   <block id="64a20b3b93e3313beb44e4cdfaa3fc62" category="section-title">Accéder à la console de maintenance de l'agent</block>
   <block id="54b21d666b59ebab4d006b20d3923a8a" category="paragraph">Vous pouvez accéder à la console de maintenance à partir de l’hôte de l’agent de console.  Accédez au répertoire suivant :</block>
   <block id="38c16b07265a0ea453b6c31b87484378" category="section-title">Commandes proxy transparentes</block>
-  <block id="4108bec2e5adefed2de8ccea6de208c1" category="paragraph">La console de maintenance de l'agent fournit des commandes pour configurer l'agent afin d'utiliser un serveur proxy transparent.</block>
-  <block id="67ee408ff988e76f6d3799ac5efa460f" category="section-title">Afficher la configuration actuelle du proxy transparent</block>
-  <block id="a2a14e0f8a35f998c35eb5e7b4f11c63" category="paragraph">Pour afficher la configuration actuelle du proxy transparent, utilisez la commande suivante :</block>
-  <block id="2060dbc448df049844e06c84fd90c8cc" category="section-title">Ajouter un serveur proxy transparent</block>
   <block id="d55c6a8d11c5ba3e1a749110d08d13a0" category="paragraph">Pour ajouter un serveur proxy transparent, utilisez la commande suivante, où<block ref="b2ade5ab23fdcff48ad66c933b8c0a7a" prefix=" " category="inline-code"></block> est le chemin d'accès au fichier de certificat pour le serveur proxy.  Le fichier de certificat doit être au format PEM :</block>
   <block id="2dfbed833348a18ef6acd6126802e582" category="paragraph">Assurez-vous que le fichier de certificat se trouve dans le même répertoire que la commande ou spécifiez le chemin d’accès complet au fichier de certificat.</block>
-  <block id="37113521420e96a3a50c96de96815289" category="section-title">Mettre à jour le certificat pour un serveur proxy transparent</block>
   <block id="7e3520831eb4f49402b5e66b7de0cf9b" category="paragraph">Pour mettre à jour le certificat d'un serveur proxy transparent, utilisez la commande suivante, où<block ref="b2ade5ab23fdcff48ad66c933b8c0a7a" prefix=" " category="inline-code"></block> est le chemin vers le nouveau fichier de certificat pour le serveur proxy.  Le fichier de certificat doit être au format PEM :</block>
-  <block id="f45f29ba66bb2b571ee2752605accdb9" category="section-title">Supprimer un serveur proxy transparent</block>
   <block id="0bddca9be37ec136c74bc13d67a2327c" category="paragraph">Pour supprimer le serveur proxy transparent, utilisez la commande suivante :</block>
   <block id="e73e4a152d192531e90aca4120b4f30b" category="section-title">Afficher l'aide pour n'importe quelle commande</block>
   <block id="6e59373a630740150c04aaac47bb0503" category="paragraph">Pour afficher l'aide d'une commande, ajoutez<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block> à la commande.  Par exemple, pour afficher l'aide relative à la<block ref="08bc9d3537a56e203564c5b4357049f4" prefix=" " category="inline-code"></block> commande, utilisez la commande suivante :</block>
@@ -1818,9 +1797,7 @@
   <block id="8f4f872a5a91b4fda0f95e21e0b83fb1" category="list-text"><block ref="8f4f872a5a91b4fda0f95e21e0b83fb1" category="inline-link-rx"></block></block>
   <block id="d85b01f001ee16ebd8eb1917c739d824" category="inline-link">Découvrez les systèmes StorageGRID</block>
   <block id="6dd67f54d38094b3a7d65e4eeed06755" category="list-text"><block ref="6dd67f54d38094b3a7d65e4eeed06755" category="inline-link-rx"></block></block>
-  <block id="9957f1fffd0798d003f7701530308820" category="summary">La gestion des identités et des accès de la NetApp Console fournit un rôle d'analyste de support pour aider à la surveillance et aux cas de support.</block>
   <block id="bd35c1f622cddab38a157ba7ccffd7a0" category="doc">Rôle d'accès d'analyste de support opérationnel pour la NetApp Console</block>
-  <block id="7e901891254682b3e1fddc06e4e1938a" category="paragraph">Vous pouvez attribuer le rôle suivant aux utilisateurs pour leur donner accès aux alertes et à la surveillance. Les utilisateurs disposant de ce rôle peuvent également ouvrir des cas d’assistance.</block>
   <block id="a9c987c5ba386ab7cea1039db6dab527" category="section-title">Analyste de soutien opérationnel</block>
   <block id="eaeb30f9f18e0c50b178676f3eaef45f" category="cell">Tâche</block>
   <block id="6b67f7084bd7c23cc1a6915c07f7db8a" category="cell">Peut effectuer</block>
@@ -2175,7 +2152,6 @@
   <block id="1dc9c22149f4c0ef8e2fc6c49159dc73" category="cell">Informations d'identification de l'utilisateur</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">Les limitations connues identifient les plates-formes, les appareils ou les fonctions qui ne sont pas pris en charge par cette version du produit ou qui n'interagissent pas correctement avec elle. Examinez attentivement ces limitations.</block>
   <block id="c6fe3fe7cf3d078b181c8a9d01950402" category="doc">Limitations connues de la NetApp Console</block>
-  <block id="882e98b214f100c29ca675a0c0b4c5a4" category="paragraph">Ces limitations sont spécifiques à la configuration de la console NEtApp et à l'administration : l'agent, la plateforme SaaS (logiciel en tant que service), etc.</block>
   <block id="66bf395a11c3c005c11b5085fdfc7337" category="section-title">Limitations de l'agent de console</block>
   <block id="911d15b7ac55478d2b567e8488658687" category="section-title">Conflit possible avec les adresses IP dans la plage 172</block>
   <block id="c4c2e36276fced82261124b9b0bb8f65" category="paragraph">La NetApp Console déploie un agent avec deux interfaces dont les adresses IP sont comprises dans les plages 172.17.0.0/16 et 172.18.0.0/16.</block>
@@ -2609,9 +2585,6 @@
   <block id="accd9735475d1c9d7b0b5006261d6484" category="summary">L'agent de console nécessite des autorisations pour effectuer des actions chez votre fournisseur de cloud.  Ces autorisations sont incluses dans les politiques fournies par NetApp.  Vous devez comprendre ce que l’agent fait avec ces autorisations.</block>
   <block id="1a24ebef5708132569792a414e03e094" category="doc">Autorisations Google Cloud pour l'agent de la console</block>
   <block id="6b45b097205607d8631a7d487a76da98" category="section-title">Autorisations du compte de service</block>
-  <block id="48f3320f6327aedea52854dfcbcf31d9" category="paragraph">Le rôle personnalisé indiqué ci-dessous fournit les autorisations dont un agent de console a besoin pour gérer les ressources et les processus au sein de votre réseau Google Cloud.</block>
-  <block id="82a6f573069dcbf74094644066f00ff8" category="paragraph">Vous devrez appliquer ce rôle personnalisé à un compte de service qui est attaché à la machine virtuelle de l’agent de console.</block>
-  <block id="4560d9b851db1f575c8bd1ba53369c0a" category="paragraph">Vous devez également vous assurer que le rôle est à jour à mesure que de nouvelles autorisations sont ajoutées dans les versions ultérieures.  Si de nouvelles autorisations sont requises, elles seront répertoriées dans les notes de version.</block>
   <block id="06df33001c1d7187fdd81ea1f5b277aa" category="cell">Actions</block>
   <block id="f66d598893a55fa43b7676b10c66160f" category="cell">Pour créer et gérer des disques pour Cloud Volumes ONTAP.</block>
   <block id="e9047288d907d41dac5645fd341a761c" category="cell">Pour créer des règles de pare-feu pour Cloud Volumes ONTAP.</block>
@@ -2643,12 +2616,10 @@
   <block id="c5338aa09d091a71f3080053c9a0edc0" category="cell">Pour créer et gérer des machines virtuelles de stockage sur des paires Cloud Volumes ONTAP HA.</block>
   <block id="884e026d3505b2b3847b25f6cecb4de7" category="cell">Pour découvrir des informations sur les buckets Google Cloud Storage.</block>
   <block id="d07a6a967273763e473875b528aab4ea" category="cell">Pour sélectionner vos propres clés gérées par le client dans l'assistant d'activation de NetApp Backup and Recovery au lieu d'utiliser les clés de chiffrement par défaut gérées par Google.</block>
-  <block id="00e6f4ddf63e81c5de84a3913163d11d" category="section-title">06/02/2023</block>
   <block id="26e9753e85fc2c13a9569cd1345a5b06" category="paragraph">L'autorisation suivante a été ajoutée à cette politique :</block>
   <block id="3503950ea6a1ba87d4be44e07b1a16c8" category="list-text">compute.instances.updateNetworkInterface</block>
   <block id="0f30e2d10fca6f69c5f7a23bb2b30b1b" category="paragraph">Cette autorisation est requise pour Cloud Volumes ONTAP.</block>
   <block id="8988a38ba3aaf6cb48e549dc3babd50e" category="section-title">27/01/2023</block>
-  <block id="6f3dd3aa6f04d6f98a881afe84a14828" category="paragraph">Les autorisations suivantes ont été ajoutées à la politique :</block>
   <block id="d5b52c55f0ffe2752d39b0d85f9ad0ef" category="list-text">cloudkms.cryptoKeys.getIamPolicy</block>
   <block id="631730c9e44e80f5f69e36901808bf98" category="list-text">cloudkms.cryptoKeys.setIamPolicy</block>
   <block id="7d5beaedd0c93a11314ff6699a51454e" category="list-text">cloudkms.porte-clés.get</block>
@@ -3027,21 +2998,6 @@
   <block id="a7f8ea7817d42a132120d2a3377b0d22" category="paragraph">Modifiez vos informations d’identification Azure dans la console.  Par exemple, vous pouvez mettre à jour le secret client si un nouveau secret a été créé pour l’application principale de service.</block>
   <block id="fca161e7e3d0f11c877617c572f2054d" category="list-text">Sélectionnez le menu d’action pour un ensemble d’informations d’identification, puis sélectionnez *Modifier les informations d’identification*.</block>
   <block id="343f14fa04538530ee19575d02711691" category="list-text">Sur la page *Informations d'identification de l'organisation*, sélectionnez le menu d'action pour un ensemble d'informations d'identification, puis sélectionnez *Supprimer les informations d'identification*.</block>
-  <block id="aca93a34ac0830ae93442a45a45230ca" category="summary">Vous pouvez gérer les informations d'identification Google Cloud associées à l'instance de machine virtuelle de l'agent de la console en associant un abonnement à la place de marché et en résolvant les problèmes du processus d'abonnement.  Ces deux tâches garantissent que vous pouvez utiliser votre abonnement au marché pour payer les services de données.</block>
-  <block id="7fb6ce6ba61ee2f889266f6591c8bf62" category="paragraph">Vous pouvez gérer les informations d'identification Google Cloud associées à une instance de machine virtuelle d'agent de console en associant un abonnement à la place de marché et en résolvant les problèmes du processus d'abonnement.  Ces deux tâches garantissent que vous pouvez utiliser votre abonnement au marché pour payer les services de données.</block>
-  <block id="209e33f8aa50ade8c82e5bc82a8c023d" category="section-title">Associer un abonnement Marketplace aux identifiants Google Cloud</block>
-  <block id="eb7e6d1f8bb6ef3fd9a4c9dde493222f" category="paragraph">Lorsque vous déployez un agent de console dans Google Cloud, la console crée un ensemble d'informations d'identification par défaut associées à une instance de machine virtuelle d'agent de console.  À tout moment, vous pouvez modifier l'abonnement Google Cloud Marketplace associé à ces informations d'identification.  L'abonnement vous permet de créer un système Cloud Volumes ONTAP à la carte et d'utiliser d'autres services de données.</block>
-  <block id="55c766cf4228626844250621a71175de" category="section-title">Résoudre les problèmes liés au processus d'abonnement à la Marketplace</block>
-  <block id="5e8a9e85694a19d502ffc719ffe16636" category="inline-link">Page NetApp sur Google Cloud Marketplace</block>
-  <block id="d6e50a6d3ec0159b4980423911b0d4c3" category="list-text">Accédez au<block ref="50dc0afbab90b927abe9802e2e044626" category="inline-link-rx"></block> pour vérifier l'état de la commande.  Si la page indique *Gérer sur le fournisseur*, faites défiler vers le bas et sélectionnez *Gérer les commandes*.</block>
-  <block id="1602e955f4d68623784fbd9b3e232de3" category="inline-image-macro">Une capture d'écran de la page du marché après l'abonnement.</block>
-  <block id="138509c56fb0084f814c9be7b6c3f21d" category="paragraph"><block ref="138509c56fb0084f814c9be7b6c3f21d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e934500d9ced37392a4bfadda2e26daf" category="list-text">Si la commande affiche une coche verte et que cela est inattendu, il est possible qu'une autre personne de l'organisation utilisant le même compte de facturation soit déjà abonnée.  Si cela est inattendu ou si vous avez besoin des détails de cet abonnement, contactez votre équipe commerciale NetApp .</block>
-  <block id="bb7a877315ec49d95bef4521481a238d" category="inline-image-macro">Une capture d’écran d’un droit accepté.</block>
-  <block id="57c37d5700a1b0612b4ca2402852172a" category="paragraph"><block ref="57c37d5700a1b0612b4ca2402852172a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="342df35452bbec008148c714d47038f6" category="list-text">Si la commande affiche une horloge et le statut *En attente*, revenez à la page du marché et choisissez *Gérer sur le fournisseur* pour terminer le processus comme indiqué ci-dessus.</block>
-  <block id="9547217bb6aa822040056cba67310321" category="inline-image-macro">Une capture d'écran d'un droit de marché en attente.</block>
-  <block id="e6ec8d6dff39d45a9056311495699cef" category="paragraph"><block ref="e6ec8d6dff39d45a9056311495699cef" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2ef5f9dff59a7d4a9d1cf5d43f11c644" category="summary">Associez un compte de site de support NetApp à votre organisation NetApp Console pour activer les flux de travail clés pour Cloud Volumes ONTAP.  Ces informations d’identification NSS sont associées à l’ensemble de l’organisation.</block>
   <block id="1f2fc513e25e1f4b4fdc575d67f8f88d" category="doc">Gérer les informations d'identification NSS associées à la NetApp Console</block>
   <block id="b7dc979cedad1454168cefa97164fdc4" category="paragraph">Associez un compte de site de support NetApp à votre organisation de console pour activer les flux de travail clés pour la gestion du stockage.  Ces informations d’identification NSS sont associées à l’ensemble de l’organisation.</block>
@@ -3204,7 +3160,6 @@
   <block id="b797d654931eeb3fd544b972b537bc1a" category="paragraph">Assurez-vous que le fichier de certificat est au format PEM et réside dans le même répertoire que la commande ou spécifiez le chemin d'accès complet au fichier de certificat.</block>
   <block id="76fe97fb8546b1f5923f0501c8e25ae0" category="section-title">Modifier le proxy transparent pour l'agent de la console</block>
   <block id="92621940050d65fc4b47ade313d8f178" category="inline-link-macro">Console de maintenance des agents</block>
-  <block id="20257cdf81419bff017c7b16260ebb25" category="paragraph">Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent de console en utilisant le<block ref="091092579ca8cede1b760e7c5a90a003" prefix=" " category="inline-code"></block> commande ou supprimez le serveur proxy transparent en utilisant le<block ref="ef5ebb9e0c08ee0463e7503ff1111f4c" prefix=" " category="inline-code"></block> commande.  Pour plus d'informations, consultez la documentation de<block ref="9370e1eb4855e9767e8414447e836404" category="inline-link-macro-rx"></block> .</block>
   <block id="349027440539dc46278ee9e93260025d" category="section-title">Mettre à jour le proxy de l'agent de console s'il perd l'accès à Internet</block>
   <block id="71164e4bc7911ce651a366899f4f487b" category="paragraph">Si la configuration proxy de votre réseau change, votre agent risque de perdre l’accès à Internet.  Par exemple, si quelqu’un modifie le mot de passe du serveur proxy ou met à jour le certificat.  Dans ce cas, vous devrez accéder directement à l'interface utilisateur depuis l'hôte de l'agent de la console et mettre à jour les paramètres.  Assurez-vous que vous disposez d’un accès réseau à l’hôte de l’agent de la console et que vous pouvez vous connecter à la console.</block>
   <block id="54734e5bba3b83b2757e43d1ff24b2c4" category="section-title">Activer le trafic API direct</block>
@@ -3600,19 +3555,14 @@
   <block id="c91d4274dbc95093979f44d9158f63c4" category="doc">Organisez vos ressources de la NetApp Console avec des dossiers et des projets</block>
   <block id="6dca94e5f8ef4f7534b19b4528884acb" category="paragraph">Dans la NetApp Console, vous organisez vos ressources NetApp à l’aide de projets et de dossiers.  Un _projet_ représente un espace de travail dans la console auquel les membres de l'organisation accèdent pour gérer les _ressources_ (par exemple, un système Cloud Volumes ONTAP ).  Un _dossier_ regroupe des projets liés.  Après avoir organisé vos ressources en dossiers et projets, vous pouvez accorder un accès granulaire aux ressources en fournissant aux membres de l’organisation des autorisations sur des dossiers et des projets spécifiques.</block>
   <block id="c08b7d4448e95633b73e2495389e853c" category="section-title">Ajouter un dossier ou un projet</block>
-  <block id="bbc694ba62c62df49795c9c42c96c762" category="paragraph">Lorsque vous créez votre organisation, elle comprend un seul projet.  Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets associés.</block>
-  <block id="c35523034b7fc4da98dc5a67f27b9d9d" category="paragraph">La hiérarchie des ressources de votre organisation peut comporter jusqu'à sept niveaux, avec des dossiers imbriqués à six niveaux de profondeur et des projets au septième.</block>
   <block id="8b2ab7e3ad5d97cdc07606024ad7cd90" category="list-text">Sélectionnez *Organisation*.</block>
   <block id="54f6cd3aa5e387ea27f8d46fcd265b0f" category="list-text">Depuis la page *Organisation*, sélectionnez *Ajouter un dossier ou un projet*.</block>
   <block id="0bb9526fc793356f11cea651032b1b15" category="list-text">Sélectionnez *Dossier* ou *Projet*.</block>
-  <block id="5506a3204ff4171234856af0ca0d34fd" category="list-text">Fournissez des détails sur le dossier ou le projet :</block>
-  <block id="dd3673b97acb6c067381ad1c2f6b16eb" category="list-text">*Nom et emplacement* : saisissez un nom et choisissez un emplacement dans la hiérarchie pour le dossier ou le projet.  Un dossier ou un projet peut être directement sous l'organisation ou à l'intérieur d'un dossier.</block>
   <block id="f46059ba82cb53e4af025ce918760999" category="list-text">*Ressources* : Sélectionnez les ressources que vous souhaitez associer à ce dossier ou projet.</block>
   <block id="3c3738a24f68869d5cec5d24654be31c" category="paragraph">Vous pouvez sélectionner des ressources associées au dossier parent ou au projet.</block>
   <block id="2aa8f2be43810963811ccc42047d868e" category="inline-link-macro">Apprenez quand associer une ressource à un dossier</block>
   <block id="1cfaf9081db0e3182d27f586bb481603" category="paragraph"><block ref="9b735c42d80f104cecdf7ab600a203a6" category="inline-link-macro-rx"></block> .</block>
   <block id="8bb3c5dc86a399d0babf2eb49831e5ec" category="list-text">*Accès* : Affichez les membres qui auront accès au dossier ou au projet en fonction des autorisations existantes déjà définies dans votre hiérarchie de ressources.</block>
-  <block id="bb1674c6ad82758dbe5312cfed6ce30a" category="paragraph">Sélectionnez *Ajouter un membre* pour attribuer l'accès et un rôle à des membres supplémentaires. Un rôle définit les autorisations dont disposent les membres pour le dossier ou le projet.</block>
   <block id="7f394af8afb3598061eec3ed6197180d" category="section-title">Renommer un dossier ou un projet</block>
   <block id="f8ca84129dded5d2d753c0d0cc1ddea1" category="paragraph">Si nécessaire, vous pouvez modifier le nom de vos dossiers et projets.</block>
   <block id="f53392d049b9dddff4ba55ad74c96588" category="inline-image-macro">Une icône avec trois points</block>
@@ -3620,9 +3570,6 @@
   <block id="ec4b36b02d2682a0624b6df463ee2789" category="list-text">Sur la page *Modifier*, saisissez un nouveau nom et sélectionnez *Appliquer*.</block>
   <block id="03b976867f3d4bd64ebf2dde3b296e4d" category="section-title">Supprimer un dossier ou un projet</block>
   <block id="486b799bb85b3d2fe9d51e27f973ebbf" category="paragraph">Supprimez les dossiers et les projets dont vous n’avez plus besoin.</block>
-  <block id="11c35e27e51a047151d75fb0ede09570" category="inline-xref">Apprenez à dissocier les ressources</block>
-  <block id="9a4d17fef1beed2567fc013cd2bec581" category="list-text">Assurez-vous que le dossier ou le projet n’a aucune ressource associée. <block ref="802e9206ed2588cee6f64d588f1bc58d" category="inline-xref-macro-rx"></block> .</block>
-  <block id="7e3bd90255d7fc608bda397ba970467a" category="list-text">Assurez-vous que le dossier ou le projet n’a aucune ressource associée.</block>
   <block id="42f2baba648ca8f4aea79acfaf1465c8" category="list-text">Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnez<block ref="e85cc783c74f9ef35cfeeca99fcaf6f6" category="inline-image-macro-rx" type="image"></block> puis sélectionnez *Supprimer*.</block>
   <block id="48a726f3d57687547ef8fb70fab0c713" category="list-text">Confirmez que vous souhaitez supprimer le dossier ou le projet.</block>
   <block id="7ef08e2a2795e0ebd33ca241791da34d" category="section-title">Afficher les ressources associées à un dossier ou à un projet</block>
@@ -3634,7 +3581,6 @@
   <block id="a470fed0aa4603c3c8d460c4028252f1" category="list-text">Sélectionnez *Ressources* pour afficher les ressources associées.  Dans le tableau, la colonne *Statut* identifie les ressources associées au dossier ou au projet.</block>
   <block id="c2fdbd86cd719dffbb80161af27b0ec9" category="inline-image-macro">Une capture d'écran de la page Modifier le projet qui montre les ressources disponibles que vous pouvez associer ou dissocier du projet.</block>
   <block id="65381685a85e45e94ee53dbceff322ff" category="paragraph"><block ref="65381685a85e45e94ee53dbceff322ff" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="df3e2bd0fe2ced6b1bd1a55dad748146" category="section-title">Modifier les ressources associées à un dossier ou à un projet</block>
   <block id="189b8907a7ab6c4c7b1ea92510e40d70" category="paragraph">Les membres disposant d’autorisations pour un dossier ou un projet peuvent accéder à ses ressources associées.</block>
   <block id="0727cfa5c59f7b7114ac7246e406611c" category="list-text">Sur la page *Modifier*, sélectionnez *Ressources*.</block>
   <block id="d66e1bd376f74d0703fc72b368b92cd7" category="paragraph">Dans le tableau, la colonne *Statut* identifie les ressources associées au dossier ou au projet.</block>
@@ -3642,15 +3588,12 @@
   <block id="77132bcd63b33103ab4d954f60736e06" category="list-text">En fonction des ressources que vous avez sélectionnées, sélectionnez *Associer au projet* ou *Dissocier du projet*.</block>
   <block id="152ff89b1af4f8995e50a4b8f158db52" category="inline-image-macro">Une capture d'écran de la page Modifier le projet qui montre l'option Associer des ressources disponible après avoir sélectionné des ressources qui ne sont pas actuellement associées.</block>
   <block id="883f9a97670aa2ea1a29d0163ef97be1" category="paragraph"><block ref="883f9a97670aa2ea1a29d0163ef97be1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c16f1c2a54634bdad6dee177f8131ef5" category="list-text">Sélectionnez *Appliquer*</block>
   <block id="e3621d23b92254c73b3a713d227a66f5" category="section-title">Afficher les membres associés à un dossier ou à un projet</block>
   <block id="6b1db5558a176057dbfc6d02d715d5ee" category="list-text">Sélectionnez *Accès* pour afficher les membres qui ont accès au dossier ou au projet.</block>
   <block id="68f9e92246f3af16e2706083b8012f92" category="inline-image-macro">Une capture d'écran de la page Modifier le projet qui montre les membres qui ont accès au projet.</block>
   <block id="e537768f43901c1791172250c6c08115" category="paragraph"><block ref="e537768f43901c1791172250c6c08115" category="inline-image-macro-rx" type="image"></block></block>
   <block id="19df46354fac1ffd06065f8388377f84" category="section-title">Modifier l'accès des membres à un dossier ou à un projet</block>
-  <block id="838d404665efe77bad8374ea27c3b7ca" category="paragraph">Modifiez l'accès des membres pour garantir que les bons membres peuvent accéder aux ressources associées.</block>
   <block id="f676fbba085923546a37baf94ce6784b" category="inline-link-macro">gérer les autorisations depuis la page Membres</block>
-  <block id="08e3536d495a23d703d2d1e7d2054ba1" category="paragraph">L'accès des membres fourni à un niveau hiérarchique supérieur ne peut pas être modifié à des niveaux inférieurs.  Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l’accès.  Alternativement, vous pouvez<block ref="2e250d63a19626cb0aeed14260bd2f59" category="inline-link-macro-rx"></block> .</block>
   <block id="6774afc9942c8dcab2e06828e8f199cb" category="inline-link-macro">En savoir plus sur l'héritage des rôles</block>
   <block id="8945f05b50a19ebe83ee85e629a09120" category="paragraph"><block ref="e2e11ae218588663759cb10a40da4876" category="inline-link-macro-rx"></block> .</block>
   <block id="2bd6967deb6b9eb3d79e794bad318fb4" category="list-text">Sur la page *Modifier*, sélectionnez *Accès* pour afficher la liste des membres qui ont accès au dossier ou au projet sélectionné.</block>
@@ -3671,7 +3614,6 @@
   <block id="f2822d5dedda5be93d6f6e298458878b" category="paragraph">Les utilisateurs disposant de ce rôle peuvent gérer uniquement les membres d'un dossier ou d'un projet désigné</block>
   <block id="31c547d7cd4c250a91b1a8bef306d954" category="paragraph">_L'administrateur du dossier ou du projet_ peut afficher tous les membres sur la page *Membres* mais gérer les autorisations uniquement pour les dossiers et les projets auxquels il a accès. <block ref="c691e2b9b4224ed90bb4f1f11059b372" category="inline-link-macro-rx"></block> .</block>
   <block id="e3a1bd8f43fc761424ef512d07c27a8b" category="section-title">Ajoutez des membres à votre organisation</block>
-  <block id="af1944d628b4a4ffaf6c377d8bfd75a9" category="paragraph">Vous pouvez ajouter deux types de membres à votre organisation : un compte utilisateur et un compte de service. Les applications utilisent des comptes de service pour effectuer des tâches API sans intervention humaine.  Une personne utilise généralement un compte utilisateur pour se connecter et gérer les ressources.</block>
   <block id="4a6e57c6cb2443ee81ba504493e38c0d" category="paragraph">Les utilisateurs doivent s'inscrire à la NetApp Console avant de pouvoir les ajouter à une organisation ou leur attribuer un rôle.  Vous créez des comptes de service directement depuis la console.</block>
   <block id="e882dcb285b727741daef45bc38e2d7b" category="paragraph">Pour gérer les utilisateurs et leurs autorisations, vous devez disposer du rôle *Administrateur de l'organisation* ou du rôle *Administrateur de dossier ou de projet*.  N'oubliez pas que les utilisateurs disposant du rôle *Administrateur de dossier ou de projet* ne peuvent gérer que les membres du dossier ou des projets pour lesquels ils disposent des autorisations d'administrateur.</block>
   <block id="7915733bd673ab1728be20879c847f08" category="section-title">Ajouter un compte utilisateur</block>
@@ -3697,7 +3639,6 @@
   <block id="8e7e960ee764c7e6e42c82f1edaa4133" category="list-text">Pour *Type de membre*, sélectionnez *Compte de service*.</block>
   <block id="e14a6ae0776860dda96f0e481824bccd" category="list-text">Saisissez un nom pour le compte de service.</block>
   <block id="ebcb63e875051cc6846253b2c9ce48da" category="list-text">Si vous souhaitez utiliser l’authentification JWT, sélectionnez *Utiliser l’authentification JWT par clé privée* et téléchargez votre clé RSA publique ou votre certificat.  Ignorez cette étape si vous souhaitez utiliser un identifiant client et un secret à la place.</block>
-  <block id="f17ae6fd3e69f0e9652031dd252bbc3e" category="paragraph">Votre certificat X.509.  Il doit être au format PEM, CRT ou CER.</block>
   <block id="fc0041752419b9f94c8f1b7af4db8c4a" category="list-text">Sélectionnez une *Catégorie* puis sélectionnez un *Rôle* qui fournit au membre des autorisations pour les ressources associées à l'organisation, au dossier ou au projet que vous avez sélectionné.</block>
   <block id="78f6d8218cb580b136d9697f7235ad36" category="list-text">Si vous n’avez pas choisi d’utiliser l’authentification JWT, téléchargez ou copiez l’ID client et le secret client.  + La console affiche le secret du client une seule fois.  Copiez-le en toute sécurité ; vous pourrez le recréer plus tard si nécessaire.</block>
   <block id="3f1c25aff6cde8c3443a53dfb8490e46" category="list-text">Si vous avez choisi l’authentification JWT, téléchargez ou copiez l’ID client et l’audience JWT.  Ces informations ne sont affichées qu'une seule fois et ne peuvent pas être récupérées ultérieurement.</block>
@@ -3711,7 +3652,6 @@
   <block id="d5e4a18be128c90b65012755ecabfe00" category="paragraph">Le tableau *Membres* répertorie les membres de votre organisation.</block>
   <block id="4137654b2b560bb6af478553cbc120b2" category="section-title">Supprimer un membre de votre organisation</block>
   <block id="e4cb5729a397d486706aec2c33ce4ea6" category="paragraph">Vous devrez peut-être supprimer un membre de votre organisation, par exemple s'il quitte votre entreprise.</block>
-  <block id="b6be293e7a1c53f72d15da417976fc81" category="paragraph">Le système supprime les autorisations du membre mais conserve ses comptes de console et de site de support NetApp .</block>
   <block id="17968a6208774a9e7e1a042da70ec52f" category="list-text">Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnez<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> puis sélectionnez *Supprimer l'utilisateur*.</block>
   <block id="6e49938f1c5b86ad879eeaf086442b08" category="list-text">Confirmez que vous souhaitez supprimer le membre de votre organisation.</block>
   <block id="a657b530c9804722859fcb4792bf4466" category="section-title">Recréer les informations d'identification pour un compte de service</block>
@@ -3719,10 +3659,8 @@
   <block id="587ee44a2d8c31788fd2c2219c69f11c" category="paragraph">Lorsque vous recréez les informations d’identification, vous supprimez les informations d’identification existantes pour le compte de service et en créez de nouvelles. Vous ne pouvez pas utiliser les informations d'identification précédentes.</block>
   <block id="bb0f4333667b84217bd737a0e3fc6024" category="list-text">Dans le tableau *Membres*, accédez à un compte de service, sélectionnez<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> puis sélectionnez *Recréer les secrets*.</block>
   <block id="8de213850e1e3dc79a14014382d25163" category="list-text">Sélectionnez *Recréer*.</block>
-  <block id="26099ee95e920d1bb32d1205490ad92b" category="list-text">Téléchargez ou copiez l'ID client et le secret client.  + Le secret client ne s'affiche qu'une seule fois. Copiez-le ou téléchargez-le et stockez-le en toute sécurité.</block>
   <block id="25240dbf964ce37736226ead112d31f2" category="section-title">Gérer l'authentification multifacteur (MFA) d'un utilisateur</block>
   <block id="50ce8407589b8befd67cd61c66e1dd17" category="paragraph">Si un utilisateur perd l’accès à son périphérique MFA, vous pouvez supprimer ou désactiver sa configuration MFA.</block>
-  <block id="a860c0a128dada61cfda723f07532eda" category="paragraph">Les utilisateurs doivent reconfigurer MFA lors de la connexion après la suppression.  Si l'utilisateur n'a perdu l'accès à son appareil MFA que temporairement, il peut utiliser le code de récupération qu'il a enregistré lors de la configuration de MFA pour se connecter.</block>
   <block id="e0703bf0ce92b0a162c7173416f52e67" category="paragraph">S'ils ne disposent pas de leur code de récupération, désactivez temporairement MFA pour autoriser la connexion. Lorsque vous désactivez l'authentification multifacteur pour un utilisateur, elle est désactivée pendant huit heures seulement, puis réactivée automatiquement. L'utilisateur est autorisé à se connecter une fois pendant cette période sans MFA. Après les huit heures, l’utilisateur doit utiliser MFA pour se connecter.</block>
   <block id="5882327647586429810441bede064892" category="admonition">Pour gérer l'authentification multifacteur d'un utilisateur, vous devez disposer d'une adresse e-mail dans le même domaine que l'utilisateur concerné.</block>
   <block id="4c03cc49e70b34418f2385277d266d90" category="list-text">Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnez<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> puis sélectionnez *Gérer l'authentification multifacteur*.</block>
@@ -3730,11 +3668,8 @@
   <block id="2fe6c9d572351b2d4e0b387a62bdf1e2" category="summary">Gérez la hiérarchie des ressources de votre organisation en associant des ressources à des projets et des dossiers spécifiques.</block>
   <block id="0b99b236783ea746ceb31085990e767d" category="paragraph">Lorsque vous associez un membre à votre organisation, vous fournissez des autorisations au niveau de l'organisation, du dossier ou du projet.  Pour garantir que ces membres disposent des autorisations nécessaires pour accéder aux bonnes ressources, vous devez gérer la hiérarchie des ressources de votre organisation en associant les ressources à des projets et des dossiers spécifiques.  Une _ressource_ est un système de stockage ou un agent de console que la console gère déjà ou dont elle a connaissance.</block>
   <block id="98ca801aa8933a24531043c30c475e2e" category="section-title">Consultez les ressources de votre organisation</block>
-  <block id="19c483b3cc14239dca4a799e0b75956f" category="paragraph">Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Les ressources non découvertes sont des ressources de stockage identifiées mais pas encore ajoutées à la console.</block>
-  <block id="90e05d9e1b72166781e95442b46203c0" category="admonition">REMARQUE : la page Ressources exclut les ressources Amazon FSx for NetApp ONTAP, car les utilisateurs ne peuvent pas les associer à un rôle.  Affichez-les sur la page Systèmes ou depuis Charges de travail.</block>
   <block id="95c9ea5440ca8b54a3d3dae8e1d1f492" category="list-text">Sélectionnez *Ressources*.</block>
   <block id="a5d2efab4d8509840f3f76fe8f0a57c1" category="list-text">Sélectionnez *Recherche avancée et filtrage*.</block>
-  <block id="3d1bc41342a56d581edf9d1765f01a0b" category="list-text">Utilisez l’une des options disponibles pour trouver la ressource que vous recherchez :</block>
   <block id="48ca2619b5dca392dc3969df94469cf3" category="list-text">*Rechercher par nom de ressource* : saisissez une chaîne de texte et sélectionnez *Ajouter*.</block>
   <block id="b2efca9e0863336ee0d7aa6af1771c24" category="list-text">*Plateforme* : Sélectionnez une ou plusieurs plateformes, telles qu'Amazon Web Services.</block>
   <block id="e6d1209910233e075e359b7fdb3892a8" category="list-text">*Ressources* : sélectionnez une ou plusieurs ressources, telles que Cloud Volumes ONTAP.</block>
@@ -3760,10 +3695,8 @@
   <block id="0d8f80667cd7bc86a6f6ea26c12d18b9" category="paragraph">L'exemple suivant montre une ressource associée à un projet.</block>
   <block id="a46cbe82e9adff7ecc82d6eadb58aa97" category="inline-image-macro">Une capture d'écran de la page des détails des ressources qui montre une ressource associée à un projet directement sous l'organisation.</block>
   <block id="7cadbb5f400f149f938a910df5c5cb0d" category="paragraph"><block ref="7cadbb5f400f149f938a910df5c5cb0d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7e77a0d272b850a5b082c2fed060594a" category="admonition">Si vous devez déterminer quels membres de l’organisation ont accès à la ressource, vous pouvez<block ref="7b75e3c2af3e500cfb657c057dbc7c5e" category="inline-link-macro-rx"></block> .</block>
   <block id="02daa88c7c6888cad8b055624d764072" category="section-title">Supprimer une ressource d'un dossier ou d'un projet</block>
   <block id="101c2fc402187ad7ad2fa40cf25d35b2" category="paragraph">Pour supprimer une ressource d’un dossier ou d’un projet, vous devez supprimer l’association entre le dossier ou le projet et la ressource. Lorsque vous supprimez l’association, cela empêche les membres de gérer la ressource dans le dossier ou le projet.</block>
-  <block id="0ca2d7cec61f3ffe672d4b8efae574f3" category="admonition">Pour supprimer une ressource découverte de l'ensemble de l'organisation, supprimez le système de la page *Systèmes*.</block>
   <block id="a55ecc4bf928da93f86f41bb1fa482cc" category="inline-image-macro">Une icône d'une poubelle</block>
   <block id="4fc3c6ef596dbec8a3af38f79c84cf02" category="list-text">Pour le dossier ou le projet pour lequel vous souhaitez supprimer la ressource, sélectionnez<block ref="5aa3fbfa4a030d3d0fb7677a91fd2eba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ece216a1c354b015ef19084b08f5e92f" category="list-text">Confirmez que vous souhaitez supprimer l'association en sélectionnant *Supprimer*.</block>
@@ -3771,11 +3704,9 @@
   <block id="cf3b3d414366a26f5b43041b5056897c" category="summary">Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.</block>
   <block id="14750286cb2a5a61bf62b65d9b9d2112" category="doc">Utiliser des rôles pour gérer l'accès des utilisateurs aux ressources de la NetApp Console</block>
   <block id="5f24947dab075e3413b914aa36df023a" category="paragraph">Dans la console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.</block>
-  <block id="61258c54d2a7f09077a72a4eeb56874d" category="paragraph">Attribuez des rôles aux utilisateurs en fonction de votre stratégie IAM pour une sécurité renforcée.  Les rôles IAM garantissent que les utilisateurs disposent uniquement de l’accès dont ils ont besoin.</block>
   <block id="3908f1e42aa5b81b8316befd30a6965d" category="inline-link-macro">Apprenez à organiser vos ressources avec des dossiers et des projets.</block>
   <block id="ecdeffad8e53c7c9b1fb61f02a3cb5d1" category="admonition">N'oubliez pas que vous ne pouvez pas accorder directement l'accès aux ressources.  Affectez d’abord les ressources aux projets.  Pensez à configurer votre hiérarchie de ressources avant d’attribuer l’accès aux utilisateurs.<block ref="122b4639308e055d5bdfeb8a65e1794d" category="inline-link-macro-rx"></block></block>
   <block id="34025ad60edecbf8612a359edaca8684" category="section-title">Afficher les rôles attribués à un membre</block>
-  <block id="aa71b6597d142a17d9d21782a5fd883b" category="paragraph">Lorsque vous ajoutez un membre à votre organisation, vous êtes invité à lui attribuer un rôle.  Vous pouvez permettre aux membres de vérifier les rôles qui leur sont actuellement attribués.</block>
   <block id="317e1169ce13ad8808ce0775bf310cef" category="paragraph">Si vous disposez du rôle _Administrateur de dossier ou de projet_, la page affiche tous les membres de l'organisation.  Cependant, vous ne pouvez afficher et gérer les autorisations des membres que pour les dossiers et les projets pour lesquels vous disposez d'autorisations. <block ref="c691e2b9b4224ed90bb4f1f11059b372" category="inline-link-macro-rx"></block> .</block>
   <block id="12815307393fa19648b391d49b4282e4" category="section-title">Ajouter un rôle d'accès à un membre</block>
   <block id="9a9b4b286a389bc98dfdeb3214c134a1" category="paragraph">Vous attribuez généralement un rôle lorsque vous ajoutez un membre à votre organisation, mais vous pouvez le mettre à jour à tout moment en supprimant ou en ajoutant des rôles.</block>
@@ -3783,7 +3714,6 @@
   <block id="7a43b6f649f8cf73a12056888057076b" category="paragraph">Votre stratégie de rôle d’accès doit s’aligner sur la manière dont vous avez organisé vos ressources NetApp .</block>
   <block id="20c36cd6c77d407b6118c77ebe403934" category="admonition">Un membre auquel est attribué le rôle d'administrateur d'organisation ne peut pas se voir attribuer de rôles supplémentaires.  Ils disposent déjà d’autorisations sur l’ensemble de l’organisation.  Un membre doté du rôle Dossier ou Projet ne peut se voir attribuer aucun autre rôle dans le dossier ou le projet où il possède déjà ce rôle.  Ces deux rôles donnent accès à tous les services dans le cadre qui leur est attribué.</block>
   <block id="068135177d9d1843118236d5f10dc5b7" category="section-title">Modifier le rôle attribué à un membre</block>
-  <block id="88ccee89efe2b556b8fcc7b01ae63c9f" category="paragraph">Vous pouvez modifier les rôles attribués à un membre si vous devez ajuster l'accès d'un utilisateur.</block>
   <block id="4edfdeb74f014e9408efa692c71a9d2e" category="admonition">Les utilisateurs doivent avoir au moins un rôle qui leur est attribué.  Vous ne pouvez pas supprimer tous les rôles d’un utilisateur.  Si vous devez supprimer tous les rôles, vous devez supprimer l’utilisateur de votre organisation.</block>
   <block id="2be01e6baa22b9b0a4f0a2c054fe7289" category="summary">Si nécessaire, vous pouvez modifier le nom de votre organisation NetApp Console .</block>
   <block id="1920da3586c2e2872f88b02997c971c3" category="doc">ID d'organisation et de projet</block>
@@ -3900,7 +3830,6 @@
   <block id="80308b1bd5b2d563350bbb74c701710f" category="section-title">Étape 3 : Configurer le réseau</block>
   <block id="80196471f6a2f8c78a5455f640296b19" category="paragraph">Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  La satisfaction de ces exigences permet à l’agent de console de gérer les ressources et les processus au sein de votre environnement de cloud hybride.</block>
   <block id="c39c5a4e7fd2ccefcd663038795421ed" category="section-title">Étape 4 : configurer les autorisations AWS pour la console</block>
-  <block id="103049e74e847c769a97fe33d5d46712" category="paragraph">Vous devez fournir des autorisations AWS à la NetApp Console en utilisant l’une des options suivantes :</block>
   <block id="168b098cb315f9dde326e5fcaa738ac3" category="list-text">Option 1 : créez des stratégies IAM et attachez-les à un rôle IAM que vous pouvez associer à l’instance EC2.</block>
   <block id="ab285b81ee6660fa09c5ad9eb7eb49a6" category="list-text">Option 2 : fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.</block>
   <block id="380b440efe1d4d54168900055656ba0c" category="paragraph">Suivez les étapes pour préparer les autorisations pour la console.</block>
@@ -3917,8 +3846,6 @@
   <block id="b3175a7a8c2ba73aad02f57026632d9b" category="inline-link">Découvrez comment gérer les buckets S3 à partir de NetApp ConsoleP</block>
   <block id="cb0908023b296d7d49436ab6f97e1722" category="paragraph">Si vous avez des compartiments Amazon S3 dans le même compte AWS où vous avez créé l'agent de console, vous verrez un système de stockage Amazon S3 apparaître automatiquement sur la page *Systèmes*.<block ref="e807fcbb34e8f3cdd2199d0fc61d445e" category="inline-link-rx"></block></block>
   <block id="c38f7847f04d50ab6fcbc66333ed1e25" category="section-title">Étape 6 : Accorder des autorisations à la NetApp Console</block>
-  <block id="abdfcd483825370c001a0b749d453dc4" category="paragraph">Maintenant que vous avez installé l'agent de console, vous devez fournir à la console les autorisations AWS que vous avez précédemment configurées.  L’octroi des autorisations permet à l’agent de la console de gérer vos données et votre infrastructure de stockage dans AWS.</block>
-  <block id="5a52914d8d01c8e84d9a721dbf01a42b" category="paragraph">Attachez le rôle IAM que vous avez précédemment créé à l’instance EC2 de l’agent de console.</block>
   <block id="0ceede4f3f6785079b421e3b767884a7" category="paragraph">Aller à la<block ref="9fa63571706fcef6edc9d423212e6d10" category="inline-link-rx"></block> pour commencer à utiliser l'agent de console.</block>
   <block id="478934e77aeec11eff664bb1d6c547a8" category="paragraph">Fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.</block>
   <block id="0950c5af4754899d3da4c72fa2993986" category="list-text">Assurez-vous que l’agent de console correct est actuellement sélectionné dans la console.</block>
@@ -4072,7 +3999,6 @@
   <block id="702a1eca6754acddde443fd4cb404a99" category="doc">Créer un agent de console dans Google Cloud à partir de la NetApp Console</block>
   <block id="4b4904242b46a5c5de838c3bf8de1c06" category="paragraph">Vous pouvez créer un agent de console dans Google Cloud à partir de la console.  Vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l'agent de la console.</block>
   <block id="05e4e55b4a1ded174cd4d080db80632c" category="paragraph">Configurez la mise en réseau pour garantir que l'agent de la console peut gérer les ressources, avec des connexions aux réseaux cibles et un accès Internet sortant.</block>
-  <block id="47bf230a49ecee72c3b36a37f9758812" category="paragraph">\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects</block>
   <block id="1ac278db12cb6e29a5837e46be7230d6" category="paragraph">Implémentez cette exigence de mise en réseau après avoir créé l’agent de console.</block>
   <block id="367fc1a15d8d93ee5b98ec9fb0626a3f" category="section-title">Étape 2 : Configurer les autorisations pour créer l’agent de console</block>
   <block id="770085896a0aaa47d2b2a21de5e713fe" category="paragraph">Avant de pouvoir déployer un agent de console à partir de la console, vous devez configurer des autorisations pour l'utilisateur Google Platform qui déploie la machine virtuelle de l'agent de console.</block>
@@ -4161,7 +4087,6 @@
   <block id="d7134f839db72245fe3e0d8d0bfce146" category="section-title">Étape 4 : Configurer les autorisations pour l’agent de la console</block>
   <block id="a0e4b6848b26b9f671f19438b07d341b" category="section-title">Étape 5 : Configurer les autorisations VPC partagées</block>
   <block id="ed699bb1e56dba725718c6f093e80619" category="section-title">Étape 6 : Activer les API Google Cloud</block>
-  <block id="69f380f2398b7565bd53d007caa73472" category="paragraph">Plusieurs API Google Cloud doivent être activées avant de pouvoir déployer des systèmes Cloud Volumes ONTAP dans Google Cloud.</block>
   <block id="e8e253336558188ed5f5c2ffa5852d13" category="section-title">Étape 7 : Installer l’agent de console</block>
   <block id="99564e0e630cf4a642f3e276f6caacab" category="inline-link">Découvrez comment gérer Google Cloud Storage depuis la NetApp Console</block>
   <block id="22a243e5f9859fe3d0fcb5d054ec0f43" category="paragraph">Si vous disposez de buckets Google Cloud Storage dans le même compte Google Cloud où vous avez créé l'agent de la console, vous verrez un système Google Cloud Storage apparaître automatiquement sur la page *Systèmes*.<block ref="f4a6f159093eba0ffefdac7ab4ea2c30" category="inline-link-rx"></block></block>
@@ -4296,7 +4221,6 @@
   <block id="25ed61080ee73d701a5ba6feef931050" category="paragraph"><block ref="25ed61080ee73d701a5ba6feef931050" category="inline-link-macro-rx"></block></block>
   <block id="8ac340f924d72696326df51a32dbdee5" category="inline-link">Page de la place de marché Azure pour les régions Azure Government</block>
   <block id="cc337b5a93c54f8a59d4731866297bf2" category="list-text"><block ref="cc337b5a93c54f8a59d4731866297bf2" category="inline-link-rx"></block></block>
-  <block id="ece4476b2389e3e8eff9a96e00d892b7" category="list-text">*IP publique* : si vous souhaitez utiliser une adresse IP publique avec la machine virtuelle de l'agent de console, l'adresse IP doit utiliser un SKU de base pour garantir que la console utilise cette adresse IP publique.</block>
   <block id="92fa0fc1299e55c066d0a19cd22b4e7b" category="list-text">*Identité* : Sous *Gestion*, sélectionnez *Activer l'identité gérée attribuée par le système*.</block>
   <block id="b99469b29b000bd070b5f230caa3b887" category="paragraph">Azure déploie la machine virtuelle avec les paramètres spécifiés.  La machine virtuelle et le logiciel de l'agent de console devraient être exécutés dans environ cinq minutes.</block>
   <block id="8f40f6b9cda905fc9a83217435e6b940" category="open-title">Installation manuelle</block>
@@ -4306,7 +4230,6 @@
   <block id="dff3d2b179cc5b62a2e772cc8404f515" category="section-title">Étape 2 : Configurer la NetApp Console</block>
   <block id="673e7aa51056c2e179dd721d8108e744" category="paragraph">Lorsque vous accédez à la console pour la première fois, vous êtes invité à choisir une organisation pour l'agent de la console et devez activer le mode restreint.</block>
   <block id="94c608264d0740c1539084d4a2415780" category="paragraph">La personne qui configure l’agent de la console doit se connecter à la console à l’aide d’un identifiant qui n’appartient pas déjà à une organisation de la console.</block>
-  <block id="09bf19e6ad387b1e458c5178d9016692" category="paragraph">Si votre identifiant est associé à une autre organisation, vous devrez vous inscrire avec un nouvel identifiant.  Sinon, vous ne verrez pas l’option permettant d’activer le mode restreint sur l’écran de configuration.</block>
   <block id="e698c1fd9cae8de09d0fab313c0adf0b" category="list-text">Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à l’instance de l’agent de console et entrez l’URL suivante de l’agent de console que vous avez installé.</block>
   <block id="2f8c3ab071a9ded2677148c9c94dcab3" category="list-text">Inscrivez-vous ou connectez-vous à la NetApp Console.</block>
   <block id="7c129580ce3fdaedbab5835e1c6efc59" category="list-text">Une fois connecté, configurez la console :</block>
@@ -4318,7 +4241,6 @@
   <block id="e9a22dbe949aceeeba0832b4920f12de" category="paragraph">Si vous avez déployé l'agent de console dans une région gouvernementale, la case à cocher est déjà activée et ne peut pas être modifiée.  Cela est dû au fait que le mode restreint est le seul mode pris en charge dans les régions gouvernementales.</block>
   <block id="34ef49f2003b645a0f1b248a8e158945" category="paragraph">L'agent de console est maintenant installé et configuré avec votre organisation de console.  Tous les utilisateurs doivent accéder à la console à l’aide de l’adresse IP de l’instance de l’agent de la console.</block>
   <block id="cb763b4641bf6e6767c99d379a3c59aa" category="paragraph">Fournissez à la console les autorisations que vous avez précédemment configurées.</block>
-  <block id="0d90b7023964fcc3c91d83c1e214d24e" category="paragraph">Si vous avez déployé l’agent de console à partir de la Place de marché Azure ou si vous avez installé manuellement le logiciel de l’agent de console, vous devez fournir les autorisations que vous avez précédemment configurées.</block>
   <block id="9ec50c85d379863701d46321169dc12e" category="paragraph">Ces étapes ne s'appliquent pas si vous avez déployé l'agent de console à partir d'AWS Marketplace, car vous avez choisi le rôle IAM requis lors du déploiement.</block>
   <block id="d8325912caeaba85aaefdb17eacaea8d" category="inline-link-macro">Apprenez à préparer les autorisations cloud</block>
   <block id="1b9eb4a1347f52519d9e7d0e26300a53" category="paragraph"><block ref="01cf67ff20127008355664826b726767" category="inline-link-macro-rx"></block> .</block>
@@ -4904,7 +4826,6 @@
   <block id="a6c767dcba3869189c00afe8384d49d1" category="inline-link-macro">Base de connaissances NetApp .</block>
   <block id="c5210c54ffa8d650855e8cf9ce855ee5" category="paragraph">Si vous disposez d'un compte sur le site de support NetApp , vous pouvez également consulter le<block ref="b7101d8626a4e0032aefbb96762d5e1f" category="inline-link-macro-rx"></block></block>
   <block id="980194f6da5ee72bc5d20ee6e316a73f" category="section-title">Messages d'erreur courants et résolutions</block>
-  <block id="ece4155d60ae4e8dfd6eeb423c8526dd" category="paragraph">Le tableau répertorie les messages d’erreur courants et leurs suggestions de résolution :</block>
   <block id="e20cbb947afcf84cf58de1358ee1068d" category="cell">Message d'erreur</block>
   <block id="b72ac10807b29c77f5b7e4b80ea40414" category="cell">Explication</block>
   <block id="a18bb1dfc38a5f8bdbcc37d7ddf92320" category="cell">Ce qu'il faut faire</block>
@@ -4925,7 +4846,6 @@
   <block id="41dd69dc7c6b4f3a269a4e72a6eedce5" category="list-text">Vérifiez si le conteneur OCCM est en cours d'exécution et fonctionne.</block>
   <block id="2fa1ea75814dc1fdfdc37b059a82eaea" category="paragraph">Impossible de charger les informations d'assistance pour l'agent.</block>
   <block id="f741099adb576ac2cebaca78923cb39c" category="paragraph">Ce message s'affiche si l'agent ne peut pas accéder à votre compte d'assistance.</block>
-  <block id="8c301b35d1707a20114f884ea75e3e4f" category="paragraph">* *.</block>
   <block id="f1250585f9c248976b034c285b91672c" category="paragraph">Utilisez l’une des commandes suivantes pour vérifier votre agent de console.  Tous les services doivent avoir le statut _En cours d'exécution_.  Si ce n’est pas le cas, contactez le support NetApp .</block>
   <block id="0960e06fac3e48e6403802fb4aa8fbde" category="paragraph">Pour plus d'informations sur l'accès aux diagnostics de l'agent de la console, consultez les rubriques suivantes :</block>
   <block id="a25b82d4083e9054d77530a1b1771861" category="inline-link-macro">Vérifier l'état de l'agent de la console (pour les déploiements d'hôtes Linux)</block>
@@ -4944,10 +4864,6 @@
   <block id="3b2256fce45383ccea4ebfc8f456dcf9" category="section-title">Problèmes d'installation de l'agent de console</block>
   <block id="2cca0346972b04930650bf988ebae1ab" category="paragraph">Si l’installation échoue, consultez le rapport et les journaux pour résoudre les problèmes.</block>
   <block id="f8a1a17cd9b62f1fc12e61715a042238" category="section-title">Désactiver les vérifications de configuration pour les installations manuelles</block>
-  <block id="849f51f76842f376ad2d4b11f1383701" category="paragraph">Il peut arriver que vous ayez besoin de désactiver les contrôles de configuration qui vérifient la connectivité sortante lors de l'installation. Par exemple:</block>
-  <block id="763a64c54c72ab3083be417c5fc344f7" category="list-text">Lors de l'installation manuelle d'un agent dans votre environnement Government Cloud, vous devez désactiver les vérifications de configuration, sinon l'installation échouera.</block>
-  <block id="09791c89411350b678fc1839765eab56" category="list-text">Vous souhaiterez peut-être également désactiver ces vérifications si vous continuez à utiliser la liste de points de terminaison précédente pour les mises à niveau de l'agent.</block>
-  <block id="d904cff226021034938fcc2411d0007a" category="paragraph">Vous désactivez la vérification de configuration en définissant l'indicateur _skipConfigCheck_ dans le fichier _com/opt/application/netapp/service-manager-2/config.json_.  Par défaut, cet indicateur est défini sur faux et la vérification de configuration vérifie l'accès sortant pour l'agent.  Définissez cet indicateur sur vrai pour désactiver la vérification.  Vous devez être familiarisé avec la syntaxe JSON avant de terminer cette étape.</block>
   <block id="2b7c431e56422c4f2f72e4103ac272de" category="paragraph">Pour réactiver la vérification de configuration, procédez comme suit et définissez l'indicateur _skipConfigCheck_ sur false.</block>
   <block id="e67f6596d19ecc5846a8d78e917daf2d" category="list-text">Accédez à l’hôte de l’agent de la console en tant que root ou avec les privilèges sudo.</block>
   <block id="d0ec983e93943635bce3349bbdcbf79e" category="list-text">Créez une copie de sauvegarde du fichier _/opt/application/netapp/service-manager-2/config.json_ pour vous assurer de pouvoir annuler vos modifications.</block>
@@ -4955,13 +4871,6 @@
   <block id="e5a62c3c41fbb902bf1696d9b5ee861e" category="list-text">Modifiez le fichier _/opt/application/netapp/service-manager-2/config.json_ et remplacez la valeur de l'indicateur _skipConfigCheck_ par true.</block>
   <block id="9e3e4c61d70076bf677edfc157a67761" category="list-text">Enregistrez votre fichier.</block>
   <block id="92ae5258778c2fa8ece2b13c88ec0853" category="list-text">Redémarrez le service Service Manager 2 en exécutant la commande suivante :</block>
-  <block id="662f9a338a22b54f53c272273a014b79" category="section-title">Échec de l'installation sur les points de terminaison utilisés pour les mises à niveau</block>
-  <block id="433bf8d69523b6c45bd3e9074176c8e4" category="paragraph">Si vous utilisez toujours le<block ref="99a33b76fea6c3306005dfd630a43c9c" category="inline-link-macro-rx"></block> utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case *Configuration de l'agent de validation* ou ignorez la vérification de la configuration lors de l'installation dans un VCenter.</block>
-  <block id="b223d695dc0a3cfeb346189c2e0da719" category="inline-link-macro">points finaux actuels</block>
-  <block id="6ff810ad8ac9135f58145c78533c4ad6" category="inline-link-macro">Apprenez à mettre à jour vos points de terminaison</block>
-  <block id="1d9f2c477941ad369756e011cc9d7f3f" category="paragraph">NetApp recommande de mettre à jour vos règles de pare-feu pour autoriser l'accès au<block ref="4eae8a7245c9e90ebe2b3731e8a0c4a1" category="inline-link-macro-rx"></block> dans les meilleurs délais. <block ref="81e8d12b12d5dbcaca843cd6eacbf7e1" category="inline-link-macro-rx"></block> .</block>
-  <block id="651580bc14c37a80ea60b4945de22424" category="paragraph">Assurez-vous de vérifier que la seule erreur est liée aux points de terminaison précédents :</block>
-  <block id="5142e35e06a4059a377c9fc09d2a174e" category="paragraph">S'il y a d'autres erreurs, vous devrez les résoudre avant de continuer.</block>
   <block id="efc08f7ae120eb6ea0a122c03f686581" category="section-title">Travailler avec le support NetApp</block>
   <block id="d0bc8404c6e69b4ebc8cadb9768f40e3" category="paragraph">Si vous n’avez pas pu résoudre les problèmes avec votre agent de console, vous pouvez contacter le support NetApp .  Le support NetApp peut vous demander l'ID de l'agent de console ou de lui envoyer les journaux de l'agent de console s'il ne les possède pas déjà.</block>
   <block id="7a4c595a1d52f82afae3ef326e950386" category="section-title">Rechercher l'ID de l'agent de la console</block>
@@ -5375,10 +5284,6 @@
   <block id="63355a9119047d0bb5216fe09819ed76" category="admonition">Vous ne pouvez pas modifier les informations d'identification d'un profil d'instance associé à une instance d'agent de console ou à une instance Amazon FSx for ONTAP . Vous ne pouvez renommer les informations d'identification que pour une instance FSx for ONTAP .</block>
   <block id="f2a10e059f22d2e4e590bf375629f82c" category="list-text">Sur la page *Informations d'identification de l'organisation*, sélectionnez le menu d'action pour un ensemble d'informations d'identification, puis sélectionnez *Modifier les informations d'identification*.</block>
   <block id="76f673856509040ebe6f53809741b891" category="admonition">Vous ne pouvez pas supprimer les informations d’identification d’un profil d’instance associé à un agent de console.</block>
-  <block id="fe0e7233937189ab2b2856c5f3bbfefc" category="doc">Associez les informations d'identification de l'agent de la console à votre abonnement Google Cloud</block>
-  <block id="be6d6ead122d68c4f8ddf176dfa23437" category="paragraph">Lorsque vous créez un agent de console dans Google Cloud, vous pouvez utiliser les informations d'identification associées pour vous abonner aux NetApp Intelligent Services, qui incluent Cloud Volumes ONTAP et les services de données NetApp .  Vous devez associer l'abonnement à l'agent dont vous souhaitez utiliser les informations d'identification pour payer les services.</block>
-  <block id="1e494b5627bead907a00e4ea2064baa4" category="paragraph">Le remplacement de l'abonnement actuel du marché par un nouveau met à jour l'abonnement pour les systèmes Cloud Volumes ONTAP existants et nouveaux.</block>
-  <block id="0e0ee6c108e2775832f3d4fec4e5c9ab" category="paragraph">L'abonnement aux services de données NetApp via Google Cloud Marketplace peut échouer en raison d'autorisations incorrectes ou d'une redirection manquée vers la console. Si cela se produit, suivez les étapes suivantes pour terminer le processus d’abonnement.</block>
   <block id="743026d6272c7eac4898bf78c6a0ec00" category="paragraph">La console doit s'authentifier auprès d'AWS avant de pouvoir déployer l'agent de console dans votre VPC. Vous pouvez choisir l’une de ces méthodes d’authentification :</block>
   <block id="3c3077c55d74474a96914d3933e99034" category="paragraph">Quelle que soit l’option choisie, la première étape consiste à créer une politique IAM. Cette politique contient uniquement les autorisations nécessaires pour lancer l’agent de console dans AWS à partir de la console.</block>
   <block id="a6ff8031b9b97942fbb164a958bb15cb" category="inline-link-macro">Afficher les autorisations requises pour l'agent de la console lui-même</block>
@@ -5398,7 +5303,6 @@
   <block id="b40610ec83466e7c103049d70ad18892" category="inline-link-macro">Examen des exigences des agents</block>
   <block id="8a62551759227881974703cf10bfc946" category="paragraph"><block ref="e2790838ef7051b1907224142bc33625" category="inline-link-macro-rx"></block>.</block>
   <block id="446a691d3cf6457cb60610b81794fdbc" category="paragraph">AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.</block>
-  <block id="118b5697b68c5f4ada51d65dffac2674" category="paragraph">Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique. Si la machine que vous utilisez pour accéder à la console n'a pas accès à cette adresse IP privée, les actions de la console échouent.</block>
   <block id="d1cb423c9810b1ddd65eea821845fff2" category="admonition">Pour activer la détection d’activité utilisateur suspecte, vous devez disposer du rôle d’administrateur de l’organisation de la console.</block>
   <block id="c563d78603e1e09616c6c043a19061ba" category="cell">*Points de terminaison pour 4.0.0 et versions ultérieures*</block>
   <block id="1463a95efc33a52765f03569e1e39a10" category="cell">*But*</block>
@@ -5417,7 +5321,6 @@
   <block id="30c4239755a3fa7fe7952fafec8297dd" category="paragraph">Pour les opérations quotidiennes.</block>
   <block id="533560d1d92ef216fc2f7047b132da5b" category="list-text">Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande t3.2xlarge.</block>
   <block id="5218e689f8059e737f702b1608b1d2aa" category="list-text">Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande Standard_D8s_v3.</block>
-  <block id="8cf6ae40c51e78159e689e6172cff9c8" category="list-text">Un type d’instance qui répond aux exigences de CPU et de RAM.  NetApp recommande n2-standard-8.</block>
   <block id="9588595fbe3fa7f47431af3c53dbfa23" category="list-text"><block ref="9588595fbe3fa7f47431af3c53dbfa23" category="inline-link-rx"></block></block>
   <block id="cb4f6677094ab1c46678dcab5e428e83" category="summary">Vous devez vous assurer que la console et tous les agents que vous installez disposent du bon accès réseau pour fonctionner correctement.</block>
   <block id="08c556d51e4f6c65d7b6fa418e7669be" category="doc">Accès réseau requis pour la version 3.9.55 et les versions antérieures</block>
@@ -5454,7 +5357,6 @@
   <block id="7d04a8adb8b138151b42f809761295c7" category="cell"><block ref="7d04a8adb8b138151b42f809761295c7" category="inline-link-macro-rx"></block></block>
   <block id="a5e170ce8c9d104f0b20e67e54257be5" category="paragraph">Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet. Vous pouvez ajouter un proxy explicite lors de l'installation. Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter. Si vous disposez d'un serveur proxy explicite, vous devrez saisir les paramètres comme indiqué.</block>
   <block id="247a6a0ee254b2ff09347b727ee46227" category="inline-link-macro">Découvrez la console de maintenance des agents</block>
-  <block id="ed63faa45dd9543220a2183fa0e02b97" category="admonition">Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. <block ref="6d6c38ccb358695b7ab850225fcd83aa" category="inline-link-macro-rx"></block></block>
   <block id="fbcd7669a7a0c8cc9053c7c78029654b" category="admonition">Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console. Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur le<block ref="d3f69ee6935d5f5f8542f4da69ac2bb6" category="inline-link-macro-rx"></block> .</block>
   <block id="334ed7efb24267c8a9d5f60a214ee627" category="list-text">Installez le package podman-compose 1.5.0.</block>
   <block id="83291537b9ae75a78c7add56b73a4688" category="list-text">Si vous utilisez Red Hat Enterprise Linux 8 :</block>
@@ -5463,11 +5365,9 @@
   <block id="e32e1b9613d2e086e1fc46ae7489620c" category="paragraph">La version 4.1.0 est disponible pour le mode standard et le mode restreint.</block>
   <block id="650940dddaeb353d547fc2674ba4d35b" category="paragraph-title">Indicateurs d'état d'agent renommés</block>
   <block id="9722491a4236a9be86f414fa5b3eebb8" category="paragraph">Les indicateurs d'état de l'agent de la console ont été renommés de *Actif* et *Inactif* à *Connecté* et *Déconnecté* afin de rendre leur fonction plus claire.</block>
-  <block id="d9e7da7d4b9cc9086a7ab3a5a270f7da" category="paragraph-title">Prise en charge de Red Hat Enterprise Linux (RHEL) 9.6 et de Podman 5.4.0</block>
   <block id="2749b80160d80f9500fa8b5d5b4da1ba" category="section-title">Administration de la NetApp Console</block>
   <block id="a0d96dec6c85f67c2563063cec22ac66" category="paragraph">Cette version comprend les éléments suivants :</block>
   <block id="ac740509743c941164fb7e88fc8b768e" category="paragraph-title">Nouvelle adresse e-mail pour les notifications de la NetApp Console</block>
-  <block id="3ded9fa2f8cf197bdf563d5509101e3a" category="paragraph">L'adresse e-mail qui envoie les notifications de NetApp Console a changé et est désormais *service@console.netapp.com* au lieu de *service@console.bluexp.netapp.com*. NetApp recommande de mettre à jour vos règles de messagerie pour autoriser *service@console.netapp.com* afin de continuer à recevoir les notifications par e-mail de NetApp Console .</block>
   <block id="e079e06be34bd849355b3a013a28ade3" category="section-title">Détails de la machine virtuelle de l'agent de console pour AWS</block>
   <block id="0759ecf4e00f5c23dd6fcb46adfd5f73" category="section-title">Détails de la machine virtuelle de l'agent de console pour Azure</block>
   <block id="a284e20714904b80b3bc57b894975967" category="section-title">Détails de la machine virtuelle de l'agent de console pour Google Cloud</block>
@@ -5549,7 +5449,6 @@
   <block id="4a882eeef3e6c50d3bb4d82f84d57379" category="cell">calculer.firewalls.delete</block>
   <block id="29dc352467775fda0809adc424204117" category="cell">calculer.firewalls.get</block>
   <block id="dbfb0e7e24eb5b7c01752edd4c67baa0" category="cell">liste des pare-feu</block>
-  <block id="4a1e6993ee92e55c56f575a1285bdc17" category="cell">calculer.globalOperations.get .</block>
   <block id="d8bd74ea171478953e02b86e43191839" category="cell">calculer.images.obtenir</block>
   <block id="a2f8719fc4688979942132e6c83c9b02" category="cell">calculer.images.getFromFamily</block>
   <block id="0c47c066c21579629745163c6286259e" category="cell">calculer.images.liste</block>
@@ -5636,27 +5535,334 @@
   <block id="a4421516ae043bd916b22750fd43a081" category="list-text">calculer.sous-réseaux.utiliser</block>
   <block id="e308cbdddf34fb65f938301ff80d4538" category="list-text">calculer.subnetworks.useExternalIp</block>
   <block id="bc803c81454ea9df76e9060827a7bc53" category="list-text">compute.instances.addAccessConfig</block>
-  <block id="f14cdbbd5f80553660910a0a1219e605" category="section-title">26/11/2025</block>
   <block id="3f7540ad5f30cb6539b7476d85d2f608" category="paragraph">Les autorisations ont été mises à jour afin de clarifier leur utilisation, mais aucune autorisation n'a été ajoutée ni supprimée. Trois colonnes ont été ajoutées pour indiquer si chaque autorisation est utilisée pour le déploiement, les opérations quotidiennes ou la suppression. En outre, certaines autorisations sont segmentées en fonction de leur utilisation pour la NetApp Data Classification et la NetApp Backup and Recovery.</block>
-  <block id="babdf7713555e95437e95d0dc578e050" category="list-text">*Administrateur de la reprise après sinistre* : Effectuez les actions nécessaires.</block>
-  <block id="756062c061caa73b104caf35ad95abd9" category="list-text">*Administrateur de basculement en cas de sinistre* : Effectuer des basculements et des migrations.</block>
-  <block id="99c828ca537070159318271d66dda996" category="list-text">*Administrateur de l'application de reprise après sinistre* : Créer des plans de réplication. Modifier les plans de réplication. Démarrer les tests de basculement.</block>
-  <block id="10bfeabec8da9ffb3c60c40834621a5d" category="list-text">*Visionneuse de reprise après sinistre* : Affichage des informations uniquement.</block>
-  <block id="f66b3ba81642886354f66476eebc171c" category="cell">Permet aux utilisateurs d'afficher les résultats de l'analyse de NetApp Data Classification . Les utilisateurs disposant de ce rôle peuvent afficher les informations de conformité et générer des rapports pour les ressources auxquelles ils sont autorisés à accéder. Ces utilisateurs ne peuvent pas activer ou désactiver l’analyse des volumes, des buckets ou des schémas de base de données. La classification des données ne comporte pas de rôle d'administrateur.</block>
-  <block id="9320804217d782369dccfe3cfe90fd29" category="inline-link">Documents sur la classification des données</block>
-  <block id="81584a5aa440695d6dd39594311c7b2d" category="list-text"><block ref="81584a5aa440695d6dd39594311c7b2d" category="inline-link-rx"></block></block>
-  <block id="d1047a2a7e1c25fc1d5cbd4c2dea5954" category="paragraph">Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs. Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier. Par exemple, vous pouvez attribuer à un utilisateur le rôle d’administrateur Ransomware Resilience pour un projet et le rôle d’administrateur SnapCenter pour un autre projet. Sinon, si un utilisateur a besoin du rôle d'administrateur Ransomware Resilience pour tous les projets d'un dossier spécifique, vous pouvez lui attribuer ce rôle au niveau du dossier.</block>
-  <block id="4c56531120cb5dd49448926a4a5fd1fd" category="paragraph">Vous pouvez attribuer les rôles suivants aux utilisateurs partenaires :</block>
-  <block id="c291dac152d909d3eb9020000be43137" category="inline-link-macro">Visionneuse de classification des données</block>
-  <block id="c7e28713a896e9488b74e428eb025ad0" category="list-text"><block ref="c7e28713a896e9488b74e428eb025ad0" category="inline-link-macro-rx"></block></block>
-  <block id="08324e7c6f4c191ebd76163dd3616c9a" category="list-text"><block ref="08324e7c6f4c191ebd76163dd3616c9a" category="inline-link-macro-rx"></block></block>
-  <block id="4feead535ae6dd1e4ba78516194fe4b1" category="list-text"><block ref="4feead535ae6dd1e4ba78516194fe4b1" category="inline-link-macro-rx"></block></block>
-  <block id="6131a90681ddf9c2c7134fa754e90d4e" category="paragraph">Installez et configurez Podman :</block>
-  <block id="68d20f859d04971de5875c315c929e92" category="list-text">Installez le package podman-compose correspondant</block>
-  <block id="5448bfba9b19b99ebf560293cc6b89ab" category="list-text">Vérifiez que votre version de Podman utilise Netavark Aardvark DNS au lieu de CNI.</block>
-  <block id="bf58c65de2201356b331dfea5e7eb976" category="paragraph">Téléchargez Podman depuis les dépôts Red Hat Enterprise Linux.</block>
-  <block id="2632bb82f2d43ffb72d31ea06ed68352" category="list-text">Installez EPEL pour obtenir podman-compose.</block>
-  <block id="3c7d277b4a6a1367e3f2567411648df9" category="paragraph">Installez une version compatible de Docker Engine en suivant les étapes suivantes. N’installez pas la dernière version, car la console ne la prend pas en charge.</block>
   <block id="18ecbdaa6bb0f123dda150b973bd53b7" category="list-text">Si vous utilisez Red Hat Enterprise 9.1 à 9.6 :</block>
-  <block id="c54ef5e116598334892682d82cbec3e0" category="section-title">Utilisation des autorisations Google Cloud pour Cloud Volumes ONTAP</block>
+  <block id="2f78cc1ceedbe872d890b3b087731dee" category="paragraph">| Amazon FsX pour NetApp ONTAP:</block>
+  <block id="fccc45024c0efe519c08e43bb1bd4c5f" category="list-text">api.workloads.netapp.com</block>
+  <block id="5e57ad0482de1c13a4a285a6101f6c13" category="paragraph">| La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP .</block>
+  <block id="d273096b8b8c7966eb2a2fb6ca248366" category="paragraph">| \ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \// https://config.googleapis.com/v1/projects</block>
+  <block id="f8cd35bf6f398c2f8c485bfd95309caa" category="list-text">. Sélectionnez *Tester la connexion* pour tester votre connexion. Vous êtes dirigé vers une page de connexion pour votre serveur IdP. Connectez-vous avec vos identifiants IdP.  Une fois connecté, retournez à la console pour activer la connexion.</block>
+  <block id="61169bbb57ab5c82abb2ac47499153f3" category="list-text">Dans la console, sélectionnez *Suivant* pour consulter la page récapitulative.</block>
+  <block id="95d9f0b87c61b5cd1f8c21678ced4a5c" category="list-text">Configurer les notifications.</block>
+  <block id="ec811988404f148d3a7f84f040f45531" category="paragraph">Choisissez entre sept jours ou 30 jours.  Le système envoie par courriel des notifications d'expiration et les affiche dans la console à tout utilisateur ayant les rôles suivants : super administrateur, administrateur d'organisation, administrateur de fédération et visionneur de fédération.</block>
+  <block id="88f10db937786a2fa2751961ec03f831" category="list-text">Vérifiez les détails de la fédération, puis sélectionnez *Activer la fédération*.</block>
+  <block id="a59486087b1574debcf33e28dd13ed9f" category="paragraph">Une fois la fédération activée, les utilisateurs se connectent à la NetApp Console à l'aide de leurs identifiants d'entreprise.</block>
+  <block id="15b890fd729e8bd42b01f29b115cdada" category="list-text">API Cloud Infrastructure Manager</block>
+  <block id="10cefdd3da771664f7b0150b62c249ed" category="paragraph">L'exemple suivant crée un rôle nommé « agent » au niveau du projet :</block>
+  <block id="1d98a973e28127ca1d5a524c0a65c609" category="paragraph"><block ref="6970de80a07cb67923442f88622aa01f" prefix="" category="inline-code"></block></block>
+  <block id="f84b7166fdd9d73f9025b6ebc8f1a1e2" category="admonition">Vous ne pouvez pas définir de certificat pour un serveur proxy transparent lors de l'installation manuelle de l'agent de console. Si vous devez définir un certificat pour un serveur proxy transparent, vous devez utiliser la console de maintenance après l'installation. En savoir plus sur le<block ref="67604b84b6c55a93968d120e00fd25fc" category="inline-link-macro-rx"></block> .</block>
+  <block id="e6153b5af910bd914558e46567df943b" category="paragraph">Après l'installation, l'agent de la console se met automatiquement à jour si une nouvelle version est disponible.</block>
+  <block id="5f8a3be418076860c7498d8c5d0e14c3" category="list-text">Téléchargez le logiciel agent Console puis copiez-le sur l'hôte Linux.  Vous pouvez le télécharger soit depuis la NetApp Console , soit depuis le site d'assistance NetApp .</block>
+  <block id="4775980021a4840f05c457f43800b94a" category="list-text">NetApp Console: Accédez à *Agents &gt; Gestion &gt; Déployer l’agent &gt; Sur site &gt; Installation manuelle*.</block>
+  <block id="06f42bb69fed27c52f7bae78f3878026" category="paragraph">Choisissez de télécharger les fichiers d'installation de l'agent ou une URL vers ces fichiers.</block>
+  <block id="0501357b97c3d33dc8ef20b31207b3cc" category="list-text">Site d'assistance NetApp (nécessaire si vous n'avez pas déjà accès à la console)<block ref="384f9db5f56c00fd1d970f44502ee5ff" category="inline-link-rx"></block> ,</block>
+  <block id="1619892cf61e304c5a69af0282981660" category="admonition">Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. <block ref="42ec89ae005e4bc718304f7a7f9af7dd" category="inline-link-macro-rx"></block></block>
+  <block id="f74259191e67bafc8413f9d445c37856" category="list-text">L'agent Console nécessite un hôte dédié.  Toute architecture est prise en charge si elle répond aux exigences de taille suivantes :</block>
+  <block id="1123fbbce8c7742c0e3dcd6cccd5cce6" category="paragraph">L'agent Console a besoin de cet espace dans<block ref="ca905eb4a00d34150573153a09e2e79b" prefix=" " category="inline-code"></block> car Podman ou Docker sont conçus pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le<block ref="af5045a6e72956f67984a97cd3e8b9da" prefix=" " category="inline-code"></block> répertoire et<block ref="2e1a4e3f55001820560b237188c70bc3" prefix=" " category="inline-code"></block> pour Docker. Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.</block>
+  <block id="1c6e1ba9ff363a7122e316a4b7f2c7e3" category="list-text">Si IMDSv2 est activé (paramètre par défaut pour les nouvelles instances EC2), définissez la limite de sauts de réponse PUT sur 3.  Sinon, le système affichera une erreur d'initialisation de l'interface utilisateur lors de la configuration de l'agent.</block>
+  <block id="328d5228f325395bc3a386f41499640a" category="list-text">Un type d’instance qui répond aux exigences de CPU et de RAM. NetApp recommande n2-standard-8.</block>
+  <block id="36321f8de6704271c20efb18c2788361" category="paragraph">Suivez ces étapes pour installer et configurer Podman :</block>
+  <block id="e7655ce2e211e4106a4d229011bca18b" category="list-text">Installer le package podman-compose version 1.0.6</block>
+  <block id="cfc9caf6832f568fe347d970af78e108" category="list-text">Si vous utilisez Red Hat Enterprise Linux, vérifiez que votre version Podman utilise Netavark Aardvark DNS au lieu de CNI</block>
+  <block id="e822146085e921b554750abcae74cd4a" category="paragraph">Vous pouvez obtenir Podman à partir des référentiels officiels de Red Hat Enterprise Linux.</block>
+  <block id="97c0d440ee76e86ece38ee9da4a462cb" category="list-text">Installez le package de référentiel EPEL s'il n'est pas déjà disponible sur votre système.</block>
+  <block id="93052470e7c6a20358c8d89c161e4880" category="paragraph">Cette étape est nécessaire car podman-compose est disponible dans le référentiel Extra Packages for Enterprise Linux (EPEL).</block>
+  <block id="657da9022df45645ff2569b61278d3c3" category="paragraph">Suivez les étapes pour installer une version de Docker Engine prise en charge. N'installez pas la dernière version, car elle n'est pas prise en charge par la console.</block>
+  <block id="ae41cdf98d6f24f84727785b0c41cda9" category="paragraph">NetApp a renommé le Canvas en page *Systèmes*. Accédez à la page *Systèmes* depuis le menu *Stockage &gt; Gestion*.</block>
+  <block id="6f111d20190d5490668e3e0ac2cad5d2" category="paragraph-title">Prise en charge de Red Hat Enterprise Linux (RHEL) 9.6 et de Podman 5.4.0</block>
+  <block id="db70fced03768e8735fbdebf7ea67e66" category="paragraph">L'adresse e-mail qui envoie les notifications de NetApp Console a changé et est désormais *service@console.netapp.com* au lieu de *service@console.bluexp.netapp.com*. NetApp recommande de mettre à jour vos règles de messagerie pour autoriser *service@console.netapp.com* afin de continuer à recevoir les notifications par e-mail de NetApp Console .</block>
+  <block id="026970f0ac157044199489d6744c2491" category="doc">Agent de console 4.2.0</block>
+  <block id="7051fe17573689080a1f11b0e88a8603" category="paragraph">La version 4.2.0 prend en charge à la fois le mode standard et le mode restreint.</block>
+  <block id="dfcd07d4790b963532ec4f8f70f184cd" category="paragraph-title">Prise en charge de Google Cloud Infrastructure Manager</block>
+  <block id="221dc7db98837c8091cba0d42f55b28d" category="inline-link-macro">Gestionnaire de déploiement cloud</block>
+  <block id="e7858dcbf9687c88e071775eb4ee07ea" category="paragraph">NetApp utilise désormais Google Cloud Infrastructure Manager (IM) au lieu de Google Cloud Deployment Manager pour déployer et gérer les agents dans Google Cloud.  Ce changement a été effectué car Google va déprécier<block ref="9574f21b6b64ac1c3366333a9bb489f6" category="inline-link-macro-rx"></block> .</block>
+  <block id="817a59a137d2f36b17e19b14b0e90545" category="inline-link-macro">Consultez le journal des modifications d'autorisation.</block>
+  <block id="05345eddc0e94be562e27e8d53b608ae" category="list-text">Tous les nouveaux agents 4.2.0 et supérieurs utilisent Infrastructure Manager et vous devez mettre à jour les autorisations du compte utilisateur et du compte de service utilisés pour le déploiement.<block ref="ca3a237b8d0ef6729093b3abe4bab2f0" category="inline-link-macro-rx"></block></block>
+  <block id="cc598dc1e413aff136dd2366a85faf46" category="list-text">Lors du déploiement d'un agent, le système crée également un bucket Google Cloud pour stocker les fichiers de déploiement.</block>
+  <block id="d9dfb1e70d9002b82990e5020a243087" category="list-title">Amélioration des contrôles de configuration pour les agents de console</block>
+  <block id="1c113e32e8394b861faad1f61a9626cb" category="inline-link-macro">Apprenez-en davantage sur les points de terminaison requis pour les agents de la console.</block>
+  <block id="675d71adc8a1b2329a23e817b7275840" category="list-text">L'agent de la console vérifie désormais la présence de points de terminaison obsolètes lors de l'exécution d'une vérification de configuration.  Si vous n'avez pas mis à jour la liste des points de terminaison vers la nouvelle version 4.0.0 ou supérieure, les installations réussissent si le système peut accéder à la liste des points de terminaison précédente.<block ref="4fa9d5f65f1179ca8dedab794aee5677" category="inline-link-macro-rx"></block></block>
+  <block id="5cf1eebafa9e566db5b16d2f75b10866" category="inline-link-macro">Découvrez comment effectuer des vérifications de configuration sur les agents de la console.</block>
+  <block id="532e2205eae250e20138ac0d4fb7670a" category="list-text">Effectuez des vérifications de configuration sur les agents de console installés depuis la console ou la console de maintenance des agents afin de vérifier la connectivité et de résoudre les problèmes.<block ref="2d14832e5c27ace253e7c4b1295d1814" category="inline-link-macro-rx"></block></block>
+  <block id="f1a69f998a4fd4d34f139b76d2b1cf5d" category="paragraph-title">Téléchargez directement le logiciel agent depuis la NetApp Console.</block>
+  <block id="ffb09157eddacde0f2ddbb27b8b5a58d" category="inline-link-macro">Découvrez comment télécharger le logiciel agent de la console directement depuis la NetApp Console.</block>
+  <block id="0d8ee60431ecde7e8c0ca3d789c24bae" category="paragraph">Lorsque vous devez installer manuellement un agent, vous pouvez accéder au logiciel de l'agent directement depuis la NetApp Console , en plus du site de support NetApp .<block ref="3ce006bd909dc885369b2f86674a08a3" category="inline-link-macro-rx"></block></block>
+  <block id="f33a1c02aef9134dd317909d568855ae" category="paragraph-title">Possibilité de configurer des notifications pour les identifiants expirant</block>
+  <block id="eb85d454a2ba07f1bf0f8e315ae0b696" category="paragraph">Configurez les notifications d'expiration des identifiants sur les comptes de service et les fédérations.  Choisissez entre sept ou 30 jours.  La console affiche des notifications et envoie des e-mails aux utilisateurs ayant le rôle approprié.  Les administrateurs de l'organisation reçoivent des notifications relatives aux comptes de service.  Les administrateurs d'organisation, les administrateurs de fédération et les utilisateurs de la fédération reçoivent des notifications de fédération.</block>
+  <block id="c76ecba1e00b52577de6653acbf29014" category="paragraph-title">Les connexions locales ne sont plus disponibles après l'activation de la fédération.</block>
+  <block id="e713ec00d2b4c1f46099d8669c70bc4a" category="paragraph">Une fois la fédération activée pour une organisation Console, les utilisateurs ne peuvent plus utiliser les identifiants locaux et sont redirigés vers les identifiants de fédération.</block>
+  <block id="37922d4b00cf704156c5276d88caa05c" category="paragraph-title">Améliorations de l'ergonomie des pages de gestion du stockage</block>
+  <block id="e8f9974435fe7b24ffa11827d0104693" category="paragraph">Les informations détaillées concernant vos systèmes ONTAP sur site (et FSx pour ONTAP) sont désormais plus faciles à consulter et à gérer à partir des pages de gestion du stockage.</block>
+  <block id="c513928c0b95afec773bd29d135d4632" category="list-text">La page * Discoverable systems* sépare les informations récapitulatives de l'affichage par onglets des systèmes disponibles, facilitant ainsi la consultation d'informations complètes sur les systèmes détectables.</block>
+  <block id="044a03cc529cee34c57112a210e50b35" category="paragraph">Avec les deux premières options, la console utilise le service AWS Security Token pour obtenir des informations d’identification temporaires qui changent constamment. Ce processus représente la meilleure pratique : il est automatique et sécurisé.</block>
+  <block id="b0d37b69696e5fe98085933a2a7e3fc1" category="paragraph">La création de partenariats entre organisations dans la NetApp Console permet aux partenaires de gérer en toute sécurité les ressources NetApp au-delà des frontières organisationnelles, rationalisant ainsi la collaboration et renforçant la sécurité.</block>
+  <block id="d7046de4945385aed3cb44fde274d256" category="doc">Validation de l'agent avec la console de maintenance</block>
+  <block id="af6e565b77baba04e851ef6db3453fab" category="paragraph">Vous pouvez utiliser la console de maintenance de l'agent Console pour valider l'installation et la configuration d'un agent Console.</block>
+  <block id="2df2419e3b3e4992394516227a5f4a71" category="section-title">config-checker valider</block>
+  <block id="11d2b70f92f5671a073ee7f95edbc568" category="paragraph">Le<block ref="2df2419e3b3e4992394516227a5f4a71" prefix=" " category="inline-code"></block> Cette commande permet de valider la configuration d'un agent de console.</block>
+  <block id="3225a10b07f1580f10dee4abc3779e6c" category="section-title">Paramètres</block>
+  <block id="bb9f0d8e73ffa6630952dc1ecc6cd9de" category="paragraph"><block ref="6a11199e55b0cb53d751c5170e5f74f9" prefix="" category="inline-code"></block>--*REQUIS*--</block>
+  <block id="69dfddf838a2ddd2939ee5adc69cb83c" category="paragraph">Choisissez un ou plusieurs services à valider.  Les noms de service valides sont :<block ref="8b55a44b49368262df89fd0e17b1a181" prefix="*" category="inline-code"></block> qui valide la connectivité réseau aux points de terminaison de la console requis.</block>
+  <block id="1fde504b28ae1c1b6dbb99c104b00a85" category="paragraph"><block ref="693f786102104e01b7396235926fc506" prefix="" category="inline-code"></block>--*OBLIGATOIRE*-- Choisissez un ou plusieurs types de validation à exécuter.  Les types de validation valides sont : *<block ref="25835188a2355e9530d3a10fcbe4c65b" prefix=" " category="inline-code"></block> qui valide la connectivité réseau aux points de terminaison de la console requis.</block>
+  <block id="b3c3244f084b65704359870cc6488d93" category="paragraph"><block ref="f2d537814e28e44e0e35d5b4ce13cadb" prefix="" category="inline-code"></block>--*FACULTATIF*--</block>
+  <block id="d076e244720434cf026cb278c7f19d8e" category="paragraph">Spécifie l'URL du serveur proxy à utiliser pour la validation.  Requis si votre agent est configuré pour utiliser un serveur proxy.</block>
+  <block id="775c73e442d845c4596a67e7c69aefd9" category="paragraph"><block ref="b58f4fd799634e7ef624ae15a007f9bb" prefix="" category="inline-code"></block>--*FACULTATIF*--</block>
+  <block id="4ed623d06dfe32e4f16db9d33c5ede6c" category="paragraph">Spécifie le chemin d'accès à un ou plusieurs fichiers de certificat à utiliser pour la validation.  Les fichiers de certificat doivent être au format PEM.  Séparez les chemins multiples par des virgules.  Ce paramètre est requis si votre agent utilise un certificat personnalisé.</block>
+  <block id="6a90f9864a2f9aa8de0590c60d07a970" category="section-title">Exemples de validation du vérificateur de configuration</block>
+  <block id="56cc3a7f96b8e67c7d92a9185e36c08e" category="listing-title">Validation de base :</block>
+  <block id="2947152e0492b862524897c4ae5ba389" category="listing-title">Validation lorsqu'un serveur proxy est utilisé pour l'agent :</block>
+  <block id="97df144968d77a81cf138d0e4021ce2c" category="listing-title">Validation lorsqu'un certificat est utilisé pour l'agent :</block>
+  <block id="6db60e859007b84c686f5dc3f04f4697" category="section-title">proxy obtenir</block>
+  <block id="5b9ef687e725b42e8780bea1b481641c" category="paragraph">Le<block ref="6db60e859007b84c686f5dc3f04f4697" prefix=" " category="inline-code"></block> Cette commande affiche des informations sur la configuration actuelle du serveur proxy transparent.  Pour afficher la configuration actuelle du serveur proxy transparent, utilisez la commande suivante :</block>
+  <block id="e08f6bee8517842a48e4ef6996aea3e0" category="section-title">Exemple de proxy get</block>
+  <block id="73c7d09b23bd1ddf9009062714384bf3" category="paragraph">Pour afficher la configuration actuelle du serveur proxy transparent, utilisez la commande suivante :</block>
+  <block id="08bc9d3537a56e203564c5b4357049f4" category="section-title">ajouter un proxy</block>
+  <block id="74c09d7b43cd297a5639a898e7348c8b" category="paragraph">Le<block ref="08bc9d3537a56e203564c5b4357049f4" prefix=" " category="inline-code"></block> Cette commande configure l'agent pour utiliser un serveur proxy transparent.</block>
+  <block id="0e2fd9178e3f3c1cede27d7b2ecab1c8" category="paragraph"><block ref="681b381a05010f3412144ddec4fb6462" prefix="" category="inline-code"></block></block>
+  <block id="6868c5dea32c658d31e34cd6c643eda9" category="paragraph">Spécifie le chemin d'accès au fichier de certificat du serveur proxy.  Le fichier de certificat doit être au format PEM. Assurez-vous que le fichier de certificat se trouve dans le même répertoire que la commande ou spécifiez le chemin d’accès complet au fichier de certificat.</block>
+  <block id="b7660892597c4cc86dbc7d99b33701af" category="section-title">Exemple d'ajout de proxy</block>
+  <block id="091092579ca8cede1b760e7c5a90a003" category="section-title">mise à jour du proxy</block>
+  <block id="6902b4aa3527b74bdb35b5dd12aec412" category="paragraph">Le<block ref="091092579ca8cede1b760e7c5a90a003" prefix=" " category="inline-code"></block> Cette commande permet de mettre à jour le certificat d'un proxy transparent.</block>
+  <block id="6f1a60eec202a10b5b6d62f479ba4428" category="paragraph"><block ref="681b381a05010f3412144ddec4fb6462" prefix="" category="inline-code"></block>spécifie le chemin d'accès au fichier de certificat du serveur proxy.  Le fichier de certificat doit être au format PEM.</block>
+  <block id="06b30352eda5cf9b69816fe23dff936f" category="section-title">Exemple de mise à jour de proxy</block>
+  <block id="ef5ebb9e0c08ee0463e7503ff1111f4c" category="section-title">suppression du proxy</block>
+  <block id="f07ee52c9fc05f9047d0eb5e87de40b1" category="paragraph">Le<block ref="ef5ebb9e0c08ee0463e7503ff1111f4c" prefix=" " category="inline-code"></block> Cette commande supprime la configuration du serveur proxy transparent de l'agent.</block>
+  <block id="7aa5255fb9f7e29b797e1c6816a0d999" category="section-title">Exemple de suppression de proxy</block>
+  <block id="e1c2619e19fc02c38aacafc93d795901" category="summary">Vous pouvez attribuer le rôle d'analyste de support opérationnel aux utilisateurs afin de leur donner accès aux alertes et à la surveillance. Les utilisateurs disposant de ce rôle peuvent également ouvrir des cas d’assistance.</block>
+  <block id="3db89b44d26706e71a450352c7c5a1da" category="list-text">*Administrateur de reprise après sinistre* : Effectuez toutes les actions.</block>
+  <block id="1e732ca66bd89df595b8e795e5dfa4ac" category="list-text">*Administrateur de basculement de reprise après sinistre* : Effectuer le basculement et les migrations.</block>
+  <block id="014b84d038553d60cf09cbddcb4e7d08" category="list-text">*Administrateur d'application de récupération après sinistre* : Créer des plans de réplication. Modifier les plans de réplication. Démarrer les tests de basculement.</block>
+  <block id="ca931702830a76aaa24d5f451156d2b4" category="list-text">*Visionneuse de récupération après sinistre* : Afficher uniquement les informations.</block>
+  <block id="71aa2505b70e192a741f69ce63677f4b" category="cell">Administrateur de basculement de reprise après sinistre</block>
+  <block id="49f16ca5444f519e5203bb5067957eef" category="cell">Administrateur d'application de reprise après sinistre</block>
+  <block id="49868b41c479810c405bc3509cdb1907" category="cell">Permet aux utilisateurs d'afficher les résultats de l'analyse de NetApp Data Classification . Les utilisateurs disposant de ce rôle peuvent afficher les informations de conformité et générer des rapports pour les ressources auxquelles ils sont autorisés à accéder. Ces utilisateurs ne peuvent pas activer ou désactiver l’analyse des volumes, des buckets ou des schémas de base de données. La classification ne comporte pas de rôle d'administrateur.</block>
+  <block id="7fefc96661449151a3bee08edda3e255" category="paragraph">Ces limitations sont spécifiques à la configuration et à l'administration de la NetApp Console : l'agent, la plateforme logicielle en tant que service (SaaS), et plus encore.</block>
+  <block id="332ea1ed79fb36acca4a28cb73bfb8c3" category="section-title">Autorisations du compte utilisateur Google Cloud</block>
+  <block id="83ad392c56898ad2bc9258551bd9dc50" category="paragraph">Le rôle personnalisé ci-dessous confère à un utilisateur Google Cloud les autorisations nécessaires pour déployer un agent.  Attribuez ce rôle personnalisé à l'utilisateur qui déploiera l'agent.</block>
+  <block id="3434c5106687454490c5ce3fd3325b7e" category="example-title">Afficher les autorisations du compte utilisateur Google Cloud</block>
+  <block id="5e03aefcc897db1801bbaa45747a2971" category="paragraph">Le rôle personnalisé ci-dessous confère au compte de service Google Cloud associé à l'agent Console les autorisations nécessaires pour gérer les ressources et les processus de votre réseau Google Cloud.</block>
+  <block id="d25721a787a66e973329bd6a7db30c28" category="paragraph">Appliquez ce rôle personnalisé à un compte de service associé à la machine virtuelle de l'agent de console.</block>
+  <block id="60067761727ed2480c4d7988a096bea6" category="example-title">Afficher les autorisations du compte de service Google</block>
+  <block id="2ed702ae3741d2ab2632b3029a0f8e32" category="inline-link-macro">Consultez le journal des modifications des autorisations Google</block>
+  <block id="46bc318b70c402ba98ca33c35bb84afc" category="inline-link-macro">Consultez la procédure pour ajouter des comptes de service Google Cloud.</block>
+  <block id="8dcaddb2ef42a50a271974a377b95e29" category="paragraph">Veillez à ce que le rôle soit à jour, car de nouvelles autorisations sont ajoutées ou supprimées dans les versions ultérieures.  Le journal des modifications répertorie toutes les nouvelles autorisations requises.<block ref="d7c0ba232558007d3f0cd6897a857261" category="inline-link-macro-rx"></block> <block ref="a191fc816c4388da3117cded8f9ecd39" category="inline-link-macro-rx"></block></block>
+  <block id="823b2e7894c2b52c1e9adc9ea10b9be5" category="section-title">Comment les autorisations Google Cloud sont utilisées</block>
+  <block id="99b25e2af002c77f33933ee7b2cca7b6" category="paragraph">L'agent Console utilise les autorisations du rôle personnalisé pour gérer les ressources Cloud Volumes ONTAP et les processus de services de données NetApp sur votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.</block>
+  <block id="ba28f37a50f35b5b62bf9d0cebb79e6a" category="section-title">Autorisations utilisées pour Cloud Volumes ONTAP</block>
+  <block id="45c85e2fcbcad00a3b3aff5447627a5b" category="paragraph">L'agent Console utilise les autorisations du rôle personnalisé pour gérer les ressources et les processus Cloud Volumes ONTAP de votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.</block>
+  <block id="05fedb77715f320017d52f66da44b1b0" category="example-title">Autorisations pour Cloud Volumes ONTAP</block>
+  <block id="1978fc577443d8841749463c81c14e1b" category="cell">*config.deployments.create*</block>
+  <block id="7011503cf97d17706ff8163876018fb2" category="cell">Pour déployer l'instance de machine virtuelle Cloud Volumes ONTAP à l'aide de Google Cloud Infrastructure Manager.</block>
+  <block id="90859ccfb98bd6357cfd9888e01654f7" category="cell">*config.deployments.delete*</block>
+  <block id="1c823c113d5b21854ab32fb4006d239e" category="cell">*config.deployments.deleteState*</block>
+  <block id="4aef8bfd5362969e0a14daaef6aa2206" category="cell">*config.deployments.get*</block>
+  <block id="39871c3ed7f15a544a81dd29a8f6d5be" category="cell">*config.deployments.getLock*</block>
+  <block id="6f5bdaf7fca0180616b4ae4d03d58a28" category="cell">*config.deployments.getState*</block>
+  <block id="3f52aa0019ca6c92a0b2ce5ef1585bb7" category="cell">*config.deployments.list*</block>
+  <block id="91ea1caf7d132e95307e5641e3eb678a" category="cell">*config.deployments.lock*</block>
+  <block id="5cea6e43ecc95c4f000154ebf17ffe41" category="cell">*config.deployments.update*</block>
+  <block id="efda381a960e37f6857c4e005d80f4d4" category="cell">*config.deployments.updateState*</block>
+  <block id="527ac12ac6f7f67f130d341677f2666a" category="cell">*config.operations.get*</block>
+  <block id="09cbd21df4067bcce7aca81e1d55d7f9" category="cell">*config.previews.get*</block>
+  <block id="4f81cd437237e3919ef57ccf6f896eab" category="cell">*config.previews.list*</block>
+  <block id="25beaddbb4bfa58c896401064f614a49" category="cell">*config.resources.list*</block>
+  <block id="b47fce5e3845afb2bed0589dd445f4b1" category="cell">*config.revisions.get*</block>
+  <block id="6e9d76e8116c43eb4d333f5e51a59158" category="cell">*compute.forwardingRules.create*</block>
+  <block id="1204549a036d6f1fa0e77a33b66ba5fc" category="cell">Créez des règles de transfert pour le routage du trafic vers les services backend.</block>
+  <block id="51f4457e4ce6f71c07304daee30d55a4" category="cell">*compute.forwardingRules.delete*</block>
+  <block id="5625df4a9e5fad50b5ed7483ef854ba0" category="cell">Supprimer les règles de transfert existantes.</block>
+  <block id="2747d1bc3f8c306dcd87a303e8d46ac4" category="cell">*compute.forwardingRules.get*</block>
+  <block id="518cdf23dbd2f2786baa04a1b251789f" category="cell">Récupérer les détails des règles de redirection existantes.</block>
+  <block id="be4ea57d513cf3eb072627e23f9ab07d" category="cell">*compute.forwardingRules.setLabels*</block>
+  <block id="f5be53441d39f1e3531a7e05f4c9cb41" category="cell">Définir ou mettre à jour les étiquettes des règles de transfert pour l'organisation.</block>
+  <block id="2df5b761a5ee0099ec61a876d1eb970a" category="cell">calculer.globalOperations.get</block>
+  <block id="e91ad303361b5fdc2d2c5336e085b399" category="cell">*compute.healthChecks.create*</block>
+  <block id="cd9c9102f061e7080ec044f1de8be60f" category="cell">Créer et gérer des contrôles d'intégrité pour surveiller l'état des services backend.</block>
+  <block id="69c63ecfab8251f5332b3f093989452b" category="cell">*compute.healthChecks.delete*</block>
+  <block id="91fc716755c2ccb249d395deaddc51d1" category="cell">*compute.healthChecks.get*</block>
+  <block id="1d0d0f012d65150fe8a659ddc5246c6b" category="cell">*compute.healthChecks.useReadOnly*</block>
+  <block id="51c92eabc0dc72041fa2d618c547a3b3" category="cell">*compute.instances.use*</block>
+  <block id="60f9a4c26542d13806ebfceda41b622a" category="cell">Utiliser des instances de machines virtuelles (opérations de démarrage, d'arrêt et de connexion).</block>
+  <block id="7694a96be1a3706f979373e54371672a" category="cell">*compute.resourcePolicies.create*</block>
+  <block id="69c9360ed1f6b9f362a8bb04cc2f9976" category="cell">Créer et gérer des politiques de ressources pour la gestion automatisée des ressources.</block>
+  <block id="5c1436481ccb784f0099a466930a9d4b" category="cell">*compute.resourcePolicies.delete*</block>
+  <block id="79c6a1fb6244cc1241f910477c4585fa" category="cell">*compute.resourcePolicies.get*</block>
+  <block id="946819076f570f98fc2669abc5ebb221" category="cell">*logging.logEntries.create*</block>
+  <block id="365620bda694367699a9e977c245c99d" category="cell">Créer et acheminer les entrées de journal à des fins de surveillance, de débogage et d'audit.</block>
+  <block id="24073bc546846441de345b264ff9733b" category="cell">*logging.logEntries.route*</block>
+  <block id="af467f9a70abceae95e202a38cab79bc" category="cell">*cloudbuild.builds.get*</block>
+  <block id="f93ac717762cc8fe2abd2d13026a6e0c" category="cell">*iam.serviceAccounts.create*</block>
+  <block id="97f415e7bf3ae2691c030ac84e8a7ab4" category="cell">*iam.serviceAccountKeys.create*</block>
+  <block id="d097a5e02531e9d8606a4b9016211fb0" category="cell">création d'objets de stockage</block>
+  <block id="18e2e5fd1011d7608a9039b76959973f" category="cell">Créez et gérez des objets (fichiers) dans un bucket Google Cloud Storage.</block>
+  <block id="877dd561e8b326f974d6649bf025cc47" category="cell">suppression des objets de stockage</block>
+  <block id="75c9b1d045f5bd31e38a2fe8fc99685b" category="cell">*compute.addresses.createInternal*</block>
+  <block id="a01609be65377c550c1f3f9c95e301e9" category="cell">Créer des adresses IP internes au sein du réseau VPC pour l'allocation des ressources.</block>
+  <block id="67ce54621d28117b563f4a29bba7ea15" category="cell">*compute.addresses.deleteInternal*</block>
+  <block id="eb8b5851a4b3813a0b7d8271e9390168" category="cell">Suppression des adresses IP internes pour le nettoyage des ressources.</block>
+  <block id="4a9033f2bc4de0bb816e8bb0b5d4f954" category="cell">*compute.addresses.setLabels*</block>
+  <block id="c9100b96b75009cc80c0b2c138896bf1" category="cell">Mettre à jour les étiquettes de la ressource Adresse.</block>
+  <block id="f80885b173b15e9ea2234f900e51e402" category="cell">*compute.addresses.useInternal*</block>
+  <block id="d52c5aaec9bec122290d546577a86741" category="cell">Utilisez les adresses IP internes pour les communications réseau.</block>
+  <block id="6cf64ac632269f6541c1da37cd735d52" category="cell">Créer et gérer les services backend pour le routage du trafic.</block>
+  <block id="d8e30cab07834e99dd81b60d6b1eb695" category="cell">*compute.regionBackendServices.delete*</block>
+  <block id="d71ae8f686ef0997fc9137df9832b3a3" category="cell">*compute.regionBackendServices.update*</block>
+  <block id="6ffa2106d04c5f11c8219cf00218c867" category="cell">*compute.regionBackendServices.use*</block>
+  <block id="8afe1371ad74901fbfca12f6507394f7" category="cell">*compute.instanceGroups.create*</block>
+  <block id="31837e29feaf463250d44e6b633644d1" category="cell">*compute.instanceGroups.delete*</block>
+  <block id="a231c32ea863f8bc2002ebefe954023f" category="cell">*compute.instanceGroups.update*</block>
+  <block id="008a67a6e66af0c91194d03a05ed9ca6" category="cell">*compute.instanceGroups.use*</block>
+  <block id="fee9fb5dae000866e2823c08577b5639" category="paragraph">L'agent de la console utilise les autorisations du rôle personnalisé pour gérer les ressources et les processus NetApp Backup and Recovery sur votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.</block>
+  <block id="a696d2e75adad45b4173573021542ba7" category="example-title">Afficher les autorisations pour NetApp Backup and Recovery</block>
+  <block id="d5ca4eff15be43a2a5ebcb745899160d" category="paragraph">L'agent de la console utilise les autorisations du rôle personnalisé pour gérer les ressources et les processus de NetApp Data Classification sur votre réseau Google Cloud.  Les sections suivantes décrivent comment l'agent utilise ces autorisations.</block>
+  <block id="b8eb36ca4f2271dadd68e9f2f9d9f7b6" category="example-title">Autorisations d'affichage pour la NetApp Data Classification</block>
+  <block id="7a5913617c08594a652178dd2ed587bf" category="paragraph">Les autorisations ajoutées et supprimées sont indiquées ci-dessous.</block>
+  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">8 décembre 2025</block>
+  <block id="a70054dca76030cd2e7762887511fa92" category="paragraph">NetApp passe de Google Cloud Deployment Manager à Google Cloud Infrastructure Manager (IM) pour déployer et exécuter l'agent Console dans Google Cloud.  Les autorisations suivantes ont été ajoutées pour prendre en charge cette modification.</block>
+  <block id="9460401daaedfab505f0b1eadec0cb88" category="paragraph">Les autorisations supplémentaires suivantes sont requises pour l'utilisateur Google Cloud qui déploie l'agent :</block>
+  <block id="e198f8a2ce0814efb4de119c73722602" category="list-text">storage.folders.create</block>
+  <block id="89d185c8189ca757fe8cb3161961069c" category="list-text">je suis.compte_de_service.agir_en</block>
+  <block id="7ead255295d96ea6de46a56ecad36e7d" category="list-text">config.déploiements.créer</block>
+  <block id="b00d998cacf7883bfb4d60b7f7b8dbe6" category="list-text">config.operations.get</block>
+  <block id="a77f8f520fc19fb807c12336eeb6e0f1" category="paragraph">Les autorisations supplémentaires suivantes sont requises pour le compte de service Google Cloud utilisé pour les opérations quotidiennes :</block>
+  <block id="9c91d0a29ec8c0b89d42f6feb1b8b213" category="list-text">cloudbuild.connections.list</block>
+  <block id="d22ee60cbc3ff63b0c7d8688d3ea75be" category="list-text">cloudbuild.repositories.accessReadToken</block>
+  <block id="7848d877069a98fcc73fd0262b50d5dc" category="list-text">cloudbuild.repositories.list</block>
+  <block id="0e3e1067c310a197feb8287fe779ff81" category="list-text">cloudquotas.quotas.get</block>
+  <block id="a3b719875760fa108520adf339dee562" category="list-text">config.artifacts.import</block>
+  <block id="55cd451af096a93731b1e3d7e3429492" category="list-text">config.deployments.deleteState</block>
+  <block id="cd9b1a46a946b53d4fc054be8e028486" category="list-text">config.deployments.getLock</block>
+  <block id="995b280499f482fca8bf81a7ede55340" category="list-text">config.deployments.getState</block>
+  <block id="1b4d8bafd38f9bad158f509da5c485c6" category="list-text">config.deployments.updateState</block>
+  <block id="44c2cc8ff119df5a29b6a6ccee852e48" category="list-text">config.previews.upload</block>
+  <block id="2ae9911aee10f552e485d65f256fff31" category="list-text">config.revisions.getState</block>
+  <block id="77d9be0a069b64561dcc06d563707f9c" category="list-text">logging.logEntries.create</block>
+  <block id="3cae5e024ce5f256c03eeb10c3ad4e19" category="list-text">mise à jour des objets de stockage</block>
+  <block id="f91284eb9de39f3d7e2a21cf5994571d" category="list-text">iam.serviceAccounts.get</block>
+  <block id="5c2f845538267fafb03ca99ce0dc3f48" category="paragraph">Les autorisations supplémentaires suivantes sont requises pour déployer Cloud Volumes ONTAP:</block>
+  <block id="c163c809c2a0ca0c891139509a6ca65b" category="list-text">cloudbuild.builds.get</block>
+  <block id="8e69fbd4d05c5ecfcdaac5c9421ee931" category="list-text">config.deployments.delete</block>
+  <block id="36f59298cb7a695036b1f410b8e7a025" category="list-text">config.deployments.get</block>
+  <block id="12daf2722e0103231cb0dd113fd916ec" category="list-text">config.déploiements.liste</block>
+  <block id="f3c2c7bca6e535ec0244d2c8af06efd6" category="list-text">config.déploiements.mise à jour</block>
+  <block id="44f3f9390fa3822713843b857e27b3fe" category="list-text">config.previews.get</block>
+  <block id="fa7d29940aaac850cb247120a867e23e" category="list-text">config.previews.list</block>
+  <block id="7f61b5a7a77adeb9e9f1790f452235c4" category="list-text">config.revisions.get</block>
+  <block id="635a490a44ad3028c4acede5b8484cc2" category="list-text">config.resources.list</block>
+  <block id="9989c44bee8dee4cb7f01266fafda94f" category="list-text">iam.serviceAccountKeys.create</block>
+  <block id="ee0506f09d6a7976f7ba93533e0a25a9" category="list-text">je suis.comptesdeservice.créer</block>
+  <block id="dd7e4582f9999edf3b40d496843fa529" category="paragraph">Les autorisations supplémentaires suivantes sont requises pour le compte de service utilisé pour les opérations quotidiennes de Cloud Volumes ONTAP.</block>
+  <block id="5fb65d9866ed23983e68b0b7fddd0d15" category="list-text">calculer.adresses.créerInterne</block>
+  <block id="c2bc156592faf656f145d38a4823df20" category="list-text">calculer.adresses.supprimerInterne</block>
+  <block id="ef34b61f78525c155ff3b7e9c0b2be2d" category="list-text">calculer.adresses.setLabels</block>
+  <block id="4a8f52870b8cc6d947fd943722432e79" category="list-text">calculer.adresses.utiliserInterne</block>
+  <block id="d57d373ca78566db582c948674bf5b7f" category="list-text">calculer.forwardingRules.créer</block>
+  <block id="448aabe83942e3bb9ef25173b527144e" category="list-text">calculer.forwardingRules.delete</block>
+  <block id="1a7221f68ba7e68197368c69ea43808d" category="list-text">calculer.forwardingRules.get</block>
+  <block id="dc6e0a34de68c5e87f224f9d6f2eaddb" category="list-text">calculer.forwardingRules.setLabels</block>
+  <block id="663b65df0be4371d9e7079d58724e3ca" category="list-text">calculer.healthChecks.créer</block>
+  <block id="6b0675fc6728b7261f48895cbdaa668b" category="list-text">calculer.healthChecks.supprimer</block>
+  <block id="761112290226750e922fcc41ea79565e" category="list-text">calculer.healthChecks.get</block>
+  <block id="1ff641b277f1da1dc822ea8772aa7f7d" category="list-text">calculer.healthChecks.useReadOnly</block>
+  <block id="007222f573b047fac21eb0c4010a04ae" category="list-text">calculer.instanceGroups.créer</block>
+  <block id="6fc202cfdabf6604e7e98cf9441ec3c9" category="list-text">calculer.instanceGroups.supprimer</block>
+  <block id="b27ccd3f28fa1ae2c4c242ce4375b0d3" category="list-text">calculer.instanceGroups.update</block>
+  <block id="756a8e6c0ce83856240259584a8f747f" category="list-text">calculer.instanceGroups.utiliser</block>
+  <block id="5a83ef5325f336f451391fea875ac476" category="list-text">calculer.instances.utiliser</block>
+  <block id="3341ac251f90eb3feda08fa2af91c449" category="list-text">compute.regionBackendServices.delete</block>
+  <block id="8c5348684057fdb6ea94f53d6e91debe" category="list-text">calculer.regionBackendServices.update</block>
+  <block id="413fb87968c99457c19bc2cedb8a31e4" category="list-text">compute.regionBackendServices.use</block>
+  <block id="0b257a26721cbf5e7a10cd95066d7b49" category="list-text">calculer.resourcePolicies.créer</block>
+  <block id="738061c248141ac453e6b42cf82c2a8e" category="list-text">calculer.resourcePolicies.supprimer</block>
+  <block id="32c06ac076ffdc3b2ccf1214454c6243" category="list-text">calculer.resourcePolicies.get</block>
+  <block id="72ca8180a628903ebd8eea37a1c92bcc" category="list-text">logging.logEntries.route</block>
+  <block id="f3f7e6957e72ba16a78d58e8ac7a43cd" category="list-text">config.déploiements.lock</block>
+  <block id="33fb61c4c752d541a30c9ba8194091da" category="section-title">26 novembre 2025</block>
+  <block id="90e7692e452d555a08bc34e6a38ecd0c" category="section-title">06 février 2023</block>
+  <block id="47d455f427b4674cc00157a8a2934409" category="paragraph">Les autorisations suivantes ont été ajoutées à cette politique :</block>
+  <block id="e97ae785ddbd746339946844f92175e6" category="inline-link">Documents de classification</block>
+  <block id="6847efe16c9bfc0feacaef65fc05b7b9" category="list-text"><block ref="6847efe16c9bfc0feacaef65fc05b7b9" category="inline-link-rx"></block></block>
+  <block id="9b894a36c4ebb01df8469fa98daba21f" category="summary">Il arrive que NetApp mette à jour les autorisations requises pour le compte de service utilisé par l'agent Console lorsqu'il est déployé sur Google Cloud.</block>
+  <block id="d6d6c33d995f278b372d3d2f7a10524d" category="doc">Gestion des autorisations de l'agent de la console pour les déploiements Google Cloud</block>
+  <block id="daf1fbd23852baa7dc431ec2658722d9" category="inline-link-macro">Vérifiez la liste des autorisations Google requises</block>
+  <block id="c35025e4c3afa1c5d645893259cbce25" category="paragraph"><block ref="df29c88404b44d3e8df12197653b40b2" category="inline-link-macro-rx"></block>.</block>
+  <block id="4860b54918e1580143a7c01984c21fe1" category="paragraph">Utilisez la console Google Cloud pour mettre à jour le rôle IAM attribué au compte de service afin qu'il corresponde au nouvel ensemble d'autorisations.</block>
+  <block id="34e82a1501cca5af4e190be9c03c0fbb" category="inline-link-macro">Documentation Google Cloud : Modifier un rôle personnalisé</block>
+  <block id="322a5219fa870735040f24cb43da8303" category="paragraph"><block ref="322a5219fa870735040f24cb43da8303" category="inline-link-macro-rx"></block></block>
+  <block id="16d62d361fbd1153b9fe75b035aa7c51" category="paragraph">Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent Console en utilisant le<block ref="091092579ca8cede1b760e7c5a90a003" prefix=" " category="inline-code"></block> commande ou supprimer le serveur proxy transparent en utilisant la<block ref="ef5ebb9e0c08ee0463e7503ff1111f4c" prefix=" " category="inline-code"></block> commande.  Pour plus d'informations, consultez la documentation relative à<block ref="1b2f5cd7e64b458e431e40fa20571324" category="inline-link-macro-rx"></block> .</block>
+  <block id="6c69cf52de815b4e3d26a89db4f26c8a" category="paragraph">Lorsque vous créez votre organisation, elle comprend un seul projet. Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets connexes.</block>
+  <block id="2bc87be9675bb8a069610f3430a1e3e8" category="paragraph">Vous pouvez créer jusqu'à sept niveaux de dossiers et de projets dans la structure des ressources de votre organisation.  Créez des dossiers imbriqués pour construire une structure hiérarchique pour votre organisation.</block>
+  <block id="e403ae80ee5407293bf60157033759c8" category="list-text">Saisissez les détails du dossier ou du projet :</block>
+  <block id="e3a15113b550a2e5d2560f495223b05a" category="list-text">*Nom et emplacement* : saisissez un nom et choisissez un emplacement dans la hiérarchie pour le dossier ou le projet. Placez un dossier ou un projet sous l'organisation ou à l'intérieur d'un autre dossier.</block>
+  <block id="d67cf2e8c3d97e0eed9561206ed3e9ca" category="paragraph">Sélectionnez *Ajouter un membre* pour lui attribuer un accès et un rôle.</block>
+  <block id="70fdeef63f056c10a8cdcc5f3fbc8eb3" category="inline-xref">Apprenez comment supprimer des ressources</block>
+  <block id="d66b571e57bc053e8b1ad8e43b91ee4e" category="paragraph">Avant de supprimer un dossier ou un projet, assurez-vous qu'il ne contient aucune ressource. <block ref="2ce0cd71e2b80657c61ce3337cd46c5f" category="inline-xref-macro-rx"></block>.</block>
+  <block id="2634a609591cac73e3cee6d75b3a8299" category="section-title">Modifier les ressources associées à un dossier ou à un projet</block>
+  <block id="e1485c69a5051018e6f541a40ac64334" category="paragraph">Modifier les droits d'accès des membres pour contrôler l'accès aux ressources.</block>
+  <block id="3aab6b4b2431f483b7e867e25c7dc17f" category="paragraph">Vous ne pouvez pas modifier l'accès des membres aux niveaux inférieurs si celui-ci est hérité d'un niveau hiérarchique supérieur. Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l’accès.  Vous pouvez également : <block ref="2e250d63a19626cb0aeed14260bd2f59" category="inline-link-macro-rx"></block>.</block>
+  <block id="dc56ef546dad0049c4fe42c718817af1" category="paragraph">Vous pouvez ajouter deux types de membres à votre organisation : un compte utilisateur et un compte de service. Les applications utilisent des comptes de service pour effectuer automatiquement les tâches API.  Les utilisateurs se servent de comptes pour se connecter et gérer les ressources.</block>
+  <block id="0a8fdeec95373b802409cb30efb505de" category="paragraph">Votre certificat X.509. Il doit être au format PEM, CRT ou CER.</block>
+  <block id="81e59e8e4bf25fcadc8863ff39bcfc04" category="list-text">Configurez les notifications d'expiration de votre certificat.  Choisissez entre sept jours ou 30 jours.  Les notifications d'expiration sont envoyées par e-mail et affichées dans la console aux utilisateurs ayant le rôle de super administrateur ou d'administrateur d'organisation.</block>
+  <block id="1753b2507377ecd0602ed08944b9d1b2" category="paragraph">Lorsque vous supprimez un membre, le système révoque ses autorisations mais conserve ses comptes Console et NetApp Support Site.</block>
+  <block id="a758e86398ed40898f56dc46bf8d3b3b" category="list-text">Téléchargez ou copiez l'ID client et le secret client. + La console n'affiche le secret client qu'une seule fois. Copiez-le ou téléchargez-le et stockez-le en toute sécurité.</block>
+  <block id="a3d754fa6f41840770949e7570cb4dc0" category="paragraph">Les utilisateurs doivent configurer à nouveau l'authentification multifacteur (MFA) lorsqu'ils se connectent après sa suppression. Si l'utilisateur n'a perdu l'accès à son appareil MFA que temporairement, il peut utiliser le code de récupération qu'il a enregistré lors de la configuration de MFA pour se connecter.</block>
+  <block id="e41f7fb86a6b410ae7e503a4ccc83ef6" category="paragraph">Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Le système détecte les ressources de stockage et les marque comme non découvertes jusqu'à ce que vous les ajoutiez à la console.</block>
+  <block id="fc35c417bbb2c0ec9081298a05b3071b" category="admonition">La page Ressources exclut les ressources Amazon FSx for NetApp ONTAP car les utilisateurs ne peuvent pas les associer à un rôle.  Consultez-les sur la page *Systèmes* ou depuis la section Charges de travail.</block>
+  <block id="62ff23d019d29d30b64698ce14ebdc09" category="list-text">Utilisez les options disponibles pour trouver une ressource :</block>
+  <block id="aaff9ff22e8e6739bcdc8cc79cb3614b" category="inline-link-macro">Afficher les membres ayant accès aux dossiers et projets associés</block>
+  <block id="8b3be42a579e101783dbee0366282232" category="admonition">Pour voir quels membres de l'organisation ont accès à la ressource,<block ref="d3f770deeda88cc3cea0d73a63cf7240" category="inline-link-macro-rx"></block> .</block>
+  <block id="d23b81e3e519af34ae1d1368f055ab5c" category="admonition">Pour supprimer une ressource détectée de l'ensemble de l'organisation, accédez à la page *Systèmes* et supprimez le système.</block>
+  <block id="876c2ced14b405974ba0e1bffce7d0d5" category="paragraph">Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs. Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier. Attribuer les rôles d'accès par projet ou dossier.  Par exemple, attribuez le rôle d'administrateur Ransomware Resilience à un utilisateur pour un projet et le rôle d'administrateur SnapCenter pour un autre.  Pour attribuer à un utilisateur le rôle d'administrateur Ransomware Resilience pour tous les projets d'un dossier, attribuez le rôle au niveau du dossier.</block>
+  <block id="ed59bba19a8b1215a5da046694459de3" category="paragraph">Attribuez des rôles conformément à votre stratégie IAM pour améliorer la sécurité.  Les rôles IAM limitent l'accès des utilisateurs aux seules ressources nécessaires.</block>
+  <block id="dff14b7229aae5e011982b724c9867d3" category="paragraph">Lorsque vous ajoutez un membre à votre organisation, vous êtes invité à lui attribuer un rôle. Vous pouvez vérifier les rôles qui leur sont actuellement attribués.</block>
+  <block id="d47741191d2932672428925f5a647577" category="paragraph">Modifier les rôles d'un membre pour mettre à jour son accès.</block>
+  <block id="c0597b9526c7ff0d7645fb305fbbb302" category="paragraph">Amazon FSX pour NetApp ONTAP:</block>
+  <block id="deb5ab06bb4820c3ddaf1096673112dd" category="paragraph">La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP .</block>
+  <block id="92e2005838617f772873a40c3ba5ee87" category="paragraph">Assurez-vous que l'hôte exécutant le logiciel agent Console respecte les exigences en matière de système d'exploitation, de RAM et de ports.</block>
+  <block id="7477110a62e7e23490489fd5dde0d9b3" category="paragraph">Assurez-vous que l'emplacement réseau réponde aux exigences suivantes afin que l'agent de la console puisse gérer les ressources de votre cloud hybride.</block>
+  <block id="4a2cd5186a22d99f67f031f282623ea8" category="paragraph">Accordez les autorisations AWS à la NetApp Console en utilisant l'une de ces options :</block>
+  <block id="cb55016940e52c1c7b882becfa96703f" category="paragraph">Une fois les prérequis remplis, installez manuellement le logiciel sur votre hôte Linux.</block>
+  <block id="3a25df27a9593be32d58d660128319d2" category="paragraph">Après avoir installé l'agent Console, accordez-lui les autorisations AWS que vous avez configurées afin qu'il puisse gérer vos données et votre infrastructure de stockage sur AWS.</block>
+  <block id="5c585aa7c70930b73bdafb2cb9161f8a" category="paragraph">Associez le rôle IAM que vous créez à l'instance EC2 de l'agent de console.</block>
+  <block id="ba496406ba5e67bd0a486e583b8cd337" category="paragraph">\ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \// https://config.googleapis.com/v1/projects</block>
+  <block id="483f6f30ec7b7da81659462b08c18e8a" category="paragraph">L'exemple suivant crée un rôle nommé « agentDeployment » au niveau du projet :</block>
+  <block id="606b4f54c298cd84f8c9d4d46c74820a" category="paragraph">gcloud iam roles create connectorDeployment --project=myproject --file=agent-deployment.yaml</block>
+  <block id="a447c4cad2c58e7308d516639f777fff" category="section-title">Étape 3 : Créez un compte de service Google Cloud à utiliser avec l’agent.</block>
+  <block id="45395d40cf0cb384fb917beab8ac0f5c" category="admonition">Lorsque vous déployez un agent dans Google Cloud, celui-ci crée un compartiment pour stocker les fichiers de déploiement.</block>
+  <block id="478d6690c508002bc0e2f9e7c3ee46d5" category="paragraph">Plusieurs API Google Cloud doivent être activées avant de pouvoir déployer un agent Console dans Google Cloud.</block>
+  <block id="1fe3854ddba0cc13565a8a11d513f6a0" category="paragraph">Veuillez vous munir des éléments suivants :</block>
+  <block id="989c7bb7f839354a9ed40ce2b95bb63a" category="list-text">Suivez les instructions pour configurer et démarrer l'instance :</block>
+  <block id="b95854f0f3ff949a77556f1717a2053a" category="list-text">*Adresse IP publique* : Pour utiliser une adresse IP publique avec la machine virtuelle de l’agent Console, sélectionnez une référence SKU de base.</block>
+  <block id="14b08ffab5a3e9a00dd089a48d7cb1c4" category="paragraph">Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique. Si la machine que vous utilisez pour accéder à la console ne peut pas atteindre l'adresse IP privée, la console ne fonctionne pas.</block>
+  <block id="e1f80f0a4664c5510ddb707c6296dd7c" category="paragraph">Une identité gérée permet à la machine virtuelle de l'agent Console de s'identifier auprès de Microsoft Entra ID sans avoir besoin d'informations d'identification.<block ref="f91ce7faef49711445322691b4d6ac64" category="inline-link-rx"></block> .</block>
+  <block id="c5edce68cac7e488fac66a004543fa61" category="paragraph">Si votre compte est associé à une autre organisation, vous devez créer un nouveau compte.  Sinon, l'option permettant d'activer le mode restreint n'apparaît pas sur l'écran de configuration.</block>
+  <block id="b32ca5cd3832e04aa3786f7647aecbcc" category="paragraph">Si vous avez installé l'agent Console à partir d'Azure Marketplace ou manuellement, vous devez lui accorder les autorisations que vous avez configurées précédemment.</block>
+  <block id="124aaa31a673a34a4e59e30b752222d2" category="paragraph">L'agent Console doit être connecté pour pouvoir le modifier.</block>
+  <block id="aa5691f6d018b3411c8082be20a4529f" category="paragraph">Vous pouvez attribuer les rôles suivants aux utilisateurs partenaires :</block>
+  <block id="eaec472b7a23d9c311a78adfd10b1032" category="inline-link-macro">Administrateur de sauvegarde et de récupération</block>
+  <block id="9b589496549b93bcbd645613fbd03c9c" category="list-text"><block ref="9b589496549b93bcbd645613fbd03c9c" category="inline-link-macro-rx"></block></block>
+  <block id="760c54a4cb61f02dffc8c2331073ae1d" category="list-text"><block ref="760c54a4cb61f02dffc8c2331073ae1d" category="inline-link-macro-rx"></block></block>
+  <block id="db385d806691bf16134876c971ae47ac" category="list-text"><block ref="db385d806691bf16134876c971ae47ac" category="inline-link-macro-rx"></block></block>
+  <block id="456f871b4f4ee4ad376b69d4040f5120" category="list-text"><block ref="456f871b4f4ee4ad376b69d4040f5120" category="inline-link-macro-rx"></block></block>
+  <block id="78d4b42d7cc8df44f5151da486494386" category="list-text"><block ref="78d4b42d7cc8df44f5151da486494386" category="inline-link-macro-rx"></block></block>
+  <block id="67580c71df9613a2df5711bad8e2d8d9" category="list-text"><block ref="67580c71df9613a2df5711bad8e2d8d9" category="inline-link-macro-rx"></block></block>
+  <block id="7c53729e63e6d7b0ff2748297a9aa07d" category="paragraph">Ce tableau répertorie les messages d'erreur courants et indique comment les corriger :</block>
+  <block id="5d3a908b240fe98ac0740455635b4cc0" category="list-text">Si vous rencontrez toujours des problèmes, contactez l'assistance.</block>
+  <block id="13ab9425db1c4ad9c7ca529999f6de24" category="list-text">Vérifiez que l'agent dispose d'un accès sortant aux points de terminaison requis.<block ref="c7fe41b97889c23a57defbbf2129845e" category="inline-link-macro-rx"></block></block>
+  <block id="61af83c0a45998dc351428765c46fa2e" category="section-title">Effectuez des vérifications de configuration sur l'agent de la console.</block>
+  <block id="764bd6d2ae27e2401a34b6a482fc62d3" category="paragraph">Effectuez des vérifications de configuration sur les agents de la console depuis la console ou la console de maintenance des agents pour vous assurer qu'ils sont connectés.</block>
+  <block id="cb4e992a592d7b26e6c218cdde9ee1b5" category="inline-link-macro">Apprenez-en davantage sur l'utilisation de la commande de validation de config-checker.</block>
+  <block id="adbf5b321ab6472093079a96d92216c2" category="paragraph">Vous pouvez également effectuer des vérifications de configuration à l'aide de la console de maintenance de l'agent.<block ref="714b5c6de8ffee7e082263b89290e9dc" category="inline-link-macro-rx"></block></block>
+  <block id="2c8b526b02d94d86279aebb87311c90d" category="admonition">Vous ne pouvez valider que les agents dont le statut est *Connecté*.</block>
+  <block id="2256ce9e5331fffeb7ded438ec67c9bf" category="list-title">Étapes depuis la console</block>
+  <block id="80ed8e269497520c11a5f07aaac10ca9" category="list-text">Sélectionnez le menu d'actions de l'agent Console que vous souhaitez vérifier et choisissez *Valider*.</block>
+  <block id="5dfebfd3b68f37eb76c1cbde60947384" category="inline-image-macro">Capture d'écran montrant l'option Valider dans le menu Actions pour un agent.</block>
+  <block id="9bccdaa91fb930ee1c5038c140fa7f92" category="paragraph"><block ref="9bccdaa91fb930ee1c5038c140fa7f92" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5a8fd97dba9bde8fc857ad3f2edce597" category="paragraph">La validation peut prendre jusqu'à 15 minutes.  Les résultats s'affichent une fois terminé.</block>
+  <block id="e1da0c759b99b40771f992144973dfe0" category="paragraph">Il peut arriver que vous ayez besoin de désactiver les contrôles de configuration qui vérifient la connectivité sortante lors de l'installation. Par exemple, lors de l'installation manuelle d'un agent dans votre environnement Government Cloud, vous devez désactiver les vérifications de configuration, sinon l'installation échouera.</block>
+  <block id="749e848334a8eeda9b72b5bef6878260" category="paragraph">Vous désactivez la vérification de configuration en définissant l'indicateur _skipConfigCheck_ dans le fichier _com/opt/application/netapp/service-manager-2/config.json_. Par défaut, cet indicateur est défini sur faux et la vérification de configuration vérifie l'accès sortant pour l'agent. Définissez cet indicateur sur vrai pour désactiver la vérification. Familiarisez-vous avec la syntaxe JSON avant de passer à l'étape suivante.</block>
+  <block id="174dd97dd1f160583ac76fa482fa6a5e" category="section-title">10 décembre 2025</block>
+  <block id="426c031f387e762bb968fd54671cf5a6" category="paragraph">Directive non résolue dans &lt;stdin&gt; - include::_whatsnew/2025-12-08.adoc[]</block>
+  <block id="5a348f21cc989b094b43c61561c46351" category="sidebar">Vérifications de configuration</block>
+  <block id="800641e37082e3805299720dbe2f9713" category="sidebar">proxy transparent</block>
 </blocks>

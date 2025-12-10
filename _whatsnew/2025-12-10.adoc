@@ -1,0 +1,44 @@
+= Agent de console 4.2.0
+:allow-uri-read: 
+
+
+
+
+=== Agent de console 4.2.0
+
+La version 4.2.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité, des corrections de bugs et les fonctionnalités suivantes :
+
+.Prise en charge de Google Cloud Infrastructure Manager
+NetApp utilise désormais Google Cloud Infrastructure Manager (IM) au lieu de Google Cloud Deployment Manager pour déployer et gérer les agents dans Google Cloud.  Ce changement a été effectué car Google va déprécierlink:https://docs.cloud.google.com/deployment-manager/docs/deprecations["Gestionnaire de déploiement cloud"] .
+
+* Tous les nouveaux agents 4.2.0 et supérieurs utilisent Infrastructure Manager et vous devez mettre à jour les autorisations du compte utilisateur et du compte de service utilisés pour le déploiement.link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log["Consultez le journal des modifications d'autorisation."^]
+* Lors du déploiement d'un agent, le système crée également un bucket Google Cloud pour stocker les fichiers de déploiement.
+
+
+.Amélioration des contrôles de configuration pour les agents de console
+* L'agent de la console vérifie désormais la présence de points de terminaison obsolètes lors de l'exécution d'une vérification de configuration.  Si vous n'avez pas mis à jour la liste des points de terminaison vers la nouvelle version 4.0.0 ou supérieure, les installations réussissent si le système peut accéder à la liste des points de terminaison précédente.link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez-en davantage sur les points de terminaison requis pour les agents de la console."^]
+* Effectuez des vérifications de configuration sur les agents de console installés depuis la console ou la console de maintenance des agents afin de vérifier la connectivité et de résoudre les problèmes.link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html#verify-network-access["Découvrez comment effectuer des vérifications de configuration sur les agents de la console."^]
+
+
+.Téléchargez directement le logiciel agent depuis la NetApp Console.
+Lorsque vous devez installer manuellement un agent, vous pouvez accéder au logiciel de l'agent directement depuis la NetApp Console , en plus du site de support NetApp .link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html#install-the-console-agent-manually["Découvrez comment télécharger le logiciel agent de la console directement depuis la NetApp Console."^]
+
+
+
+=== Administration de la NetApp Console
+
+Cette version comprend les éléments suivants :
+
+.Possibilité de configurer des notifications pour les identifiants expirant
+Configurez les notifications d'expiration des identifiants sur les comptes de service et les fédérations.  Choisissez entre sept ou 30 jours.  La console affiche des notifications et envoie des e-mails aux utilisateurs ayant le rôle approprié.  Les administrateurs de l'organisation reçoivent des notifications relatives aux comptes de service.  Les administrateurs d'organisation, les administrateurs de fédération et les utilisateurs de la fédération reçoivent des notifications de fédération.
+
+.Les connexions locales ne sont plus disponibles après l'activation de la fédération.
+Une fois la fédération activée pour une organisation Console, les utilisateurs ne peuvent plus utiliser les identifiants locaux et sont redirigés vers les identifiants de fédération.
+
+.Améliorations de l'ergonomie des pages de gestion du stockage
+Les informations détaillées concernant vos systèmes ONTAP sur site (et FSx pour ONTAP) sont désormais plus faciles à consulter et à gérer à partir des pages de gestion du stockage.
+
+* La page * Discoverable systems* sépare les informations récapitulatives de l'affichage par onglets des systèmes disponibles, facilitant ainsi la consultation d'informations complètes sur les systèmes détectables.
+
