@@ -63,12 +63,6 @@ Les informations détaillées concernant vos systèmes ONTAP sur site (et FSx po
 
 
 
-== 8 décembre 2025
-
-Directive non résolue dans <stdin> - include::_whatsnew/2025-12-08.adoc[]
-
-
-
 == 10 novembre 2025
 
 

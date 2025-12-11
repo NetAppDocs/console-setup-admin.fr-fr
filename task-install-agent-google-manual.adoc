@@ -86,9 +86,6 @@ Podman version 5.4.0 avec podman-compose 1.5.0.
  a| 
 Pris en charge en mode d'application ou en mode permissif
 
-* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
-
-
 
 
  a| 
@@ -107,9 +104,6 @@ Podman version 4.9.4 avec podman-compose 1.5.0.
  a| 
 Pris en charge en mode d'application ou en mode permissif
 
-* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
-
-
 
 
  a| 
@@ -127,9 +121,6 @@ Podman version 4.6.1 ou 4.9.4 avec podman-compose 1.0.6.
 <<podman-configuration,Afficher les exigences de configuration de Podman>> .
  a| 
 Pris en charge en mode d'application ou en mode permissif
-
-* La gestion des systèmes Cloud Volumes ONTAP n'est PAS prise en charge par les agents sur lesquels SELinux est activé sur le système d'exploitation.
-
 
 
 
