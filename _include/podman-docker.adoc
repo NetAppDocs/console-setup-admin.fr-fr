@@ -44,26 +44,34 @@ rm /var/run/docker.sock
 Vous pouvez obtenir Podman à partir des référentiels officiels de Red Hat Enterprise Linux.
 
 +
-Pour Red Hat Enterprise Linux 9 :
-
+.. Pour Red Hat Enterprise Linux 9,6 :
 +
 [source, cli]
 ----
-sudo dnf install podman-2:<version>
+sudo dnf install podman-5:<version>
 ----
 +
 Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
 
-+
-Pour Red Hat Enterprise Linux 8 :
-
+.. Pour Red Hat Enterprise Linux 9.1 à 9.4 :
 +
 [source, cli]
 ----
-sudo dnf install podman-3:<version>
+sudo dnf install podman-4:<version>
 ----
 +
 Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+.. Pour Red Hat Enterprise Linux 8 :
++
+[source, cli]
+----
+sudo dnf install podman-4:<version>
+----
++
+Où <version> est la version prise en charge de Podman que vous installez. <<podman-versions,Afficher les versions de Podman prises en charge>> .
+
+
 
 . Activez et démarrez le service podman.socket.
 +
@@ -78,11 +86,14 @@ sudo systemctl enable --now podman.socket
 sudo dnf install python3
 ----
 . Installez le package de référentiel EPEL s'il n'est pas déjà disponible sur votre système.
-
-
++
 Cette étape est nécessaire car podman-compose est disponible dans le référentiel Extra Packages for Enterprise Linux (EPEL).
 
-. Si vous utilisez Red Hat Enterprise 9.1 à 9.6 :
+. Si vous utilisez Red Hat Enterprise 9 :
++
+.. Installez le paquetage du dépôt EPEL.
+
+
 +
 [source, cli]
 ----
@@ -99,11 +110,12 @@ sudo dnf install podman-compose-1.5.0
 
 . Si vous utilisez Red Hat Enterprise Linux 8 :
 +
+.. Installez le paquetage du dépôt EPEL.
++
 [source, cli]
 ----
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 ----
-+
 .. Installez le package podman-compose 1.0.6.
 +
 [source, cli]
@@ -115,44 +127,42 @@ sudo dnf install podman-compose-1.0.6
 NOTE: En utilisant le `dnf install` la commande répond à l'exigence d'ajout de podman-compose à la variable d'environnement PATH.  La commande d'installation ajoute podman-compose à /usr/bin, qui est déjà inclus dans le `secure_path` option sur l'hôte.
 
 .. Si vous utilisez Red Hat Enterprise Linux 8, vérifiez que votre version Podman utilise NetAvark avec Aardvark DNS au lieu de CNI.
-
-
-. Vérifiez si votre networkBackend est défini sur CNI en exécutant la commande suivante :
-
-
-[listing]
++
+... Vérifiez si votre networkBackend est défini sur CNI en exécutant la commande suivante :
++
+[source, cli]
 ----
 podman info | grep networkBackend
 ----
-. Si le networkBackend est défini sur `CNI` , vous devrez le changer en `netavark` .
-. Installer `netavark` et `aardvark-dns` en utilisant la commande suivante :
-
-
-[listing]
+... Si le networkBackend est défini sur `CNI` , vous devrez le changer en `netavark` .
+... Installer `netavark` et `aardvark-dns` en utilisant la commande suivante :
++
+[source, cli]
 ----
 dnf install aardvark-dns netavark
 ----
-. Ouvrez le `/etc/containers/containers.conf` fichier et modifiez l'option network_backend pour utiliser « netavark » au lieu de « cni ».
+... Ouvrez le `/etc/containers/containers.conf` fichier et modifiez l'option network_backend pour utiliser « netavark » au lieu de « cni ».
 +
 Si `/etc/containers/containers.conf` n'existe pas, effectuez les modifications de configuration pour `/usr/share/containers/containers.conf` .
 
+... Redémarrez podman.
 +
-.. Redémarrez podman.
-
-
-
-
-[listing]
+[source, cli]
 ----
 systemctl restart podman
 ----
-. Confirmez que networkBackend est désormais modifié en « netavark » à l'aide de la commande suivante :
-
-
-[listing]
+... Confirmez que networkBackend est désormais modifié en « netavark » à l'aide de la commande suivante :
++
+[source, cli]
 ----
 podman info | grep networkBackend
 ----
+
+
+
+
+
+
 --
 .Moteur Docker
 --

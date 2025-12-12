@@ -204,8 +204,6 @@ sidebar:
         url: "/task-configuring-proxy.html"
       - title: Exiger l'utilisation d'IMDSv2 sur les instances EC2
         url: "/task-require-imdsv2.html"
-      - title: Gérer les mises à niveau des agents
-        url: "/task-upgrade-agent.html"
       - title: Travailler avec plusieurs agents de console
         url: "/task-manage-multiple-agents.html"
       - title: Dépanner l'agent de la console
