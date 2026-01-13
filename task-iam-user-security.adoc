@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-iam-user-security.html 
+keywords: user, service account, member, role, permissions, organization, project, folder, iam, identity and access management 
+summary: Gérez les membres de votre organisation pour fournir des autorisations à différents niveaux de la hiérarchie des ressources de votre organisation. 
+---
+= Sécurité des utilisateurs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sécurisez l'accès des utilisateurs à votre organisation NetApp Console en gérant les paramètres de sécurité des membres. Vous pouvez réinitialiser les mots de passe des utilisateurs, gérer l'authentification multifacteurs (MFA) et recréer les informations d'identification des comptes de service.
+
+.Rôles d'accès requis
+Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). Lien : reference-iam-predefined-roles.html [En savoir plus sur les rôles d’accès].
+
+
+
+== Réinitialiser les mots de passe des utilisateurs (utilisateurs locaux uniquement)
+
+Les administrateurs de l'organisation ne peuvent pas réinitialiser les mots de passe des utilisateurs locaux. Ils peuvent toutefois demander aux utilisateurs de réinitialiser eux-mêmes leurs mots de passe.
+
+Indiquez à l'utilisateur de réinitialiser son mot de passe depuis la page de connexion de la console en sélectionnant *Mot de passe oublié ?*.
+
+
+NOTE: Cette option n'est pas disponible pour les utilisateurs appartenant à une organisation fédérée.
+
+
+
+== Gérer l'authentification multifacteur (MFA) d'un utilisateur
+
+Si un utilisateur perd l’accès à son périphérique MFA, vous pouvez supprimer ou désactiver sa configuration MFA.
+
+
+NOTE: L'authentification multifacteurs est uniquement disponible pour les utilisateurs locaux. Les utilisateurs fédérés ne peuvent pas activer l'authentification multifacteur.
+
+Les utilisateurs doivent configurer à nouveau l'authentification multifacteur (MFA) lorsqu'ils se connectent après sa suppression. Si l'utilisateur perd temporairement l'accès à son dispositif MFA, il peut utiliser son code de récupération enregistré pour se connecter.
+
+S'ils ne disposent pas de leur code de récupération, désactivez temporairement MFA pour autoriser la connexion. Lorsque vous désactivez l'authentification multifacteur pour un utilisateur, elle est désactivée pendant huit heures seulement, puis réactivée automatiquement. L'utilisateur est autorisé à se connecter une fois pendant cette période sans MFA. Après les huit heures, l’utilisateur doit utiliser MFA pour se connecter.
+
+
+NOTE: Pour gérer l'authentification multifacteur d'un utilisateur, vous devez disposer d'une adresse e-mail dans le même domaine que l'utilisateur concerné.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
++
+Le tableau *Membres* répertorie les membres de votre organisation.
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Gérer l'authentification multifacteur*.
+. Choisissez de supprimer ou de désactiver la configuration MFA de l'utilisateur.
+
+
+
+
+== Recréer les informations d'identification pour un compte de service
+
+Vous pouvez créer de nouveaux identifiants pour un service si vous les perdez ou si vous devez les mettre à jour.
+
+La création de nouveaux identifiants supprime les anciens. Vous ne pouvez pas utiliser les anciens identifiants.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Dans le tableau *Membres*, accédez à un compte de service, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Recréer les secrets*.
+. Sélectionnez *Recréer*.
+. Téléchargez ou copiez l'ID client et le secret client.
++
+La console n'affiche le secret client qu'une seule fois. Veillez à le copier ou à le télécharger et à le conserver en lieu sûr.
+
+

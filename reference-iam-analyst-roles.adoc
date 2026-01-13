@@ -34,8 +34,8 @@ Vous pouvez attribuer le rôle d'analyste de support opérationnel aux utilisate
 | Inscrivez-vous au support et soumettez des cas via la console | Oui 
 
 
-| Oui | Afficher la page d'audit et les notifications 
+| Afficher la page d'audit et les notifications | Oui 
 
 
-| Oui | Afficher, télécharger et configurer les alertes 
+| Afficher, télécharger et configurer les alertes | Oui 
 |===

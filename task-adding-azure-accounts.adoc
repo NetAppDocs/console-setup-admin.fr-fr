@@ -83,7 +83,7 @@ La console a besoin d’autorisations pour effectuer des actions dans Azure.  Vo
 .À propos de cette tâche
 L’image suivante illustre comment la console obtient les autorisations pour effectuer des opérations dans Azure.  Un objet principal de service, lié à un ou plusieurs abonnements Azure, représente la console dans Microsoft Entra ID et est attribué à un rôle personnalisé qui autorise les autorisations requises.
 
-image:diagram_azure_authentication.png["Image conceptuelle qui montre la console obtenant l’authentification et l’autorisation de Microsoft Entra ID avant de pouvoir effectuer un appel API.  Dans Active Directory, le rôle de console définit les autorisations.  Il est lié à un ou plusieurs abonnements Azure et à un objet principal de service qui représente l’application Cloud Manger."]
+image:diagram_azure_authentication.png["Image conceptuelle illustrant comment la console obtient l'authentification et l'autorisation de Microsoft Entra ID avant de pouvoir effectuer un appel API. Le rôle Console définit les autorisations dans Active Directory. Elle est liée à un ou plusieurs abonnements Azure et à un objet principal de service qui représente l'application Console."]
 
 .Étapes
 . <<Créer une application Microsoft Entra>> .

@@ -4,7 +4,7 @@ permalink: task-iam-manage-roles.html
 keywords: projects, access, resources, user roles, iam, identity and access management, folder, organization, permissions, roles, members, access roles 
 summary: 'Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu"ils doivent faire et où.' 
 ---
-= Utiliser des rôles pour gérer l'accès des utilisateurs aux ressources de la NetApp Console
+= Gérer l'accès des membres dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,28 +14,88 @@ summary: 'Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisate
 
 
 [role="lead"]
-Dans la console, vous pouvez attribuer des rôles aux utilisateurs en fonction de ce qu'ils doivent faire et où.
+Gérez l'accès des membres dans votre organisation Console. Attribuer des rôles pour définir les autorisations. Supprimez les membres lorsqu'ils quittent l'entreprise.
 
-Les utilisateurs disposant du rôle *Administrateur d'organisation* ou *Administrateur de dossier ou de projet* ont la responsabilité d'attribuer des rôles à d'autres utilisateurs. Vous pouvez attribuer des rôles d’accès sur la base d’un projet ou d’un dossier. Attribuer les rôles d'accès par projet ou dossier.  Par exemple, attribuez le rôle d'administrateur Ransomware Resilience à un utilisateur pour un projet et le rôle d'administrateur SnapCenter pour un autre.  Pour attribuer à un utilisateur le rôle d'administrateur Ransomware Resilience pour tous les projets d'un dossier, attribuez le rôle au niveau du dossier.
+.Rôles d'accès requis
+Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). Lien : reference-iam-predefined-roles.html [En savoir plus sur les rôles d’accès].
 
-Utilisez des rôles d’accès pour attribuer l’accès aux ressources de stockage en fonction des tâches spécifiques que les utilisateurs doivent effectuer. Par exemple, si un utilisateur doit interagir avec Ransomware Resilience, il doit disposer d'un rôle d'accès qui inclut des autorisations d'affichage ou d'administration pour Ransomware Resilience pour le projet pour lequel le rôle d'accès est accordé.
-
-Attribuez des rôles conformément à votre stratégie IAM pour améliorer la sécurité.  Les rôles IAM limitent l'accès des utilisateurs aux seules ressources nécessaires.
+Vous pouvez attribuer des rôles d'accès par projet ou par dossier. Par exemple, attribuez un rôle à un utilisateur pour deux projets spécifiques ou attribuez le rôle au niveau du dossier pour donner à un utilisateur le rôle d'administrateur de résilience aux ransomwares pour tous les projets d'un dossier.
 
 
-NOTE: N'oubliez pas que vous ne pouvez pas accorder directement l'accès aux ressources.  Affectez d’abord les ressources aux projets.  Pensez à configurer votre hiérarchie de ressources avant d’attribuer l’accès aux utilisateurs.link:task-iam-manage-folders-projects.html["Apprenez à organiser vos ressources avec des dossiers et des projets."]
+NOTE: Ajoutez vos dossiers et projets avant d'attribuer l'accès aux utilisateurs. link:task-iam-manage-folders-projects.html["Apprenez à ajouter des dossiers et des projets."]
+
+
+
+== Comprendre comment l'accès est accordé dans la NetApp Console
+
+La NetApp Console utilise un modèle de contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations des utilisateurs. Vous pouvez attribuer des rôles prédéfinis aux membres individuellement ou par le biais de groupes fédérés. Vous pouvez ajouter et attribuer des rôles aux comptes de service, ainsi qu'aux groupes fédérés. Chaque rôle définit les actions qu'un membre peut effectuer sur les ressources associées.
+
+Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp Console:
+
+* Tous les utilisateurs doivent d'abord s'inscrire à la NetApp Console avant de pouvoir accéder aux ressources.
+* Vous devez attribuer explicitement un rôle à chaque utilisateur dans la console avant qu'il puisse accéder aux ressources, même s'il est membre d'un groupe fédéré auquel un rôle a été attribué.
+* Vous pouvez ajouter des comptes de service directement depuis la console et leur attribuer des rôles.
+
+
+
+
+=== Utilisation de l'héritage de rôles
+
+Lorsque vous attribuez un rôle au niveau de l'organisation, du dossier ou du projet dans NetApp Console, ce rôle est automatiquement hérité par toutes les ressources du périmètre sélectionné. Par exemple, les rôles au niveau d'un dossier s'appliquent à tous les projets qu'il contient, tandis que les rôles au niveau d'un projet s'appliquent à toutes les ressources de ce projet.
+
+
+
+== Afficher les membres de l'organisation
+
+Pour comprendre quelles ressources et autorisations sont disponibles pour un membre, vous pouvez afficher les rôles attribués au membre à différents niveaux de la hiérarchie des ressources de votre organisation.link:task-iam-manage-roles.html["Découvrez comment utiliser les rôles pour contrôler l’accès aux ressources de la console."^]
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
++
+Le tableau *Membres* répertorie les membres de votre organisation.
+
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+
 
 
 
 == Afficher les rôles attribués à un membre
 
-Lorsque vous ajoutez un membre à votre organisation, vous êtes invité à lui attribuer un rôle. Vous pouvez vérifier les rôles qui leur sont actuellement attribués.
+Vous pouvez vérifier les rôles qui leur sont actuellement attribués.
 
 Si vous disposez du rôle _Administrateur de dossier ou de projet_, la page affiche tous les membres de l'organisation.  Cependant, vous ne pouvez afficher et gérer les autorisations des membres que pour les dossiers et les projets pour lesquels vous disposez d'autorisations. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
 
-. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnez image:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
 . Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet dans lequel vous souhaitez afficher le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle*.
 
+
+
+
+== Afficher les membres associés à un dossier ou à un projet
+
+Vous pouvez consulter la liste des membres qui ont accès à un dossier ou à un projet spécifique.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Organisation*.
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
++
+** Sélectionnez *Accès* pour afficher les membres qui ont accès au dossier ou au projet.
++
+image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier le projet qui montre les membres qui ont accès au projet."]
+
+
+
+
+
+
+
+== Attribuer ou modifier l'accès des membres
+
+Une fois qu'un utilisateur s'inscrit à NetApp Console, vous pouvez l'ajouter à votre organisation et lui attribuer un rôle pour lui donner accès aux ressources. link:task-iam-manage-members-permissions.html#add-members["Découvrez comment ajouter des membres à votre organisation."^]
+
+Vous pouvez ajuster l'accès d'un membre en ajoutant ou en supprimant des rôles selon les besoins.
 
 
 
@@ -45,15 +105,17 @@ Vous attribuez généralement un rôle lorsque vous ajoutez un membre à votre o
 
 Vous pouvez attribuer à un utilisateur un rôle d’accès pour votre organisation, votre dossier ou votre projet.
 
-Les membres peuvent avoir plusieurs rôles au sein du même projet et dans différents projets. Par exemple, les petites organisations peuvent attribuer tous les rôles d’accès disponibles au même utilisateur, tandis que les grandes organisations peuvent demander aux utilisateurs d’effectuer des tâches plus spécialisées. Vous pouvez également attribuer à un utilisateur le rôle d’administrateur Ransomware Resilience pour une organisation.  Dans cet exemple, l’utilisateur serait en mesure d’effectuer des tâches de résilience aux ransomwares sur tous les projets au sein de votre organisation.
+Les membres peuvent occuper plusieurs rôles au sein d'un même projet et dans différents projets. Par exemple, les petites organisations peuvent attribuer tous les rôles d'accès disponibles au même utilisateur, tandis que les grandes organisations peuvent confier des tâches plus spécialisées à certains utilisateurs. Vous pouvez également attribuer à un utilisateur le rôle d'administrateur de la résilience aux ransomwares au niveau de l'organisation. Dans cet exemple, l'utilisateur pourrait effectuer des tâches de résilience aux ransomwares sur tous les projets de votre organisation.
 
 Votre stratégie de rôle d’accès doit s’aligner sur la manière dont vous avez organisé vos ressources NetApp .
 
 
-TIP: Un membre auquel est attribué le rôle d'administrateur d'organisation ne peut pas se voir attribuer de rôles supplémentaires.  Ils disposent déjà d’autorisations sur l’ensemble de l’organisation.  Un membre doté du rôle Dossier ou Projet ne peut se voir attribuer aucun autre rôle dans le dossier ou le projet où il possède déjà ce rôle.  Ces deux rôles donnent accès à tous les services dans le cadre qui leur est attribué.
+TIP: Un membre qui possède le rôle d'administrateur de l'organisation ne peut se voir attribuer aucun rôle supplémentaire. Ils disposent déjà des autorisations nécessaires pour l'ensemble de l'organisation. Un membre possédant le rôle d'administrateur de dossier ou de projet ne peut se voir attribuer aucun autre rôle au sein du dossier ou du projet où il possède déjà ce rôle. Ces deux rôles donnent accès à tous les services relevant du périmètre qui leur est attribué.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Sélectionnez l'un des onglets membres : *Utilisateurs*, *Comptes de service* ou *Groupes fédérés*.
 . Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du membre auquel vous souhaitez attribuer un rôle et sélectionnez *Ajouter un rôle*.
 . Pour ajouter un rôle, suivez les étapes dans la boîte de dialogue :
 +
@@ -80,12 +142,38 @@ NOTE: Les utilisateurs doivent avoir au moins un rôle qui leur est attribué.  
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Sélectionnez l'un des onglets membres : *Utilisateurs*, *Comptes de service* ou *Groupes fédérés*.
 . Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
 . Dans le tableau, développez la ligne correspondante pour l'organisation, le dossier ou le projet pour lequel vous souhaitez modifier le rôle attribué au membre et sélectionnez *Afficher* dans la colonne *Rôle* pour afficher les rôles attribués à ce membre.
 . Vous pouvez modifier un rôle existant pour un membre ou supprimer un rôle.
 +
 .. Pour modifier le rôle d'un membre, sélectionnez *Modifier* à côté du rôle que vous souhaitez modifier.  Vous ne pouvez modifier un rôle que pour un rôle appartenant à la même catégorie de rôle.  Par exemple, vous pouvez passer d’un rôle de service de données à un autre.  Confirmer le changement.
-.. Pour annuler l'attribution du rôle d'un membre, sélectionnezimage:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour désattribuer le rôle respectif au membre.  Il vous sera demandé de confirmer la suppression.
+.. Pour retirer le rôle d'un membre, sélectionnez image:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour supprimer le rôle correspondant du membre. Il vous sera demandé de confirmer la suppression.
 
 
+
+
+
+
+== Supprimer un membre de votre organisation
+
+Supprimez un membre s'il quitte votre organisation.
+
+Lorsque vous supprimez un membre, le système révoque ses autorisations de console mais conserve ses comptes de console et de site de support NetApp .
+
+[NOTE]
+====
+.membres fédérés
+* Les utilisateurs fédérés perdent automatiquement l'accès à la NetApp Console lorsqu'ils sont supprimés de votre fournisseur d'identité. Mais vous devriez tout de même les supprimer de votre organisation Console pour que votre liste de membres reste à jour.
+* Si vous supprimez un utilisateur d'un groupe fédéré dans votre fournisseur d'identité, il perd l'accès à la console associé à ce groupe. Ils conservent toutefois tous les accès associés à un rôle explicite qui leur est attribué dans la console.
+
+
+====
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Membres*.
+. Sélectionnez l'un des onglets membres : *Utilisateurs*, *Comptes de service* ou *Groupes fédérés*.
+. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Supprimer l'utilisateur*.
+. Confirmez que vous souhaitez supprimer le membre de votre organisation.
 

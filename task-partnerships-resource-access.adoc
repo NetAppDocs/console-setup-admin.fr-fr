@@ -97,7 +97,7 @@ La liste *Membre* affiche les membres que l'organisation partenaire a ajoutés a
 . Vous pouvez modifier un rôle existant pour un membre ou supprimer un rôle.
 +
 .. Pour modifier le rôle d'un membre, sélectionnez *Modifier* à côté du rôle que vous souhaitez modifier.  Vous ne pouvez modifier un rôle que pour un rôle appartenant à la même catégorie de rôle.  Par exemple, vous pouvez passer d’un rôle de service de données à un autre.  Confirmer le changement.
-.. Pour annuler l'attribution du rôle d'un membre, sélectionnezimage:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour désattribuer le rôle respectif au membre.  Il vous sera demandé de confirmer la suppression.
+.. Pour retirer le rôle d'un membre, sélectionnez image:icon-delete.png["Une icône qui ressemble à une poubelle"] à côté du rôle pour supprimer le rôle correspondant du membre. Il vous sera demandé de confirmer la suppression.
 
 
 

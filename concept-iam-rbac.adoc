@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: concept-iam-rbac.html 
+keywords: roles, permissions, role-based access control, rbac, iam, identity and access management, least privilege, access control, NetApp Console access, organization access, folder access, project access, resource access 
+summary: 'Gérez l"accès des utilisateurs à la NetApp Console grâce au contrôle d"accès basé sur les rôles (RBAC), en attribuant des rôles prédéfinis au niveau de l"organisation, du dossier ou du projet. Chaque rôle octroie des autorisations spécifiques qui définissent les actions que les utilisateurs peuvent effectuer dans le cadre de leur rôle.' 
+---
+= Découvrez le contrôle d'accès basé sur les rôles (RBAC) de NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gérez l'accès des utilisateurs à la NetApp Console grâce au contrôle d'accès basé sur les rôles (RBAC), en attribuant des rôles prédéfinis au niveau de l'organisation, du dossier ou du projet. Chaque rôle octroie des autorisations spécifiques qui définissent les actions que les utilisateurs peuvent effectuer dans le cadre de leur rôle.
+
+NetApp conçoit les rôles de console selon le principe du moindre privilège, de sorte que chaque rôle n'inclut que les autorisations nécessaires à ses tâches. Cette approche renforce la sécurité en limitant l'accès à ce dont chaque membre a besoin.
+
+Après avoir organisé les ressources en dossiers et projets, attribuez aux membres de l'organisation un ou plusieurs rôles pour des dossiers ou projets spécifiques, leur permettant ainsi d'exercer uniquement leurs responsabilités.
+
+Par exemple, vous pouvez attribuer à un membre le rôle d'administrateur de résilience aux ransomwares pour un niveau de projet spécifique, lui permettant d'effectuer des opérations de résilience aux ransomwares pour les ressources de ce projet, sans lui accorder un accès plus large à l'ensemble de l'organisation. Ce même utilisateur peut se voir attribuer ce rôle pour plusieurs projets au sein de votre organisation.
+
+Vous pouvez attribuer aux utilisateurs plusieurs rôles pour un même périmètre ou pour des périmètres différents, en fonction de leurs responsabilités. Par exemple, une petite organisation pourrait confier la gestion de la résilience aux ransomwares et des tâches de sauvegarde et de restauration à un même utilisateur au niveau de l'organisation, tandis qu'une plus grande organisation pourrait affecter des utilisateurs différents à chaque rôle au niveau du projet.
+
+
+
+== Types de membres de l'organisation Console
+
+Il existe trois types de membres dans une organisation NetApp Console : * _Comptes utilisateurs_ : Utilisateurs individuels qui se connectent à la NetApp Console pour gérer les ressources. Les utilisateurs doivent s'inscrire à la NetApp Console avant de pouvoir être ajoutés à une organisation. * _Comptes de service_ : Comptes non humains utilisés par les applications ou les services pour interagir avec la NetApp Console via des API. Vous pouvez ajouter des comptes de service directement à votre organisation Console. * _Groupes fédérés_ : Groupes synchronisés depuis votre fournisseur d'identité (IdP) qui vous permettent de gérer collectivement l'accès de plusieurs utilisateurs. Chaque utilisateur d'un groupe fédéré doit s'être inscrit à la NetApp Console et avoir été ajouté à votre organisation avec un rôle d'accès avant de pouvoir accéder aux ressources accordées au groupe.
+
+link:task-iam-manage-members-permissions.html#add-members["Découvrez comment ajouter des membres à votre organisation."]
+
+
+
+== Rôles prédéfinis dans la NetApp Console
+
+La NetApp Console inclut des rôles prédéfinis que vous pouvez attribuer aux membres de l'organisation. Chaque rôle comprend des autorisations qui spécifient les actions qu'un membre peut effectuer dans le cadre qui lui est assigné (organisation, dossier ou projet).
+
+Les rôles de la NetApp Console utilisent le principe du moindre privilège, qui garantit que les membres ne disposent que des autorisations nécessaires à leurs tâches, et catégorisent les rôles selon le type d'accès qu'ils fournissent :
+
+* Rôles de la plateforme : Fournir les autorisations d’administration de la console
+* Rôles des services de données : octroient des autorisations pour la gestion de services de données spécifiques, tels que la résilience aux ransomwares et la sauvegarde et la restauration.
+* Rôles de l'application : Fournir les autorisations de gestion du stockage ainsi que d'audit des événements et alertes de la console.
+
+
+Vous pouvez attribuer plusieurs rôles à un membre en fonction de ses responsabilités. Par exemple, vous pouvez attribuer à un membre à la fois le rôle d'administrateur de la résilience aux ransomwares et le rôle d'administrateur de la sauvegarde et de la récupération pour un projet spécifique.
+
+link:reference-iam-predefined-roles.html["Découvrez les rôles prédéfinis disponibles dans la NetApp Console."].

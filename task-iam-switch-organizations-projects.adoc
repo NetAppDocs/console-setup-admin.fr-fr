@@ -31,14 +31,14 @@ Si vous êtes membre de plusieurs organisations, vous pouvez basculer entre elle
 image:screenshot-iam-switch-organizations.png["Une capture d'écran de la bannière supérieure où vous pouvez sélectionner la liste déroulante Organisation, puis sélectionner une autre organisation."]
 
 . Si vous avez des organisations partenaires, sélectionnez l’onglet *Partenariat* pour afficher les organisations partenaires disponibles.
-
-
-+ L'onglet *Partenariat* ne s'affiche pas si vous n'avez aucune organisation partenaire.
++
+L'onglet *Partenariat* ne s'affiche pas si vous n'avez aucune organisation partenaire.
 
 . Sélectionnez une autre organisation, puis sélectionnez *Changer*.
++
+Si vous avez des organisations partenaires, sélectionnez l’onglet *Partenariat* pour afficher les organisations partenaires disponibles.
 
 
-+ Si vous avez des organisations partenaires, sélectionnez l’onglet *Partenariat* pour afficher les organisations partenaires disponibles.
 
 
 

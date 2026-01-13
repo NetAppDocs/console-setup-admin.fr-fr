@@ -44,7 +44,7 @@ L’identité gérée attribuée par le système à la machine virtuelle de l’
 
 Si vous souhaitez utiliser différentes informations d'identification Azure avec la console, vous devez accorder les autorisations requises enlink:task-adding-azure-accounts.html["création et configuration d'un principal de service dans Microsoft Entra ID"] pour chaque compte Azure.  L'image suivante montre deux comptes supplémentaires, chacun configuré avec un principal de service et un rôle personnalisé qui fournit des autorisations :
 
-image:diagram_permissions_multiple_azure.png["Une image conceptuelle qui montre le compte Azure initial, qui reçoit des autorisations via un rôle personnalisé et une identité gérée, et deux comptes supplémentaires qui reçoivent des autorisations via un rôle personnalisé et un principal de service."]
+image:diagram_permissions_multiple_azure.png["Image conceptuelle montrant le compte Azure initial qui reçoit des autorisations via un rôle personnalisé et une identité gérée, ainsi que deux comptes supplémentaires qui reçoivent des autorisations via un rôle personnalisé et un principal de service."]
 
 Vous voudriez alorslink:task-adding-azure-accounts.html#add-credentials-azure["ajouter les informations d'identification du compte à la console"] en fournissant des détails sur le principal du service AD.
 

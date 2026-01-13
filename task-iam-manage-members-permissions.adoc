@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-iam-manage-members-permissions.html 
-keywords: user, service account, member, role, permissions, organization, project, folder, iam, identity and access management 
+keywords: user, service account, member, role, permissions, organization, project, folder, iam, identity and access management, federated groups, SSO, access roles, add members, grant permissions 
 summary: Gérez les membres de votre organisation pour fournir des autorisations à différents niveaux de la hiérarchie des ressources de votre organisation. 
 ---
-= Ajouter des membres et des comptes de service à la NetApp Console
+= Ajouter des utilisateurs à une organisation NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,47 +14,49 @@ summary: Gérez les membres de votre organisation pour fournir des autorisations
 
 
 [role="lead"]
-Dans la console, vous pouvez ajouter des utilisateurs et des comptes de service à votre organisation et leur attribuer un ou plusieurs rôles dans votre hiérarchie de ressources.  Un _rôle_ contient un ensemble d’autorisations qui permet à un membre (utilisateur ou compte de service) d’effectuer des actions spécifiques à un niveau spécifique de la hiérarchie des ressources.
+Dans la console, vous accordez aux utilisateurs l'accès aux projets ou aux dossiers en fonction d'un rôle d'accès. Un _rôle d'accès_ contient un ensemble d'autorisations qui permet à un membre (compte utilisateur ou compte de service) d'effectuer des actions spécifiques au niveau assigné de la hiérarchie des ressources.
 
-Vous avez besoin de l’un des rôles suivants pour gérer les utilisateurs et les autorisations :
+.Rôles d'accès requis
+Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"].
 
-* Administrateur de l'organisation
-+
-Les utilisateurs avec ce rôle peuvent gérer tous les membres
 
-* Administrateur de dossier ou de projet
-+
-Les utilisateurs disposant de ce rôle peuvent gérer uniquement les membres d'un dossier ou d'un projet désigné
 
-+
-_L'administrateur du dossier ou du projet_ peut afficher tous les membres sur la page *Membres* mais gérer les autorisations uniquement pour les dossiers et les projets auxquels il a accès. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
+== Comprendre comment l'accès est accordé dans la NetApp Console
 
+La NetApp Console utilise le contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations. Attribuer des rôles aux utilisateurs individuellement ou par le biais de groupes fédérés. Chaque rôle définit les actions autorisées pour des ressources spécifiques.
+
+Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp Console:
+
+* Tous les utilisateurs doivent d'abord s'inscrire à la NetApp Console avant de pouvoir accéder aux ressources.
+* Vous devez attribuer explicitement un rôle à chaque utilisateur dans la console avant qu'il puisse accéder aux ressources, même s'il est membre d'un groupe fédéré auquel un rôle a été attribué.
+* Vous pouvez ajouter des comptes de service directement depuis la console et leur attribuer des rôles.
 
 
 
 
 == Ajoutez des membres à votre organisation
 
-Vous pouvez ajouter deux types de membres à votre organisation : un compte utilisateur et un compte de service. Les applications utilisent des comptes de service pour effectuer automatiquement les tâches API.  Les utilisateurs se servent de comptes pour se connecter et gérer les ressources.
+La NetApp Console prend en charge trois types de membres : les comptes d’utilisateurs, les comptes de service et les groupes fédérés.
 
-Les utilisateurs doivent s'inscrire à la NetApp Console avant de pouvoir les ajouter à une organisation ou leur attribuer un rôle.  Vous créez des comptes de service directement depuis la console.
+Les utilisateurs doivent s'inscrire à la NetApp Console avant que vous puissiez les ajouter et leur attribuer un rôle, même s'ils font partie d'un groupe fédéré. Créez des comptes de service directement dans la console.
 
-Pour gérer les utilisateurs et leurs autorisations, vous devez disposer du rôle *Administrateur de l'organisation* ou du rôle *Administrateur de dossier ou de projet*.  N'oubliez pas que les utilisateurs disposant du rôle *Administrateur de dossier ou de projet* ne peuvent gérer que les membres du dossier ou des projets pour lesquels ils disposent des autorisations d'administrateur.
+Pour accéder aux ressources, tous les membres doivent se voir attribuer au moins un rôle explicite.
+
+Lors de l'ajout d'un membre, choisissez le niveau de ressource (organisation, dossier ou projet) et attribuez-lui un ou plusieurs rôles avec les autorisations nécessaires.
 
 
 
-=== Ajouter un compte utilisateur
+=== Ajouter un utilisateur
 
-Bien que les utilisateurs s'inscrivent eux-mêmes à la NetApp Console , ils doivent être explicitement ajoutés à une organisation ou à des dossiers ou projets spécifiques pour accéder aux ressources de la console.
+Les utilisateurs s'inscrivent à la NetApp Console, mais un administrateur d'organisation, de dossier ou de projet doit les ajouter à une organisation, un dossier ou un projet pour qu'ils puissent accéder aux ressources.
+
+.Avant de commencer :
+L'utilisateur doit déjà s'être inscrit à la NetApp Console. S'ils ne se sont pas encore inscrits, dirigez-les vers link:task-sign-up-saas.html["Inscrivez-vous à la NetApp Console."]
+
+
+NOTE: Si vous ajoutez un utilisateur faisant partie d'un groupe fédéré, assurez-vous que cet utilisateur s'est déjà inscrit à la NetApp Console et qu'un rôle lui a été explicitement attribué dans la console. NetApp recommande d'attribuer un rôle d'accès minimal tel que celui de lecteur de l'organisation.
 
 .Étapes
-. Diriger l'utilisateur vers la visite https://console.netapp.com/["NetApp Console"^] pour s'inscrire.
-+
-Une fois que les utilisateurs se sont inscrits, ils remplissent la page *Inscription*, vérifient leur courrier électronique et se connectent. Si la console invite les utilisateurs à créer une organisation, ils la ferment et vous informent de la création de leur compte.  Vous pouvez ensuite ajouter l’utilisateur à votre organisation existante.
-
-+
-link:task-sign-up-saas.html["Découvrez comment vous inscrire à la NetApp Console"] .
-
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Membres*.
 . Sélectionnez *Ajouter un membre*.
@@ -65,8 +67,8 @@ link:task-sign-up-saas.html["Découvrez comment vous inscrire à la NetApp Conso
 Notez ce qui suit :
 
 +
-** Vous ne pouvez sélectionner que les dossiers et les projets pour lesquels vous disposez d'autorisations.
-** La sélection d’une organisation ou d’un dossier accorde au membre des autorisations sur tout son contenu.
+** Vous pouvez sélectionner uniquement les dossiers et les projets pour lesquels vous disposez des autorisations.
+** Lorsque vous sélectionnez une organisation ou un dossier, vous accordez au membre l'autorisation d'accéder à tout son contenu.
 ** Vous ne pouvez attribuer le rôle *Administrateur de l'organisation* qu'au niveau de l'organisation.
 
 
@@ -74,10 +76,10 @@ Notez ce qui suit :
 +
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
 
-. Facultatif : sélectionnez un rôle ou un projet supplémentaire.  Si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation ou accorder à l'utilisateur des rôles supplémentaires dans la zone sélectionnée, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier ou projet ou une catégorie de rôle différente, puis choisissez un rôle.
+. Pour donner accès à davantage de dossiers, de projets ou de rôles, sélectionnez *Ajouter un rôle*, choisissez le dossier, le projet ou la catégorie de rôle, puis sélectionnez un rôle.
 . Sélectionnez *Ajouter*.
 +
-La console envoie à l'utilisateur un e-mail contenant des instructions.
+La console envoie des instructions par courriel à l'utilisateur.
 
 
 
@@ -85,9 +87,10 @@ La console envoie à l'utilisateur un e-mail contenant des instructions.
 
 === Ajouter un compte de service
 
-Vous pouvez automatiser les tâches et intégrer les API de la console en toute sécurité avec les comptes de service.  Lorsque vous créez un compte de service, choisissez entre deux méthodes d’authentification : à l’aide d’un ID client et d’un secret, ou à l’aide de l’authentification JWT (JSON Web Token).  L'ID client et la méthode secrète conviennent aux configurations simples, tandis que l'authentification JWT offre une sécurité renforcée pour les environnements automatisés ou natifs du cloud.  Choisissez l’option qui correspond le mieux à vos besoins de sécurité et à la manière dont vous prévoyez d’utiliser la console.
+Les comptes de service vous permettent d'automatiser les tâches et de vous connecter en toute sécurité aux API de la console. Choisissez un ID client et un secret pour les configurations simples, ou un JWT (JSON Web Token) pour une sécurité renforcée dans les environnements automatisés ou natifs du cloud. Choisissez la méthode qui répond à vos exigences de sécurité.
 
-Si vous souhaitez utiliser l’authentification JWT, préparez votre clé publique ou votre certificat.
+.Avant de commencer :
+Pour l'authentification JWT, préparez votre clé publique ou votre certificat.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
@@ -95,7 +98,7 @@ Si vous souhaitez utiliser l’authentification JWT, préparez votre clé publiq
 . Sélectionnez *Ajouter un membre*.
 . Pour *Type de membre*, sélectionnez *Compte de service*.
 . Saisissez un nom pour le compte de service.
-. Si vous souhaitez utiliser l’authentification JWT, sélectionnez *Utiliser l’authentification JWT par clé privée* et téléchargez votre clé RSA publique ou votre certificat.  Ignorez cette étape si vous souhaitez utiliser un identifiant client et un secret à la place.
+. Pour utiliser l'authentification JWT, sélectionnez *Utiliser l'authentification JWT par clé privée* et téléchargez votre clé ou certificat RSA public. Ignorez cette étape si vous utilisez un ID client et un secret.
 +
 Votre certificat X.509. Il doit être au format PEM, CRT ou CER.
 
@@ -113,84 +116,58 @@ Notez ce qui suit :
 ** Vous ne pouvez attribuer le rôle *Administrateur de l'organisation* qu'au niveau de l'organisation.
 
 
-. Sélectionnez une *Catégorie* puis sélectionnez un *Rôle* qui fournit au membre des autorisations pour les ressources associées à l'organisation, au dossier ou au projet que vous avez sélectionné.
+. Sélectionnez une *Catégorie*, puis un *Rôle* qui confère au membre les autorisations nécessaires pour accéder aux ressources de l'organisation, du dossier ou du projet que vous avez sélectionné.
 +
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
 
-. Facultatif : sélectionnez un rôle ou un projet supplémentaire.  Si vous souhaitez fournir l'accès à des dossiers ou projets supplémentaires au sein de votre organisation ou accorder à l'utilisateur des rôles supplémentaires dans la zone sélectionnée, sélectionnez *Ajouter un rôle*, spécifiez un autre dossier ou projet ou une catégorie de rôle différente, puis choisissez un rôle.
-. Si vous n’avez pas choisi d’utiliser l’authentification JWT, téléchargez ou copiez l’ID client et le secret client.  + La console affiche le secret du client une seule fois.  Copiez-le en toute sécurité ; vous pourrez le recréer plus tard si nécessaire.
-. Si vous avez choisi l’authentification JWT, téléchargez ou copiez l’ID client et l’audience JWT.  Ces informations ne sont affichées qu'une seule fois et ne peuvent pas être récupérées ultérieurement.
+. Pour donner accès à davantage de dossiers, de projets ou de rôles, sélectionnez *Ajouter un rôle*, choisissez le dossier, le projet ou la catégorie de rôle, puis sélectionnez un rôle.
+. Si vous n’avez pas choisi d’utiliser l’authentification JWT, téléchargez ou copiez l’ID client et le secret client.
++
+La console n'affiche le secret client qu'une seule fois. Copiez-le en lieu sûr ; vous pourrez le recréer plus tard si vous le perdez.
+
+. Si vous avez choisi l'authentification JWT, téléchargez ou copiez l'ID client et l'audience JWT. La console n'affiche ces informations qu'une seule fois et ne permet pas de les récupérer ultérieurement.
 . Sélectionnez *Fermer*.
 
 
 
 
-== Afficher les membres de l'organisation
+== Ajoutez un groupe fédéré à votre organisation
 
-Pour comprendre quelles ressources et autorisations sont disponibles pour un membre, vous pouvez afficher les rôles attribués au membre à différents niveaux de la hiérarchie des ressources de votre organisation.link:task-iam-manage-roles.html["Découvrez comment utiliser les rôles pour contrôler l’accès aux ressources de la console."^]
+Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.
 
-Vous pouvez afficher les comptes d'utilisateurs et les comptes de service à partir de la page *Membres*.
-
-
-NOTE: Vous pouvez également afficher tous les membres associés à un dossier ou à un projet spécifique. link:task-iam-manage-folders-projects.html#view-associated-resources-members["Apprendre encore plus"] .
+.Avant de commencer :
+Avant d'ajouter un groupe fédéré, veuillez vous assurer des points suivants : * Vous devez avoir déjà configuré la fédération entre votre fournisseur d'identité et la console. link:concept-federation.html["Apprenez à configurer une fédération."] * Le groupe doit déjà exister dans votre fournisseur d'identité. * Vous devez connaître le nom exact du groupe dans votre fournisseur d'identité. * Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Membres*.
+. Sélectionnez *Ajouter un membre*.
+. Pour *Type de membre*, sélectionnez *Groupe fédéré*.
+. Sélectionnez la fédération dont le groupe est membre.
+. Pour *Nom du groupe*, veuillez saisir le nom exact du groupe dans votre fournisseur d'identité.
+. Utilisez la section *Sélectionnez une organisation, un dossier ou un projet* pour choisir le niveau de votre hiérarchie de ressources pour lequel le membre doit disposer d'autorisations.
 +
-Le tableau *Membres* répertorie les membres de votre organisation.
+Notez ce qui suit :
 
-. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
-
-
-
-
-== Supprimer un membre de votre organisation
-
-Vous devrez peut-être supprimer un membre de votre organisation, par exemple s'il quitte votre entreprise.
-
-Lorsque vous supprimez un membre, le système révoque ses autorisations mais conserve ses comptes Console et NetApp Support Site.
-
-.Étapes
-. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Supprimer l'utilisateur*.
-. Confirmez que vous souhaitez supprimer le membre de votre organisation.
-
-
-
-
-== Recréer les informations d'identification pour un compte de service
-
-Créez de nouvelles informations d’identification si vous les perdez ou si vous devez les mettre à jour.
-
-Lorsque vous recréez les informations d’identification, vous supprimez les informations d’identification existantes pour le compte de service et en créez de nouvelles. Vous ne pouvez pas utiliser les informations d'identification précédentes.
-
-.Étapes
-. Sélectionnez *Administration > Identité et accès*.
-. Sélectionnez *Membres*.
-. Dans le tableau *Membres*, accédez à un compte de service, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Recréer les secrets*.
-. Sélectionnez *Recréer*.
-. Téléchargez ou copiez l'ID client et le secret client. + La console n'affiche le secret client qu'une seule fois. Copiez-le ou téléchargez-le et stockez-le en toute sécurité.
-
-
-
-
-== Gérer l'authentification multifacteur (MFA) d'un utilisateur
-
-Si un utilisateur perd l’accès à son périphérique MFA, vous pouvez supprimer ou désactiver sa configuration MFA.
-
-Les utilisateurs doivent configurer à nouveau l'authentification multifacteur (MFA) lorsqu'ils se connectent après sa suppression. Si l'utilisateur n'a perdu l'accès à son appareil MFA que temporairement, il peut utiliser le code de récupération qu'il a enregistré lors de la configuration de MFA pour se connecter.
-
-S'ils ne disposent pas de leur code de récupération, désactivez temporairement MFA pour autoriser la connexion. Lorsque vous désactivez l'authentification multifacteur pour un utilisateur, elle est désactivée pendant huit heures seulement, puis réactivée automatiquement. L'utilisateur est autorisé à se connecter une fois pendant cette période sans MFA. Après les huit heures, l’utilisateur doit utiliser MFA pour se connecter.
-
-
-NOTE: Pour gérer l'authentification multifacteur d'un utilisateur, vous devez disposer d'une adresse e-mail dans le même domaine que l'utilisateur concerné.
-
-.Étapes
-. Sélectionnez *Administration > Identité et accès*.
-. Sélectionnez *Membres*.
 +
-Le tableau *Membres* répertorie les membres de votre organisation.
+** Vous ne pouvez sélectionner que les dossiers et les projets pour lesquels vous disposez d'autorisations.
+** La sélection d’une organisation ou d’un dossier accorde au membre des autorisations sur tout son contenu.
+** Vous ne pouvez attribuer le rôle *Administrateur de l'organisation* qu'au niveau de l'organisation.
 
-. Depuis la page *Membres*, accédez à un membre dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Gérer l'authentification multifacteur*.
-. Choisissez de supprimer ou de désactiver la configuration MFA de l'utilisateur.
+
+. Sélectionnez une *Catégorie*, puis un *Rôle* qui confère au membre les autorisations nécessaires pour accéder aux ressources de l'organisation, du dossier ou du projet que vous avez sélectionné.
++
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+. Pour donner accès à davantage de dossiers, de projets ou de rôles, sélectionnez *Ajouter un rôle*, choisissez le dossier, le projet ou la catégorie de rôle, puis sélectionnez un rôle.
+
+
+
+
+== Informations connexes
+
+* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès dans la NetApp Console"]
+* link:task-iam-get-started.html["Démarrer avec l'identité et l'accès"]
+* link:reference-iam-predefined-roles.html["Rôles d'accès à la NetApp Console"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["En savoir plus sur l'API pour l'identité et l'accès"^]
 

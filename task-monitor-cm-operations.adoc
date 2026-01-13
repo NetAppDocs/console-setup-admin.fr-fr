@@ -44,9 +44,11 @@ Le tableau met en évidence les fonctionnalités de la page Audit et du Centre d
 
 == Auditer l'activité des utilisateurs à partir de la page Audit
 
+Utilisez la page Audit pour identifier qui a effectué une action ou son statut.
+
 La page Audit affiche les actions que les utilisateurs ont effectuées pour gérer votre organisation ou votre compte.  Cela inclut des actions de gestion telles que l'association d'utilisateurs, la création de systèmes, la création d'agents, etc.
 
-Utilisez la page Audit pour identifier qui a effectué une action ou son statut.
+Vous pouvez également vérifier qui a ajouté un membre à une organisation ou qu'un projet a été supprimé avec succès.
 
 .Étapes
 . Sélectionnez *Administration > Audit*.

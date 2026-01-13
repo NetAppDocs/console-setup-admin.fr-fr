@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-iam-manage-folders-projects.html 
 keywords: folders, projects, resource hierarchy, create folders, create projects, iam, identity and access management, project id 
-summary: 'au sein de la NetApp Console, l"utilisation de la gestion des identités et des accès vous permet de représenter une hiérarchie complète des ressources à l"aide de dossiers et de projets.' 
+summary: 'Ajoutez des dossiers et des projets en fonction de la structure de votre entreprise. Une fois les dossiers et les projets créés, vous pouvez leur associer des ressources et gérer l"accès des membres à ces projets.' 
 ---
-= Organisez vos ressources de la NetApp Console avec des dossiers et des projets
+= Ajoutez des dossiers et des projets à votre organisation NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,71 @@ summary: 'au sein de la NetApp Console, l"utilisation de la gestion des identit�
 
 
 [role="lead"]
-Dans la NetApp Console, vous organisez vos ressources NetApp à l’aide de projets et de dossiers.  Un _projet_ représente un espace de travail dans la console auquel les membres de l'organisation accèdent pour gérer les _ressources_ (par exemple, un système Cloud Volumes ONTAP ).  Un _dossier_ regroupe des projets liés.  Après avoir organisé vos ressources en dossiers et projets, vous pouvez accorder un accès granulaire aux ressources en fournissant aux membres de l’organisation des autorisations sur des dossiers et des projets spécifiques.
+Ajoutez des dossiers et des projets en fonction de la structure de votre entreprise. Une fois les dossiers et les projets créés, vous pouvez leur associer des ressources et gérer l'accès des membres à ces projets.
+
+La console crée automatiquement un projet pour vous lorsque vous créez une nouvelle organisation. La plupart des organisations ont besoin de gérer plusieurs projets, ainsi que de dossiers pour bien les organiser. link:concept-identity-and-access-management.html["Découvrez la hiérarchie des ressources dans la NetApp Console."].
+
+
+
+== Utiliser des dossiers et des projets pour organiser les ressources
+
+Dans NetApp Console, une organisation contient des dossiers et des projets qui vous aident à organiser vos ressources. Les dossiers vous permettent de regrouper les projets connexes, et les projets vous aident à gérer les ressources et l'accès des membres.
+
+
+
+=== Dossiers
+
+Les dossiers vous aident à organiser les projets connexes. Vous pouvez créer des dossiers imbriqués pour représenter les différents niveaux de la structure de votre organisation. Par exemple, vous pouvez créer un dossier principal pour chaque unité commerciale, puis créer des sous-dossiers pour les différentes équipes au sein de cette unité commerciale. Vous créez ensuite des projets dans des dossiers.
+
+Les dossiers permettent également de gérer plus efficacement l'accès des membres grâce à l'héritage des rôles. Lorsque vous attribuez des rôles aux membres au niveau du dossier, ils héritent des autorisations pour tous les sous-projets et dossiers.
+
+
+NOTE: Les dossiers sont un outil d'organisation et ne sont pas visibles pour les membres qui ne disposent pas des autorisations IAM telles que les rôles d'administrateur d'organisation, d'administrateur de dossier ou de projet, ou de super administrateur. Les membres accèdent aux projets, pas aux dossiers.
+
+Les administrateurs de l'organisation peuvent déléguer les responsabilités administratives en créant des dossiers. Après avoir créé un dossier, un administrateur de l'organisation peut attribuer à un membre les rôles d'administrateur de dossier ou de projet pour des dossiers spécifiques. Ces membres peuvent alors gérer tous les projets contenus dans ce dossier sans avoir accès à l'ensemble de l'organisation.
+
+Les dossiers peuvent contenir d'autres dossiers ou projets comme enfants, mais ils ne peuvent pas avoir de ressources directement associées à eux. Les ressources doivent être associées à un projet.
+
+[[associate-resource-folder]]
+[NOTE]
+====
+.Quand associer une ressource à un dossier
+Un _administrateur d'organisation_ peut associer une ressource à un dossier afin qu'un _administrateur de dossier ou de projet_ puisse la lier aux projets appropriés dans le dossier.
+
+Par exemple, disons que vous avez un dossier qui contient deux projets :
+
+image:diagram-iam-resource-association-folder-1.png["Un diagramme qui montre un dossier et deux projets qui résident dans le dossier : projet A et projet B."]
+
+L'administrateur de l'organisation peut associer une ressource au dossier :
+
+image:diagram-iam-resource-association-folder-2.png["Un diagramme montrant un dossier avec une ressource associée à ce dossier. Deux projets se trouvent dans le dossier : le projet A et le projet B."]
+
+Associer une ressource à un dossier ne la rend pas accessible à tous les projets ; seul l'administrateur du dossier ou du projet peut la voir.  L'administrateur du dossier ou du projet décide quels projets peuvent y accéder et associe la ressource aux projets appropriés.
+
+Dans cet exemple, l’administrateur associe la ressource au projet A :
+
+image:diagram-iam-resource-association-folder-3.png["Un diagramme montrant un dossier contenant deux projets : le projet A et le projet B. Une ressource associée au projet A."]
+
+Les membres disposant d’autorisations pour le projet A peuvent désormais accéder à la ressource.
+
+====
+
+
+=== Projets
+
+Associer les ressources aux projets pour permettre aux membres de les gérer. Les ressources doivent être associées à un projet pour la gestion et l'accès des utilisateurs.
+
+Une organisation peut avoir un ou plusieurs projets. Un projet peut se trouver directement sous l'organisation ou dans un dossier. Si un agent est utilisé pour découvrir des ressources au sein d'un projet, vous devez également associer cet agent à ce projet.
+
+Les utilisateurs naviguent entre les projets qui leur sont assignés sur la page *Systèmes* pour gérer les ressources associées à chaque projet.
 
 
 
 == Ajouter un dossier ou un projet
 
-Lorsque vous créez votre organisation, elle comprend un seul projet. Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets connexes.
+Ajoutez des projets pour gérer les ressources et des dossiers pour regrouper les projets associés. Lorsque vous créez une nouvelle organisation, la console inclut un projet.
 
-Vous pouvez créer jusqu'à sept niveaux de dossiers et de projets dans la structure des ressources de votre organisation.  Créez des dossiers imbriqués pour construire une structure hiérarchique pour votre organisation.
+Vous pouvez créer jusqu'à sept niveaux de dossiers et de projets dans la structure des ressources de votre organisation. Créez des dossiers imbriqués pour organiser vos ressources selon vos besoins.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
@@ -31,18 +87,16 @@ Vous pouvez créer jusqu'à sept niveaux de dossiers et de projets dans la struc
 . Sélectionnez *Dossier* ou *Projet*.
 . Saisissez les détails du dossier ou du projet :
 +
-** *Nom et emplacement* : saisissez un nom et choisissez un emplacement dans la hiérarchie pour le dossier ou le projet. Placez un dossier ou un projet sous l'organisation ou à l'intérieur d'un autre dossier.
-** *Ressources* : Sélectionnez les ressources que vous souhaitez associer à ce dossier ou projet.
-+
-Vous pouvez sélectionner des ressources associées au dossier parent ou au projet.
+** *Nom et emplacement* : Saisissez un nom et choisissez un emplacement pour le dossier ou le projet. Vous pouvez placer des dossiers ou des projets sous l'organisation ou dans un autre dossier.
+** *Ressources* : Sélectionnez les ressources que vous souhaitez associer à ce dossier ou à ce projet. Si vous n'avez pas encore ajouté de systèmes de stockage à la console, vous pouvez effectuer cette étape ultérieurement.
+
 
 +
-link:concept-identity-and-access-management.html#associate-resource-folder["Apprenez quand associer une ressource à un dossier"] .
 
-** *Accès* : Affichez les membres qui auront accès au dossier ou au projet en fonction des autorisations existantes déjà définies dans votre hiérarchie de ressources.
+NOTE: Les membres ne peuvent accéder aux ressources d'un dossier que lorsque ces ressources sont affectées à un projet. Utilisez des dossiers pour stocker temporairement les ressources en attendant de créer les projets nécessaires. Cela peut aider l'administrateur de l'organisation à déléguer l'allocation des ressources à un administrateur de dossier ou de projet, qui affectera ensuite les ressources aux projets au sein du dossier.
+
 +
-Sélectionnez *Ajouter un membre* pour lui attribuer un accès et un rôle.
-
+** *Accès* : Sélectionnez *Ajouter un membre* pour attribuer un accès et un rôle. Vous pouvez ajouter ou supprimer des membres du projet ou du dossier à tout moment.
 +
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
 
@@ -55,7 +109,7 @@ link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès
 
 == Renommer un dossier ou un projet
 
-Si nécessaire, vous pouvez modifier le nom de vos dossiers et projets.
+Renommez un dossier ou un projet selon vos besoins. Le changement de nom n'affecte pas les ressources associées ni l'accès des membres.
 
 .Étapes
 . Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône avec trois points"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
@@ -66,7 +120,7 @@ Si nécessaire, vous pouvez modifier le nom de vos dossiers et projets.
 
 == Supprimer un dossier ou un projet
 
-Supprimez les dossiers et les projets dont vous n’avez plus besoin.
+Supprimez les dossiers et les projets dont vous n'avez plus besoin, par exemple après une restructuration d'équipe ou la fin d'un projet.
 
 Avant de supprimer un dossier ou un projet, assurez-vous qu'il ne contient aucune ressource. <<modify-resources,Apprenez comment supprimer des ressources>>.
 
@@ -100,10 +154,7 @@ image:screenshot-iam-allocated-resources.png["Une capture d'écran de la page Mo
 
 == Modifier les ressources associées à un dossier ou à un projet
 
-Les membres disposant d’autorisations pour un dossier ou un projet peuvent accéder à ses ressources associées.
-
-.Avant de commencer
-link:concept-identity-and-access-management.html#associate-resource-folder["Apprenez quand associer une ressource à un dossier"] .
+Vous pouvez modifier les ressources associées à un dossier ou à un projet en fonction de l'évolution des besoins de votre organisation.
 
 .Étapes
 . Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
@@ -112,7 +163,7 @@ link:concept-identity-and-access-management.html#associate-resource-folder["Appr
 Dans le tableau, la colonne *Statut* identifie les ressources associées au dossier ou au projet.
 
 . Sélectionnez les ressources que vous souhaitez associer ou dissocier.
-. En fonction des ressources que vous avez sélectionnées, sélectionnez *Associer au projet* ou *Dissocier du projet*.
+. En fonction des ressources que vous avez sélectionnées, choisissez *S'associer au projet* ou *Se dissocier du projet*.
 +
 image:screenshot-iam-associate-resources.png["Une capture d'écran de la page Modifier le projet qui montre l'option Associer des ressources disponible après avoir sélectionné des ressources qui ne sont pas actuellement associées."]
 
@@ -123,7 +174,13 @@ image:screenshot-iam-associate-resources.png["Une capture d'écran de la page Mo
 
 == Afficher les membres associés à un dossier ou à un projet
 
-* Sélectionnez *Accès* pour afficher les membres qui ont accès au dossier ou au projet.
+Vous pouvez consulter les membres associés à un dossier ou à un projet depuis la page *Organisation*.
+
+.Étapes
+. Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.
+. Sur la page *Modifier*, sélectionnez *Accès* pour afficher la liste des membres qui ont accès au dossier ou au projet sélectionné.
++
+** Sélectionnez *Accès* pour afficher les membres qui ont accès au dossier ou au projet.
 +
 image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier le projet qui montre les membres qui ont accès au projet."]
 
@@ -131,13 +188,13 @@ image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier
 
 
 
+
+
 == Modifier l'accès des membres à un dossier ou à un projet
 
-Modifier les droits d'accès des membres pour contrôler l'accès aux ressources.
+Modifier les droits d'accès des membres pour contrôler l'accès aux ressources. N'oubliez pas que les rôles attribués au niveau du dossier sont hérités par tous les projets et dossiers enfants.
 
-Vous ne pouvez pas modifier l'accès des membres aux niveaux inférieurs si celui-ci est hérité d'un niveau hiérarchique supérieur. Mettez à jour les autorisations des membres au niveau hiérarchique supérieur pour modifier l’accès.  Vous pouvez également : link:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"].
-
-link:concept-identity-and-access-management.html#role-inheritance["En savoir plus sur l'héritage des rôles"] .
+Vous ne pouvez pas modifier les droits d'accès des membres aux niveaux inférieurs s'ils sont hérités du niveau du dossier ou de l'organisation. Modifiez les autorisations du membre au niveau hiérarchique supérieur pour changer son accès. Vous pouvez également : link:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"].
 
 .Étapes
 . Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.

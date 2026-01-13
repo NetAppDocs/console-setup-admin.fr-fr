@@ -16,7 +16,7 @@ summary: 'Pour commencer à gérer les identités et les accès dans NetApp Cons
 [role="lead"]
 Lorsque vous vous inscrivez à la NetApp Console, vous êtes invité à créer une nouvelle organisation.  L'organisation comprend un membre (un administrateur d'organisation) et un projet par défaut.  Pour configurer la gestion des identités et des accès (IAM) afin de répondre aux besoins de votre entreprise, vous devrez personnaliser la hiérarchie de votre organisation, ajouter des membres supplémentaires, ajouter ou découvrir des ressources et associer ces ressources à l'ensemble de votre hiérarchie.
 
-Vous devez disposer des autorisations *Administrateur d'organisation* pour administrer l'identité et l'accès de l'ensemble de votre organisation.  Si vous disposez des autorisations *Administrateur de dossier ou de projet*, vous ne pouvez administrer que les dossiers et les projets pour lesquels vous disposez des autorisations.
+Vous avez besoin des autorisations d'*administrateur d'organisation* ou de *super administrateur* pour gérer l'identité et l'accès de votre organisation. Avec les autorisations d'*administrateur de dossier ou de projet*, vous ne pouvez gérer que les dossiers et les projets auxquels vous avez accès.
 
 Suivez ces étapes pour créer une nouvelle organisation.  L'ordre peut varier en fonction des besoins de votre organisation.
 
@@ -29,7 +29,7 @@ link:task-iam-manage-folders-projects.html["Apprenez à organiser vos ressources
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Membres associés à votre organisation
 [role="quick-margin-para"]
-Liez les comptes utilisateurs à votre organisation et attribuez des autorisations.  Vous avez également la possibilité d’ajouter des comptes de service à votre organisation.
+Une fois que les utilisateurs se sont inscrits à NetApp Console, vous devez les ajouter explicitement à votre organisation Console. Vous avez également la possibilité d'ajouter des comptes de service à votre organisation.
 
 [role="quick-margin-para"]
 link:task-iam-manage-members-permissions.html["Apprenez à gérer les membres et leurs autorisations"] .

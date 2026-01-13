@@ -17,9 +17,6 @@ summary: La maintenance du système d’exploitation sur l’hôte de l’agent 
 La maintenance du système d'exploitation sur l'hôte de l'agent de console est votre responsabilité (celle du client).  Par exemple, vous (le client) devez appliquer les mises à jour de sécurité au système d'exploitation sur l'hôte de l'agent en suivant les procédures standard de votre entreprise pour la distribution du système d'exploitation.
 
 
-TIP: Si vous avez déjà un agent, vous devez en être conscient.link:reference-agent-operating-system-changes.html["modifications apportées aux systèmes d'exploitation Linux pris en charge"] .
-
-
 
 == Correctifs du système d'exploitation et l'agent
 

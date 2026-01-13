@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-iam-manage-resources.html 
 keywords: resource, hierarchy, association, access, resource permissions, resource hierarchy, iam, identity and access management 
-summary: Gérez la hiérarchie des ressources de votre organisation en associant des ressources à des projets et des dossiers spécifiques. 
+summary: 'Contrôlez l"accès des utilisateurs aux ressources en les ajoutant aux projets et aux dossiers de votre organisation NetApp Console . Accorder l"accès aux utilisateurs au niveau du projet.' 
 ---
-= Gérer la hiérarchie des ressources dans votre organisation NetApp Console
+= Ajoutez des ressources aux dossiers et aux projets dans la NetApp Console.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,22 @@ summary: Gérez la hiérarchie des ressources de votre organisation en associant
 
 
 [role="lead"]
-Lorsque vous associez un membre à votre organisation, vous fournissez des autorisations au niveau de l'organisation, du dossier ou du projet.  Pour garantir que ces membres disposent des autorisations nécessaires pour accéder aux bonnes ressources, vous devez gérer la hiérarchie des ressources de votre organisation en associant les ressources à des projets et des dossiers spécifiques.  Une _ressource_ est un système de stockage ou un agent de console que la console gère déjà ou dont elle a connaissance.
+Contrôlez l'accès des utilisateurs aux ressources en les ajoutant aux projets et aux dossiers de votre organisation NetApp Console . Accorder l'accès aux utilisateurs au niveau du projet.
+
+Une _ressource_ est une entité dont la console a connaissance, telle qu'une ressource de stockage, un agent de console ou une charge de travail de sauvegarde et de restauration.
+
+Vous pouvez consulter et gérer les ressources depuis la page *Ressources* de la console.
+
+
+
+== types de ressources de la console
+
+Vous pouvez associer plusieurs types de ressources aux projets de votre organisation NetApp Console :
+
+Ressources de stockage:: Les ressources de stockage sont le type de ressource le plus courant dans votre organisation et comprennent à la fois les systèmes de stockage sur site et les systèmes de stockage dans le cloud. Lorsque vous ajoutez un système de stockage à la console, vous pouvez l'ajouter à un dossier ou à un projet. En attendant, la console le considère comme non découvert et ne l'affiche pas sur la page *Ressources*.
+Agents de console:: Si vous avez utilisé un agent Console pour découvrir les systèmes de stockage, ajoutez cet agent au même dossier ou projet. Cela permet aux utilisateurs d'effectuer des fonctions activées par l'agent, telles que les services de données ou la gestion du stockage native de la console. Vous pouvez ajouter des agents à des dossiers ou à des projets depuis la page *Agents* de la Console. link:task-iam-associate-agents.html["Découvrez comment associer un agent de console à un dossier ou à un projet"].
+Abonnements Keystone:: Si votre organisation dispose d'abonnements Keystone , vous pouvez les consulter sur la page *Ressources*. Vous pouvez associer des abonnements Keystone à des dossiers ou des projets afin de donner accès aux membres qui disposent des autorisations nécessaires pour ces dossiers ou projets.
+
 
 
 
@@ -23,7 +38,7 @@ Lorsque vous associez un membre à votre organisation, vous fournissez des autor
 Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Le système détecte les ressources de stockage et les marque comme non découvertes jusqu'à ce que vous les ajoutiez à la console.
 
 
-NOTE: La page Ressources exclut les ressources Amazon FSx for NetApp ONTAP car les utilisateurs ne peuvent pas les associer à un rôle.  Consultez-les sur la page *Systèmes* ou depuis la section Charges de travail.
+NOTE: La console exclut les ressources Amazon FSx for NetApp ONTAP de la page Ressources car les utilisateurs ne peuvent pas les associer à un rôle. Vous pouvez consulter ces ressources sur la page *Systèmes* ou depuis la section Charges de travail.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
@@ -44,10 +59,7 @@ NOTE: La page Ressources exclut les ressources Amazon FSx for NetApp ONTAP car l
 
 == Associer une ressource à des dossiers et des projets
 
-Associez une ressource à un dossier ou à un projet pour la rendre disponible.
-
-.Avant de commencer
-Vous devez comprendre comment fonctionne l’association de ressources. link:concept-identity-and-access-management.html#resources["En savoir plus sur les ressources, notamment quand associer une ressource à un dossier"] .
+Associez une ressource à un dossier ou à un projet pour la rendre accessible aux membres disposant des autorisations nécessaires pour ce dossier ou ce projet.
 
 .Étapes
 . Depuis la page *Ressources*, accédez à une ressource dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Associer à des dossiers ou des projets*.
@@ -59,7 +71,7 @@ Notez que vous ne pouvez sélectionner que les dossiers et les projets pour lesq
 . Sélectionnez *Associer les ressources*.
 +
 ** Si vous avez associé la ressource à des projets, les membres disposant d’autorisations pour ces projets ont désormais la possibilité d’accéder à la ressource depuis la console.
-** Si vous avez associé la ressource à un dossier, un _administrateur de dossier ou de projet_ peut désormais accéder à la ressource et l'associer à un projet dans le dossier. link:concept-identity-and-access-management.html#resources["En savoir plus sur l'association d'une ressource à un dossier"] .
+** Si vous avez associé la ressource à un dossier, un _administrateur de dossier ou de projet_ peut désormais accéder à la ressource et l'associer à un projet dans le dossier. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
 
 
 
@@ -93,15 +105,15 @@ NOTE: Pour voir quels membres de l'organisation ont accès à la ressource,link:
 
 == Supprimer une ressource d'un dossier ou d'un projet
 
-Pour supprimer une ressource d’un dossier ou d’un projet, vous devez supprimer l’association entre le dossier ou le projet et la ressource. Lorsque vous supprimez l’association, cela empêche les membres de gérer la ressource dans le dossier ou le projet.
+Pour supprimer une ressource d'un dossier ou d'un projet, supprimez son association. Cela empêche les membres de gérer la ressource dans ce dossier ou ce projet.
 
 
 NOTE: Pour supprimer une ressource détectée de l'ensemble de l'organisation, accédez à la page *Systèmes* et supprimez le système.
 
 .Étapes
 . Depuis la page *Ressources*, accédez à une ressource dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher les détails*.
-. Pour le dossier ou le projet pour lequel vous souhaitez supprimer la ressource, sélectionnezimage:icon-delete.png["Une icône d'une poubelle"]
-. Confirmez que vous souhaitez supprimer l'association en sélectionnant *Supprimer*.
+. Pour supprimer une ressource d'un dossier ou d'un projet, sélectionnez image:icon-delete.png["Une icône d'une poubelle"] à côté du dossier ou du projet.
+. Sélectionnez *Supprimer* pour supprimer l'association.
 
 
 

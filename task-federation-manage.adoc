@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-federation-manage.html 
-keywords: federation, BlueXP, identity provider, IdP, single sign-on, SSO, verified domain, credentials, certificate, client secret, update, manage federations, security, compliance, user access, productivity, account management, authentication, access control, business continuity 
+keywords: federation, NetApp Console, identity provider, IdP, single sign-on, SSO, verified domain, credentials, certificate, client secret, update, manage federations, security, compliance, user access, productivity, account management, authentication, access control, business continuity 
 summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer dans la NetApp Console.  Vous pouvez visualiser l"état de la connexion, l"activer ou la désactiver selon vos besoins.' 
 ---
 = Gérer les fédérations dans la NetApp Console
@@ -16,17 +16,18 @@ summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer d
 [role="lead"]
 Vous pouvez gérer votre fédération dans la NetApp Console.  Vous pouvez le désactiver, mettre à jour les informations d'identification expirées, ainsi que le désactiver si vous n'en avez plus besoin.
 
-
-NOTE: Si vous avez configuré la fédération à l’aide de NetApp Cloud Central, importez-la via la page *Fédération* pour la gérer dans la console.link:task-federation-import.html["Apprenez à importer votre fédération"]
-
-Vous pouvez également ajouter un domaine vérifié à une fédération existante, ce qui vous permet d'utiliser plusieurs domaines pour votre connexion fédérée.
-
-
-NOTE: Les événements de gestion de fédération tels que l'activation, la désactivation et la mise à jour des fédérations s'affichent dans la chronologie.link:task-monitor-cm-operations.html["En savoir plus sur les opérations de surveillance dans la NetApp Console."]
-
 .Rôles requis
 Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
+Vous pouvez également ajouter un domaine vérifié supplémentaire à une fédération existante, ce qui vous permet d'utiliser plusieurs domaines pour votre connexion fédérée.
+
+[NOTE]
+====
+* Si vous avez configuré la fédération à l’aide de NetApp Cloud Central, importez-la via la page *Fédération* pour la gérer dans la console.link:task-federation-import.html["Apprenez à importer votre fédération"]
+* Vous pouvez consulter les événements de gestion des fédérations, tels que l'activation, la désactivation et la mise à jour des fédérations, sur la page Audit. link:task-monitor-cm-operations.html["En savoir plus sur les opérations de surveillance dans la NetApp Console."]
+
+
+====
 
 
 == Activer une fédération

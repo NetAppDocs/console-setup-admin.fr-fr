@@ -14,13 +14,9 @@ summary: Si les membres de votre organisation doivent utiliser un agent de conso
 
 
 [role="lead"]
-Lorsqu'un _administrateur d'organisation_ crée un agent de console, l'agent de console est automatiquement associé au projet actuellement sélectionné au sein de l'organisation.  Bien qu'une personne disposant du rôle _Administrateur de l'organisation_ puisse accéder à cet agent de console depuis n'importe où dans l'organisation.  Les autres membres de votre organisation ne peuvent accéder à cet agent de console qu’à partir du projet dans lequel il a été créé, sauf si vous associez cet agent de console à d’autres projets.
+Associez les agents de la console à des projets spécifiques pour permettre la gestion des ressources et l'accès aux services de données. Pour que l'accès par l'équipe soit possible, les ressources découvertes via un agent de console doivent être associées à la fois à la ressource et à l'agent, et appartenir aux mêmes projets respectifs.
 
-.Avant de commencer
-Découvrez comment fonctionne l’association d’agents de console. link:concept-identity-and-access-management.html#associate-agents["En savoir plus sur l'utilisation de l'agent de console avec Identity and Access"] .
-
-.À propos de cette tâche
-Un _administrateur de dossier ou de projet_ peut afficher tous les agents de la console sur la page *Agent* mais ne peut associer les agents de la console qu'aux dossiers et aux projets pour lesquels il dispose d'autorisations. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
+Les super administrateurs et les administrateurs d'organisation peuvent créer des agents et associer n'importe quel agent à n'importe quel projet ou dossier. Les administrateurs de dossiers ou de projets ne peuvent associer des agents existants qu'aux dossiers et projets pour lesquels ils disposent des autorisations nécessaires. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"].
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès* > *Agents*.

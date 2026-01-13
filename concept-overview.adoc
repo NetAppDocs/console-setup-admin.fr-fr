@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-overview.html 
 keywords: overview, concepts, features, use case, cloud manager, bluexp, how bluexp works, supported cloud providers, cloud providers, hyperscalers, aws, google, how NetApp Console works 
-summary: 'La NetApp Console fournit une gestion centralisée des services de stockage et de données NetApp dans les environnements locaux et cloud à l"échelle de l"entreprise.' 
+summary: La console unifie la gestion et la protection du stockage sur un multicloud hybride avec des services de données intégrés pour protéger et optimiser les données. 
 ---
 = En savoir plus sur la NetApp Console
 :hardbreaks:
@@ -14,25 +14,19 @@ summary: 'La NetApp Console fournit une gestion centralisée des services de sto
 
 
 [role="lead"]
-La NetApp Console offre une gestion centralisée du stockage NetApp et des NetApp Data Services dans les environnements locaux et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
-
-Il s'agit d'une plate-forme disponible en tant que service (SaaS) qui fournit la gestion du stockage, la mobilité des données, la protection des données, ainsi que l'analyse et le contrôle des données.  Les capacités de gestion sont fournies via une console Web et des API.
-
-
-
-== Caractéristiques
-
 La console unifie la gestion et la protection du stockage sur un multicloud hybride avec des services de données intégrés pour protéger et optimiser les données.
 
+Elle est disponible sous forme de plateforme de service (SaaS) ou en option auto-hébergée que vous pouvez installer dans votre cloud souverain. Il assure la gestion du stockage, la mobilité des données, la protection des données, ainsi que l'analyse et le contrôle des données. Les fonctionnalités de gestion sont assurées par une console web et des API.
 
 
-=== Gestion centralisée du stockage
+
+== Gestion centralisée du stockage
 
 Découvrez, déployez et gérez le stockage cloud et sur site avec la console.
 
 
 
-==== Stockage cloud et sur site pris en charge
+=== Stockage cloud et sur site pris en charge
 
 Vous pouvez gérer les types de stockage suivants depuis la console :
 
@@ -68,15 +62,15 @@ Stockage d'objets dans le cloud::
 
 
 
-==== Gestion du stockage
+=== Gestion du stockage
 
 Dans la console, les _systèmes_ représentent le stockage découvert ou déployé.  Vous pouvez sélectionner un _système_ pour l'intégrer aux services de données NetApp ou gérer le stockage, comme l'ajout de volumes.
 
-image:screenshot-canvas.png["Une capture d'écran de la console qui montre plusieurs systèmes, dont l'un est sélectionné et montre la possibilité d'activer les services de données NetApp ou de sélectionner *Entrer le système* pour gérer le stockage."]
+image:screenshot-canvas.png["Capture d'écran de la console montrant plusieurs systèmes. L'une des options est sélectionnée et affiche la possibilité d'activer les services de données NetApp ou de sélectionner *Accéder au système* pour gérer le stockage."]
 
 
 
-=== Services de données intégrés et gestion du stockage pour protéger, sécuriser et optimiser les données
+== Services de données intégrés et gestion du stockage pour protéger, sécuriser et optimiser les données
 
 La console fournit des services de données pour sécuriser et maintenir la disponibilité du stockage.
 
@@ -147,11 +141,11 @@ link:concept-agents.html["En savoir plus sur les agents de console"] .
 
 
 
-=== Modes de déploiement
+=== Déploiement SaaS versus cloud souverain
 
-NetApp propose deux modes de déploiement pour la NetApp Console: le _mode standard_ utilise une couche de logiciel en tant que service (SaaS) pour une fonctionnalité complète, tandis que le _mode restreint_ limite la connectivité sortante.
+Vous pouvez commencer à utiliser NetApp Console en vous inscrivant à l'offre SaaS ou en la déployant dans votre cloud souverain. Lorsque vous déployez NetApp Console dans un cloud souverain, NetApp limite la connectivité sortante afin de répondre aux exigences de sécurité et de conformité de votre organisation. Toutes les fonctionnalités et tous les services ne sont pas disponibles lorsque la console est déployée dans un cloud souverain.
 
-NetApp continue de proposer BlueXP pour les sites qui n’ont pas besoin de connectivité sortante.  BlueXP est disponible en mode privé uniquement.link:task-quick-start-private-mode.html["Découvrez BlueXP (mode privé) pour les sites sans connexion Internet."]
+NetApp continue de proposer BlueXP pour les sites qui ne souhaitent aucune connectivité sortante. BlueXP peut être installé sur votre réseau sans connectivité sortante. link:task-quick-start-private-mode.html["Découvrez BlueXP (mode privé) pour les sites sans connexion Internet."]
 
 link:concept-modes.html["En savoir plus sur les modes de déploiement"] .
 

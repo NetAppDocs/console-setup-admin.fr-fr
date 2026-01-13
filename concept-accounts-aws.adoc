@@ -24,7 +24,7 @@ Lorsque vous déployez un agent de console à partir de la console, vous devez f
 
 Lorsque la console lance l’agent de console dans AWS, elle crée un rôle IAM et un profil pour l’agent. Il attache également une politique qui fournit à l’agent de la console des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Vérifiez comment l'agent utilise les autorisations"].
 
-image:diagram_permissions_initial_aws.png["Une image conceptuelle qui montre la console déployant l’agent de console dans un compte AWS. Une politique IAM est attribuée à un rôle IAM, qui est attaché à la console."]
+image:diagram_permissions_initial_aws.png["Une image conceptuelle qui montre la console déployant l’agent de console dans un compte AWS."]
 
 Si vous ajoutez un nouveau système Cloud Volumes ONTAP , la console sélectionne ces informations d’identification AWS par défaut :
 
@@ -51,7 +51,7 @@ Consultez les sections ci-dessous pour plus de détails.
 
 Pour utiliser la console avec des comptes AWS supplémentaires, fournissez des clés AWS ou l'ARN d'un rôle dans un compte de confiance. L'image suivante montre deux comptes supplémentaires, l'un fournissant des autorisations via un rôle IAM dans un compte approuvé et l'autre via les clés AWS d'un utilisateur IAM :
 
-image:diagram_permissions_multiple_aws.png["Une image conceptuelle qui montre deux comptes supplémentaires.  Chacun dispose d’une politique IAM, l’une est attachée à l’utilisateur IAM et l’autre est attachée à un rôle IAM."]
+image:diagram_permissions_multiple_aws.png["Une image conceptuelle qui montre deux comptes supplémentaires. Chacun possède une politique IAM. L'un est associé à un utilisateur IAM et l'autre à un rôle IAM."]
 
 Vous ajoutez les informations d'identification du compte à la console en spécifiant le nom de ressource Amazon (ARN) du rôle IAM ou les clés AWS de l'utilisateur IAM.
 

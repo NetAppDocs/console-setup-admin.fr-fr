@@ -1,0 +1,32 @@
+= Agent de console 4.3.0
+:allow-uri-read: 
+
+
+
+
+=== Agent de console 4.3.0
+
+La version 4.3.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité, des corrections de bugs et les fonctionnalités suivantes :
+
+.Capacité à valider les connexions réseau des agents de la console
+Vous pouvez désormais valider les connexions réseau des agents Console connectés directement depuis la NetApp Console. Cette fonctionnalité permet de vérifier la connectivité et de résoudre les problèmes liés aux agents de la console.
+
+link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html#verify-network-access["Découvrez comment effectuer des vérifications de configuration sur les agents de la console."]
+
+
+
+=== Administration de la NetApp Console
+
+Cette version comprend les éléments suivants :
+
+.Prise en charge de la fédération lorsque la NetApp Console est en mode restreint
+Vous pouvez désormais activer la fédération pour une organisation NetApp Console en mode restreint. Cela permet aux utilisateurs de se connecter à la console en utilisant leurs identifiants d'entreprise tout en conservant les avantages de sécurité du mode restreint.
+
+.Mode lecture seule
+Vous pouvez configurer une organisation NetApp Console en mode lecture seule. En mode lecture seule, les utilisateurs peuvent consulter les ressources et les paramètres, mais ne peuvent apporter aucune modification. Un administrateur ou un super administrateur d'organisation peut activer le mode lecture seule pour une organisation. Lorsque le mode lecture seule est activé, les utilisateurs disposant de rôles d'administrateur doivent élever manuellement leurs autorisations pour effectuer les modifications nécessaires.
+
+link:https://docs.netapp.com/us-en/console-setup-admin/task-enable-read-only-mode.html["Découvrez comment activer le mode lecture seule pour une organisation Console."]
+
+link:https://docs.netapp.com/us-en/console-setup-admin/task-user-settings["Découvrez comment rehausser votre rôle lorsque votre organisation est en mode lecture seule."]

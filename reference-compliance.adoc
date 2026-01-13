@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: reference-compliance.html 
+keywords: SOC-2, compliance, netapp console compliance, console compliance, console soc-2, soc-2 report, soc 2 report 
+summary: 'Dans la console, chaque utilisateur dispose d"un profil qui contient des informations sur l"utilisateur et ses paramètres. Vous pouvez afficher et modifier les paramètres de votre profil.' 
+---
+= Conformité de sécurité pour la NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La NetApp Console est conforme à la norme SOC 2 Type II.
+
+link:https://www.netapp.com/responsibility/trust-center/compliance/soc-2/["Apprenez-en davantage sur la conformité SOC 2 de NetApp."]

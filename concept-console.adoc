@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: concept-modes.html 
+permalink: concept-console.html 
 keywords: dark site, internet, on prem, no internet, supported deployments, govcloud, government access, environments, supported environments, deployment modes, modes, private mode, restricted mode, il6, sc2s, c2s, dark site, sovereign region, saas, government region, secret region, top secret, aws secret, aws top secret, private 
-summary: 'La NetApp Console propose plusieurs _modes de déploiement_ qui vous permettent de répondre à vos exigences commerciales et de sécurité. Le _mode standard_ exploite une couche de logiciel en tant que service (SaaS) pour fournir des fonctionnalités complètes, tandis que le _mode restreint_ et le _mode privé_ sont disponibles pour les organisations qui ont des restrictions de connectivité.' 
+summary: NetApp Console propose une solution SaaS pour un accès complet aux fonctionnalités ou une option auto-hébergée pour les organisations confrontées à des restrictions de connectivité. 
 ---
-= En savoir plus sur les modes de déploiement de la NetApp Console
+= En savoir plus sur la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,13 @@ summary: 'La NetApp Console propose plusieurs _modes de déploiement_ qui vous p
 
 
 [role="lead"]
-La NetApp Console propose plusieurs _modes de déploiement_ qui vous permettent de répondre à vos exigences commerciales et de sécurité.
+NetApp Console propose une solution SaaS pour un accès complet aux fonctionnalités ou une option auto-hébergée pour les organisations confrontées à des restrictions de connectivité.
 
-* Le _mode standard_ s'appuie sur une couche de logiciel en tant que service (SaaS) pour fournir toutes les fonctionnalités.  Les utilisateurs accèdent à la console via une interface hébergée basée sur le Web
-* Le _mode restreint_ est disponible pour les organisations qui ont des restrictions de connectivité et qui souhaitent installer la NetApp Console dans leur propre cloud public.  Les utilisateurs accèdent à la console via une interface Web hébergée sur un agent de console dans leur environnement cloud.
-+
-La NetApp Console restreint le trafic, la communication et les données en mode restreint, et vous devez vous assurer que votre environnement (sur site et dans le cloud) est conforme aux réglementations requises.
+Vous pouvez utiliser NetApp Console de deux manières : soit comme une solution SaaS entièrement gérée, soit comme une solution auto-hébergée dans votre propre environnement cloud. Avec l'option SaaS, vous accédez à la console via console.netapp.com tandis que NetApp gère toute l'infrastructure, l'authentification et les mises à jour. Vous bénéficiez d'un accès complet aux fonctionnalités directement depuis votre navigateur web. Si vous choisissez l'option auto-hébergée, vous installez un agent Console dans votre environnement AWS, Azure ou Google Cloud. L'interface fonctionne en local et l'agent maintient une connectivité sortante limitée vers NetApp pour les tâches essentielles telles que l'authentification et les mises à jour.
 
+Optez pour la solution SaaS si votre organisation dispose d'une connectivité internet standard. Vous bénéficiez d'une configuration simplifiée, de mises à jour automatiques et d'un accès complet à tous les systèmes de stockage, services de données et fonctionnalités avancées de NetApp . Vous pouvez ajouter des agents directement depuis la console, et NetApp se charge de toute la maintenance.
 
+Choisissez l'option auto-hébergée si votre organisation exige des contrôles stricts en matière de connectivité, de sécurité ou de conformité, comme c'est le cas dans les secteurs gouvernementaux ou réglementés. Vous bénéficiez d'un contrôle accru et d'une meilleure isolation du réseau, mais vous ne pouvez gérer que certains systèmes de stockage NetApp et utiliser des services de données limités, certaines fonctionnalités étant indisponibles. Vous installez manuellement un agent Console et accédez à la Console directement depuis l'interface de l'agent local. Installez votre agent via votre place de marché cloud ou par installation manuelle ; l’agent communique uniquement avec NetApp en sortie, garantissant ainsi l’absence de connexions Internet entrantes.
 
 
 
