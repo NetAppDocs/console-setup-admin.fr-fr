@@ -14,7 +14,7 @@ summary: 'Il existe plusieurs manières différentes de créer un agent de conso
 
 
 [role="lead"]
-Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d'accéder directement à partir de la NetApp Console .  ---
+Il existe plusieurs manières différentes de créer un agent de console dans Google Cloud.  Le moyen le plus courant est d'accéder directement à partir de la NetApp Console .
 
 Les options d’installation suivantes sont disponibles :
 
