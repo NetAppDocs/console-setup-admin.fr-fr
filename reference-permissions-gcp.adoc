@@ -189,7 +189,6 @@ includedPermissions:
 - compute.firewalls.list
 - compute.forwardingRules.create
 - compute.forwardingRules.delete
-- compute.forwardingRules.update
 - compute.forwardingRules.get
 - compute.forwardingRules.setLabels
 - compute.globalOperations.get
@@ -291,6 +290,7 @@ includedPermissions:
 - iam.serviceAccounts.list
 - iam.serviceAccountKeys.create
 - storage.objects.get
+- storage.objects.list
 - storage.buckets.getIamPolicy
 
 
@@ -402,9 +402,6 @@ L'agent Console utilise les autorisations du rôle personnalisé pour gérer les
 
 
 | calculer.forwardingRules.get | Récupérer les détails des règles de redirection existantes. | Non | Oui | Non 
-
-
-| calculer.forwardingRules.update | Mettre à jour les règles de transfert existantes pour la gestion du trafic. | Non | Oui | Non 
 
 
 | calculer.forwardingRules.setLabels | Définir ou mettre à jour les étiquettes des règles de transfert pour l'organisation. | Non | Oui | Non 
