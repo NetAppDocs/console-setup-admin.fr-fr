@@ -21,6 +21,11 @@ link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.h
 
 Cette version comprend les éléments suivants :
 
+.Contrôle d'accès basé sur les rôles pour les groupes fédérés dans la NetApp Console
+La NetApp Console prend en charge l'attribution de rôles aux groupes fédérés (par exemple, les groupes Active Directory), permettant aux administrateurs d'automatiser l'intégration et la désintégration des utilisateurs en fonction de leur appartenance à un groupe dans le fournisseur d'identité (IdP) de l'organisation. Cette fonctionnalité réduit la charge administrative et garantit un accès sécurisé et cohérent en mettant à jour instantanément l'accès à la console lorsque les appartenances aux groupes changent.
+
+link:https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html#add-a-federated-group-to-your-organization["Découvrez comment donner accès à un groupe fédéré à votre organisation."]
+
 .Prise en charge de la fédération lorsque la NetApp Console est en mode restreint
 Vous pouvez désormais activer la fédération pour une organisation NetApp Console en mode restreint. Cela permet aux utilisateurs de se connecter à la console en utilisant leurs identifiants d'entreprise tout en conservant les avantages de sécurité du mode restreint.
 

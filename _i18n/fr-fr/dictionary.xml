@@ -5744,9 +5744,7 @@
   <block id="1065e278b83db0baa7239d1c2c89e558" category="paragraph">La console n'affiche le secret client qu'une seule fois. Copiez-le en lieu sûr ; vous pourrez le recréer plus tard si vous le perdez.</block>
   <block id="6c07155a6c5b387b3649e57518b2acbf" category="list-text">Si vous avez choisi l'authentification JWT, téléchargez ou copiez l'ID client et l'audience JWT. La console n'affiche ces informations qu'une seule fois et ne permet pas de les récupérer ultérieurement.</block>
   <block id="1e5bd0e3b2f8efdd44ff92b7d355c374" category="section-title">Ajoutez un groupe fédéré à votre organisation</block>
-  <block id="c4d8a0f38fcfd51b64b45642a963ccd2" category="paragraph">Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.</block>
   <block id="1f87469083830ec60b59de86a65908a9" category="inline-link-macro">Apprenez à configurer une fédération.</block>
-  <block id="44c50d77ce337726b2c52859655871e2" category="paragraph">Avant d'ajouter un groupe fédéré, veuillez vous assurer des points suivants : * Vous devez avoir déjà configuré la fédération entre votre fournisseur d'identité et la console. <block ref="562353f9c9a6ec120d22140ce361907b" category="inline-link-macro-rx"></block> * Le groupe doit déjà exister dans votre fournisseur d'identité. * Vous devez connaître le nom exact du groupe dans votre fournisseur d'identité. * Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console.</block>
   <block id="16a2c505069eacd418dca553f5b68d99" category="list-text">Pour *Type de membre*, sélectionnez *Groupe fédéré*.</block>
   <block id="00cfd65508d24955faa8b609b29efc15" category="list-text">Sélectionnez la fédération dont le groupe est membre.</block>
   <block id="be1ae879869c7f401beda2410fc2ef42" category="list-text">Pour *Nom du groupe*, veuillez saisir le nom exact du groupe dans votre fournisseur d'identité.</block>
@@ -5903,9 +5901,13 @@
   <block id="4c61619ce49044f354b1f5cc38707fd2" category="sidebar">Autorisations et règles de sécurité de l'agent AWS</block>
   <block id="20ec4216ad7aef42619add3b96b89c33" category="sidebar">Autorisations Azure et règles de sécurité requises</block>
   <block id="347863a199ea8f4c7e1e9540d041ca12" category="sidebar">Autorisations Google Cloud et règles de pare-feu requises</block>
-  <block id="772b95b1a689cd9ca0f7d8935114e25c" category="paragraph-title">Autorisations supplémentaires de Google Cloud pour Cloud Volumes ONTAP</block>
-  <block id="335ea2f40a7e49b48a24b0867a975d2b" category="paragraph">Pour prendre en charge la gestion de Cloud Volumes ONTAP dans Google Cloud, l'agent de la console nécessite désormais une autorisation supplémentaire. L'autorisation suivante a été ajoutée au compte de service utilisé par l'agent Console : compute.forwardingRules.update</block>
-  <block id="b4c9682d1423fe286221a4951d5900b8" category="paragraph"><block ref="b4c9682d1423fe286221a4951d5900b8" category="inline-link-macro-rx"></block></block>
-  <block id="b18fad63d8ccb120bf7c88b5cde19431" category="cell">calculer.forwardingRules.update</block>
-  <block id="d82499f632494fadd7c3cb95a45cdd03" category="cell">Mettre à jour les règles de transfert existantes pour la gestion du trafic.</block>
+  <block id="9f3261123c8a658e7b62dee5c17371f4" category="paragraph-title">Contrôle d'accès basé sur les rôles pour les groupes fédérés dans la NetApp Console</block>
+  <block id="c4d7a3f544d6f76c7c70bcb232209dbf" category="paragraph">La NetApp Console prend en charge l'attribution de rôles aux groupes fédérés (par exemple, les groupes Active Directory), permettant aux administrateurs d'automatiser l'intégration et la désintégration des utilisateurs en fonction de leur appartenance à un groupe dans le fournisseur d'identité (IdP) de l'organisation. Cette fonctionnalité réduit la charge administrative et garantit un accès sécurisé et cohérent en mettant à jour instantanément l'accès à la console lorsque les appartenances aux groupes changent.</block>
+  <block id="ac4ebbe533b328180ba7587ac3ed17ea" category="inline-link-macro">Découvrez comment donner accès à un groupe fédéré à votre organisation.</block>
+  <block id="bd8d483345dcb63c75668983c3887b87" category="paragraph"><block ref="bd8d483345dcb63c75668983c3887b87" category="inline-link-macro-rx"></block></block>
+  <block id="8e21188f4a561525a629d0158af709a2" category="paragraph">Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation et lui attribuer un ou plusieurs rôles. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.</block>
+  <block id="74339c243d7e2c57c81d3b6eeb492598" category="paragraph">Avant d'attribuer un rôle à un groupe fédéré, assurez-vous des points suivants :</block>
+  <block id="99673e10ad28f12bcaf375fb16592097" category="list-text">Configurez la fédération entre votre fournisseur d'identité et la console. <block ref="562353f9c9a6ec120d22140ce361907b" category="inline-link-macro-rx"></block></block>
+  <block id="2e2db2e64333e9c722068fbbc6cceb8e" category="list-text">Le groupe doit déjà exister dans votre fournisseur d'identité et avoir un accès applicatif à la console.</block>
+  <block id="06d5b18e5be0feb68eea2f9f0a2102d0" category="list-text">Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console. NetApp recommande d'attribuer un rôle d'accès minimal tel que celui de lecteur de l'organisation.</block>
 </blocks>

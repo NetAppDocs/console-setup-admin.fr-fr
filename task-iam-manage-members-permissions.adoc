@@ -133,10 +133,14 @@ La console n'affiche le secret client qu'une seule fois. Copiez-le en lieu sûr 
 
 == Ajoutez un groupe fédéré à votre organisation
 
-Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.
+Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation et lui attribuer un ou plusieurs rôles. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.
 
-.Avant de commencer :
-Avant d'ajouter un groupe fédéré, veuillez vous assurer des points suivants : * Vous devez avoir déjà configuré la fédération entre votre fournisseur d'identité et la console. link:concept-federation.html["Apprenez à configurer une fédération."] * Le groupe doit déjà exister dans votre fournisseur d'identité. * Vous devez connaître le nom exact du groupe dans votre fournisseur d'identité. * Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console.
+Avant d'attribuer un rôle à un groupe fédéré, assurez-vous des points suivants :
+
+* Configurez la fédération entre votre fournisseur d'identité et la console. link:concept-federation.html["Apprenez à configurer une fédération."]
+* Le groupe doit déjà exister dans votre fournisseur d'identité et avoir un accès applicatif à la console.
+* Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console. NetApp recommande d'attribuer un rôle d'accès minimal tel que celui de lecteur de l'organisation.
+
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
