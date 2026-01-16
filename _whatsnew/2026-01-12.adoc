@@ -34,4 +34,4 @@ Vous pouvez configurer une organisation NetApp Console en mode lecture seule. En
 
 link:https://docs.netapp.com/us-en/console-setup-admin/task-enable-read-only-mode.html["Découvrez comment activer le mode lecture seule pour une organisation Console."]
 
-link:https://docs.netapp.com/us-en/console-setup-admin/task-user-settings["Découvrez comment rehausser votre rôle lorsque votre organisation est en mode lecture seule."]
+link:https://docs.netapp.com/us-en/console-setup-admin/task-user-settings.html["Découvrez comment rehausser votre rôle lorsque votre organisation est en mode lecture seule."]
