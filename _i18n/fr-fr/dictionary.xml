@@ -5910,4 +5910,8 @@
   <block id="99673e10ad28f12bcaf375fb16592097" category="list-text">Configurez la fédération entre votre fournisseur d'identité et la console. <block ref="562353f9c9a6ec120d22140ce361907b" category="inline-link-macro-rx"></block></block>
   <block id="2e2db2e64333e9c722068fbbc6cceb8e" category="list-text">Le groupe doit déjà exister dans votre fournisseur d'identité et avoir un accès applicatif à la console.</block>
   <block id="06d5b18e5be0feb68eea2f9f0a2102d0" category="list-text">Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console. NetApp recommande d'attribuer un rôle d'accès minimal tel que celui de lecteur de l'organisation.</block>
+  <block id="881a7400da554e794b5b8e9d39c7db4a" category="section-title">Points de terminaison pour les charges de travail</block>
+  <block id="7226c299553546c713e6b5ab556098c8" category="paragraph">L'agent de la console doit pouvoir accéder au point de terminaison suivant pour les charges de travail NetApp .</block>
+  <block id="0eda8bbe61d2248f5418aba76b8dc5b1" category="paragraph">https://api.workloads.netapp.com</block>
+  <block id="a2d795d1d62d99052325545b09f9236f" category="paragraph">La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP.</block>
 </blocks>
