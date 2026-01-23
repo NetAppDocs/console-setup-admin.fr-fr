@@ -109,9 +109,6 @@ Les membres peuvent occuper plusieurs rôles au sein d'un même projet et dans d
 
 Votre stratégie de rôle d’accès doit s’aligner sur la manière dont vous avez organisé vos ressources NetApp .
 
-
-TIP: Un membre qui possède le rôle d'administrateur de l'organisation ne peut se voir attribuer aucun rôle supplémentaire. Ils disposent déjà des autorisations nécessaires pour l'ensemble de l'organisation. Un membre possédant le rôle d'administrateur de dossier ou de projet ne peut se voir attribuer aucun autre rôle au sein du dossier ou du projet où il possède déjà ce rôle. Ces deux rôles donnent accès à tous les services relevant du périmètre qui leur est attribué.
-
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Membres*.

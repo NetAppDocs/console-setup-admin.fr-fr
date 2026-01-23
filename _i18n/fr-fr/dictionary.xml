@@ -4837,7 +4837,6 @@
   <block id="70328d3965555bdfe7c71386e9e25887" category="sidebar">Installer un certificat signé par une autorité de certification pour l'accès à la console Web</block>
   <block id="417a7f2f69f19fbcd309a4694944397e" category="sidebar">Exiger l'utilisation d'IMDSv2 sur les instances EC2</block>
   <block id="e5c32965ed32649bcfd48bc8b138f3d2" category="sidebar">Désinstaller et supprimer l'agent de la console</block>
-  <block id="7c584a16cbf4210dc0a344179e274e09" category="sidebar">Configuration par défaut</block>
   <block id="8f235a758f8b25f9b4ff4eddf53e6c5e" category="sidebar">Appliquer les autorisations ONTAP dans la NetApp Console</block>
   <block id="cbaee96b9499da2c5c6d3b23090382c6" category="sidebar">En savoir plus sur les informations d'identification et les autorisations</block>
   <block id="9d812302dfdd0fdbf4faa0fe53b9ed24" category="sidebar">En savoir plus sur les projets et les autorisations</block>
@@ -5778,7 +5777,6 @@
   <block id="cc58a3864ec91bd4d491cafcb895e671" category="paragraph">Une fois qu'un utilisateur s'inscrit à NetApp Console, vous pouvez l'ajouter à votre organisation et lui attribuer un rôle pour lui donner accès aux ressources. <block ref="43b297cbb0e75204baf387be01022755" category="inline-link-macro-rx"></block></block>
   <block id="729d1ca3c10203fc503fd9f53e1e1025" category="paragraph">Vous pouvez ajuster l'accès d'un membre en ajoutant ou en supprimant des rôles selon les besoins.</block>
   <block id="385f92ada47188b8c301664b007e6ca3" category="paragraph">Les membres peuvent occuper plusieurs rôles au sein d'un même projet et dans différents projets. Par exemple, les petites organisations peuvent attribuer tous les rôles d'accès disponibles au même utilisateur, tandis que les grandes organisations peuvent confier des tâches plus spécialisées à certains utilisateurs. Vous pouvez également attribuer à un utilisateur le rôle d'administrateur de la résilience aux ransomwares au niveau de l'organisation. Dans cet exemple, l'utilisateur pourrait effectuer des tâches de résilience aux ransomwares sur tous les projets de votre organisation.</block>
-  <block id="185fff519c8fc661f991bd10bba243ab" category="admonition">Un membre qui possède le rôle d'administrateur de l'organisation ne peut se voir attribuer aucun rôle supplémentaire. Ils disposent déjà des autorisations nécessaires pour l'ensemble de l'organisation. Un membre possédant le rôle d'administrateur de dossier ou de projet ne peut se voir attribuer aucun autre rôle au sein du dossier ou du projet où il possède déjà ce rôle. Ces deux rôles donnent accès à tous les services relevant du périmètre qui leur est attribué.</block>
   <block id="ebeb67c2ab58cfe7b88d1a1bc054c1a8" category="list-text">Sélectionnez l'un des onglets membres : *Utilisateurs*, *Comptes de service* ou *Groupes fédérés*.</block>
   <block id="a62c20a6e8e006e17ebdbe37484ef3e8" category="paragraph">Supprimez un membre s'il quitte votre organisation.</block>
   <block id="b28aef4c16ab3aa23caf8777e9998b0c" category="paragraph">Lorsque vous supprimez un membre, le système révoque ses autorisations de console mais conserve ses comptes de console et de site de support NetApp .</block>
@@ -5915,4 +5913,7 @@
   <block id="3a78a8ea0b02debae5e6b16cc1929cb5" category="paragraph">Vous pouvez désormais valider les connexions réseau des agents Console connectés directement depuis la NetApp Console. Cette fonctionnalité permet de vérifier la connectivité et de résoudre les problèmes avec les agents Console. Ceci s'ajoute à la possibilité existante d'exécuter des diagnostics réseau depuis la ligne de commandes de la console de maintenance de l'agent Console (CLI).</block>
   <block id="16e0d5a8229f3c0136c12aa9def60bb1" category="inline-link-macro">Apprenez à exécuter la configuration depuis la NetApp Console.</block>
   <block id="3cb937c3382e580784aa7486c365ec19" category="paragraph"><block ref="3cb937c3382e580784aa7486c365ec19" category="inline-link-macro-rx"></block></block>
+  <block id="ee856bddd35f8f0d8d6a5e0b5017b7dd" category="sidebar">Comprendre les agents Console</block>
+  <block id="10895cced39195f7b9456b154a2c8530" category="sidebar">Commencez avec le mode privé</block>
+  <block id="1b074cef0a39f307bf3f23d76207e4f6" category="sidebar">Configuration de l'agent par défaut</block>
 </blocks>
