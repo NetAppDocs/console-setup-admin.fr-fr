@@ -11,9 +11,9 @@ La version 4.3.0 prend en charge à la fois le mode standard et le mode restrein
 Cette version de l'agent Console inclut des améliorations de sécurité, des corrections de bugs et les fonctionnalités suivantes :
 
 .Capacité à valider les connexions réseau des agents de la console
-Vous pouvez désormais valider les connexions réseau des agents Console connectés directement depuis la NetApp Console. Cette fonctionnalité permet de vérifier la connectivité et de résoudre les problèmes liés aux agents de la console.
+Vous pouvez désormais valider les connexions réseau des agents Console connectés directement depuis la NetApp Console. Cette fonctionnalité permet de vérifier la connectivité et de résoudre les problèmes avec les agents Console. Ceci s'ajoute à la possibilité existante d'exécuter des diagnostics réseau depuis la ligne de commandes de la console de maintenance de l'agent Console (CLI).
 
-link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html#verify-network-access["Découvrez comment effectuer des vérifications de configuration sur les agents de la console."]
+link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html#verify-network-access["Apprenez à exécuter la configuration depuis la NetApp Console."]
 
 
 

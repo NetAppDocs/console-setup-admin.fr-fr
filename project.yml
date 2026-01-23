@@ -264,7 +264,7 @@ sidebar:
     - title: Console de maintenance des agents
       entries:
       - title: Vérifications de configuration
-        url: "/reference-agent-maint-console.html"
+        url: "/reference-agent-maint-console-config-checker.html"
       - title: proxy transparent
         url: "/reference-agent-maint-console-proxy.html"
     - title: exigences relatives aux autorisations et au réseau de l'agent du fournisseur
