@@ -605,48 +605,35 @@ Où <version> est la version de l’agent de console que vous avez téléchargé
 ./NetApp_Console_Agent_Cloud_<version> --proxy <HTTP or HTTPS proxy server> --cacert <path and file name of a CA-signed certificate>
 ----
 +
-Vous devrez ajouter des informations de proxy si votre réseau nécessite un proxy pour l'accès à Internet. Vous pouvez ajouter un proxy explicite lors de l'installation. Les paramètres --proxy et --cacert sont facultatifs et vous ne serez pas invité à les ajouter. Si vous disposez d'un serveur proxy explicite, vous devrez saisir les paramètres comme indiqué.
-
-+
-Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
-
-+
-[source, cli]
-----
-./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
-----
-+
-`--proxy`configure l'agent de console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
-
-+
-** \http://adresse:port
-** \http://nom-d'utilisateur:mot-de-passe@adresse:port
-** \http://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
-** \https://adresse:port
-** \https://nom-d'utilisateur:mot-de-passe@adresse:port
-** \https://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
-+
-Notez ce qui suit :
-
-+
-*** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
-*** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour un \ comme indiqué ci-dessus.
-*** L'agent de console ne prend pas en charge les noms d'utilisateur ou les mots de passe qui incluent le caractère @.
-*** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le préfixant d'une barre oblique inverse : & ou !
-+
-Par exemple:
-
-+
-\http://bxpproxyuser:netapp1\!@adresse:3128
-
-
-
-
+Vous devrez ajouter les informations de proxy si votre réseau nécessite un proxy pour accéder à Internet. Vous pouvez ajouter un proxy explicite lors de l'installation. Les `--proxy` et `--cacert` paramètres sont facultatifs et il ne vous sera pas demandé de les ajouter. Si vous avez un serveur proxy explicite, vous devrez saisir les paramètres comme indiqué.
 
 
 
 
 NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"]
+
++
+
+Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+
++
+
+[source, cli]
+----
+./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+----
++
+`--proxy` configure l'agent de la Console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
+
++ * \http://adresse:port * \http://nom-utilisateur:mot-de-passe@adresse:port * \http://nom-de-domaine%92nom-utilisateur:mot-de-passe@adresse:port * \https://adresse:port * \https://nom-utilisateur:mot-de-passe@adresse:port * \https://nom-de-domaine%92nom-utilisateur:mot-de-passe@adresse:port
+
++ Notez ce qui suit :
+
++ ** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine. ** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour une \ comme indiqué ci-dessus. ** L'agent Console ne prend pas en charge les noms d'utilisateur ni les mots de passe qui incluent le caractère @. ** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le faisant précéder d'une barre oblique inverse : & ou !
+
++ Par exemple :
+
++ \http://bxpproxyuser:netapp1\!@address:3128
 
 . Si vous avez utilisé Podman, vous devrez ajuster le port aardvark-dns.
 +
