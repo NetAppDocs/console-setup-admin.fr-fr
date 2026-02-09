@@ -18,6 +18,12 @@ Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Co
 
 
 
+== 09 février 2026
+
+includes::_whatsnew/2026-02-09.adoc[]
+
+
+
 == 13 janvier 2026
 
 

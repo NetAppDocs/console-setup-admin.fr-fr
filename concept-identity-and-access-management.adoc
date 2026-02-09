@@ -18,7 +18,7 @@ Utilisez la gestion des identités et des accès (IAM) de la console NetApp pour
 
 Les ressources sont organisées de manière hiérarchique : l’organisation se trouve au sommet, suivie des dossiers (qui peuvent contenir d’autres dossiers ou projets), puis des projets, qui contiennent des systèmes de stockage, des charges de travail et des agents.
 
-Attribuez des autorisations de contrôle d'accès basé sur les rôles (RBAC) aux membres au niveau de l'organisation, du dossier ou du projet afin de garantir que les utilisateurs disposent de l'accès approprié aux ressources.
+Attribuez des rôles d'accès au niveau de l'organisation, du dossier ou du projet afin que les utilisateurs disposent du bon accès aux ressources.
 
 
 NOTE: Vous devez disposer des rôles _Super administrateur_, _Administrateur d'organisation_ ou _Administrateur de dossier ou de projet_ pour gérer IAM dans la NetApp Console.
@@ -57,7 +57,7 @@ link:task-iam-manage-folders-projects.html["Apprenez comment ajouter des dossier
 
 === Ressources
 
-Les _ressources_ comprennent les systèmes de stockage, les abonnements Keystone , ainsi que les agents Console.
+Une  est une entité que la NetApp Console reconnaît et qui peut être affectée à un projet.  comprennent les systèmes de stockage, les abonnements Keystone, certaines charges de travail NetApp Backup and Recovery, ainsi que les agents NetApp Console.
 
 + Vous devez associer une ressource à un projet avant que quiconque puisse y accéder.
 
@@ -69,14 +69,10 @@ Par exemple, vous pouvez associer un système Cloud Volumes ONTAP à un projet o
 
 link:task-iam-manage-resources.html["Apprenez à associer des ressources à des projets."]
 
-Systèmes de stockage et abonnements Keystone:: Les systèmes de stockage sont les principales ressources que vous gérez dans la NetApp Console. La NetApp Console prend en charge la gestion des systèmes de stockage sur site et dans le cloud. Vous devez ajouter un système de stockage à un projet avant que quiconque puisse y accéder.
-+
---
-Les systèmes de stockage sont automatiquement associés au projet dans lequel ils sont ajoutés, mais vous pouvez également les associer à d'autres projets ou dossiers depuis la page *Ressources*.
-
-Les abonnements Keystone sont également des ressources que vous pouvez associer à des projets afin d'accorder aux utilisateurs l'accès à l'abonnement dans la NetApp Console.
-
---
+Systèmes de stockage et abonnements Keystone:: Les systèmes de stockage sont les principales ressources que vous gérez dans NetApp Console. NetApp Console prend en charge la gestion des systèmes de stockage sur site et dans le cloud. Vous devez ajouter un système de stockage à un projet pour qu'il soit accessible aux personnes affectées à ce projet.
+Systèmes de stockage:: Les systèmes de stockage sont automatiquement associés au projet dans lequel ils sont ajoutés, mais vous pouvez les associer à d'autres projets ou dossiers depuis la page *Ressources*. Vous ne pouvez pas associer les systèmes de stockage FSx for NetApp ONTAP à des projets ou des dossiers, mais vous pouvez les consulter sur la page *Systèmes* ou depuis Workloads.
+Abonnements Keystone:: Les abonnements Keystone sont également des ressources que vous pouvez associer à des projets afin d'accorder aux utilisateurs l'accès à l'abonnement dans la NetApp Console.
+Charges de travail de sauvegarde et de récupération (Oracle et Microsoft SQL Server):: Certaines charges de travail NetApp Backup and Recovery sont également considérées comme des ressources. Vous pouvez attribuer aux utilisateurs des autorisations d’accès à NetApp Backup and Recovery.
 
 
 [[associate-agents]]

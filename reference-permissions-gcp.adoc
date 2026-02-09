@@ -191,6 +191,7 @@ includedPermissions:
 - compute.forwardingRules.delete
 - compute.forwardingRules.get
 - compute.forwardingRules.setLabels
+- compute.forwardingRules.update
 - compute.globalOperations.get
 - compute.healthChecks.create
 - compute.healthChecks.delete
@@ -406,6 +407,9 @@ L'agent Console utilise les autorisations du rôle personnalisé pour gérer les
 
 
 | calculer.forwardingRules.setLabels | Définir ou mettre à jour les étiquettes des règles de transfert pour l'organisation. | Non | Oui | Non 
+
+
+| compute.forwardingRules.update | Mettre à jour les règles de transfert existantes pour la gestion du trafic. | Non | Oui | Non 
 
 
 | calculer.globalOperations.get | Pour obtenir l'état des opérations. | Oui | Oui | Non 
@@ -790,6 +794,12 @@ L'agent de la console utilise les autorisations du rôle personnalisé pour gér
 == Journal des modifications
 
 Les autorisations ajoutées et supprimées sont indiquées ci-dessous.
+
+
+
+=== 09 février 2026
+
+L' `compute.forwardingRules.update`autorisation est ajoutée pour prendre en charge Infrastructure Manager dans les déploiements Cloud Volumes ONTAP sur Google Cloud.
 
 
 

@@ -1,0 +1,22 @@
+= Agent Console 4.4.0
+:allow-uri-read: 
+
+
+
+
+=== Agent Console 4.4.0
+
+La version 4.4.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs.
+
+
+
+=== Administration de la NetApp Console
+
+Cette version comprend les éléments suivants :
+
+.Prise en charge du contrôle d'accès basé sur les rôles pour les charges de travail NetApp Backup and Recovery (Oracle et Microsoft SQL Server)
+Vous pouvez associer des charges de travail Backup and Recovery (Oracle et Microsoft SQL Server) à des projets. Après affectation à un projet, les utilisateurs qui se voient attribuer un rôle Backup and Recovery pour le projet peuvent travailler avec les charges de travail. Les autres charges de travail ne sont pas prises en charge avec l'accès basé sur les rôles pour le moment.
+
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["En savoir plus sur la configuration de l'accès basé sur les rôles pour les charges de travail de NetApp Backup and Recovery."^]
