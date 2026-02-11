@@ -5367,13 +5367,6 @@
   <block id="47d455f427b4674cc00157a8a2934409" category="paragraph">Les autorisations suivantes ont été ajoutées à cette politique :</block>
   <block id="e97ae785ddbd746339946844f92175e6" category="inline-link">Documents de classification</block>
   <block id="6847efe16c9bfc0feacaef65fc05b7b9" category="list-text"><block ref="6847efe16c9bfc0feacaef65fc05b7b9" category="inline-link-rx"></block></block>
-  <block id="9b894a36c4ebb01df8469fa98daba21f" category="summary">Il arrive que NetApp mette à jour les autorisations requises pour le compte de service utilisé par l'agent Console lorsqu'il est déployé sur Google Cloud.</block>
-  <block id="d6d6c33d995f278b372d3d2f7a10524d" category="doc">Gestion des autorisations de l'agent de la console pour les déploiements Google Cloud</block>
-  <block id="daf1fbd23852baa7dc431ec2658722d9" category="inline-link-macro">Vérifiez la liste des autorisations Google requises</block>
-  <block id="c35025e4c3afa1c5d645893259cbce25" category="paragraph"><block ref="df29c88404b44d3e8df12197653b40b2" category="inline-link-macro-rx"></block>.</block>
-  <block id="4860b54918e1580143a7c01984c21fe1" category="paragraph">Utilisez la console Google Cloud pour mettre à jour le rôle IAM attribué au compte de service afin qu'il corresponde au nouvel ensemble d'autorisations.</block>
-  <block id="34e82a1501cca5af4e190be9c03c0fbb" category="inline-link-macro">Documentation Google Cloud : Modifier un rôle personnalisé</block>
-  <block id="322a5219fa870735040f24cb43da8303" category="paragraph"><block ref="322a5219fa870735040f24cb43da8303" category="inline-link-macro-rx"></block></block>
   <block id="16d62d361fbd1153b9fe75b035aa7c51" category="paragraph">Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent Console en utilisant le<block ref="091092579ca8cede1b760e7c5a90a003" prefix=" " category="inline-code"></block> commande ou supprimer le serveur proxy transparent en utilisant la<block ref="ef5ebb9e0c08ee0463e7503ff1111f4c" prefix=" " category="inline-code"></block> commande.  Pour plus d'informations, consultez la documentation relative à<block ref="1b2f5cd7e64b458e431e40fa20571324" category="inline-link-macro-rx"></block> .</block>
   <block id="e403ae80ee5407293bf60157033759c8" category="list-text">Saisissez les détails du dossier ou du projet :</block>
   <block id="70fdeef63f056c10a8cdcc5f3fbc8eb3" category="inline-xref">Apprenez comment supprimer des ressources</block>
@@ -5935,5 +5928,21 @@
   <block id="d82499f632494fadd7c3cb95a45cdd03" category="cell">Mettre à jour les règles de transfert existantes pour la gestion du trafic.</block>
   <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">09 février 2026</block>
   <block id="86adfecaaa4dc7c9c4b8f67dcfd84a27" category="paragraph">L'<block ref="b18fad63d8ccb120bf7c88b5cde19431" prefix=" " category="inline-code"></block>autorisation est ajoutée pour prendre en charge Infrastructure Manager dans les déploiements Cloud Volumes ONTAP sur Google Cloud.</block>
-  <block id="dea86e9f14e9d4847c31a2b6d002bdbc" category="paragraph">includes::_whatsnew/2026-02-09.adoc[]</block>
+  <block id="aca93a34ac0830ae93442a45a45230ca" category="summary">Vous pouvez gérer les identifiants Google Cloud associés à l'instance de machine virtuelle de l'agent Console en associant un abonnement marketplace et en résolvant les problèmes liés au processus d'abonnement. Ces deux actions garantissent que vous pouvez utiliser votre abonnement marketplace pour payer les services de données.</block>
+  <block id="a5902f6d28779078fd2033b21af7a5fe" category="doc">Gérer les identifiants et les abonnements Google Cloud pour NetApp Console</block>
+  <block id="7fb6ce6ba61ee2f889266f6591c8bf62" category="paragraph">Vous pouvez gérer les identifiants Google Cloud associés à une instance de machine virtuelle de l'agent Console en associant un abonnement marketplace et en résolvant les problèmes liés au processus d'abonnement. Ces deux actions garantissent que vous pouvez utiliser votre abonnement marketplace pour payer les services de données.</block>
+  <block id="209e33f8aa50ade8c82e5bc82a8c023d" category="section-title">Associer un abonnement Marketplace à des identifiants Google Cloud</block>
+  <block id="eb7e6d1f8bb6ef3fd9a4c9dde493222f" category="paragraph">Lorsque vous déployez un agent Console sur Google Cloud, la Console crée un ensemble d'identifiants par défaut associés à une instance de machine virtuelle agent Console. À tout moment, vous pouvez modifier l'abonnement Google Cloud Marketplace associé à ces identifiants. L'abonnement vous permet de créer un système Cloud Volumes ONTAP à la demande et d'utiliser d'autres services de données.</block>
+  <block id="55c766cf4228626844250621a71175de" category="section-title">Dépanner le processus d'abonnement à la Marketplace</block>
+  <block id="22799693f8d16282f927158e17952aae" category="paragraph">Il arrive que l'abonnement aux services de données NetApp via Google Cloud Marketplace soit fragmenté en raison d'autorisations incorrectes ou d'un oubli de suivre la redirection vers la Console. Si cela se produit, utilisez les étapes suivantes pour terminer le processus d'abonnement.</block>
+  <block id="5e8a9e85694a19d502ffc719ffe16636" category="inline-link">NetApp page sur la place de marché Google Cloud</block>
+  <block id="d6e50a6d3ec0159b4980423911b0d4c3" category="list-text">Accédez à <block ref="50dc0afbab90b927abe9802e2e044626" category="inline-link-rx"></block> pour vérifier l'état de la commande. Si la page indique *Gérer chez le fournisseur*, faites défiler vers le bas et sélectionnez *Gérer les commandes*.</block>
+  <block id="1602e955f4d68623784fbd9b3e232de3" category="inline-image-macro">Une capture d'écran de la page du marketplace après l'abonnement.</block>
+  <block id="138509c56fb0084f814c9be7b6c3f21d" category="paragraph"><block ref="138509c56fb0084f814c9be7b6c3f21d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e934500d9ced37392a4bfadda2e26daf" category="list-text">Si la commande affiche une coche verte et que cela est inattendu, il est possible qu'une autre personne de l'organisation utilisant le même compte de facturation soit déjà abonnée. Si cela est inattendu ou si vous avez besoin des détails de cet abonnement, contactez votre équipe commerciale NetApp.</block>
+  <block id="bb7a877315ec49d95bef4521481a238d" category="inline-image-macro">Une capture d'écran d'un droit accepté.</block>
+  <block id="57c37d5700a1b0612b4ca2402852172a" category="paragraph"><block ref="57c37d5700a1b0612b4ca2402852172a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="342df35452bbec008148c714d47038f6" category="list-text">Si la commande affiche une horloge et le statut *Pending*, retournez sur la page du marketplace et choisissez *Manage on Provider* pour terminer le processus comme documenté ci-dessus.</block>
+  <block id="9547217bb6aa822040056cba67310321" category="inline-image-macro">Une capture d'écran d'un droit de place de marché en attente.</block>
+  <block id="e6ec8d6dff39d45a9056311495699cef" category="paragraph"><block ref="e6ec8d6dff39d45a9056311495699cef" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
