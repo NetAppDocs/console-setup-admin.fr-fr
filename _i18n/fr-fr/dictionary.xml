@@ -5945,4 +5945,7 @@
   <block id="342df35452bbec008148c714d47038f6" category="list-text">Si la commande affiche une horloge et le statut *Pending*, retournez sur la page du marketplace et choisissez *Manage on Provider* pour terminer le processus comme documenté ci-dessus.</block>
   <block id="9547217bb6aa822040056cba67310321" category="inline-image-macro">Une capture d'écran d'un droit de place de marché en attente.</block>
   <block id="e6ec8d6dff39d45a9056311495699cef" category="paragraph"><block ref="e6ec8d6dff39d45a9056311495699cef" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="718285f559bff92f1fc2fb988df3fabe" category="doc">Agent Console 4.4.1</block>
+  <block id="3ffe5c6490eae7ac4252c8efb9559119" category="paragraph-title">Accédez à NetApp Data Infrastructure Insights depuis la NetApp Console</block>
+  <block id="0597e1be82ceeb01b40b4706c1dc68e1" category="paragraph">Vous pouvez accéder à un essai gratuit de NetApp Data Infrastructure Insights depuis NetApp Console. Allez dans *Governance* &gt; *Data Infrastructure Insights* pour vous inscrire et explorer des insights et des analyses sur votre environnement de données.</block>
 </blocks>

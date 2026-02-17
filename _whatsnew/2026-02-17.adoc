@@ -1,0 +1,26 @@
+= Agent Console 4.4.1
+:allow-uri-read: 
+
+
+
+
+=== Agent Console 4.4.1
+
+La version 4.4.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs.
+
+
+
+=== Administration de la NetApp Console
+
+Cette version comprend les éléments suivants :
+
+
+
+=== Administration de la NetApp Console
+
+Cette version comprend les éléments suivants :
+
+.Accédez à NetApp Data Infrastructure Insights depuis la NetApp Console
+Vous pouvez accéder à un essai gratuit de NetApp Data Infrastructure Insights depuis NetApp Console. Allez dans *Governance* > *Data Infrastructure Insights* pour vous inscrire et explorer des insights et des analyses sur votre environnement de données.
