@@ -906,6 +906,7 @@ L'agent effectue les requêtes API suivantes pour déployer la NetApp Data Class
 * cloudformation:Supprimer la pile
 * cloudformation:DescribeStacks
 * cloudformation:Décrire les événements de pile
+* cloudformation:ListStacks
 * iam:Ajouter un rôle au profil d'instance
 * ec2 : AssociateIamInstanceProfile
 * ec2 : Décrire les associations de profils d'instance Iam
@@ -1195,6 +1196,14 @@ L'agent effectue les requêtes API suivantes pour déployer et gérer Cloud Volu
 == Journal des modifications
 
 Au fur et à mesure que des autorisations sont ajoutées et supprimées, nous les noterons dans les sections ci-dessous.
+
+
+
+=== 24 février 2026
+
+L'autorisation suivante est désormais requise pour Data Classification :
+
+cloudformation:ListStacks
 
 
 
