@@ -881,7 +881,7 @@ Vous n'avez besoin des autorisations suivantes que si vous avez activé les fonc
 
 
 
-=== Classification
+=== Classification des données
 
 L'agent effectue les requêtes API suivantes pour déployer la NetApp Data Classification:
 
