@@ -16,11 +16,9 @@ summary: 'Désinstallez un agent de console pour résoudre les problèmes ou pou
 [role="lead"]
 Désinstallez un agent de console pour résoudre les problèmes ou pour le supprimer définitivement de l'hôte.  Les étapes à suivre dépendent du mode de déploiement que vous utilisez.  Une fois que vous avez supprimé un agent de console de votre environnement, vous pouvez le supprimer de la console.
 
-link:concept-modes.html["En savoir plus sur les modes de déploiement de la NetApp Console"] .
 
 
-
-== Désinstaller l'agent lors de l'utilisation du mode standard ou restreint
+== Désinstallez l'agent lorsqu'il dispose d'une connectivité sortante
 
 Si vous utilisez le mode standard ou le mode restreint (en d'autres termes, l'hôte de l'agent dispose d'une connectivité sortante), vous devez suivre les étapes ci-dessous pour désinstaller l'agent.
 
@@ -33,6 +31,42 @@ Si vous utilisez le mode standard ou le mode restreint (en d'autres termes, l'h�
 +
 _silent_ exécute le script sans vous demander de confirmation.
 
+
+
+
+
+== Désinstallez l'agent lorsqu'il n'a aucune connectivité sortante
+
+Si votre agent ne dispose d'aucune connectivité sortante (par exemple, en mode privé), vous devez supprimer manuellement le logiciel agent de l'hôte.
+
+.Étape
+. Connectez-vous à la machine virtuelle Linux pour l’agent de console.
+. Depuis l'hôte Linux, exécutez les commandes suivantes :
++
+[source, cli]
+----
+/opt/application/netapp/ds/cleanup.sh
+rm -rf /opt/application/netapp/
+----
+. Depuis l'hôte Linux, supprimez les anciens fichiers image de conteneur inutilisés pour libérer de l'espace dans le répertoire /var pour la réinstallation.
++
+[role="tabbed-block"]
+====
+.Podman
+--
+[source, cli]
+----
+podman system prune --all
+----
+--
+.Docker
+--
+[source, cli]
+----
+docker system prune -a
+----
+--
+====
 
 
 

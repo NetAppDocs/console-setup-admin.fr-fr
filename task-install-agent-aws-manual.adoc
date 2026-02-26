@@ -422,7 +422,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
 
 
  a| 
-\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+\https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.netapp.com \https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
@@ -585,6 +585,13 @@ Si vous ne supprimez pas ces variables système, l'installation échoue.
 +
 Choisissez de télécharger les fichiers d'installation de l'agent ou une URL vers ces fichiers.
 
+
+
++
+
+NOTE: Téléchargez le programme d'installation de l'agent « online » conçu pour une utilisation sur votre réseau ou dans le cloud. Un programme d'installation « offline » distinct est disponible pour l'agent Console, mais il n'est pris en charge qu'avec les déploiements en mode privé.
+
++
 ** Site d'assistance NetApp (nécessaire si vous n'avez pas déjà accès à la console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^] ,
 
 

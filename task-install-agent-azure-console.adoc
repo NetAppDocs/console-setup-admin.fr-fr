@@ -90,7 +90,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
 
 
  a| 
-\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+\https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.netapp.com \https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
@@ -112,7 +112,7 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 --
 
 
-Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez la NetApp Console Web fournie via la couche SaaS, elle contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données.  Cela inclut les points de terminaison contactés pour déployer l'agent de console à partir de la console.
+Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez l'application SaaS NetApp Console basée sur le web, celle-ci contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données. Cela inclut des points de terminaison qui sont contactés pour déployer l'agent Console depuis la Console.
 +
 --
 link:reference-networking-saas-console.html["Afficher la liste des points de terminaison contactés depuis la console NetApp"] .

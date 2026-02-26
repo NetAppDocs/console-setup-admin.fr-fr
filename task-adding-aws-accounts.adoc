@@ -156,7 +156,7 @@ Ajoutez les informations d’identification AWS en fournissant l’ARN d’un r�
 
 === Configurer le rôle IAM
 
-Configurez un rôle IAM qui permet à la couche logicielle en tant que service (SaaS) de la NetApp Console d’assumer le rôle.
+Configurez un rôle IAM qui permet à l'application NetApp Console en tant que logiciel en tant que service (SaaS) d'assumer le rôle.
 
 .Étapes
 . Accédez à la console IAM dans le compte cible.

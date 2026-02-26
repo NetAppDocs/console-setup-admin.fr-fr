@@ -90,7 +90,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
 
 
  a| 
-\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+\https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.netapp.com \https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
@@ -179,7 +179,7 @@ Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail
 +
 https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm["Documentation Microsoft Azure : Configurer des identités gérées pour les ressources Azure sur une machine virtuelle à l'aide du portail Azure"^]
 
-. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour le connecteur"] et les enregistrer dans un fichier JSON.
+. Copiez le contenu dulink:reference-permissions-azure.html["autorisations de rôle personnalisées pour l'agent de la console"] et les enregistrer dans un fichier JSON.
 . Modifiez le fichier JSON en ajoutant des ID d’abonnement Azure à l’étendue attribuable.
 +
 Vous devez ajouter l’ID de chaque abonnement Azure que vous souhaitez utiliser avec la NetApp Console.

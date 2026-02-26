@@ -47,7 +47,7 @@ Les agents de console déployés chez votre fournisseur de cloud doivent avoir a
 | \ https://support.netapp.com | Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP. 
 
 
-| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
+| \https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.netapp.com \https://cdn.auth0.com | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
 
 
  a| 

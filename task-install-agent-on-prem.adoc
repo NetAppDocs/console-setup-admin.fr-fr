@@ -248,7 +248,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
 
 
  a| 
-\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+\https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.netapp.com \https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
@@ -316,7 +316,7 @@ Pour obtenir des informations de licence et envoyer des messages AutoSupport au 
 
 
  a| 
-\ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com \ https://console.netapp.com \ https://components.console.bluexp.netapp.com \ https://cdn.auth0.com
+\https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.netapp.com \https://cdn.auth0.com
  a| 
 Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
@@ -788,6 +788,13 @@ Si vous ne supprimez pas ces variables système, l'installation échoue.
 +
 Choisissez de télécharger les fichiers d'installation de l'agent ou une URL vers ces fichiers.
 
+
+
++
+
+NOTE: Téléchargez le programme d'installation de l'agent « online » conçu pour une utilisation sur votre réseau ou dans le cloud. Un programme d'installation « offline » distinct est disponible pour l'agent Console, mais il n'est pris en charge qu'avec les déploiements en mode privé.
+
++
 ** Site d'assistance NetApp (nécessaire si vous n'avez pas déjà accès à la console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^] ,
 
 
@@ -872,7 +879,7 @@ Vous devrez enregistrer l'agent de console dans la NetApp Console.
 
 == Enregistrer l'agent de console auprès de la NetApp Console
 
-Connectez-vous à la console et associez l’agent de la console à votre organisation.  La manière dont vous vous connectez dépend du mode dans lequel vous utilisez la console.  Si vous utilisez la console en mode standard, vous vous connectez via le site Web SaaS.  Si vous utilisez la console en mode restreint, vous vous connectez localement à partir de l'hôte de l'agent de la console.
+Connectez-vous à la Console et associez l'agent Console à votre organisation. La façon dont vous vous connectez dépend du mode dans lequel vous utilisez la Console. Si vous utilisez la Console en mode standard, vous vous connectez via le site web SaaS. Si vous utilisez la Console en mode restreint ou en mode privé, vous vous connectez localement depuis l'hôte de l'agent Console.
 
 .Étapes
 . Ouvrez un navigateur Web et entrez l’URL de l’hôte de l’agent de la console :

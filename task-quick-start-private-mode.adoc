@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-quick-start-private-mode.html 
-keywords: private mode quick start, quick start, aws top secret cloud, aws secret cloud, secret cloud, top secret cloud, bluexp legacy, bluexp 
-summary: 'Le mode privé est généralement utilisé avec des environnements locaux qui n’ont pas de connexion Internet et avec des régions cloud sécurisées, notamment AWS Secret Cloud, AWS Top Secret Cloud et Azure IL6.  Le mode privé n"est pas encore disponible avec la NetApp Console.  NetApp continue de prendre en charge ces environnements avec l"interface héritée BlueXP . lien :<lien doc vers PDF>' 
+keywords: private mode quick start, quick start, aws top secret cloud, aws secret cloud, secret cloud, top secret cloud, bluexp legacy, bluexp, netapp console private mode 
+summary: Le mode privé est généralement utilisé avec des environnements sur site sans connexion Internet et avec des régions cloud sécurisées, ce qui inclut AWS Secret Cloud, AWS Top Secret Cloud et Azure IL6. 
 ---
-= Démarrage du flux de travail (mode privé BlueXP )
+= Flux de travail de démarrage pour NetApp Console en mode privé
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,118 +14,165 @@ summary: 'Le mode privé est généralement utilisé avec des environnements loc
 
 
 [role="lead"]
-Le mode privé BlueXP (interface BlueXP héritée) est généralement utilisé avec des environnements locaux qui n’ont pas de connexion Internet et avec des régions cloud sécurisées, notamment AWS Secret Cloud, AWS Top Secret Cloud et Azure IL6.  NetApp continue de prendre en charge ces environnements avec l’interface BlueXP héritée.
+Vous pouvez installer NetApp Console sur site ou dans un environnement cloud sécurisé. Le mode privé est généralement utilisé avec les environnements sur site sans connexion Internet et avec les régions cloud sécurisées, ce qui inclut https://aws.amazon.com/federal/secret-cloud/["AWS Secret Cloud"^], https://aws.amazon.com/federal/top-secret-cloud/["AWS Top Secret Cloud"^] et https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6["Azure IL6"^]
 
-link:media/BlueXP-Private-Mode-legacy-interface.pdf["Documentation PDF pour le mode privé BlueXP"^]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"] link:task-prepare-private-mode.html["Préparez-vous au déploiement"]
+[role="quick-margin-list"]
+. Préparez un hôte Linux dédié qui répond aux exigences en matière de CPU, de RAM, d’espace disque, d’outil d’orchestration de conteneurs, etc.
+. Configurez la mise en réseau qui permet d'accéder aux réseaux cibles.
+. Pour les déploiements dans le cloud, configurez les autorisations dans votre fournisseur de cloud afin de pouvoir associer ces autorisations à l'agent Console après avoir installé le logiciel.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] link:task-install-private-mode.html["Déployer l'agent de console"]
+[role="quick-margin-list"]
+. Installez l'agent Console sur votre propre hôte Linux.
+. Configurez la NetApp Console en ouvrant un navigateur Web et en saisissant l'adresse IP de l'hôte Linux.
+. Pour les déploiements dans le cloud, fournissez à la NetApp Console les autorisations que vous avez précédemment configurées.
 
 
 
-== Fonctionnalités et services de données pris en charge avec le mode privé
 
-Le tableau suivant peut vous aider à identifier rapidement quels services et fonctionnalités BlueXP sont pris en charge en mode privé.
+== Fonctionnalités et services pris en charge pour NetApp Console en mode privé
 
-Notez que certains services peuvent être pris en charge avec des limitations.
+Le tableau suivant répertorie les fonctionnalités de gestion du stockage, les services de données et les fonctionnalités d'administration disponibles dans la NetApp Console lorsque vous l'installez en mode privé. Les fonctionnalités diffèrent lorsque vous installez la NetApp Console dans le cloud par rapport à vos locaux.
 
-[cols="19,27,27"]
+
+
+=== Mode privé installé dans le cloud
+
+[cols="3*"]
 |===
-| Domaine de produits | Service ou fonctionnalité BlueXP | Mode privé 
+| Domaine de produits | NetApp service ou fonctionnalité | Agent de console requis 
 
 
-.10+| *Environnements de travail* Cette partie du tableau répertorie la prise en charge de la gestion de l'environnement de travail à partir du canevas BlueXP .  Il n'indique pas les destinations de sauvegarde prises en charge pour la BlueXP backup and recovery. | Amazon FSx pour ONTAP | Non 
+.2+| *Gestion des systèmes de stockage* Cette partie du tableau répertorie la prise en charge de la gestion des systèmes de stockage depuis la NetApp Console. Elle n'indique pas les destinations de sauvegarde prises en charge pour NetApp Backup and Recovery. | Cloud Volumes ONTAP | Oui, mais comme il n'y a pas d'accès à Internet, les fonctionnalités suivantes ne sont pas disponibles : mises à jour logicielles automatiques et AutoSupport. 
 
 
-| Amazon S3 | Non 
+ a| 
+Clusters ONTAP sur site
+
+* Nécessite une connectivité depuis le cloud (où l'agent NetApp Console est installé) vers l'environnement sur site.
++
+Vous devez disposer d'un agent Console installé pour découvrir les clusters ONTAP sur site.
 
 
-| Azure Blob | Non 
+| Vous pouvez utiliser la découverte directe sans agent Console, mais vous avez besoin d'un agent pour utiliser les fonctionnalités de gestion. 
 
 
-| Azure NetApp Files | Non 
+.3+| *Services de données*  a| 
+Sauvegarde et récupération
+
+* En mode privé, NetApp Backup and Recovery prend en charge uniquement la sauvegarde et la restauration des données de volume ONTAP. https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données ONTAP"^] La sauvegarde et la restauration des données d'application et des données de machines virtuelles ne sont pas prises en charge.
+* Non pris en charge dans Google Cloud ou dans https://aws.amazon.com/federal/secret-cloud/["AWS Secret Cloud"^], https://aws.amazon.com/federal/top-secret-cloud/["AWS Top Secret Cloud"^], ou https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6["Azure IL6"^]
+
+| Oui 
 
 
-| Cloud Volumes ONTAP | Oui 
+ a| 
+Classification NetApp
+
+* Les seules sources de données prises en charge sont celles que vous pouvez découvrir localement. https://docs.netapp.com/us-en/data-services-data-classification/task-deploy-compliance-dark-site.html#supported-data-sources["Consultez les sources que vous pouvez découvrir localement"^]
+* Les fonctionnalités nécessitant un accès Internet sortant ne sont pas prises en charge. https://docs.netapp.com/us-en/data-services-data-classification/task-deploy-compliance-dark-site.html#limitations["Afficher les limitations de la fonctionnalité"^]
+
+| Oui 
 
 
-| Google Cloud NetApp Volumes | Non 
+| NetApp Replication | Oui* (inutile en cas de réplication de ONTAP sur site vers ONTAP sur site) 
 
 
-| Stockage Google Cloud | Non 
+| *NetApp fonctionnalités du contrat d'assistance* | Aucune | -- 
 
 
-| Clusters ONTAP sur site | Oui 
+.6+| *Fonctionnalités administratives* | Audit | Non 
 
 
-| E-Series | Non 
+ a| 
+Licenses and subscriptions gestion des licences et des abonnements
+
+* Seul BYOL est pris en charge avec le mode privé.
++
+Pour Cloud Volumes ONTAP BYOL, seules les licences par nœud sont prises en charge. Les licences basées sur la capacité ne sont pas prises en charge. Parce qu'une connexion Internet sortante n'est pas disponible, vous devez importer manuellement votre fichier de licence Cloud Volumes ONTAP dans la Console.
 
 
-| StorageGRID | Non 
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#add-unassigned-licenses["Découvrez comment ajouter des licences"^]
+| Non 
 
 
-.15+| *Services* | Alertes | Non 
+| Gestion des identités et des accès | Non 
 
 
-| Sauvegarde et récupération | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
+| Gérer les identifiants du fournisseur de cloud | Non 
 
 
-| Classification des données | Oui 
-
-
-| Copier et synchroniser | Non 
-
-
-| Conseiller numérique | Non 
-
-
-| Portefeuille numérique | Oui 
-
-
-| Reprise après sinistre | Non 
-
-
-| Efficacité économique | Non 
-
-
-| Résilience aux ransomwares | Non 
-
-
-| Réplication | Oui 
-
-
-| Mises à jour logicielles | Non 
-
-
-| Durabilité | Non 
-
-
-| hiérarchisation | Non 
-
-
-| Mise en cache des volumes | Non 
-
-
-| Usine de charge de travail | Non 
-
-
-.8+| *Caractéristiques* | Gestion des identités et des accès | Oui 
-
-
-| Informations d'identification | Oui 
-
-
-| Fédération | Non 
-
-
-| Authentification multifacteur | Non 
-
-
-| Comptes NSS | Non 
+| Mode lecture seule | Non 
 
 
 | Notifications | Non 
+|===
 
 
-| Recherche | Non 
+=== Mode privé installé sur site
+
+[cols="3*"]
+|===
+| Domaine de produits | NetApp service ou fonctionnalité | Agent de console requis 
 
 
-| Chronologie | Oui 
+| *Gestion des systèmes de stockage* Cette partie du tableau répertorie la prise en charge de la gestion des systèmes de stockage depuis la NetApp Console. Elle n'indique pas les destinations de sauvegarde prises en charge pour NetApp Backup and Recovery.  a| 
+Clusters ONTAP sur site
+
+* Nécessite une connectivité depuis le cloud (où l'agent NetApp Console est installé) vers l'environnement sur site.
++
+Vous devez disposer d'un agent Console installé pour découvrir les clusters ONTAP sur site.
+
+
+| Vous pouvez utiliser la découverte directe sans agent Console, mais vous avez besoin d'un agent pour utiliser les fonctionnalités de gestion. 
+
+
+.3+| *Services de données*  a| 
+Sauvegarde et récupération
+
+* En mode privé, NetApp Backup and Recovery prend en charge uniquement la sauvegarde et la restauration des données du volume ONTAP. https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données ONTAP"^]
+* La sauvegarde et la restauration des données d'application et des données de machine virtuelle ne sont pas prises en charge.
+
+| Oui 
+
+
+ a| 
+Classification NetApp
+
+* Les seules sources de données prises en charge sont celles que vous pouvez découvrir localement. https://docs.netapp.com/us-en/data-services-data-classification/task-deploy-compliance-dark-site.html#supported-data-sources["Consultez les sources que vous pouvez découvrir localement"^]
+* Les fonctionnalités nécessitant un accès Internet sortant ne sont pas prises en charge. https://docs.netapp.com/us-en/data-services-data-classification/task-deploy-compliance-dark-site.html#limitations["Afficher les limitations de la fonctionnalité"^]
+
+| Oui 
+
+
+| NetApp Replication | Oui* (inutile en cas de réplication de ONTAP sur site vers ONTAP sur site) 
+
+
+| *NetApp fonctionnalités du contrat d'assistance* | Aucune | S/O 
+
+
+.6+| *Fonctionnalités administratives* | Audit | Non 
+
+
+ a| 
+Licenses and subscriptions gestion des licences et des abonnements
+
+* Seul BYOL est pris en charge avec le mode privé.
+
+| Non 
+
+
+| Gestion des identités et des accès | Non 
+
+
+| Gérer les identifiants du fournisseur de cloud | Non 
+
+
+| Mode lecture seule | Non 
+
+
+| Notifications | Non 
 |===

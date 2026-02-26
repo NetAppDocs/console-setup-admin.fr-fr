@@ -117,4 +117,5 @@ Pour savoir comment configurer les autorisations, reportez-vous aux pages suivan
 ** link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Configurer les autorisations pour le mode restreint"]
 
 
+* link:task-prepare-private-mode.html#step-6-prepare-cloud-permissions["Configurer les autorisations pour le mode privé"]
 
