@@ -39,7 +39,7 @@ Le `config-checker validate` Cette commande permet de valider la configuration d
 `--services <comma-separated list of services to validate>`--*REQUIS*--
 
 [role="quick-margin-para"]
-Choisissez un ou plusieurs services à valider.  Les noms de service valides sont :*`PLATFORM` qui valide la connectivité réseau aux points de terminaison de la console requis.
+Choisissez un ou plusieurs services à valider. Les noms de services valides sont : *`PLATFORM` qui valide la connectivité réseau aux points de terminaison requis de la Console ainsi que l'ouverture des ports nécessaires pour l'agent Console.
 
 `--validationTypes <comma-separated list validation types to run>`--*OBLIGATOIRE*-- Choisissez un ou plusieurs types de validation à exécuter.  Les types de validation valides sont : * `NETWORK` qui valide la connectivité réseau aux points de terminaison de la console requis.
 

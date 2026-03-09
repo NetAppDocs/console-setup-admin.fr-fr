@@ -43,6 +43,8 @@ Vous pouvez attribuer les rôles suivants aux utilisateurs partenaires :
 * link:reference-iam-disaster-rec-roles.html["Visionneuse de reprise après sinistre"]
 * link:reference-iam-storage-roles.html["Analyste de soutien aux opérations"]
 * link:reference-iam-predefined-roles.html["Visionneuse de classification"]
+* link:reference-iam-keystone-roles.html["Administrateur Keystone"]
+* link:reference-iam-keystone-roles.html["Visionneuse Keystone"]
 
 
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles prédéfinis"]

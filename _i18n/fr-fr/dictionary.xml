@@ -4391,7 +4391,6 @@
   <block id="23fc9bc00056f19d24e4c3ab8b5ca0c6" category="paragraph">Affichez la version de l'agent de la console pour confirmer la mise à niveau ou partagez-la avec votre représentant NetApp .</block>
   <block id="b9b50a4a67814c748f85c0dd361e7931" category="list-text">Sélectionnez *Administration &gt; Support &gt; Agents*.</block>
   <block id="b8833ad6a19536ecd8aef7620db4ddce" category="paragraph">La console affiche la version en haut de la page.</block>
-  <block id="fb2564b7b05cf68b7b51fea5098120fd" category="section-title">Vérifier l'accès au réseau</block>
   <block id="021662795bfc95f525aded11ea0f47b7" category="inline-link-macro">En savoir plus sur les points d’accès réseau requis.</block>
   <block id="532483dbc5894a7da7a4dd2c7f9b4e0e" category="paragraph">Assurez-vous que l’agent de console dispose de l’accès réseau dont il a besoin.<block ref="787bde807a1a57661aeb1e9aa8557b03" category="inline-link-macro-rx"></block></block>
   <block id="3b2256fce45383ccea4ebfc8f456dcf9" category="section-title">Problèmes d'installation de l'agent de console</block>
@@ -5052,7 +5051,6 @@
   <block id="11d2b70f92f5671a073ee7f95edbc568" category="paragraph">Le<block ref="2df2419e3b3e4992394516227a5f4a71" prefix=" " category="inline-code"></block> Cette commande permet de valider la configuration d'un agent de console.</block>
   <block id="3225a10b07f1580f10dee4abc3779e6c" category="section-title">Paramètres</block>
   <block id="bb9f0d8e73ffa6630952dc1ecc6cd9de" category="paragraph"><block ref="6a11199e55b0cb53d751c5170e5f74f9" prefix="" category="inline-code"></block>--*REQUIS*--</block>
-  <block id="69dfddf838a2ddd2939ee5adc69cb83c" category="paragraph">Choisissez un ou plusieurs services à valider.  Les noms de service valides sont :<block ref="8b55a44b49368262df89fd0e17b1a181" prefix="*" category="inline-code"></block> qui valide la connectivité réseau aux points de terminaison de la console requis.</block>
   <block id="1fde504b28ae1c1b6dbb99c104b00a85" category="paragraph"><block ref="693f786102104e01b7396235926fc506" prefix="" category="inline-code"></block>--*OBLIGATOIRE*-- Choisissez un ou plusieurs types de validation à exécuter.  Les types de validation valides sont : *<block ref="25835188a2355e9530d3a10fcbe4c65b" prefix=" " category="inline-code"></block> qui valide la connectivité réseau aux points de terminaison de la console requis.</block>
   <block id="b3c3244f084b65704359870cc6488d93" category="paragraph"><block ref="f2d537814e28e44e0e35d5b4ce13cadb" prefix="" category="inline-code"></block>--*FACULTATIF*--</block>
   <block id="d076e244720434cf026cb278c7f19d8e" category="paragraph">Spécifie l'URL du serveur proxy à utiliser pour la validation.  Requis si votre agent est configuré pour utiliser un serveur proxy.</block>
@@ -5231,7 +5229,6 @@
   <block id="5d3a908b240fe98ac0740455635b4cc0" category="list-text">Si vous rencontrez toujours des problèmes, contactez l'assistance.</block>
   <block id="13ab9425db1c4ad9c7ca529999f6de24" category="list-text">Vérifiez que l'agent dispose d'un accès sortant aux points de terminaison requis.<block ref="c7fe41b97889c23a57defbbf2129845e" category="inline-link-macro-rx"></block></block>
   <block id="61af83c0a45998dc351428765c46fa2e" category="section-title">Effectuez des vérifications de configuration sur l'agent de la console.</block>
-  <block id="764bd6d2ae27e2401a34b6a482fc62d3" category="paragraph">Effectuez des vérifications de configuration sur les agents de la console depuis la console ou la console de maintenance des agents pour vous assurer qu'ils sont connectés.</block>
   <block id="cb4e992a592d7b26e6c218cdde9ee1b5" category="inline-link-macro">Apprenez-en davantage sur l'utilisation de la commande de validation de config-checker.</block>
   <block id="adbf5b321ab6472093079a96d92216c2" category="paragraph">Vous pouvez également effectuer des vérifications de configuration à l'aide de la console de maintenance de l'agent.<block ref="714b5c6de8ffee7e082263b89290e9dc" category="inline-link-macro-rx"></block></block>
   <block id="2c8b526b02d94d86279aebb87311c90d" category="admonition">Vous ne pouvez valider que les agents dont le statut est *Connecté*.</block>
@@ -6128,4 +6125,16 @@
   <block id="d9f6b701b4e6e8fa39df2310070b5bad" category="sidebar">Commencez avec NetApp Console (mode privé)</block>
   <block id="cc1e97b9fe18a374eacd6937d0fd1f20" category="sidebar">Workflow de démarrage pour le mode privé</block>
   <block id="68874f436c529f1931417d4bdfb1c183" category="cell">5.0.3 (2 mars 2026)</block>
+  <block id="dd340069cb16665edf781618805f1165" category="doc">Agent Console 4.5.0</block>
+  <block id="de3b44fa9f294325dd837b3f15773cd6" category="paragraph">La version 4.5.0 prend en charge à la fois le mode standard et le mode restreint.</block>
+  <block id="8d40f2642d0505b33483f580f9515a11" category="paragraph">Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs, ainsi que la fonctionnalité nouvelle suivante.</block>
+  <block id="b8ea9a14287592fd39444f5f11f22b28" category="paragraph-title">Prise en charge des vérifications de configuration pour les ports requis</block>
+  <block id="e6aa0876ac72372fe4102974fad02f9e" category="inline-link-macro">En savoir plus sur l'exécution des vérifications de configuration sur l'agent Console.</block>
+  <block id="8fab8f63a86cd4593eb84501e6b42574" category="paragraph">Vous pouvez valider que les ports requis pour l'agent de la Console sont ouverts à l'aide de contrôles de configuration. Vous pouvez effectuer des contrôles de configuration depuis la Console ou la console de maintenance de l'Agent. <block ref="b6bcdf4dfaf7604bd81efc4009e39859" category="inline-link-macro-rx"></block></block>
+  <block id="2de08c251ba5c647be79f6b565692ba4" category="section-title">Administration de la console</block>
+  <block id="2bdd9842a1d8845c8d1b9f13695c4ac5" category="inline-link-macro">En savoir plus sur l’attribution des rôles Keystone aux utilisateurs partenaires.</block>
+  <block id="f932e5731af0b28e3d04131c77f23704" category="paragraph">Vous pouvez attribuer des rôles Keystone aux utilisateurs partenaires pour leur permettre de gérer les ressources Keystone au sein d'une organisation partenaire. <block ref="37c7e4a6dbebd9961095310c537fa832" category="inline-link-macro-rx"></block></block>
+  <block id="89c004a6a6a30c4e3297ce59ad9244fe" category="paragraph">Choisissez un ou plusieurs services à valider. Les noms de services valides sont : <block ref="8b55a44b49368262df89fd0e17b1a181" prefix="*" category="inline-code"></block> qui valide la connectivité réseau aux points de terminaison requis de la Console ainsi que l'ouverture des ports nécessaires pour l'agent Console.</block>
+  <block id="81e25f5172548cbe6ade4ab58b86b791" category="section-title">Vérifiez l'accès au réseau et aux ports pour l'agent Console</block>
+  <block id="79809c4a6f04cdeb09f4ec1df49c2f33" category="paragraph">Effectuez des vérifications de configuration sur les agents Console depuis la Console ou la console de maintenance des agents pour vous assurer qu'ils peuvent accéder aux points de terminaison requis et que les ports requis sont ouverts.</block>
 </blocks>

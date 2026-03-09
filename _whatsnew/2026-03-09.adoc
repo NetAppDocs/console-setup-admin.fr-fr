@@ -1,0 +1,20 @@
+= Agent Console 4.5.0
+:allow-uri-read: 
+
+
+
+
+=== Agent Console 4.5.0
+
+La version 4.5.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs, ainsi que la fonctionnalité nouvelle suivante.
+
+.Prise en charge des vérifications de configuration pour les ports requis
+Vous pouvez valider que les ports requis pour l'agent de la Console sont ouverts à l'aide de contrôles de configuration. Vous pouvez effectuer des contrôles de configuration depuis la Console ou la console de maintenance de l'Agent. link:https://docs.netapp.com/console-setup-admin/task-troubleshoot-agent.html["En savoir plus sur l'exécution des vérifications de configuration sur l'agent Console."]
+
+
+
+=== Administration de la console
+
+Vous pouvez attribuer des rôles Keystone aux utilisateurs partenaires pour leur permettre de gérer les ressources Keystone au sein d'une organisation partenaire. link:https://docs.netapp.com/console-setup-admin/console-administration/task-partnerships-assign-users.html["En savoir plus sur l’attribution des rôles Keystone aux utilisateurs partenaires."]

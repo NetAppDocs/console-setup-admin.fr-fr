@@ -122,7 +122,7 @@ La console affiche la version en haut de la page.
 
 
 
-== Vérifier l'accès au réseau
+== Vérifiez l'accès au réseau et aux ports pour l'agent Console
 
 Assurez-vous que l’agent de console dispose de l’accès réseau dont il a besoin.link:reference-networking-saas-console.html["En savoir plus sur les points d’accès réseau requis."]
 
@@ -130,7 +130,7 @@ Assurez-vous que l’agent de console dispose de l’accès réseau dont il a be
 
 === Effectuez des vérifications de configuration sur l'agent de la console.
 
-Effectuez des vérifications de configuration sur les agents de la console depuis la console ou la console de maintenance des agents pour vous assurer qu'ils sont connectés.
+Effectuez des vérifications de configuration sur les agents Console depuis la Console ou la console de maintenance des agents pour vous assurer qu'ils peuvent accéder aux points de terminaison requis et que les ports requis sont ouverts.
 
 Vous pouvez également effectuer des vérifications de configuration à l'aide de la console de maintenance de l'agent.link:reference-agent-maint-console-config-checker.html["Apprenez-en davantage sur l'utilisation de la commande de validation de config-checker."]
 
