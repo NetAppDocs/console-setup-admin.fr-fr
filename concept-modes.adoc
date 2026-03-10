@@ -347,7 +347,7 @@ Pour Cloud Volumes ONTAP, les licences basées sur la capacité et les licences 
 | Partenariats organisationnels | Non 
 
 
-| Mode lecture seule | Non 
+| Mode lecture seule | Oui 
 
 
 | Notifications | Non 
@@ -579,7 +579,7 @@ Notez que certains services peuvent être pris en charge avec des limitations. P
 | Domaine de produits | NetApp service ou fonctionnalité | Mode restreint | Mode privé 
 
 
-.10+| *Gestion des systèmes de stockage* Ce tableau indique les systèmes de stockage que vous pouvez gérer depuis la NetApp Console. Il ne répertorie pas les destinations de sauvegarde pour NetApp Backup and Recovery. | Alertes | Non | Non 
+.12+| *Gestion des systèmes de stockage* Ce tableau indique les systèmes de stockage que vous pouvez gérer depuis la NetApp Console. Il ne répertorie pas les destinations de sauvegarde pour NetApp Backup and Recovery. | Alertes | Non | Non 
 
 
 | Amazon FSx pour ONTAP | Non | Non 
@@ -609,74 +609,74 @@ Notez que certains services peuvent être pris en charge avec des limitations. P
 | E-Series | Non | Non 
 
 
-| StorageGRID | Non | Non | Usine de charge de travail 
+| StorageGRID | Non | Non 
 
 
-| Non | Non .8+| *Services de données* | Sauvegarde et récupération 
+| Usine de charge de travail | Non | Non 
 
 
-| Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] | Classification NetApp 
+.8+| *Services de données* | Sauvegarde et récupération | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
 
 
-| Oui | Oui | Copier et synchroniser 
+| Classification NetApp | Oui | Oui 
 
 
-| Non | Non | NetApp Disaster Recovery 
+| Copier et synchroniser | Non | Non 
 
 
-| Non | Non | Protection contre les ransomwares NetApp 
+| NetApp Disaster Recovery | Non | Non 
 
 
-| Non | Non | NetApp Replication 
+| Protection contre les ransomwares NetApp | Non | Non 
 
 
-| Oui | Oui | NetApp Cloud Tiering 
+| NetApp Replication | Oui | Oui 
 
 
-| Non | Non | NetApp Volume Caching 
+| NetApp Cloud Tiering | Non | Non 
 
 
-| Non | Non .4+| *NetApp fonctionnalités du contrat d'assistance* | Conseiller numérique 
+| NetApp Volume Caching | Non | Non 
 
 
-| Non | Non | Planification du cycle de vie 
+.4+| *NetApp fonctionnalités du contrat d'assistance* | Conseiller numérique | Non | Non 
 
 
-| Non | Non | Mises à jour logicielles 
+| Planification du cycle de vie | Non | Non 
 
 
-| Non | Non | Durabilité 
+| Mises à jour logicielles | Non | Non 
 
 
-| Non | Non .9+| *Fonctionnalités administratives* | Indicateurs du tableau de bord pour les services de stockage et de données 
+| Durabilité | Non | Non 
 
 
-| Non | Non | Gestion des identités et des accès 
+.9+| *Fonctionnalités administratives* | Indicateurs du tableau de bord pour les services de stockage et de données | Non | Non 
 
 
-| Oui | Oui | Gérer les identifiants du fournisseur de cloud 
+| Gestion des identités et des accès | Oui | Oui 
 
 
-| Oui | Oui | Fédération 
+| Gérer les identifiants du fournisseur de cloud | Oui | Oui 
 
 
-| Oui | Non | Licenses and subscriptions 
+| Fédération | Oui | Non 
 
 
-| Oui | Oui | Authentification multifacteur 
+| Licenses and subscriptions | Oui | Oui 
 
 
-| Oui | Non | Comptes NSS 
+| Authentification multifacteur | Oui | Non 
 
 
-| Oui | Non | Partenariats organisationnels 
+| Comptes NSS | Oui | Non 
 
 
-| Oui | Non | Mode lecture seule 
+| Partenariats organisationnels | Oui | Non 
 
 
-| Non | Non | Notifications | Oui 
+| Mode lecture seule | Oui | Non 
 
 
-| Non | Audit | Oui | Oui 
+| Notifications | Oui | Non | Audit 
 |===
