@@ -1231,15 +1231,6 @@
   <block id="995b0a469f6f6243977462e753ae05da" category="paragraph">Testez votre connexion fédérée avant de l'activer. Utilisez l’option de test sur la page Fédération dans la console pour vérifier que votre utilisateur de test peut s’authentifier avec succès. Si le test réussit, vous pouvez activer la connexion.</block>
   <block id="6350c75317bf3a6a382ca51f7f21d612" category="paragraph-title"><block ref="3fb1f11a25837416d87a2007da1d76e6" category="inline-image-macro-rx" type="image"></block>Activez votre connexion dans la console</block>
   <block id="de1943b4a42a516fe3f0157be7b5952f" category="paragraph">Une fois la connexion activée, les utilisateurs peuvent se connecter à la console à l’aide de leurs informations d’identification d’entreprise.</block>
-  <block id="7a15d5af6f3fb4b588190669535d4bbe" category="paragraph">Consultez le sujet de votre protocole ou IdP respectif pour commencer :</block>
-  <block id="b5fa3a7b59c0dbf56027e973a978221b" category="inline-link-macro">Configurer une connexion fédérée avec AD FS</block>
-  <block id="e655d90f8f735e0e83a1465e53299a3c" category="list-text"><block ref="e655d90f8f735e0e83a1465e53299a3c" category="inline-link-macro-rx"></block></block>
-  <block id="010b9e75f2be10992c686afea2384784" category="inline-link-macro">Configurer une connexion fédérée avec Microsoft Entra ID</block>
-  <block id="c26b4a46fbd641691ec1909da444386d" category="list-text"><block ref="c26b4a46fbd641691ec1909da444386d" category="inline-link-macro-rx"></block></block>
-  <block id="d167ee77ecb410e3563f53c002b2587e" category="inline-link-macro">Configurer une connexion fédérée avec PingFederate</block>
-  <block id="b76c6c3c96f9fd2d4a4d8f47ff90bcb3" category="list-text"><block ref="b76c6c3c96f9fd2d4a4d8f47ff90bcb3" category="inline-link-macro-rx"></block></block>
-  <block id="3f2aa4bd073d2458603c46bc293f8ade" category="inline-link-macro">Configurer une connexion fédérée avec un fournisseur d'identité SAML</block>
-  <block id="00aef0f14c29d451cdbf8446ce6b0b8e" category="list-text"><block ref="00aef0f14c29d451cdbf8446ce6b0b8e" category="inline-link-macro-rx"></block></block>
   <block id="728d17e7146dcd6218a24c46a1de8943" category="doc">En savoir plus sur la gestion des identités et des accès de la NetApp Console</block>
   <block id="e5c1519cd8d7472771e0a519c54ccae1" category="paragraph">Une _organisation_ est le niveau supérieur du système IAM de la console et représente généralement votre entreprise.  Votre organisation se compose de dossiers, de projets, de membres, de rôles et de ressources.  Les agents sont associés à des projets spécifiques au sein de l’organisation.</block>
   <block id="6c8d76b40d187de98318661a9cab7239" category="paragraph">Un _administrateur d'organisation_ peut associer une ressource à un dossier afin qu'un _administrateur de dossier ou de projet_ puisse la lier aux projets appropriés dans le dossier.</block>
@@ -5491,7 +5482,6 @@
   <block id="3cbafb79babb187563c0124e2520510c" category="section-title">Comprendre comment l'accès est accordé dans la NetApp Console</block>
   <block id="6006dace312ced6616f59ef5355ec45d" category="paragraph">La NetApp Console utilise le contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations. Attribuer des rôles aux utilisateurs individuellement ou par le biais de groupes fédérés. Chaque rôle définit les actions autorisées pour des ressources spécifiques.</block>
   <block id="34b1f94b77b5bf3b37ba851f10060189" category="paragraph">Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp Console:</block>
-  <block id="68486ab3d656a167edf458a9cdc1ec37" category="list-text">Tous les utilisateurs doivent d'abord s'inscrire à la NetApp Console avant de pouvoir accéder aux ressources.</block>
   <block id="2bd8e344bd7b38add589340263927733" category="list-text">Vous devez attribuer explicitement un rôle à chaque utilisateur dans la console avant qu'il puisse accéder aux ressources, même s'il est membre d'un groupe fédéré auquel un rôle a été attribué.</block>
   <block id="b499ec6fa9977b0ca77f6656a13829bb" category="list-text">Vous pouvez ajouter des comptes de service directement depuis la console et leur attribuer des rôles.</block>
   <block id="9522a4fe29d3a6f0c0622f4995ff5efb" category="paragraph">La NetApp Console prend en charge trois types de membres : les comptes d’utilisateurs, les comptes de service et les groupes fédérés.</block>
@@ -5677,7 +5667,6 @@
   <block id="74339c243d7e2c57c81d3b6eeb492598" category="paragraph">Avant d'attribuer un rôle à un groupe fédéré, assurez-vous des points suivants :</block>
   <block id="99673e10ad28f12bcaf375fb16592097" category="list-text">Configurez la fédération entre votre fournisseur d'identité et la console. <block ref="562353f9c9a6ec120d22140ce361907b" category="inline-link-macro-rx"></block></block>
   <block id="2e2db2e64333e9c722068fbbc6cceb8e" category="list-text">Le groupe doit déjà exister dans votre fournisseur d'identité et avoir un accès applicatif à la console.</block>
-  <block id="06d5b18e5be0feb68eea2f9f0a2102d0" category="list-text">Les utilisateurs appartenant au groupe doivent déjà s'être inscrits à la NetApp Console et s'être vu attribuer explicitement un rôle dans la console. NetApp recommande d'attribuer un rôle d'accès minimal tel que celui de lecteur de l'organisation.</block>
   <block id="881a7400da554e794b5b8e9d39c7db4a" category="section-title">Points de terminaison pour les charges de travail</block>
   <block id="7226c299553546c713e6b5ab556098c8" category="paragraph">L'agent de la console doit pouvoir accéder au point de terminaison suivant pour les charges de travail NetApp .</block>
   <block id="0eda8bbe61d2248f5418aba76b8dc5b1" category="paragraph">https://api.workloads.netapp.com</block>
@@ -6137,4 +6126,9 @@
   <block id="89c004a6a6a30c4e3297ce59ad9244fe" category="paragraph">Choisissez un ou plusieurs services à valider. Les noms de services valides sont : <block ref="8b55a44b49368262df89fd0e17b1a181" prefix="*" category="inline-code"></block> qui valide la connectivité réseau aux points de terminaison requis de la Console ainsi que l'ouverture des ports nécessaires pour l'agent Console.</block>
   <block id="81e25f5172548cbe6ade4ab58b86b791" category="section-title">Vérifiez l'accès au réseau et aux ports pour l'agent Console</block>
   <block id="79809c4a6f04cdeb09f4ec1df49c2f33" category="paragraph">Effectuez des vérifications de configuration sur les agents Console depuis la Console ou la console de maintenance des agents pour vous assurer qu'ils peuvent accéder aux points de terminaison requis et que les ports requis sont ouverts.</block>
+  <block id="01440d4fde4475cae0005dbb66b8f907" category="list-text"><block ref="01440d4fde4475cae0005dbb66b8f907" category="inline-link-macro-rx"></block></block>
+  <block id="83c2b9a6cf87b54eb30380def11da84d" category="list-text"><block ref="83c2b9a6cf87b54eb30380def11da84d" category="inline-link-macro-rx"></block></block>
+  <block id="b4a377b58913080baf7f33d3fbf72f1a" category="list-text"><block ref="b4a377b58913080baf7f33d3fbf72f1a" category="inline-link-macro-rx"></block></block>
+  <block id="1bbaa3de74e15060c4e8eab23f5e562e" category="list-text"><block ref="1bbaa3de74e15060c4e8eab23f5e562e" category="inline-link-macro-rx"></block></block>
+  <block id="fa05cdec48b95e7a466d56fb898a127b" category="admonition">Lorsque vous ajoutez un groupe fédéré à la Console et lui attribuez un rôle, seuls les utilisateurs qui sont membres du groupe dans votre IdP et qui se sont déjà inscrits à la NetApp Console et se sont vu explicitement attribuer un rôle dans la Console peuvent accéder aux ressources. NetApp recommande d’attribuer un rôle d’accès minimal, tel que Organization viewer, à ces utilisateurs.</block>
 </blocks>
