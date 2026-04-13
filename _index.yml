@@ -44,8 +44,8 @@ indexpage:
       url: task-iam-manage-members-permissions.html
   - title: Agents de la console de déploiement
     links:
-    - title: En savoir plus sur les agents de console
-      url: concept-agents.html
+    - title: Choisissez une méthode de déploiement de l'agent Console
+      url: "/concept-agent-install-options.html"
     - title: Déployer un agent sur site
       url: "/task-install-agent-on-prem.html"
     - title: Déployer un agent dans AWS
@@ -55,7 +55,7 @@ indexpage:
     - title: Déployez un agent dans Google Cloud
       url: "/task-install-agent-google-console-gcloud.html"
     - title: Agents de la console de maintenance
-      url: task-maintain-agents.html
+      url: "/task-maintain-agents.html"
   - title: Sécurité et conformité
     links:
     - title: Fédérez-vous avec votre fournisseur d'identité

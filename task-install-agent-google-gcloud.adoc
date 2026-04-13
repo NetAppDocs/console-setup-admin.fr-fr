@@ -4,7 +4,7 @@ permalink: task-install-agent-google-gcloud.html
 keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, create connector, gcp installation, gcp connector 
 summary: 'Pour créer un agent de console dans Google Cloud à l"aide de Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l"agent de console.' 
 ---
-= Créer un agent de console à partir de Google Cloud
+= Déployez un agent de Console depuis Google Cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,12 @@ summary: 'Pour créer un agent de console dans Google Cloud à l"aide de Google 
 
 
 [role="lead"]
-Pour créer un agent de console dans Google Cloud à l'aide de Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis créer l'agent de console.
+Pour déployer un agent Console dans Google Cloud à l'aide de Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis déployer l'agent Console.
+
+Le déploiement d'un agent dans Google Cloud lance une instance de machine virtuelle exécutant Linux et le logiciel agent Console dans un VPC de votre choix.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
+* Vous devriez avoir un link:concept-agents.html["En savoir plus sur les agents de console"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -451,19 +453,8 @@ $ gcloud components update
 +
 [source, bash]
 ----
-gcloud compute instances create <instance-name>
-  --machine-type=n2-standard-8
-  --image-project=netapp-cloudmanager
-  --image-family=cloudmanager
-  --scopes=cloud-platform
-  --project=<project>
-  --service-account=<service-account>
-  --zone=<zone>
-  --no-address
-  --tags <network-tag>
-  --network <network-path>
-  --subnet <subnet-path>
-  --boot-disk-kms-key <kms-key-path>
+
+gcloud compute instances create <instance-name> --machine-type=n2-standard-8 --image-project=<image-project-name> --image-family=<image-family-name> --scopes=cloud-platform --project=<project-name> --service-account="<service-account-name>" --zone=<zone-name> --no-address --tags "<tags>" --network "<network-path>" --subnet "<subnet-path>"
 ----
 +
 nom d'instance:: Le nom d’instance souhaité pour l’instance de machine virtuelle.

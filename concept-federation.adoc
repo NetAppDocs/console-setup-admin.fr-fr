@@ -56,7 +56,7 @@ NetApp prend en charge les protocoles et fournisseurs d’identité suivants pou
 
 .Protocoles
 * link:task-federation-adfs.html["Services de fédération Active Directory (AD FS)"]
-* link:link:task-federation-saml.html["Fournisseurs d'identité SAML (Security Assertion Markup Language)"]
+* link:task-federation-saml.html["Fournisseurs d'identité SAML (Security Assertion Markup Language)"]
 
 
 .Fournisseurs d'identité

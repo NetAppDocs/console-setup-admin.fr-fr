@@ -21,6 +21,8 @@ Le rôle d'administrateur de fédération est requis pour créer et gérer des f
 
 La vérification de votre domaine implique l'ajout d'un enregistrement TXT aux paramètres DNS de votre domaine.  Cet enregistrement est utilisé pour prouver que vous êtes propriétaire du domaine et permet à la NetApp Console d'approuver le domaine pour la fédération.  Vous devrez peut-être vous coordonner avec votre administrateur informatique ou réseau pour terminer cette étape.
 
+Par exemple, si vous utilisez Microsoft Entra ID, vous pouvez suivre les étapes décrites dans la documentation Microsoft link:https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain["Ajoutez un domaine avec Microsoft Entra ID"].
+
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Fédération* pour afficher la page *Fédérations*.

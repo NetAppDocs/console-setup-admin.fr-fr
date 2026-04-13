@@ -4,7 +4,7 @@ permalink: task-install-agent-google-manual.html
 keywords: install connector, google cloud connector installation, google cloud connector, install connector in google cloud, bluexp, gcloud, manual install, create connector, gcp installation, gcp connector 
 summary: 'Pour installer manuellement l"agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l"hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la console, puis fournir les autorisations que vous avez préparées.' 
 ---
-= Installer manuellement l'agent de console dans Google Cloud
+= Déployez manuellement l'agent Console dans Google Cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,12 @@ summary: 'Pour installer manuellement l"agent de console sur votre propre hôte 
 
 
 [role="lead"]
-Pour installer manuellement l'agent de console sur votre propre hôte Linux, vous devez vérifier les exigences de l'hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la console, puis fournir les autorisations que vous avez préparées.
+Pour déployer manuellement l'agent Console sur votre propre hôte Linux, vous devez examiner les exigences de l'hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la Console, puis fournir les autorisations que vous avez préparées.
+
+Le déploiement d'un agent dans Google Cloud lance une instance de machine virtuelle exécutant Linux et le logiciel agent Console dans un VPC de votre choix.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
+* link:concept-agents.html["En savoir plus sur les agents de console"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 

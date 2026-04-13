@@ -4,7 +4,7 @@ permalink: reference-agent-maint-console-config-checker.html
 keywords: transparent proxy, connector certificate, agent maintenance console, proxy configuration, connector proxy. agent proxy 
 summary: 'Vous pouvez utiliser la console de maintenance de l"agent de console pour configurer un agent de console afin d"utiliser un serveur proxy transparent.' 
 ---
-= Validation de l'agent avec la console de maintenance
+= Validation de l'agent de console avec la console de maintenance dans NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -39,9 +39,19 @@ Le `config-checker validate` Cette commande permet de valider la configuration d
 `--services <comma-separated list of services to validate>`--*REQUIS*--
 
 [role="quick-margin-para"]
-Choisissez un ou plusieurs services à valider. Les noms de services valides sont : *`PLATFORM` qui valide la connectivité réseau aux points de terminaison requis de la Console ainsi que l'ouverture des ports nécessaires pour l'agent Console.
+Choisissez un ou plusieurs services à valider. Les noms de services valides sont :
 
-`--validationTypes <comma-separated list validation types to run>`--*OBLIGATOIRE*-- Choisissez un ou plusieurs types de validation à exécuter.  Les types de validation valides sont : * `NETWORK` qui valide la connectivité réseau aux points de terminaison de la console requis.
+*`PLATFORM`qui valide la connectivité réseau aux points de terminaison requis de la Console ainsi que l'ouverture des ports requis pour l'agent de la Console.
+
+`--validationTypes <comma-separated list validation types to run>` --*OBLIGATOIRE*-- Choisissez un ou plusieurs types de validation à exécuter. Les types de validation valides sont :
+
+* `NETWORK`qui valide la connectivité réseau aux points de terminaison Console requis.
+* `HARDWARE`qui vérifie que l'hôte de l'agent répond aux exigences matérielles minimales pour l'agent Console.
++
+
+NOTE: Lors de l'installation, NetApp vérifie que l'hôte de l'agent dispose d'au moins 80 % de l'espace disque total disponible, ce qui inclut 48 Go dans  `/opt` et 32 Go dans  `/var` (80 Go au total). Après l'installation, il est nécessaire qu'au moins 20 % de l'espace disque total reste disponible, ce qui inclut 12 Go dans  `/opt` et 8 Go dans  `/var` (20 Go au total).
+
+
 
 `--proxy <url>`--*FACULTATIF*--
 
@@ -57,20 +67,22 @@ Spécifie le chemin d'accès à un ou plusieurs fichiers de certificat à utilis
 
 === Exemples de validation du vérificateur de configuration
 
-.Validation de base :
+Les exemples suivants comprennent la validation de la connectivité réseau, des ports requis et des exigences matérielles, ainsi que différentes combinaisons d'utilisation d'un serveur proxy et de certificats personnalisés.
+
+.Validation de la connectivité réseau et des exigences matérielles :
 [source, cli]
 ----
-./agent-maint-console config-checker validate --services PLATFORM --validationTypes NETWORK
+./agent-maint-console config-checker validate --services PLATFORM --validationTypes NETWORK,HARDWARE
 ----
 .Validation lorsqu'un serveur proxy est utilisé pour l'agent :
 [source, cli]
 ----
-./agent-maint-console config-checker validate --services PLATFORM --validationTypes NETWORK --proxy http://proxy.company.com:8080
+./agent-maint-console config-checker validate --services PLATFORM --validationTypes NETWORK,HARDWARE --proxy http://proxy.company.com:8080
 ----
 .Validation lorsqu'un certificat est utilisé pour l'agent :
 [source, cli]
 ----
-./agent-maint-console config-checker validate --services PLATFORM --validationTypes NETWORK --certs /path/to/cert1.pem,/path/to/cert2.pem
+./agent-maint-console config-checker validate --services PLATFORM --validationTypes NETWORK,HARDWARE --certs /path/to/cert1.pem,/path/to/cert2.pem
 ----
 
 

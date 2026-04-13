@@ -4,7 +4,7 @@ permalink: reference-permissions-azure.html
 keywords: permissions, azure, azure permissions, bluexp 
 summary: Lorsque la NetApp Console lance un agent de console dans Azure, elle attache un rôle personnalisé à la machine virtuelle qui fournit à l’agent des autorisations pour gérer les ressources et les processus au sein de cet abonnement Azure.  L’agent utilise les autorisations pour effectuer des appels d’API vers plusieurs services Azure. 
 ---
-= Autorisations Azure pour l'agent de console
+= Autorisations Azure pour l’agent NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

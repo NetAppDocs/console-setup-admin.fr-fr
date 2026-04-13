@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-upgrade-agent.html 
-keywords: upgrade, manual upgrade, agent upgrade, manual agent upgrade, upgrade agent manually, private mode upgrade, offline upgrade, upgrade private mode, connector upgrade, agent upgrade 
-summary: 'L"agent Console est automatiquement mis à jour lorsqu"il dispose d"une connectivité sortante. Si votre agent Console ne dispose pas de connectivité sortante, vous pouvez le mettre à niveau manuellement (par exemple avec le mode privé).' 
+keywords: upgrade, manual upgrade, agent upgrade, manual agent upgrade, upgrade agent manually, private mode upgrade, offline upgrade, upgrade private mode, connector upgrade, agent upgrade, vcenter upgrade, OVA upgrade, ISO upgrade, vsphere upgrade 
+summary: 'L"agent Console est automatiquement mis à jour lorsqu"il dispose d"une connectivité sortante. Si votre agent Console ne dispose pas de connectivité sortante, vous pouvez le mettre à jour manuellement. Si votre agent a été déployé dans vCenter, vous pouvez le mettre à jour à l"aide d"une image ISO.' 
 ---
-= Gérer les mises à niveau de l'agent de la console
+= Mettre à niveau l'agent de la console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'L"agent Console est automatiquement mis à jour lorsqu"il dispose d"un
 
 
 [role="lead"]
-L'agent Console est automatiquement mis à jour lorsqu'il dispose d'une connectivité sortante. Si votre agent Console ne dispose pas de connectivité sortante, vous pouvez le mettre à niveau manuellement (par exemple avec le mode privé).
+L'agent Console est automatiquement mis à jour lorsqu'il dispose d'une connectivité sortante. Si votre agent Console ne dispose pas de connectivité sortante, vous pouvez le mettre à jour manuellement. Si votre agent a été déployé dans vCenter à l'aide d'un fichier OVA, vous pouvez le mettre à jour vers une nouvelle version en montant une image ISO sur la machine virtuelle.
 
 
 
@@ -44,4 +44,47 @@ sudo /path/NetApp-Console-Agent-Offline-<version>
 Où <version> est la version de l'agent que vous avez téléchargé.
 
 . Une fois la mise à niveau terminée, vous pouvez vérifier la version de l'agent en accédant à *Administration > Support > Agents*.
+
+
+
+
+== Mettre à niveau un agent Console déployé par vCenter à l'aide d'une image ISO
+
+Si votre agent Console a été déployé dans vCenter à l'aide d'un fichier OVA, vous pouvez le mettre à niveau vers une nouvelle version en montant une image ISO sur la machine virtuelle et en exécutant la mise à niveau depuis la console de maintenance de la machine virtuelle.
+
+Avant de commencer, prenez un instantané de la machine virtuelle au cas où vous auriez besoin de revenir en arrière.
+
+.Étapes
+. Téléchargez l'ISO de l'agent Console depuis le https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^].
+. Téléversez l'ISO sur un espace de stockage de données accessible depuis vCenter.
+. Dans le client vSphere, connectez-vous à votre vCenter et sélectionnez l’instance de machine virtuelle qui héberge l’agent de Console.
+. Monter l'ISO sur la VM :
++
+.. Faites un clic droit sur la machine virtuelle et sélectionnez *Modifier les paramètres*.
+.. Sélectionnez le lecteur CD/DVD et choisissez *Fichier ISO Datastore*.
+.. Accédez à l'emplacement et sélectionnez l'ISO de l'agent Console.
+.. Assurez-vous que *Connect* est activé.
+.. Sélectionnez *OK*.
+
+
+. Une fois la machine virtuelle sélectionnée, sélectionnez *Lancer la console Web*.
+. Connectez-vous à la console de maintenance en utilisant le nom d'utilisateur `maint` et le mot de passe de maintenance que vous avez spécifié lors du déploiement de l'OVA.
+. Appuyez sur  `1` pour ouvrir le menu *Configuration système*.
+. Appuyez sur  `3` Entrée pour sélectionner *Mise à niveau* et suivez les instructions à l'écran.
++
+La mise à niveau installe le système d'exploitation mis à jour, l'environnement d'exécution Docker et les services de l'agent Console en place. Si le noyau est mis à jour, la machine virtuelle redémarre automatiquement.
+
+. Une fois la mise à niveau terminée, vérifiez que l'agent de la Console fonctionne correctement :
++
+.. Sur le vSphere client, vérifiez que la machine virtuelle est allumée et que la console web est accessible.
+.. Dans la NetApp Console, accédez à *Administration > Support > Agents* et vérifiez que la version de l’agent correspond bien à la nouvelle version.
+
+
+. Démontez l'ISO de la VM :
++
+.. Dans le vSphere client, cliquez avec le bouton droit sur la VM et sélectionnez *Modifier les paramètres*.
+.. Sélectionnez le lecteur CD/DVD et choisissez *Périphérique client* ou déconnectez l’ISO de la banque de données.
+.. Sélectionnez *OK*.
+
+
 

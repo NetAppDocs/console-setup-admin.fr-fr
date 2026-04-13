@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: faq-iam-netapp-console.html 
+keywords: faq, frequently asked questions, frequently asked questions about netapp console iam, identity and access management, role-based access control, rbac, iam, roles, permissions, organization, folders, projects, members, agents, service accounts, federated groups 
+summary: 'Questions fréquentes concernant la gestion des accès et le contrôle d"accès basés sur les rôles dans la NetApp Console.' 
+---
+= FAQ sur la gestion des identités et des accès pour NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette FAQ répond aux questions fréquentes concernant la gestion des identités et des accès (IAM) dans la NetApp Console. Elle se concentre sur les concepts de contrôle d'accès basé sur les rôles, le comportement hiérarchique et la gestion des membres, qui sont utiles lors de la planification et de la mise en œuvre de l'accès pour votre organisation.
+
+
+
+== Mise en route
+
+.Quelles sont les premières étapes pour configurer IAM après la création d'une nouvelle organisation NetApp Console ?
+Lors de votre inscription, la Console crée une organisation avec un administrateur d'organisation et un projet par défaut. À partir de là, les étapes de configuration recommandées sont :
+
+. Modifiez le projet par défaut ou créez des projets et des dossiers supplémentaires pour correspondre à la hiérarchie de votre entreprise.
+. Ajoutez des membres à votre organisation.
+. Ajouter ou découvrir des ressources.
+. Associer les ressources à d'autres projets selon les besoins.
+
+
+
+
+== Hiérarchie des ressources : organisations, dossiers et projets
+
+.Quelle est la différence entre un dossier et un projet dans NetApp Console IAM ?
+Les dossiers regroupent les projets liés pour structurer l'organisation et répartir les rôles. Les projets contiennent des ressources et permettent aux membres d'y accéder. Les ressources ne peuvent pas être associées directement aux dossiers — elles doivent être associées à des projets. L'attribution d'un rôle au niveau du dossier confère à ce membre un accès hérité à tous les sous-projets et dossiers.
+
+.Les dossiers sont-ils visibles par tous les membres de mon organisation ?
+Non. Les dossiers ne sont visibles que par les membres disposant des autorisations IAM : administrateur de l’organisation, administrateur de dossier ou de projet, ou super administrateur. Les membres standard accèdent directement aux projets et ne voient pas les dossiers.
+
+.Puis-je associer directement une ressource à un dossier ?
+Non. Les ressources doivent être associées à des projets, et non à des dossiers. Cependant, un administrateur de l'organisation peut associer une ressource à un dossier afin qu'un administrateur de dossier ou de projet puisse ensuite la lier aux projets appropriés au sein de ce dossier.
+
+.Jusqu'à quel niveau puis-je imbriquer les dossiers et les projets dans la hiérarchie de mon organisation ?
+Vous pouvez créer jusqu'à sept niveaux de dossiers et de projets dans la structure des ressources de votre organisation.
+
+.Quels types de ressources peuvent être associés aux projets dans NetApp Console ?
+Les ressources pouvant être associées aux projets comprennent :
+
+* Systèmes de stockage
+* Abonnements Keystone
+* Certaines charges de travail de sauvegarde et de restauration
+* Agents de console
+
+
+
+
+== Rôles et permissions
+
+.Quelle est la différence entre un administrateur d'organisation et un administrateur de dossier ou de projet ?
+Un administrateur d'organisation dispose d'un accès illimité à tous les projets et dossiers de l'ensemble de l'organisation et est le seul à pouvoir créer des agents de Console. Un administrateur de dossier ou de projet peut uniquement gérer les dossiers et projets qui lui sont attribués et ne peut pas créer d'agents de Console.
+
+.Qui peut créer des agents Console dans NetApp Console ?
+Seuls les utilisateurs disposant du rôle d'administrateur de l'organisation peuvent créer des agents de Console. Les administrateurs de dossier ou de projet ne peuvent pas créer d'agents de Console.
+
+.Quel rôle dois-je attribuer à un utilisateur qui a uniquement besoin de surveiller l'état du stockage et de gérer les demandes d'assistance ?
+Attribuez le rôle d’*analyste de support opérationnel*, qui donne accès aux alertes et aux outils de surveillance ainsi qu’à la possibilité de saisir et de gérer les demandes de support.
+
+.Puis-je modifier le rôle d'un membre au niveau du projet si cet accès a été hérité d'un dossier ?
+Non. Vous ne pouvez pas modifier l'accès d'un membre à un niveau inférieur si cet accès a été hérité d'un niveau supérieur. Pour modifier l'accès, vous devez modifier l'autorisation du membre au niveau hiérarchique supérieur (dossier ou organisation) où elle a été initialement attribuée.
+
+
+
+== Gestion des membres et accès
+
+.Que doit-il se passer avant que je puisse ajouter un utilisateur à mon organisation NetApp Console ?
+L'utilisateur doit déjà s'être inscrit à la NetApp Console avant que vous puissiez l'ajouter à votre organisation, dossier ou projet. Cette condition s'applique même aux utilisateurs qui sont membres d'un groupe fédéré.
+
+.Les utilisateurs fédérés ont-ils automatiquement accès aux ressources lorsque j'ajoute leur groupe à la NetApp Console ?
+Non. Même lorsqu'un rôle est attribué à un groupe fédéré, les utilisateurs individuels doivent remplir deux conditions avant de pouvoir accéder aux ressources :
+
+. L'utilisateur doit déjà s'être inscrit à la NetApp Console.
+. L'utilisateur doit se voir attribuer explicitement un rôle dans la NetApp Console.
+
+
+NetApp recommande d'attribuer à ces utilisateurs un rôle d'accès minimal tel que Organization viewer.
+
+
+
+== Agents de console
+
+.Que devient un agent Console après sa création, et peut-il être utilisé dans d'autres projets ?
+Les agents de la console sont initialement liés au projet dans lequel ils sont créés. Après leur création, les administrateurs peuvent ajouter des agents à d'autres projets ou les associer à un dossier depuis la page Agents.
+
+
+
+== Informations connexes
+
+* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès de la NetApp Console"]
+* link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès à la NetApp Console"]
+* link:task-iam-get-started.html["Démarrer avec l'identité et l'accès dans la NetApp Console"]
+* link:task-iam-manage-folders-projects.html["Ajoutez des dossiers et des projets à votre organisation NetApp Console"]
+* link:task-iam-manage-members-permissions.html["Ajouter des utilisateurs à une organisation NetApp Console"]
+

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-install-agent-aws-console.html 
-keywords: install connector, aws connector installation, aws connector, install connector in aws, bluexp, create connector 
-summary: Vous pouvez créer un agent de console dans AWS directement à partir de la NetApp Console.  Avant de créer un agent de console dans AWS à partir de la console, vous devez configurer votre réseau et préparer les autorisations AWS. 
+keywords: deploy agent, aws agent deployment, aws agent, deploy agent in aws, bluexp, create agent, NetApp Console 
+summary: Vous pouvez déployer un agent Console sur AWS directement depuis la NetApp Console. Avant de déployer un agent Console sur AWS depuis la Console, vous devez configurer votre réseau et préparer les autorisations AWS. 
 ---
-= Créer un agent de console dans AWS à partir de la NetApp Console
+= Déployer un agent de Console dans AWS depuis NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,12 @@ summary: Vous pouvez créer un agent de console dans AWS directement à partir d
 
 
 [role="lead"]
-Vous pouvez créer un agent de console dans AWS directement à partir de la NetApp Console.  Avant de créer un agent de console dans AWS à partir de la console, vous devez configurer votre réseau et préparer les autorisations AWS.
+Vous pouvez déployer un agent Console sur AWS directement depuis la NetApp Console. Avant de déployer un agent Console sur AWS depuis la Console, vous devez configurer votre réseau et préparer les autorisations AWS.
+
+Le déploiement d'un agent dans AWS lance une instance EC2 exécutant Linux et le logiciel agent Console dans un VPC de votre choix.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
+* link:concept-agents.html["En savoir plus sur les agents de console"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -341,7 +343,9 @@ link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour
 +
 []
 ====
-Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case pour ignorer la vérification de validation.
+** Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case pour ignorer la vérification de validation.
+** Lors de l'installation, NetApp vérifie que l'hôte de l'agent dispose d'au moins 80 % de l'espace disque total disponible, ce qui inclut 48 Go dans  `/opt` et 32 Go dans  `/var` (80 Go au total). Après l'installation, il est nécessaire qu'au moins 20 % de l'espace disque total reste disponible, ce qui inclut 12 Go dans  `/opt` et 8 Go dans  `/var` (20 Go au total).
+
 
 ====
 . Sélectionnez *Ajouter*.

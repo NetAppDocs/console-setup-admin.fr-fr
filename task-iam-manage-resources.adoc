@@ -26,9 +26,16 @@ Vous pouvez consulter et gérer les ressources depuis la page *Ressources* de la
 
 Vous pouvez associer plusieurs types de ressources aux projets de votre organisation NetApp Console :
 
-Ressources de stockage:: Les ressources de stockage sont le type de ressource le plus courant dans votre organisation et comprennent à la fois les systèmes de stockage sur site et les systèmes de stockage dans le cloud. Lorsque vous ajoutez un système de stockage à la console, vous pouvez l'ajouter à un dossier ou à un projet. En attendant, la console le considère comme non découvert et ne l'affiche pas sur la page *Ressources*.
-Agents de console:: Si vous avez utilisé un agent Console pour découvrir les systèmes de stockage, ajoutez cet agent au même dossier ou projet. Cela permet aux utilisateurs d'effectuer des fonctions activées par l'agent, telles que les services de données ou la gestion du stockage native de la console. Vous pouvez ajouter des agents à des dossiers ou à des projets depuis la page *Agents* de la Console. link:task-iam-associate-agents.html["Découvrez comment associer un agent de console à un dossier ou à un projet"].
-Abonnements Keystone:: Si votre organisation dispose d'abonnements Keystone , vous pouvez les consulter sur la page *Ressources*. Vous pouvez associer des abonnements Keystone à des dossiers ou des projets afin de donner accès aux membres qui disposent des autorisations nécessaires pour ces dossiers ou projets.
+Ressources de stockage:: Les ressources de stockage sont le type de ressource le plus courant au sein de votre organisation et représentent à la fois les systèmes de stockage sur site et le stockage cloud. Lorsque vous ajoutez un système de stockage à la Console, vous devez l'ajouter à un projet. Jusqu'à ce moment-là, la Console le marque comme non découvert et ne l'affiche pas sur la page *Ressources*.
++
+--
+
+NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs du dossier ou du projet concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
+
+--
+Agents de console:: Si vous avez utilisé un agent de Console pour découvrir les systèmes de stockage, ajoutez l’agent au même projet que le système de stockage. Cela permet aux utilisateurs d’effectuer des fonctions activées par l’agent, telles que les services de données ou la gestion du stockage native à Console. Vous pouvez ajouter des agents aux projets depuis la page *Agents* dans la Console. link:task-iam-associate-agents.html["Apprenez comment associer un agent Console à un projet"].
+Abonnements Keystone:: Si votre organisation dispose d'abonnements Keystone, vous pouvez les consulter sur la page *Ressources*. Vous pouvez associer les abonnements Keystone à des projets afin de fournir l'accès aux membres qui disposent des autorisations pour ces projets.
+Charges de travail de sauvegarde et de restauration:: Les charges de travail Backup and Recovery sont également considérées comme des ressources. Vous pouvez attribuer aux utilisateurs des autorisations d'accès aux charges de travail Backup and Recovery en associant ces charges de travail à des projets. Par exemple, accordez à un utilisateur l'accès à une charge de travail Backup and Recovery en l'associant à un projet auquel l'utilisateur a accès et en lui attribuant le rôle Backup and Recovery approprié.
 
 
 

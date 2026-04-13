@@ -4,7 +4,7 @@ permalink: reference-networking-saas-console-previous.html
 keywords: networking, urls, endpoints, web browser, console, network, set up networking, netapp console 
 summary: Vous devez vous assurer que la console et tous les agents que vous installez disposent du bon accès réseau pour fonctionner correctement. 
 ---
-= Accès réseau requis pour la version 3.9.55 et les versions antérieures
+= Accès réseau pour NetApp Console 3.9.55 et versions antérieures
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

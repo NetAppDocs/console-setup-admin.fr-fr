@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, enhancements, fixes, connectors, bluexp, iam, notice, releases, console' 
-summary: 'Découvrez les nouveautés des fonctionnalités d"administration de la NetApp Console : IAM, agents de console, informations d"identification du fournisseur de cloud, etc.' 
+summary: 'Découvrez les nouveautés concernant l"administration de la NetApp Console.' 
 ---
 = Quoi de neuf
 :hardbreaks:
@@ -18,6 +18,24 @@ Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Co
 
 
 
+== 13 avril 2026
+
+
+
+=== Agent Console 4.6.0
+
+La version 4.6.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs, ainsi que la fonctionnalité nouvelle suivante.
+
+.Prise en charge des vérifications de configuration de l'espace disque
+Vous pouvez vérifier que l'espace disque requis pour l'agent Console est disponible à l'aide des contrôles de configuration. Vous pouvez effectuer des contrôles de configuration depuis la Console ou la console de maintenance de l'agent.link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["Apprenez-en davantage sur l'exécution des vérifications de configuration sur l'agent de la Console"^]
+
+.Mettre à niveau un agent Console déployé par vCenter à l'aide d'une image ISO
+Si vous avez déployé un agent Console dans vCenter à l'aide d'un fichier OVA, vous pouvez désormais le mettre à niveau vers une nouvelle version en montant une image ISO sur la machine virtuelle et en exécutant la mise à niveau depuis la console de maintenance de la machine virtuelle. link:https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-agent.html["Découvrez comment mettre à niveau un agent Console déployé par vCenter"^]
+
+
+
 == 10 mars 2026
 
 
@@ -28,14 +46,14 @@ La version 4.5.0 prend en charge à la fois le mode standard et le mode restrein
 
 Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs, ainsi que la fonctionnalité nouvelle suivante.
 
-.Prise en charge des vérifications de configuration pour les ports requis
-Vous pouvez valider que les ports requis pour l'agent de la Console sont ouverts à l'aide de contrôles de configuration. Vous pouvez effectuer des contrôles de configuration depuis la Console ou la console de maintenance de l'Agent. link:https://docs.netapp.com/console-setup-admin/task-troubleshoot-agent.html["En savoir plus sur l'exécution des vérifications de configuration sur l'agent Console."]
+.Prise en charge des vérifications de configuration des ports requis
+Vous pouvez valider que les ports requis pour l'agent de la Console sont ouverts à l'aide de contrôles de configuration. Vous pouvez effectuer des contrôles de configuration depuis la Console ou la console de maintenance de l'Agent. link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["En savoir plus sur l'exécution des vérifications de configuration sur l'agent Console."]
 
 
 
 === Administration de la console
 
-Vous pouvez attribuer des rôles Keystone aux utilisateurs partenaires pour leur permettre de gérer les ressources Keystone au sein d'une organisation partenaire. link:https://docs.netapp.com/console-setup-admin/console-administration/task-partnerships-assign-users.html["En savoir plus sur l’attribution des rôles Keystone aux utilisateurs partenaires."]
+Vous pouvez attribuer des rôles Keystone aux utilisateurs partenaires pour leur permettre de gérer les ressources Keystone au sein d'une organisation partenaire. link:https://docs.netapp.com/us-en/console-setup-admin/task-partnerships-assign-users.html["En savoir plus sur l’attribution des rôles Keystone aux utilisateurs partenaires."]
 
 
 

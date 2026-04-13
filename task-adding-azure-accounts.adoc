@@ -274,10 +274,9 @@ Votre principal de service est maintenant configuré et vous devez avoir copié 
 Après avoir fourni à un compte Azure les autorisations requises, vous pouvez ajouter les informations d’identification de ce compte à la console.  Cette étape vous permet de lancer Cloud Volumes ONTAP à l’aide de différentes informations d’identification Azure.
 
 .Avant de commencer
-Si vous venez de créer ces informations d'identification auprès de votre fournisseur de cloud, il faudra peut-être quelques minutes avant qu'elles soient disponibles pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
+* Si vous venez de créer ces informations d'identification auprès de votre fournisseur de cloud, il faudra peut-être quelques minutes avant qu'elles soient disponibles pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
+* Vous devez créer un agent de console avant de pouvoir configurer un abonnement. link:concept-agent-install-options.html["Apprenez à créer un agent de console"].
 
-.Avant de commencer
-Vous devez créer un agent de console avant de pouvoir modifier les paramètres de la console. link:concept-agents.html#agent-installation["Apprenez à créer un agent de console"] .
 
 .Étapes
 . Sélectionnez *Administration > Informations d'identification*.

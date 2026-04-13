@@ -250,7 +250,7 @@ Le remplacement de l'abonnement actuel au marché par un nouvel abonnement modif
 
 
 .Avant de commencer
-Vous devez créer un agent de console avant de pouvoir configurer un abonnement. link:concept-agents.html#agent-installation["Apprenez à créer un agent de console"] .
+Vous devez créer un agent de console avant de pouvoir configurer un abonnement. link:concept-agent-install-options.html["Apprenez à créer un agent de console"].
 
 .Étapes
 . Sélectionnez *Administration > Informations d'identification*.

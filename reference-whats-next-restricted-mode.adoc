@@ -4,7 +4,7 @@ permalink: reference-whats-next-restricted-mode.html
 keywords: restricted mode, what you can do 
 summary: Une fois que vous êtes opérationnel avec NetApp Console en mode restreint, vous pouvez commencer à utiliser les services pris en charge par le mode restreint. 
 ---
-= Ce que vous pouvez faire ensuite (mode restreint)
+= Étapes suivantes pour NetApp Console en mode restreint
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

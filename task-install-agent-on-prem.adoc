@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-install-agent-on-prem.html 
-keywords: install connector, on prem connector installation, on prem connector, install connector on prem, manual install 
-summary: Installez un agent de console sur site, puis connectez-vous et configurez-le pour qu’il fonctionne avec votre organisation de console. 
+keywords: deploy agent, on prem agent deployment, on prem agent, deploy connector on prem, manual deployment 
+summary: 'Déployez un agent Console sur site, puis connectez-vous et configurez-le pour qu"il fonctionne avec votre organisation Console.' 
 ---
-= Installer manuellement un agent de console sur site
+= Déployer manuellement un agent Console sur site
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: Installez un agent de console sur site, puis connectez-vous et configur
 
 
 [role="lead"]
-Installez un agent de console sur site, puis connectez-vous et configurez-le pour qu’il fonctionne avec votre organisation de console.
+Déployez un agent Console sur site, puis connectez-vous et configurez-le pour qu'il fonctionne avec votre organisation Console.
 
 
-NOTE: Si vous êtes un utilisateur VMWare, vous pouvez utiliser un OVA pour installer un agent de console dans votre VCenter.link:task-install-agent-on-prem-ova.html["En savoir plus sur l’installation d’un agent dans un VCenter."]
+NOTE: Si vous êtes un utilisateur de VMWare, vous pouvez utiliser un fichier OVA pour déployer un agent Console dans votre vCenter. link:task-install-agent-on-prem-ova.html["Apprenez-en davantage sur le déploiement d'un agent dans un vCenter."]
 
 Avant l'installation, vous devez vous assurer que votre hôte (VM ou hôte Linux) répond aux exigences et que l'agent de la console disposera d'un accès sortant à Internet ainsi qu'aux réseaux ciblés.  Si vous envisagez d'utiliser des services de données NetApp ou des options de stockage cloud telles que Cloud Volumes ONTAP, vous devrez créer des informations d'identification auprès de votre fournisseur de cloud à ajouter à la console afin que l'agent de la console puisse effectuer des actions dans le cloud en votre nom.
 

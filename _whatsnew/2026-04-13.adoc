@@ -1,0 +1,17 @@
+= Agent Console 4.6.0
+:allow-uri-read: 
+
+
+
+
+=== Agent Console 4.6.0
+
+La version 4.6.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs, ainsi que la fonctionnalité nouvelle suivante.
+
+.Prise en charge des vérifications de configuration de l'espace disque
+Vous pouvez vérifier que l'espace disque requis pour l'agent Console est disponible à l'aide des contrôles de configuration. Vous pouvez effectuer des contrôles de configuration depuis la Console ou la console de maintenance de l'agent.link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["Apprenez-en davantage sur l'exécution des vérifications de configuration sur l'agent de la Console"^]
+
+.Mettre à niveau un agent Console déployé par vCenter à l'aide d'une image ISO
+Si vous avez déployé un agent Console dans vCenter à l'aide d'un fichier OVA, vous pouvez désormais le mettre à niveau vers une nouvelle version en montant une image ISO sur la machine virtuelle et en exécutant la mise à niveau depuis la console de maintenance de la machine virtuelle. link:https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-agent.html["Découvrez comment mettre à niveau un agent Console déployé par vCenter"^]

@@ -25,7 +25,7 @@ Effectuez ces tâches de maintenance à l’aide de la console Web de la machine
 
 
 .Limites
-La mise à niveau de l'agent via la console n'est pas encore prise en charge.  De plus, vous ne pouvez afficher que les informations sur l'adresse IP, le DNS et les passerelles.
+Vous pouvez uniquement consulter (et non modifier) les informations relatives à l'adresse IP, au DNS et aux passerelles via la console de maintenance.
 
 
 

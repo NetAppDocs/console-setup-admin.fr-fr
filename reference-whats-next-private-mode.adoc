@@ -4,7 +4,7 @@ permalink: reference-whats-next-private-mode.html
 keywords: private mode, supported features for private mode 
 summary: Après avoir configuré NetApp Console en mode privé, vous pouvez commencer à utiliser les services pris en charge avec le mode privé. 
 ---
-= Ce que vous pouvez faire ensuite (mode privé)
+= Étapes suivantes pour NetApp Console en mode privé
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
