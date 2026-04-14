@@ -19,7 +19,7 @@ Vous déployez un agent Console sur AWS directement depuis AWS Marketplace. Pour
 Le déploiement d'un agent dans AWS lance une instance EC2 exécutant Linux et le logiciel agent Console dans un VPC de votre choix.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
+* link:concept-agent-install-options.html#agent-marketplace-deploy["Découvrez quand déployer depuis le AWS Marketplace"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 

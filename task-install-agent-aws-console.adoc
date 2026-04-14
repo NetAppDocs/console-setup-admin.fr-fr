@@ -19,7 +19,7 @@ Vous pouvez déployer un agent Console sur AWS directement depuis la NetApp Cons
 Le déploiement d'un agent dans AWS lance une instance EC2 exécutant Linux et le logiciel agent Console dans un VPC de votre choix.
 
 .Avant de commencer
-* link:concept-agents.html["En savoir plus sur les agents de console"].
+* link:concept-agent-install-options.html#agent-console-deploy["Découvrez quand déployer depuis la console"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 

@@ -66,6 +66,44 @@ sidebar:
         url: "/task-install-private-mode.html"
       - title: Ce que vous pouvez faire ensuite
         url: "/reference-whats-next-private-mode.html"
+    - title: Déployer un agent de console
+      entries:
+      - title: Choisissez une méthode de déploiement de l'agent Console
+        url: "/concept-agent-install-options.html"
+      - title: AWS
+        entries:
+        - title: Créer un agent de console dans AWS à partir de la NetApp Console
+          url: "/task-install-agent-aws-console.html"
+        - title: Créez un agent de console dans AWS à partir de la place de marché
+            AWS
+          url: "/task-install-agent-aws-marketplace.html"
+        - title: Installez manuellement un agent de Console dans AWS
+          url: "/task-install-agent-aws-manual.html"
+      - title: Azuré
+        entries:
+        - title: Créer un agent de console dans Azure à partir de la NetApp Console
+          url: "/task-install-agent-azure-console.html"
+        - title: Créez un agent de Console dans Azure à partir de la marketplace Azure
+          url: "/task-install-agent-azure-marketplace.html"
+        - title: Installez manuellement un agent de Console dans Azure
+          url: "/task-install-agent-azure-manual.html"
+      - title: Google Cloud
+        entries:
+        - title: Créer un agent de console dans Google Cloud à partir de la NetApp
+            Console
+          url: "/task-install-agent-google-console-gcloud.html"
+        - title: Créer un agent de console dans Google Cloud à partir de Google Cloud
+          url: "/task-install-agent-google-gcloud.html"
+        - title: Installez manuellement un agent Console dans Google Cloud
+          url: "/task-install-agent-google-manual.html"
+      - title: Installer un agent sur site
+        entries:
+        - title: Installer manuellement un agent de console sur site
+          url: "/task-install-agent-on-prem.html"
+        - title: Installez un agent Console sur site dans VCenter
+          url: "/task-install-agent-on-prem-ova.html"
+        - title: Ports pour l'agent de console sur site
+          url: "/reference-ports-on-prem.html"
   - title: Utiliser la NetApp Console
     entries:
     - title: Connectez-vous à la NetApp Console
@@ -89,52 +127,6 @@ sidebar:
       entries:
       - title: En savoir plus sur les agents de console
         url: "/concept-agents.html"
-      - title: Déployer un agent de console
-        entries:
-        - title: Choisissez une méthode de déploiement de l'agent Console
-          url: "/concept-agent-install-options.html"
-        - title: AWS
-          entries:
-          - title: Options d'installation de l'agent de console pour AWS
-            url: "/concept-install-aws.html"
-          - title: Créer un agent de console dans AWS à partir de la NetApp Console
-            url: "/task-install-agent-aws-console.html"
-          - title: Créez un agent de console dans AWS à partir de la place de marché
-              AWS
-            url: "/task-install-agent-aws-marketplace.html"
-          - title: Installez manuellement un agent de Console dans AWS
-            url: "/task-install-agent-aws-manual.html"
-        - title: Azuré
-          entries:
-          - title: Options d'installation de l'agent de console pour Azure
-            url: "/concept-install-azure.html"
-          - title: Créer un agent de console dans Azure à partir de la NetApp Console
-            url: "/task-install-agent-azure-console.html"
-          - title: Créez un agent de Console dans Azure à partir de la marketplace
-              Azure
-            url: "/task-install-agent-azure-marketplace.html"
-          - title: Installez manuellement un agent de Console dans Azure
-            url: "/task-install-agent-azure-manual.html"
-        - title: Google Cloud
-          entries:
-          - title: Options d'installation de l'agent de console pour Google Cloud
-            url: "/concept-install-google.html"
-          - title: Créer un agent de console dans Google Cloud à partir de la NetApp
-              Console
-            url: "/task-install-agent-google-console-gcloud.html"
-          - title: Créer un agent de console dans Google Cloud à partir de Google
-              Cloud
-            url: "/task-install-agent-google-gcloud.html"
-          - title: Installez manuellement un agent Console dans Google Cloud
-            url: "/task-install-agent-google-manual.html"
-        - title: Installer un agent sur site
-          entries:
-          - title: Installer manuellement un agent de console sur site
-            url: "/task-install-agent-on-prem.html"
-          - title: Installez un agent Console sur site dans VCenter
-            url: "/task-install-agent-on-prem-ova.html"
-          - title: Ports pour l'agent de console sur site
-            url: "/reference-ports-on-prem.html"
       - title: Agents de la console de maintenance
         entries:
         - title: Maintenir les agents de Console installés manuellement

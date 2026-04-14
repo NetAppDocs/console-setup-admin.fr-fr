@@ -34,8 +34,21 @@ Le mode restreint est généralement utilisé par les gouvernements étatiques e
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] link:task-subscribe-restricted-mode.html["Abonnez-vous aux NetApp Intelligent Services (facultatif)"]
 [role="quick-margin-para"]
-Facultatif : abonnez-vous à NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire (PAYGO) ou via un contrat annuel.  Les NetApp Intelligent Services incluent NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Cloud Tiering, NetApp Ransomware Resilience et NetApp Disaster Recovery.  La NetApp Data Classification est incluse dans votre abonnement sans frais supplémentaires.
+En option : souscrivez à NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à l’heure (PAYGO) ou via un contrat annuel. NetApp Intelligent Services inclut NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Ransomware Resilience et NetApp Disaster Recovery. NetApp Data Classification est inclus dans votre abonnement sans frais supplémentaires.
 
+[NOTE]
+====
+NetApp Cloud Tiering n'est plus disponible à l'achat ni au renouvellement de licence depuis le 26 avril 2026.
+
+Les clients existants peuvent continuer à utiliser et à bénéficier du support pour NetApp Cloud Tiering jusqu'à l'expiration de leur abonnement ou de leur contrat de licence. Après l'expiration de l'abonnement, les clients n'auront plus accès aux fonctionnalités ou au support de NetApp Cloud Tiering.
+
+NetApp recommande aux clients de travailler avec leur représentant NetApp pour migrer leurs licences de hiérarchisation existantes vers des licences ONTAP FabricPool, qui offrent la fonctionnalité de hiérarchisation des données dans ONTAP. Voir link:https://docs.netapp.com/us-en/ontap/fabricpool/install-license-aws-azure-ibm-task.html["Installez une licence FabricPool sur un cluster ONTAP"] pour plus d'informations sur la configuration de la hiérarchisation des données dans ONTAP à l'aide de FabricPool.
+
+* link:https://go.digital.netapp.com/rs/683-HWH-936/images/Cloud-Tiering-EOA-Notice2.pdf?version=0&mkt_tok=NjgzLUhXSC05MzYAAAGgvTOT_9L2PauNXYE0fOs0RIz8KK2q5Jb6sg8Yv-97NNJ53ceAab9UAqpKOrAvByxsOWqhIQHNCHgFfM0q3TI["NetApp Cloud Tiering Avis de fin de disponibilité"]
+* link:https://go.digital.netapp.com/rs/683-HWH-936/images/Cloud-Tiering-EOA-FAQ-v3.pdf?version=0&mkt_tok=NjgzLUhXSC05MzYAAAGgvTOT_rplJe_ZtlY4PQAQRQlewsDa0W4JR55muT0KCThR46zI7-uOhIYfVsxODDKFrnYYvy5uZzvhEKHOwBI["NetApp Cloud Tiering FAQ sur la fin de disponibilité"]
+
+
+====
 
 
 == Fonctionnalités et services pris en charge pour la NetApp Console en mode restreint

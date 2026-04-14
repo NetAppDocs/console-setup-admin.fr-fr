@@ -22,7 +22,7 @@ Le déploiement d'un agent dans Azure lance une machine virtuelle exécutant Lin
 NOTE: Déployez un agent Console dans la même région Azure que les systèmes Cloud Volumes ONTAP qu'il gère, ou dans la  https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Paire de régions Azure"^]. Cela garantit qu'une connexion Azure Private Link est utilisée entre Cloud Volumes ONTAP et ses comptes de stockage associés.
 
 .Avant de commencer
-* Vous devriez avoir unlink:concept-agents.html["compréhension des agents de console"] .
+* link:concept-agent-install-options.html#agent-console-deploy["Découvrez quand déployer depuis la console"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
