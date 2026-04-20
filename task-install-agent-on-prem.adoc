@@ -266,10 +266,65 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 * Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
 
 
+
+
+ a| 
+\https://occmclientinfragov.azurecr.us.io \https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels. Si vous utilisezlink:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue. Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+^1^ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu car ils sont plus sécurisés et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
+
++ * À partir de la version 3.9.47 de l'agent de console, le système prend en charge les points de terminaison répertoriés dans l'option 1.  Les versions précédentes de l’agent de console ne prennent pas en charge la compatibilité descendante.  * L’agent de la console contacte d’abord les points de terminaison dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.  * Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+
+ a| 
+Si l'agent Console se trouve dans une région AWS Government : \https://*.blob.core.windows.net https://cloudmanagerinfraprod.azurecr.io
+ a| 
+Pour obtenir les images nécessaires aux mises à niveau de l'agent Console lorsque celui-ci est installé dans une région AWS Government.
+
+
+
+ a| 
+Si l'agent Console se trouve dans une région Azure Government : \https://*.blob.core.windows.net https://occmclientinfragov.azurecr.us
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent Console lorsque celui-ci est installé dans une région Azure Government.
+
+
+
+ a| 
+Si l'agent Console se trouve dans une région commerciale ou une région souveraine, vous pouvez choisir entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée) ^1^
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir les images nécessaires aux mises à niveau de l'agent Console lorsque celui-ci est installé dans une région commerciale ou une région souveraine.
+
 |===
 --
 
 
+|*Points de terminaison pour 3.9.55 et inférieur* | *Points de terminaison pour 4.0.0 et supérieur* | *Objectif*
+
+a| * https://support.netapp.com * https://mysupport.netapp.com a| * https://mysupport.netapp.com * https://signin.b2c.netapp.com * https://support.netapp.com a| Pour les licences et la prise de contact avec le support NetApp. a| * https://*.api.bluexp.netapp.com * https://api.bluexp.netapp.com * https://*.cloudmanager.cloud.netapp.com * https://cloudmanager.cloud.netapp.com * https://netapp-cloud-account.auth0.com * https://netapp-cloud-account.us.auth0.com * https://console.netapp.com * https://*.console.netapp.com a| * https://api.bluexp.netapp.com * https://netapp-cloud-account.auth0.com * https://netapp-cloud-account.us.auth0.com * https://console.netapp.com * https://components.console.netapp.com * https://cdn.auth0.com a| Pour les opérations courantes. a| * https://*.blob.core.windows.net * https://cloudmanagerinfraprod.azurecr.io a| * https://bluexpinfraprod.eastus2.data.azurecr.io * https://bluexpinfraprod.azurecr.io | Pour obtenir les images nécessaires aux mises à niveau de l’agent Console.
+
+|===
+|===
 --
 .Azuré
 --
@@ -334,6 +389,61 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 * Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
 
 
+
+
+ a| 
+\https://occmclientinfragov.azurecr.us.io \https://bluexpinfraprod.azurecr.io
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent de console.
+
+* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels. Si vous utilisezlink:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue. Pour éviter cet échec, ignorez la vérification de validation.
++
+Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
+
+* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
+
+
+^1^ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu car ils sont plus sécurisés et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
+
++ * À partir de la version 3.9.47 de l'agent de console, le système prend en charge les points de terminaison répertoriés dans l'option 1.  Les versions précédentes de l’agent de console ne prennent pas en charge la compatibilité descendante.  * L’agent de la console contacte d’abord les points de terminaison dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.  * Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
+
+
+
+ a| 
+Si l'agent Console se trouve dans une région AWS Government : \https://*.blob.core.windows.net https://cloudmanagerinfraprod.azurecr.io
+ a| 
+Pour obtenir les images nécessaires aux mises à niveau de l'agent Console lorsque celui-ci est installé dans une région AWS Government.
+
+
+
+ a| 
+Si l'agent Console se trouve dans une région Azure Government : \https://*.blob.core.windows.net https://occmclientinfragov.azurecr.us
+ a| 
+Pour obtenir des images pour les mises à niveau de l'agent Console lorsque celui-ci est installé dans une région Azure Government.
+
+
+
+ a| 
+Si l'agent Console se trouve dans une région commerciale ou une région souveraine, vous pouvez choisir entre deux ensembles de points de terminaison :
+
+* Option 1 (recommandée) ^1^
++
+\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+
+* Option 2
++
+\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+
+
+ a| 
+Pour obtenir les images nécessaires aux mises à niveau de l'agent Console lorsque celui-ci est installé dans une région commerciale ou une région souveraine.
+
+|===
+|*Points de terminaison pour 3.9.55 et inférieur* | *Points de terminaison pour 4.0.0 et supérieur* | *Objectif*
+
+a| * https://support.netapp.com * https://mysupport.netapp.com a| * https://mysupport.netapp.com * https://signin.b2c.netapp.com * https://support.netapp.com a| Pour les licences et la prise de contact avec le support NetApp. a| * https://*.api.bluexp.netapp.com * https://api.bluexp.netapp.com * https://*.cloudmanager.cloud.netapp.com * https://cloudmanager.cloud.netapp.com * https://netapp-cloud-account.auth0.com * https://netapp-cloud-account.us.auth0.com * https://console.netapp.com * https://*.console.netapp.com a| * https://api.bluexp.netapp.com * https://netapp-cloud-account.auth0.com * https://netapp-cloud-account.us.auth0.com * https://console.netapp.com * https://components.console.netapp.com * https://cdn.auth0.com a| Pour les opérations courantes. a| * https://*.blob.core.windows.net * https://cloudmanagerinfraprod.azurecr.io a| * https://bluexpinfraprod.eastus2.data.azurecr.io * https://bluexpinfraprod.azurecr.io | Pour obtenir les images nécessaires aux mises à niveau de l’agent Console.
+
+|===
 |===
 --
 ====
