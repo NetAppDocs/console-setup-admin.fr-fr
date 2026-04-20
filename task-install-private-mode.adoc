@@ -32,7 +32,9 @@ Pour utiliser la NetApp Console dans l' https://aws.amazon.com/federal/secret-cl
 .Étapes
 . Téléchargez le logiciel agent Console depuis le https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^]
 +
-Veillez à télécharger le programme d'installation hors ligne pour les réseaux privés sans accès à Internet.
+** Sélectionnez la version compatible avec le mode privé. Consultez la link:whats-new.html["notes de version"] pour connaître la dernière version prise en charge.
+** Téléchargez le programme d'installation hors ligne pour les réseaux sans accès à Internet.
+
 
 . Copiez le programme d’installation sur l’hôte Linux.
 . Attribuer des autorisations pour exécuter le script.

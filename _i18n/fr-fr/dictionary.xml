@@ -5810,7 +5810,6 @@
   <block id="c73db6dd4dc3a461773070693cc406c6" category="paragraph">Pour utiliser la NetApp Console dans l'<block ref="da2732e6e9a1be4ab82a1194533aac59" category="inline-link-rx"></block> ou l'<block ref="6f5217ea8a3f93cd9532863eb844647b" category="inline-link-rx"></block>, vous devez suivre des instructions distinctes pour démarrer dans ces environnements.<block ref="7305ccb1d247c4e62b18170abee468ff" category="inline-link-rx"></block></block>
   <block id="1c88387d9be2a13f9b45fd276e63cf80" category="list-text">Les privilèges root sont requis pour installer l'agent Console.</block>
   <block id="afbfe533a489b7d4102d31feb17a881a" category="list-text">Téléchargez le logiciel agent Console depuis le<block ref="99637e01fa8caa34a544049093cac68c" category="inline-link-rx"></block></block>
-  <block id="a6c2003199e95310a83aa40a67058bd8" category="paragraph">Veillez à télécharger le programme d'installation hors ligne pour les réseaux privés sans accès à Internet.</block>
   <block id="70c6033ed76dffb5d74ff7bb0402f4fa" category="paragraph">L'agent Console est installé. Vous pouvez maintenant configurer la NetApp Console.</block>
   <block id="4d50d200e5ecb85ea8908049caf1caab" category="paragraph">Lorsque vous accédez à la NetApp Console pour la première fois, vous serez invité à configurer la NetApp Console.</block>
   <block id="d50d972bc008375c76a9eba41b5ce3e3" category="list-text">Ouvrez un navigateur Web et saisissez l'adresse IP de l'hôte Linux sur lequel vous avez installé l'agent Console.</block>
@@ -6225,4 +6224,7 @@
   <block id="fdac344e6e2a4fe5d79f5e4669b070fe" category="list-text"><block ref="0c9621013a18e4c625fdd25673bfa917" category="inline-link-macro-rx"></block>.</block>
   <block id="8f5eebf6075fe260d8a4c0281dc3bfe2" category="paragraph">En option : souscrivez à NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données à l’heure (PAYGO) ou via un contrat annuel. NetApp Intelligent Services inclut NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Ransomware Resilience et NetApp Disaster Recovery. NetApp Data Classification est inclus dans votre abonnement sans frais supplémentaires.</block>
   <block id="6c842907a578805c3a54843de813b384" category="paragraph">Souscrivez aux NetApp Intelligent Services auprès de votre fournisseur de cloud pour une facturation horaire (PAYGO) ou annuelle. Un abonnement inclut NetApp Backup and Recovery, Cloud Volumes ONTAP, NetApp Ransomware Resilience, NetApp Disaster Recovery, et NetApp Data Classification.</block>
+  <block id="1a8d41e65cef4d345c50298a70f79734" category="inline-link-macro">notes de version</block>
+  <block id="ce51f82ecbd933f0a6bf385915be19b8" category="list-text">Sélectionnez la version compatible avec le mode privé. Consultez la <block ref="2c36977bb4765b4c1724e0f48d254dff" category="inline-link-macro-rx"></block> pour connaître la dernière version prise en charge.</block>
+  <block id="bd7c58df65cf13e6d395217af09edfdb" category="list-text">Téléchargez le programme d'installation hors ligne pour les réseaux sans accès à Internet.</block>
 </blocks>
