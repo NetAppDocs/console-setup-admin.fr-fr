@@ -23,8 +23,6 @@ Mode restreint (installé dans votre propre cloud public):: Le mode restreint es
 Mode privé (installé sur vos locaux ou dans le cloud):: Le mode privé est destiné aux organisations ayant des exigences de sécurité strictes, telles que celles dans AWS Secret Cloud, AWS Top Secret Cloud, Azure IL6 ou des environnements isolés du réseau. Il ne se connecte pas à l'application SaaS NetApp Console ni aux API cloud NetApp, vous donnant un contrôle total et bloquant toute communication externe. Les services de données pris en charge incluent NetApp Backup and Recovery, NetApp Data Classification, NetApp Replication et Cloud Volumes ONTAP. Tout le stockage et l'authentification restent locaux, gardant les données dans votre environnement. Utilisez ce mode pour les sous-traitants de la défense, les institutions financières avec des règles strictes de résidence des données et les agences gouvernementales avec des systèmes classifiés.
 
 
-Lorsqu'il est installé dans vos locaux, seuls les systèmes de stockage ONTAP sont pris en charge.
-
 
 NOTE: NetApp Console limite le flux de données en modes restreint et privé, mais vous devez vous assurer que votre environnement est conforme à vos réglementations.
 
