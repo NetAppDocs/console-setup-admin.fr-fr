@@ -106,7 +106,7 @@ NetApp Replication
 | Fédération | Non 
 
 
-| Gestion des identités et des accès | Non 
+| Gestion des identités et des accès | Oui 
 
 
  a| 

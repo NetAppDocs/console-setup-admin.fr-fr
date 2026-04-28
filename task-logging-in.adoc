@@ -21,7 +21,7 @@ Après votre inscription, l'administrateur de votre organisation Console doit aj
 .Étapes
 . Accédez à l’URL de la NetApp Console. L’URL dépend du mode de Console que votre organisation utilise :
 +
-** **Mode standard** : Ouvrez un navigateur Web et accédez à https://console.netapp.com["NetApp Console"]
+** *Mode standard* : Ouvrez un navigateur Web et accédez à https://console.netapp.com["NetApp Console"]
 ** **Mode restreint ou mode privé** : Ouvrez un navigateur Web et accédez à l'adresse IP où l'agent Console est installé.
 
 
