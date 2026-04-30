@@ -8,7 +8,7 @@ Vous devriez avoir les éléments suivants :
 * Privilèges root pour installer l'agent de la console.
 * Détails sur un serveur proxy, si un proxy est requis pour l'accès Internet à partir de l'agent de la console.
 +
-Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.
+Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent Console.
 
 * Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.
 
@@ -32,9 +32,9 @@ Si vous ne supprimez pas ces variables système, l'installation échoue.
 
 . Téléchargez le logiciel agent Console puis copiez-le sur l'hôte Linux.  Vous pouvez le télécharger soit depuis la NetApp Console , soit depuis le site d'assistance NetApp .
 +
-** NetApp Console: Accédez à *Agents > Gestion > Déployer l’agent > Sur site > Installation manuelle*.
+** NetApp Console : Accédez à *Agents > Gestion > Déployer l’agent > Sur site > Installation manuelle*.
 +
-Choisissez de télécharger les fichiers d'installation de l'agent ou une URL vers ces fichiers.
+Choisissez de télécharger les fichiers d'installation de l'agent ou de copier une URL vers les fichiers.
 
 
 
@@ -43,7 +43,7 @@ Choisissez de télécharger les fichiers d'installation de l'agent ou une URL ve
 NOTE: Téléchargez le programme d'installation de l'agent « online » conçu pour une utilisation sur votre réseau ou dans le cloud. Un programme d'installation « offline » distinct est disponible pour l'agent Console, mais il n'est pris en charge qu'avec les déploiements en mode privé.
 
 +
-** Site d'assistance NetApp (nécessaire si vous n'avez pas déjà accès à la console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^] ,
+** NetApp Support Site (nécessaire si vous n'avez pas déjà accès à la Console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^].
 
 
 . Attribuer des autorisations pour exécuter le script.
@@ -68,17 +68,17 @@ Vous devrez ajouter les informations de proxy si votre réseau nécessite un pro
 
 
 
-NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"]
+NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après avoir installé un agent. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"].
 
 +
 
-Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+Voici un exemple de configuration d'un serveur proxy explicite avec un certificat signé par une autorité de certification :
 
 +
 
 [source, cli]
 ----
-./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+./NetApp_Console_Agent_Cloud_v4.0.0 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
 ----
 +
 `--proxy` configure l'agent de la Console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :

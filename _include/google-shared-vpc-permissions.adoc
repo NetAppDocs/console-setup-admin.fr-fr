@@ -44,9 +44,9 @@ compute.networkUser
 |===
 Remarques :
 
-. deploymentmanager.editor n'est requis au niveau du projet hôte que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  La NetApp Console crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
-. firewall.create et firewall.delete ne sont requis que si vous ne transmettez pas de règles de pare-feu au déploiement et que vous choisissez de laisser la console les créer pour vous.  Ces autorisations résident dans le fichier .yaml du compte de console.  Si vous déployez une paire HA à l’aide d’un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3.  Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer des règles pour VPC0.
-. Pour la hiérarchisation du cloud, le compte de service de hiérarchisation doit avoir le rôle serviceAccount.user sur le compte de service, pas seulement au niveau du projet.  Actuellement, si vous attribuez serviceAccount.user au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec getIAMPolicy.
+. `deploymentmanager.editor` est uniquement requis au niveau du projet hôte si vous ne transmettez pas de règles de pare-feu au déploiement et choisissez de laisser la Console les créer pour vous. La NetApp Console crée un déploiement dans le projet hôte qui contient la règle de pare-feu VPC0 si aucune règle n'est spécifiée.
+. `firewall.create` et  `firewall.delete` ne sont requis que si vous ne transmettez pas les règles de pare-feu au déploiement et que vous choisissez de laisser la Console les créer pour vous. Ces autorisations se trouvent dans le fichier .yaml du compte Console. Si vous déployez une paire haute disponibilité en utilisant un VPC partagé, ces autorisations seront utilisées pour créer les règles de pare-feu pour VPC1, 2 et 3. Pour tous les autres déploiements, ces autorisations seront également utilisées pour créer les règles pour VPC0.
+. Pour Cloud Tiering, le compte de service de tiering doit avoir le rôle  `serviceAccount.user` sur le compte de service, et non uniquement au niveau du projet. Si vous attribuez  `serviceAccount.user` au niveau du projet, les autorisations ne s'affichent pas lorsque vous interrogez le compte de service avec  `getIAMPolicy`.
 
 
 ====

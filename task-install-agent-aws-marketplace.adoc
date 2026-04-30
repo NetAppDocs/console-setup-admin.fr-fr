@@ -128,7 +128,7 @@ Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et
 --
 
 
-Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
+Ports:: Aucun trafic entrant n'est reçu par l'agent Console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp.
 +
 --
 * HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
@@ -142,7 +142,7 @@ Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet s
 --
 
 
-Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service Network Time Protocol (NTP) à la fois sur l'agent de la Console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur NetApp Data Classification"^]
 +
 --
 Implémentez cet accès réseau après avoir créé l’agent de console.
@@ -212,7 +212,7 @@ Vous devriez avoir les éléments suivants :
 
 
 .Étapes
-. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^]
+. Allez à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^].
 . Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
 . Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
 +

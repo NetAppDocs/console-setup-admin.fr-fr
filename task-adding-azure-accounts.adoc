@@ -239,7 +239,7 @@ Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d�
 . Dans le service *Microsoft Entra ID*, sélectionnez *Inscriptions d'applications* et sélectionnez l'application.
 . Copiez l'*ID d'application (client)* et l'*ID de répertoire (locataire)*.
 +
-image:screenshot_azure_app_ids.gif["Une capture d'écran qui montre l'ID d'application (client) et l'ID de répertoire (locataire) pour une application dans Microsoft Entra IDy."]
+image:screenshot_azure_app_ids.gif["Capture d'écran montrant l'ID de l'application (client) et l'ID du répertoire (locataire) d'une application dans Microsoft Entra ID."]
 
 +
 Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
@@ -329,7 +329,7 @@ Le remplacement de l'abonnement actuel au marché le met à jour pour les systè
 +
 Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement au marché aux informations d'identification associées à la NetApp Console.
 
-. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les identifiants à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
 . Pour associer les informations d’identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans la Place de marché Azure :
 +
 .. Si vous y êtes invité, connectez-vous à votre compte Azure.

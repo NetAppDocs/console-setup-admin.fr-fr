@@ -3,7 +3,7 @@
 
 
 .Étapes
-. Aller à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^]
+. Allez à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^].
 . Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
 . Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
 +

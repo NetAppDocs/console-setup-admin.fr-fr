@@ -9,7 +9,7 @@
 +
 Vous devez sélectionner les informations d’identification associées à un agent de console.  Vous ne pouvez pas associer un abonnement au marché aux informations d'identification associées à la NetApp Console.
 
-. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les identifiants à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
 . Pour associer les informations d’identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans la Place de marché Azure :
 +
 .. Si vous y êtes invité, connectez-vous à votre compte Azure.

@@ -117,10 +117,10 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 --
 
 
-Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez l'application SaaS NetApp Console basée sur le web, celle-ci contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données. Cela inclut des points de terminaison qui sont contactés pour déployer l'agent Console depuis la Console.
+Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez l'application SaaS NetApp Console basée sur le Web, celle-ci contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données. Cela inclut des points de terminaison qui sont contactés pour déployer l'agent Console depuis la Console.
 +
 --
-link:reference-networking-saas-console.html["Afficher la liste des points de terminaison contactés depuis la console NetApp"] .
+link:reference-networking-saas-console.html["Consultez la liste des points de terminaison contactés depuis la NetApp Console"].
 
 --
 
@@ -136,7 +136,7 @@ Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et
 --
 
 
-Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
+Ports:: Aucun trafic entrant n'est reçu par l'agent Console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp.
 +
 --
 * HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
@@ -150,7 +150,7 @@ Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet s
 --
 
 
-Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service Network Time Protocol (NTP) à la fois sur l'agent de la Console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur NetApp Data Classification"^]
 +
 --
 Vous devrez implémenter cette exigence de mise en réseau après avoir créé l’agent de console.
@@ -335,15 +335,15 @@ Assurez-vous que vous disposez de la paire de clés correcte pour accéder à la
 +
 link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour AWS"] .
 
-. Vérifiez vos sélections pour vérifier que votre configuration est correcte.
+. Vérifiez vos sélections pour vous assurer que votre configuration est correcte.
 +
-.. La case à cocher *Valider la configuration de l'agent* est cochée par défaut pour que la console valide les exigences de connectivité réseau lors du déploiement.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport pour vous aider à résoudre le problème.  Si le déploiement réussit, aucun rapport n'est fourni.
+.. La case à cocher *Valider la configuration de l’agent* est activée par défaut afin que la NetApp Console valide les exigences de connectivité réseau lors du déploiement. Si la NetApp Console ne parvient pas à déployer l’agent, un rapport est fourni pour vous aider à résoudre le problème. Si le déploiement réussit, aucun rapport n’est fourni.
 
 
 +
-[]
+[NOTE]
 ====
-** Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case pour ignorer la vérification de validation.
+** Si vous utilisez encore l'link:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur. Pour éviter cela, décochez la case à cocher pour ignorer la vérification de validation.
 ** Lors de l'installation, NetApp vérifie que l'hôte de l'agent dispose d'au moins 80 % de l'espace disque total disponible, ce qui inclut 48 Go dans  `/opt` et 32 Go dans  `/var` (80 Go au total). Après l'installation, il est nécessaire qu'au moins 20 % de l'espace disque total reste disponible, ce qui inclut 12 Go dans  `/opt` et 8 Go dans  `/var` (20 Go au total).
 
 

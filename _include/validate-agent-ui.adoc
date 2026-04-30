@@ -13,6 +13,5 @@ NOTE: Si la console déploie correctement l'agent, elle ne génère pas de rappo
 +
 Vous devez recommencer l’ensemble du processus si vous souhaitez essayer de déployer à nouveau l’agent.
 
+. Accéder au rapport et aux journaux depuis l'hôte de l'agent de la console
 
-
-Accéder au rapport et aux journaux depuis l'hôte de l'agent de la console

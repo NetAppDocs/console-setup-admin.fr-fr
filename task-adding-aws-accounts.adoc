@@ -262,7 +262,7 @@ Vous devez sélectionner les informations d’identification associées à un ag
 +
 image:screenshot_aws_configure_subscription.png["Une capture d’écran du menu d’action pour un ensemble d’informations d’identification existantes."]
 
-. Pour associer les informations d'identification à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
+. Pour associer les identifiants à un abonnement existant, sélectionnez l'abonnement dans la liste déroulante et sélectionnez *Configurer*.
 . Pour associer les informations d'identification à un nouvel abonnement, sélectionnez *Ajouter un abonnement > Continuer* et suivez les étapes dans AWS Marketplace :
 +
 .. Sélectionnez *Afficher les options d'achat*.

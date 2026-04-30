@@ -2,15 +2,15 @@
 :allow-uri-read: 
 
 
-. Vérifiez vos sélections pour vérifier que votre configuration est correcte.
+. Vérifiez vos sélections pour vous assurer que votre configuration est correcte.
 +
-.. La case à cocher *Valider la configuration de l'agent* est cochée par défaut pour que la console valide les exigences de connectivité réseau lors du déploiement.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport pour vous aider à résoudre le problème.  Si le déploiement réussit, aucun rapport n'est fourni.
+.. La case à cocher *Valider la configuration de l’agent* est activée par défaut afin que la NetApp Console valide les exigences de connectivité réseau lors du déploiement. Si la NetApp Console ne parvient pas à déployer l’agent, un rapport est fourni pour vous aider à résoudre le problème. Si le déploiement réussit, aucun rapport n’est fourni.
 
 
 +
-[]
+[NOTE]
 ====
-** Si vous utilisez toujours lelink:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur.  Pour éviter cela, décochez la case pour ignorer la vérification de validation.
+** Si vous utilisez encore l'link:reference-networking-saas-console-previous.html["points finaux précédents"] utilisé pour les mises à niveau de l'agent, la validation échoue avec une erreur. Pour éviter cela, décochez la case à cocher pour ignorer la vérification de validation.
 ** Lors de l'installation, NetApp vérifie que l'hôte de l'agent dispose d'au moins 80 % de l'espace disque total disponible, ce qui inclut 48 Go dans  `/opt` et 32 Go dans  `/var` (80 Go au total). Après l'installation, il est nécessaire qu'au moins 20 % de l'espace disque total reste disponible, ce qui inclut 12 Go dans  `/opt` et 8 Go dans  `/var` (20 Go au total).
 
 

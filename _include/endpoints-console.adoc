@@ -5,9 +5,9 @@
 Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la NetApp Console::
 +
 --
-Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
+Les ordinateurs qui accèdent à la Console depuis un navigateur Web doivent pouvoir contacter plusieurs points de terminaison.
 
-link:reference-networking-saas-console.html["Préparer la mise en réseau pour la console NetApp"] .
+link:reference-networking-saas-console.html["Préparez la mise en réseau pour la NetApp Console"].
 
 --
 

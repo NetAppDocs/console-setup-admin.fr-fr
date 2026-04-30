@@ -45,7 +45,7 @@ L'agent utilise `/opt` pour installer le `/opt/application/netapp` répertoire e
 
 ** `/var`: 40 Go d'espace doivent être disponibles
 +
-L'agent Console a besoin de cet espace dans `/var` car Podman ou Docker sont conçus pour créer les conteneurs dans ce répertoire.  Plus précisément, ils créeront des conteneurs dans le `/var/lib/containers/storage` répertoire et `/var/lib/docker` pour Docker. Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
+L'agent Console requiert cet espace dans `/var` car Podman ou Docker est conçu pour créer les conteneurs dans ce répertoire. Plus précisément, ils créeront des conteneurs dans le répertoire `/var/lib/containers/storage` et `/var/lib/docker` pour Docker. Les montages externes ou les liens symboliques ne fonctionnent pas pour cet espace.
 
 
 
@@ -132,7 +132,7 @@ Ubuntu
  a| 
 3.9.45 ou version ultérieure avec la NetApp Console en mode standard ou en mode restreint
  a| 
-Docker Engine 23.06 à 28.0.0.
+Docker Engine 23.0.6 à 28.0.0.
  a| 
 Non pris en charge
 
@@ -185,7 +185,7 @@ Suivez ces étapes pour installer et configurer Podman :
 
 * Activer et démarrer le service podman.socket
 * Installer Python 3
-* Installer le package podman-compose version 1.0.6
+* Installez le paquet podman-compose (varie selon la version de Red Hat)
 * Ajoutez podman-compose à la variable d'environnement PATH
 * Si vous utilisez Red Hat Enterprise Linux, vérifiez que votre version Podman utilise Netavark Aardvark DNS au lieu de CNI
 
@@ -360,9 +360,9 @@ Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent d
 Points de terminaison contactés à partir d'ordinateurs lors de l'utilisation de la NetApp Console::
 +
 --
-Les ordinateurs qui accèdent à la console à partir d’un navigateur Web doivent avoir la possibilité de contacter plusieurs points de terminaison.  Vous devrez utiliser la console pour configurer l'agent de la console et pour l'utilisation quotidienne de la console.
+Les ordinateurs qui accèdent à la Console depuis un navigateur Web doivent pouvoir contacter plusieurs points de terminaison.
 
-link:reference-networking-saas-console.html["Préparer la mise en réseau pour la console NetApp"] .
+link:reference-networking-saas-console.html["Préparez la mise en réseau pour la NetApp Console"].
 
 --
 
@@ -457,7 +457,7 @@ Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et
 --
 
 
-Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
+Ports:: Aucun trafic entrant n'est reçu par l'agent Console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp.
 +
 --
 * HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
@@ -471,7 +471,7 @@ Si les systèmes Cloud Volumes ONTAP ne disposent pas d'une connexion Internet s
 --
 
 
-Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service Network Time Protocol (NTP) à la fois sur l'agent de la Console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur NetApp Data Classification"^]
 
 
 
@@ -559,7 +559,7 @@ Vous devriez avoir les éléments suivants :
 * Privilèges root pour installer l'agent de la console.
 * Détails sur un serveur proxy, si un proxy est requis pour l'accès Internet à partir de l'agent de la console.
 +
-Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent de la console.
+Vous avez la possibilité de configurer un serveur proxy après l'installation, mais cela nécessite le redémarrage de l'agent Console.
 
 * Un certificat signé par une autorité de certification, si le serveur proxy utilise HTTPS ou si le proxy est un proxy d'interception.
 
@@ -583,9 +583,9 @@ Si vous ne supprimez pas ces variables système, l'installation échoue.
 
 . Téléchargez le logiciel agent Console puis copiez-le sur l'hôte Linux.  Vous pouvez le télécharger soit depuis la NetApp Console , soit depuis le site d'assistance NetApp .
 +
-** NetApp Console: Accédez à *Agents > Gestion > Déployer l’agent > Sur site > Installation manuelle*.
+** NetApp Console : Accédez à *Agents > Gestion > Déployer l’agent > Sur site > Installation manuelle*.
 +
-Choisissez de télécharger les fichiers d'installation de l'agent ou une URL vers ces fichiers.
+Choisissez de télécharger les fichiers d'installation de l'agent ou de copier une URL vers les fichiers.
 
 
 
@@ -594,7 +594,7 @@ Choisissez de télécharger les fichiers d'installation de l'agent ou une URL ve
 NOTE: Téléchargez le programme d'installation de l'agent « online » conçu pour une utilisation sur votre réseau ou dans le cloud. Un programme d'installation « offline » distinct est disponible pour l'agent Console, mais il n'est pris en charge qu'avec les déploiements en mode privé.
 
 +
-** Site d'assistance NetApp (nécessaire si vous n'avez pas déjà accès à la console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^] ,
+** NetApp Support Site (nécessaire si vous n'avez pas déjà accès à la Console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^].
 
 
 . Attribuer des autorisations pour exécuter le script.
@@ -619,17 +619,17 @@ Vous devrez ajouter les informations de proxy si votre réseau nécessite un pro
 
 
 
-NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"]
+NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après avoir installé un agent. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"].
 
 +
 
-Voici un exemple de configuration d’un serveur proxy explicite avec un certificat signé par une autorité de certification :
+Voici un exemple de configuration d'un serveur proxy explicite avec un certificat signé par une autorité de certification :
 
 +
 
 [source, cli]
 ----
-./NetApp_Console_Agent_Cloud_v4.0.0--proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
+./NetApp_Console_Agent_Cloud_v4.0.0 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
 ----
 +
 `--proxy` configure l'agent de la Console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
@@ -730,7 +730,7 @@ Fournissez à la console la clé d’accès AWS pour un utilisateur IAM disposan
 . Sélectionnez *Informations d'identification de l'organisation*.
 . Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
 +
-.. *Emplacement des informations d'identification* : sélectionnez *Amazon Web Services > Agent.
+.. *Emplacement des informations d'identification* : Sélectionnez *Amazon Web Services > Agent*.
 .. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
 .. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
 .. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.

@@ -17,8 +17,10 @@ Il est de votre responsabilité de mettre à jour le rôle personnalisé à mesu
 L'exemple suivant crée un rôle nommé « agent » au niveau du projet :
 
 +
-`gcloud iam roles create connector --project=myproject --file=agent.yaml`
-
+[source, shell]
+----
+gcloud iam roles create agent --project=myproject --file=agent.yaml
+----
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["Documentation Google Cloud : Création et gestion de rôles personnalisés"^]
 
@@ -29,13 +31,13 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 .. Depuis le service IAM & Admin, sélectionnez *Comptes de service > Créer un compte de service*.
 .. Saisissez les détails du compte de service et sélectionnez *Créer et continuer*.
 .. Sélectionnez le rôle que vous venez de créer.
-.. Terminez les étapes restantes pour créer le rôle.
+.. Terminez les étapes restantes pour créer le compte de service.
 +
 https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Documentation Google Cloud : Création d'un compte de service"^]
 
 
 
-. Si vous prévoyez de déployer des systèmes Cloud Volumes ONTAP dans des projets différents de celui dans lequel réside l'agent de console, vous devrez fournir au compte de service de l'agent de console un accès à ces projets.
+. Si vous prévoyez de déployer des systèmes Cloud Volumes ONTAP dans des projets autres que celui où réside l'agent de la Console, vous devrez alors accorder au compte de service de l'agent de la Console l'accès à ces projets.
 +
 Par exemple, disons que l’agent de console se trouve dans le projet 1 et que vous souhaitez créer des systèmes Cloud Volumes ONTAP dans le projet 2.  Vous devrez accorder l’accès au compte de service dans le projet 2.
 

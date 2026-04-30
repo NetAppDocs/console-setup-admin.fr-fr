@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Connectez-vous à la console et associez l’agent de la console à votre organisation.  La manière dont vous vous connectez dépend du mode dans lequel vous utilisez la console.  Si vous utilisez la console en mode standard, vous vous connectez via le site Web SaaS.  Si vous utilisez la console en mode restreint ou privé, vous vous connectez localement à partir de l'hôte de l'agent de la console.
+Connectez-vous à la Console et associez l'agent de la Console à votre organisation. La façon dont vous vous connectez dépend du mode dans lequel vous utilisez la Console. Si vous utilisez la Console en mode standard, vous vous connectez via le site web SaaS. Si vous utilisez la Console en mode restreint ou privé, vous vous connectez localement depuis l'hôte de l'agent de la Console.
 
 .Étapes
 . Ouvrez un navigateur Web et entrez l’URL de l’hôte de l’agent de la console :

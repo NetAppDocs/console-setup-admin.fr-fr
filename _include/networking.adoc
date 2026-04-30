@@ -17,10 +17,10 @@ Connexions aux réseaux cibles:: L'agent de console nécessite une connexion ré
 Accès Internet sortant:: L’emplacement réseau où vous déployez l’agent de console doit disposer d’une connexion Internet sortante pour contacter des points de terminaison spécifiques.
 
 
-Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez l'application SaaS NetApp Console basée sur le web, celle-ci contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données. Cela inclut des points de terminaison qui sont contactés pour déployer l'agent Console depuis la Console.
+Points de terminaison contactés depuis la console NetApp:: Lorsque vous utilisez l'application SaaS NetApp Console basée sur le Web, celle-ci contacte plusieurs points de terminaison pour effectuer des tâches de gestion des données. Cela inclut des points de terminaison qui sont contactés pour déployer l'agent Console depuis la Console.
 +
 --
-link:reference-networking-saas-console.html["Afficher la liste des points de terminaison contactés depuis la console NetApp"] .
+link:reference-networking-saas-console.html["Consultez la liste des points de terminaison contactés depuis la NetApp Console"].
 
 --
 
@@ -33,7 +33,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enabli
 --
 
 
-Ports:: Il n'y a aucun trafic entrant vers l'agent de console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp .
+Ports:: Aucun trafic entrant n'est reçu par l'agent Console, sauf si vous l'initiez ou s'il est utilisé comme proxy pour envoyer des messages AutoSupport de Cloud Volumes ONTAP au support NetApp.
 +
 --
 * HTTP (80) et HTTPS (443) donnent accès à l'interface utilisateur locale, que vous utiliserez dans de rares circonstances.
@@ -70,5 +70,5 @@ https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-ad
 --
 
 
-Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service NTP (Network Time Protocol) sur l'agent de console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur la classification des données NetApp"^]
+Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analyser vos sources de données d'entreprise, vous devez activer un service Network Time Protocol (NTP) à la fois sur l'agent de la Console et sur le système NetApp Data Classification afin que l'heure soit synchronisée entre les systèmes. https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["En savoir plus sur NetApp Data Classification"^]
 
