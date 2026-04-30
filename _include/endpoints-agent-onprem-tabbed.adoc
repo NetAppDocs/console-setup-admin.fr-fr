@@ -1,0 +1,34 @@
+= 
+:allow-uri-read: 
+
+
+[role="tabbed-block"]
+====
+.Points de terminaison minimum requis
+--
+Ces points de terminaison sont nécessaires pour tous les déploiements d'agents Console. Des points de terminaison supplémentaires sont requis pour gérer les ressources NetApp dans AWS ou Azure.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | Objectif Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=nss-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=saas-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=upgrade-endpoints] 
+|===
+--
+.Points de terminaison supplémentaires pour les ressources AWS
+--
+Lorsque l'agent Console est installé sur site, il a besoin d'un accès réseau aux points de terminaison AWS supplémentaires suivants pour gérer les systèmes NetApp (tels que Cloud Volumes ONTAP) déployés dans AWS.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | Objectif Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=aws-endpoints] 
+|===
+--
+.Points de terminaison supplémentaires pour les ressources Azure
+--
+Lorsque l'agent Console est installé sur site, il a besoin d'un accès réseau aux points de terminaison Azure supplémentaires suivants pour gérer les systèmes NetApp (tels que Cloud Volumes ONTAP) déployés dans Azure.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | Objectif Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=azure-public-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=azure-china-endpoints] 
+|===
+--
+====

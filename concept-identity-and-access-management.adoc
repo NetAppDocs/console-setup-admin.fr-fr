@@ -14,14 +14,14 @@ summary: 'Utilisez la gestion des identités et des accès (IAM) de la console N
 
 
 [role="lead"]
-Utilisez la gestion des identités et des accès (IAM) de la console NetApp pour organiser vos ressources NetApp et contrôler l'accès en fonction de la structure de votre entreprise : par emplacement, département ou projet.
+Utilisez la gestion des identités et des accès (IAM) de la NetApp Console pour organiser vos ressources NetApp et contrôler l'accès en fonction de la structure de votre entreprise—par emplacement, département ou projet.
 
 Vous organisez les ressources de manière hiérarchique : l’organisation est au sommet, puis les dossiers (qui peuvent avoir d’autres dossiers ou projets), et enfin les projets, qui ont des systèmes de stockage, des charges de travail et des agents.
 
 Attribuez des rôles d'accès au niveau de l'organisation, du dossier ou du projet afin que les utilisateurs disposent du bon accès aux ressources.
 
 
-NOTE: Vous devez disposer des rôles _Super administrateur_, _Administrateur d'organisation_ ou _Administrateur de dossier ou de projet_ pour gérer IAM dans NetApp Console.
+NOTE: Vous devez disposer du rôle _Super administrateur_, _Administrateur d'organisation_ ou _Administrateur de dossier ou de projet_ pour gérer IAM dans la NetApp Console.
 
 L’image suivante illustre cette hiérarchie à un niveau de base.
 
@@ -31,7 +31,7 @@ image:diagram-iam-resource-hierarchy.png["Un schéma conceptuel illustrant les c
 
 == Composants de gestion des identités et des accès
 
-NetApp Console IAM est construite sur trois types de composants : les composants organisationnels qui définissent la hiérarchie, les ressources qui sont affectées au sein de cette hiérarchie, et les membres et rôles qui contrôlent qui peut accéder à quoi.
+La NetApp Console IAM est construite sur trois types de composants : les composants organisationnels qui définissent la hiérarchie, les ressources qui sont affectées au sein de cette hiérarchie, et les membres et les rôles qui contrôlent qui peut accéder à quoi.
 
 
 
@@ -48,11 +48,11 @@ Par exemple, vous pouvez associer un système ONTAP sur site à un seul projet o
 link:task-iam-manage-folders-projects.html["Découvrez comment ajouter des projets à votre organisation."^]
 
 --
-Dossiers:: Regroupez les projets associés dans des _dossiers_ pour les organiser par emplacement, site ou unité commerciale. Vous ne pouvez pas associer directement des ressources aux dossiers, mais attribuer un rôle à un utilisateur au niveau du dossier lui donne accès à tous les projets de ce dossier.
+Dossiers:: Regroupez les projets associés dans des dossiers afin de les organiser par emplacement, site ou unité commerciale. Vous ne pouvez pas associer directement des ressources aux dossiers, mais l'attribution d'un rôle à un utilisateur au niveau du dossier lui donne accès à tous les projets dans ce dossier.
 
 
 
-NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs du dossier ou du projet concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
+NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs de dossier ou de projet du dossier concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
 
 
 
@@ -72,8 +72,8 @@ Systèmes de stockage:: Les systèmes de stockage sont les principales ressource
 Les systèmes de stockage sont automatiquement associés au projet dans lequel ils sont ajoutés, mais vous pouvez les associer à d'autres projets ou dossiers depuis la page *Ressources*. Vous ne pouvez pas associer les systèmes de stockage FSx for NetApp ONTAP à des projets ou des dossiers, mais vous pouvez les consulter sur la page *Systèmes* ou depuis Workloads.
 
 --
-Abonnements Keystone:: Les abonnements Keystone sont également des ressources que vous pouvez associer à des projets afin d'accorder aux utilisateurs l'accès à l'abonnement dans la NetApp Console.
-Charges de travail de sauvegarde et de récupération (Oracle et Microsoft SQL Server):: Certaines charges de travail de sauvegarde et de restauration sont également considérées comme des ressources. Attribuez une charge de travail de sauvegarde et de restauration à un projet afin d'accorder aux utilisateurs l'accès.
+Abonnements Keystone:: Les abonnements Keystone sont également des ressources que vous pouvez associer à des projets pour accorder aux utilisateurs l'accès à l'abonnement dans NetApp Console.
+Charges de travail de sauvegarde et de récupération (Oracle et Microsoft SQL Server):: Certaines charges de travail de NetApp Backup and Recovery sont également considérées comme des ressources. Attribuez une charge de travail de NetApp Backup and Recovery à un projet pour accorder aux utilisateurs l'accès.
 
 
 [[associate-agents]]
@@ -106,7 +106,7 @@ Lorsque vous associez un membre à un rôle, vous pouvez lui attribuer ce rôle 
 
 NetApp Console propose des rôles précis qui respectent le principe du « moindre privilège », ce qui signifie que les rôles d'accès sont conçus pour donner aux utilisateurs l'accès uniquement à ce dont ils ont besoin.
 
-Les utilisateurs peuvent cumuler plusieurs rôles à mesure que leurs responsabilités s'étendent.
+Les utilisateurs peuvent se voir confier plusieurs rôles à mesure que leurs responsabilités s'étendent.
 
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
 
@@ -125,17 +125,17 @@ La structure IAM la plus adaptée dépend de la taille de votre organisation et 
 
 Pour les organisations comptant moins de 50 utilisateurs et disposant d'une gestion centralisée du stockage, envisagez une approche simplifiée utilisant les rôles de super administrateur et de super visualiseur.
 
-**Exemple : Société ABC (équipe de 5 personnes)**
+*Exemple : ABC Corporation (équipe de 5 personnes)*
 
-* **Structure :** Une seule organisation avec 3 projets (Production, Développement, Sauvegarde)
-* **Rôles :**
+* *Structure :* Une seule organisation avec 3 projets (Production, Développement, Sauvegarde)
+* *Rôles :*
 +
 ** 2 membres seniors : rôle de *super administrateur* pour un accès administratif complet
 ** 3 membres de l'équipe : rôle de *Super observateur* pour la surveillance sans droits de modification
 
 
-* **Stratégie d'agent :** Un seul agent est associé à tous les projets pour l'accès aux ressources partagées.
-* **Avantages :** Administration simplifiée, complexité des rôles réduite, adapté aux équipes nécessitant un accès étendu
+* *Stratégie d'agent :* Un seul agent est associé à tous les projets pour l'accès aux ressources partagées
+* *Avantages :* Administration simplifiée, complexité des rôles réduite, adapté aux équipes nécessitant un accès étendu
 
 
 
@@ -144,31 +144,31 @@ Pour les organisations comptant moins de 50 utilisateurs et disposant d'une gest
 
 Pour les grandes organisations ayant des activités régionales et des équipes spécialisées, il convient de mettre en œuvre une approche hiérarchique avec des dossiers représentant les limites géographiques ou les limites des unités commerciales.
 
-**Exemple : Société XYZ (entreprise multinationale)**
+*Exemple : XYZ Corporation (multinational company)*
 
-* **Structure :** Organisation > Dossiers régionaux (Amérique du Nord, Europe, Asie-Pacifique) > Dossiers de projet par région
-* **Rôles de la plateforme :**
+* *Structure :* Organisation > Dossiers régionaux (Amérique du Nord, Europe, Asie-Pacifique) > Dossiers de projet par région
+* *Rôles de la plateforme :*
 +
 ** 1 *Administration de l'organisation* : Supervision globale et gestion des politiques
 ** 3 *Administrateurs de dossiers ou de projets* : Contrôle régional (un par région)
 ** 1 *Administrateur de la fédération* : Intégration du fournisseur d’identité d’entreprise
 
 
-* **Rôles de stockage par région :**
+* *Rôles de stockage par région :*
 +
 ** 9 *Administration du stockage* : Découvrir et gérer les systèmes de stockage dans les régions attribuées
 ** 2 *Visualiseur de stockage* : Surveillez les ressources de stockage dans différentes régions
 ** 1 *Spécialiste de la santé du système* : Gérer la santé du stockage sans modifier le système
 
 
-* **Rôles du service de données :**
+* *Rôles du service de données :*
 +
 ** Administration des sauvegardes et des restaurations : par projet, selon les responsabilités liées aux sauvegardes.
 ** *Administrateur de la résilience aux ransomwares* : Supervision de l’équipe de sécurité sur l’ensemble des projets
 
 
-* **Stratégie d'agents :** Agents régionaux associés à des projets géographiques appropriés
-* **Avantages :** Sécurité renforcée grâce à la séparation des rôles, à l’autonomie régionale et au respect des réglementations locales
+* *Stratégie d'agents :* Agents régionaux associés à des projets géographiques appropriés
+* *Avantages :* Sécurité renforcée grâce à la séparation des rôles, à l’autonomie régionale et au respect des réglementations locales
 
 
 
@@ -177,10 +177,10 @@ Pour les grandes organisations ayant des activités régionales et des équipes 
 
 Pour les organisations disposant d'équipes spécialisées nécessitant un accès spécifique aux services de données, utilisez des attributions de rôles ciblées basées sur les responsabilités fonctionnelles.
 
-**Exemple : TechCorp (entreprise technologique de taille moyenne)**
+*Exemple : TechCorp (entreprise technologique de taille moyenne)*
 
-* **Structure :** Organisation > Dossiers de département (Informatique, Sécurité, Développement) > Ressources spécifiques au projet
-* **Rôles spécialisés :**
+* *Structure :* Organisation > Dossiers de département (IT, Security, Development) > Ressources spécifiques au projet
+* *Rôles spécialisés :*
 +
 ** Équipe de sécurité : rôles d’administrateur de la résilience aux ransomwares et de consultant en classification.
 ** Équipe de sauvegarde : *Super administrateur de sauvegarde et de restauration* pour des opérations de sauvegarde complètes
@@ -188,8 +188,8 @@ Pour les organisations disposant d'équipes spécialisées nécessitant un accè
 ** Équipe de conformité : *Analyste de soutien aux opérations* pour le suivi et la gestion des cas de soutien
 
 
-* **Stratégie relative aux agents :** Les agents sont rattachés aux projets départementaux en fonction de la propriété des ressources.
-* **Avantages :** Contrôle d’accès personnalisé, efficacité opérationnelle accrue et responsabilisation claire pour les tâches spécialisées
+* *Stratégie d'agents :* Les agents sont rattachés aux projets départementaux en fonction de la propriété des ressources
+* *Avantages :* contrôle d'accès personnalisé, efficacité opérationnelle accrue et responsabilisation claire pour les tâches spécialisées
 
 
 

@@ -14,7 +14,7 @@ summary: Gérez les membres de votre organisation pour fournir des autorisations
 
 
 [role="lead"]
-Dans la console, vous accordez aux utilisateurs l'accès aux projets ou aux dossiers en fonction d'un rôle d'accès. Un _rôle d'accès_ contient un ensemble d'autorisations qui permet à un membre (compte utilisateur ou compte de service) d'effectuer des actions spécifiques au niveau assigné de la hiérarchie des ressources.
+Dans la console, vous accordez aux utilisateurs l'accès aux projets ou aux dossiers en fonction d'un rôle d'accès. Un rôle d'accès comprend un ensemble d'autorisations permettant à un membre (utilisateur ou compte de service) d'effectuer des actions spécifiques au niveau correspondant de la hiérarchie des ressources.
 
 .Rôles d'accès requis
 Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"].
@@ -23,7 +23,7 @@ Super administrateur, administrateur d'organisation ou administrateur de dossier
 
 == Comprendre comment l'accès est accordé dans la NetApp Console
 
-La NetApp Console utilise le contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations. Attribuer des rôles aux utilisateurs individuellement ou par le biais de groupes fédérés. Chaque rôle définit les actions autorisées pour des ressources spécifiques.
+La NetApp Console utilise le contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations. Attribuez des rôles aux utilisateurs individuellement ou via des groupes fédérés. Chaque rôle définit les actions autorisées pour des ressources spécifiques.
 
 Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp Console:
 
@@ -54,7 +54,7 @@ Les utilisateurs s'inscrivent à la NetApp Console, mais un administrateur d'org
 L'utilisateur doit déjà s'être inscrit à la NetApp Console. S'ils ne se sont pas encore inscrits, dirigez-les vers link:task-sign-up-saas.html["Inscrivez-vous à la NetApp Console."]
 
 
-NOTE: Si vous ajoutez un utilisateur faisant partie d'un groupe fédéré, assurez-vous que cet utilisateur s'est déjà inscrit à la NetApp Console et qu'un rôle lui a été explicitement attribué dans la console. NetApp recommande d'attribuer un rôle d'accès minimal tel que celui de lecteur de l'organisation.
+NOTE: Si vous ajoutez un utilisateur membre d'un groupe fédéré, assurez-vous que l'utilisateur s'est déjà inscrit à la NetApp Console et qu'un rôle lui a été explicitement attribué dans la Console. NetApp recommande d'attribuer un rôle d'accès minimal, tel que Organization viewer.
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
@@ -100,7 +100,7 @@ Pour l'authentification JWT, préparez votre clé publique ou votre certificat.
 . Saisissez un nom pour le compte de service.
 . Pour utiliser l'authentification JWT, sélectionnez *Utiliser l'authentification JWT par clé privée* et téléchargez votre clé ou certificat RSA public. Ignorez cette étape si vous utilisez un ID client et un secret.
 +
-Votre certificat X.509. Il doit être au format PEM, CRT ou CER.
+Téléversez votre certificat X.509 au format PEM, CRT ou CER.
 
 +
 .. Configurez les notifications d'expiration de votre certificat.  Choisissez entre sept jours ou 30 jours.  Les notifications d'expiration sont envoyées par e-mail et affichées dans la console aux utilisateurs ayant le rôle de super administrateur ou d'administrateur d'organisation.
@@ -121,7 +121,7 @@ Notez ce qui suit :
 link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
 
 . Pour donner accès à davantage de dossiers, de projets ou de rôles, sélectionnez *Ajouter un rôle*, choisissez le dossier, le projet ou la catégorie de rôle, puis sélectionnez un rôle.
-. Si vous n’avez pas choisi d’utiliser l’authentification JWT, téléchargez ou copiez l’ID client et le secret client.
+. Si vous n'avez pas utilisé l'authentification JWT, téléchargez ou copiez l'identifiant client et le secret client.
 +
 La console n'affiche le secret client qu'une seule fois. Copiez-le en lieu sûr ; vous pourrez le recréer plus tard si vous le perdez.
 
@@ -136,12 +136,12 @@ La console n'affiche le secret client qu'une seule fois. Copiez-le en lieu sûr 
 Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation et lui attribuer un ou plusieurs rôles. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.
 
 
-IMPORTANT: Lorsque vous ajoutez un groupe fédéré à la Console et lui attribuez un rôle, seuls les utilisateurs qui sont membres du groupe dans votre IdP et qui se sont déjà inscrits à la NetApp Console et se sont vu explicitement attribuer un rôle dans la Console peuvent accéder aux ressources. NetApp recommande d’attribuer un rôle d’accès minimal, tel que Organization viewer, à ces utilisateurs.
+IMPORTANT: Lorsque vous ajoutez un groupe fédéré à la Console et lui attribuez un rôle, seuls les utilisateurs qui sont membres du groupe dans votre IdP et qui se sont déjà inscrits à la NetApp Console et se sont vu explicitement attribuer un rôle dans la Console peuvent accéder aux ressources. NetApp recommande d'attribuer à ces utilisateurs un rôle d'accès minimal, tel que Lecteur de l'organisation.
 
 Avant d'attribuer un rôle à un groupe fédéré, assurez-vous des points suivants :
 
 * Configurez la fédération entre votre fournisseur d'identité et la console. link:concept-federation.html["Apprenez à configurer une fédération."]
-* Le groupe doit déjà exister dans votre fournisseur d'identité et avoir un accès applicatif à la console.
+* Le groupe doit déjà exister dans votre fournisseur d'identité et avoir été affecté à l'accès à l'application Console.
 
 
 .Étapes

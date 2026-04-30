@@ -22,12 +22,12 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 | Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
 
-| Amazon FsX pour NetApp ONTAP:
+| Amazon FSx for NetApp ONTAP :
 
 * api.workloads.netapp.com
 
 
-| La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP .
+| La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter FSx for ONTAP-based workloads.
 
 | \ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
 
@@ -49,7 +49,7 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 | Pour gérer les ressources dans Google Cloud.
 
-| \ https://mysupport.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp . | \ https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console. | \ https://support.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP.
+| https://mysupport.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp. | https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou ajouter de nouvelles informations d'identification NSS à la NetApp Console. | https://support.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp, ainsi que pour recevoir les mises à jour logicielles pour Cloud Volumes ONTAP.
 
 | https://api.bluexp.netapp.com https://netapp-cloud-account.auth0.com https://netapp-cloud-account.us.auth0.com https://console.netapp.com https://components.console.netapp.com https://cdn.auth0.com | Fournir des fonctionnalités et des services au sein de la NetApp Console.
 
@@ -87,8 +87,8 @@ Pour obtenir des images pour les mises à niveau de l'agent de console.
 
 NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu, car ils sont plus sécurisés, et d'interdire les points de terminaison de l'option 2, sauf si vous utilisez Ransomware Resilience ou Backup and Recovery.  Notez les points suivants à propos de ces points de terminaison :
 
-* Les points de terminaison de l'option 1 sont pris en charge dans la version 3.9.47 et supérieure.  Les versions antérieures à la version 3.9.47 ne prennent pas en charge la compatibilité descendante.
-* L'agent de console initie d'abord le contact avec les points de terminaison de l'option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.
+* Les points de terminaison de l'option 1 sont pris en charge à partir de la version 3.9.47. Les versions antérieures à 3.9.47 ne prennent pas en charge la rétrocompatibilité.
+* L'agent de la Console contacte d'abord les points de terminaison de l'Option 2. Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'Option 1.
 * Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
 
 
@@ -102,7 +102,7 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 * Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
 
 
-a| https://occmclientinfragov.azurecr.us.io https://bluexpinfraprod.azurecr.io a| Pour obtenir des images pour les mises à niveau de l'agent Console.
+a| https://occmclientinfragov.azurecr.us https://bluexpinfraprod.azurecr.io a| Pour obtenir des images pour les mises à niveau de l'agent Console.
 
 * Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels. Si vous utilisezlink:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue. Pour éviter cet échec, ignorez la vérification de validation.
 +
@@ -113,7 +113,7 @@ Bien que les points de terminaison précédents soient toujours pris en charge, 
 
 ^1^ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu car ils sont plus sécurisés et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
 
-+ * À partir de la version 3.9.47 de l'agent de console, le système prend en charge les points de terminaison répertoriés dans l'option 1.  Les versions précédentes de l’agent de console ne prennent pas en charge la compatibilité descendante.  * L’agent de la console contacte d’abord les points de terminaison dans l’option 2.  Si ces points de terminaison ne sont pas accessibles, il contacte automatiquement les points de terminaison de l'option 1.  * Si vous utilisez l’agent de console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison Option 1.  Autoriser les points de terminaison de l’option 2 et interdire l’option 1.
++ * À partir de la version 3.9.47 de l'agent Console, le système prend en charge les points de terminaison listés dans l'option 1. Les versions antérieures de l'agent Console ne prennent pas en charge la compatibilité ascendante. * L'agent Console contacte d'abord les points de terminaison de l'option 2. Si ces points de terminaison sont inaccessibles, il contacte automatiquement ceux de l'option 1. * Si vous utilisez l'agent Console avec NetApp Backup and Recovery ou Ransomware Resilience, le système ne prend pas en charge les points de terminaison de l'option 1. Autorisez les points de terminaison de l'option 2 et désactivez ceux de l'option 1.
 
 | Si l'agent de la console se trouve dans une région AWS Government : \https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
 
