@@ -32,6 +32,8 @@ Vous pouvez accéder à la console de maintenance depuis l'hôte de l'agent de c
 
 Le `config-checker validate` Cette commande permet de valider la configuration d'un agent de console.
 
+link:reference-networking-saas-console.html["En savoir plus sur les points d’accès réseau requis."] link:task-install-agent-on-prem.html#os-req-agent["En savoir plus sur les exigences relatives à l'hôte."]
+
 
 
 === Paramètres

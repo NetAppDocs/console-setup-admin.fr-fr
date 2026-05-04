@@ -411,13 +411,6 @@ Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
  a| 
 Pour obtenir des images pour les mises à niveau de l'agent de console.
 
-* Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels. Si vous utilisezlink:reference-networking-saas-console-previous.html["points finaux précédents"] , le contrôle de validation échoue. Pour éviter cet échec, ignorez la vérification de validation.
-+
-Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. link:reference-networking-saas-console-previous.html#update-endpoint-list["Apprenez à mettre à jour votre liste de points de terminaison"] .
-
-* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
-
-
 |===
 --
 

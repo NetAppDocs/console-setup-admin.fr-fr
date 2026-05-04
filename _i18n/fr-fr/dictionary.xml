@@ -165,19 +165,11 @@
   <block id="641d1f191c2b819061a8e9b6046fdbeb" category="paragraph">| Pour gérer les ressources dans Google Cloud.</block>
   <block id="4600c0d23dfe95b8db6f735a4b192742" category="paragraph">a| \ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io a| Pour obtenir des images pour les mises à niveau de l'agent de console.</block>
   <block id="4691a33bfa50c006ca907ff0f1c2ff22" category="inline-link-macro">Apprenez à mettre à jour votre liste de points de terminaison</block>
-  <block id="6e9c9d81baee7aa9e962024fc724b7ca" category="paragraph">Bien que les points de terminaison précédents soient toujours pris en charge, NetApp recommande de mettre à jour vos règles de pare-feu vers les points de terminaison actuels dès que possible. <block ref="b264fb455cda46e4971383987c8dce4c" category="inline-link-macro-rx"></block> .</block>
   <block id="b44e4956810f4ddc108ea4c7e1339c8b" category="list-text">Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.</block>
   <block id="27ef411618dcaaeae6016b6063099cd3" category="paragraph">^1^ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu car ils sont plus sécurisés et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :</block>
-  <block id="9d8771d45517bfb98492c1863dcd84e6" category="paragraph">| Si l'agent de la console se trouve dans une région AWS Government : \https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io</block>
-  <block id="d69547f8da7a3fc1f1750b21a40b4d81" category="paragraph">| Pour obtenir des images pour les mises à niveau de l'agent de console lorsque l'agent de console est installé dans une région AWS Government.</block>
-  <block id="e1e00fbff5d8f3eda49d54653859b8dc" category="paragraph">| Si l'agent de console se trouve dans une région Azure Government : \https://*.blob.core.windows.net \ https://occmclientinfragov.azurecr.us</block>
-  <block id="95c562cec08a4fe5f10bc4bf63bcd8b1" category="paragraph">| Pour obtenir des images pour les mises à niveau de l’agent de console lorsque l’agent de console est installé dans une région Azure Government.</block>
-  <block id="a69993e3de4e29e60253494f1d804482" category="paragraph">a| Si l'agent de console se trouve dans une région commerciale ou une région souveraine, vous pouvez choisir entre deux ensembles de points de terminaison :</block>
-  <block id="5f6428bd6c6248b828101aca600e81cd" category="list-text">Option 1 (recommandée) ^1^</block>
   <block id="7d9fb0da2a7d9c9f4e35c19e20d063fa" category="paragraph">\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io</block>
   <block id="e24963e40778134b357f4a5eac58e1f5" category="list-text">Option 2</block>
   <block id="136fa3635085015cd64da15749cb05d3" category="paragraph">\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io</block>
-  <block id="6e4b673e0b468e69f5eee0cd8a1bc7be" category="paragraph">| Pour obtenir des images pour les mises à niveau de l’agent de console lorsque l’agent de console est installé dans une région commerciale ou une région souveraine.</block>
   <block id="e30145628db8e56b12ce8e660f2e5fda" category="inline-link-macro">répertorié ici</block>
   <block id="cf6ace098b5e91cbdb744b6c08dce9e8" category="inline-link-macro">Apprenez à mettre à jour votre réseau</block>
   <block id="5ba4013e86db68ef909f6a62fad996ec" category="list-text">Si vous mettez à jour les points de terminaison de votre pare-feu, vos agents existants continueront de fonctionner.</block>
@@ -4072,7 +4064,6 @@
   <block id="0960e06fac3e48e6403802fb4aa8fbde" category="paragraph">Pour plus d'informations sur l'accès aux diagnostics de l'agent de la console, consultez les rubriques suivantes :</block>
   <block id="a25b82d4083e9054d77530a1b1771861" category="inline-link-macro">Vérifier l'état de l'agent de la console (pour les déploiements d'hôtes Linux)</block>
   <block id="fb418088b41b8e87851b52debc27d47c" category="list-text"><block ref="fb418088b41b8e87851b52debc27d47c" category="inline-link-macro-rx"></block></block>
-  <block id="0b73ccbc949b18b9ec9f895e07294e36" category="list-text">Podman (pour les déploiements RedHat Enterprise Linux)</block>
   <block id="7456d0b67dfbe48185fc6410c811e1dc" category="section-title">Afficher la version de l'agent de la console</block>
   <block id="23fc9bc00056f19d24e4c3ab8b5ca0c6" category="paragraph">Affichez la version de l'agent de la console pour confirmer la mise à niveau ou partagez-la avec votre représentant NetApp .</block>
   <block id="b9b50a4a67814c748f85c0dd361e7931" category="list-text">Sélectionnez *Administration &gt; Support &gt; Agents*.</block>
@@ -4339,7 +4330,6 @@
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Connaissances et soutien</block>
   <block id="253b718b7b0bb8f190e2ebe1c721295e" category="paragraph">Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience. Ransomware Resilience prend en charge les rôles suivants :</block>
   <block id="16a7e3e925ade6eef4533f96172d423f" category="sidebar">Rôles de résilience aux ransomwares</block>
-  <block id="4ed68ecf8e006d0fab7f06897731cf53" category="list-text">Lorsque vous déployez un nouvel agent, le contrôle de validation teste la connectivité aux points de terminaison actuels. Si vous utilisez<block ref="99a33b76fea6c3306005dfd630a43c9c" category="inline-link-macro-rx"></block> , le contrôle de validation échoue. Pour éviter cet échec, ignorez la vérification de validation.</block>
   <block id="a8b7063e167b83f7676ad4659510d5ea" category="sidebar">Rôles de sauvegarde et de récupération</block>
   <block id="ffce0d237e59f85993727b9607fade6c" category="sidebar">Rôles de reprise après sinistre</block>
   <block id="fffc92a6b6a3b44b650e6669aa797cac" category="summary">Ransomware Resilience propose différents rôles d'utilisateur pour gérer l'accès aux paramètres, aux actions et aux rapports.</block>
@@ -6192,11 +6182,17 @@
   <block id="fffc3b17829167ae6b45a4b144c7bad7" category="list-text"><block ref="fffc3b17829167ae6b45a4b144c7bad7" category="inline-link-macro-rx"></block></block>
   <block id="3081a7b6bb95ec0d5cf84dc2ea835174" category="list-text">Docker (pour Ubuntu et vCenter les déploiements)</block>
   <block id="0128c0d35d7f984db85c5d65138fb691" category="section-title">Vérifiez que l'agent de la Console répond aux exigences</block>
-  <block id="787bde807a1a57661aeb1e9aa8557b03" category="paragraph"><block ref="787bde807a1a57661aeb1e9aa8557b03" category="inline-link-macro-rx"></block></block>
   <block id="c45122f09d565aa9c39277ed8a04fe96" category="paragraph">Si vous n'avez pas pu résoudre les problèmes liés à votre agent Console, vous pouvez contacter l'assistance NetApp. NetApp Support pourra vous demander l'identifiant de l'agent Console ou de leur envoyer les journaux de l'agent Console s'ils ne les ont pas déjà.</block>
   <block id="550db41d5673daf8fdbc4334a1fbff87" category="paragraph">Si vous rencontrez des problèmes, NetApp pourrait vous demander d'envoyer un message AutoSupport au support NetApp à des fins de dépannage.</block>
   <block id="97c06a2bee370a00309be22a5d370be9" category="summary">Désinstallez un agent de Console pour résoudre les problèmes ou le supprimer définitivement de l'hôte. La procédure à suivre dépend du mode de déploiement que vous utilisez. Une fois que vous avez supprimé un agent de Console de votre environnement, vous pouvez le supprimer de la Console.</block>
   <block id="42e88fe3980dba2a9d6c7e65cc1f3a04" category="list-text">Sur la page *Aperçu*, sélectionnez le menu d'actions d'un agent déconnecté et sélectionnez *Supprimer l'agent*.</block>
   <block id="6b0481da6e57f7d61d264eda118c6c5b" category="paragraph">Mettez à jour l'URI d'un agent de Console si vos besoins réseau évoluent. Cela garantit une gestion ininterrompue, sécurisée et conforme de votre infrastructure de stockage.</block>
   <block id="55a14e6b296f723d13dead096a169722" category="paragraph">L'agent de la console doit redémarrer pendant le processus de mise à niveau, donc la NetApp Console sera indisponible pendant la mise à niveau.</block>
+  <block id="530df3726781395191a4e890157aa779" category="list-text">https://occmclientinfragov.azurecr.us.io (si vous vous trouvez dans un environnement en mode restreint)</block>
+  <block id="a3bf5c90fa71fd1dac8e77c19a0cae5c" category="inline-link-macro">En savoir plus sur les exigences relatives à l'hôte.</block>
+  <block id="ed637bdd25ff9b3d6cdb12d0b3117fd4" category="paragraph"><block ref="787bde807a1a57661aeb1e9aa8557b03" category="inline-link-macro-rx"></block> <block ref="2cf3600481d00e694d39bf1acae4604c" category="inline-link-macro-rx"></block></block>
+  <block id="51bc5a08850d61e055a088db3581d040" category="paragraph">\https://occmclientinfragov.azurecr.us \https://bluexpinfraprod.azurecr.io</block>
+  <block id="db454f9269515bb4dec7a10f7a86bc01" category="list-text">Podman (pour les déploiements Red Hat Enterprise Linux)</block>
+  <block id="d92105d2e9772b92b6c636fbe0cfdf2c" category="inline-link-macro">En savoir plus sur les points d'accès réseau requis pour le mode restreint.</block>
+  <block id="befec105cd1e8a7f9d2e63f216085cb8" category="admonition">Pour les clients cloud gouvernementaux (mode restreint), NetApp Console ne valide pas le point de terminaison de mise à niveau en mode restreint. Vous devez vérifier manuellement que vos règles de pare-feu autorisent l'accès à ce point de terminaison.<block ref="df5e5876be260d9f3642c620299197c9" category="inline-link-macro-rx"></block></block>
 </blocks>
