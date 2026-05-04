@@ -20,9 +20,9 @@ Vous gérez les informations d'identification AWS et les abonnements Marketplace
 
 == Informations d'identification AWS initiales
 
-Lorsque vous déployez un agent de console à partir de la console, vous devez fournir l’ARN d’un rôle IAM ou des clés d’accès pour un utilisateur IAM. La méthode d'authentification doit disposer des autorisations nécessaires pour déployer l'agent Console dans AWS.  Les autorisations requises sont listées dans lelink:task-install-agent-aws-console.html#aws-permissions-agent["Politique de déploiement d'agents pour AWS"] .
+Lorsque vous déployez un agent Console depuis la Console, vous devez fournir l'ARN d'un rôle IAM ou les clés d'accès d'un utilisateur IAM. La méthode d'authentification doit disposer des autorisations nécessaires pour déployer l'agent Console dans AWS. Les autorisations requises sont listées dans le link:task-install-agent-aws-console.html#aws-permissions-agent["Politique de déploiement d'agents pour AWS"].
 
-Lorsque la console lance l’agent de console dans AWS, elle crée un rôle IAM et un profil pour l’agent. Il attache également une politique qui fournit à l’agent de la console des autorisations pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Vérifiez comment l'agent utilise les autorisations"].
+Lorsque la Console lance l'agent Console dans AWS, elle crée un rôle IAM et un profil pour l'agent. Elle associe également une stratégie qui accorde à l'agent Console les autorisations nécessaires pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Examinez comment l'agent utilise les autorisations"].
 
 image:diagram_permissions_initial_aws.png["Une image conceptuelle qui montre la console déployant l’agent de console dans un compte AWS."]
 
@@ -30,7 +30,7 @@ Si vous ajoutez un nouveau système Cloud Volumes ONTAP , la console sélectionn
 
 image:screenshot_accounts_select_aws.gif["Une capture d'écran qui montre l'option Changer de compte dans la page Détails et informations d'identification."]
 
-Déployez tous vos systèmes Cloud Volumes ONTAP à l’aide des informations d’identification AWS initiales ou vous pouvez ajouter des informations d’identification supplémentaires.
+Vous pouvez déployer tous vos systèmes Cloud Volumes ONTAP en utilisant les identifiants AWS initiaux, ou vous pouvez ajouter des identifiants supplémentaires.
 
 
 
@@ -131,7 +131,7 @@ Non, il n'est pas possible de déplacer les ressources AWS associées à votre s
 
 === Comment fonctionnent les informations d’identification pour les déploiements sur le marché et les déploiements sur site ?
 
-Les sections ci-dessus décrivent la méthode de déploiement recommandée pour l'agent de console, qui provient de la console. Vous pouvez également déployer un agent sur AWS depuis AWS Marketplace et installer manuellement le logiciel agent Console sur votre propre hôte Linux ou dans votre vCenter.
+Les sections précédentes décrivent la méthode de déploiement recommandée pour l'agent Console, à savoir le déploiement depuis la Console. Vous pouvez également déployer un agent sur AWS depuis AWS Marketplace et installer manuellement le logiciel de l'agent Console sur votre propre hôte Linux ou dans votre vCenter.
 
 Si vous utilisez la Marketplace, les autorisations sont fournies de la même manière.  Il vous suffit de créer et de configurer manuellement le rôle IAM, puis de fournir des autorisations pour tous les comptes supplémentaires.
 

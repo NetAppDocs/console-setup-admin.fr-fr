@@ -265,7 +265,7 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 
 
 .Résultat
-Votre principal de service est maintenant configuré et vous devez avoir copié l'ID de l'application (client), l'ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous ajoutez un compte Azure.
+Votre principal de service est maintenant configuré et vous devez avoir copié l’ID de l’application (client), l’ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous ajoutez un compte Azure.
 
 
 
@@ -297,7 +297,7 @@ Après avoir fourni à un compte Azure les autorisations requises, vous pouvez a
 
 
 .Résultat
-Vous pouvez passer à un autre ensemble d'informations d'identification à partir de la page Détails et informations d'identification. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["lors de l'ajout d'un système à la console"^]
+Vous pouvez passer à un autre ensemble d'identifiants depuis la page Détails et identifiants https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["lors de l'ajout d'un système à la console"^].
 
 image:screenshot_accounts_switch_azure.gif["Une capture d'écran qui montre la sélection entre les informations d'identification après avoir sélectionné Modifier les informations d'identification dans la page Détails et informations d'identification."]
 

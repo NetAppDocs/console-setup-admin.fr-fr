@@ -30,7 +30,7 @@ NOTE: Déployez un agent Console dans la même région Azure que les systèmes C
 
 == Étape 1 : Configurer le réseau
 
-Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes. Ces exigences permettent à l’agent de console de gérer les ressources dans votre cloud hybride.
+Assurez-vous que l'emplacement réseau où vous prévoyez d'installer l'agent Console répond aux exigences suivantes. Ces exigences permettent à l'agent Console de gérer les ressources de votre cloud hybride.
 
 région Azure:: Si vous utilisez Cloud Volumes ONTAP, l'agent de console doit être déployé dans la même région Azure que les systèmes Cloud Volumes ONTAP qu'il gère, ou dans la https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Paire de régions Azure"^] pour les systèmes Cloud Volumes ONTAP .  Cette exigence garantit qu’une connexion Azure Private Link est utilisée entre Cloud Volumes ONTAP et ses comptes de stockage associés.
 +
@@ -417,7 +417,7 @@ Notez les points suivants lorsque vous configurez la machine virtuelle :
 +
 link:reference-ports-azure.html["Afficher les règles du groupe de sécurité pour Azure"] .
 
-** Identité* : Sous *Gestion*, sélectionnez *Activer l'identité gérée attribuée par le système*.
+** *Identité* : Sous *Gestion*, sélectionnez *Activer l'identité gérée attribuée par le système*.
 +
 Ce paramètre est important car une identité gérée permet à la machine virtuelle de l’agent de console de s’identifier auprès de Microsoft Entra ID sans fournir d’informations d’identification. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["En savoir plus sur les identités gérées pour les ressources Azure"^] .
 
@@ -449,7 +449,7 @@ Gardez le mode restreint désactivé pour utiliser la console en mode standard. 
 
 
 .Résultat
-Vous avez maintenant installé l’agent de console et l’avez configuré avec votre organisation de console.
+Vous avez maintenant installé l'agent Console et l'avez configuré avec votre organisation Console.
 
 Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où vous avez créé l’agent de console, vous verrez un système de stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la console"^]
 

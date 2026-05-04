@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-ports-gcp.html 
 keywords: ports, firewall rules, http, https, inbound, outbound, connector, agent 
-summary: 'Les règles de pare-feu Google Cloud pour l"agent nécessitent des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d"installation, vous devez configurer ce groupe de sécurité manuellement.' 
+summary: 'Les règles du pare-feu Google Cloud pour l"agent nécessitent des règles de trafic entrant et sortant. La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent Console à partir de la Console. Pour les autres options d"installation, vous devez configurer ce groupe de sécurité manuellement.' 
 ---
 = Règles de pare-feu de l'agent de console dans Google Cloud
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Les règles de pare-feu Google Cloud pour l"agent nécessitent des rè
 
 
 [role="lead"]
-Les règles de pare-feu Google Cloud pour l'agent nécessitent des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console. Pour les autres options d'installation, vous devez configurer ce groupe de sécurité manuellement.
+Les règles du pare-feu Google Cloud pour l'agent nécessitent des règles de trafic entrant et sortant. La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent Console à partir de la Console. Pour les autres options d'installation, vous devez configurer ce groupe de sécurité manuellement.
 
 
 
@@ -82,5 +82,5 @@ NOTE: L'adresse IP source est l'hôte de l'agent.
 | Appels d'API | TCP | 8080 | Classification des données | Sonder l'instance de classification des données pendant le déploiement 
 
 
-| DNS | UDP | 53 | DNS | Utilisé pour la résolution DNS par classification des données 
+| DNS | UDP | 53 | DNS | Utilisé pour la résolution DNS par Data Classification 
 |===

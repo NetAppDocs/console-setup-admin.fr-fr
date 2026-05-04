@@ -160,7 +160,7 @@ NOTE: L'opérateur de console est le nom par défaut fourni dans la politique.  
 --
 .Principal de service Azure
 --
-Fournissez à l'agent de la Console les informations d'identification du principal de service Azure que vous avez configuré précédemment.
+Fournissez à l'agent de la console les identifiants pour le principal de service Azure que vous avez configuré précédemment.
 
 .Étapes
 . Sélectionnez *Administration > Informations d'identification*.

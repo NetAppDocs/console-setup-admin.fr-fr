@@ -17,9 +17,9 @@ summary: 'Dans la NetApp Console, vous pouvez attribuer des rôles aux utilisate
 Gérez l'accès des membres dans votre organisation Console. Attribuer des rôles pour définir les autorisations. Supprimez les membres lorsqu'ils quittent l'entreprise.
 
 .Rôles d'accès requis
-Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). Lien : reference-iam-predefined-roles.html [En savoir plus sur les rôles d’accès].
+Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"].
 
-Vous pouvez attribuer des rôles d'accès par projet ou par dossier. Par exemple, attribuez un rôle à un utilisateur pour deux projets spécifiques ou attribuez le rôle au niveau du dossier pour donner à un utilisateur le rôle d'administrateur de résilience aux ransomwares pour tous les projets d'un dossier.
+Vous pouvez attribuer des rôles d'accès par projet ou par dossier. Par exemple, attribuez un rôle à un utilisateur pour deux projets spécifiques ou attribuez le rôle au niveau du dossier pour donner à un utilisateur le rôle d'administrateur Ransomware Resilience pour tous les projets d'un dossier.
 
 
 NOTE: Ajoutez vos dossiers et projets avant d'attribuer l'accès aux utilisateurs. link:task-iam-manage-folders-projects.html["Apprenez à ajouter des dossiers et des projets."]
@@ -28,7 +28,7 @@ NOTE: Ajoutez vos dossiers et projets avant d'attribuer l'accès aux utilisateur
 
 == Comprendre comment l'accès est accordé dans la NetApp Console
 
-La NetApp Console utilise un modèle de contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations des utilisateurs. Vous pouvez attribuer des rôles prédéfinis aux membres individuellement ou par le biais de groupes fédérés. Vous pouvez ajouter et attribuer des rôles aux comptes de service, ainsi qu'aux groupes fédérés. Chaque rôle définit les actions qu'un membre peut effectuer sur les ressources associées.
+La NetApp Console utilise un modèle de contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations des utilisateurs. Vous pouvez attribuer des rôles prédéfinis aux membres individuellement ou via des groupes fédérés. Vous pouvez ajouter et attribuer des rôles aux comptes de service, ainsi qu'aux groupes fédérés. Chaque rôle définit les actions qu'un membre peut effectuer sur les ressources associées.
 
 Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp Console:
 
@@ -62,7 +62,7 @@ Le tableau *Membres* répertorie les membres de votre organisation.
 
 == Afficher les rôles attribués à un membre
 
-Vous pouvez vérifier les rôles qui leur sont actuellement attribués.
+Vous pouvez vérifier les rôles actuellement attribués au membre.
 
 Si vous disposez du rôle _Administrateur de dossier ou de projet_, la page affiche tous les membres de l'organisation.  Cependant, vous ne pouvez afficher et gérer les autorisations des membres que pour les dossiers et les projets pour lesquels vous disposez d'autorisations. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"] .
 

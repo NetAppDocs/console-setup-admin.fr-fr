@@ -14,7 +14,7 @@ summary: 'Ajoutez et gérez les informations d’identification AWS afin que la 
 
 
 [role="lead"]
-Ajoutez et gérez les informations d'identification AWS afin de déployer et de gérer les ressources cloud dans vos comptes AWS à partir de la NetApp Console.  Si vous gérez plusieurs abonnements AWS Marketplace, vous pouvez attribuer chacun d'eux à différentes informations d'identification AWS à partir de la page Informations d'identification.
+Ajoutez et gérez vos identifiants AWS pour déployer et gérer des ressources cloud dans vos comptes AWS depuis la NetApp Console. Si vous gérez plusieurs abonnements AWS Marketplace, vous pouvez associer chacun d'eux à des identifiants AWS différents depuis la page Identifiants.
 
 
 
@@ -99,7 +99,7 @@ Le compte dispose des autorisations requises. <<add-the-credentials,Vous pouvez 
 
 ==== Accorder des autorisations en fournissant des clés AWS
 
-Si vous souhaitez fournir à la console des clés AWS pour un utilisateur IAM, vous devez accorder les autorisations requises à cet utilisateur.  La politique IAM de la console définit les actions et ressources AWS que la console est autorisée à utiliser.
+Pour fournir à la Console des clés AWS pour un utilisateur IAM, vous devez accorder à cet utilisateur les autorisations requises. La stratégie IAM de la Console définit les actions et ressources AWS que la Console est autorisée à utiliser.
 
 Vous devez utiliser cette méthode d’authentification si un agent de console est installé sur site.  Vous ne pouvez pas utiliser un rôle IAM.
 
@@ -189,7 +189,7 @@ Par exemple, la politique devrait ressembler à ceci :
 }
 ----
 +
-Se référer à link:https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-cross-account-resource-access.html["Documentation AWS Identity and Access Management (IAM)"^] pour plus d'informations sur l'accès aux ressources inter-comptes dans IAM.
+Reportez-vous à link:https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-cross-account-resource-access.html["Documentation AWS Identity and Access Management (IAM)"^] pour plus d'informations sur l'accès aux ressources inter-comptes dans IAM.
 
 ** Créez une politique qui inclut les autorisations requises pour créer un agent de console.
 +
@@ -212,7 +212,7 @@ Le rôle IAM dispose désormais des autorisations requises. <<add-the-credential
 Après avoir fourni au rôle IAM les autorisations requises, ajoutez l’ARN du rôle à la console.
 
 .Avant de commencer
-Si vous venez de créer le rôle IAM, il faudra peut-être quelques minutes avant qu'il soit disponible pour utilisation.  Attendez quelques minutes avant d’ajouter les informations d’identification à la console.
+Si vous venez de créer le rôle IAM, il peut s'écouler quelques minutes avant qu'il soit disponible pour utilisation. Attendez quelques minutes avant d'ajouter les identifiants à la Console.
 
 .Étapes
 . Sélectionnez *Administration > Informations d'identification*.
@@ -232,7 +232,7 @@ image:screenshot-settings-icon-organization.png["Une capture d’écran qui mont
 
 == Ajouter des informations d'identification à la console pour Amazon FSx for ONTAP
 
-Pour plus de détails, reportez-vous à la https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["la documentation de la console pour Amazon FSx pour ONTAP"^]
+Pour plus de détails, veuillez vous référer au https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Documentation de la console pour Amazon FSx for ONTAP"^]
 
 
 
@@ -292,7 +292,7 @@ Pour toutes les autres organisations ou comptes, vous devrez associer manuelleme
 
 == Associer un abonnement existant à votre organisation
 
-Lorsque vous vous abonnez à partir d'AWS Marketplace, la dernière étape du processus consiste à associer l'abonnement à votre organisation. Si vous n’avez pas effectué cette étape, vous ne pourrez pas utiliser l’abonnement avec votre organisation.
+Lorsque vous vous abonnez sur AWS Marketplace, la dernière étape consiste à associer l'abonnement à votre organisation. Si vous n'avez pas effectué cette étape, vous ne pouvez pas utiliser l'abonnement avec votre organisation.
 
 * link:concept-modes.html["En savoir plus sur les modes de déploiement de la console"]
 * link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès à la console"]

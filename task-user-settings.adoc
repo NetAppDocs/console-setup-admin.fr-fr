@@ -93,8 +93,6 @@ Vous ne pouvez utiliser les codes de récupération qu'une seule fois.  Si vous 
 
 == Supprimez votre configuration MFA
 
-Lorsque vous avez terminé, déconnectez-vous de la console ou replacez le curseur en position initiale pour revenir au mode lecture seule. Le système supprime vos privilèges élevés lorsque votre session expire.
-
 
 NOTE: Si vous ne parvenez pas à accéder à votre application d’authentification ou à votre code de récupération, vous devrez contacter l’administrateur de votre organisation pour réinitialiser votre configuration MFA.
 

@@ -456,7 +456,7 @@ NOTE: L'opérateur de console est le nom par défaut fourni dans la politique.  
 --
 .Principal de service Azure
 --
-Fournissez à la NetApp Console les informations d’identification du principal de service Azure que vous avez précédemment configuré.
+Fournissez à la NetApp Console les identifiants du principal de service Azure que vous avez configuré précédemment.
 
 .Étapes
 . Sélectionnez *Administration > Informations d'identification*.
@@ -477,7 +477,7 @@ Fournissez à la NetApp Console les informations d’identification du principal
 
 
 .Résultat
-la NetApp Console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.
+La NetApp Console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.
 
 --
 .Compte de service Google Cloud

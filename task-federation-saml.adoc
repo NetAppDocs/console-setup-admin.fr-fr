@@ -14,10 +14,10 @@ summary: 'Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l"auth
 
 
 [role="lead"]
-Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l’authentification unique (SSO) pour la console NEtApp.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.
+Fédérez-vous avec votre fournisseur IdP SAML 2.0 pour activer l'authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.
 
 .Rôle requis
-Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations. Le rôle de visionneuse de fédération permet de consulter la page de la fédération. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
 
 NOTE: Vous pouvez vous fédérer avec votre IdP d'entreprise ou avec le site de support NetApp .  Vous ne pouvez pas vous fédérer avec les deux.

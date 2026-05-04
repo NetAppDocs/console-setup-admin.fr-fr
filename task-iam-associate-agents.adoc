@@ -19,7 +19,7 @@ Associez les agents de la console à des projets spécifiques pour permettre la 
 Les super administrateurs et les administrateurs d'organisation peuvent créer des agents et associer n'importe quel agent à n'importe quel projet ou dossier. Les administrateurs de dossiers ou de projets ne peuvent associer des agents existants qu'aux dossiers et projets pour lesquels ils disposent des autorisations nécessaires. link:reference-iam-predefined-roles.html["En savoir plus sur les actions qu'un _administrateur de dossier ou de projet_ peut effectuer"].
 
 
-NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs du dossier ou du projet concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
+NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs de dossier ou de projet du dossier concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès* > *Agents*.

@@ -16,7 +16,7 @@ summary: 'Ajoutez des dossiers et des projets en fonction de la structure de vot
 [role="lead"]
 Ajoutez des dossiers et des projets en fonction de la structure de votre entreprise. Une fois les dossiers et les projets créés, vous pouvez leur associer des ressources et gérer l'accès des membres à ces projets.
 
-La console crée automatiquement un projet pour vous lorsque vous créez une nouvelle organisation. La plupart des organisations ont besoin de gérer plusieurs projets, ainsi que de dossiers pour bien les organiser. link:concept-identity-and-access-management.html["Découvrez la hiérarchie des ressources dans la NetApp Console."].
+La Console crée automatiquement un projet pour vous lorsque vous créez une nouvelle organisation. La plupart des organisations ont besoin de plus d’un projet, ainsi que de dossiers pour garder les choses organisées. link:concept-identity-and-access-management.html["Découvrez la hiérarchie des ressources dans la NetApp Console."].
 
 
 
@@ -35,7 +35,7 @@ Les dossiers permettent également de gérer plus efficacement l'accès des memb
 
 NOTE: Les dossiers sont un outil d'organisation et ne sont pas visibles pour les membres qui ne disposent pas des autorisations IAM telles que les rôles d'administrateur d'organisation, d'administrateur de dossier ou de projet, ou de super administrateur. Les membres accèdent aux projets, pas aux dossiers.
 
-Les administrateurs de l'organisation peuvent déléguer les responsabilités administratives en créant des dossiers. Après avoir créé un dossier, un administrateur de l'organisation peut attribuer à un membre les rôles d'administrateur de dossier ou de projet pour des dossiers spécifiques. Ces membres peuvent alors gérer tous les projets contenus dans ce dossier sans avoir accès à l'ensemble de l'organisation.
+Les administrateurs de l'organisation peuvent déléguer des responsabilités administratives en créant des dossiers. Après avoir créé un dossier, un administrateur de l'organisation peut attribuer à un membre le rôle d'administrateur de dossier ou de projet pour des dossiers particuliers. Ces membres peuvent alors gérer tous les projets dans ce dossier sans avoir accès à l'ensemble de l'organisation.
 
 Les dossiers peuvent contenir d'autres dossiers ou projets comme enfants, mais ils ne peuvent pas avoir de ressources directement associées à eux. Les ressources doivent être associées à un projet.
 
@@ -194,7 +194,7 @@ image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier
 
 Modifier les droits d'accès des membres pour contrôler l'accès aux ressources. N'oubliez pas que les rôles attribués au niveau du dossier sont hérités par tous les projets et dossiers enfants.
 
-Vous ne pouvez pas modifier les droits d'accès des membres aux niveaux inférieurs s'ils sont hérités du niveau du dossier ou de l'organisation. Modifiez les autorisations du membre au niveau hiérarchique supérieur pour changer son accès. Vous pouvez également : link:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"].
+Vous ne pouvez pas modifier l'accès des membres aux niveaux inférieurs si celui-ci est hérité du dossier ou du niveau organisation. Modifiez l'autorisation du membre au niveau hiérarchique supérieur pour changer l'accès. Vous pouvez également link:task-iam-manage-roles.html#manage-permissions["gérer les autorisations depuis la page Membres"].
 
 .Étapes
 . Depuis la page *Organisation*, accédez à un projet ou à un dossier dans le tableau, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Modifier le dossier* ou *Modifier le projet*.

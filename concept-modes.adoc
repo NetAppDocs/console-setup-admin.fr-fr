@@ -50,7 +50,7 @@ Le tableau suivant compare ces modes.
 | Accès UI | Depuis l'application Console SaaS | Localement à partir d'une machine virtuelle d'agent | Localement depuis la machine virtuelle de l'agent 
 
 
-| Point de terminaison de l'API | L'application Console SaaS | un agent | un agent 
+| Point de terminaison de l'API | L'application Console SaaS | Un agent | Un agent 
 
 
 | Authentification | Via SaaS en utilisant auth0, la connexion NSS ou la fédération d'identité | Via SaaS en utilisant auth0 ou la fédération d'identité | Authentification de l'utilisateur local 
@@ -140,13 +140,13 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | Classification NetApp | Oui 
 
 
-| Copie et synchronisation NetApp | Oui 
+| NetApp Copy and Sync | Oui 
 
 
 | NetApp Disaster Recovery | Oui 
 
 
-| Protection contre les ransomwares NetApp | Oui 
+| NetApp Ransomware Resilience | Oui 
 
 
 | NetApp Replication | Non 
@@ -188,7 +188,7 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
  a| 
 Licenses and subscriptions gestion des licences et des abonnements
 
-* Les abonnements Marketplace et BYOL sont pris en charge avec le mode standard ; toutefois, les options de licence prises en charge dépendent du service de données NetApp que vous utilisez.  Consultez la documentation de chaque service pour en savoir plus sur les options de licence disponibles.
+* Les abonnements Marketplace et BYOL sont pris en charge en mode standard ; toutefois, les options de licence disponibles dépendent du service de données NetApp que vous utilisez. Consultez la documentation de chaque service pour en savoir plus sur les options de licence disponibles.
 
 | Non 
 
@@ -209,9 +209,6 @@ Licenses and subscriptions gestion des licences et des abonnements
 
 
 | Mode lecture seule | Non 
-
-
-| Notifications | Non 
 |===
 
 
@@ -306,7 +303,7 @@ NetApp Replication
 
 * Pris en charge dans les régions gouvernementales avec mode restreint.  Non pris en charge dans les régions commerciales ou dans les régions souveraines avec mode restreint.
 
-| Oui*, (inutile en cas de réplication de ONTAP sur site vers ONTAP sur site) 
+| Oui* (inutile en cas de réplication de ONTAP sur site vers ONTAP sur site) 
 
 
 | *NetApp fonctionnalités du contrat d'assistance* | Aucune | S/O 
@@ -359,9 +356,6 @@ Pour Cloud Volumes ONTAP, les licences basées sur la capacité et les licences 
 
 
 | Mode lecture seule | Oui 
-
-
-| Notifications | Non 
 |===
 
 
@@ -624,7 +618,7 @@ Notez que certains services peuvent être pris en charge avec des limitations. P
 | StorageGRID | Non | Non 
 
 
-| Usine de charge de travail | Non | Non 
+| Charges de travail | Non | Non 
 
 
 .8+| *Services de données* | Sauvegarde et récupération | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-limited-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] | Ouihttps://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html#support-for-sites-with-no-internet-connectivity["Afficher la liste des destinations de sauvegarde prises en charge pour les données de volume ONTAP"^] 
@@ -633,13 +627,13 @@ Notez que certains services peuvent être pris en charge avec des limitations. P
 | Classification NetApp | Oui | Oui 
 
 
-| Copier et synchroniser | Non | Non 
+| NetApp Copy and Sync | Non | Non 
 
 
 | NetApp Disaster Recovery | Non | Non 
 
 
-| Protection contre les ransomwares NetApp | Non | Non 
+| NetApp Ransomware Resilience | Non | Non 
 
 
 | NetApp Replication | Oui | Oui 

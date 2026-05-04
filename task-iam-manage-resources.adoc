@@ -30,7 +30,7 @@ Ressources de stockage:: Les ressources de stockage sont le type de ressource le
 +
 --
 
-NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs du dossier ou du projet concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
+NOTE: Les utilisateurs disposant du rôle d'administrateur d'organisation peuvent ajouter des ressources à un dossier afin de déléguer la tâche d'associer la ressource à des projets aux administrateurs de dossier ou de projet du dossier concerné. link:task-iam-manage-folders-projects.html#associate-resource-folder["En savoir plus sur l'association d'une ressource à un dossier"].
 
 --
 Agents de console:: Si vous avez utilisé un agent de Console pour découvrir les systèmes de stockage, ajoutez l’agent au même projet que le système de stockage. Cela permet aux utilisateurs d’effectuer des fonctions activées par l’agent, telles que les services de données ou la gestion du stockage native à Console. Vous pouvez ajouter des agents aux projets depuis la page *Agents* dans la Console. link:task-iam-associate-agents.html["Apprenez comment associer un agent Console à un projet"].
@@ -86,7 +86,7 @@ Notez que vous ne pouvez sélectionner que les dossiers et les projets pour lesq
 .Après avoir terminé
 Si vous découvrez une ressource à l’aide d’un agent de console, associez l’agent de console au projet pour accorder l’accès.  Dans le cas contraire, l’agent de console et sa ressource associée ne sont pas accessibles aux membres sans le rôle _Organization admin_.
 
-link:task-iam-associate-connectors.html["Découvrez comment associer un agent de console à un dossier ou à un projet"].
+link:task-iam-associate-agents.html["Découvrez comment associer un agent de console à un dossier ou à un projet"] .
 
 
 

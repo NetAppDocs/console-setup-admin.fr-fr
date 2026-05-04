@@ -28,7 +28,7 @@ Un abonnement marketplace permet de facturer les services de données suivants a
 La NetApp Data Classification est activée via votre abonnement, mais l'utilisation de la classification est gratuite.
 
 .Avant de commencer
-Vous devez déjà avoir déployé un agent de console pour vous abonner aux services de données.  Vous devez associer un abonnement au marché aux informations d’identification cloud connectées à un agent de console.
+Vous devez avoir préalablement déployé un agent Console pour vous abonner aux services de données. Vous devez associer un abonnement Marketplace aux identifiants cloud connectés à un agent Console.
 
 [role="tabbed-block"]
 ====

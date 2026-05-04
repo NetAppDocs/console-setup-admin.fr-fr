@@ -14,7 +14,7 @@ summary: Le mode privé est généralement utilisé avec des environnements sur 
 
 
 [role="lead"]
-Vous pouvez installer NetApp Console sur site ou dans un environnement cloud sécurisé. Le mode privé est généralement utilisé avec les environnements sur site sans connexion Internet et avec les régions cloud sécurisées, ce qui inclut https://aws.amazon.com/federal/secret-cloud/["AWS Secret Cloud"^], https://aws.amazon.com/federal/top-secret-cloud/["AWS Top Secret Cloud"^] et https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6["Azure IL6"^]
+Vous pouvez installer NetApp Console sur site ou dans un environnement cloud sécurisé. Le mode privé est généralement utilisé avec les environnements sur site sans connexion Internet et avec les régions cloud sécurisées, qui incluent  https://aws.amazon.com/federal/secret-cloud/["AWS Secret Cloud"^],  https://aws.amazon.com/federal/top-secret-cloud/["AWS Top Secret Cloud"^] et  https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-dod-il6["Azure IL6"^].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"] link:task-prepare-private-mode.html["Préparez-vous au déploiement"]
 [role="quick-margin-list"]

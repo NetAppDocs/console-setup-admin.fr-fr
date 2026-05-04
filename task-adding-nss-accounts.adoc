@@ -51,7 +51,7 @@ Vous pouvez associer plusieurs comptes NSS à votre organisation ; cependant, v
 NOTE: NetApp utilise Microsoft Entra ID comme fournisseur d’identité pour les services d’authentification spécifiques au support et aux licences.
 
 .Étapes
-. Dans *Administration > Support*.
+. Sélectionnez *Administration > Support*.
 . Sélectionnez *Gestion NSS*.
 . Sélectionnez *Ajouter un compte NSS*.
 . Sélectionnez *Continuer* pour être redirigé vers une page de connexion Microsoft.
@@ -65,7 +65,7 @@ Il s’agit d’un identifiant généré par le système qui correspond à votre
 +
 ** Si vous avez besoin d'actualiser vos jetons d'identification de connexion, il existe également une option *Mettre à jour les informations d'identification* dans leimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-nss-menu.png["Une icône de trois points horizontaux"] menu.
 +
-L'utilisation de cette option vous invite à vous reconnecter.  Notez que le jeton de ces comptes expire après 90 jours.  Une notification sera publiée pour vous en informer.
+Cette option vous invite à vous reconnecter. Veuillez noter que le jeton de ces comptes expire après 90 jours. Vous recevrez une notification à ce sujet.
 
 
 
@@ -95,7 +95,7 @@ Les informations d'identification expirées peuvent perturber les éléments sui
 De plus, vous pouvez mettre à jour les informations d’identification NSS associées à votre organisation si vous souhaitez modifier le compte NSS associé à votre organisation.  Par exemple, si la personne associée à votre compte NSS a quitté votre entreprise.
 
 .Étapes
-. Dans *Administration > Support*.
+. Sélectionnez *Administration > Support*.
 . Sélectionnez *Gestion NSS*.
 . Pour le compte NSS que vous souhaitez mettre à jour, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Mettre à jour les informations d'identification*.
 . Lorsque vous y êtes invité, sélectionnez *Continuer* pour être redirigé vers une page de connexion Microsoft.
@@ -114,7 +114,7 @@ Si votre organisation dispose de plusieurs comptes de site de support NetApp , v
 Vous devez d'abord avoir associé le compte à la Console.
 
 .Étapes
-. Dans *Administration > Support*.
+. Sélectionnez *Administration > Support*.
 . Sélectionnez *Gestion NSS*.
 . Suivez les étapes suivantes pour modifier le compte NSS :
 +
@@ -139,7 +139,7 @@ Pour des raisons de sécurité, l'adresse e-mail associée à un compte NSS n'es
 TIP: Lorsque vous accédez à la page de gestion NSS, la console génère un jeton pour chaque compte du tableau.  Ce jeton inclut des informations sur l’adresse e-mail associée.  Le jeton est supprimé lorsque vous quittez la page.  Les informations ne sont jamais mises en cache, ce qui contribue à protéger votre vie privée.
 
 .Étapes
-. Dans *Administration > Support*.
+. Sélectionnez *Administration > Support*.
 . Sélectionnez *Gestion NSS*.
 . Pour le compte NSS que vous souhaitez mettre à jour, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Afficher l'adresse e-mail*.  Vous pouvez utiliser le bouton Copier pour copier l'adresse e-mail.
 
@@ -153,7 +153,7 @@ Supprimez tous les comptes NSS que vous ne souhaitez plus utiliser avec la conso
 Vous ne pouvez pas supprimer un compte actuellement associé à un système Cloud Volumes ONTAP .  Vous devez d’abord<<attach-system-nss-account,attacher ces systèmes à un autre compte NSS>> .
 
 .Étapes
-. Dans *Administration > Support*.
+. Sélectionnez *Administration > Support*.
 . Sélectionnez *Gestion NSS*.
 . Pour le compte NSS que vous souhaitez supprimer, sélectionnezimage:icon-action.png["Une icône composée de trois points côte à côte"] puis sélectionnez *Supprimer*.
 . Sélectionnez *Supprimer* pour confirmer.

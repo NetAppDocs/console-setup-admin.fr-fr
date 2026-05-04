@@ -16,13 +16,13 @@ summary: 'Ransomware Resilience propose différents rôles d"utilisateur pour g�
 [role="lead"]
 Les rôles Ransomware Resilience permettent aux utilisateurs d'accéder à NetApp Ransomware Resilience. Ransomware Resilience prend en charge les rôles suivants :
 
-**Rôles de base**
+*Rôles de base*
 
 * Administrateur de la résilience aux ransomwares : configurez les paramètres de résilience aux ransomwares ; examinez et répondez aux alertes de chiffrement.
 * Visionneuse de résilience aux ransomwares : affichez les incidents de chiffrement, les rapports et les paramètres de découverte
 
 
-**Rôles d'activité de comportement de l'utilisateur**link:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["Détection d'activité utilisateur suspecte"^] les alertes offrent une visibilité sur les données telles que les événements d'activité des fichiers ; ces alertes incluent les noms de fichiers et les actions de fichiers (telles que la lecture, l'écriture, la suppression, le renommage) effectuées par l'utilisateur.  Pour limiter la visibilité de ces données, seuls les utilisateurs disposant de ces rôles peuvent gérer ou visualiser ces alertes.
+*Rôles d'activité de comportement utilisateur* link:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["Détection d'activité utilisateur suspecte"^] alertes fournissent une visibilité sur des données telles que les événements d'activité sur les fichiers ; ces alertes incluent les noms de fichiers et les actions sur les fichiers (telles que Lire, Écrire, Supprimer, Renommer) effectuées par l'utilisateur. Pour limiter la visibilité de ces données, seuls les utilisateurs disposant de ces rôles peuvent gérer ou consulter ces alertes.
 
 * Administrateur du comportement utilisateur de Ransomware Resilience - Activez la détection d'activité utilisateur suspecte, enquêtez et répondez aux alertes d'activité utilisateur suspecte
 * Visualiseur de comportement utilisateur Ransomware Resilience : affichez les alertes d'activité utilisateur suspecte
@@ -309,7 +309,7 @@ Oui
 
 Pour configurer les paramètres de comportement utilisateur suspect et répondre aux alertes, un utilisateur doit disposer du rôle d'administrateur du comportement utilisateur Ransomware Resilience. Pour afficher uniquement les alertes de comportement utilisateur suspect, un utilisateur doit disposer du rôle d'observateur de comportement utilisateur Ransomware Resilience.
 
-Les rôles de comportement des utilisateurs doivent être conférés aux utilisateurs disposant de privilèges d'administrateur ou de spectateur Ransomware Resilience existants qui ont besoin d'accéder àlink:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["paramètres et alertes d'activité utilisateur suspecte"^] .  Un utilisateur disposant du rôle d’administrateur Ransomware Resilience, par exemple, doit recevoir le rôle d’administrateur du comportement utilisateur Ransomware Resilience pour configurer les agents d’activité utilisateur et bloquer ou débloquer les utilisateurs.  Le rôle d’administrateur du comportement utilisateur de Ransomware Resilience ne doit pas être conféré à un visualiseur de Ransomware Resilience.
+Les rôles de gestion du comportement utilisateur doivent être attribués aux utilisateurs disposant déjà de privilèges d'administrateur ou de visionneur Ransomware Resilience qui ont besoin d'accéder à link:https://docs.netapp.com/us-en/data-services-ransomware-resilience/suspicious-user-activity.html["paramètres et alertes d'activité utilisateur suspecte"^]. Par exemple, un utilisateur possédant le rôle d'administrateur Ransomware Resilience doit recevoir le rôle d'administrateur de gestion du comportement utilisateur pour configurer les agents d'activité utilisateur et bloquer ou débloquer des utilisateurs. Le rôle d'administrateur de gestion du comportement utilisateur Ransomware Resilience ne doit pas être attribué à un visionneur Ransomware Resilience.
 
 
 NOTE: Pour activer la détection d’activité utilisateur suspecte, vous devez disposer du rôle d’administrateur de l’organisation de la console.

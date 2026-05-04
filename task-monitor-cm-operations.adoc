@@ -154,7 +154,7 @@ Tous les autres utilisateurs et destinataires sont configurés pour ne recevoir 
 Vous devez disposer du rôle d’administrateur de l’organisation pour personnaliser les paramètres de notifications.
 
 .Étapes
-. Sélectionnez *Administration > Paramètres de notifications*.
+. Sélectionnez *Administration > Paramètres des notifications*.
 . Sélectionnez *Utilisateurs de l'organisation* ou *Destinataires supplémentaires*.
 +
 La page *Destinataires supplémentaires* vous permet de configurer la console pour notifier les personnes membres de votre organisation Console.

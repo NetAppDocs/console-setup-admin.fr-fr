@@ -25,7 +25,7 @@ Avant de pouvoir utiliser la console pour gérer les ressources de votre projet 
 Deux ensembles d’autorisations doivent être en place avant de déployer un agent de console directement à partir de la console :
 
 . Vous devez déployer un agent de console à l’aide d’un compte Google disposant des autorisations nécessaires pour lancer l’agent de console à partir de la console.
-. Lors du déploiement de l'agent de console, vous êtes invité à sélectionner un https://cloud.google.com/iam/docs/service-accounts["compte de service"^] pour l'agent La console obtient des autorisations du compte de service pour créer et gérer les systèmes Cloud Volumes ONTAP , pour gérer les sauvegardes à l'aide de la sauvegarde et de la récupération NetApp , et bien plus encore. Les autorisations sont fournies en associant un rôle personnalisé au compte de service.
+. Lors du déploiement de l'agent Console, vous êtes invité à sélectionner un  https://cloud.google.com/iam/docs/service-accounts["compte de service"^] pour l'agent. La Console obtient les autorisations du compte de service pour créer et gérer des systèmes Cloud Volumes ONTAP, gérer les sauvegardes à l'aide de NetApp Backup and Recovery, et plus encore. Les autorisations sont fournies en associant un rôle personnalisé au compte de service.
 
 
 L'image suivante illustre les exigences d'autorisation décrites aux numéros 1 et 2 ci-dessus :

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-federation-verify-domain.html 
 keywords: federation, active directory federation services, adfs, ad fs, single sign-on, microsoft, federate, federated connection, SSO, identity federation, identity management, corporate identity 
-summary: 'Vous ne pouvez utiliser que des domaines vérifiés pour la fédération. Si vous souhaitez fédérer avec un domaine différent de votre domaine de messagerie, vous devez d"abord vérifier que vous êtes propriétaire du domaine.  Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.' 
+summary: 'Si vous souhaitez fédérer avec un domaine différent de votre domaine de messagerie, vous devez d"abord vérifier que vous possédez le domaine. Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.' 
 ---
 = Vérifiez le domaine de messagerie pour votre connexion fédérée
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: 'Vous ne pouvez utiliser que des domaines vérifiés pour la fédérati
 
 
 [role="lead"]
-Si vous souhaitez vous fédérer avec un domaine différent de votre domaine de messagerie, vous devez d'abord vérifier que vous êtes propriétaire du domaine.  Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.
+Si vous souhaitez fédérer avec un domaine différent de votre domaine de messagerie, vous devez d'abord vérifier que vous possédez le domaine. Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.
 
 .Rôles requis
-Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations. Le rôle de visionneuse de fédération permet de consulter la page de la fédération. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
 La vérification de votre domaine implique l'ajout d'un enregistrement TXT aux paramètres DNS de votre domaine.  Cet enregistrement est utilisé pour prouver que vous êtes propriétaire du domaine et permet à la NetApp Console d'approuver le domaine pour la fédération.  Vous devrez peut-être vous coordonner avec votre administrateur informatique ou réseau pour terminer cette étape.
 
-Par exemple, si vous utilisez Microsoft Entra ID, vous pouvez suivre les étapes décrites dans la documentation Microsoft link:https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain["Ajoutez un domaine avec Microsoft Entra ID"].
+Par exemple, si vous utilisez Microsoft Entra ID, vous pouvez suivre les étapes décrites dans la documentation Microsoft https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain["Ajoutez un domaine avec Microsoft Entra ID"^].
 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.

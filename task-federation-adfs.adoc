@@ -17,14 +17,14 @@ summary: 'Fédérez-vous avec vos services de fédération Active Directory (AD 
 Fédérez vos services de fédération Active Directory (AD FS) avec la NetApp Console pour activer l'authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter à la console en utilisant leurs identifiants d’entreprise.
 
 .Rôles requis
-Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations. Le rôle de visionneuse de fédération permet de consulter la page de la fédération. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
 
 NOTE: Vous pouvez vous fédérer avec votre IdP d'entreprise ou avec le site de support NetApp .  NetApp recommande de choisir l’un ou l’autre, mais pas les deux.
 
 NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Tout d’abord, configurez le fournisseur d’identité pour qu’il approuve la NetApp Console en tant que fournisseur de services.  Ensuite, créez une connexion dans la console en utilisant la configuration de votre fournisseur d’identité.
 
-Vous pouvez configurer la fédération avec votre serveur AD FS pour activer l'authentification unique (SSO) pour la NetApp Console.  Le processus implique la configuration de votre AD FS pour approuver la console en tant que fournisseur de services, puis la création de la connexion dans la NetApp Console.
+Vous pouvez configurer la fédération avec votre serveur AD FS pour activer l'authentification unique (SSO) pour NetApp Console. Le processus implique de configurer votre AD FS pour qu'il fasse confiance à la Console en tant que fournisseur de services, puis de créer la connexion dans NetApp Console.
 
 .Avant de commencer
 * Un compte IdP avec des privilèges administratifs est requis.  Coordonnez-vous avec votre administrateur IdP pour terminer les étapes.
@@ -47,7 +47,7 @@ Vous pouvez configurer la fédération avec votre serveur AD FS pour activer l'a
 . Sélectionnez *Suivant*.
 . Créez une approbation de partie de confiance sur votre serveur AD FS.  Vous pouvez utiliser PowerShell ou le configurer manuellement sur votre serveur AD FS.  Consultez la documentation AD FS pour plus de détails sur la création d’une approbation de partie de confiance.
 +
-.. Créez la confiance à l’aide de PowerShell en utilisant le script suivant :
+.. Créez la relation de confiance à l'aide de PowerShell en exécutant le script suivant :
 +
 [source, powershell]
 ----
@@ -56,8 +56,8 @@ AddRelyingParty "urn:auth0:netapp-cloud-account" "https://netapp-cloud-account.a
 ----
 .. Vous pouvez également créer l’approbation manuellement dans la console de gestion AD FS.  Utilisez les valeurs suivantes de la NetApp Console lors de la création de l’approbation :
 +
-*** Lors de la création de l'identifiant de confiance de confiance, utilisez la valeur **YOUR_TENANT** : `netapp-cloud-account`
-*** Lorsque vous sélectionnez *Activer la prise en charge de WS-Federation*, utilisez la valeur **YOUR_AUTH0_DOMAIN** : `netapp-cloud-account.auth0.com`
+*** Lors de la création de l'identificateur de confiance de dépendance, utilisez la valeur *YOUR_TENANT* : `netapp-cloud-account`
+*** Lorsque vous sélectionnez *Activer la prise en charge de WS-Federation*, utilisez la valeur *YOUR_AUTH0_DOMAIN* : `netapp-cloud-account.auth0.com`
 
 
 .. Après avoir créé l’approbation, copiez l’URL des métadonnées à partir de votre serveur AD FS ou téléchargez le fichier de métadonnées de fédération.  Vous aurez besoin de cette URL ou de ce fichier pour terminer la connexion dans la console.

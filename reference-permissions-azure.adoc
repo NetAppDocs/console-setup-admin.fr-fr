@@ -756,7 +756,7 @@ L’agent effectue les requêtes API suivantes pour déployer et gérer Cloud Vo
 | Crypter les comptes de stockage lors de la création | Microsoft.ManagedIdentity/userAssignedIdentities/assign/action | Oui | Oui | Non 
 
 
-.3+| Utilisez des ensembles de machines virtuelles évolutives en mode d'orchestration flexible afin de spécifier des zones spécifiques pour Cloud Volumes ONTAP | Microsoft.Compute/virtualMachineScaleSets/write | Oui | Non | Non 
+.3+| Utilisez les groupes de machines virtuelles identiques en mode d'orchestration flexible pour spécifier des zones spécifiques pour Cloud Volumes ONTAP | Microsoft.Compute/virtualMachineScaleSets/write | Oui | Non | Non 
 
 
 | Microsoft.Compute/virtualMachineScaleSets/lecture | Oui | Non | Non 

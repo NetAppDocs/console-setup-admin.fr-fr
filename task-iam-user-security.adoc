@@ -17,7 +17,7 @@ summary: Gérez les membres de votre organisation pour fournir des autorisations
 Sécurisez l'accès des utilisateurs à votre organisation NetApp Console en gérant les paramètres de sécurité des membres. Vous pouvez réinitialiser les mots de passe des utilisateurs, gérer l'authentification multifacteurs (MFA) et recréer les informations d'identification des comptes de service.
 
 .Rôles d'accès requis
-Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). Lien : reference-iam-predefined-roles.html [En savoir plus sur les rôles d’accès].
+Super administrateur, administrateur d'organisation ou administrateur de dossier ou de projet (pour les dossiers et les projets qu'ils administrent). link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"].
 
 
 
@@ -60,7 +60,7 @@ Le tableau *Membres* répertorie les membres de votre organisation.
 
 == Recréer les informations d'identification pour un compte de service
 
-Vous pouvez créer de nouveaux identifiants pour un service si vous les perdez ou si vous devez les mettre à jour.
+Vous pouvez créer de nouveaux identifiants pour un compte de service si vous les perdez ou si vous devez les mettre à jour.
 
 La création de nouveaux identifiants supprime les anciens. Vous ne pouvez pas utiliser les anciens identifiants.
 

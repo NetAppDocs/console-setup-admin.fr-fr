@@ -20,7 +20,7 @@ L'agent Console est automatiquement mis à jour lorsqu'il dispose d'une connecti
 
 == Mettre à niveau l'agent de la console
 
-L'agent de la console doit redémarrer pendant le processus de mise à niveau afin que la NetApp Console ne soit pas disponible pendant la mise à niveau.
+L'agent de la console doit redémarrer pendant le processus de mise à niveau, donc la NetApp Console sera indisponible pendant la mise à niveau.
 
 .Étapes
 . Téléchargez le logiciel de l'agent de la console à partir du https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab["Site de support NetApp"^] .

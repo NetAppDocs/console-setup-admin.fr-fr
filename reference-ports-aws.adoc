@@ -66,7 +66,7 @@ Le groupe de sécurité prédéfini pour l’agent inclut les règles sortantes 
 
 === Règles sortantes avancées
 
-Si vous avez besoin de règles rigides pour le trafic sortant, vous pouvez utiliser les informations suivantes pour ouvrir uniquement les ports requis pour la communication sortante par l'agent
+Si vous avez besoin de règles strictes pour le trafic sortant, vous pouvez utiliser les informations suivantes pour ouvrir uniquement les ports requis pour la communication sortante par l'agent.
 
 
 NOTE: L'adresse IP source est l'hôte de l'agent.
@@ -85,5 +85,5 @@ NOTE: L'adresse IP source est l'hôte de l'agent.
 | TCP | 8080 | Classification des données | Sonder l'instance de classification des données pendant le déploiement 
 
 
-| DNS | UDP | 53 | DNS | Utilisé pour la résolution DNS par la console 
+| DNS | UDP | 53 | DNS | Utilisé pour la résolution DNS par la NetApp Console 
 |===

@@ -670,7 +670,7 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 
 
 .Résultat
-Votre principal de service est maintenant configuré et vous devez avoir copié l'ID de l'application (client), l'ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous ajoutez un compte Azure.
+Votre principal de service est maintenant configuré et vous devez avoir copié l’ID de l’application (client), l’ID du répertoire (locataire) et la valeur du secret client.  Vous devez saisir ces informations dans la console lorsque vous ajoutez un compte Azure.
 
 --
 ====

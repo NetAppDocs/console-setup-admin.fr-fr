@@ -33,7 +33,7 @@ Si l'agent de console lui-même ne dispose pas d'une connexion Internet sortante
 
 
 
-IMPORTANT: Une fois que vous avez configuré un proxy, vous ne pouvez pas modifier le type de proxy.  Si vous devez modifier le type de proxy, supprimez l'agent de console et ajoutez un nouvel agent avec le nouveau type de proxy.
+IMPORTANT: Une fois le proxy configuré, vous ne pouvez plus en modifier le type. Pour changer de type de proxy, vous devez supprimer l'agent Console et ajouter un nouvel agent avec le nouveau type de proxy.
 
 
 
@@ -115,7 +115,7 @@ Assurez-vous que le fichier de certificat est au format PEM et réside dans le m
 Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent Console en utilisant le `proxy update` commande ou supprimer le serveur proxy transparent en utilisant la `proxy remove` commande.  Pour plus d'informations, consultez la documentation relative àlink:reference-agent-maint-console-proxy.html["Console de maintenance des agents"] .
 
 
-IMPORTANT: Une fois que vous avez configuré un proxy, vous ne pouvez pas modifier le type de proxy.  Si vous devez modifier le type de proxy, supprimez l'agent de console et ajoutez un nouvel agent avec le nouveau type de proxy.
+IMPORTANT: Une fois le proxy configuré, vous ne pouvez plus en modifier le type. Pour changer de type de proxy, vous devez supprimer l'agent Console et ajouter un nouvel agent avec le nouveau type de proxy.
 
 
 
@@ -127,7 +127,7 @@ Si la configuration proxy de votre réseau change, votre agent risque de perdre 
 
 == Activer le trafic API direct
 
-Si vous avez configuré un agent Console pour utiliser un serveur proxy, vous pouvez activer le trafic API direct sur l'agent Console afin d'envoyer des appels API directement aux services du fournisseur cloud sans passer par le proxy. Les agents exécutés sur AWS, Azure ou Google Cloud prennent en charge cette option.
+Si vous avez configuré un agent Console pour utiliser un serveur proxy, vous pouvez activer le trafic API direct sur l'agent Console afin d'envoyer les appels API directement aux services du fournisseur de cloud, sans passer par le proxy. Les agents exécutés dans AWS, Azure ou Google Cloud prennent en charge cette option.
 
 Si vous désactivez Azure Private Links avec Cloud Volumes ONTAP et utilisez des points de terminaison de service, activez le trafic API direct.  Sinon, le trafic ne sera pas acheminé correctement.
 

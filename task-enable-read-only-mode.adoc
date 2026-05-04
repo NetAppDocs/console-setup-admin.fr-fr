@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-enable-read-only-mode.html 
 keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login 
-summary: 'Pour commencer à utiliser la console, la première étape consiste à vous inscrire ou à vous connecter en utilisant vos identifiants du site de support NetApp ou à créer un compte de connexion à la NetApp Console . Si vous êtes le premier utilisateur de votre entreprise à vous inscrire, vous créez une nouvelle organisation dans la Console en tant qu"administrateur de l"organisation. Si votre entreprise dispose déjà d"une organisation, vous pouvez vous inscrire ou vous connecter pour y accéder.' 
+summary: Par mesure de sécurité, vous pouvez activer le mode lecture seule pour votre organisation NetApp Console . En mode lecture seule, les utilisateurs peuvent consulter les ressources et les paramètres, mais ne peuvent apporter aucune modification. 
 ---
 = Activer le mode lecture seule pour une organisation NetApp Console
 :hardbreaks:
@@ -40,70 +40,3 @@ Lorsque le mode lecture seule est activé, les utilisateurs voient une bannière
 image:screenshot-read-only-slider.png["Capture d'écran montrant le bouton de basculement du mode lecture seule en position activée."]
 
 
-
-
-
-== Inscrivez-vous à NetApp Console en tant qu'administrateur initial de l'organisation
-
-Si votre entreprise ne dispose pas d'une organisation NetApp Console , inscrivez-vous pour en créer une. Le premier utilisateur est l'administrateur et gère les comptes et les autorisations. Vous pourrez modifier les rôles et ajouter des administrateurs ultérieurement.
-
-.Étapes
-. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["NetApp Console"^]
-. Si vous possédez un compte sur le site d'assistance NetApp , saisissez directement l'adresse électronique associée à votre compte sur la page *Connexion*.
-+
-La console vous inscrit automatiquement lors de cette première connexion avec vos identifiants du site d'assistance NetApp .
-
-. Si vous souhaitez vous inscrire en créant une connexion à la console, sélectionnez *S'inscrire*.
-+
-.. Sur la page *Inscription*, saisissez les informations requises et sélectionnez *Suivant*.
-+
-
-NOTE: Seuls les caractères anglais sont autorisés dans le formulaire d'inscription.
-
-.. Consultez votre boîte de réception pour obtenir un e-mail de NetApp contenant des instructions pour vérifier votre adresse e-mail.
-+
-Vérifiez votre adresse e-mail pour finaliser votre inscription.
-
-
-
-. Après vous être connecté, veuillez lire et accepter le contrat de licence utilisateur final.
-. Sur la page *Bienvenue*, créez une organisation.
-. Sélectionnez *Commençons*.
-
-
-+ En tant qu'administrateur novice, suivez la procédure guidée pour ajouter du stockage, créer un agent de console, et plus encore. link:task-console-assistant.html["Découvrez comment utiliser l'assistant de console."]
-
-.Prochaines étapes
-En tant qu'administrateur, une fois que vous avez suivi les étapes indiquées dans l'Assistant de console, vous devez planifier votre stratégie d'identité et d'accès, ajouter des utilisateurs à votre organisation et leur attribuer des rôles. link:task-iam-get-started.html["Découvrez la gestion des identités et des accès pour la NetApp Console."]
-
-
-
-== Inscrivez-vous ou connectez-vous à la NetApp Console lorsqu'une organisation existe déjà.
-
-Si votre entreprise possède déjà une organisation NetApp Console , inscrivez-vous ou connectez-vous pour y accéder. Votre méthode d'inscription ou de connexion dépend de si votre entreprise utilise la fédération d'identités ou possède des identifiants pour le site de support NetApp . Sinon, créez un compte de connexion à la NetApp Console .
-
-.Étapes
-. Ouvrez un navigateur Web et accédez à la https://console.netapp.com["NetApp Console"^]
-. Si vous possédez un compte sur le site d'assistance NetApp ou si votre entreprise a configuré l'authentification unique (SSO), saisissez votre adresse e-mail associée ou vos identifiants SSO sur la page *Connexion*. Suivez les instructions pour terminer la connexion.
-+
-Dans les deux cas, vous êtes inscrit à la console dans le cadre de cette connexion initiale.
-
-. Si vous souhaitez vous inscrire en créant une connexion à la console, sélectionnez *S'inscrire*.
-+
-.. Sur la page *Inscription*, saisissez les informations requises et sélectionnez *Suivant*.
-+
-
-NOTE: Seuls les caractères anglais sont autorisés dans le formulaire d'inscription.
-
-.. Consultez votre boîte de réception pour obtenir un e-mail de NetApp contenant des instructions pour vérifier votre adresse e-mail.
-+
-Vérifiez votre adresse e-mail pour finaliser votre inscription.
-
-
-
-. Après vous être connecté, veuillez lire et accepter le contrat de licence utilisateur final.
-. Si le système vous invite à créer une organisation, fermez la boîte de dialogue et informez-en un administrateur de la console afin qu'il puisse vous ajouter à votre organisation et vous donner accès. link:task-user-settings.html#contact-admin["Apprenez comment contacter un administrateur de l'organisation."]
-
-
-.Prochaines étapes
-Une fois que vous aurez accès à votre organisation, vous pourrez commencer à gérer le stockage et à utiliser les services de données qui vous sont attribués.

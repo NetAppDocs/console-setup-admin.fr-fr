@@ -408,7 +408,7 @@ Serveur proxy:: NetApp prend en charge les configurations de proxy explicites et
 * Informations d'identification
 * Certificat HTTPS
 +
-En mode privé, la NetApp Console n'envoie de trafic sortant qu'à votre fournisseur de cloud afin de créer un système Cloud Volumes ONTAP.
+En mode privé, la NetApp Console n'envoie de trafic sortant qu'à votre fournisseur de cloud pour créer un système Cloud Volumes ONTAP.
 
 
 
@@ -428,7 +428,7 @@ Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analy
 
 == Étape 6 : Préparer les autorisations cloud
 
-Si l'agent Console est installé dans le cloud et que vous prévoyez de créer des systèmes Cloud Volumes ONTAP, NetApp Console requiert des autorisations du fournisseur de cloud. Vous devez configurer les autorisations dans votre fournisseur de cloud, puis les associer à l'instance de l'agent Console après son installation.
+Si l'agent Console est installé dans le cloud et que vous prévoyez de créer des systèmes Cloud Volumes ONTAP, NetApp Console requiert des autorisations du fournisseur de cloud. Vous devez configurer les autorisations dans votre fournisseur de cloud, puis associer ces autorisations à l'instance de l'agent Console après son installation.
 
 Pour consulter les étapes requises, sélectionnez l'option de méthode d'authentification que vous souhaitez utiliser pour votre fournisseur de cloud.
 
@@ -497,7 +497,7 @@ Le compte dispose désormais des autorisations requises.
 --
 Créez un rôle personnalisé Azure doté des autorisations requises. Attribuez ce rôle à la VM de l'agent Console.
 
-Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST. Les étapes suivantes expliquent comment créer le rôle à l’aide d’Azure CLI. Si vous préférez utiliser une autre méthode, consultez https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^].
 
 .Étapes
 . Activez une identité managée attribuée par le système sur la machine virtuelle où vous prévoyez d'installer l'agent Console afin de pouvoir fournir les autorisations Azure requises via un rôle personnalisé.
@@ -688,7 +688,7 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 
 
 .Résultat
-Votre principal de service est maintenant configuré et vous devriez avoir copié l’ID d’application (client), l’ID d’annuaire (locataire) et la valeur du secret client. Saisissez ces informations dans NetApp Console lors de l’ajout d’un identifiant Azure.
+Votre principal de service est maintenant configuré et vous devriez avoir copié l’ID d’application (client), l’ID d’annuaire (locataire) et la valeur du secret client. Saisissez ces informations dans la NetApp Console lors de l’ajout d’un identifiant Azure.
 
 --
 .Compte de service Google Cloud

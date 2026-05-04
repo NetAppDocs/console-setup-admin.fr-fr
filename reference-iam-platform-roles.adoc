@@ -39,7 +39,7 @@ Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de c
 | Créer des agents | Oui | Non 
 
 
-| Créer, modifier ou supprimer des systèmes depuis la console (ajouter ou découvrir des systèmes) | Oui | Oui 
+| Créer, modifier ou supprimer des systèmes depuis la Console (ajouter ou découvrir des systèmes) | Oui | Oui 
 
 
 | Créer des dossiers et des projets, y compris la suppression | Oui | Non 

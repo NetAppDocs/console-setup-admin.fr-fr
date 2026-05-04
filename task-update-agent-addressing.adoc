@@ -57,7 +57,7 @@ system configuration backup settings modify -destination <target-location>
 
 == Modifier les URI d'un agent
 
-Mettez à jour l'URI de l'agent Console si vos besoins réseau évoluent. Cela garantit une gestion continue, sécurisée et conforme de votre infrastructure de stockage.
+Mettez à jour l'URI d'un agent de Console si vos besoins réseau évoluent. Cela garantit une gestion ininterrompue, sécurisée et conforme de votre infrastructure de stockage.
 
 .Étapes
 . Sélectionnez *Administration > Agents*.

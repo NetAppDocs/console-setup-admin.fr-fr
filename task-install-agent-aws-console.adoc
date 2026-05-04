@@ -291,7 +291,7 @@ Vous devriez maintenant avoir un rôle IAM disposant des autorisations requises 
 
 == Étape 3 : Créer l’agent de console
 
-Créez l’agent de console directement à partir de la console Web.
+Créez l'agent Console directement depuis la console web Console.
 
 .À propos de cette tâche
 * La création de l’agent de console à partir de la console déploie une instance EC2 dans AWS à l’aide d’une configuration par défaut.  Ne passez pas à une instance EC2 plus petite avec moins de processeurs ou moins de RAM après avoir créé l'agent de console. link:reference-agent-default-config.html["En savoir plus sur la configuration par défaut de l'agent de console"] .
@@ -311,10 +311,10 @@ Vous devriez avoir les éléments suivants :
 
 .Étapes
 . Sélectionnez *Administration > Agents*.
-. Sur la page *Aperçu*, sélectionnez *Déployer l'agent > AWS*
+. Sur la page *Aperçu*, sélectionnez *Déployer l’agent > AWS*.
 . Suivez les étapes de l’assistant pour créer l’agent de console :
-. Sur la page *Introduction*, vous trouverez un aperçu du processus
-. Sur la page *Informations d'identification AWS*, spécifiez votre région AWS, puis choisissez une méthode d'authentification, qui est soit un rôle IAM que la console peut assumer, soit une clé d'accès AWS et une clé secrète.
+. Sur la page *Introduction*, consultez la présentation générale du processus.
+. Sur la page *Identifiants AWS*, spécifiez votre région AWS, puis choisissez une méthode d'authentification, soit un rôle IAM que la Console peut assumer, soit une clé d'accès et une clé secrète AWS.
 +
 
 TIP: Si vous choisissez *Assumer le rôle*, vous pouvez créer le premier ensemble d'informations d'identification à partir de l'assistant de déploiement de l'agent de console.  Tout ensemble d’informations d’identification supplémentaire doit être créé à partir de la page Informations d’identification.  Ils seront ensuite disponibles depuis l'assistant dans une liste déroulante. link:task-adding-aws-accounts.html["Apprenez à ajouter des informations d'identification supplémentaires"] .

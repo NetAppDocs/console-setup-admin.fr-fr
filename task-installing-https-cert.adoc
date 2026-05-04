@@ -90,7 +90,7 @@ Vous devez renouveler le certificat HTTPS de l'agent avant son expiration pour g
 . Sélectionnez *Administration > Agents*.
 . Sur la page *Aperçu*, sélectionnez le menu d'action pour un agent de console et sélectionnez *Configuration HTTPS*.
 +
-Les détails sur le certificat s'affichent, y compris la date d'expiration.
+Détails concernant l'affichage du certificat, y compris la date d'expiration.
 
 . Sélectionnez *Modifier le certificat* et suivez les étapes pour générer un CSR ou installer votre propre certificat signé par une autorité de certification.
 

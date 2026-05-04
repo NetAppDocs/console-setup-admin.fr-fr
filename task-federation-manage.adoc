@@ -14,10 +14,10 @@ summary: 'Après avoir ajouté une connexion fédérée, vous pouvez la gérer d
 
 
 [role="lead"]
-Vous pouvez gérer votre fédération dans la NetApp Console.  Vous pouvez le désactiver, mettre à jour les informations d'identification expirées, ainsi que le désactiver si vous n'en avez plus besoin.
+Vous pouvez gérer votre fédération dans la NetApp Console. Vous pouvez la désactiver, mettre à jour les identifiants expirés, ainsi que la supprimer si vous n'en avez plus besoin.
 
 .Rôles requis
-Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations. Le rôle de visionneuse de fédération permet de consulter la page de la fédération. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
 Vous pouvez également ajouter un domaine vérifié supplémentaire à une fédération existante, ce qui vous permet d'utiliser plusieurs domaines pour votre connexion fédérée.
 
@@ -82,7 +82,7 @@ Testez la connexion d'une fédération existante pour vérifier qu'elle fonction
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez l'onglet *Fédération*.
-. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Tester la connexion*.
+. Sélectionnez le menu Actions image:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération que vous souhaitez tester et sélectionnez *Tester la connexion*.
 . Sélectionnez *Test*.  Le système vous invite à vous connecter avec vos identifiants d'entreprise.  Si la connexion réussit, vous êtes redirigé vers la NetApp Console.  Si la connexion échoue, vous voyez un message d’erreur indiquant le problème avec la fédération.
 . Sélectionnez *Terminé* pour revenir à l’onglet *Fédération*.
 
@@ -98,7 +98,7 @@ Désactivez une fédération avant de la supprimer, par exemple lors de la mise 
 .Étapes
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez l'onglet *Fédération*.
-. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Désactiver*.
+. Sélectionnez le menu Actions image:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération que vous souhaitez désactiver et sélectionnez *Désactiver*.
 
 
 
@@ -113,7 +113,7 @@ Vous ne pouvez pas récupérer une fédération après l’avoir supprimée.  Vo
 IMPORTANT: Vous devez désactiver une fédération avant de pouvoir la supprimer.  Vous ne pouvez pas annuler la suppression d'une fédération après l'avoir supprimée.
 
 .Étapes
-. Sélectionnez *Administration > Identité et accès* .
+. Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Fédérations* pour afficher la page *Fédérations*.
-. Sélectionnez le menu actionsimage:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération à laquelle vous souhaitez ajouter un domaine vérifié et sélectionnez *Supprimer*.
+. Sélectionnez le menu Actions image:button_3_vert_dots.png["une icône avec trois points verticaux"] à côté de la fédération que vous souhaitez supprimer et sélectionnez *Supprimer*.
 

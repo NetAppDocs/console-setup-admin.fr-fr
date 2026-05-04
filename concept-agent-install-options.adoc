@@ -108,9 +108,9 @@ link:task-install-agent-aws-manual.html["Installez manuellement un agent de Cons
 
 
 
-== Installation manuelle sur site à l'aide de VCenter (OVA)
+== Installez manuellement sur site à l'aide de vCenter (OVA)
 
-Si vous utilisez VMware VCenter, vous pouvez déployer l'agent Console en important un fichier OVA (Open Virtual Appliance). L'OVA est une image de machine virtuelle préconfigurée que vous déployez avec le vSphere client, sans avoir à installer Linux ni à configurer un environnement d'exécution de conteneurs.
+Si vous utilisez VMware vCenter, vous pouvez déployer l'agent Console en important un fichier OVA (Open Virtual Appliance). L'OVA est une image de machine virtuelle préconfigurée que vous déployez avec le client vSphere, sans installer Linux ni configurer un environnement d'exécution de conteneur.
 
 Choisissez cette méthode lorsque :
 
@@ -131,14 +131,14 @@ NOTE: Vous ne pouvez pas gérer les ressources Google Cloud depuis un agent de C
 * Déploiement sur site uniquement ; non disponible pour les déploiements cloud
 * Comprend une console de maintenance à menus pour les tâches de maintenance des agents
 * Flux de travail de déploiement familier pour les administrateurs VMware
-* * Une image de machine virtuelle préconfigurée contribue à prévenir les erreurs et facilite la maintenance
+* L'image de machine virtuelle préconfigurée contribue à prévenir les erreurs et facilite la maintenance
 
  a| 
-* Nécessite vCenter ; ne peut pas être installé directement sur un hôte ESXi nu
+* Nécessite vCenter; ne peut pas être installé directement sur un hôte ESXi nu
 
 
 |===
-link:task-install-agent-on-prem-ova.html["Déployez sur site à l'aide de vCenter"]
+link:task-install-agent-on-prem-ova.html["Déployer sur site à l'aide de vCenter"]
 
 
 
@@ -148,7 +148,7 @@ Vous pouvez installer manuellement l'agent Console sur n'importe quel hôte Linu
 
 Choisissez cette méthode lorsque :
 
-* Vous effectuez un déploiement sur site et ne disposez pas d'un environnement VMware vCenter.
+* Vous effectuez un déploiement sur site et ne disposez pas d'un environnement vCenter VMware.
 * Vous maîtrisez l'administration Linux et souhaitez gérer vous-même l'hôte sous-jacent.
 * Vous souhaitez contrôler le moment où l'agent de la Console est mis à jour.
 

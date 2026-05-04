@@ -19,7 +19,7 @@ Pour déployer manuellement l'agent Console sur votre propre hôte Linux, vous d
 Le déploiement d'un agent dans Google Cloud lance une instance de machine virtuelle exécutant Linux et le logiciel agent Console dans un VPC de votre choix.
 
 .Avant de commencer
-* link:concept-agent-install-options.html#agent-cloud-manual-deploy["Découvrez quand déployer manuellement dans Google Cloud"].
+* link:concept-agent-install-options.html#agent-cloud-manual-deploy["Découvrez quand déployer manuellement sur Google Cloud"].
 * Vous devriez revoirlink:reference-limitations.html["Limitations de l'agent de console"] .
 
 
@@ -154,14 +154,6 @@ Docker Engine 23.0.6 à 28.0.0.
 Non pris en charge
 
 |===
-Type de machine Google Cloud:: Un type d’instance qui répond aux exigences de CPU et de RAM. NetApp recommande n2-standard-8.
-+
---
-L'agent de console est pris en charge dans Google Cloud sur une instance de machine virtuelle avec un système d'exploitation prenant en charge https://cloud.google.com/compute/shielded-vm/docs/shielded-vm["Fonctionnalités de la machine virtuelle blindée"^]
-
---
-
-
 
 
 == Étape 2 : installer Podman ou Docker Engine

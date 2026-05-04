@@ -16,7 +16,7 @@ summary: 'Pour commencer à gérer les identités et les accès dans NetApp Cons
 [role="lead"]
 Lorsque vous vous inscrivez à la NetApp Console, vous êtes invité à créer une nouvelle organisation.  L'organisation comprend un membre (un administrateur d'organisation) et un projet par défaut.  Pour configurer la gestion des identités et des accès (IAM) afin de répondre aux besoins de votre entreprise, vous devrez personnaliser la hiérarchie de votre organisation, ajouter des membres supplémentaires, ajouter ou découvrir des ressources et associer ces ressources à l'ensemble de votre hiérarchie.
 
-Vous avez besoin des autorisations d'*administrateur d'organisation* ou de *super administrateur* pour gérer l'identité et l'accès de votre organisation. Avec les autorisations d'*administrateur de dossier ou de projet*, vous ne pouvez gérer que les dossiers et les projets auxquels vous avez accès.
+Vous devez disposer des autorisations d'administrateur d'organisation ou de super administrateur pour gérer l'identité et le contrôle d'accès de votre organisation. Avec les autorisations d'administrateur de dossier ou de projet, vous pouvez uniquement gérer les dossiers et les projets auxquels vous avez accès.
 
 Suivez ces étapes pour créer une nouvelle organisation.  L'ordre peut varier en fonction des besoins de votre organisation.
 

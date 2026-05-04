@@ -62,7 +62,7 @@ La console vous avertit lorsque la machine virtuelle de l'agent n'est pas saine,
 Par exemple, la console vous avertit lorsqu'une ressource d'agent (CPU, RAM ou espace disque) dépasse 90 % de sa capacité totale pendant 30 minutes consécutives.  Par la suite, si l’utilisation des ressources descend en dessous de ce seuil, la notification s’affiche comme résolue (verte) dans le Centre de notifications.
 
 
-NOTE: Travaillez avec le support NetApp si vous avez des questions sur la modification de votre machine virtuelle agent.
+NOTE: Travaillez avec le support NetApp si vous avez des questions concernant la modification de votre machine virtuelle d'agent.
 
 link:https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#notification-center["Apprendre encore plus."^]
 

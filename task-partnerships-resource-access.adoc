@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-partnerships-resource-access.html 
-keywords: role-based access, partnership access, partner resources, resource access, grant acces, provide partner access, partnership organization 
+keywords: role-based access, partnership access, partner resources, resource access, grant access, provide partner access, partnership organization 
 summary: 'Vous pouvez accorder l"accès aux utilisateurs du partenariat en leur attribuant des rôles spécifiques pour les dossiers et les projets au sein de votre organisation.' 
 ---
 = Fournir un accès aux ressources aux utilisateurs du partenariat
@@ -61,7 +61,7 @@ Par exemple, si vous aviez deux projets et que vous souhaitiez que le même util
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Partenariats*.
 . Sélectionnez l'onglet *Partenariat initié*.
-. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi que vous souhaitez afficher et sélectionnez *Afficher les détails*.
+. Sélectionnez le menu Actions image:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi que vous souhaitez consulter et sélectionnez *Afficher les détails*.
 +
 La liste *Membre* affiche les membres que l'organisation partenaire a ajoutés au partenariat.
 
@@ -90,7 +90,7 @@ Vous pouvez modifier ou supprimer un rôle que vous avez attribué à un membre 
 . Sélectionnez *Administration > Identité et accès*.
 . Sélectionnez *Partenariats*.
 . Sélectionnez l'onglet *Partenariat initié*.
-. Sélectionnez le menu actionsimage:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi que vous souhaitez afficher et sélectionnez *Afficher les détails*.
+. Sélectionnez le menu Actions image:icon-action.png["une icône avec trois points verticaux"] à côté du partenariat établi que vous souhaitez consulter et sélectionnez *Afficher les détails*.
 +
 La liste *Membre* affiche les membres que l'organisation partenaire a ajoutés au partenariat.
 

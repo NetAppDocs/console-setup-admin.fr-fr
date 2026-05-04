@@ -168,7 +168,7 @@ Créez un rôle personnalisé Azure que vous pouvez attribuer à votre compte Az
 
 La console déploie la machine virtuelle de l'agent de console dans Azure, active un https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée attribuée par le système"^] , crée le rôle requis et l'attribue à la machine virtuelle. link:reference-permissions-azure.html["Examiner comment la console utilise les autorisations"] .
 
-Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST.  Les étapes suivantes montrent comment créer le rôle à l’aide de l’interface de ligne de commande Azure.  Si vous préférez utiliser une méthode différente, reportez-vous à https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^]
+Notez que vous pouvez créer un rôle personnalisé Azure à l’aide du portail Azure, d’Azure PowerShell, d’Azure CLI ou de l’API REST. Les étapes suivantes expliquent comment créer le rôle à l’aide d’Azure CLI. Si vous préférez utiliser une autre méthode, consultez https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Documentation Azure"^].
 
 .Étapes
 . Copiez les autorisations requises pour un nouveau rôle personnalisé dans Azure et enregistrez-les dans un fichier JSON.
@@ -455,9 +455,9 @@ Ces autorisations concernent l’agent de console lui-même. Il s’agit d’un 
 
 .Étapes
 . Sélectionnez *Administration > Agents*.
-. Sur la page *Aperçu*, sélectionnez *Déployer l'agent > Azure*
+. Sur la page *Vue d'ensemble*, sélectionnez *Déployer l'agent > Azure*.
 . Sur la page *Révision*, examinez les exigences de déploiement d’un agent.  Ces exigences sont également détaillées ci-dessus sur cette page.
-. Sur la page *Authentification de la machine virtuelle*, sélectionnez l'option d'authentification qui correspond à la façon dont vous configurez les autorisations Azure :
+. Sur la page *Authentification de la machine virtuelle*, sélectionnez l'option d'authentification qui correspond à la façon dont vous avez configuré les autorisations Azure :
 +
 ** Sélectionnez *Connexion* pour vous connecter à votre compte Microsoft, qui devrait disposer des autorisations requises.
 +
@@ -481,22 +481,19 @@ TIP: Si vous êtes déjà connecté à un compte Azure, la console utilise autom
 
 . Sur la page *Authentification de la machine virtuelle*, choisissez un abonnement Azure, un emplacement, un nouveau groupe de ressources ou un groupe de ressources existant, puis choisissez une méthode d’authentification pour la machine virtuelle de l’agent de console que vous créez.
 +
-La méthode d’authentification de la machine virtuelle peut être un mot de passe ou une clé publique SSH.
++ La méthode d'authentification de la machine virtuelle peut être un mot de passe ou une clé publique SSH.
 
 +
-https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect?tabs=Linux["En savoir plus sur la connexion à une machine virtuelle Linux dans Azure"^]
++ https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect?tabs=Linux["En savoir plus sur la connexion à une machine virtuelle Linux dans Azure"^]
 
-. Sur la page *Détails*, saisissez un nom pour l'agent, spécifiez les balises et choisissez si vous souhaitez que la console crée un nouveau rôle doté des autorisations requises ou si vous souhaitez sélectionner un rôle existant que vous avez configuré aveclink:reference-permissions-azure.html["les autorisations requises"] .
+. Sur la page *Détails*, saisissez un nom pour l’agent, spécifiez les balises et choisissez si vous souhaitez que la Console crée un nouveau rôle doté des autorisations requises ou si vous souhaitez sélectionner un rôle existant que vous avez configuré avec link:reference-permissions-azure.html["les autorisations requises"].
 +
 Notez que vous pouvez choisir les abonnements Azure associés à ce rôle.  Chaque abonnement que vous choisissez fournit à l'agent de la console des autorisations pour gérer les ressources de cet abonnement (par exemple, Cloud Volumes ONTAP).
 
 . Sur la page *Réseau*, choisissez un réseau virtuel et un sous-réseau, activez ou non une adresse IP publique et spécifiez éventuellement une configuration proxy.
-+
-** Sur la page *Groupe de sécurité*, choisissez de créer un nouveau groupe de sécurité ou de sélectionner un groupe de sécurité existant qui autorise les règles entrantes et sortantes requises.
+. Sur la page *Groupe de sécurité*, choisissez de créer un nouveau groupe de sécurité ou de sélectionner un groupe de sécurité existant qui autorise les règles entrantes et sortantes requises.
 +
 link:reference-ports-azure.html["Afficher les règles du groupe de sécurité pour Azure"] .
-
-
 
 . Vérifiez vos sélections pour vous assurer que votre configuration est correcte.
 +

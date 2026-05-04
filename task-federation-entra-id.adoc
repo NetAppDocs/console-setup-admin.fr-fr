@@ -17,14 +17,14 @@ summary: 'Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour acti
 Fédérez-vous avec votre fournisseur IdP Microsoft Entra ID pour activer l'authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.
 
 .Rôles requis
-Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations.  Le spectateur de la Fédération peut voir la page de la Fédération.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations. Le rôle de visionneuse de fédération permet de consulter la page de la fédération. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 
 
 NOTE: Vous pouvez vous fédérer avec votre IdP d'entreprise ou avec le site de support NetApp .  NetApp recommande de choisir l’un ou l’autre, mais pas les deux.
 
 NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Vous devez d’abord configurer le fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services.  Ensuite, vous pouvez créer une connexion dans la console qui utilise la configuration du fournisseur d’identité.
 
-Vous pouvez configurer une connexion fédérée avec Microsoft Entra ID pour activer l’authentification unique (SSO) pour la console.  Le processus implique la configuration de votre identifiant Microsoft Entra pour approuver la console en tant que fournisseur de services, puis la création de la connexion dans la console.
+Vous pouvez configurer une connexion fédérée avec Microsoft Entra ID pour activer l'authentification unique (SSO) pour la Console. La procédure consiste à configurer votre Microsoft Entra ID pour qu'il approuve la Console en tant que fournisseur de services, puis à créer la connexion dans la Console.
 
 .Avant de commencer
 * Un compte IdP avec des privilèges administratifs est requis.  Coordonnez-vous avec votre administrateur IdP pour terminer les étapes.
@@ -77,9 +77,9 @@ Vous pouvez configurer une connexion fédérée avec Microsoft Entra ID pour act
 [discrete]
 ====== Créer une connexion
 
-. Créer la connexion avec Microsoft Entra ID
+. Créez la connexion avec Microsoft Entra ID.
 +
-.. Saisissez l’ID client et le secret client que vous avez créés à l’étape précédente.
+.. Saisissez l'identifiant client et le secret client que vous avez créés à l'étape précédente.
 .. Saisissez le nom de domaine Microsoft Entra ID.
 
 

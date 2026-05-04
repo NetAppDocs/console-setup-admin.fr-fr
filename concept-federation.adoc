@@ -78,16 +78,16 @@ Pour fédérer avec un domaine différent de votre domaine de messagerie, vérif
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Configurez votre IdP pour faire confiance à NetApp en tant que fournisseur de services
 [role="quick-margin-para"]
-Configurez votre fournisseur d’identité pour qu’il fasse confiance à NetApp en créant une nouvelle application et en fournissant des détails tels que l’URL ACS, l’ID d’entité ou d’autres informations d’identification. Les informations sur le fournisseur de services varient selon le fournisseur d'identité. Reportez-vous donc à la documentation de votre fournisseur d'identité spécifique pour plus de détails. Vous devrez travailler avec votre administrateur IdP pour terminer cette étape.
+Configurez votre fournisseur d'identité pour faire confiance à NetApp en créant une nouvelle application et en fournissant des informations telles que l'URL ACS, l'ID d'entité ou d'autres informations d'identifiant. Les informations du fournisseur de services varient selon le fournisseur d'identité, veuillez donc consulter la documentation de votre fournisseur d'identité pour plus de détails. Vous devrez collaborer avec votre administrateur IdP pour terminer cette étape.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"]Créer la connexion fédérée dans la console
 [role="quick-margin-para"]
 Fournissez l’URL ou le fichier de métadonnées SAML de votre fournisseur d’identité pour créer la connexion.  Ces informations sont utilisées pour établir la relation de confiance entre la console et votre fournisseur d’identité. Les informations que vous fournissez dépendent de l'IdP que vous utilisez. Par exemple, si vous utilisez Microsoft Entra ID, vous devez fournir l’ID client, le secret et le domaine.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Trois"]Testez votre fédération dans la console
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"]Testez votre fédération dans la NetApp Console
 [role="quick-margin-para"]
 Testez votre connexion fédérée avant de l'activer. Utilisez l’option de test sur la page Fédération dans la console pour vérifier que votre utilisateur de test peut s’authentifier avec succès. Si le test réussit, vous pouvez activer la connexion.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Trois"]Activez votre connexion dans la console
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"]Activez votre connexion dans la NetApp Console
 [role="quick-margin-para"]
 Une fois la connexion activée, les utilisateurs peuvent se connecter à la console à l’aide de leurs informations d’identification d’entreprise.

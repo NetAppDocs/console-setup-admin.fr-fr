@@ -305,7 +305,7 @@ Pour gérer les ressources Google Cloud, déployez votre agent dans Google Cloud
 
 Le mode de déploiement de votre Console, l'environnement de stockage et les besoins en matière de souveraineté des données déterminent où vous déployez les agents. Déployez plusieurs agents dans différents environnements pour une séparation organisationnelle ou selon les besoins de l'entreprise.
 
-Vous pouvez déployer des agents directement depuis la console, depuis votre place de marché cloud, ou manuellement dans vCenter ou sur site. link:concept-agent-install-options.html["Comparez les méthodes de déploiement pour choisir celle qui convient le mieux à votre environnement"].
+Vous pouvez déployer des agents directement depuis la Console, depuis votre cloud marketplace ou manuellement dans vCenter ou dans vos locaux. link:concept-agent-install-options.html["Comparez les méthodes de déploiement pour choisir celle qui convient le mieux à votre environnement"].
 
 
 
@@ -313,7 +313,7 @@ Vous pouvez déployer des agents directement depuis la console, depuis votre pla
 
 Déployez des agents dans votre cloud ou sur site pour assurer la connectivité avec l'application SaaS Console hébergée dans le cloud. Les agents activent des fonctionnalités avancées tandis que l'interface utilisateur de la Console reste accessible de partout.
 
-Vous pouvez installer les agents directement depuis la Console lorsque vous utilisez l'application SaaS (mode standard). Vous pouvez installer dans AWS, Azure ou Google Cloud, ou manuellement sur votre propre hôte Linux ou dans votre environnement VCenter.
+Vous pouvez installer les agents directement depuis la Console lorsque vous utilisez l'application SaaS (mode standard). Vous pouvez installer sur AWS, Azure ou Google Cloud, ou manuellement sur votre infrastructure locale, sur votre propre hôte Linux ou dans votre environnement vCenter.
 
 
 

@@ -16,9 +16,9 @@ summary: 'Gérez l"accès des utilisateurs à la NetApp Console grâce au contr�
 [role="lead"]
 Gérez l'accès des utilisateurs à la NetApp Console grâce au contrôle d'accès basé sur les rôles (RBAC), en attribuant des rôles prédéfinis au niveau de l'organisation, du dossier ou du projet. Chaque rôle octroie des autorisations spécifiques qui définissent les actions que les utilisateurs peuvent effectuer dans le cadre de leur rôle.
 
-NetApp conçoit les rôles de console selon le principe du moindre privilège, de sorte que chaque rôle n'inclut que les autorisations nécessaires à ses tâches. Cette approche renforce la sécurité en limitant l'accès à ce dont chaque membre a besoin.
+NetApp conçoit les rôles de la Console selon le principe du moindre privilège, de sorte que chaque rôle inclut uniquement les autorisations nécessaires à ses tâches. Cette approche renforce la sécurité en limitant l'accès à ce dont chaque membre a besoin.
 
-Après avoir organisé les ressources en dossiers et projets, attribuez aux membres de l'organisation un ou plusieurs rôles pour des dossiers ou projets spécifiques, leur permettant ainsi d'exercer uniquement leurs responsabilités.
+Après avoir organisé les ressources en dossiers et en projets, attribuez aux membres un ou plusieurs rôles pour des dossiers ou des projets spécifiques, leur permettant ainsi de n'exercer que leurs responsabilités.
 
 Par exemple, vous pouvez attribuer à un membre le rôle d'administrateur de résilience aux ransomwares pour un niveau de projet spécifique, lui permettant d'effectuer des opérations de résilience aux ransomwares pour les ressources de ce projet, sans lui accorder un accès plus large à l'ensemble de l'organisation. Ce même utilisateur peut se voir attribuer ce rôle pour plusieurs projets au sein de votre organisation.
 
@@ -43,7 +43,7 @@ link:task-iam-manage-members-permissions.html#add-members["Découvrez comment aj
 
 La NetApp Console inclut des rôles prédéfinis que vous pouvez attribuer aux membres de l'organisation. Chaque rôle comprend des autorisations qui spécifient les actions qu'un membre peut effectuer dans le cadre qui lui est assigné (organisation, dossier ou projet).
 
-Les rôles de la NetApp Console utilisent le principe du moindre privilège, qui garantit que les membres ne disposent que des autorisations nécessaires à leurs tâches, et catégorisent les rôles selon le type d'accès qu'ils fournissent :
+NetApp Console utilise des rôles basés sur le principe du moindre privilège, garantissant que les membres disposent uniquement des autorisations nécessaires à leurs tâches, et catégorise les rôles selon le type d'accès qu'ils offrent :
 
 * Rôles de la plateforme : Fournir les autorisations d’administration de la console
 * Rôles des services de données : octroient des autorisations pour la gestion de services de données spécifiques, tels que la résilience aux ransomwares et la sauvegarde et la restauration.

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-agent-vm-config.html 
 keywords: agent VM, vcenter, esxi, increase cpu, increase ram, vm maintenance, agent maintenance, agent operating system, agent host 
-summary: Vous pouvez apporter des modifications à votre hôte VCenter ou ESXi existant après avoir déployé l’agent de console.  Par exemple, vous pouvez augmenter la CPU ou la RAM de l’instance de machine virtuelle qui héberge l’agent de console. 
+summary: 'Vous pouvez modifier votre vCenter ou hôte ESXi existant après le déploiement de l"agent Console. Par exemple, vous pouvez augmenter le CPU ou la RAM de l"instance de machine virtuelle qui héberge l"agent Console.' 
 ---
-= Maintenir un hôte VCenter ou ESXi pour l'agent de console
+= Maintenez un vCenter ou un hôte ESXi pour l'agent Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Vous pouvez apporter des modifications à votre hôte VCenter ou ESXi e
 
 
 [role="lead"]
-Vous pouvez apporter des modifications à votre hôte VCenter ou ESXi existant après avoir déployé l’agent de console.  Par exemple, vous pouvez augmenter la CPU ou la RAM de l’instance de machine virtuelle qui héberge l’agent de console.
+Vous pouvez modifier votre vCenter ou hôte ESXi existant après le déploiement de l'agent Console. Par exemple, vous pouvez augmenter le CPU ou la RAM de l'instance de machine virtuelle qui héberge l'agent Console.
 
 Effectuez ces tâches de maintenance à l’aide de la console Web de la machine virtuelle :
 
@@ -31,10 +31,10 @@ Vous pouvez uniquement consulter (et non modifier) les informations relatives à
 
 == Accéder à la console de maintenance de la machine virtuelle
 
-Vous pouvez accéder à la console de maintenance à partir du client VSphere.
+Vous pouvez accéder à la console de maintenance depuis le vSphere client.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
@@ -47,7 +47,7 @@ Vous pouvez accéder à la console de maintenance à partir du client VSphere.
 Vous pouvez modifier le mot de passe pour le `maint` utilisateur.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
@@ -61,10 +61,10 @@ Vous pouvez modifier le mot de passe pour le `maint` utilisateur.
 
 Vous pouvez augmenter la CPU ou la RAM de l’instance de machine virtuelle qui héberge l’agent de console.
 
-Modifiez les paramètres de l’instance de machine virtuelle dans votre hôte VCenter ou ESXi, puis utilisez la console de maintenance pour appliquer les modifications.
+Modifiez les paramètres de l'instance de machine virtuelle dans votre vCenter ou hôte ESXi, puis utilisez la console de maintenance pour appliquer les modifications.
 
-.Étapes du client VSphere
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+.Étapes dans le client vSphere
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Cliquez avec le bouton droit sur l’instance de VM et sélectionnez *Modifier les paramètres*.
 . Augmentez l'espace disque dur utilisé pour la partition /opt ou /var.
@@ -77,11 +77,11 @@ Modifiez les paramètres de l’instance de machine virtuelle dans votre hôte V
 
 
 .Étapes de la console de maintenance
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
-. Entrer `1 to view the `System Configuration` menu.
+. Entrer `1` pour voir le `System Configuration` menu.
 . Entrer `2` et suivez les instructions à l’écran.  La console recherche de nouveaux paramètres et augmente la taille des partitions.
 
 
@@ -89,10 +89,10 @@ Modifiez les paramètres de l’instance de machine virtuelle dans votre hôte V
 
 === Afficher les paramètres réseau de la machine virtuelle de l'agent
 
-Affichez les paramètres réseau de la machine virtuelle de l’agent dans le client VSphere pour confirmer ou résoudre les problèmes de réseau.  Vous ne pouvez afficher (et non mettre à jour) que les paramètres réseau suivants : adresse IP et détails DNS.
+Consultez les paramètres réseau de la machine virtuelle de l'agent dans le client vSphere pour confirmer ou résoudre les problèmes de réseau. Vous pouvez uniquement consulter (et non modifier) les paramètres réseau suivants : adresse IP et détails DNS.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
@@ -107,7 +107,7 @@ Affichez les paramètres réseau de la machine virtuelle de l’agent dans le cl
 Ajoutez, mettez à jour ou supprimez des itinéraires statiques pour la machine virtuelle de l'agent selon les besoins.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
@@ -125,11 +125,11 @@ Ajoutez, mettez à jour ou supprimez des itinéraires statiques pour la machine 
 Vous pouvez mettre à jour les paramètres du domaine de recherche pour la machine virtuelle de l'agent.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
-. Entrer `2`` pour voir le `Network Configuration` menu.
+. Entrer `2` pour voir le `Network Configuration` menu.
 . Entrer `8` pour mettre à jour les paramètres de recherche de domaine et suivre les invites à l'écran.
 . Appuyez sur Entrée.
 . Vous pouvez également apporter des modifications supplémentaires.
@@ -143,7 +143,7 @@ Vous pouvez mettre à jour les paramètres du domaine de recherche pour la machi
 Accédez aux outils de diagnostic pour résoudre les problèmes avec l’agent de la console.  Le support NetApp peut vous demander de le faire lors du dépannage.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.
@@ -160,7 +160,7 @@ Vous pouvez accéder aux outils de diagnostic à distance avec un outil tel que 
 L'accès SSH permet des fonctionnalités de terminal avancées telles que le copier-coller.
 
 .Étapes
-. Ouvrez le client VSphere et connectez-vous à votre VCenter.
+. Ouvrez le client vSphere et connectez-vous à votre vCenter.
 . Sélectionnez l’instance de machine virtuelle qui héberge l’agent de console.
 . Sélectionnez *Lancer la console Web*.
 . Connectez-vous à l’instance de machine virtuelle à l’aide du nom d’utilisateur et du mot de passe que vous avez spécifiés lors de la création de l’instance de machine virtuelle.  Le nom d'utilisateur est `maint` et le mot de passe est celui que vous avez spécifié lors de la création de l'instance de VM.

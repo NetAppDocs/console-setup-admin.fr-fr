@@ -39,7 +39,7 @@ Chaque volet de la page d’accueil nécessite des rôles d’utilisateur diffé
 
 Si vous ne disposez pas des autorisations nécessaires pour accéder à un volet, celui-ci affiche un message indiquant que vous ne disposez pas des autorisations nécessaires pour l'utiliser.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès à la NetApp Console ."] .
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès à la NetApp Console"].
 
 .Étapes
 . Dans le menu de la NetApp Console , sélectionnez *Accueil*.
