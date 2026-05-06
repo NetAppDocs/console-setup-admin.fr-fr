@@ -16,6 +16,8 @@ summary: 'Si vous souhaitez fédérer avec un domaine différent de votre domain
 [role="lead"]
 Si vous souhaitez fédérer avec un domaine différent de votre domaine de messagerie, vous devez d'abord vérifier que vous possédez le domaine. Vous ne pouvez utiliser que des domaines vérifiés pour la fédération.
 
+Ce processus de vérification de domaine est différent de la vérification d'organisation. link:task-verify-organization.html["Apprenez comment vérifier votre organisation"].
+
 .Rôles requis
 Le rôle d'administrateur de fédération est requis pour créer et gérer des fédérations. Le rôle de visionneuse de fédération permet de consulter la page de la fédération. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
 

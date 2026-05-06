@@ -225,7 +225,7 @@ Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
  a| 
-\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint)
  a| 
 Pour obtenir des images pour les mises à niveau de l'agent de console.
 
@@ -738,15 +738,13 @@ Si vous ne supprimez pas ces variables système, l'installation échoue.
 +
 ** NetApp Console : Accédez à *Agents > Gestion > Déployer l’agent > Sur site > Installation manuelle*.
 +
-Choisissez de télécharger les fichiers d'installation de l'agent ou de copier une URL vers les fichiers.
+Choisissez de télécharger les fichiers d'installation de l'agent ou une URL vers ces fichiers.
 
-
-
+** https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^] (nécessaire si vous n'avez pas déjà accès à la NetApp Console).
 +
 
 NOTE: Téléchargez le programme d'installation de l'agent « online » conçu pour une utilisation sur votre réseau ou dans le cloud. Un programme d'installation « offline » distinct est disponible pour l'agent Console, mais il n'est pris en charge qu'avec les déploiements en mode privé.
 
-+
 ** NetApp Support Site (nécessaire si vous n'avez pas déjà accès à la Console) https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab["Site de support NetApp"^].
 
 
@@ -769,33 +767,46 @@ Où <version> est la version de l’agent de console que vous avez téléchargé
 +
 Vous devrez ajouter les informations de proxy si votre réseau nécessite un proxy pour accéder à Internet. Vous pouvez ajouter un proxy explicite lors de l'installation. Les `--proxy` et `--cacert` paramètres sont facultatifs et il ne vous sera pas demandé de les ajouter. Si vous avez un serveur proxy explicite, vous devrez saisir les paramètres comme indiqué.
 
-
-
-
-NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après avoir installé un agent. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"].
-
 +
 
+NOTE: Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. link:reference-agent-maint-console-proxy.html["Découvrez la console de maintenance des agents"].
+
++
 Voici un exemple de configuration d'un serveur proxy explicite avec un certificat signé par une autorité de certification :
 
 +
-
 [source, cli]
 ----
+./NetApp_Console_Agent_Cloud_v4.0.0 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
 ./NetApp_Console_Agent_Cloud_v4.0.0 --proxy https://user:password@10.0.0.30:8080/ --cacert /tmp/cacert/certificate.cer
 ----
 +
 `--proxy` configure l'agent de la Console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :
 
-+ * \http://adresse:port * \http://nom-utilisateur:mot-de-passe@adresse:port * \http://nom-de-domaine%92nom-utilisateur:mot-de-passe@adresse:port * \https://adresse:port * \https://nom-utilisateur:mot-de-passe@adresse:port * \https://nom-de-domaine%92nom-utilisateur:mot-de-passe@adresse:port
++
+** \http://adresse:port
+** \http://nom-d'utilisateur:mot-de-passe@adresse:port
+** \http://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://adresse:port
+** \https://nom-d'utilisateur:mot-de-passe@adresse:port
+** \https://nom-de-domaine%92nom-d'utilisateur:mot-de-passe@adresse:port
++
+Notez ce qui suit :
 
-+ Notez ce qui suit :
++
+*** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine.
+*** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour un \ comme indiqué ci-dessus.
+*** L'agent Console ne prend pas en charge les noms d'utilisateur ou les mots de passe contenant le caractère @.
+*** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le préfixant d'une barre oblique inverse : & ou !
++
+Par exemple:
 
-+ ** L'utilisateur peut être un utilisateur local ou un utilisateur de domaine. ** Pour un utilisateur de domaine, vous devez utiliser le code ASCII pour une \ comme indiqué ci-dessus. ** L'agent Console ne prend pas en charge les noms d'utilisateur ni les mots de passe qui incluent le caractère @. ** Si le mot de passe inclut l'un des caractères spéciaux suivants, vous devez échapper ce caractère spécial en le faisant précéder d'une barre oblique inverse : & ou !
++
+\http://bxpproxyuser:netapp1\!@adresse:3128
 
-+ Par exemple :
 
-+ \http://bxpproxyuser:netapp1\!@address:3128
+
+
 
 . Si vous avez utilisé Podman, vous devrez ajuster le port aardvark-dns.
 +

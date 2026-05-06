@@ -128,15 +128,10 @@ Les agents de console nécessitent un accès à certains points de terminaison r
 
 link:reference-networking-saas-console.html["En savoir plus sur les points d’accès réseau requis."] link:task-install-agent-on-prem.html#os-req-agent["En savoir plus sur les exigences relatives à l'hôte."]
 
-Lors de l'installation, NetApp vérifie que l'hôte de l'agent dispose d'au moins 80 % de l'espace disque total disponible, ce qui inclut 48 Go dans  `/opt` et 32 Go dans  `/var` (80 Go au total). Après l'installation, il est nécessaire qu'au moins 20 % de l'espace disque total reste disponible, ce qui inclut 12 Go dans  `/opt` et 8 Go dans  `/var` (20 Go au total).
-
 Vous pouvez également effectuer des contrôles de validation à l'aide de la console de maintenance de l'agent. link:reference-agent-maint-console-config-checker.html["Apprenez-en davantage sur l'utilisation de la commande de validation de config-checker."]
 
 
 IMPORTANT: Pour les clients cloud gouvernementaux (mode restreint), NetApp Console ne valide pas le point de terminaison de mise à niveau en mode restreint. Vous devez vérifier manuellement que vos règles de pare-feu autorisent l'accès à ce point de terminaison.link:task-prepare-restricted-mode.html["En savoir plus sur les points d'accès réseau requis pour le mode restreint."]
-
-
-NOTE: Vous ne pouvez valider que les agents dont le statut est *Connecté*.
 
 .Étapes depuis la console
 . Sélectionnez *Administration > Agents*.

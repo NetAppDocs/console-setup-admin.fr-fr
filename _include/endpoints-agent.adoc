@@ -93,12 +93,9 @@ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre
 
 
 |===
-a| \ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io a| Pour obtenir des images pour les mises à niveau de l'agent de console.
+a| https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint) a| Pour obtenir des images pour les mises à niveau de l’agent Console.
 
-* Lorsque vous effectuez une mise à jour vers les points de terminaison actuels de votre pare-feu, vos agents existants continueront de fonctionner.
-
-
-a| https://occmclientinfragov.azurecr.us https://bluexpinfraprod.azurecr.io a| Pour obtenir des images pour les mises à niveau de l'agent Console.
+a| https://occmclientinfragov.azurecr.us a| Pour obtenir des images pour les mises à niveau de l’agent Console.
 
 ^1^ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu car ils sont plus sécurisés et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
 

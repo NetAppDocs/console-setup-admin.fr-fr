@@ -40,6 +40,10 @@ La NetApp Console IAM est construite sur trois types de composants : les compos
 Les composantes organisationnelles—organisation, dossiers et projets—forment une hiérarchie qui détermine comment les ressources sont regroupées et comment l'accès est délégué.
 
 Organisation:: Une  constitue le niveau supérieur du système IAM de la NetApp Console et représente généralement votre entreprise. Votre organisation se compose de dossiers, de projets, de membres, de rôles et de ressources. Les ressources sont associées à des projets et les membres se voient attribuer des rôles au niveau de l'organisation, du dossier ou du projet.
+
+
+Vous pouvez également vérifier votre organisation afin de la lier à l'identité de votre compte professionnel NetApp pour une gouvernance cohérente entre les systèmes NetApp. link:concept-verified-organization.html["Découvrez les organisations vérifiées dans la NetApp Console"].
+
 Projets:: Les projets regroupent les ressources de stockage. Attribuez des ressources aux projets et accordez des droits d'accès aux utilisateurs au niveau du projet. Une ressource peut appartenir à plusieurs projets. Les utilisateurs disposant d'un accès au projet peuvent utiliser ses ressources.
 +
 --

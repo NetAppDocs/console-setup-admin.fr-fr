@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: concept-verified-organization.html 
+keywords: verified organization, organization verification, cmat, crm id, business account, identity and access management, iam, organization governance 
+summary: 'Les organisations vérifiées lient votre NetApp Console organisation à votre NetApp compte professionnel afin que l"identité et la gouvernance soient cohérentes entre les systèmes.' 
+---
+= Découvrez les organisations vérifiées dans la NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une organisation vérifiée lie votre organisation dans la NetApp Console à l'identité de votre compte professionnel NetApp (par exemple, un identifiant CMAT). Cela aide la Console à appliquer une identité d'organisation et un modèle de gouvernance cohérents à travers les systèmes NetApp.
+
+
+
+== Pourquoi vérifier votre organisation
+
+La vérification de votre organisation peut vous aider :
+
+* Alignez votre organisation Console avec l'identité de votre compte professionnel NetApp.
+* Améliorez la cohérence pour l’administration, la création de rapports et les flux de support.
+* Réduisez l'ambiguïté lorsque vos équipes travaillent sur plusieurs NetApp services.
+* Prendre en charge les contrôles de gouvernance qui dépendent d'une identité d'organisation de confiance.
+
+
+
+
+== Qu'est-ce qui change après la vérification
+
+Une fois votre organisation vérifiée :
+
+* L'organisation est associée à une identité de compte professionnel NetApp.
+* La console peut considérer cette identité d'organisation comme faisant autorité pour la cartographie au niveau métier.
+* Certaines modifications de profil d'organisation peuvent être restreintes dans la Console si elles sont gérées par le système source.
+
+
+
+
+== Avant de vérifier
+
+Avant de vérifier votre organisation, confirmez les points suivants :
+
+* Vous disposez du rôle administratif requis pour votre organisation.
+* Vous disposez des informations nécessaires à la vérification de l'organisation.
+* Vous avez pris contact avec votre équipe de compte NetApp si le mappage des comptes professionnels nécessite une validation.
+
+
+
+
+== Informations connexes
+
+* link:task-verify-organization.html["Vérifiez votre organisation"]
+* link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès"]
+* link:task-iam-rename-organization.html["ID d'organisation et de projet"]
+

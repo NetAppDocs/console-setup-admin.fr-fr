@@ -51,7 +51,7 @@ Les agents de console déployés chez votre fournisseur de cloud doivent avoir a
 
 
  a| 
-\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint)
  a| 
 Pour obtenir des images pour les mises à niveau de l'agent de console.
 

@@ -84,7 +84,7 @@ Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
  a| 
-\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint)
  a| 
 Pour obtenir des images pour les mises à niveau de l'agent de console.
 

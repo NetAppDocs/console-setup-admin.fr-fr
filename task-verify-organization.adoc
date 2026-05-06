@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: task-verify-organization.html 
+keywords: verify organization, organization verification, cmat, crm id, business account, iam, digital advisor, AIQ, identity and access management 
+summary: 'Vérifiez votre organisation pour lier votre organisation NetApp Console à l"identité de votre compte professionnel NetApp.' 
+---
+= Vérifiez votre organisation dans la NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La vérification de votre organisation permet d'associer votre organisation Console à l'identité de votre compte professionnel NetApp. Vous pourrez ainsi utiliser des fonctionnalités telles que le Digital Advisor et les recommandations AIQ.
+
+.Rôles requis
+Administrateur de l'organisation ou Super admin.link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d’accès."]
+
+Si votre entreprise possède plusieurs comptes professionnels auprès de NetApp, vous devez vérifier votre organisation et l'associer au compte professionnel approprié. Si votre entreprise ne possède qu'un seul compte professionnel auprès de NetApp, votre organisation est automatiquement vérifiée et liée à ce compte professionnel.
+
+Lorsque votre organisation Console est associée à votre compte professionnel, Digital Advisor affiche uniquement les ressources liées à ce compte. Si vous possédez plusieurs comptes professionnels, vous devrez en sélectionner un à associer à votre organisation Console. Si vous devez modifier l'association, vous pouvez revérifier votre organisation et sélectionner un autre compte professionnel.
+
+.Étapes
+. Sélectionnez *Administration > Identité et accès*.
+. Sélectionnez *Organisation*.
+. Sur la page *Organisation*, sélectionnez *Vérifier* à côté du titre de la page.
++
+image:screenshot-iam-verify-org.png["Capture d'écran de la page Organisation montrant le bouton Vérifier à côté du titre de la page."]
+
+. Dans la boîte de dialogue *Associer un compte professionnel*, choisissez le compte professionnel à associer à votre organisation.
+

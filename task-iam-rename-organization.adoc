@@ -15,7 +15,7 @@ summary: Si nécessaire, vous pouvez modifier le nom de votre organisation NetAp
 
 
 [role="lead"]
-Votre organisation NetApp Console possède un nom et un ID.  Vous pouvez choisir un nom pour votre organisation afin de l’identifier.  Vous devrez peut-être également récupérer l’ID de l’organisation pour certaines intégrations.
+Votre organisation NetApp Console possède un nom et un identifiant. Vous pouvez choisir un nom pour votre organisation afin de faciliter son identification. Vous aurez peut-être également besoin de l'identifiant de l'organisation pour les appels d'API.
 
 
 
