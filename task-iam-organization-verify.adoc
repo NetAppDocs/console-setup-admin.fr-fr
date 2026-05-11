@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-iam-organization-verify.html 
+keywords: verify Console organization, associate business account, CMAT account, digital advisor, filtering, organization verification,, business account management, multi-account NetApp customers, organization governance, account ownership verification, resource visibility control 
+summary: 'Par défaut, Digital Advisor affiche tous les comptes NetApp associés à votre entreprise, plutôt qu"à votre seule organisation Console. Pour limiter ce qui est affiché dans Digital Advisor à un compte spécifique, vérifiez le compte professionnel que vous souhaitez utiliser avec votre organisation Console.' 
+---
+= Vérifiez votre organisation NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Par défaut, Digital Advisor affiche tous les comptes NetApp associés à votre entreprise, plutôt qu'à votre seule organisation Console. Pour limiter ce qui est affiché dans Digital Advisor à un compte spécifique, vérifiez le compte professionnel que vous souhaitez utiliser avec votre organisation Console.
+
+
+
+== Avant de commencer
+
+Vous devez disposer du rôle d'administrateur de l'organisation pour vérifier votre organisation. Votre utilisateur doit également être associé à un compte NetApp Support Site (NSS). link:task-adding-nss-accounts["Apprenez comment associer votre compte NSS"].
+
+
+NOTE: Si votre entreprise ne possède qu'un seul compte professionnel et que votre utilisateur est associé à un compte NetApp Support Site, la Console vérifie automatiquement votre organisation.
+
+
+
+== Vérifiez votre organisation
+
+.Étapes
+. Si votre utilisateur a accès à plusieurs organisations, sélectionnez l'organisation que vous souhaitez vérifier dans le menu déroulant Organization.
+. Dans *Administration > Identité et accès*.
+. Sélectionnez *Organisation*.
+. À côté du titre de la page, sélectionnez *Verify*.
++
+image:screenshot-iam-verify-org.png["Capture d'écran de la page Organisation avec le bouton Vérifier mis en évidence."]
+
++
+
+NOTE: Si votre entreprise ne possède qu'un seul compte professionnel, la mention *Vérifié* apparaîtra à côté de l'en-tête de la page et aucune action n'est requise.
+
+. Dans la boîte de dialogue *Associer un compte professionnel*, sélectionnez le compte professionnel que vous souhaitez associer à votre organisation Console dans le menu déroulant. Sélectionnez ensuite *Associer*.
+
