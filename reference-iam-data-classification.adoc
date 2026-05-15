@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-data-classification.html 
+keywords: role-based access control, IAM roles, access delegation, data classification, cloud data sense, compliance admin, classification viewer 
+summary: 'NetApp Data Classification prend en charge deux rôles pour gérer l"accès en lecture et en écriture aux ressources.' 
+---
+= NetApp Data Classification rôles dans NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Data Classification prend en charge la gestion des accès, vous offrant ainsi la possibilité d'attribuer aux utilisateurs un rôle adapté aux tâches qu'ils doivent accomplir au sein de votre organisation. La méthode d'attribution des rôles dépend de vos pratiques commerciales et de gestion du stockage.
+
+La classification des données prend en charge deux rôles :
+
+* Administration de la conformité
+* Visionneuse de classification
+
+
+
+
+== Administration de la conformité
+
+Le rôle d'administrateur de conformité s'applique uniquement au niveau de l'organisation et permet de gérer l'accès aux ressources de NetApp Data Classification. Si un utilisateur possède des responsabilités inférieures à celles d'un administrateur de l'organisation, il doit disposer du rôle d'administrateur de conformité pour installer NetApp Data Classification.
+
+
+IMPORTANT: Le rôle d'administrateur de conformité n'est pas un rôle autonome. Les utilisateurs disposant du rôle d'administrateur de conformité doivent également être associés à au moins un link:reference-iam-platform-roles.html["Rôle de la plateforme"].
+
+
+NOTE: L'administrateur de conformité a été ajouté à NetApp Data Classification dans la version 1.54. Si vous aviez déployé NetApp Data Classification avant cette version et disposiez d'un rôle de plateforme avec moins d'accès qu'un administrateur d'organisation, le rôle d'administrateur de conformité était automatiquement associé au compte utilisateur.
+
+
+
+== Visionneuse de classification
+
+Le visualiseur de classification est conçu pour les utilisateurs qui ont besoin d'accéder aux résultats d'analyse dans NetApp Data Classification, mais qui n'ont pas besoin d'accéder aux ressources de configuration. Les utilisateurs disposant du rôle de visualiseur de classification peuvent consulter les résultats de la cartographie et des analyses complètes afin d'identifier les possibilités d'économies de stockage ou les risques potentiels pour les données. Les utilisateurs disposant du rôle de visualiseur de classification peuvent également générer des rapports pour les ressources auxquelles ils ont accès. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données.
+
+
+
+== Plus d'informations
+
+* link:https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html["Découvrez la NetApp Data Classification"^]
+

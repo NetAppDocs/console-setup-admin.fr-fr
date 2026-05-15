@@ -218,6 +218,8 @@ sidebar:
           entries:
           - title: Rôles de sauvegarde et de récupération
             url: "/reference-iam-backup-rec-roles.html"
+          - title: Rôles de la classification des données
+            url: "/reference-iam-data-classification.html"
           - title: Rôles de reprise après sinistre
             url: "/reference-iam-disaster-rec-roles.html"
           - title: Rôles de résilience aux ransomwares
