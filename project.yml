@@ -208,6 +208,8 @@ sidebar:
           entries:
           - title: Rôles Google Cloud NetApp Volumes
             url: "/reference-iam-gcnv-roles.html"
+          - title: Licenses and subscriptions rôles
+            url: "/reference-iam-licenses-subscriptions.html"
           - title: Rôles Keystone
             url: "/reference-iam-keystone-roles.html"
           - title: Analyste de soutien aux opérations
