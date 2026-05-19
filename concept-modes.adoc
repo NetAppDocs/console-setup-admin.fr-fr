@@ -243,7 +243,7 @@ Authentification:: NetApp Console propose une authentification avec auth0 ou les
 
 Aller à la https://console.netapp.com["NetApp Console"^] et inscrivez-vous.
 
-+ link:task-quick-start-standard-mode.html["Découvrez comment démarrer avec le mode standard"].
+link:task-quick-start-standard-mode.html["Découvrez comment démarrer avec le mode standard"].
 
 
 
@@ -255,7 +255,7 @@ Les utilisateurs accèdent à l'interface utilisateur locale fournie par l'agent
 
 En fonction des services de données et des fonctionnalités que vous prévoyez d'utiliser, un administrateur d'organisation Console crée des agents Console supplémentaires pour gérer les données au sein de votre environnement de cloud hybride.
 
-<<Mode restreint,En savoir plus sur la connectivité sortante aux API de la NetApp Console>>.
+link:task-install-restricted-mode.html["En savoir plus sur la connectivité sortante aux API de la NetApp Console"].
 
 L'image suivante est un exemple de déploiement en mode restreint.
 

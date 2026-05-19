@@ -1539,7 +1539,6 @@
   <block id="1aff819a8dc16b341c309ebd6cc37f98" category="list-text">Visionneuse de Google Cloud NetApp Volumes</block>
   <block id="1b8af7dd682b66a57a953c80c4b1a22c" category="summary">La gestion des identités et des accès de la NetApp Console inclut des rôles prédéfinis que vous pouvez attribuer aux membres de votre organisation.</block>
   <block id="5ed613d5969e54b01e0691f040afb027" category="doc">En savoir plus sur les rôles d'accès à la NetApp Console</block>
-  <block id="1fd5cc749e7150dcdba3870e8dddd968" category="paragraph">La gestion des identités et des accès (IAM) dans la NetApp Console fournit des rôles prédéfinis que vous pouvez attribuer aux membres de votre organisation à différents niveaux de votre hiérarchie de ressources.  Avant d’attribuer ces rôles, vous devez comprendre les autorisations incluses dans chaque rôle.  Les rôles se répartissent dans les catégories suivantes : plateforme, application et service de données.</block>
   <block id="cb9e27422b343274f9974efbc9c3dbc1" category="section-title">Rôles de la plateforme</block>
   <block id="17dd3fc9247e5f8def4f8dd38ae667ff" category="paragraph">Les rôles de plate-forme accordent des autorisations d’administration à la NetApp Console , y compris l’attribution de rôles et la gestion des utilisateurs.  La console a plusieurs rôles de plate-forme.</block>
   <block id="3aba2887bff41f744b43940b1b82080a" category="cell">Rôle de la plateforme</block>
@@ -1569,8 +1568,6 @@
   <block id="5cc5248d8f5f2a5831a23c2c1c7ba338" category="cell">Rôle de configuration du médiateur ONTAP</block>
   <block id="b3aa67ea8b077eb2b67ff9a0651b5426" category="inline-link-macro">Médiateur cloud ONTAP</block>
   <block id="04799ba9193d1752205122631a125181" category="cell">Les comptes de service dotés du rôle de configuration de médiateur ONTAP peuvent créer des demandes de service.  Ce rôle est requis dans un compte de service pour configurer une instance du<block ref="a95914b5fa4d5193b1ebdf5a17356faa" category="inline-link-macro-rx"></block> .</block>
-  <block id="0321c70517c9c78cf799c7075b2ab9de" category="inline-link-macro">Analyste de soutien aux opérations</block>
-  <block id="406a1f2f1940a9f2563b8c2e2ba639da" category="cell"><block ref="406a1f2f1940a9f2563b8c2e2ba639da" category="inline-link-macro-rx"></block></block>
   <block id="f6b9aba95e329090662ec51c688d6d77" category="cell">Fournit un accès aux alertes et aux outils de surveillance et la possibilité de saisir et de gérer les cas d'assistance.</block>
   <block id="1a137246f35bc1bb21510edbe9caad21" category="cell"><block ref="1a137246f35bc1bb21510edbe9caad21" category="inline-link-macro-rx"></block></block>
   <block id="00887a306e7c01c69b56fa9f82030618" category="cell">Administrez les fonctions de santé et de gouvernance du stockage, découvrez les ressources de stockage, ainsi que modifiez et supprimez les systèmes existants.</block>
@@ -5350,13 +5347,11 @@
   <block id="af6715a71d6494b4d95a731d8f2326c0" category="list-text">NetApp met automatiquement à niveau le logiciel agent chaque mois.</block>
   <block id="4d5d1212bd0be52b0f06612ab0868e2b" category="list-text">Vous accédez à l'interface utilisateur depuis l'application NetApp Console SaaS, qui est disponible sur Internet public.</block>
   <block id="5981099db8f6a5f0ede8f01d1c46b020" category="list-text">NetApp Console propose une authentification avec auth0 ou les identifiants NetApp Support Site (NSS). La fédération d'identité est disponible.</block>
-  <block id="f7edecd71600ffc14fed18b4fac58cb4" category="paragraph">+ <block ref="d7d87d0a148c81603b40370c84cf5979" category="inline-link-macro-rx"></block>.</block>
   <block id="18ce407df84b9b3b6a37f37949068013" category="section-title">NetApp Console en mode restreint (installée dans votre propre cloud public)</block>
   <block id="1bab4d9f19f78d9293b2c57776f8b486" category="paragraph">Vous installez un agent Console dans le cloud (dans une région gouvernementale, souveraine ou commerciale), et celui-ci dispose d'une connectivité sortante limitée aux points de terminaison de l'API NetApp Console (hébergés dans l'application SaaS).</block>
   <block id="8aba565c1287faf0e1ca4932525d434a" category="paragraph">Les utilisateurs accèdent à l'interface utilisateur locale fournie par l'agent Console, pas à l'application SaaS.</block>
   <block id="6db08dac0b67e028e51d8ac5e5a62432" category="paragraph">En fonction des services de données et des fonctionnalités que vous prévoyez d'utiliser, un administrateur d'organisation Console crée des agents Console supplémentaires pour gérer les données au sein de votre environnement de cloud hybride.</block>
   <block id="074dab9c82d3474cf642c9f99e7d5a26" category="inline-xref">En savoir plus sur la connectivité sortante aux API de la NetApp Console</block>
-  <block id="014c03d6e48ef20c47b3fd17154a6d54" category="paragraph"><block ref="a77e3fdf9a749a1e7ea79c8e4fb20767" category="inline-xref-macro-rx"></block>.</block>
   <block id="56899b78a8e10c53c1560d7de57c34e8" category="inline-image-macro">Une image conceptuelle montrant l'internet public où l'application SaaS et l'authentification auth0 sont disponibles, un réseau virtuel dans le cloud où un agent est exécuté et fournit un accès à la console web, et gère Cloud Volumes ONTAP et un AFF cluster dans un centre de données sur site.</block>
   <block id="785d30430f94fe799a20dd723658310c" category="paragraph"><block ref="785d30430f94fe799a20dd723658310c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2a6f3b571c873d3d99d18749793c049" category="section-title">Fonctionnalités et services pris en charge pour la NetApp Console en mode restreint</block>
@@ -6277,4 +6272,42 @@
   <block id="72917a7c676383ff6b788b1412017021" category="cell"><block ref="72917a7c676383ff6b788b1412017021" category="inline-link-macro-rx"></block></block>
   <block id="e2b838aa3390b536f83cc6ce3e1a2748" category="cell">Les utilisateurs disposant du rôle de visionneur de licences et d'abonnements peuvent consulter les licences directes et les abonnements Marketplace pour la NetApp Console et les services de données associés.</block>
   <block id="5ec2925c394689c97be1228f67a49b85" category="sidebar">Licenses and subscriptions rôles</block>
+  <block id="52599219f6b08bb2ce3fc85743943c5e" category="paragraph"><block ref="d7d87d0a148c81603b40370c84cf5979" category="inline-link-macro-rx"></block>.</block>
+  <block id="2550db9aaa48d21b3c6e2051eb610223" category="paragraph"><block ref="7c12d9abb1f60d196a4cd5e699bed565" category="inline-link-macro-rx"></block>.</block>
+  <block id="ef4c9807306cc53f9292ed7a239eeaa7" category="paragraph">La gestion des accès (IAM) dans la NetApp Console propose des rôles prédéfinis que vous pouvez attribuer aux membres de votre organisation à différents niveaux de votre hiérarchie de ressources. Avant d'attribuer ces rôles, vous devez comprendre les autorisations incluses dans chaque rôle. Les rôles se répartissent dans les catégories suivantes : plateforme, application et service de données. Les tableaux indiquent également le nom d’API de chaque rôle pour les clients qui gèrent les attributions de rôles à l’aide de l’API.</block>
+  <block id="81be82a027b82e849a37f5d6236fd170" category="paragraph">*Le nom de l'API correspond à l'identifiant de rôle utilisé dans les API. Copiez la valeur exactement comme indiqué (en respectant la casse et les tirets bas).</block>
+  <block id="17f15167b5660a249617ea94aa6d9d22" category="cell">Nom de l'API*</block>
+  <block id="bf0d50e0ceb480c4356aa15afd8f46f2" category="cell">ORGANIZATION_ADMIN</block>
+  <block id="c57c74449515f098b0771d80be257585" category="cell">ADMINISTRATEUR_DE_DOSSIER_OU_DE_PROJET</block>
+  <block id="fd810da79c458f535206eb152d85f49a" category="cell">ADMINISTRATION_FÉDÉRÉE</block>
+  <block id="18f551f3ef804a123c4afd52f4b81cf2" category="cell">VISIONNEUSE_FÉDÉRATION</block>
+  <block id="1009830b82a14f129f4e4fe247bfd3a9" category="cell">ADMINISTRATEUR_PARTENARIAT</block>
+  <block id="41178155e278fcb0872000619462de8c" category="cell">VISIONNEUSE_PARTENARIAT</block>
+  <block id="fb10f0238035c2b31076223dc45beea0" category="cell">SUPER_ADMIN</block>
+  <block id="6fab4e3d2b56faa8eb39ac7b6a1197c8" category="cell">SUPER_VIEWER</block>
+  <block id="7f46ae3923acb3e1c9a053c547677f98" category="cell">GCNV_ADMIN</block>
+  <block id="18bd19ad68d219d2a11aa468a1cc89fa" category="cell">Visionneuse GCNV</block>
+  <block id="70e312b7130aab755fc1b7285f3ce9a0" category="cell">KEYSTONE_ADMIN</block>
+  <block id="f566c3f80b38166af64295a26184a32f" category="cell">KEYSTONE_VIEWER</block>
+  <block id="6f80e1ba07524b620f9ac3ab70a9f846" category="cell">CONFIGURATION DU MÉDIATEUR ONTAP</block>
+  <block id="f4090d772571520ccc8fd7caa2042019" category="cell"><block ref="f4090d772571520ccc8fd7caa2042019" category="inline-link-macro-rx"></block></block>
+  <block id="3b846a37d0c85419e50ecd7c10c0ddba" category="cell">ANALYSTE DE SOUTIEN AUX OPÉRATIONS</block>
+  <block id="a06d75f2be53002fd7ecebe794bad111" category="cell">ADMINISTRATEUR_STOCKAGE</block>
+  <block id="fe37126842449c75ba0d4df263b08491" category="cell">VISIONNEUSE_STOCKAGE</block>
+  <block id="407be222835100079630428a5af78b74" category="cell">SPÉCIALISTE EN SANTÉ DES SYSTÈMES</block>
+  <block id="629e62d45e24564a18d793b49363d3a9" category="cell">BACKUP_SUPER_ADMIN</block>
+  <block id="5d54ab26b22a109b2881e9549f4378ef" category="cell">ADMINISTRATEUR DE SAUVEGARDE</block>
+  <block id="034df2d2ba1de0d80e8c260c4530197f" category="cell">RESTAURER_ADMIN</block>
+  <block id="b68963c2b53fa2c7991241f6f3e240e4" category="cell">CLONE_ADMIN</block>
+  <block id="da2d82be703db381b6dcd6391c0cc02b" category="cell">VISIONNEUSE DE SAUVEGARDE</block>
+  <block id="ac686ff21b4074cf049db71604cb97af" category="cell">ADMINISTRATEUR DE RÉCUPÉRATION EN CAS DE CATASTROPHE</block>
+  <block id="c76b372cec1939f6fb6d752bed882919" category="cell">ADMINISTRATION DE REPRISE EN CAS DE CATASTROPHE</block>
+  <block id="f1a38d3c8e34eeaf097c7789d2d074a9" category="cell">ADMINISTRATEUR D'APPLICATION DE RÉCUPÉRATION EN CAS DE CATASTROPHE</block>
+  <block id="dd1ad3d92ec6d3df74d3fceee4ebb1bd" category="cell">VISIONNEUSE DE RÉCUPÉRATION EN CAS DE CATASTROPHE</block>
+  <block id="d3a63d7bea99ba9fb20d05753b51a65d" category="cell">VISIONNEUSE DE CLASSIFICATION</block>
+  <block id="ebeadd2261cd842bc1fd55bdb9d73b1f" category="cell">ADMINISTRATEUR DE PROTECTION CONTRE LES RANSOMWARE</block>
+  <block id="5712b685a85dbcca1d3a2c5b2e15bc46" category="cell">VISIONNEUSE DE PROTECTION CONTRE LES RANSOMWARE</block>
+  <block id="3726f34b9bf1c6c6d98054942b244313" category="cell">RANSOMWARE_RESILIENCE_USER_BEHAVIOR_ADMIN</block>
+  <block id="91a470b0f7bf1c1702a23ad6d9d4159d" category="cell">VISIONNEUSE DU COMPORTEMENT DES UTILISATEURS DE LA RÉSILIENCE AUX RANSOMWARES</block>
+  <block id="a67d722a1a98561bf88726ffcf6ecda7" category="cell">SNAPCENTER_ADMIN</block>
 </blocks>
