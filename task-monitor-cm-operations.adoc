@@ -142,7 +142,7 @@ Vous pouvez envoyer des types spécifiques de notifications par e-mail afin d'ê
 
 [NOTE]
 ====
-* La console envoie des notifications par e-mail pour l'agent, les licences et les abonnements, NetApp Copy and Sync et NetApp Backup and Recovery.
+* La console envoie des notifications par e-mail concernant l’agent, les licences et les abonnements, NetApp Copy and Sync, NetApp Backup and Recovery et NetApp Ransomware Resilience.
 * L'envoi de notifications par e-mail n'est pas pris en charge lorsque l'agent de console est installé sur un site sans accès Internet.
 
 
