@@ -6020,10 +6020,6 @@
   <block id="04dfc56baea30e6c894320e91c84aa02" category="summary">NetApp Console gestion des identités et des accès fournit des rôles d'administrateur que vous pouvez attribuer aux membres de votre organisation qui ont besoin d'accéder à Google Cloud NetApp Volumes.</block>
   <block id="c629aa034e9fdba04e68dcb224bc9576" category="paragraph">Google Cloud NetApp Volumes utilise les rôles suivants :</block>
   <block id="cff9a72837846d57cb2d651523721cc6" category="cell">Créer, modifier ou supprimer des systèmes depuis la Console (ajouter ou découvrir des systèmes)</block>
-  <block id="62d9c2659cf0ad00c633675f8170cede" category="cell">Permet à un utilisateur d'accéder sans restriction à tous les projets et dossiers au sein d'une organisation. Peut ajouter des membres à n'importe quel projet ou dossier, ainsi qu'effectuer toute tâche et utiliser tout service de données qui n'a pas de rôle explicite associé. Les utilisateurs disposant de ce rôle gèrent votre organisation en créant des dossiers et des projets, en attribuant des rôles, en ajoutant des utilisateurs et en gérant les systèmes s'ils disposent des identifiants appropriés. C'est le seul rôle d'accès qui peut créer des agents Console.</block>
-  <block id="11242816a2212aaec156e393f611d6a4" category="cell">Ce rôle confère à l'utilisateur un sous-ensemble de rôles de visionneuse. Il est conçu pour les petites organisations qui n'ont pas forcément besoin de répartir les responsabilités de la console entre plusieurs utilisateurs.</block>
-  <block id="b73b9bb1076e1557f19d367a133b14f9" category="cell">Restaurez les charges de travail dans NetApp Backup and Recovery.</block>
-  <block id="9bc794a51a7dec822701191ea93b64bd" category="cell">Clonez les applications et les données dans NetApp Backup and Recovery.</block>
   <block id="84deda971835a8442abb48d0c88d2e97" category="paragraph">*Rôles de base*</block>
   <block id="7e47bfd1d8d1b989cf845ab6724b608b" category="paragraph">*Rôles d'activité de comportement utilisateur* <block ref="885ef4a0557ed3cd017b2efccb0c3de5" category="inline-link-macro-rx"></block> alertes fournissent une visibilité sur des données telles que les événements d'activité sur les fichiers ; ces alertes incluent les noms de fichiers et les actions sur les fichiers (telles que Lire, Écrire, Supprimer, Renommer) effectuées par l'utilisateur. Pour limiter la visibilité de ces données, seuls les utilisateurs disposant de ces rôles peuvent gérer ou consulter ces alertes.</block>
   <block id="6f5db1c938d25fcc5e43ec9d050769ac" category="paragraph">Les rôles de gestion du comportement utilisateur doivent être attribués aux utilisateurs disposant déjà de privilèges d'administrateur ou de visionneur Ransomware Resilience qui ont besoin d'accéder à <block ref="dabde4cfb2462919536551734d022527" category="inline-link-macro-rx"></block>. Par exemple, un utilisateur possédant le rôle d'administrateur Ransomware Resilience doit recevoir le rôle d'administrateur de gestion du comportement utilisateur pour configurer les agents d'activité utilisateur et bloquer ou débloquer des utilisateurs. Le rôle d'administrateur de gestion du comportement utilisateur Ransomware Resilience ne doit pas être attribué à un visionneur Ransomware Resilience.</block>
@@ -6170,51 +6166,13 @@
   <block id="ba56355010a4d2b7a9f84d9cd9154231" category="admonition">Si vous souhaitez configurer un proxy transparent, vous pouvez le faire après l'installation. <block ref="42ec89ae005e4bc718304f7a7f9af7dd" category="inline-link-macro-rx"></block>.</block>
   <block id="0e4e2076c75603c2622d2ec78b60debe" category="paragraph"><block ref="595589ae3dfdb377f4f5b01e56137ac6" prefix="" category="inline-code"></block> configure l'agent de la Console pour utiliser un serveur proxy HTTP ou HTTPS en utilisant l'un des formats suivants :</block>
   <block id="63e61b342d17ed1b9128b82afdcaa55e" category="list-text">L'agent Console ne prend pas en charge les noms d'utilisateur ou les mots de passe contenant le caractère @.</block>
-  <block id="c67fc0b337f1a4a940497d14b954a64b" category="inline-link-macro">Découvrez les organisations vérifiées dans la NetApp Console</block>
-  <block id="418740347c100d5f65ec6fdae40039ab" category="paragraph">Vous pouvez également vérifier votre organisation afin de la lier à l'identité de votre compte professionnel NetApp pour une gouvernance cohérente entre les systèmes NetApp. <block ref="92388bda5755f2ce99ab8ec4678c3808" category="inline-link-macro-rx"></block>.</block>
-  <block id="a0868ee8ba25b4a31561be0443ebf933" category="summary">Les organisations vérifiées lient votre NetApp Console organisation à votre NetApp compte professionnel afin que l'identité et la gouvernance soient cohérentes entre les systèmes.</block>
-  <block id="48cf25e26ffebb2bb495d369d230e558" category="paragraph">Une organisation vérifiée lie votre organisation dans la NetApp Console à l'identité de votre compte professionnel NetApp (par exemple, un identifiant CMAT). Cela aide la Console à appliquer une identité d'organisation et un modèle de gouvernance cohérents à travers les systèmes NetApp.</block>
-  <block id="30a203cb96c50fefbc17611dc5c228ac" category="section-title">Pourquoi vérifier votre organisation</block>
-  <block id="5895e55252be33d4a8c0a3f2fed70ae9" category="paragraph">La vérification de votre organisation peut vous aider :</block>
-  <block id="619827fbf7b134d07776d964ca418ef2" category="list-text">Alignez votre organisation Console avec l'identité de votre compte professionnel NetApp.</block>
-  <block id="ea4a402c177478c80f1fd6987232b900" category="list-text">Améliorez la cohérence pour l’administration, la création de rapports et les flux de support.</block>
-  <block id="bbe78e0920e9bb47f8f85fdccf397e62" category="list-text">Réduisez l'ambiguïté lorsque vos équipes travaillent sur plusieurs NetApp services.</block>
-  <block id="f1883c3d9fd07e5c6274f9c0f795b6c5" category="list-text">Prendre en charge les contrôles de gouvernance qui dépendent d'une identité d'organisation de confiance.</block>
-  <block id="62a9515152e6d7ec6e3c394287acb594" category="section-title">Qu'est-ce qui change après la vérification</block>
-  <block id="7c11a53e44d8f76aeb151f87a95cd80b" category="paragraph">Une fois votre organisation vérifiée :</block>
-  <block id="cb56792a5e15f62a1f62723585cad786" category="list-text">L'organisation est associée à une identité de compte professionnel NetApp.</block>
-  <block id="cab3888d6123cd3a318da7afcbce12bd" category="list-text">La console peut considérer cette identité d'organisation comme faisant autorité pour la cartographie au niveau métier.</block>
-  <block id="bdde811059b4457d759f661bfe34084d" category="list-text">Certaines modifications de profil d'organisation peuvent être restreintes dans la Console si elles sont gérées par le système source.</block>
-  <block id="192e00466c0b488c77c731b828ab5e1e" category="section-title">Avant de vérifier</block>
-  <block id="31862d7570d9062614fe4d5b544b3059" category="paragraph">Avant de vérifier votre organisation, confirmez les points suivants :</block>
-  <block id="4eee70687da5ea2684317c0660041669" category="list-text">Vous disposez du rôle administratif requis pour votre organisation.</block>
-  <block id="4a1b2fdd5fd46224c3cab8b448abdaf7" category="list-text">Vous disposez des informations nécessaires à la vérification de l'organisation.</block>
-  <block id="073b3141ff007e2e7c9e7770dbb5c013" category="list-text">Vous avez pris contact avec votre équipe de compte NetApp si le mappage des comptes professionnels nécessite une validation.</block>
   <block id="ff79cbea9f2efa42d53fff27506cf26d" category="inline-link-macro">Vérifiez votre organisation</block>
-  <block id="cd61b05fa0ea90bca24f6c4068c70af2" category="list-text"><block ref="cd61b05fa0ea90bca24f6c4068c70af2" category="inline-link-macro-rx"></block></block>
-  <block id="a813b69ac531b0701ca879b788271f1d" category="list-text"><block ref="a813b69ac531b0701ca879b788271f1d" category="inline-link-macro-rx"></block></block>
   <block id="0ad3148d437ad1c27c46470f823dd1b5" category="paragraph">https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint)</block>
-  <block id="10c97f048a09dcded54f8b476a81ea96" category="inline-link-macro">Apprenez comment vérifier votre organisation</block>
-  <block id="f56da6e3ae650bf113d86ed1707a0cd5" category="paragraph">Ce processus de vérification de domaine est différent de la vérification d'organisation. <block ref="72ae1679f86197db823e7993d8e7864f" category="inline-link-macro-rx"></block>.</block>
-  <block id="35ea601a80ea7b092eea5094e5acf0bf" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block>Vérifiez votre organisation (facultatif)</block>
-  <block id="1c5b44eb32f9d12f80011dc0daf0c723" category="paragraph">Si votre équipe utilise la vérification d'organisation, associez votre organisation Console à l'identité de votre compte professionnel NetApp.</block>
-  <block id="f628652f1454cbcdff49a07bde8f26d6" category="paragraph"><block ref="72ae1679f86197db823e7993d8e7864f" category="inline-link-macro-rx"></block>.</block>
-  <block id="92388bda5755f2ce99ab8ec4678c3808" category="list-text"><block ref="92388bda5755f2ce99ab8ec4678c3808" category="inline-link-macro-rx"></block></block>
   <block id="3d48cd486159d7ff770d2ac9604cb64a" category="paragraph">Votre organisation NetApp Console possède un nom et un identifiant. Vous pouvez choisir un nom pour votre organisation afin de faciliter son identification. Vous aurez peut-être également besoin de l'identifiant de l'organisation pour les appels d'API.</block>
   <block id="155e00b589db80072de70532ce7a50ce" category="doc">Vérifiez votre organisation NetApp Console</block>
   <block id="7934ae571b929618df901b492ff84198" category="inline-link-macro">Apprenez comment associer votre compte NSS</block>
   <block id="7a1bd24cabea42f3fe04b753aec5d8ba" category="list-text">Si votre utilisateur a accès à plusieurs organisations, sélectionnez l'organisation que vous souhaitez vérifier dans le menu déroulant Organization.</block>
   <block id="01b73db22fadaa534984d5a80ed20a2e" category="list-text">Dans *Administration &gt; Identité et accès*.</block>
-  <block id="10296e23827c1a60c2f8d75482c4a075" category="summary">Vérifiez votre organisation pour lier votre organisation NetApp Console à l'identité de votre compte professionnel NetApp.</block>
-  <block id="80333c8b0e0d35357d14ab44c8c5f4f9" category="doc">Vérifiez votre organisation dans la NetApp Console</block>
-  <block id="43c3b1d18eaf47add23da2905752381b" category="paragraph">La vérification de votre organisation permet d'associer votre organisation Console à l'identité de votre compte professionnel NetApp. Vous pourrez ainsi utiliser des fonctionnalités telles que le Digital Advisor et les recommandations AIQ.</block>
-  <block id="0a2f38a239e81a08f5b837f81513a9bc" category="paragraph">Administrateur de l'organisation ou Super admin.<block ref="8f129ac67aaaf533c741c49d131f7a5d" category="inline-link-macro-rx"></block></block>
-  <block id="45c6d1bd46ddc19876bfc91687471ea2" category="paragraph">Si votre entreprise possède plusieurs comptes professionnels auprès de NetApp, vous devez vérifier votre organisation et l'associer au compte professionnel approprié. Si votre entreprise ne possède qu'un seul compte professionnel auprès de NetApp, votre organisation est automatiquement vérifiée et liée à ce compte professionnel.</block>
-  <block id="c6a431b7786ec48067cfa83374b99c0a" category="paragraph">Lorsque votre organisation Console est associée à votre compte professionnel, Digital Advisor affiche uniquement les ressources liées à ce compte. Si vous possédez plusieurs comptes professionnels, vous devrez en sélectionner un à associer à votre organisation Console. Si vous devez modifier l'association, vous pouvez revérifier votre organisation et sélectionner un autre compte professionnel.</block>
-  <block id="8d6d948cdc13e069b613284450d2961f" category="list-text">Sur la page *Organisation*, sélectionnez *Vérifier* à côté du titre de la page.</block>
-  <block id="36cb56591d62e53ed37d02c1e0cf2a57" category="inline-image-macro">Capture d'écran de la page Organisation montrant le bouton Vérifier à côté du titre de la page.</block>
-  <block id="0bddf0553f7265d90da078ccd7865d6a" category="paragraph"><block ref="0bddf0553f7265d90da078ccd7865d6a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="812c2b994db82152161eb7a216b75550" category="list-text">Dans la boîte de dialogue *Associer un compte professionnel*, choisissez le compte professionnel à associer à votre organisation.</block>
   <block id="e337542e72a609caf56b5e5fdf59c9ff" category="doc">Agent Console 4.7.0</block>
   <block id="99c4637fed7022fa029be07f2fddc9af" category="paragraph">La version 4.7.0 prend en charge à la fois le mode standard et le mode restreint.</block>
   <block id="c36716f3e716cc1af0c491f3d55d650b" category="paragraph">Cette version inclut la fonctionnalité suivante.</block>
@@ -6242,10 +6200,6 @@
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="section-title">Plus d'informations</block>
   <block id="4964a8f5f86e15358c2fc765883fe9b2" category="inline-link-macro">Découvrez la NetApp Data Classification</block>
   <block id="5ced687e00d6efd9bda8689abae14e58" category="list-text"><block ref="5ced687e00d6efd9bda8689abae14e58" category="inline-link-macro-rx"></block></block>
-  <block id="ae8e202976179a823c177023962ba12a" category="cell"><block ref="ae8e202976179a823c177023962ba12a" category="inline-link-macro-rx"></block></block>
-  <block id="c1e616bcb4ff762399549fa457f2d29b" category="cell">Nécessaire pour installer NetApp Data Classification et pour associer des autorisations au niveau de l'organisation dans NetApp Data Classification.</block>
-  <block id="47a46671c1a0773fed715c3799195b7f" category="cell"><block ref="47a46671c1a0773fed715c3799195b7f" category="inline-link-macro-rx"></block></block>
-  <block id="d1bd98b9d900098c018b826ca4e6bd65" category="cell">Permet aux utilisateurs de consulter les résultats d'analyse NetApp Data Classification. Les utilisateurs disposant de ce rôle peuvent consulter les informations de conformité et générer des rapports pour les ressources auxquelles ils ont la permission d'accéder. Ces utilisateurs ne peuvent pas activer ou désactiver l'analyse des volumes, des compartiments ou des schémas de base de données.</block>
   <block id="eeeb9dcaeb66c431b51b12eff19105f3" category="sidebar">Rôles de la classification des données</block>
   <block id="f879dc19b8d807f7185039a4bd14f8f8" category="summary">NetApp Licenses and Subscriptions vous permettent d’attribuer différents rôles aux utilisateurs dans la NetApp Console afin d’accomplir les tâches nécessaires à la gestion des licences et des abonnements.</block>
   <block id="6f147a6113c5afec8776bf72f44f87d5" category="doc">Rôles des Licenses and subscriptions dans la NetApp Console</block>
@@ -6264,17 +6218,10 @@
   <block id="e1e396fcbcea3e57f0efa53c64e39e2e" category="cell">Voir l'abonnement</block>
   <block id="9ffbfdd088029bc08ac68a7e8204d3d0" category="cell">Supprimer l'abonnement</block>
   <block id="f06ea6495b1fd2d6a469a12a5dc9f68b" category="cell">Supprimer la licence</block>
-  <block id="cdc482262618604a335f0c4343ec2ea8" category="inline-link-macro">Administration des licences et des abonnements</block>
-  <block id="0d89f22c7458cba55f94b24b9c15e6d0" category="cell"><block ref="0d89f22c7458cba55f94b24b9c15e6d0" category="inline-link-macro-rx"></block></block>
-  <block id="a40769dfb91b2027074e15e64eff6c7c" category="cell">Les utilisateurs disposant du rôle d'administrateur de licences et d'abonnements peuvent créer, mettre à jour et supprimer des licences directes et des abonnements à la place de marché pour la NetApp Console et les services de données associés.</block>
-  <block id="bbbb1967c36266ce01e7c3f89d283ee5" category="inline-link-macro">Visionneuse de licences et d'abonnements</block>
-  <block id="72917a7c676383ff6b788b1412017021" category="cell"><block ref="72917a7c676383ff6b788b1412017021" category="inline-link-macro-rx"></block></block>
-  <block id="e2b838aa3390b536f83cc6ce3e1a2748" category="cell">Les utilisateurs disposant du rôle de visionneur de licences et d'abonnements peuvent consulter les licences directes et les abonnements Marketplace pour la NetApp Console et les services de données associés.</block>
   <block id="5ec2925c394689c97be1228f67a49b85" category="sidebar">Licenses and subscriptions rôles</block>
   <block id="52599219f6b08bb2ce3fc85743943c5e" category="paragraph"><block ref="d7d87d0a148c81603b40370c84cf5979" category="inline-link-macro-rx"></block>.</block>
   <block id="2550db9aaa48d21b3c6e2051eb610223" category="paragraph"><block ref="7c12d9abb1f60d196a4cd5e699bed565" category="inline-link-macro-rx"></block>.</block>
   <block id="ef4c9807306cc53f9292ed7a239eeaa7" category="paragraph">La gestion des accès (IAM) dans la NetApp Console propose des rôles prédéfinis que vous pouvez attribuer aux membres de votre organisation à différents niveaux de votre hiérarchie de ressources. Avant d'attribuer ces rôles, vous devez comprendre les autorisations incluses dans chaque rôle. Les rôles se répartissent dans les catégories suivantes : plateforme, application et service de données. Les tableaux indiquent également le nom d’API de chaque rôle pour les clients qui gèrent les attributions de rôles à l’aide de l’API.</block>
-  <block id="81be82a027b82e849a37f5d6236fd170" category="paragraph">*Le nom de l'API correspond à l'identifiant de rôle utilisé dans les API. Copiez la valeur exactement comme indiqué (en respectant la casse et les tirets bas).</block>
   <block id="17f15167b5660a249617ea94aa6d9d22" category="cell">Nom de l'API*</block>
   <block id="bf0d50e0ceb480c4356aa15afd8f46f2" category="cell">ORGANIZATION_ADMIN</block>
   <block id="c57c74449515f098b0771d80be257585" category="cell">ADMINISTRATEUR_DE_DOSSIER_OU_DE_PROJET</block>
@@ -6289,7 +6236,6 @@
   <block id="70e312b7130aab755fc1b7285f3ce9a0" category="cell">KEYSTONE_ADMIN</block>
   <block id="f566c3f80b38166af64295a26184a32f" category="cell">KEYSTONE_VIEWER</block>
   <block id="6f80e1ba07524b620f9ac3ab70a9f846" category="cell">CONFIGURATION DU MÉDIATEUR ONTAP</block>
-  <block id="f4090d772571520ccc8fd7caa2042019" category="cell"><block ref="f4090d772571520ccc8fd7caa2042019" category="inline-link-macro-rx"></block></block>
   <block id="3b846a37d0c85419e50ecd7c10c0ddba" category="cell">ANALYSTE DE SOUTIEN AUX OPÉRATIONS</block>
   <block id="a06d75f2be53002fd7ecebe794bad111" category="cell">ADMINISTRATEUR_STOCKAGE</block>
   <block id="fe37126842449c75ba0d4df263b08491" category="cell">VISIONNEUSE_STOCKAGE</block>
@@ -6310,4 +6256,21 @@
   <block id="91a470b0f7bf1c1702a23ad6d9d4159d" category="cell">VISIONNEUSE DU COMPORTEMENT DES UTILISATEURS DE LA RÉSILIENCE AUX RANSOMWARES</block>
   <block id="a67d722a1a98561bf88726ffcf6ecda7" category="cell">SNAPCENTER_ADMIN</block>
   <block id="6b0a56bcf40e8d005fd8e9e5b2559479" category="list-text">La console envoie des notifications par e-mail concernant l’agent, les licences et les abonnements, NetApp Copy and Sync, NetApp Backup and Recovery et NetApp Ransomware Resilience.</block>
+  <block id="9ac912c60697a1237d12bdfad1ed975f" category="cell">Accès à l'abonnement Keystone</block>
+  <block id="6d2986515ca8666b77fb12051944388d" category="cell">Nom de l'API* *Le nom de l'API est l'identifiant de rôle utilisé dans les API. Copiez la valeur exactement comme indiqué (y compris les majuscules et les underscores).</block>
+  <block id="bfb78ce9833860669efdf093e894f0d5" category="cell">Disponibilité du mode</block>
+  <block id="73e5d1355567cd0f538ddabf3cf26be3" category="cell">Standard, restreint, privé</block>
+  <block id="f2ad52479c9d7a5dc51ed3f3ab03e45a" category="cell">Ce rôle permet à un utilisateur d'accéder sans restriction à tous les projets et dossiers d'une organisation, d'ajouter des membres à n'importe quel projet ou dossier, ainsi que d'effectuer toute tâche et d'utiliser tout service de données pour lesquels aucun rôle explicite n'est associé. Les utilisateurs disposant de ce rôle gèrent votre organisation en créant des dossiers et des projets, en attribuant des rôles, en ajoutant des utilisateurs et en gérant les systèmes s'ils disposent des identifiants appropriés. C'est le seul rôle d'accès qui peut créer des agents Console.</block>
+  <block id="331dfa1e0a93d1ecb14265311c06848f" category="cell">Standard, Restreint</block>
+  <block id="0c59885a322273fa1fb3ebe78010c852" category="cell">Ce rôle confère à l'utilisateur un sous-ensemble de rôles de visionneuse. Il est conçu pour les petites organisations qui n'ont pas forcément besoin de répartir les responsabilités de la Console entre plusieurs utilisateurs.</block>
+  <block id="370187cecb3fe8ea0ece4a9d95fb222e" category="cell">Permet à un utilisateur d'accéder en lecture seule aux informations et ressources de l'organisation qui relèvent du niveau hiérarchique assigné.</block>
+  <block id="eb6d8ae6f20283755b339c0dc273988b" category="cell">Standard</block>
+  <block id="0321c70517c9c78cf799c7075b2ab9de" category="inline-link-macro">analyste de soutien aux opérations</block>
+  <block id="406a1f2f1940a9f2563b8c2e2ba639da" category="cell"><block ref="406a1f2f1940a9f2563b8c2e2ba639da" category="inline-link-macro-rx"></block></block>
+  <block id="55a6c46602496366e85545482ddb9ca2" category="cell">Restaurez les charges de travail dans la section Sauvegarde et récupération.</block>
+  <block id="65af4793a6fa01700ec78442d5b2626f" category="cell">Clonez les applications et les données dans la fonction de sauvegarde et de restauration.</block>
+  <block id="9ba1f0e426e643179b44f5146f795c55" category="cell">Permet aux utilisateurs de consulter les résultats d'analyse NetApp Data Classification. Les utilisateurs disposant de ce rôle peuvent consulter les informations de conformité et générer des rapports pour les ressources auxquelles ils ont la permission d'accéder. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données. Data Classification ne dispose pas de rôle d'administrateur.</block>
+  <block id="19ba82eae8f218642333800aab8dc1c9" category="cell">Standard, Privé</block>
+  <block id="31c8c9293a24d211fe8df6780c3b5864" category="list-text">Vous pouvez choisir parmi les rôles pris en charge lors de l'attribution de rôles aux utilisateurs ou aux comptes de service.</block>
+  <block id="b4c25e4423bb6dcb1445deb7b10e93fb" category="paragraph">Seuls les rôles pris en charge sont affichés dans la liste déroulante. <block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>.</block>
 </blocks>

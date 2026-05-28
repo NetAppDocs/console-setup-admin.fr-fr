@@ -125,16 +125,19 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | Stockage Google Cloud | Oui 
 
 
+| Accès à l'abonnement Keystone | Oui 
+
+
 | Clusters ONTAP sur site | Nécessaire pour la découverte et la gestion. Vous pouvez utiliser la découverte directe sans agent Console, mais vous avez besoin d'un agent pour utiliser les fonctionnalités de gestion. 
 
 
 | StorageGRID | Oui 
 
 
-| Charges de travail | Non 
+| Charges de travail | Non .8+| *Services de données* 
 
 
-.8+| *Services de données* | NetApp Backup and Recovery | Oui 
+| NetApp Backup and Recovery | Oui 
 
 
 | Classification NetApp | Oui 
@@ -155,10 +158,10 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | NetApp Cloud Tiering | Oui 
 
 
-| NetApp Volume Caching | Oui 
+| NetApp Volume Caching | Oui .5+| *NetApp fonctionnalités du contrat d'assistance* 
 
 
-.5+| *NetApp fonctionnalités du contrat d'assistance* | Conseiller numérique | Oui 
+| Conseiller numérique | Oui 
 
 
 | Efficacité économique | Oui 
@@ -170,10 +173,10 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | Mises à jour logicielles | Non 
 
 
-| Durabilité | Oui 
+| Durabilité | Oui .12+| *Fonctionnalités administratives* 
 
 
-.12+| *Fonctionnalités administratives* | Audit | Non 
+| Audit | Non 
 
 
 | Centre d'automatisation | Non 

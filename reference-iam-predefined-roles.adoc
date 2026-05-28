@@ -22,35 +22,36 @@ La gestion des accès (IAM) dans la NetApp Console propose des rôles prédéfin
 
 Les rôles de plate-forme accordent des autorisations d’administration à la NetApp Console , y compris l’attribution de rôles et la gestion des utilisateurs.  La console a plusieurs rôles de plate-forme.
 
-*Le nom de l'API correspond à l'identifiant de rôle utilisé dans les API. Copiez la valeur exactement comme indiqué (en respectant la casse et les tirets bas).
-
-[cols="1,2,3"]
+[cols="1,1,1,2"]
 |===
-| Rôle de la plateforme | Nom de l'API* | Responsabilités 
+| Rôle de la plateforme | Nom de l'API* *Le nom de l'API est l'identifiant de rôle utilisé dans les API. Copiez la valeur exactement comme indiqué (y compris les majuscules et les underscores). | Disponibilité du mode | Responsabilités 
 
 
-| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de l'organisation"] | ORGANIZATION_ADMIN | Permet à un utilisateur d'accéder sans restriction à tous les projets et dossiers au sein d'une organisation. Peut ajouter des membres à n'importe quel projet ou dossier, ainsi qu'effectuer toute tâche et utiliser tout service de données qui n'a pas de rôle explicite associé. Les utilisateurs disposant de ce rôle gèrent votre organisation en créant des dossiers et des projets, en attribuant des rôles, en ajoutant des utilisateurs et en gérant les systèmes s'ils disposent des identifiants appropriés. C'est le seul rôle d'accès qui peut créer des agents Console. 
+| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de l'organisation"] | ORGANIZATION_ADMIN | Standard, restreint, privé | Ce rôle permet à un utilisateur d'accéder sans restriction à tous les projets et dossiers d'une organisation, d'ajouter des membres à n'importe quel projet ou dossier, ainsi que d'effectuer toute tâche et d'utiliser tout service de données pour lesquels aucun rôle explicite n'est associé. Les utilisateurs disposant de ce rôle gèrent votre organisation en créant des dossiers et des projets, en attribuant des rôles, en ajoutant des utilisateurs et en gérant les systèmes s'ils disposent des identifiants appropriés. C'est le seul rôle d'accès qui peut créer des agents Console. 
 
 
-| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de dossier ou de projet"] | ADMINISTRATEUR_DE_DOSSIER_OU_DE_PROJET | Permet à un utilisateur un accès illimité aux projets et dossiers attribués. Ils peuvent ajouter des membres aux dossiers ou aux projets qu'ils gèrent, ainsi qu'effectuer n'importe quelle tâche et utiliser n'importe quel service de données ou application sur les ressources du dossier ou du projet qui leur est attribué. Les administrateurs de dossier ou de projet ne peuvent pas créer d’agents de console. 
+| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de dossier ou de projet"] | ADMINISTRATEUR_DE_DOSSIER_OU_DE_PROJET | Standard, restreint, privé | Permet à un utilisateur un accès illimité aux projets et dossiers attribués. Ils peuvent ajouter des membres aux dossiers ou aux projets qu'ils gèrent, ainsi qu'effectuer n'importe quelle tâche et utiliser n'importe quel service de données ou application sur les ressources du dossier ou du projet qui leur est attribué. Les administrateurs de dossier ou de projet ne peuvent pas créer d’agents de console. 
 
 
-| link:reference-iam-platform-roles.html#federation-roles["Administrateur de la fédération"] | ADMINISTRATION_FÉDÉRÉE | Permet à un utilisateur de créer et de gérer des fédérations avec la console, ce qui permet l'authentification unique (SSO). 
+| link:reference-iam-platform-roles.html#federation-roles["Administrateur de la fédération"] | ADMINISTRATION_FÉDÉRÉE | Standard, Restreint | Permet à un utilisateur de créer et de gérer des fédérations avec la console, ce qui permet l'authentification unique (SSO). 
 
 
-| link:reference-iam-platform-roles.html#federation-roles["Téléspectateur de la Fédération"] | VISIONNEUSE_FÉDÉRATION | Permet à un utilisateur de visualiser les fédérations existantes avec la console.  Impossible de créer ou de gérer des fédérations. 
+| link:reference-iam-platform-roles.html#federation-roles["Téléspectateur de la Fédération"] | VISIONNEUSE_FÉDÉRATION | Standard, Restreint | Permet à un utilisateur de visualiser les fédérations existantes avec la console.  Impossible de créer ou de gérer des fédérations. 
 
 
-| link:reference-iam-platform-roles.html#partnership-roles["Administrateur de partenariat"] | ADMINISTRATEUR_PARTENARIAT | Permet à un utilisateur de créer et de gérer des partenariats. 
+| link:reference-iam-platform-roles.html#partnership-roles["Administrateur de partenariat"] | ADMINISTRATEUR_PARTENARIAT | Standard, Restreint | Permet à un utilisateur de créer et de gérer des partenariats. 
 
 
-| link:reference-iam-platform-roles.html#partnership-roles["Visionneuse de partenariat"] | VISIONNEUSE_PARTENARIAT | Permet à un utilisateur de visualiser les partenariats existants.  Impossible de créer ou de gérer des partenariats. 
+| link:reference-iam-platform-roles.html#partnership-roles["Visionneuse de partenariat"] | VISIONNEUSE_PARTENARIAT | Standard, Restreint | Permet à un utilisateur de visualiser les partenariats existants.  Impossible de créer ou de gérer des partenariats. 
 
 
-| link:reference-iam-platform-roles.html#super-admin-roles["Super administrateur"] | SUPER_ADMIN | Donne à l'utilisateur un sous-ensemble de rôles d'administrateur.  Ce rôle est conçu pour les petites organisations qui n'ont peut-être pas besoin de répartir les responsabilités de la console entre plusieurs utilisateurs. 
+| link:reference-iam-platform-roles.html#super-admin-roles["Super administrateur"] | SUPER_ADMIN | Standard, restreint, privé | Donne à l'utilisateur un sous-ensemble de rôles d'administrateur.  Ce rôle est conçu pour les petites organisations qui n'ont peut-être pas besoin de répartir les responsabilités de la console entre plusieurs utilisateurs. 
 
 
-| link:reference-iam-platform-roles.html#super-admin-roles["Super spectateur"] | SUPER_VIEWER | Ce rôle confère à l'utilisateur un sous-ensemble de rôles de visionneuse. Il est conçu pour les petites organisations qui n'ont pas forcément besoin de répartir les responsabilités de la console entre plusieurs utilisateurs. 
+| link:reference-iam-platform-roles.html#super-admin-roles["Super spectateur"] | SUPER_VIEWER | Standard, restreint, privé | Ce rôle confère à l'utilisateur un sous-ensemble de rôles de visionneuse. Il est conçu pour les petites organisations qui n'ont pas forcément besoin de répartir les responsabilités de la Console entre plusieurs utilisateurs. 
+
+
+| Visionneuse d'organisation |  | Standard, restreint, privé | Permet à un utilisateur d'accéder en lecture seule aux informations et ressources de l'organisation qui relèvent du niveau hiérarchique assigné. 
 |===
 
 
@@ -58,42 +59,36 @@ Les rôles de plate-forme accordent des autorisations d’administration à la N
 
 Voici une liste des rôles dans la catégorie d’application.  Chaque rôle accorde des autorisations spécifiques dans le cadre de son périmètre désigné.  Les utilisateurs sans le rôle d’application ou de plateforme requis ne peuvent pas accéder à l’application correspondante.
 
-[cols="1,2,3"]
+[cols="1,1,1,2"]
 |===
-| Rôle de l'application | Nom de l'API* | Responsabilités 
+| Rôle de l'application | Nom de l'API* | Disponibilité du mode | Responsabilités 
 
 
-| link:reference-iam-gcnv-roles.html["Administrateur Google Cloud NetApp Volumes"] | GCNV_ADMIN | Les utilisateurs disposant du rôle Google Cloud NetApp Volumes peuvent découvrir et gérer Google Cloud NetApp Volumes. 
+| link:reference-iam-gcnv-roles.html["Administrateur Google Cloud NetApp Volumes"] | GCNV_ADMIN | Standard | Les utilisateurs disposant du rôle Google Cloud NetApp Volumes peuvent découvrir et gérer Google Cloud NetApp Volumes. 
 
 
-| link:reference-iam-gcnv-roles.html["Visionneuse de Google Cloud NetApp Volumes"] | Visionneuse GCNV | Les utilisateurs disposant du rôle utilisateur Google Cloud NetApp Volumes peuvent consulter Google Cloud NetApp Volumes. 
+| link:reference-iam-gcnv-roles.html["Visionneuse de Google Cloud NetApp Volumes"] | Visionneuse GCNV | Standard | Les utilisateurs disposant du rôle utilisateur Google Cloud NetApp Volumes peuvent consulter Google Cloud NetApp Volumes. 
 
 
-| link:reference-iam-keystone-roles.html["Administrateur Keystone"] | KEYSTONE_ADMIN | Les utilisateurs disposant du rôle d’administrateur Keystone peuvent créer des demandes de service.  Permet aux utilisateurs de surveiller et d'afficher l'utilisation, les ressources et les détails d'administration au sein du locataire Keystone auquel ils accèdent. 
+| link:reference-iam-keystone-roles.html["Administrateur Keystone"] | KEYSTONE_ADMIN | Standard | Les utilisateurs disposant du rôle d’administrateur Keystone peuvent créer des demandes de service.  Permet aux utilisateurs de surveiller et d'afficher l'utilisation, les ressources et les détails d'administration au sein du locataire Keystone auquel ils accèdent. 
 
 
-| link:reference-iam-keystone-roles.html["Visionneuse Keystone"] | KEYSTONE_VIEWER | Les utilisateurs disposant du rôle de visualiseur Keystone NE PEUVENT PAS créer de demandes de service.  Permet aux utilisateurs de surveiller et d'afficher la consommation, les actifs et les informations administratives au sein du locataire Keystone auquel ils accèdent. 
+| link:reference-iam-keystone-roles.html["Visionneuse Keystone"] | KEYSTONE_VIEWER | Standard | Les utilisateurs disposant du rôle de visualiseur Keystone NE PEUVENT PAS créer de demandes de service.  Permet aux utilisateurs de surveiller et d'afficher la consommation, les actifs et les informations administratives au sein du locataire Keystone auquel ils accèdent. 
 
 
-| link:reference-iam-licenses-subscriptions.html["Administration des licences et des abonnements"] |  | Les utilisateurs disposant du rôle d'administrateur de licences et d'abonnements peuvent créer, mettre à jour et supprimer des licences directes et des abonnements à la place de marché pour la NetApp Console et les services de données associés. 
+| Rôle de configuration du médiateur ONTAP | CONFIGURATION DU MÉDIATEUR ONTAP | Standard | Les comptes de service dotés du rôle de configuration de médiateur ONTAP peuvent créer des demandes de service.  Ce rôle est requis dans un compte de service pour configurer une instance dulink:https://docs.netapp.com/us-en/ontap/mediator/mediator-overview-concept.html["Médiateur cloud ONTAP"^] . 
 
 
-| link:reference-iam-licenses-subscriptions.html["Visionneuse de licences et d'abonnements"] |  | Les utilisateurs disposant du rôle de visionneur de licences et d'abonnements peuvent consulter les licences directes et les abonnements Marketplace pour la NetApp Console et les services de données associés. 
+| link:reference-iam-analyst-roles.html["analyste de soutien aux opérations"] | ANALYSTE DE SOUTIEN AUX OPÉRATIONS | Standard, restreint, privé | Fournit un accès aux alertes et aux outils de surveillance et la possibilité de saisir et de gérer les cas d'assistance. 
 
 
-| Rôle de configuration du médiateur ONTAP | CONFIGURATION DU MÉDIATEUR ONTAP | Les comptes de service dotés du rôle de configuration de médiateur ONTAP peuvent créer des demandes de service.  Ce rôle est requis dans un compte de service pour configurer une instance dulink:https://docs.netapp.com/us-en/ontap/mediator/mediator-overview-concept.html["Médiateur cloud ONTAP"^] . 
+| link:reference-iam-storage-roles.html["Administrateur de stockage"] | ADMINISTRATEUR_STOCKAGE | Standard, Restreint | Administrez les fonctions de santé et de gouvernance du stockage, découvrez les ressources de stockage, ainsi que modifiez et supprimez les systèmes existants. 
 
 
-| link:reference-iam-analyst-roles.html["Analyste de soutien aux opérations"] | ANALYSTE DE SOUTIEN AUX OPÉRATIONS | Fournit un accès aux alertes et aux outils de surveillance et la possibilité de saisir et de gérer les cas d'assistance. 
+| link:reference-iam-storage-roles.html["Visionneuse de stockage"] | VISIONNEUSE_STOCKAGE | Standard, Restreint | Affichez l'état du stockage et les fonctions de gouvernance, ainsi que les ressources de stockage précédemment découvertes.  Impossible de découvrir, de modifier ou de supprimer les systèmes de stockage existants. 
 
 
-| link:reference-iam-storage-roles.html["Administrateur de stockage"] | ADMINISTRATEUR_STOCKAGE | Administrez les fonctions de santé et de gouvernance du stockage, découvrez les ressources de stockage, ainsi que modifiez et supprimez les systèmes existants. 
-
-
-| link:reference-iam-storage-roles.html["Visionneuse de stockage"] | VISIONNEUSE_STOCKAGE | Affichez l'état du stockage et les fonctions de gouvernance, ainsi que les ressources de stockage précédemment découvertes.  Impossible de découvrir, de modifier ou de supprimer les systèmes de stockage existants. 
-
-
-| link:reference-iam-storage-roles.html["Spécialiste de la santé du système"] | SPÉCIALISTE EN SANTÉ DES SYSTÈMES | Administrer les fonctions de stockage, de santé et de gouvernance, toutes les autorisations de l'administrateur de stockage, sauf l'impossibilité de modifier ou de supprimer les systèmes existants. 
+| link:reference-iam-storage-roles.html["Spécialiste de la santé du système"] | SPÉCIALISTE EN SANTÉ DES SYSTÈMES | Standard, Restreint | Administrer les fonctions de stockage, de santé et de gouvernance, toutes les autorisations de l'administrateur de stockage, sauf l'impossibilité de modifier ou de supprimer les systèmes existants. 
 |===
 
 
@@ -101,57 +96,54 @@ Voici une liste des rôles dans la catégorie d’application.  Chaque rôle acc
 
 Voici une liste des rôles dans la catégorie de service de données.  Chaque rôle accorde des autorisations spécifiques dans le cadre de son périmètre désigné.  Les utilisateurs qui ne disposent pas du rôle de service de données requis ou d’un rôle de plateforme ne pourront pas accéder au service de données.
 
-[cols="1,2,3"]
+[cols="1,1,1,2"]
 |===
-| Rôle du service de données | Nom de l'API* | Responsabilités 
+| Rôle du service de données | Nom de l'API* | Disponibilité du mode | Responsabilités 
 
 
-| link:reference-iam-backup-rec-roles.html["Super administrateur de sauvegarde et de récupération"] | BACKUP_SUPER_ADMIN | Effectuez toutes les actions dans NetApp Backup and Recovery. 
+| link:reference-iam-backup-rec-roles.html["Super administrateur de sauvegarde et de récupération"] | BACKUP_SUPER_ADMIN | Standard, restreint, privé | Effectuez toutes les actions dans NetApp Backup and Recovery. 
 
 
-| link:reference-iam-backup-rec-roles.html["Administrateur de sauvegarde et de récupération"] | ADMINISTRATEUR DE SAUVEGARDE | Effectuez des sauvegardes sur des snapshots locaux, répliquez-les sur un stockage secondaire et sauvegardez-les sur un stockage d'objets. 
+| link:reference-iam-backup-rec-roles.html["Administrateur de sauvegarde et de récupération"] | ADMINISTRATEUR DE SAUVEGARDE | Standard, restreint, privé | Effectuez des sauvegardes sur des snapshots locaux, répliquez-les sur un stockage secondaire et sauvegardez-les sur un stockage d'objets. 
 
 
-| link:reference-iam-backup-rec-roles.html["Administrateur de restauration de sauvegarde et de récupération"] | RESTAURER_ADMIN | Restaurez les charges de travail dans NetApp Backup and Recovery. 
+| link:reference-iam-backup-rec-roles.html["Administrateur de restauration de sauvegarde et de récupération"] | RESTAURER_ADMIN | Standard, restreint, privé | Restaurez les charges de travail dans la section Sauvegarde et récupération. 
 
 
-| link:reference-iam-backup-rec-roles.html["Administrateur de clone de sauvegarde et de récupération"] | CLONE_ADMIN | Clonez les applications et les données dans NetApp Backup and Recovery. 
+| link:reference-iam-backup-rec-roles.html["Administrateur de clone de sauvegarde et de récupération"] | CLONE_ADMIN | Standard, restreint, privé | Clonez les applications et les données dans la fonction de sauvegarde et de restauration. 
 
 
-| link:reference-iam-backup-rec-roles.html["Visionneuse de sauvegarde et de récupération"] | VISIONNEUSE DE SAUVEGARDE | Afficher les informations de sauvegarde et de récupération. 
+| link:reference-iam-backup-rec-roles.html["Visionneuse de sauvegarde et de récupération"] | VISIONNEUSE DE SAUVEGARDE | Standard, restreint, privé | Afficher les informations de sauvegarde et de récupération. 
 
 
-| link:reference-iam-disaster-rec-roles.html["Administrateur de reprise après sinistre"] | ADMINISTRATEUR DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Effectuez toutes les actions dans le service NetApp Disaster Recovery . 
+| link:reference-iam-disaster-rec-roles.html["Administrateur de reprise après sinistre"] | ADMINISTRATEUR DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Standard | Effectuez toutes les actions dans le service NetApp Disaster Recovery . 
 
 
-| link:reference-iam-disaster-rec-roles.html["Administrateur de basculement de reprise après sinistre"] | ADMINISTRATION DE REPRISE EN CAS DE CATASTROPHE | Effectuer des basculements et des migrations. 
+| link:reference-iam-disaster-rec-roles.html["Administrateur de basculement de reprise après sinistre"] | ADMINISTRATION DE REPRISE EN CAS DE CATASTROPHE | Standard | Effectuer des basculements et des migrations. 
 
 
-| link:reference-iam-disaster-rec-roles.html["Administrateur d'application de reprise après sinistre"] | ADMINISTRATEUR D'APPLICATION DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Créez des plans de réplication, modifiez les plans de réplication et démarrez les basculements de test. 
+| link:reference-iam-disaster-rec-roles.html["Administrateur d'application de reprise après sinistre"] | ADMINISTRATEUR D'APPLICATION DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Standard | Créez des plans de réplication, modifiez les plans de réplication et démarrez les basculements de test. 
 
 
-| link:reference-iam-disaster-rec-roles.html["Visionneuse de reprise après sinistre"] | VISIONNEUSE DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Afficher uniquement les informations. 
+| link:reference-iam-disaster-rec-roles.html["Visionneuse de reprise après sinistre"] | VISIONNEUSE DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Standard | Afficher uniquement les informations. 
 
 
-| link:reference-iam-data-classification.html["Administration de la conformité"] |  | Nécessaire pour installer NetApp Data Classification et pour associer des autorisations au niveau de l'organisation dans NetApp Data Classification. 
+| Visionneuse de classification | VISIONNEUSE DE CLASSIFICATION | Standard, restreint, privé | Permet aux utilisateurs de consulter les résultats d'analyse NetApp Data Classification. Les utilisateurs disposant de ce rôle peuvent consulter les informations de conformité et générer des rapports pour les ressources auxquelles ils ont la permission d'accéder. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données. Data Classification ne dispose pas de rôle d'administrateur. 
 
 
-| link:reference-iam-data-classification.html["Visionneuse de classification"] | VISIONNEUSE DE CLASSIFICATION | Permet aux utilisateurs de consulter les résultats d'analyse NetApp Data Classification. Les utilisateurs disposant de ce rôle peuvent consulter les informations de conformité et générer des rapports pour les ressources auxquelles ils ont la permission d'accéder. Ces utilisateurs ne peuvent pas activer ou désactiver l'analyse des volumes, des compartiments ou des schémas de base de données. 
+| link:reference-iam-ransomware-roles.html["Administrateur de la résilience aux ransomwares"] | ADMINISTRATEUR DE PROTECTION CONTRE LES RANSOMWARE | Standard | Gérez les actions sur les onglets Protéger, Alertes, Récupérer, Paramètres et Rapports de NetApp Ransomware Resilience. 
 
 
-| link:reference-iam-ransomware-roles.html["Administrateur de la résilience aux ransomwares"] | ADMINISTRATEUR DE PROTECTION CONTRE LES RANSOMWARE | Gérez les actions sur les onglets Protéger, Alertes, Récupérer, Paramètres et Rapports de NetApp Ransomware Resilience. 
+| link:reference-iam-ransomware-roles.html["Visionneuse de résilience aux ransomwares"] | VISIONNEUSE DE PROTECTION CONTRE LES RANSOMWARE | Standard | Affichez les données de charge de travail, affichez les données d'alerte, téléchargez les données de récupération et téléchargez les rapports dans Ransomware Resilience. 
 
 
-| link:reference-iam-ransomware-roles.html["Visionneuse de résilience aux ransomwares"] | VISIONNEUSE DE PROTECTION CONTRE LES RANSOMWARE | Affichez les données de charge de travail, affichez les données d'alerte, téléchargez les données de récupération et téléchargez les rapports dans Ransomware Resilience. 
+| link:reference-iam-ransomware-roles.html["Comportement utilisateur de Ransomware Resilience administrateur"] | RANSOMWARE_RESILIENCE_USER_BEHAVIOR_ADMIN | Standard | Configurez, gérez et affichez la détection, les alertes et la surveillance des comportements suspects des utilisateurs dans Ransomware Resilience. 
 
 
-| link:reference-iam-ransomware-roles.html["Comportement utilisateur de Ransomware Resilience administrateur"] | RANSOMWARE_RESILIENCE_USER_BEHAVIOR_ADMIN | Configurez, gérez et affichez la détection, les alertes et la surveillance des comportements suspects des utilisateurs dans Ransomware Resilience. 
+| link:reference-iam-ransomware-roles.html["Visualiseur de comportement utilisateur de Ransomware Resilience"] | VISIONNEUSE DU COMPORTEMENT DES UTILISATEURS DE LA RÉSILIENCE AUX RANSOMWARES | Standard | Affichez les alertes et les informations sur les comportements suspects des utilisateurs dans Ransomware Resilience. 
 
 
-| link:reference-iam-ransomware-roles.html["Visualiseur de comportement utilisateur de Ransomware Resilience"] | VISIONNEUSE DU COMPORTEMENT DES UTILISATEURS DE LA RÉSILIENCE AUX RANSOMWARES | Affichez les alertes et les informations sur les comportements suspects des utilisateurs dans Ransomware Resilience. 
-
-
-| Administrateur SnapCenter | SNAPCENTER_ADMIN | Offre la possibilité de sauvegarder des instantanés à partir de clusters ONTAP sur site à l'aide de NetApp Backup and Recovery pour les applications.  Un membre disposant de ce rôle peut effectuer les actions suivantes : * Effectuer n’importe quelle action à partir de Sauvegarde et récupération > Applications * Gérer tous les systèmes dans les projets et dossiers pour lesquels il dispose d’autorisations * Utiliser tous les services de la NetApp Console SnapCenter n’a pas de rôle de visualiseur. 
+| Administrateur SnapCenter | SNAPCENTER_ADMIN | Standard, Privé | Offre la possibilité de sauvegarder des instantanés à partir de clusters ONTAP sur site à l'aide de NetApp Backup and Recovery pour les applications.  Un membre disposant de ce rôle peut effectuer les actions suivantes : * Effectuer n’importe quelle action à partir de Sauvegarde et récupération > Applications * Gérer tous les systèmes dans les projets et dossiers pour lesquels il dispose d’autorisations * Utiliser tous les services de la NetApp Console SnapCenter n’a pas de rôle de visualiseur. 
 |===
 
 

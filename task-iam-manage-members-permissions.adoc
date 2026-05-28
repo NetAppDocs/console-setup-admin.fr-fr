@@ -30,6 +30,7 @@ Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp C
 * Tous les utilisateurs doivent d'abord s'inscrire à la NetApp Console avant de pouvoir accéder aux ressources, même s'ils font partie d'un groupe fédéré.
 * Vous devez attribuer explicitement un rôle à chaque utilisateur dans la console avant qu'il puisse accéder aux ressources, même s'il est membre d'un groupe fédéré auquel un rôle a été attribué.
 * Vous pouvez ajouter des comptes de service directement depuis la console et leur attribuer des rôles.
+* Vous pouvez choisir parmi les rôles pris en charge lors de l'attribution de rôles aux utilisateurs ou aux comptes de service.
 
 
 
@@ -74,7 +75,7 @@ Notez ce qui suit :
 
 . *Sélectionnez une catégorie* puis sélectionnez un *Rôle* qui fournit au membre des autorisations pour les ressources associées à l'organisation, au dossier ou au projet que vous avez sélectionné.
 +
-link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+Seuls les rôles pris en charge sont affichés dans la liste déroulante. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"].
 
 . Pour donner accès à davantage de dossiers, de projets ou de rôles, sélectionnez *Ajouter un rôle*, choisissez le dossier, le projet ou la catégorie de rôle, puis sélectionnez un rôle.
 . Sélectionnez *Ajouter*.
@@ -163,7 +164,7 @@ Notez ce qui suit :
 
 . Sélectionnez une *Catégorie*, puis un *Rôle* qui confère au membre les autorisations nécessaires pour accéder aux ressources de l'organisation, du dossier ou du projet que vous avez sélectionné.
 +
-link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+Seuls les rôles pris en charge sont affichés dans la liste déroulante. link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"].
 
 . Pour donner accès à davantage de dossiers, de projets ou de rôles, sélectionnez *Ajouter un rôle*, choisissez le dossier, le projet ou la catégorie de rôle, puis sélectionnez un rôle.
 
