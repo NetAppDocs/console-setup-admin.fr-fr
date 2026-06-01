@@ -170,9 +170,12 @@ Vous pouvez également accéder au rapport de validation au format JSON et aux j
 
 === Désactiver les vérifications de configuration pour les installations manuelles
 
+
+
+=== Désactiver les vérifications de configuration pour les installations manuelles
+
 Il peut arriver que vous ayez besoin de désactiver les contrôles de configuration qui vérifient la connectivité sortante lors de l'installation. Par exemple, lors de l'installation manuelle d'un agent dans votre environnement Government Cloud, vous devez désactiver les vérifications de configuration, sinon l'installation échouera.
 
-.Étapes
 Vous désactivez la vérification de configuration en définissant l'indicateur _skipConfigCheck_ dans le fichier _com/opt/application/netapp/service-manager-2/config.json_. Par défaut, cet indicateur est défini sur faux et la vérification de configuration vérifie l'accès sortant pour l'agent. Définissez cet indicateur sur vrai pour désactiver la vérification. Familiarisez-vous avec la syntaxe JSON avant de passer à l'étape suivante.
 
 Pour réactiver la vérification de configuration, procédez comme suit et définissez l'indicateur _skipConfigCheck_ sur false.
@@ -181,8 +184,7 @@ Pour réactiver la vérification de configuration, procédez comme suit et défi
 . Accédez à l’hôte de l’agent de la console en tant que root ou avec les privilèges sudo.
 . Créez une copie de sauvegarde du fichier _/opt/application/netapp/service-manager-2/config.json_ pour vous assurer de pouvoir annuler vos modifications.
 . Arrêtez le service Service Manager 2 en exécutant la commande suivante :
-
-
++
 [source, cli]
 ----
 systemctl stop netapp-service-manager.service
