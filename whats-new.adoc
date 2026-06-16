@@ -18,6 +18,31 @@ Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Co
 
 
 
+== 15 juin 2026
+
+
+
+=== Publication du mode privé (4.7.0)
+
+Une nouvelle version du mode privé est désormais disponible en téléchargement à partir du https://mysupport.netapp.com/site/downloads["Site de support NetApp"^]
+
+La version 4.7.0 inclut des mises à jour des composants et services suivants de la NetApp Console.
+
+[cols="3*"]
+|===
+| Composant ou service | Version incluse dans cette version | Modifications depuis la version précédente du mode privé 
+
+
+| Agent de console | 4.7.0 | Rendez-vous sur le  https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#2026-05-11.html["Nouveautés de la page NetApp Console"^] et consultez les modifications incluses pour les versions 4.7.0. 
+
+
+| NetApp Backup and Recovery | 5.4.0 (08 juin 2026) | Allez à  https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Nouveautés de la page NetApp Backup and Recovery"^]. 
+
+
+| NetApp Data Classification | 1.54.0 (11 mai 2026) | Allez à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Nouveautés de la page Classification NetApp"^]. 
+|===
+
+
 == 11 mai 2026
 
 
@@ -106,10 +131,10 @@ La version 4.4.0 inclut des mises à jour des composants et services suivants de
 | Agent de console | 4.4.0 | Rendez-vous sur le  https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#2026-02-09.html["Nouveautés de la page NetApp Console"^] et consultez les modifications incluses pour les versions 4.4.0. 
 
 
-| Sauvegarde et récupération | 5.0.3 (2 mars 2026) | Allez à  https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Nouveautés de la page NetApp Backup and Recovery"^]. 
+| NetApp Backup and Recovery | 5.0.3 (2 mars 2026) | Allez à  https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Nouveautés de la page NetApp Backup and Recovery"^]. 
 
 
-| Classification | 1.5.1 (9 février 2026) | Allez à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Nouveautés de la page Classification NetApp"^]. 
+| NetApp Data Classification | 1.5.1 (9 février 2026) | Allez à la https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Nouveautés de la page Classification NetApp"^]. 
 |===
 
 
@@ -1333,7 +1358,7 @@ Si vous disposez d'un connecteur existant créé avant la version 3.9.44, Docker
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-1-review-host-requirements["En savoir plus sur les exigences de Docker Engine"] .
 
 .Certificat SSL mis à jour pour l'accès à l'interface utilisateur locale
-Lorsque vous utilisez BlueXP en mode restreint ou en mode privé, l'interface utilisateur est accessible à partir de la machine virtuelle Connector déployée dans votre région cloud ou sur site.  Par défaut, BlueXP utilise un certificat SSL auto-signé pour fournir un accès HTTPS sécurisé à la console Web exécutée sur le connecteur.
+Lorsque vous utilisez BlueXP en mode restreint ou privé, l'interface utilisateur est accessible depuis la machine virtuelle Connector déployée dans votre cloud ou sur site. Par défaut, BlueXP utilise un certificat SSL auto-signé pour fournir un accès HTTPS sécurisé depuis le navigateur web local.
 
 Dans cette version, nous avons apporté des modifications au certificat SSL pour les connecteurs nouveaux et existants :
 
@@ -1373,7 +1398,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-operating-s
 
 === Autorisations AWS et Azure mises à jour
 
-Nous avons mis à jour les politiques AWS et Azure du connecteur afin de supprimer les autorisations qui ne sont plus nécessaires.  Les autorisations étaient liées à la mise en cache Edge BlueXP et à la découverte et à la gestion des clusters Kubernetes, qui ne sont plus pris en charge depuis août 2024.
+Nous avons mis à jour les politiques AWS et Azure du Connector afin de supprimer les autorisations qui ne sont plus requises. Les autorisations étaient liées à BlueXP edge caching ainsi qu'à la découverte et à la gestion des clusters Kubernetes dans Azure et AWS.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions.html#change-log["Découvrez ce qui a changé dans la politique AWS"] .
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#change-log["Découvrez ce qui a changé dans la politique Azure"] .
@@ -1397,7 +1422,7 @@ La prise en charge de cette version inclut une mise à jour de la stratégie de 
 "Microsoft.Compute/virtualMachineScaleSets/read",
 "Microsoft.Compute/virtualMachineScaleSets/delete"
 ----
-Ces autorisations sont requises pour la prise en charge des ensembles de machines virtuelles identiques par Cloud Volumes ONTAP .  Si vous disposez de connecteurs existants et que vous souhaitez utiliser cette nouvelle fonctionnalité, vous devrez ajouter ces autorisations aux rôles personnalisés associés à vos informations d’identification Azure.
+Ces autorisations sont requises pour la prise en charge des groupes de machines virtuelles identiques (Virtual Machine Scale Sets) par Cloud Volumes ONTAP. Si vous disposez déjà de Connectors et que vous souhaitez utiliser cette nouvelle fonctionnalité, vous devrez ajouter ces autorisations aux stratégies personnalisées associées aux informations d'identification Azure.
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["En savoir plus sur la version 9.15.1 de Cloud Volumes ONTAP"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Afficher les autorisations Azure pour le connecteur"] .
@@ -1569,7 +1594,7 @@ Le 30 juin 2024, RHEL 7 a atteint la fin de maintenance (EOM), tandis que CentOS
 
 https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/rhel-7-end-of-maintenance["Red Hat : Ce qu'il faut savoir sur la fin de la maintenance de Red Hat Enterprise Linux 7"^]
 
-Si vous disposez d’un agent existant exécuté sur RHEL 7 ou CentOS 7, NetApp ne prend pas en charge la mise à niveau ou la conversion du système d’exploitation vers RHEL 8 ou 9.  Vous devez créer un nouvel agent sur un système d’exploitation pris en charge.
+Si vous disposez d'un agent existant exécuté sur RHEL 7 ou CentOS 7, NetApp ne prend pas en charge la mise à niveau ou la conversion du système d'exploitation vers RHEL 8 ou 9. Vous devez créer un nouvel agent sur un système d'exploitation pris en charge. Suivez ces étapes générales pour effectuer la migration :
 
 . Configurer un hôte RHEL 8 ou 9.
 . Installez Podman.
@@ -1635,41 +1660,4 @@ Pour en savoir plus sur ce qui est inclus dans les versions de ces services Blue
 * https://docs.netapp.com/us-en/data-services-backup-recovery/whats-new.html["Découvrez les nouveautés de la BlueXP backup and recovery"^]
 * https://docs.netapp.com/us-en/data-services-data-classification/whats-new.html["Découvrez les nouveautés de la BlueXP classification"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["Découvrez les nouveautés de la gestion Cloud Volumes ONTAP dans BlueXP"^]
-
-
-
-
-== 17 mai 2024
-
-
-
-=== Connecteur 3.9.40
-
-Cette version du connecteur BlueXP inclut la prise en charge de systèmes d'exploitation supplémentaires, des améliorations de sécurité mineures et des corrections de bogues.
-
-À l'heure actuelle, la version 3.9.40 est disponible pour le mode standard et le mode restreint.
-
-.Prise en charge de RHEL 8 et 9
-Le connecteur est désormais pris en charge sur les hôtes exécutant les versions suivantes de Red Hat Enterprise Linux avec de _nouvelles_ installations de connecteur lors de l'utilisation de BlueXP en mode standard ou en mode restreint :
-
-* 8,6 à 8,9
-* 9,1 à 9,3
-
-
-Podman est requis comme outil d'orchestration de conteneurs pour ces systèmes d'exploitation.
-
-Vous devez connaître les exigences de Podman, les limitations connues, un résumé de la prise en charge du système d'exploitation, ce qu'il faut faire si vous avez un hôte RHEL 7, comment démarrer, et plus encore.
-
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-operating-system-changes.html["En savoir plus sur la prise en charge de RHEL 8 et 9 avec le connecteur"] .
-
-.Fin du support pour RHEL 7 et CentOS 7
-Le 30 juin 2024, RHEL 7 atteindra la fin de maintenance (EOM), tandis que CentOS 7 atteindra la fin de vie (EOL). NetApp continuera à prendre en charge le connecteur sur ces distributions Linux jusqu'au 30 juin 2024.
-
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-operating-system-changes.html["Découvrez ce qu'il faut faire si vous disposez d'un connecteur existant exécuté sur RHEL 7 ou CentOS 7"] .
-
-.Mise à jour des autorisations AWS
-Dans la version 3.9.38, nous avons mis à jour la politique de connecteur pour AWS pour inclure l'autorisation « ec2:DescribeAvailabilityZones ». Cette autorisation est désormais requise pour prendre en charge les zones locales AWS avec Cloud Volumes ONTAP.
-
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["Afficher les autorisations AWS pour le connecteur"] .
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["En savoir plus sur la prise en charge des zones locales AWS"^]
 
