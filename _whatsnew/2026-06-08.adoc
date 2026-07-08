@@ -1,0 +1,17 @@
+= Agent Console 4.8.0
+:allow-uri-read: 
+
+
+
+
+=== Agent Console 4.8.0
+
+La version 4.8.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs.
+
+
+
+=== Administration de la NetApp Console
+
+Cette version inclut des améliorations de sécurité et des corrections de bugs.
