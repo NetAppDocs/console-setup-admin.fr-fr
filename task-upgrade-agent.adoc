@@ -18,6 +18,7 @@ L'agent Console est automatiquement mis à jour lorsqu'il dispose d'une connecti
 
 
 
+[[upgrade-the-console-agent]]
 == Mettre à niveau l'agent de la console
 
 L'agent de la console doit redémarrer pendant le processus de mise à niveau, donc la NetApp Console sera indisponible pendant la mise à niveau.
@@ -48,6 +49,7 @@ Où <version> est la version de l'agent que vous avez téléchargé.
 
 
 
+[[upgrade-a-vcenter-deployed-console-agent-using-an-iso]]
 == Mettre à niveau un agent Console déployé par vCenter à l'aide d'une image ISO
 
 Si votre agent Console a été déployé dans vCenter à l'aide d'un fichier OVA, vous pouvez le mettre à niveau vers une nouvelle version en montant une image ISO sur la machine virtuelle et en exécutant la mise à niveau depuis la console de maintenance de la machine virtuelle.

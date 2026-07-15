@@ -24,6 +24,7 @@ Si l'agent de console lui-même ne dispose pas d'une connexion Internet sortante
 
 
 
+[[supported-configurations]]
 == Configurations prises en charge
 
 * Les serveurs proxy transparents sont pris en charge pour les agents qui servent les systèmes Cloud Volumes ONTAP .  Si vous utilisez les services de données NetApp avec Cloud Volumes ONTAP, créez un agent dédié pour Cloud Volumes ONTAP où vous pouvez utiliser un serveur proxy transparent.
@@ -37,6 +38,7 @@ IMPORTANT: Une fois le proxy configuré, vous ne pouvez plus en modifier le type
 
 
 
+[[enable-an-explicit-proxy-on-a-console-agent]]
 == Activer un proxy explicite sur un agent de console
 
 Lorsque vous configurez un agent de console pour utiliser un serveur proxy, cet agent et les systèmes Cloud Volumes ONTAP qu'il gère (y compris les médiateurs HA) utilisent tous le serveur proxy.
@@ -71,6 +73,8 @@ Par exemple : netapp%92proxy
 
 
 
+[[enable-a-transparent-proxy-for-a-console-agent]]
+[[transparent-proxy]]
 == Activer un proxy transparent pour un agent de console
 
 Seul Cloud Volumes ONTAP prend en charge l’utilisation d’un proxy transparent sur l’agent de la console.  Si vous utilisez des services de données NetApp en plus de Cloud Volumes ONTAP, vous devez créer un agent distinct à utiliser pour les services de données ou pour Cloud Volumes ONTAP.
@@ -110,6 +114,7 @@ Assurez-vous que le fichier de certificat est au format PEM et réside dans le m
 
 
 
+[[modify-the-transparent-proxy-for-the-console-agent]]
 === Modifier le proxy transparent pour l'agent de la console
 
 Vous pouvez mettre à jour le serveur proxy transparent existant d'un agent Console en utilisant le `proxy update` commande ou supprimer le serveur proxy transparent en utilisant la `proxy remove` commande.  Pour plus d'informations, consultez la documentation relative àlink:reference-agent-maint-console-proxy.html["Console de maintenance des agents"] .
@@ -119,12 +124,14 @@ IMPORTANT: Une fois le proxy configuré, vous ne pouvez plus en modifier le type
 
 
 
+[[update-the-console-agent-proxy-if-it-loses-access-to-the-internet]]
 == Mettre à jour le proxy de l'agent de console s'il perd l'accès à Internet
 
 Si la configuration proxy de votre réseau change, votre agent risque de perdre l’accès à Internet.  Par exemple, si quelqu’un modifie le mot de passe du serveur proxy ou met à jour le certificat.  Dans ce cas, vous devrez accéder directement à l'interface utilisateur depuis l'hôte de l'agent de la console et mettre à jour les paramètres.  Assurez-vous que vous disposez d’un accès réseau à l’hôte de l’agent de la console et que vous pouvez vous connecter à la console.
 
 
 
+[[enable-direct-api-traffic]]
 == Activer le trafic API direct
 
 Si vous avez configuré un agent Console pour utiliser un serveur proxy, vous pouvez activer le trafic API direct sur l'agent Console afin d'envoyer les appels API directement aux services du fournisseur de cloud, sans passer par le proxy. Les agents exécutés dans AWS, Azure ou Google Cloud prennent en charge cette option.

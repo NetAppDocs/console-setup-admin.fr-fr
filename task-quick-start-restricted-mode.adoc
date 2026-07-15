@@ -51,6 +51,7 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 ====
 
 
+[[supported-features-and-services-for-netapp-console-in-restricted-mode]]
 == Fonctionnalités et services pris en charge pour la NetApp Console en mode restreint
 
 Le tableau suivant répertorie les fonctionnalités de gestion du stockage, les services de données et les fonctionnalités d'administration disponibles dans NetApp Console lorsque vous l'installez en mode restreint.

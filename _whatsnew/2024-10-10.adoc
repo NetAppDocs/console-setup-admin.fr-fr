@@ -4,6 +4,7 @@
 
 
 
+[[connector-3-9-45-patch]]
 === Patch du connecteur 3.9.45
 
 Ce patch inclut des corrections de bugs.

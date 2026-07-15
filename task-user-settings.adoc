@@ -20,6 +20,7 @@ Dans la console, chaque utilisateur dispose d'un profil qui contient des informa
 
 
 
+[[change-your-display-name]]
 == Changer votre nom d'affichage
 
 Vous pouvez modifier votre nom d'affichage sur la console, qui vous identifie auprès des autres utilisateurs. Vous ne pouvez pas modifier votre nom d'utilisateur ni votre adresse électronique.
@@ -32,6 +33,7 @@ Vous pouvez modifier votre nom d'affichage sur la console, qui vous identifie au
 
 
 
+[[elevate-your-role-in-read-only-mode]]
 == Augmentez votre rôle en mode lecture seule
 
 Dans certains cas, l'administrateur de votre organisation peut placer celle-ci en mode lecture seule. Si vous avez un rôle d'administrateur, vous devez obtenir des autorisations supplémentaires pour effectuer des modifications. Cela garantit que les modifications sont intentionnelles et autorisées.
@@ -50,6 +52,8 @@ image:screenshot-user-elevated.png["Capture d'écran montrant le curseur du mode
 
 
 
+[[configure-multi-factor-authentication]]
+[[task-user-mfa]]
 == Configurer l'authentification multifacteur
 
 Configurez l’authentification multifacteur (MFA) pour améliorer la sécurité en exigeant une deuxième méthode de vérification.
@@ -78,6 +82,7 @@ Après avoir configuré l'authentification multifacteur, la console vous invite 
 
 
 
+[[regenerate-your-mfa-recovery-code]]
 == Régénérez votre code de récupération MFA
 
 Vous ne pouvez utiliser les codes de récupération qu'une seule fois.  Si vous utilisez ou perdez le vôtre, créez-en un nouveau.
@@ -91,6 +96,7 @@ Vous ne pouvez utiliser les codes de récupération qu'une seule fois.  Si vous 
 
 
 
+[[delete-your-mfa-configuration]]
 == Supprimez votre configuration MFA
 
 
@@ -104,6 +110,8 @@ NOTE: Si vous ne parvenez pas à accéder à votre application d’authentificat
 
 
 
+[[contact-your-organization-administrator]]
+[[contact-admin]]
 == Contactez l'administrateur de votre organisation
 
 Si vous devez contacter l’administrateur de votre organisation, vous pouvez lui envoyer un e-mail directement depuis la console.  L'administrateur gère les comptes utilisateurs et les autorisations au sein de votre organisation.
@@ -120,6 +128,7 @@ NOTE: Vous devez disposer d'une application de messagerie par défaut configuré
 
 
 
+[[configure-dark-mode-dark-theme]]
 == Configurer le mode sombre (thème sombre)
 
 Vous pouvez configurer la console pour qu'elle s'affiche en mode sombre.

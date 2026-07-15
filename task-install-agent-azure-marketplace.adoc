@@ -28,6 +28,7 @@ NOTE: Déployez un agent Console dans la même région Azure que les systèmes C
 
 
 
+[[step-1-set-up-networking]]
 == Étape 1 : Configurer le réseau
 
 Assurez-vous que l'emplacement réseau où vous prévoyez d'installer l'agent Console répond aux exigences suivantes. Ces exigences permettent à l'agent Console de gérer les ressources de votre cloud hybride.
@@ -145,6 +146,7 @@ Implémentez les exigences de mise en réseau après avoir créé l’agent de c
 
 
 
+[[step-2-review-vm-requirements]]
 == Étape 2 : Examiner les exigences de la machine virtuelle
 
 Lorsque vous créez l’agent de console, choisissez un type de machine virtuelle qui répond aux exigences suivantes.
@@ -156,6 +158,7 @@ Taille de la machine virtuelle Azure:: Un type d’instance qui répond aux exig
 
 
 
+[[step-3-set-up-permissions]]
 == Étape 3 : Configurer les autorisations
 
 Vous pouvez accorder des autorisations des manières suivantes :
@@ -364,6 +367,7 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 ====
 
 
+[[step-4-create-the-console-agent]]
 == Étape 4 : Créer l’agent de console
 
 Lancez l’agent de console directement depuis la Place de marché Azure.
@@ -448,6 +452,7 @@ Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où v
 
 
 
+[[step-5-provide-permissions-to-the-console-agent]]
 == Étape 5 : Accorder des autorisations à l’agent de la console
 
 Maintenant que vous avez créé l’agent de console, vous devez lui fournir les autorisations que vous avez précédemment configurées.  L’octroi des autorisations permet à l’agent de la console de gérer vos données et votre infrastructure de stockage dans Azure.

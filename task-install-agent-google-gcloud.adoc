@@ -25,6 +25,7 @@ Le déploiement d'un agent dans Google Cloud lance une instance de machine virtu
 
 
 
+[[step-1-set-up-networking]]
 == Étape 1 : Configurer le réseau
 
 Configurez la mise en réseau pour permettre à l'agent de la console de gérer les ressources et de se connecter aux réseaux cibles et à Internet.
@@ -135,6 +136,8 @@ Implémentez cette exigence de mise en réseau après avoir créé l’agent de 
 
 
 
+[[step-2-set-up-permissions-to-create-the-console-agent]]
+[[agent-permissions-google]]
 == Étape 2 : Configurer les autorisations pour créer l’agent de console
 
 Configurez les autorisations pour que l’utilisateur Google Cloud puisse déployer la machine virtuelle de l’agent de la console à partir de Google Cloud.
@@ -258,6 +261,8 @@ https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single
 
 
 
+[[step-3-set-up-permissions-for-the-console-agent-operations]]
+[[console-permissions-google]]
 == Étape 3 : Configurer les autorisations pour les opérations de l'agent de console
 
 Un compte de service Google Cloud est requis pour fournir à l'agent de la console les autorisations dont la console a besoin pour gérer les ressources dans Google Cloud.  Lorsque vous créez l’agent de console, vous devez associer ce compte de service à la machine virtuelle de l’agent de console.
@@ -317,6 +322,7 @@ Pour plus de détails, reportez-vous à https://cloud.google.com/iam/docs/granti
 
 
 
+[[step-4-set-up-shared-vpc-permissions]]
 == Étape 4 : Configurer les autorisations VPC partagées
 
 Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.
@@ -369,6 +375,7 @@ Remarques :
 ====
 
 
+[[step-5-enable-google-cloud-apis]]
 == Étape 5 : Activer les API Google Cloud
 
 Activez plusieurs API Google Cloud avant de déployer l’agent de console et Cloud Volumes ONTAP.
@@ -393,6 +400,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentation 
 
 
 
+[[step-6-create-the-console-agent]]
 == Étape 6 : Créer l’agent de console
 
 Créez un agent de console à l’aide de Google Cloud.

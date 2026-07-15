@@ -27,6 +27,7 @@ NOTE: Avec la version 4.0.0, NetApp a réduit les points de terminaison réseau 
 
 
 
+[[endpoints-contacted-by-netapp-console-and-console-agents]]
 == Points de terminaison contactés par la NetApp Console et les agents de la console
 
 Chaque agent que vous déployez et chaque ordinateur qui accède à la NetApp Console doivent disposer de connexions aux points de terminaison répertoriés ci-dessous.
@@ -58,6 +59,7 @@ Pour obtenir des images pour les mises à niveau de l'agent de console.
 |===
 
 
+[[cloud-provider-endpoints-contacted-the-console-agent]]
 == Les points de terminaison du fournisseur de cloud ont contacté l'agent de la console
 
 Les agents de console doivent avoir accès à des points de terminaison supplémentaires s'ils sont déployés chez votre fournisseur de cloud.
@@ -71,12 +73,14 @@ Configurez l’accès au point de terminaison du réseau du fournisseur de cloud
 
 
 
+[[data-services-endpoints-contacted-by-the-console-agent]]
 == Points de terminaison des services de données contactés par l'agent de la console
 
 Certains services de données NetApp ainsi que Cloud Volumes ONTAP nécessitent que l'agent dispose d'un accès Internet sortant supplémentaire.
 
 
 
+[[endpoints-for-cloud-volumes-ontap]]
 === Points de terminaison pour Cloud Volumes ONTAP
 
 * link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#outbound-internet-access-for-cloud-volumes-ontap-nodes["Points de terminaison pour Cloud Volumes ONTAP dans AWS"]
@@ -86,6 +90,7 @@ Certains services de données NetApp ainsi que Cloud Volumes ONTAP nécessitent 
 
 
 
+[[endpoints-for-workloads]]
 === Points de terminaison pour les charges de travail
 
 L'agent de la console doit pouvoir accéder au point de terminaison suivant pour les charges de travail NetApp .

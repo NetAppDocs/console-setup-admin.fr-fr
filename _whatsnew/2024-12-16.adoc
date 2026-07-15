@@ -4,6 +4,7 @@
 
 
 
+[[new-secure-endpoints-to-obtain-connector-images]]
 === Nouveaux points de terminaison sécurisés pour obtenir des images de connecteur
 
 Lorsque vous installez le connecteur ou lorsqu'une mise à niveau automatique se produit, le connecteur contacte les référentiels pour télécharger des images pour l'installation ou la mise à niveau.  Par défaut, le connecteur a toujours contacté les points de terminaison suivants :

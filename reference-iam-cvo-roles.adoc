@@ -1,0 +1,562 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-cvo-roles.html 
+keywords: cloud volumes ontap, role-based access control, rbac, viewer, operator, admin, access control, permissions, volumes, aggregates, replication, snapshots, ontap upgrade, IAM roles 
+summary: 'Vous pouvez attribuer les rôles suivants aux utilisateurs afin de leur donner accès à Cloud Volumes ONTAP depuis la Console. Les rôles Cloud Volumes ONTAP vous offrent la flexibilité d"attribuer aux utilisateurs un rôle spécifique aux tâches qu"ils doivent accomplir au sein de votre organisation.' 
+---
+= Rôles d'accès Cloud Volumes ONTAP dans la NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez attribuer les rôles suivants aux utilisateurs afin de leur donner accès à Cloud Volumes ONTAP depuis la Console. Les rôles Cloud Volumes ONTAP vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de vos propres pratiques commerciales et de gestion du stockage.
+
+Cloud Volumes ONTAP utilise les rôles suivants :
+
+* *Administrateur Cloud Volumes ONTAP* : Fournit un accès complet à toutes les opérations Cloud Volumes ONTAP.
+* *Cloud Volumes ONTAP operator* : Effectuez des opérations de stockage importantes, telles que la découverte et la gestion des systèmes Cloud Volumes ONTAP, y compris l’ajout de volumes, d’agrégats, d’instantanés et de réplications, la modification de certaines configurations et la mise à niveau des versions de Cloud Volumes ONTAP.
+* *Cloud Volumes ONTAP viewer* : Fournit un accès en lecture seule aux informations Cloud Volumes ONTAP. Ce rôle ne peut effectuer aucune opération active. Certains onglets et écrans contenant des informations de configuration peuvent être indisponibles pour les visionneurs.
+
+
+Pour plus de détails sur tous les rôles d'accès à la console NetApp, voir link:reference-iam-predefined-roles.html["rôles d'accès"].
+
+
+
+[[how-role-changes-take-effect]]
+== Comment les changements de rôle prennent effet
+
+Cloud Volumes ONTAP applique le contrôle d'accès basé sur les rôles (RBAC) grâce à un cache local de chaque attribution de rôle. Le cache est actualisé automatiquement toutes les heures. Si un rôle est nouvellement attribué ou modifié, la prise en compte de la modification peut prendre jusqu'à une heure. Après l'actualisation, la Console active les flux de travail autorisés par ce rôle.
+
+
+NOTE: Lors du premier déploiement d'un agent Console, ou lors de la mise à niveau d'un agent Console existant vers Console 4.9.0 ou une version ultérieure, la Console exécute un processus d'initialisation unique qui attribue des rôles Cloud Volumes ONTAP aux utilisateurs existants de l'organisation. Ce processus peut prendre jusqu'à 30 minutes pour être terminé.
+
+
+
+[[cloud-volumes-ontap-role-permissions]]
+== Autorisations de rôle Cloud Volumes ONTAP
+
+Le tableau suivant indique les actions que chaque rôle peut effectuer.
+
+[cols="40a,20a,20a,20a"]
+|===
+| Fonctionnalité et action | Cloud Volumes ONTAP visionneuse | Opérateur Cloud Volumes ONTAP | Administrateur Cloud Volumes ONTAP 
+
+
+ a| 
+*Page Systèmes* :
+
+
+
+ a| 
+Entrez un système
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Afficher un volume
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Découvrez un système
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Ajouter un volume
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Utilisez la *réplication* (non applicable à FSx pour ONTAP ni aux systèmes sur site)
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Utilisez le glisser-déposer pour la *réplication* (avec Cloud Volumes ONTAP comme source ou destination)
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Ajouter un système
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Accédez à un
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Ouvrir System Manager
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Activer Cloud Volumes ONTAP
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Supprimer un système
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+*Page des agents* :
+
+
+
+ a| 
+Afficher les paramètres de Cloud Volumes ONTAP
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Modifier les paramètres de Cloud Volumes ONTAP
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+*Onglet Vue d'ensemble* :
+
+
+
+ a| 
+Ajouter un volume
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Ajouter un agrégat
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Utilisez *Upgrade now*
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Mettre à jour la version ONTAP
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Modifiez la configuration *CIFS setup* à partir du menu en forme de crayon
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Ouvrir System Manager
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Utilisez le bouton Marche/Arrêt
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Définir un mot de passe
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Retirez le système de l'espace de travail
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Supprimer le système
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Modifiez ce qui suit à l'aide de l'icône en forme de crayon dans le volet de droite :
+
+* *Étiquettes système*
+* *Interruption planifiée*
+* *Classes de stockage*
+* *Type d'instance*
+* *Méthode de chargement*
+* *Vitesse d'écriture*
+* *Protection contre les ransomwares*
+* *Enregistrement du support*
+* *WORM*
+
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+*Onglet Volumes* :
+
+
+
+ a| 
+Ajouter un volume
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Cloner un volume
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Créer une copie instantanée
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Modifier les paramètres de volume
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Supprimer un volume
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Restaurer à partir d'une copie instantanée
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Changer le type de disque
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Modifier la politique de hiérarchisation
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+*Onglet Agrégats* :
+
+
+
+ a| 
+Ajouter un agrégat
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Ajouter un volume
+ a| 
+Non
+ a| 
+Oui
+ a| 
+Oui
+
+
+
+ a| 
+Augmenter la capacité
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Supprimer un agrégat
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+*Page de réplication* (avec Cloud Volumes ONTAP comme source ou destination):
+
+
+
+ a| 
+Interrompre la réplication
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Resynchroniser la réplication
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Réplication de resynchronisation inverse
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Modifier le calendrier
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Modifier le débit de transfert maximal
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Mise à jour de la réplication
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+
+
+ a| 
+Supprimer la réplication
+ a| 
+Non
+ a| 
+Non
+ a| 
+Oui
+
+|===

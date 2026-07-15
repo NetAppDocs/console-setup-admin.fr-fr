@@ -18,6 +18,7 @@ Vous gérez les informations d'identification AWS et les abonnements Marketplace
 
 
 
+[[initial-aws-credentials]]
 == Informations d'identification AWS initiales
 
 Lorsque vous déployez un agent Console depuis la Console, vous devez fournir l'ARN d'un rôle IAM ou les clés d'accès d'un utilisateur IAM. La méthode d'authentification doit disposer des autorisations nécessaires pour déployer l'agent Console dans AWS. Les autorisations requises sont listées dans le link:task-install-agent-aws-console.html#aws-permissions-agent["Politique de déploiement d'agents pour AWS"].
@@ -34,6 +35,7 @@ Vous pouvez déployer tous vos systèmes Cloud Volumes ONTAP en utilisant les id
 
 
 
+[[additional-aws-credentials]]
 == Informations d'identification AWS supplémentaires
 
 Vous pouvez ajouter des informations d’identification AWS supplémentaires à la console dans les cas suivants :
@@ -47,6 +49,7 @@ Consultez les sections ci-dessous pour plus de détails.
 
 
 
+[[add-aws-credentials-to-use-a-console-agent-with-another-aws-account]]
 === Ajoutez des informations d'identification AWS pour utiliser un agent de console avec un autre compte AWS
 
 Pour utiliser la console avec des comptes AWS supplémentaires, fournissez des clés AWS ou l'ARN d'un rôle dans un compte de confiance. L'image suivante montre deux comptes supplémentaires, l'un fournissant des autorisations via un rôle IAM dans un compte approuvé et l'autre via les clés AWS d'un utilisateur IAM :
@@ -63,6 +66,7 @@ link:task-adding-aws-accounts.html#add-credentials-agent-aws["Découvrez comment
 
 
 
+[[add-aws-credentials-to-create-a-console-agent]]
 === Ajoutez les informations d'identification AWS pour créer un agent de console
 
 L'ajout des identifiants AWS permet de créer un agent de console.
@@ -71,6 +75,7 @@ link:task-adding-aws-accounts.html#add-credentials-agent-aws["Découvrez comment
 
 
 
+[[add-aws-credentials-for-fsx-for-ontap]]
 === Ajouter les informations d'identification AWS pour FSx pour ONTAP
 
 Ajoutez les informations d’identification AWS à la console pour fournir les autorisations nécessaires à la création et à la gestion d’un système FSx pour ONTAP .
@@ -79,6 +84,7 @@ https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-set
 
 
 
+[[credentials-and-marketplace-subscriptions]]
 == Informations d'identification et abonnements à la place de marché
 
 Vous devez associer les informations d'identification que vous ajoutez à un agent de console à un abonnement AWS Marketplace pour payer Cloud Volumes ONTAP à un tarif horaire (PAYGO) et d'autres services de données NetApp ou par le biais d'un contrat annuel. link:task-adding-aws-accounts.html#subscribe["Découvrez comment associer un abonnement AWS"].
@@ -91,12 +97,14 @@ Notez les points suivants concernant les informations d’identification AWS et 
 
 
 
+[[faq]]
 == FAQ
 
 Les questions suivantes concernent les informations d’identification et les abonnements.
 
 
 
+[[how-can-i-securely-rotate-my-aws-credentials]]
 === Comment puis-je faire pivoter mes informations d’identification AWS en toute sécurité ?
 
 Comme décrit dans les sections ci-dessus, la console vous permet de fournir des informations d'identification AWS de plusieurs manières : un rôle IAM associé à l'agent de la console, en assumant un rôle IAM dans un compte approuvé ou en fournissant des clés d'accès AWS.
@@ -107,6 +115,7 @@ Si vous fournissez à la console des clés d'accès AWS, vous devez faire tourne
 
 
 
+[[can-i-change-the-aws-marketplace-subscription-for-cloud-volumes-ontap-systems]]
 === Puis-je modifier l’abonnement AWS Marketplace pour les systèmes Cloud Volumes ONTAP ?
 
 Oui, tu peux.  Lorsque vous modifiez l'abonnement AWS Marketplace associé à un ensemble d'informations d'identification, tous les systèmes Cloud Volumes ONTAP existants et nouveaux sont facturés sur le nouvel abonnement.
@@ -115,6 +124,7 @@ link:task-adding-aws-accounts.html#subscribe["Découvrez comment associer un abo
 
 
 
+[[can-i-add-multiple-aws-credentials-each-with-different-marketplace-subscriptions]]
 === Puis-je ajouter plusieurs informations d'identification AWS, chacune avec des abonnements de marché différents ?
 
 Toutes les informations d’identification AWS appartenant au même compte AWS seront associées au même abonnement AWS Marketplace.
@@ -123,12 +133,14 @@ Si vous disposez de plusieurs informations d'identification AWS appartenant à d
 
 
 
+[[can-i-move-existing-cloud-volumes-ontap-systems-to-a-different-aws-account]]
 === Puis-je déplacer des systèmes Cloud Volumes ONTAP existants vers un autre compte AWS ?
 
 Non, il n'est pas possible de déplacer les ressources AWS associées à votre système Cloud Volumes ONTAP vers un autre compte AWS.
 
 
 
+[[how-do-credentials-work-for-marketplace-deployments-and-on-premises-deployments]]
 === Comment fonctionnent les informations d’identification pour les déploiements sur le marché et les déploiements sur site ?
 
 Les sections précédentes décrivent la méthode de déploiement recommandée pour l'agent Console, à savoir le déploiement depuis la Console. Vous pouvez également déployer un agent sur AWS depuis AWS Marketplace et installer manuellement le logiciel de l'agent Console sur votre propre hôte Linux ou dans votre vCenter.

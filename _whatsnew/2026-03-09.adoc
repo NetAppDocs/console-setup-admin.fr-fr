@@ -4,6 +4,7 @@
 
 
 
+[[console-agent-4-5-0]]
 === Agent Console 4.5.0
 
 La version 4.5.0 prend en charge à la fois le mode standard et le mode restreint.
@@ -15,6 +16,7 @@ Vous pouvez valider que les ports requis pour l'agent de la Console sont ouverts
 
 
 
+[[netapp-console-administration]]
 === Administration de la NetApp Console
 
 Vous pouvez attribuer des rôles Keystone aux utilisateurs partenaires pour leur permettre de gérer les ressources Keystone au sein d'une organisation partenaire. link:https://docs.netapp.com/us-en/console-setup-admin/task-partnerships-assign-users.html["En savoir plus sur l’attribution des rôles Keystone aux utilisateurs partenaires."]

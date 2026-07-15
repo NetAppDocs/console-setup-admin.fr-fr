@@ -23,6 +23,7 @@ Une organisation partenaire doit d’abord ajouter des membres au partenariat av
 
 
 
+[[understand-roles-for-partnership-users]]
 == Comprendre les rôles des utilisateurs du partenariat
 
 Vous pouvez gérer les rôles des membres des organisations partenaires de la même manière que vous le faites pour les vôtres.  Cependant, tous les rôles ne sont pas disponibles pour les utilisateurs du partenariat.  En particulier, vous ne pouvez pas accorder aux utilisateurs partenaires un rôle autorisant les mises à jour logicielles.  La mise à jour du logiciel ONTAP nécessite généralement un accès direct au réseau.
@@ -51,6 +52,7 @@ link:reference-iam-predefined-roles.html["En savoir plus sur les rôles prédéf
 
 
 
+[[add-a-role-to-a-partner-user]]
 == Ajouter un rôle à un utilisateur partenaire
 
 Vous donnez accès aux ressources de votre organisation en ajoutant un rôle à un membre.  Lorsque vous attribuez un rôle, vous spécifiez une ressource et un rôle.  Vous pouvez attribuer plusieurs rôles à un utilisateur.
@@ -82,6 +84,7 @@ Si vous sélectionnez l’organisation ou un dossier, le membre aura des autoris
 
 
 
+[[change-or-remove-a-role-from-a-partner-user]]
 == Modifier ou supprimer un rôle d'un utilisateur partenaire
 
 Vous pouvez modifier ou supprimer un rôle que vous avez attribué à un membre d’une organisation partenaire.

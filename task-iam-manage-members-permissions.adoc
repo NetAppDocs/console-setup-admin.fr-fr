@@ -21,6 +21,7 @@ Super administrateur, administrateur d'organisation ou administrateur de dossier
 
 
 
+[[understand-how-access-is-granted-in-netapp-console]]
 == Comprendre comment l'accès est accordé dans la NetApp Console
 
 La NetApp Console utilise le contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations. Attribuez des rôles aux utilisateurs individuellement ou via des groupes fédérés. Chaque rôle définit les actions autorisées pour des ressources spécifiques.
@@ -35,6 +36,8 @@ Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp C
 
 
 
+[[add-members-to-your-organization]]
+[[add-members]]
 == Ajoutez des membres à votre organisation
 
 La NetApp Console prend en charge trois types de membres : les comptes d’utilisateurs, les comptes de service et les groupes fédérés.
@@ -47,6 +50,7 @@ Lors de l'ajout d'un membre, choisissez le niveau de ressource (organisation, do
 
 
 
+[[add-a-user]]
 === Ajouter un utilisateur
 
 Les utilisateurs s'inscrivent à la NetApp Console, mais un administrateur d'organisation, de dossier ou de projet doit les ajouter à une organisation, un dossier ou un projet pour qu'ils puissent accéder aux ressources.
@@ -86,6 +90,8 @@ La console envoie des instructions par courriel à l'utilisateur.
 
 
 
+[[add-a-service-account]]
+[[service-account]]
 === Ajouter un compte de service
 
 Les comptes de service vous permettent d'automatiser les tâches et de vous connecter en toute sécurité aux API de la console. Choisissez un ID client et un secret pour les configurations simples, ou un JWT (JSON Web Token) pour une sécurité renforcée dans les environnements automatisés ou natifs du cloud. Choisissez la méthode qui répond à vos exigences de sécurité.
@@ -132,6 +138,7 @@ La console n'affiche le secret client qu'une seule fois. Copiez-le en lieu sûr 
 
 
 
+[[add-a-federated-group-to-your-organization]]
 == Ajoutez un groupe fédéré à votre organisation
 
 Vous pouvez ajouter un groupe fédéré de votre fournisseur d'identité (IdP) à votre organisation et lui attribuer un ou plusieurs rôles. Les membres du groupe fédéré héritent des rôles que vous attribuez au groupe dans la console.
@@ -171,6 +178,7 @@ Seuls les rôles pris en charge sont affichés dans la liste déroulante. link:r
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès dans la NetApp Console"]

@@ -32,12 +32,14 @@ Vous pouvez installer NetApp Console sur site ou dans un environnement cloud sé
 
 
 
+[[supported-features-and-services-for-netapp-console-in-private-mode]]
 == Fonctionnalités et services pris en charge pour NetApp Console en mode privé
 
 Le tableau suivant répertorie les fonctionnalités de gestion du stockage, les services de données et les fonctionnalités d'administration disponibles dans la NetApp Console lorsque vous l'installez en mode privé. Les fonctionnalités diffèrent lorsque vous installez la NetApp Console dans le cloud par rapport à vos locaux.
 
 
 
+[[private-mode-installed-in-the-cloud]]
 === Mode privé installé dans le cloud
 
 [cols="3*"]
@@ -112,6 +114,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage
 |===
 
 
+[[private-mode-installed-on-premises]]
 === Mode privé installé sur site
 
 [cols="3*"]

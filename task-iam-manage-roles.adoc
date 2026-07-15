@@ -26,6 +26,7 @@ NOTE: Ajoutez vos dossiers et projets avant d'attribuer l'accès aux utilisateur
 
 
 
+[[understand-how-access-is-granted-in-netapp-console]]
 == Comprendre comment l'accès est accordé dans la NetApp Console
 
 La NetApp Console utilise un modèle de contrôle d'accès basé sur les rôles (RBAC) pour gérer les autorisations des utilisateurs. Vous pouvez attribuer des rôles prédéfinis aux membres individuellement ou via des groupes fédérés. Vous pouvez ajouter et attribuer des rôles aux comptes de service, ainsi qu'aux groupes fédérés. Chaque rôle définit les actions qu'un membre peut effectuer sur les ressources associées.
@@ -39,12 +40,15 @@ Veuillez noter les points suivants concernant l'octroi d'accès dans la NetApp C
 
 
 
+[[using-role-inheritance]]
+[[role-inheritance]]
 === Utilisation de l'héritage de rôles
 
 Lorsque vous attribuez un rôle au niveau de l'organisation, du dossier ou du projet dans NetApp Console, ce rôle est automatiquement hérité par toutes les ressources du périmètre sélectionné. Par exemple, les rôles au niveau d'un dossier s'appliquent à tous les projets qu'il contient, tandis que les rôles au niveau d'un projet s'appliquent à toutes les ressources de ce projet.
 
 
 
+[[view-organization-members]]
 == Afficher les membres de l'organisation
 
 Pour comprendre quelles ressources et autorisations sont disponibles pour un membre, vous pouvez afficher les rôles attribués au membre à différents niveaux de la hiérarchie des ressources de votre organisation.link:task-iam-manage-roles.html["Découvrez comment utiliser les rôles pour contrôler l’accès aux ressources de la console."^]
@@ -60,6 +64,8 @@ Le tableau *Membres* répertorie les membres de votre organisation.
 
 
 
+[[view-roles-assigned-to-a-member]]
+[[manage-permissions]]
 == Afficher les rôles attribués à un membre
 
 Vous pouvez vérifier les rôles actuellement attribués au membre.
@@ -72,6 +78,7 @@ Si vous disposez du rôle _Administrateur de dossier ou de projet_, la page affi
 
 
 
+[[view-members-associated-with-a-folder-or-project]]
 == Afficher les membres associés à un dossier ou à un projet
 
 Vous pouvez consulter la liste des membres qui ont accès à un dossier ou à un projet spécifique.
@@ -91,6 +98,7 @@ image:screenshot-iam-member-access.png["Une capture d'écran de la page Modifier
 
 
 
+[[assign-or-modify-member-access]]
 == Attribuer ou modifier l'accès des membres
 
 Une fois qu'un utilisateur s'inscrit à NetApp Console, vous pouvez l'ajouter à votre organisation et lui attribuer un rôle pour lui donner accès aux ressources. link:task-iam-manage-members-permissions.html#add-members["Découvrez comment ajouter des membres à votre organisation."^]
@@ -99,6 +107,7 @@ Vous pouvez ajuster l'accès d'un membre en ajoutant ou en supprimant des rôles
 
 
 
+[[add-an-access-role-to-a-member]]
 == Ajouter un rôle d'accès à un membre
 
 Vous attribuez généralement un rôle lorsque vous ajoutez un membre à votre organisation, mais vous pouvez le mettre à jour à tout moment en supprimant ou en ajoutant des rôles.
@@ -130,6 +139,7 @@ Si vous sélectionnez l’organisation ou un dossier, le membre aura des autoris
 
 
 
+[[change-a-members-assigned-role]]
 == Modifier le rôle attribué à un membre
 
 Modifier les rôles d'un membre pour mettre à jour son accès.
@@ -153,6 +163,7 @@ NOTE: Les utilisateurs doivent avoir au moins un rôle qui leur est attribué.  
 
 
 
+[[remove-a-member-from-your-organization]]
 == Supprimer un membre de votre organisation
 
 Supprimez un membre s'il quitte votre organisation.

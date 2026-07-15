@@ -18,6 +18,7 @@ Si vous êtes un nouvel utilisateur de la NetApp Console (SaaS) avec le rôle d'
 
 
 
+[[required-roles-to-access-the-console-assistant]]
 == Rôles requis pour accéder à l'assistant de la console
 
 L'assistant de console est uniquement disponible pour les utilisateurs disposant du rôle d'administrateur d'organisation.

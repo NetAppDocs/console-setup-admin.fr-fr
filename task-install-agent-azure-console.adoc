@@ -28,6 +28,8 @@ NOTE: Déployez un agent Console dans la même région Azure que les systèmes C
 
 
 
+[[step-1-set-up-networking]]
+[[networking-azure-agent]]
 == Étape 1 : Configurer le réseau
 
 Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  Ces exigences permettent à l’agent de console de gérer les ressources du cloud hybride.
@@ -153,6 +155,8 @@ Vous devez implémenter cette exigence de mise en réseau après avoir créé l�
 
 
 
+[[step-2-create-a-console-agent-deployment-policy-custom-role]]
+[[agent-custom-role]]
 == Étape 2 : Créer une stratégie de déploiement d’agent de console (rôle personnalisé)
 
 Vous devez créer un rôle personnalisé disposant des autorisations nécessaires pour déployer l’agent de console dans Azure.
@@ -275,6 +279,7 @@ Vous disposez désormais d’un rôle personnalisé appelé _Azure SetupAsServic
 
 
 
+[[step-3-set-up-authentication]]
 == Étape 3 : Configurer l’authentification
 
 Lors de la création de l’agent de console à partir de la console, vous devez fournir une connexion qui permet à la console de s’authentifier auprès d’Azure et de déployer la machine virtuelle.  Vous avez deux options :
@@ -415,6 +420,7 @@ Votre principal de service est maintenant configuré et vous devez avoir copié 
 ====
 
 
+[[step-4-create-the-console-agent]]
 == Étape 4 : Créer l’agent de console
 
 Créez l’agent de console directement à partir de la NetApp Console.

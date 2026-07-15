@@ -30,6 +30,7 @@ Vous pouvez également ajouter un domaine vérifié supplémentaire à une féd�
 ====
 
 
+[[enable-a-federation]]
 == Activer une fédération
 
 Si vous avez créé une fédération mais qu'elle n'est pas activée, vous pouvez l'activer via la page *Fédération*.  L'activation d'une fédération permet aux utilisateurs associés à la fédération de se connecter à la console à l'aide de leurs informations d'identification d'entreprise.  Créez et testez la fédération avec succès avant de l'activer.
@@ -42,6 +43,7 @@ Si vous avez créé une fédération mais qu'elle n'est pas activée, vous pouve
 
 
 
+[[add-a-verified-domain-to-an-existing-federation]]
 == Ajouter un domaine vérifié à une fédération existante
 
 Vous pouvez ajouter un domaine vérifié à une fédération existante dans la console pour utiliser plusieurs domaines avec le même fournisseur d'identité (IdP).
@@ -58,6 +60,7 @@ Vous devez déjà avoir vérifié le domaine dans la console avant de pouvoir l'
 
 
 
+[[updating-an-expiring-federated-connection]]
 == Mise à jour d'une connexion fédérée expirant
 
 Vous pouvez mettre à jour les détails d'une fédération dans la console.  Par exemple, vous devrez mettre à jour la fédération si les informations d’identification telles qu’un certificat ou un secret client expirent.  Si nécessaire, mettez à jour la date de notification pour vous rappeler de mettre à jour la connexion avant son expiration.
@@ -75,6 +78,7 @@ IMPORTANT: Mettez d’abord à jour la console avant de mettre à jour votre IdP
 
 
 
+[[test-an-existing-federation]]
 == Tester une fédération existante
 
 Testez la connexion d'une fédération existante pour vérifier qu'elle fonctionne.  Cela peut vous aider à identifier les problèmes liés à la fédération et à les résoudre.
@@ -89,6 +93,7 @@ Testez la connexion d'une fédération existante pour vérifier qu'elle fonction
 
 
 
+[[disable-a-federation]]
 == Désactiver une fédération
 
 Si vous n’avez plus besoin d’une fédération, vous pouvez la désactiver.  Cela empêche les utilisateurs associés à la fédération de se connecter à la console à l’aide de leurs informations d’identification d’entreprise.  Vous pouvez réactiver la fédération plus tard si nécessaire.
@@ -103,6 +108,7 @@ Désactivez une fédération avant de la supprimer, par exemple lors de la mise 
 
 
 
+[[delete-a-federation]]
 == Supprimer une fédération
 
 Si vous n’avez plus besoin d’une fédération, vous pouvez la supprimer.  Cela supprime la fédération et empêche tous les utilisateurs associés à la fédération de se connecter à la console à l'aide de leurs informations d'identification d'entreprise.  Par exemple, si l’IdP est en cours de mise hors service ou si la fédération n’est plus nécessaire.

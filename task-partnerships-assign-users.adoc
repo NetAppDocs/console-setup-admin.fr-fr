@@ -23,6 +23,7 @@ Vous pouvez retirer des utilisateurs d'un partenariat à tout moment. Le retrait
 
 
 
+[[add-members-to-a-partnership]]
 == Ajouter des membres à un partenariat
 
 Lorsque vous ajoutez des membres à un partenariat, l'administrateur du partenariat de l'organisation partenaire doit leur attribuer des rôles pour des ressources spécifiques de son organisation avant qu'ils puissent accéder à ces ressources.
@@ -39,6 +40,7 @@ Une fois que vous avez ajouté des membres à un partenariat, les membres s'affi
 
 
 
+[[remove-members-from-a-partnership]]
 == Supprimer des membres d'un partenariat
 
 Vous pouvez exclure des membres d'un partenariat à tout moment. L'exclusion d'un utilisateur d'un partenariat entraîne la révocation immédiate de son accès à toutes les ressources de l'organisation partenaire.
@@ -55,6 +57,7 @@ Si vous souhaitez modifier le rôle d’un membre ou les ressources auxquelles i
 
 
 
+[[view-role-information-for-a-user]]
 == Afficher les informations de rôle d'un utilisateur
 
 Vous pouvez afficher le rôle qui a été attribué à un utilisateur et les ressources associées.

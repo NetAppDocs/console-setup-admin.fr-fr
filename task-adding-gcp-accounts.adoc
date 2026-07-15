@@ -18,6 +18,7 @@ Vous pouvez gérer les identifiants Google Cloud associés à une instance de ma
 
 
 
+[[associate-a-marketplace-subscription-with-google-cloud-credentials]]
 == Associer un abonnement Marketplace à des identifiants Google Cloud
 
 Lorsque vous déployez un agent Console sur Google Cloud, la Console crée un ensemble d'identifiants par défaut associés à une instance de machine virtuelle agent Console. À tout moment, vous pouvez modifier l'abonnement Google Cloud Marketplace associé à ces identifiants. L'abonnement vous permet de créer un système Cloud Volumes ONTAP à la demande et d'utiliser d'autres services de données.
@@ -88,6 +89,7 @@ image:screenshot_gcp_associate.gif["Une capture d’écran de la page d’attrib
 
 
 
+[[troubleshoot-the-marketplace-subscription-process]]
 == Dépanner le processus d'abonnement à la Marketplace
 
 Il arrive que l'abonnement aux services de données NetApp via Google Cloud Marketplace soit fragmenté en raison d'autorisations incorrectes ou d'un oubli de suivre la redirection vers la Console. Si cela se produit, utilisez les étapes suivantes pour terminer le processus d'abonnement.

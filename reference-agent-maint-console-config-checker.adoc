@@ -18,6 +18,7 @@ Vous pouvez utiliser la console de maintenance de l'agent Console pour valider l
 
 
 
+[[access-the-agent-maintenance-console]]
 == Accéder à la console de maintenance de l'agent
 
 Vous pouvez accéder à la console de maintenance depuis l'hôte de l'agent de console. Accédez au répertoire suivant :
@@ -28,6 +29,7 @@ Vous pouvez accéder à la console de maintenance depuis l'hôte de l'agent de c
 ----
 
 
+[[config-checker-validate]]
 == config-checker valider
 
 Le `config-checker validate` Cette commande permet de valider la configuration d'un agent de console.
@@ -36,6 +38,7 @@ link:reference-networking-saas-console.html["En savoir plus sur les points d’a
 
 
 
+[[parameters]]
 === Paramètres
 
 `--services <comma-separated list of services to validate>`--*REQUIS*--
@@ -68,6 +71,7 @@ Spécifie le chemin d'accès à un ou plusieurs fichiers de certificat à utilis
 
 
 
+[[config-checker-validate-examples]]
 === Exemples de validation du vérificateur de configuration
 
 Les exemples suivants comprennent la validation de la connectivité réseau, des ports requis et des exigences matérielles, ainsi que différentes combinaisons d'utilisation d'un serveur proxy et de certificats personnalisés.
@@ -89,6 +93,7 @@ Les exemples suivants comprennent la validation de la connectivité réseau, des
 ----
 
 
+[[view-help-for-any-command]]
 === Afficher l'aide pour n'importe quelle commande
 
 Pour afficher l'aide d'une commande, ajoutez `--help` à la commande.  Par exemple, pour afficher l'aide relative à la `proxy add` commande, utilisez la commande suivante :

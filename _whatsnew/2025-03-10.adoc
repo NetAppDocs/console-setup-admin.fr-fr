@@ -4,6 +4,7 @@
 
 
 
+[[connector-3-9-50]]
 === Connecteur 3.9.50
 
 Cette version du connecteur BlueXP inclut des améliorations de sécurité mineures et des corrections de bogues.
@@ -18,6 +19,7 @@ https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/using_s
 
 
 
+[[netapp-keystone-beta-available-in-bluexp]]
 === NetApp Keystone bêta disponible dans BlueXP
 
 NetApp Keystone sera bientôt disponible sur BlueXP et est désormais en version bêta.  Vous pouvez accéder à la page d'inscription pour la version bêta de NetApp Keystone à partir de la barre de navigation de gauche de BlueXP.

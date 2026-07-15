@@ -18,6 +18,7 @@ Lors de l'installation manuelle d'un agent Console, la maintenance du système d
 
 
 
+[[apply-operating-system-updates-to-the-agent-host]]
 == Appliquer les mises à jour du système d'exploitation à l'hôte de l'agent
 
 Appliquez les correctifs de sécurité du système d’exploitation sans arrêter les services hôtes de l’agent.
@@ -41,6 +42,7 @@ sudo apt upgrade
 ----
 
 
+[[vm-or-instance-type]]
 == Type de machine virtuelle ou d'instance
 
 Si vous créez un agent de console à partir de la console, il déploie une instance de machine virtuelle dans votre fournisseur de cloud avec une configuration par défaut.  Après avoir créé l'agent, ne passez pas à une instance de machine virtuelle plus petite avec moins de CPU ou de RAM.
@@ -55,6 +57,8 @@ link:reference-agent-default-config.html["En savoir plus sur la configuration pa
 
 
 
+[[monitor-the-agent]]
+[[monitor-disk-space]]
 == Surveiller l'agent
 
 La console vous avertit lorsque la machine virtuelle de l'agent n'est pas saine, notamment en cas de problèmes d'espace disque, de RAM et de processeur.  Surveillez ces notifications dans le centre de notifications de la console ou configurez des notifications par e-mail.  Des augmentations occasionnelles de l'espace disque, de la mémoire ou de l'utilisation du processeur sont normales, mais si cela se produit fréquemment, vous devez prendre des mesures pour résoudre le problème.
@@ -81,6 +85,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operation
 |===
 
 
+[[stopping-and-starting-the-agent-vm]]
 == Arrêt et démarrage de la machine virtuelle de l'agent
 
 Si nécessaire, arrêtez et démarrez la machine virtuelle de l'agent à l'aide de la console de votre fournisseur de cloud ou des procédures standard sur site.
@@ -89,6 +94,8 @@ link:concept-agents.html#agents-must-be-operational-at-all-times["Sachez que l'a
 
 
 
+[[connect-to-the-linux-vm]]
+[[connect-linux-host]]
 == Se connecter à la machine virtuelle Linux
 
 Si vous devez vous connecter à la machine virtuelle Linux sur laquelle l’agent s’exécute, utilisez les options de connectivité de votre fournisseur de cloud.

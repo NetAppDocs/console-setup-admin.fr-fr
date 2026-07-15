@@ -18,12 +18,14 @@ Découvrez les configurations par défaut de l'agent Console pour les déploieme
 
 
 
+[[default-configuration-with-internet-access]]
 == Configuration par défaut avec accès Internet
 
 Les détails de configuration suivants s'appliquent si vous avez déployé un agent de console à partir de la NetApp Console, à partir de la place de marché de votre fournisseur de cloud ou si vous avez installé manuellement un agent de console sur un hôte Linux local disposant d'un accès Internet.
 
 
 
+[[console-agent-vm-details-for-aws]]
 === Détails de la machine virtuelle de l'agent de console pour AWS
 
 Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
@@ -40,6 +42,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 
 
 
+[[console-agent-vm-details-for-azure]]
 === Détails de la machine virtuelle de l'agent de console pour Azure
 
 Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
@@ -55,6 +58,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 
 
 
+[[console-agent-vm-details-for-google-cloud]]
 === Détails de la machine virtuelle de l'agent de console pour Google Cloud
 
 Si vous avez déployé un agent de console à partir de la console, notez les points suivants :
@@ -70,6 +74,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 
 
 
+[[installation-folder]]
 === Dossier d'installation
 
 Le dossier d'installation de l'agent se trouve à l'emplacement suivant :
@@ -78,6 +83,7 @@ Le dossier d'installation de l'agent se trouve à l'emplacement suivant :
 
 
 
+[[log-files]]
 === Fichiers journaux
 
 Les fichiers journaux sont contenus dans les dossiers suivants :
@@ -95,6 +101,7 @@ Les journaux de ce dossier fournissent des détails sur les services cloud et le
 
 
 
+[[console-agent-service]]
 === Service d'agent de console
 
 * Le service d'agent de la Console est nommé `occm`.
@@ -106,6 +113,7 @@ Si le service MySQL est hors service, alors le  `occm` service est également ho
 
 
 
+[[ports]]
 === Ports
 
 L'agent utilise les ports suivants sur l'hôte Linux :
@@ -116,6 +124,7 @@ L'agent utilise les ports suivants sur l'hôte Linux :
 
 
 
+[[default-configuration-without-internet-access]]
 == Configuration par défaut sans accès Internet
 
 La configuration suivante s’applique si vous avez installé manuellement l’agent de console sur un hôte Linux local qui n’a pas accès à Internet. link:task-quick-start-private-mode.html["En savoir plus sur cette option d'installation"] .

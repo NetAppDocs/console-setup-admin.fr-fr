@@ -18,6 +18,7 @@ Ajoutez et gérez les informations d’identification Azure afin que la NetApp C
 
 
 
+[[overview]]
 == Aperçu
 
 Il existe deux manières d’ajouter des abonnements et des informations d’identification Azure supplémentaires dans la console.
@@ -28,6 +29,7 @@ Il existe deux manières d’ajouter des abonnements et des informations d’ide
 
 
 
+[[associate-additional-azure-subscriptions-with-a-managed-identity]]
 == Associer des abonnements Azure supplémentaires à une identité gérée
 
 La console vous permet de choisir les informations d’identification Azure et l’abonnement Azure dans lesquels vous souhaitez déployer Cloud Volumes ONTAP.  Vous ne pouvez pas sélectionner un autre abonnement Azure pour le profil d'identité managée, sauf si vous l'associez https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["identité gérée"^] avec ces abonnements.
@@ -65,6 +67,8 @@ image:screenshot_accounts_switch_azure_subscription.gif["Une capture d’écran 
 
 
 
+[[add-additional-azure-credentials-to-netapp-console]]
+[[add-credentials-azure]]
 == Ajouter des informations d’identification Azure supplémentaires à la NetApp Console
 
 Lorsque vous déployez un agent de console à partir de la console, la console active une identité gérée attribuée par le système sur la machine virtuelle qui dispose des autorisations requises.  La console sélectionne ces informations d’identification Azure par défaut lorsque vous créez un nouveau système pour Cloud Volumes ONTAP.
@@ -76,6 +80,7 @@ Si vous souhaitez déployer Cloud Volumes ONTAP à l’aide de _différentes_ in
 
 
 
+[[grant-azure-permissions-using-a-service-principal]]
 === Accorder des autorisations Azure à l'aide d'un principal de service
 
 La console a besoin d’autorisations pour effectuer des actions dans Azure.  Vous pouvez accorder les autorisations requises à un compte Azure en créant et en configurant un principal de service dans Microsoft Entra ID et en obtenant les informations d’identification Azure dont la console a besoin.
@@ -231,6 +236,7 @@ image:screenshot_azure_service_mgmt_apis_add.gif["Une capture d’écran du port
 
 
 
+[[ids]]
 ==== Obtenir l'ID de l'application et l'ID du répertoire
 
 Lorsque vous ajoutez le compte Azure à la console, vous devez fournir l’ID d’application (client) et l’ID de répertoire (locataire) de l’application.  La console utilise les identifiants pour se connecter par programmation.
@@ -269,6 +275,7 @@ Votre principal de service est maintenant configuré et vous devez avoir copié 
 
 
 
+[[add-the-credentials-to-the-console]]
 === Ajoutez les informations d'identification à la console
 
 Après avoir fourni à un compte Azure les autorisations requises, vous pouvez ajouter les informations d’identification de ce compte à la console.  Cette étape vous permet de lancer Cloud Volumes ONTAP à l’aide de différentes informations d’identification Azure.
@@ -303,12 +310,15 @@ image:screenshot_accounts_switch_azure.gif["Une capture d'écran qui montre la s
 
 
 
+[[manage-existing-credentials]]
 == Gérer les informations d'identification existantes
 
 Gérez les informations d’identification Azure que vous avez déjà ajoutées à la console en associant un abonnement Marketplace, en modifiant les informations d’identification et en les supprimant.
 
 
 
+[[associate-an-azure-marketplace-subscription-to-credentials]]
+[[subscribe]]
 === Associer un abonnement Azure Marketplace aux informations d'identification
 
 Après avoir ajouté vos informations d’identification Azure à la console, vous pouvez associer un abonnement Azure Marketplace à ces informations d’identification.  Vous pouvez utiliser l'abonnement pour créer un système Cloud Volumes ONTAP à la carte et accéder aux services de données NetApp .
@@ -358,6 +368,7 @@ Pour toutes les autres organisations ou comptes, vous devrez associer manuelleme
 
 
 
+[[edit-credentials]]
 === Modifier les informations d'identification
 
 Modifiez vos informations d’identification Azure dans la console.  Par exemple, vous pouvez mettre à jour le secret client si un nouveau secret a été créé pour l’application principale de service.
@@ -371,6 +382,7 @@ Modifiez vos informations d’identification Azure dans la console.  Par exemple
 
 
 
+[[delete-credentials]]
 === Supprimer les informations d'identification
 
 Si vous n’avez plus besoin d’un ensemble d’informations d’identification, vous pouvez les supprimer.  Vous ne pouvez supprimer que les informations d’identification qui ne sont pas associées à un système.

@@ -18,6 +18,7 @@ Déployez l’agent de console en mode restreint afin de pouvoir utiliser la Net
 
 
 
+[[step-1-install-the-console-agent]]
 == Étape 1 : Installer l'agent de console
 
 Installez l'agent de console à partir de la place de marché de votre fournisseur de cloud ou manuellement sur un hôte Linux.
@@ -354,6 +355,7 @@ Configurer la NetApp Console.
 ====
 
 
+[[step-2-set-up-netapp-console]]
 == Étape 2 : Configurer la NetApp Console
 
 Lorsque vous accédez à la console pour la première fois, vous êtes invité à choisir une organisation pour l'agent de la console et devez activer le mode restreint.
@@ -391,6 +393,7 @@ Fournissez à la console les autorisations que vous avez précédemment configur
 
 
 
+[[step-3-provide-permissions-to-the-console-agent]]
 == Étape 3 : Accorder des autorisations à l’agent de la console
 
 Si vous avez installé l'agent Console à partir d'Azure Marketplace ou manuellement, vous devez lui accorder les autorisations que vous avez configurées précédemment.

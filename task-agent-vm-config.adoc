@@ -29,6 +29,7 @@ Vous pouvez uniquement consulter (et non modifier) les informations relatives à
 
 
 
+[[access-the-vm-maintenance-console]]
 == Accéder à la console de maintenance de la machine virtuelle
 
 Vous pouvez accéder à la console de maintenance depuis le vSphere client.
@@ -42,6 +43,7 @@ Vous pouvez accéder à la console de maintenance depuis le vSphere client.
 
 
 
+[[change-the-maint-user-password]]
 === Changer le mot de passe de l'utilisateur principal
 
 Vous pouvez modifier le mot de passe pour le `maint` utilisateur.
@@ -57,6 +59,7 @@ Vous pouvez modifier le mot de passe pour le `maint` utilisateur.
 
 
 
+[[increase-the-cpu-or-ram-of-the-vm-instance]]
 === Augmenter le CPU ou la RAM de l'instance VM
 
 Vous pouvez augmenter la CPU ou la RAM de l’instance de machine virtuelle qui héberge l’agent de console.
@@ -87,6 +90,7 @@ Modifiez les paramètres de l'instance de machine virtuelle dans votre vCenter o
 
 
 
+[[view-network-settings-for-the-agent-vm]]
 === Afficher les paramètres réseau de la machine virtuelle de l'agent
 
 Consultez les paramètres réseau de la machine virtuelle de l'agent dans le client vSphere pour confirmer ou résoudre les problèmes de réseau. Vous pouvez uniquement consulter (et non modifier) les paramètres réseau suivants : adresse IP et détails DNS.
@@ -102,6 +106,7 @@ Consultez les paramètres réseau de la machine virtuelle de l'agent dans le cli
 
 
 
+[[update-the-static-routes-for-the-agent-vm]]
 === Mettre à jour les routes statiques pour la machine virtuelle de l'agent
 
 Ajoutez, mettez à jour ou supprimez des itinéraires statiques pour la machine virtuelle de l'agent selon les besoins.
@@ -120,6 +125,7 @@ Ajoutez, mettez à jour ou supprimez des itinéraires statiques pour la machine 
 
 
 
+[[update-domain-search-settings-for-the-agent-vm]]
 === Mettre à jour les paramètres de recherche de domaine pour la machine virtuelle de l'agent
 
 Vous pouvez mettre à jour les paramètres du domaine de recherche pour la machine virtuelle de l'agent.
@@ -138,6 +144,8 @@ Vous pouvez mettre à jour les paramètres du domaine de recherche pour la machi
 
 
 
+[[access-the-agent-diagnostic-tools]]
+[[connect-vcenter-host]]
 === Accéder aux outils de diagnostic de l'agent
 
 Accédez aux outils de diagnostic pour résoudre les problèmes avec l’agent de la console.  Le support NetApp peut vous demander de le faire lors du dépannage.
@@ -153,6 +161,7 @@ Accédez aux outils de diagnostic pour résoudre les problèmes avec l’agent d
 
 
 
+[[access-the-agent-diagnostic-tools-remotely]]
 === Accéder aux outils de diagnostic de l'agent à distance
 
 Vous pouvez accéder aux outils de diagnostic à distance avec un outil tel que Putty.  Activez l’accès SSH à la machine virtuelle de l’agent en attribuant un mot de passe à usage unique.

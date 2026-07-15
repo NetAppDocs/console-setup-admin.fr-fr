@@ -22,6 +22,7 @@ Vous pouvez consulter et gérer les ressources depuis la page *Ressources* de la
 
 
 
+[[console-resource-types]]
 == types de ressources de la console
 
 Vous pouvez associer plusieurs types de ressources aux projets de votre organisation NetApp Console :
@@ -40,6 +41,7 @@ Charges de travail de sauvegarde et de restauration:: Les charges de travail Bac
 
 
 
+[[view-the-resources-in-your-organization]]
 == Consultez les ressources de votre organisation
 
 Vous pouvez afficher les ressources découvertes et non découvertes associées à votre organisation. Le système détecte les ressources de stockage et les marque comme non découvertes jusqu'à ce que vous les ajoutiez à la console.
@@ -64,6 +66,8 @@ NOTE: La console exclut les ressources Amazon FSx for NetApp ONTAP de la page Re
 
 
 
+[[associate-a-resource-with-folders-and-projects]]
+[[associate-resource]]
 == Associer une ressource à des dossiers et des projets
 
 Associez une ressource à un dossier ou à un projet pour la rendre accessible aux membres disposant des autorisations nécessaires pour ce dossier ou ce projet.
@@ -90,6 +94,8 @@ link:task-iam-associate-agents.html["Découvrez comment associer un agent de con
 
 
 
+[[view-the-folders-and-projects-associated-with-a-resource]]
+[[view-folders-and-projects]]
 == Afficher les dossiers et les projets associés à une ressource
 
 Vous pouvez afficher les dossiers et les projets associés à une ressource particulière.
@@ -110,6 +116,8 @@ NOTE: Pour voir quels membres de l'organisation ont accès à la ressource,link:
 
 
 
+[[remove-a-resource-from-a-folder-or-project]]
+[[remove-resource]]
 == Supprimer une ressource d'un dossier ou d'un projet
 
 Pour supprimer une ressource d'un dossier ou d'un projet, supprimez son association. Cela empêche les membres de gérer la ressource dans ce dossier ou ce projet.
@@ -125,6 +133,7 @@ NOTE: Pour supprimer une ressource détectée de l'ensemble de l'organisation, a
 
 
 
+[[related-information]]
 == Informations connexes
 
 * link:concept-identity-and-access-management.html["En savoir plus sur l'identité et l'accès dans la NetApp Console"]

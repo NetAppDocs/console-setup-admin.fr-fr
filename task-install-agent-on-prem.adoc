@@ -23,12 +23,15 @@ Avant l'installation, assurez-vous que votre hôte (machine virtuelle ou hôte L
 
 
 
+[[prepare-to-install-the-console-agent]]
 == Préparez-vous à installer l'agent de la console
 
 Avant d’installer un agent de console, vous devez vous assurer que vous disposez d’une machine hôte qui répond aux exigences d’installation.  Vous devrez également travailler avec votre administrateur réseau pour vous assurer que l'agent de la console dispose d'un accès sortant aux points de terminaison requis et aux connexions aux réseaux ciblés.
 
 
 
+[[review-console-agent-host-requirements]]
+[[os-req-agent]]
 === Examen des exigences de l'hôte de l'agent de console
 
 Exécutez l'agent Console sur un hôte x86 conforme aux exigences en matière de système d'exploitation, de RAM et de ports. Assurez-vous que votre hôte répond à ces exigences avant d'installer l'agent Console.
@@ -154,6 +157,8 @@ Non pris en charge
 |===
 
 
+[[set-up-network-access-for-the-console-agent]]
+[[network-access-agent]]
 === Configurer l'accès réseau pour l'agent de la console
 
 Configurez l’accès au réseau pour garantir que l’agent de la console peut gérer les ressources.  Il a besoin de connexions aux réseaux cibles et d’un accès Internet sortant vers des points de terminaison spécifiques.
@@ -319,6 +324,8 @@ Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analy
 
 
 
+[[create-console-agent-cloud-permissions-for-aws-or-azure]]
+[[agent-permission-aws-azure]]
 === Créer des autorisations cloud pour l'agent de console pour AWS ou Azure
 
 Si vous souhaitez utiliser les services de données NetApp dans AWS ou Azure avec un agent Console local, vous devez configurer les autorisations auprès de votre fournisseur de cloud puis ajouter les informations d'identification à l'agent Console après son installation.
@@ -511,12 +518,15 @@ image:screenshot_azure_client_secret.gif["Une capture d’écran du portail Azur
 ====
 
 
+[[manually-install-a-console-agent]]
 == Installer manuellement un agent de console
 
 Lors de l'installation manuelle d'un agent Console, vous devez préparer votre environnement machine afin qu'il réponde aux exigences. Vous aurez besoin d'une machine Linux et devrez installer Podman ou Docker, selon votre système d'exploitation Linux.
 
 
 
+[[install-podman-or-docker-engine]]
+[[podman-configuration]]
 === Installer Podman ou Docker Engine
 
 Selon votre système d'exploitation, Podman ou Docker Engine est requis avant l'installation de l'agent.
@@ -702,6 +712,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 ====
 
 
+[[install-the-console-agent-manually]]
 === Installer l'agent de console manuellement
 
 Téléchargez et installez le logiciel de l’agent de console sur un hôte Linux existant sur site.
@@ -840,6 +851,8 @@ Vous devrez enregistrer l'agent de console dans la NetApp Console.
 
 
 
+[[register-the-console-agent-with-netapp-console]]
+[[register-agent]]
 == Enregistrer l'agent de console auprès de la NetApp Console
 
 Connectez-vous à la Console et associez l'agent de la Console à votre organisation. La façon dont vous vous connectez dépend du mode dans lequel vous utilisez la Console. Si vous utilisez la Console en mode standard, connectez-vous via le site web SaaS. Si vous utilisez la Console en mode restreint ou privé, connectez-vous localement depuis l'hôte de l'agent de la Console.
@@ -865,6 +878,7 @@ Le mode restreint n’est pas pris en charge lorsque l’agent de console est in
 
 
 
+[[provide-cloud-provider-credentials-to-netapp-console]]
 == Fournir les informations d'identification du fournisseur de cloud à la NetApp Console
 
 Après avoir installé et configuré l’agent de console, ajoutez vos informations d’identification cloud afin que l’agent de console dispose des autorisations requises pour effectuer des actions dans AWS ou Azure.

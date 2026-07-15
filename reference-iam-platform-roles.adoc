@@ -29,6 +29,8 @@ Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de c
 
 
 
+[[organization-administration-roles]]
+[[organization-admin-roles]]
 == Rôles d'administration de l'organisation
 
 [cols="2,1,1"]
@@ -79,6 +81,7 @@ Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de c
 |===
 
 
+[[federation-roles]]
 == Rôles de la Fédération
 
 [cols="2,1,1"]
@@ -105,6 +108,7 @@ Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de c
 |===
 
 
+[[partnership-roles]]
 == Rôles de partenariat
 
 [cols="2,1,1"]
@@ -125,6 +129,8 @@ Les tableaux suivants indiquent les actions que chaque rôle de plate-forme de c
 |===
 
 
+[[super-admin-and-viewer-roles]]
+[[super-admin-roles]]
 == Rôles de super administrateur et de spectateur
 
 Le rôle *Super administrateur* offre un accès complet pour gérer les fonctionnalités de la console, le stockage et les services de données.  Ce rôle convient à ceux qui supervisent l’administration et la gouvernance.  En revanche, le rôle *Super spectateur* offre un accès en lecture seule, idéal pour les auditeurs ou les parties prenantes qui ont besoin de visibilité sans apporter de modifications.

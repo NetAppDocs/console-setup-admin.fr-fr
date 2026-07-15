@@ -20,10 +20,12 @@ Ces limitations sont spécifiques à la configuration de la NetApp Console et à
 
 
 
+[[console-agent-limitations]]
 == Limitations de l'agent de console
 
 
 
+[[possible-conflict-with-ip-addresses-in-the-172-range]]
 === Conflit possible avec les adresses IP dans la plage 172
 
 La NetApp Console déploie un agent avec deux interfaces dont les adresses IP sont comprises dans les plages 172.17.0.0/16 et 172.18.0.0/16.
@@ -34,6 +36,7 @@ Voir l'article de la base de connaissanceslink:https://kb.netapp.com/Advice_and_
 
 
 
+[[ssl-decryption-supported-only-for-cloud-volumes-ontap]]
 === Le déchiffrement SSL est pris en charge uniquement pour Cloud Volumes ONTAP
 
 Les serveurs proxy transparents sont pris en charge pour les agents associés à Cloud Volumes ONTAP uniquement. Vous ne pouvez pas utiliser de proxy transparent pour un agent s'il est utilisé avec d'autres NetApp data services. Si vous utilisez NetApp data services avec Cloud Volumes ONTAP, créez un agent dédié à Cloud Volumes ONTAP sur lequel vous pouvez utiliser un serveur proxy transparent.
@@ -42,6 +45,7 @@ Pour une sécurité renforcée, vous avez la possibilité delink:task-installing
 
 
 
+[[blank-page-when-loading-the-local-ui]]
 === Page blanche lors du chargement de l'interface utilisateur locale
 
 Si vous chargez la console Web exécutée sur un agent, l'interface peut parfois ne pas s'afficher et vous obtenez simplement une page vierge.
@@ -50,12 +54,14 @@ Ce problème est lié à un problème de mise en cache.  La solution de contourn
 
 
 
+[[shared-linux-hosts-are-not-supported]]
 === Les hôtes Linux partagés ne sont pas pris en charge
 
 L'agent n'est pas pris en charge sur une machine virtuelle partagée avec d'autres applications.  La VM doit être dédiée au logiciel agent.
 
 
 
+[[third-party-agents-and-extensions]]
 === Agents et extensions tiers
 
 Les agents tiers ou les extensions de machine virtuelle ne sont pas pris en charge sur la machine virtuelle de l'agent.

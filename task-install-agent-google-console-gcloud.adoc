@@ -25,6 +25,8 @@ Le déploiement d'un agent dans Google Cloud lance une instance de machine virtu
 
 
 
+[[step-1-set-up-networking]]
+[[networking-gcp-agent]]
 == Étape 1 : Configurer le réseau
 
 Configurez la mise en réseau pour garantir que l'agent de la console peut gérer les ressources, avec des connexions aux réseaux cibles et un accès Internet sortant.
@@ -135,6 +137,8 @@ Implémentez cette exigence de mise en réseau après avoir créé l’agent de 
 
 
 
+[[step-2-set-up-permissions-to-create-the-console-agent]]
+[[agent-permissions-google]]
 == Étape 2 : Configurer les autorisations pour créer l’agent de console
 
 Avant de pouvoir déployer un agent de console à partir de la console, vous devez configurer des autorisations pour l'utilisateur Google Platform qui déploie la machine virtuelle de l'agent de console.
@@ -255,6 +259,8 @@ https://cloud.google.com/iam/docs/granting-changing-revoking-access#grant-single
 
 
 
+[[step-3-create-a-google-cloud-service-account-to-use-with-the-agent]]
+[[console-permissions-google]]
 == Étape 3 : Créez un compte de service Google Cloud à utiliser avec l’agent.
 
 Un compte de service Google Cloud est requis pour fournir à l'agent de la console les autorisations dont la console a besoin pour gérer les ressources dans Google Cloud.  Lorsque vous créez l’agent de console, vous devez associer ce compte de service à la machine virtuelle de l’agent de console.
@@ -314,6 +320,7 @@ Pour plus de détails, reportez-vous à https://cloud.google.com/iam/docs/granti
 
 
 
+[[step-4-set-up-shared-vpc-permissions]]
 == Étape 4 : Configurer les autorisations VPC partagées
 
 Si vous utilisez un VPC partagé pour déployer des ressources dans un projet de service, vous devrez préparer vos autorisations.
@@ -366,6 +373,7 @@ Remarques :
 ====
 
 
+[[step-5-enable-google-cloud-apis]]
 == Étape 5 : Activer les API Google Cloud
 
 Vous devez activer plusieurs API Google Cloud avant de déployer l'agent de console et Cloud Volumes ONTAP.
@@ -390,6 +398,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentation 
 
 
 
+[[step-6-create-the-console-agent]]
 == Étape 6 : Créer l’agent de console
 
 Créez un agent de console directement depuis la console.

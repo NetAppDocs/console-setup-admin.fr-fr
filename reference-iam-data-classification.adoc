@@ -22,6 +22,7 @@ La classification des données prend en charge deux rôles :
 
 
 
+[[compliance-admin]]
 == Administration de la conformité
 
 Le rôle d'administrateur de conformité s'applique uniquement au niveau de l'organisation et permet de gérer l'accès aux ressources de NetApp Data Classification. Si un utilisateur possède des responsabilités inférieures à celles d'un administrateur de l'organisation, il doit disposer du rôle d'administrateur de conformité pour installer NetApp Data Classification.
@@ -34,12 +35,14 @@ NOTE: L'administrateur de conformité a été ajouté à NetApp Data Classificat
 
 
 
+[[classification-viewer]]
 == Visionneuse de classification
 
 Le visualiseur de classification est conçu pour les utilisateurs qui ont besoin d'accéder aux résultats d'analyse dans NetApp Data Classification, mais qui n'ont pas besoin d'accéder aux ressources de configuration. Les utilisateurs disposant du rôle de visualiseur de classification peuvent consulter les résultats de la cartographie et des analyses complètes afin d'identifier les possibilités d'économies de stockage ou les risques potentiels pour les données. Les utilisateurs disposant du rôle de visualiseur de classification peuvent également générer des rapports pour les ressources auxquelles ils ont accès. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données.
 
 
 
+[[more-information]]
 == Plus d'informations
 
 * link:https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html["Découvrez la NetApp Data Classification"^]

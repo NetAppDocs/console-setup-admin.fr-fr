@@ -18,6 +18,7 @@ Découvrez comment la NetApp Console utilise les informations d’identification
 
 
 
+[[initial-azure-credentials]]
 == Informations d'identification Azure initiales
 
 Lorsque vous déployez un agent de console à partir de la console, vous devez utiliser un compte Azure ou un principal de service disposant des autorisations nécessaires pour déployer la machine virtuelle de l’agent de console.  Les autorisations requises sont répertoriées dans lelink:task-install-agent-azure-console.html#agent-custom-role["Politique de déploiement d'agent pour Azure"] .
@@ -34,12 +35,14 @@ Vous pouvez déployer tous vos systèmes Cloud Volumes ONTAP à l’aide des inf
 
 
 
+[[additional-azure-subscriptions-for-a-managed-identity]]
 == Abonnements Azure supplémentaires pour une identité gérée
 
 L’identité gérée attribuée par le système à la machine virtuelle de l’agent de console est associée à l’abonnement dans lequel vous avez lancé l’agent de console.  Si vous souhaitez sélectionner un autre abonnement Azure, vous devezlink:task-adding-azure-accounts.html#associate-additional-azure-subscriptions-with-a-managed-identity["associer l'identité gérée à ces abonnements"] .
 
 
 
+[[additional-azure-credentials]]
 == Informations d'identification Azure supplémentaires
 
 Si vous souhaitez utiliser différentes informations d'identification Azure avec la console, vous devez accorder les autorisations requises enlink:task-adding-azure-accounts.html["création et configuration d'un principal de service dans Microsoft Entra ID"] pour chaque compte Azure.  L'image suivante montre deux comptes supplémentaires, chacun configuré avec un principal de service et un rôle personnalisé qui fournit des autorisations :
@@ -54,6 +57,7 @@ image:screenshot_accounts_switch_azure.gif["Une capture d'écran qui montre la s
 
 
 
+[[credentials-and-marketplace-subscriptions]]
 == Informations d'identification et abonnements à la place de marché
 
 Les informations d’identification que vous ajoutez à un agent de console doivent être associées à un abonnement Azure Marketplace afin que vous puissiez payer Cloud Volumes ONTAP à un tarif horaire (PAYGO) ou des services de données NetApp ou via un contrat annuel.
@@ -68,12 +72,14 @@ Notez les points suivants concernant les informations d’identification Azure e
 
 
 
+[[faq]]
 == FAQ
 
 La question suivante concerne les informations d’identification et les abonnements.
 
 
 
+[[can-i-change-the-azure-marketplace-subscription-for-cloud-volumes-ontap-systems]]
 === Puis-je modifier l’abonnement Azure Marketplace pour les systèmes Cloud Volumes ONTAP ?
 
 Oui, tu peux.  Lorsque vous modifiez l’abonnement Azure Marketplace associé à un ensemble d’informations d’identification Azure, tous les systèmes Cloud Volumes ONTAP existants et nouveaux seront facturés sur le nouvel abonnement.
@@ -82,6 +88,7 @@ link:task-adding-azure-accounts.html#subscribe["Découvrez comment associer un a
 
 
 
+[[can-i-add-multiple-azure-credentials-each-with-different-marketplace-subscriptions]]
 === Puis-je ajouter plusieurs informations d’identification Azure, chacune avec des abonnements de marketplace différents ?
 
 Toutes les informations d’identification Azure appartenant au même abonnement Azure seront associées au même abonnement Azure Marketplace.
@@ -90,12 +97,14 @@ Si vous disposez de plusieurs informations d’identification Azure appartenant 
 
 
 
+[[can-i-move-existing-cloud-volumes-ontap-systems-to-a-different-azure-subscription]]
 === Puis-je déplacer des systèmes Cloud Volumes ONTAP existants vers un autre abonnement Azure ?
 
 Non, il n’est pas possible de déplacer les ressources Azure associées à votre système Cloud Volumes ONTAP vers un autre abonnement Azure.
 
 
 
+[[how-do-credentials-work-for-marketplace-deployments-and-on-premises-deployments]]
 === Comment fonctionnent les informations d’identification pour les déploiements sur le marché et les déploiements sur site ?
 
 Les sections ci-dessus décrivent la méthode de déploiement recommandée pour l'agent de console, qui provient de la console.  Vous pouvez également déployer un agent de console dans Azure à partir de la Place de marché Azure et installer le logiciel de l’agent de console sur votre propre hôte Linux.

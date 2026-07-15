@@ -24,6 +24,7 @@ Administrateur d'organisation, administrateur de fédération, visualiseur de f�
 
 
 
+[[single-sign-on-with-netapp-support-site]]
 == Authentification unique avec le site d'assistance NetApp
 
 La fédération avec le site de support NetApp permet aux utilisateurs de se connecter à la console, à Active IQ Digital Advisor et à d'autres applications associées à l'aide des mêmes informations d'identification.
@@ -41,6 +42,7 @@ L'équipe de support NetApp examine et traite votre demande.
 
 
 
+[[single-sign-on-with-your-identity-provider]]
 == Authentification unique avec votre fournisseur d'identité
 
 Vous pouvez configurer une connexion fédérée avec votre fournisseur d’identité pour activer l’authentification unique (SSO) pour la console.  Le processus implique la configuration de votre fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services, puis la création de la connexion dans la console.
@@ -50,6 +52,7 @@ NOTE: Si vous avez précédemment configuré la fédération à l’aide de NetA
 
 
 
+[[supported-identity-providers]]
 === Fournisseurs d'identité pris en charge
 
 NetApp prend en charge les protocoles et fournisseurs d’identité suivants pour la fédération :
@@ -66,6 +69,7 @@ NetApp prend en charge les protocoles et fournisseurs d’identité suivants pou
 
 
 
+[[federation-with-netapp-console-workflow]]
 === Fédération avec le flux de travail de la NetApp Console
 
 NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Vous devez d’abord configurer le fournisseur d’identité pour qu’il approuve NetApp en tant que fournisseur de services.  Ensuite, vous pouvez créer une connexion dans la console qui utilise la configuration du fournisseur d’identité.

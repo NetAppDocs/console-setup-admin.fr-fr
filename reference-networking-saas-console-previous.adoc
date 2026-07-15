@@ -27,6 +27,8 @@ Vous devez configurer l’accès au réseau pour les éléments suivants :
 
 
 
+[[update-your-endpoint-list-to-the-revised-list-for-4-0-0-and-higher]]
+[[update-endpoint-list]]
 == Mettez à jour votre liste de points de terminaison vers la liste révisée pour la version 4.0.0 et supérieure
 
 À partir de la version 4.0.0, les agents de console nécessitent moins de points de terminaison.  Les déploiements existants avant la version 4.0.0 restent pris en charge.  Après la mise à niveau vers la version 4.0.0 ou une version ultérieure, vous pouvez supprimer les anciens points de terminaison de votre liste d'autorisation lorsque cela vous convient.
@@ -106,6 +108,7 @@ systemctl status netapp-service-manager.service
 
 
 
+[[endpoints-for-netapp-console-and-console-agents-for-3-9-55-and-below]]
 == Points de terminaison pour la NetApp Console et les agents de console pour la version 3.9.55 et les versions antérieures
 
 Ces points de terminaison sont utilisés pour les agents de console 3.9.55 et versions antérieures.
@@ -152,6 +155,7 @@ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre
 |===
 
 
+[[cloud-provider-endpoints-contacted-by-the-console-agent]]
 == Points de terminaison du fournisseur de cloud contactés par l'agent de la console
 
 Les agents de console doivent avoir accès à des points de terminaison supplémentaires s'ils sont déployés chez votre fournisseur de cloud.
@@ -167,12 +171,14 @@ Les points de terminaison du fournisseur de cloud sont les mêmes pour toutes le
 
 
 
+[[data-services-endpoints-contacted-by-the-console-agent]]
 == Points de terminaison des services de données contactés par l'agent de la console
 
 L'agent de console nécessite un accès Internet sortant supplémentaire pour prendre en charge certains services de données NetApp et Cloud Volumes ONTAP.
 
 
 
+[[endpoints-for-cloud-volumes-ontap]]
 === Points de terminaison pour Cloud Volumes ONTAP
 
 * link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#outbound-internet-access-for-cloud-volumes-ontap-nodes["Points de terminaison pour Cloud Volumes ONTAP dans AWS"]

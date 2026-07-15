@@ -18,6 +18,7 @@ Déployez la NetApp Console en mode privé pour pouvoir l'utiliser sans connexio
 
 
 
+[[step-1-install-the-console-agent]]
 == Étape 1 : Installer l'agent de console
 
 Téléchargez le programme d'installation du produit depuis le site d'assistance NetApp puis installez manuellement la Console sur votre propre hôte Linux.
@@ -62,6 +63,7 @@ L'agent Console est installé. Vous pouvez maintenant configurer la NetApp Conso
 
 
 
+[[step-2-set-up-netapp-console]]
 == Étape 2 : Configurer la NetApp Console
 
 Lorsque vous accédez à la NetApp Console pour la première fois, vous serez invité à configurer la NetApp Console.
@@ -88,6 +90,7 @@ Fournissez à l'agent de la Console les autorisations du fournisseur de cloud qu
 
 
 
+[[step-3-provide-permissions-to-console-agent]]
 == Étape 3 : Accorder les autorisations à l’agent de la Console
 
 Si vous souhaitez créer des environnements de travail Cloud Volumes ONTAP, vous devrez fournir à l'agent de la Console les autorisations du fournisseur de cloud que vous avez configurées précédemment.

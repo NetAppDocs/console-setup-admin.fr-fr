@@ -18,6 +18,7 @@ Vous pouvez attribuer le rôle d'analyste de support opérationnel aux utilisate
 
 
 
+[[operational-support-analyst]]
 == Analyste de soutien opérationnel
 
 [cols="1,2"]

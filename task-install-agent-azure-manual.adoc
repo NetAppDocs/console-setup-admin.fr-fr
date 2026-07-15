@@ -28,6 +28,7 @@ NOTE: Déployez un agent Console dans la même région Azure que les systèmes C
 
 
 
+[[step-1-review-host-requirements]]
 == Étape 1 : Examiner les exigences de l'hôte
 
 Le logiciel de l'agent de console doit s'exécuter sur un hôte qui répond aux exigences spécifiques du système d'exploitation, de la RAM, des ports, etc.
@@ -154,6 +155,8 @@ Non pris en charge
 |===
 
 
+[[step-2-install-podman-or-docker-engine]]
+[[podman-configuration]]
 == Étape 2 : installer Podman ou Docker Engine
 
 Selon votre système d'exploitation, Podman ou Docker Engine est requis avant l'installation de l'agent.
@@ -339,6 +342,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 ====
 
 
+[[step-3-set-up-networking]]
 == Étape 3 : Configurer le réseau
 
 Assurez-vous que l’emplacement réseau où vous prévoyez d’installer l’agent de console prend en charge les exigences suivantes.  La satisfaction de ces exigences permet à l’agent de console de gérer les ressources et les processus au sein de votre environnement de cloud hybride.
@@ -458,6 +462,7 @@ Activer NTP:: Si vous prévoyez d'utiliser NetApp Data Classification pour analy
 
 
 
+[[step-4-set-up-console-agent-deployment-permissions]]
 == Étape 4 : Configurer les autorisations de déploiement de l’agent de console
 
 Vous devez fournir des autorisations Azure à l’agent de la console en utilisant l’une des options suivantes :
@@ -669,6 +674,7 @@ Votre principal de service est maintenant configuré et vous devez avoir copié 
 ====
 
 
+[[step-5-install-the-console-agent]]
 == Étape 5 : Installer l’agent de console
 
 Une fois les prérequis terminés, vous pouvez installer manuellement le logiciel sur votre propre hôte Linux.
@@ -835,6 +841,7 @@ Si vous disposez d’un stockage Blob Azure dans le même abonnement Azure où v
 
 
 
+[[step-6-provide-permissions-to-netapp-console]]
 == Étape 6 : Accorder des autorisations à la NetApp Console
 
 Maintenant que vous avez installé l’agent de console, vous devez fournir à l’agent de console les autorisations Azure que vous avez précédemment configurées.  L’octroi des autorisations permet à la console de gérer vos données et votre infrastructure de stockage dans Azure.

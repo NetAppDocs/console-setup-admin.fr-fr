@@ -18,6 +18,7 @@ Les règles du pare-feu Google Cloud pour l'agent nécessitent des règles de tr
 
 
 
+[[inbound-rules]]
 == Règles entrantes
 
 [cols="10,10,80"]
@@ -42,12 +43,14 @@ Les règles du pare-feu Google Cloud pour l'agent nécessitent des règles de tr
 |===
 
 
+[[outbound-rules]]
 == Règles de sortie
 
 Les règles de pare-feu prédéfinies de l'agent ouvrent tout le trafic sortant.  Suivez les règles sortantes de base si elles sont acceptables, ou utilisez des règles sortantes avancées pour des exigences plus strictes.
 
 
 
+[[basic-outbound-rules]]
 === Règles de base pour les voyages sortants
 
 Les règles de pare-feu prédéfinies pour l'agent incluent les règles sortantes suivantes.
@@ -64,6 +67,7 @@ Les règles de pare-feu prédéfinies pour l'agent incluent les règles sortante
 |===
 
 
+[[advanced-outbound-rules]]
 === Règles sortantes avancées
 
 Si vous avez besoin de règles strictes pour le trafic sortant, vous pouvez utiliser les informations suivantes pour ouvrir uniquement les ports requis pour la communication sortante par l'agent.

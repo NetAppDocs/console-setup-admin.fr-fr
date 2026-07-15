@@ -20,6 +20,7 @@ La console prend également en charge l’association d’un compte NSS par comp
 
 
 
+[[overview]]
 == Aperçu
 
 L'association des informations d'identification du site de support NetApp à votre numéro de série de compte de console spécifique est requise pour activer les tâches suivantes :
@@ -39,6 +40,7 @@ Ces informations d’identification sont associées au numéro de série de votr
 
 
 
+[[add-an-nss-account]]
 == Ajouter un compte NSS
 
 Vous pouvez ajouter et gérer vos comptes de site de support NetApp à utiliser avec la console à partir du tableau de bord de support dans la console.
@@ -82,6 +84,7 @@ Les utilisateurs peuvent désormais sélectionner le compte lors de la création
 
 
 
+[[update-nss-credentials]]
 == Mettre à jour les informations d'identification NSS
 
 Pour des raisons de sécurité, vous devez mettre à jour vos informations d'identification NSS tous les 90 jours.  Vous serez averti dans le centre de notifications de la console si vos informations d'identification NSS ont expiré. link:task-monitor-cm-operations.html#notification-center["En savoir plus sur le centre de notifications"^] .
@@ -107,6 +110,8 @@ NetApp utilise Microsoft Entra ID comme fournisseur d’identité pour les servi
 
 
 
+[[attach-a-system-to-a-different-nss-account]]
+[[attach-system-nss-account]]
 == Attacher un système à un autre compte NSS
 
 Si votre organisation dispose de plusieurs comptes de site de support NetApp , vous pouvez modifier le compte associé à un système Cloud Volumes ONTAP .
@@ -131,6 +136,7 @@ image:screenshot-nss-change-account.png["Une capture d’écran qui montre le me
 
 
 
+[[display-the-email-address-for-an-nss-account]]
 == Afficher l'adresse e-mail d'un compte NSS
 
 Pour des raisons de sécurité, l'adresse e-mail associée à un compte NSS n'est pas affichée par défaut.  Vous pouvez afficher l'adresse e-mail et le nom d'utilisateur associé à un compte NSS.
@@ -146,6 +152,7 @@ TIP: Lorsque vous accédez à la page de gestion NSS, la console génère un jet
 
 
 
+[[remove-an-nss-account]]
 == Supprimer un compte NSS
 
 Supprimez tous les comptes NSS que vous ne souhaitez plus utiliser avec la console.

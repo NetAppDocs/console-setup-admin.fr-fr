@@ -21,6 +21,7 @@ Super administrateur, administrateur d'organisation ou administrateur de dossier
 
 
 
+[[reset-user-passwords-local-users-only]]
 == Réinitialiser les mots de passe des utilisateurs (utilisateurs locaux uniquement)
 
 Les administrateurs de l'organisation ne peuvent pas réinitialiser les mots de passe des utilisateurs locaux. Ils peuvent toutefois demander aux utilisateurs de réinitialiser eux-mêmes leurs mots de passe.
@@ -32,6 +33,8 @@ NOTE: Cette option n'est pas disponible pour les utilisateurs appartenant à une
 
 
 
+[[manage-a-users-multi-factor-authentication-mfa]]
+[[manage-mfa]]
 == Gérer l'authentification multifacteur (MFA) d'un utilisateur
 
 Si un utilisateur perd l’accès à son périphérique MFA, vous pouvez supprimer ou désactiver sa configuration MFA.
@@ -58,6 +61,7 @@ Le tableau *Membres* répertorie les membres de votre organisation.
 
 
 
+[[recreate-the-credentials-for-a-service-account]]
 == Recréer les informations d'identification pour un compte de service
 
 Vous pouvez créer de nouveaux identifiants pour un compte de service si vous les perdez ou si vous devez les mettre à jour.

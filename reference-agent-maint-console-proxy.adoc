@@ -18,6 +18,7 @@ Vous pouvez utiliser la console de maintenance de l'agent de console pour config
 
 
 
+[[access-the-agent-maintenance-console]]
 == Accéder à la console de maintenance de l'agent
 
 Vous pouvez accéder à la console de maintenance depuis l'hôte de l'agent de console. Accédez au répertoire suivant :
@@ -28,6 +29,7 @@ Vous pouvez accéder à la console de maintenance depuis l'hôte de l'agent de c
 ----
 
 
+[[view-help-for-any-command]]
 === Afficher l'aide pour n'importe quelle commande
 
 Pour afficher l'aide d'une commande, ajoutez `--help` à la commande.  Par exemple, pour afficher l'aide relative à la `proxy add` commande, utilisez la commande suivante :
@@ -38,12 +40,14 @@ Pour afficher l'aide d'une commande, ajoutez `--help` à la commande.  Par exemp
 ----
 
 
+[[proxy-get]]
 == proxy obtenir
 
 Le `proxy get` Cette commande affiche des informations sur la configuration actuelle du serveur proxy transparent.  Pour afficher la configuration actuelle du serveur proxy transparent, utilisez la commande suivante :
 
 
 
+[[proxy-get-example]]
 === Exemple de proxy get
 
 [source, cli]
@@ -52,12 +56,14 @@ Le `proxy get` Cette commande affiche des informations sur la configuration actu
 ----
 
 
+[[proxy-add]]
 == ajouter un proxy
 
 Le `proxy add` Cette commande configure l'agent pour utiliser un serveur proxy transparent.
 
 
 
+[[parameters]]
 === Paramètres
 
 `-c <certificate file>`
@@ -67,6 +73,7 @@ Spécifie le chemin d'accès au fichier de certificat du serveur proxy.  Le fich
 
 
 
+[[proxy-add-example]]
 === Exemple d'ajout de proxy
 
 Pour ajouter un serveur proxy transparent, utilisez la commande suivante, où `/home/ubuntu/myCA1.pem` est le chemin d'accès au fichier de certificat pour le serveur proxy.  Le fichier de certificat doit être au format PEM :
@@ -77,12 +84,14 @@ Pour ajouter un serveur proxy transparent, utilisez la commande suivante, où `/
 ----
 
 
+[[proxy-update]]
 == mise à jour du proxy
 
 Le `proxy update` Cette commande permet de mettre à jour le certificat d'un proxy transparent.
 
 
 
+[[parameters]]
 === Paramètres
 
 `-c <certificate file>`spécifie le chemin d'accès au fichier de certificat du serveur proxy.  Le fichier de certificat doit être au format PEM.
@@ -91,6 +100,7 @@ Assurez-vous que le fichier de certificat se trouve dans le même répertoire qu
 
 
 
+[[proxy-update-example]]
 === Exemple de mise à jour de proxy
 
 Pour mettre à jour le certificat d'un serveur proxy transparent, utilisez la commande suivante, où `/home/ubuntu/myCA1.pem` est le chemin vers le nouveau fichier de certificat pour le serveur proxy.  Le fichier de certificat doit être au format PEM :
@@ -101,12 +111,14 @@ Pour mettre à jour le certificat d'un serveur proxy transparent, utilisez la co
 ----
 
 
+[[proxy-remove]]
 == suppression du proxy
 
 Le `proxy remove` Cette commande supprime la configuration du serveur proxy transparent de l'agent.
 
 
 
+[[proxy-remove-example]]
 === Exemple de suppression de proxy
 
 Pour supprimer le serveur proxy transparent, utilisez la commande suivante :

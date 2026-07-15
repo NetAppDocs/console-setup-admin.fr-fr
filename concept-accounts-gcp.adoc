@@ -18,6 +18,7 @@ Découvrez comment la NetApp Console utilise les informations d’identification
 
 
 
+[[project-and-permissions-for-netapp-console]]
 == Projet et autorisations pour la NetApp Console
 
 Avant de pouvoir utiliser la console pour gérer les ressources de votre projet Google Cloud, vous devez d’abord déployer un agent de console.  L'agent ne peut pas être exécuté dans vos locaux ou chez un autre fournisseur de cloud.
@@ -41,6 +42,7 @@ Pour savoir comment configurer les autorisations, reportez-vous aux pages suivan
 
 
 
+[[credentials-and-marketplace-subscriptions]]
 == Informations d'identification et abonnements à la place de marché
 
 Lorsque vous déployez un agent de console dans Google Cloud, la console crée un ensemble d'informations d'identification par défaut pour le compte de service Google Cloud dans le projet dans lequel réside l'agent de console.  Ces informations d'identification doivent être associées à un abonnement Google Cloud Marketplace afin que vous puissiez payer les services de données Cloud Volumes ONTAP et NetApp .
@@ -56,6 +58,7 @@ Notez les points suivants concernant les informations d’identification Google 
 
 
 
+[[project-for-cloud-volumes-ontap]]
 == Projet pour Cloud Volumes ONTAP
 
 Cloud Volumes ONTAP peut résider dans le même projet que l'agent de la console ou dans un projet différent.  Pour déployer Cloud Volumes ONTAP dans un autre projet, vous devez d’abord ajouter le compte de service et le rôle de l’agent de console à ce projet.

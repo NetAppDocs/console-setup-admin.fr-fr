@@ -25,6 +25,7 @@ Le déploiement d'un agent dans AWS lance une instance EC2 exécutant Linux et l
 
 
 
+[[step-1-set-up-networking]]
 == Étape 1 : Configurer le réseau
 
 Assurez-vous que l’emplacement réseau de l’agent de console répond aux exigences suivantes pour gérer les ressources de cloud hybride.
@@ -145,6 +146,7 @@ Implémentez cet accès réseau après avoir créé l’agent de console.
 
 
 
+[[step-2-set-up-aws-permissions]]
 == Étape 2 : configurer les autorisations AWS
 
 Pour préparer un déploiement sur une place de marché, créez des stratégies IAM dans AWS et attachez-les à un rôle IAM.  Lorsque vous créez l'agent de console à partir d'AWS Marketplace, vous êtes invité à sélectionner ce rôle IAM.
@@ -176,6 +178,7 @@ Vous disposez désormais d’un rôle IAM que vous pouvez associer à l’instan
 
 
 
+[[step-3-review-instance-requirements]]
 == Étape 3 : Examiner les exigences de l'instance
 
 Lorsque vous créez l’agent de console, vous devez choisir un type d’instance EC2 qui répond aux exigences suivantes.
@@ -187,6 +190,7 @@ Type d'instance AWS EC2:: Un type d’instance qui répond aux exigences de CPU 
 
 
 
+[[step-4-create-the-console-agent]]
 == Étape 4 : Créer l’agent de console
 
 Créez l’agent de console directement à partir d’AWS Marketplace.

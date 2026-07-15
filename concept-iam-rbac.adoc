@@ -26,6 +26,7 @@ Vous pouvez attribuer aux utilisateurs plusieurs rôles pour un même périmètr
 
 
 
+[[types-of-console-organization-members]]
 == Types de membres de l'organisation Console
 
 Il existe trois types de membres dans une organisation NetApp Console :
@@ -39,6 +40,7 @@ link:task-iam-manage-members-permissions.html#add-members["Découvrez comment aj
 
 
 
+[[predefined-roles-in-netapp-console]]
 == Rôles prédéfinis dans la NetApp Console
 
 La NetApp Console inclut des rôles prédéfinis que vous pouvez attribuer aux membres de l'organisation. Chaque rôle comprend des autorisations qui spécifient les actions qu'un membre peut effectuer dans le cadre qui lui est assigné (organisation, dossier ou projet).
