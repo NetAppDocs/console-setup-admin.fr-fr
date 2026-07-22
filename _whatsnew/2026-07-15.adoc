@@ -16,6 +16,8 @@ Cette version de l'agent Console inclut des améliorations de sécurité et des 
 [[netapp-console-administration]]
 === Administration de la NetApp Console
 
+NetApp Console 4.9.0 administration inclut la nouvelle fonctionnalité suivante.
+
 .Prise en charge du contrôle d'accès basé sur les rôles pour Cloud Volumes ONTAP
 La console prend en charge le contrôle d'accès basé sur les rôles pour Cloud Volumes ONTAP.
 
