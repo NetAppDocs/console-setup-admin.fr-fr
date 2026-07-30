@@ -29,9 +29,6 @@ Administrateur d'organisation, administrateur de fédération, visualiseur de f�
 
 La fédération avec le site de support NetApp permet aux utilisateurs de se connecter à la console, à Active IQ Digital Advisor et à d'autres applications associées à l'aide des mêmes informations d'identification.
 
-
-NOTE: Si vous vous fédérez avec le site de support NetApp , vous ne pouvez pas également vous fédérer avec votre fournisseur de gestion des identités d'entreprise.  Choisissez celui qui convient le mieux à votre organisation.
-
 .Étapes
 . Téléchargez et complétez le https://kb.netapp.com/@api/deki/files/98382/NetApp-B2C-Federation-Request-Form-April-2022.docx?revision=1["Formulaire de demande de fédération NetApp"^] .
 . Soumettez le formulaire à l'adresse e-mail indiquée dans le formulaire.
