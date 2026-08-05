@@ -124,6 +124,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
         "iam:DeleteInstanceProfile",
         "iam:GetRolePolicy",
         "iam:GetRole",
+        "iam:TagRole",
         "sts:DecodeAuthorizationMessage",
         "sts:AssumeRole",
         "s3:GetBucketTagging",
@@ -362,6 +363,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
         "iam:CreateRole",
         "iam:DeleteRole",
         "iam:PutRolePolicy",
+        "iam:TagRole",
         "iam:CreateInstanceProfile",
         "iam:DeleteRolePolicy",
         "iam:AddRoleToInstanceProfile",
@@ -558,6 +560,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
         "iam:CreateRole",
         "iam:DeleteRole",
         "iam:PutRolePolicy",
+        "iam:TagRole",
         "iam:CreateInstanceProfile",
         "iam:DeleteRolePolicy",
         "iam:AddRoleToInstanceProfile",
@@ -678,6 +681,7 @@ Pour les régions standard, les autorisations sont réparties sur deux politique
         "iam:CreateRole",
         "iam:DeleteRole",
         "iam:PutRolePolicy",
+        "iam:TagRole",
         "iam:CreateInstanceProfile",
         "iam:DeleteRolePolicy",
         "iam:AddRoleToInstanceProfile",
@@ -955,7 +959,7 @@ L'agent effectue les requêtes API suivantes pour déployer et gérer Cloud Volu
 | But | Action | Utilisé pour le déploiement ? | Utilisé pour les opérations quotidiennes ? | Utilisé pour la suppression ? 
 
 
-.13+| Créer et gérer des rôles IAM et des profils d'instance pour les instances Cloud Volumes ONTAP | iam:ListInstanceProfiles | Oui | Oui | Non 
+.14+| Créer et gérer des rôles IAM et des profils d'instance pour les instances Cloud Volumes ONTAP | iam:ListInstanceProfiles | Oui | Oui | Non 
 
 
 | je suis:Créer un rôle | Oui | Non | Non 
@@ -965,6 +969,9 @@ L'agent effectue les requêtes API suivantes pour déployer et gérer Cloud Volu
 
 
 | je suis:PutRolePolicy | Oui | Non | Non 
+
+
+| iam:TagRole | Oui | Non | Non 
 
 
 | iam:Créer un profil d'instance | Oui | Non | Non 
