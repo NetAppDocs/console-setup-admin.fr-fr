@@ -1044,7 +1044,6 @@
   <block id="f4426e4062930abb33465fb5b79b35dc" category="inline-link-macro">Configurer les autorisations pour un déploiement Azure Marketplace</block>
   <block id="98faa0bd253708350eda28057b888356" category="list-text"><block ref="98faa0bd253708350eda28057b888356" category="inline-link-macro-rx"></block></block>
   <block id="480c97395bf73b1326ca0221bb84f0ab" category="summary">Découvrez comment la NetApp Console utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d'identification d'un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.</block>
-  <block id="1fd4a2295cad602ba9d73683db88e799" category="doc">En savoir plus sur les projets et les autorisations Google Cloud</block>
   <block id="7c592b218a390e7d1c8bdbae8fbc794a" category="section-title">Projet et autorisations pour la NetApp Console</block>
   <block id="077f81b3516261855bf075d3615cf476" category="paragraph">Avant de pouvoir utiliser la console pour gérer les ressources de votre projet Google Cloud, vous devez d’abord déployer un agent de console.  L'agent ne peut pas être exécuté dans vos locaux ou chez un autre fournisseur de cloud.</block>
   <block id="376a095d3a95abfb749fc8cc50f95d32" category="paragraph">Deux ensembles d’autorisations doivent être en place avant de déployer un agent de console directement à partir de la console :</block>
@@ -1084,7 +1083,6 @@
   <block id="1668ca1bd914c1d847f23b491319ac91" category="list-text">Microsoft Azure</block>
   <block id="09e422c729719f602773531e14c7fdcb" category="inline-link-macro">En savoir plus sur les modes de déploiement de la NetApp Console</block>
   <block id="84d8c031ecac07457c33d38260f22d91" category="summary">La fédération d’identité permet l’authentification unique avec la NetApp Console afin que les utilisateurs puissent se connecter à l’aide des informations d’identification de votre identité d’entreprise.  Pour commencer, passez en revue le processus de configuration.</block>
-  <block id="85e8937e28c11ae3f77c65c98e77836f" category="doc">Activer l'authentification unique en utilisant la fédération d'identité avec la NetApp Console</block>
   <block id="3799cba2b024e60d963d2e86eaf51655" category="paragraph">L'authentification unique (fédération) simplifie le processus de connexion et améliore la sécurité en permettant aux utilisateurs de se connecter à la NetApp Console à l'aide de leurs informations d'identification d'entreprise.  Vous pouvez activer l'authentification unique (SSO) avec votre fournisseur d'identité (IdP) ou avec le site de support NetApp .</block>
   <block id="c4173993f088503294e79bbbe0bb63d6" category="paragraph-title">Rôle requis</block>
   <block id="4610064cac3ad84114cc400649031071" category="paragraph">Administrateur d'organisation, administrateur de fédération, visualiseur de fédération.<block ref="8f129ac67aaaf533c741c49d131f7a5d" category="inline-link-macro-rx"></block></block>
@@ -1133,7 +1131,6 @@
   <block id="a97fa38afe9727184ada1ed0c4bf8cbf" category="list-text"><block ref="a97fa38afe9727184ada1ed0c4bf8cbf" category="inline-link-macro-rx"></block></block>
   <block id="d0be151a63fab72d6333774c4ad643bb" category="inline-link">En savoir plus sur l'API pour NetApp Console IAM</block>
   <block id="d7726716920c51dac9e8d3b944fb1d9c" category="list-text"><block ref="d7726716920c51dac9e8d3b944fb1d9c" category="inline-link-rx"></block></block>
-  <block id="2dd5916ed68f963e9c5529d69a4de5fa" category="inline-link-macro">Créer un agent de console à partir de la place de marché Azure</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="section-title">Aperçu</block>
   <block id="579f2ccfa8f6ecb1be46c191e6f51980" category="paragraph">Chaque mode de déploiement diffère en termes de connectivité sortante, d’emplacement, d’installation, d’authentification, de services de données et de méthodes de facturation.</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">Oui</block>
@@ -1324,8 +1321,6 @@
   <block id="0f50cd1079cb24de2b4571c09546a2e1" category="list-text">Configurer un hôte RHEL 8 ou 9.</block>
   <block id="8c9215e1b963f63a463d468347c9cc12" category="list-text">Installer un _nouvel_ agent.</block>
   <block id="b8bb8aa40b62692dd726a6effbbb7c2a" category="list-text">Configurez l'agent pour découvrir les systèmes que l'agent précédent gérait.</block>
-  <block id="49b6ed50435718c0a1e9c1c394702ab8" category="inline-link">Installer manuellement l'agent de console dans Azure</block>
-  <block id="6df5369b59a40f64ce1869a0d4d405ea" category="inline-link">Préparez-vous au déploiement en mode restreint</block>
   <block id="cdb83aacf48e960662fcf2d6745e5b60" category="paragraph">Reportez-vous aux pages suivantes pour redécouvrir vos systèmes après avoir déployé un nouvel agent de console.</block>
   <block id="6c0fb6078ec778ca2319e375a19e994b" category="inline-link">Ajouter des systèmes Cloud Volumes ONTAP existants</block>
   <block id="2015c83409a6e7dfc23533375c5ae10e" category="list-text"><block ref="2015c83409a6e7dfc23533375c5ae10e" category="inline-link-rx"></block></block>
@@ -2749,7 +2744,6 @@
   <block id="bef219d35a4468480b0ce759221cdceb" category="inline-link">Documentation sur la NetApp Backup and Recovery</block>
   <block id="bfb708a7900e1a2a8e29ed4f45dba55a" category="list-text">Sélectionnez *Afficher* pour accéder au tableau de bord de NetApp Backup and Recovery . Pour plus de détails, reportez-vous à<block ref="301caaf79db1fedee96dc10f2b708970" category="inline-link-rx"></block> .</block>
   <block id="ef115e8ed0d2118ec4e8fc147ad0a789" category="summary">Fédérez-vous avec vos services de fédération Active Directory (AD FS) pour activer l'authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter en utilisant leurs identifiants d’entreprise.</block>
-  <block id="03ce0a75253f028c7b59d2e045c61730" category="doc">Fédérer la NetApp Console avec les services de fédération Active Directory (AD FS)</block>
   <block id="df279c297fab55d5f1c2bb16edd8b9c8" category="paragraph">Fédérez vos services de fédération Active Directory (AD FS) avec la NetApp Console pour activer l'authentification unique (SSO) pour la NetApp Console.  Cela permet aux utilisateurs de se connecter à la console en utilisant leurs identifiants d’entreprise.</block>
   <block id="7697b2ab15ca139caf17dcfd778734aa" category="admonition">Vous pouvez vous fédérer avec votre IdP d'entreprise ou avec le site de support NetApp .  NetApp recommande de choisir l’un ou l’autre, mais pas les deux.</block>
   <block id="0ceb64d3b73da84590b905906ce76e4b" category="paragraph">NetApp prend uniquement en charge l'authentification unique initiée par le fournisseur de services (SP).  Tout d’abord, configurez le fournisseur d’identité pour qu’il approuve la NetApp Console en tant que fournisseur de services.  Ensuite, créez une connexion dans la console en utilisant la configuration de votre fournisseur d’identité.</block>
@@ -2844,7 +2838,6 @@
   <block id="000363e005ffe3ed85bd5a9afcd86fe5" category="list-text">Saisissez l'*URL de connexion* de votre serveur SAML.</block>
   <block id="0b1478ffaa7b17ef2974ea6fa7e943fc" category="list-text">Téléchargez le certificat X.509 que vous avez téléchargé depuis le serveur de votre fournisseur SAML.</block>
   <block id="4c45e77f7b0ce71e19ecb19d6d1452ef" category="list-text">Si vous le souhaitez, saisissez l'*URL de déconnexion* de votre serveur SAML.</block>
-  <block id="33c125c7f86d4e57eda2158c5fc47107" category="doc">Vérifiez le domaine de messagerie pour votre connexion fédérée</block>
   <block id="601af67b0c46251e3baef68bebb8dac6" category="paragraph">La vérification de votre domaine implique l'ajout d'un enregistrement TXT aux paramètres DNS de votre domaine.  Cet enregistrement est utilisé pour prouver que vous êtes propriétaire du domaine et permet à la NetApp Console d'approuver le domaine pour la fédération.  Vous devrez peut-être vous coordonner avec votre administrateur informatique ou réseau pour terminer cette étape.</block>
   <block id="8765b22079c54d8e9c1fc15493061acf" category="list-text">Sélectionnez *Vérifier la propriété du domaine*.</block>
   <block id="c25e56883d4bdfca8faf4c90b860e03c" category="list-text">Saisissez le domaine que vous souhaitez vérifier et sélectionnez *Continuer*.</block>
@@ -3104,7 +3097,6 @@
   <block id="c306ee8c9a73ec380cad93ec32b64af3" category="inline-link-macro">En savoir plus sur la gestion des identités et des accès</block>
   <block id="374de56592e527dd57d0a643704cfd56" category="list-text"><block ref="374de56592e527dd57d0a643704cfd56" category="inline-link-macro-rx"></block></block>
   <block id="f5c5f2c4e09a3be34c769b9a476a5774" category="summary">Vous pouvez appartenir à plusieurs organisations de console ou disposer d'autorisations pour accéder à plusieurs projets ou agents au sein d'une organisation.  En cas de besoin, vous pouvez facilement basculer entre les organisations, les projets et les agents de console pour accéder aux ressources associées à cette organisation, ce projet ou cet agent.</block>
-  <block id="563e9d605dde4e125a815a2688ed1349" category="doc">Basculer entre les organisations, les projets et les agents de la console</block>
   <block id="99b40e7c0a7b505819ce6f7bdb86dc3a" category="inline-link">Apprenez à créer une nouvelle organisation</block>
   <block id="4e24f9490df0b4af6b4e7bceaa6097a1" category="admonition">Vous pouvez appartenir à plusieurs organisations si une autre organisation vous invite à la rejoindre ou si vous en créez une vous-même.  Vous pouvez créer une organisation supplémentaire en utilisant l'API.<block ref="54dc9fecd403ebe4164f0404ec85af49" category="inline-link-rx"></block></block>
   <block id="f2fd478a05acdd29af1bbc7530937c70" category="section-title">Basculer entre les organisations</block>
@@ -3493,7 +3485,6 @@
   <block id="945a1013347d84bac0a2f13069240dcf" category="section-title">Fournir les informations d'identification du fournisseur de cloud à la NetApp Console</block>
   <block id="6f7b4a56a4b8f79564d165736a5096b0" category="paragraph">L’agent de la console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.  Vous pouvez désormais accéder à la<block ref="9fa63571706fcef6edc9d423212e6d10" category="inline-link-rx"></block> pour commencer à utiliser l'agent de console.</block>
   <block id="c04c3f6d982e47513e123d1910d6ae44" category="summary">Déployez l’agent de console en mode restreint afin de pouvoir utiliser la NetApp Console avec une connectivité sortante limitée.  Pour commencer, installez l’agent de console, configurez la console en accédant à l’interface utilisateur qui s’exécute sur l’agent de console, puis fournissez les autorisations cloud que vous avez précédemment configurées.</block>
-  <block id="303476906522e5d486b216ab83eaeedd" category="doc">Déployer l'agent de console en mode restreint</block>
   <block id="de90cba5dde27120301771defb68e4cf" category="section-title">Étape 1 : Installer l'agent de console</block>
   <block id="b0c7ebf873e1c5dbc2ac5f8581849a8f" category="paragraph">Installez l'agent de console à partir de la place de marché de votre fournisseur de cloud ou manuellement sur un hôte Linux.</block>
   <block id="5cadd29a69b0be5bc8b482cfc2e89adb" category="open-title">Place de marché commerciale AWS</block>
@@ -3558,7 +3549,6 @@
   <block id="201a0e8a9a7e1b007b99b4e4c24c017d" category="open-title">Principal de service Azure</block>
   <block id="3612e0e7a44ec38da1e226c618526f91" category="open-title">Compte de service Google Cloud</block>
   <block id="a87080733aad453c529e801cc597efff" category="summary">Installez un certificat signé par une autorité de certification pour l’accès utilisateur à la console Web lors de l’utilisation de la NetApp Console en mode restreint.</block>
-  <block id="76b215b1722d5e63e6379d518b352edf" category="doc">Installer un certificat signé par une autorité de certification pour l'accès à la console Web</block>
   <block id="556126dcddabe484c3c96e299b816797" category="paragraph">Si votre entreprise l’exige, vous pouvez installer un certificat signé par une autorité de certification (CA), qui offre une meilleure protection de sécurité qu’un certificat auto-signé.  Une fois le certificat installé, la console utilise le certificat signé par une autorité de certification lorsque les utilisateurs accèdent à la console Web.</block>
   <block id="c49ff7d7009f9d4727b2b25afa496418" category="section-title">Installer un certificat HTTPS</block>
   <block id="9bcd9cfa6027fc6f3b81733b086a6895" category="paragraph">Installez un certificat signé par une autorité de certification pour un accès sécurisé à la console Web exécutée sur l'agent de console.</block>
@@ -3743,7 +3733,6 @@
   <block id="5e56842d0cfbf695522e945a01570eba" category="paragraph"><block ref="5e56842d0cfbf695522e945a01570eba" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b927ec68e94ddd9ff004ca54d69e94fa" category="list-text">Saisissez le nom, l'adresse e-mail et sélectionnez les types de notifications que le destinataire recevra, puis sélectionnez *Ajouter un nouveau destinataire*.</block>
   <block id="b9344ef100a1e97ec28eecfcb56cd218" category="summary">Les administrateurs peuvent configurer la NetApp Console pour demander à un utilisateur ses informations d’identification ONTAP .</block>
-  <block id="29f68982771966bddc72b7dbd3b2f3d3" category="doc">Appliquer les autorisations ONTAP pour ONTAP Advanced View (ONTAP System Manager)</block>
   <block id="e307b6972a9cf99c3bba532457962378" category="paragraph">Par défaut, les informations d'identification de l'agent de console permettent aux utilisateurs d'accéder à la vue avancée (ONTAP System Manager).  Vous pouvez demander aux utilisateurs leurs informations d’identification ONTAP à la place.  Cela garantit que les autorisations ONTAP d'un utilisateur sont appliquées lorsqu'il travaille avec des clusters ONTAP dans les clusters Cloud Volumes ONTAP et ONTAP sur site.</block>
   <block id="b54cdbc045124058723635c19f005757" category="admonition">Vous devez disposer du rôle d’administrateur d’organisation pour modifier les paramètres de l’agent de la console.</block>
   <block id="79200641e6b3df738c3bda6a52fd51c1" category="list-text">Développez l’option *Forcer les informations d’identification*.</block>
@@ -3789,7 +3778,6 @@
   <block id="99c3e344f722dbf678cb3601f36deb14" category="paragraph">Administrateur de partenariat<block ref="8f129ac67aaaf533c741c49d131f7a5d" category="inline-link-macro-rx"></block></block>
   <block id="c4949ad54642393ff8344ba3f6da6464" category="list-text">Accédez au partenariat initié que vous souhaitez désactiver et sélectionnez<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> puis sélectionnez *Désactiver*.</block>
   <block id="3348041ee2a90208493612a853334377" category="summary">Vous pouvez accorder l'accès aux utilisateurs du partenariat en leur attribuant des rôles spécifiques pour les dossiers et les projets au sein de votre organisation.</block>
-  <block id="68c15daf4d80dc90b1515f522d8636c3" category="doc">Fournir un accès aux ressources aux utilisateurs du partenariat</block>
   <block id="2cd5a9993ca615ce23cf513d45b15404" category="inline-link-macro">Découvrez comment ajouter des membres à un partenariat.</block>
   <block id="4e6fd6febc63e73f33b1e12bb15eab7a" category="paragraph">Une organisation partenaire doit d’abord ajouter des membres au partenariat avant que vous puissiez leur attribuer des rôles pour les ressources de votre organisation.<block ref="af42bf104f841b0c4c7b71f12b6693d9" category="inline-link-macro-rx"></block></block>
   <block id="575c38cd2c5990295bb75895f260de3b" category="section-title">Comprendre les rôles des utilisateurs du partenariat</block>
@@ -3811,7 +3799,6 @@
   <block id="cc6d53ade5033c714686efe2af67ddb4" category="section-title">Modifier ou supprimer un rôle d'un utilisateur partenaire</block>
   <block id="ccfd182116bd6f5ace157605044761a6" category="paragraph">Vous pouvez modifier ou supprimer un rôle que vous avez attribué à un membre d’une organisation partenaire.</block>
   <block id="2f8da3599342d03781c72c8335767fac" category="summary">Une fois qu'un rôle vous a été attribué dans une organisation partenaire, vous pouvez basculer vers cette organisation et effectuer les actions pour lesquelles vous êtes autorisé à effectuer.</block>
-  <block id="9ea5245dac08790e720ee1ae8af1a1d0" category="doc">Travailler dans une organisation partenaire</block>
   <block id="edb0cfdfffd82f86f6584b60a8fd064b" category="inline-link-macro">Apprenez-en davantage sur le changement d’organisation et de projet.</block>
   <block id="675b0f70d6df5486c85561212eda9044" category="paragraph">Utilisez le menu Organisation pour basculer entre vos organisations et toutes les organisations partenaires auxquelles vous avez accès.<block ref="21d2fc8d574c57ca1518f48a1f4e15fc" category="inline-link-macro-rx"></block></block>
   <block id="05b4cd19be99dcfde493798bb42dc7a5" category="paragraph">Vous pourrez voir les ressources qui ont été partagées avec vous dans l'organisation partenaire et effectuer des actions en fonction du rôle qui vous a été attribué.  Travaillez avec votre administrateur de partenariat pour vous assurer que vous disposez du rôle approprié pour les ressources auxquelles vous devez accéder.</block>
@@ -3941,7 +3928,6 @@
   <block id="422588021a93cfdaa26ce8d7d46dfeda" category="list-text">Consultez votre boîte de réception pour obtenir un e-mail de NetApp contenant des instructions pour vérifier votre adresse e-mail.</block>
   <block id="16a6acfaa9478d613f4568fcc7f798b9" category="list-text">Sélectionnez *Commençons*.</block>
   <block id="003a29a0c94cdfca33812dab6ad6ae71" category="summary">Abonnez-vous aux NetApp Intelligent Services depuis la place de marché de votre fournisseur de cloud pour payer les services de données NetApp à un tarif horaire ou via un contrat annuel.  Si vous avez acheté une licence auprès de NetApp, vous devez également vous abonner à l’offre de la place de marché.  Votre licence est toujours facturée en premier, mais vous serez facturé au tarif horaire si vous dépassez votre capacité autorisée ou si la durée de la licence expire.</block>
-  <block id="9c127a433a6192892f397a5a7e6dcb5a" category="doc">S'abonner aux NetApp Intelligent Services (mode restreint)</block>
   <block id="01d7bfce3883bfe219db559f4111d0eb" category="paragraph">Un abonnement marketplace permet de facturer les services de données suivants avec un mode restreint :</block>
   <block id="53408e4899de894c1e6bc5c8f7add2d4" category="paragraph">La NetApp Data Classification est activée via votre abonnement, mais l'utilisation de la classification est gratuite.</block>
   <block id="53043f0a6d597ccfe179296cc8ded9c0" category="inline-link">Gérer les licences basées sur la capacité BYOL pour Cloud Volumes ONTAP</block>
@@ -3955,7 +3941,6 @@
   <block id="27194bd802f46de78e530dc59824e89c" category="inline-link">Gérer les informations d'identification et les abonnements Google Cloud</block>
   <block id="75972953c10b83c7556004bbdcab6786" category="list-text"><block ref="75972953c10b83c7556004bbdcab6786" category="inline-link-rx"></block></block>
   <block id="b037533a0c1bd52a8d9de28034d4b20d" category="summary">Abonnez-vous aux services de données NetApp depuis la place de marché de votre fournisseur de cloud pour payer les services de données à un tarif horaire ou via un contrat annuel.  Si vous avez acheté une licence auprès de NetApp, vous devez également vous abonner à l’offre de la place de marché.  Votre licence est toujours facturée en premier, mais vous serez facturé au tarif horaire si vous dépassez votre capacité autorisée ou si la durée de la licence expire.</block>
-  <block id="8e43404d530acd19487776c0f28649ea" category="doc">S'abonner aux NetApp Intelligent Services (mode standard)</block>
   <block id="42dacd60cd3485508aefb9e0fa6699f9" category="paragraph">Un abonnement au marketplace permet de facturer les services de données NetApp suivants :</block>
   <block id="6269943bbab503c57445a47b04897eaa" category="summary">Avant de pouvoir ouvrir un dossier d'assistance auprès du support technique NetApp , vous devez ajouter un compte de site de support NetApp à la NetApp Console , puis vous inscrire au support.</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">Inscrivez-vous pour obtenir de l'aide</block>
@@ -4078,7 +4063,6 @@
   <block id="784d74ec26e151955a4c9657042f8469" category="section-title">Obtenez de l'aide auprès de la base de connaissances NetApp</block>
   <block id="d22ff119563c0ee5fe8dab4228074cee" category="inline-link">Consultez les informations de dépannage créées par l'équipe de support NetApp</block>
   <block id="50442864bbf7126b7b62b75cde676ded" category="paragraph"><block ref="bb2a765d0923866ecd647a5c8b0cc5e9" category="inline-link-rx"></block> .</block>
-  <block id="afb829361695f0d21025a9396659859f" category="doc">Désinstaller et supprimer un agent de console</block>
   <block id="bfc66ba3b81dc2d9cc21215e84660492" category="paragraph">Si vous utilisez le mode standard ou le mode restreint (en d'autres termes, l'hôte de l'agent dispose d'une connectivité sortante), vous devez suivre les étapes ci-dessous pour désinstaller l'agent.</block>
   <block id="0f698c82e2e9c5cd1c4ae5eca5c6d189" category="list-text">Connectez-vous à la machine virtuelle Linux pour l’agent.</block>
   <block id="6a5be3e06b444aea04beccda3bc9e1d6" category="list-text">Depuis l’hôte Linux, exécutez le script de désinstallation :</block>
@@ -4129,7 +4113,6 @@
   <block id="16068479a2701e2f4cc03e6c5d4a2304" category="section-title">Configurer le mode sombre (thème sombre)</block>
   <block id="028c8274cfa01e62e5591b427f85e126" category="paragraph">Vous pouvez configurer la console pour qu'elle s'affiche en mode sombre.</block>
   <block id="a99608db4d85374403174f1119cac088" category="list-text">Déplacez le curseur *Thème sombre* pour l'activer.</block>
-  <block id="490414e0366b091220802d406e52c076" category="doc">Quoi de neuf</block>
   <block id="3243765239f2c6f00af00297914a69d4" category="paragraph">Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Console : gestion des identités et des accès (IAM), agents de console, informations d'identification du fournisseur de cloud, etc.</block>
   <block id="b9d888f58b09c4007db0247286e392b5" category="section-title">11 août 2025</block>
   <block id="328e39c031d3f6a77403904d6dda2377" category="section-title">31 juillet 2025</block>
@@ -4858,7 +4841,6 @@
   <block id="c3705e839d1a8df80ae158824bd08448" category="cell">Indicateurs du tableau de bord de la page d'accueil</block>
   <block id="3863a60fc30916ec3597541037025585" category="cell">*Services de données disponibles* :</block>
   <block id="9ea7157b38fa199a8532fa65cd92d096" category="summary">Gérez l'accès des utilisateurs à la NetApp Console grâce au contrôle d'accès basé sur les rôles (RBAC), en attribuant des rôles prédéfinis au niveau de l'organisation, du dossier ou du projet. Chaque rôle octroie des autorisations spécifiques qui définissent les actions que les utilisateurs peuvent effectuer dans le cadre de leur rôle.</block>
-  <block id="6369e7866450cfbd1595f3b5f17a45ce" category="doc">Découvrez le contrôle d'accès basé sur les rôles (RBAC) de NetApp Console</block>
   <block id="17b936d2e4829a5cf778b2c29100bb7a" category="paragraph">Par exemple, vous pouvez attribuer à un membre le rôle d'administrateur de résilience aux ransomwares pour un niveau de projet spécifique, lui permettant d'effectuer des opérations de résilience aux ransomwares pour les ressources de ce projet, sans lui accorder un accès plus large à l'ensemble de l'organisation. Ce même utilisateur peut se voir attribuer ce rôle pour plusieurs projets au sein de votre organisation.</block>
   <block id="9b372111c3284b1c413c38133ce241b7" category="paragraph">Vous pouvez attribuer aux utilisateurs plusieurs rôles pour un même périmètre ou pour des périmètres différents, en fonction de leurs responsabilités. Par exemple, une petite organisation pourrait confier la gestion de la résilience aux ransomwares et des tâches de sauvegarde et de restauration à un même utilisateur au niveau de l'organisation, tandis qu'une plus grande organisation pourrait affecter des utilisateurs différents à chaque rôle au niveau du projet.</block>
   <block id="0455998a9b4d48dfc90712f125c02594" category="section-title">Types de membres de l'organisation Console</block>
@@ -5057,7 +5039,6 @@
   <block id="46bc8a32811e038789b16b3be4c304b0" category="list-text">Les utilisateurs fédérés perdent automatiquement l'accès à la NetApp Console lorsqu'ils sont supprimés de votre fournisseur d'identité. Mais vous devriez tout de même les supprimer de votre organisation Console pour que votre liste de membres reste à jour.</block>
   <block id="2a331f65a945f71cf576d7408c911549" category="list-text">Si vous supprimez un utilisateur d'un groupe fédéré dans votre fournisseur d'identité, il perd l'accès à la console associé à ce groupe. Ils conservent toutefois tous les accès associés à un rôle explicite qui leur est attribué dans la console.</block>
   <block id="741fa1d97e274d87522c5274731ddbd6" category="paragraph">L'onglet *Partenariat* ne s'affiche pas si vous n'avez aucune organisation partenaire.</block>
-  <block id="a6e7e6949d9cfe21acbeb52c1329d758" category="doc">Sécurité des utilisateurs</block>
   <block id="1ec1065d3e78d7c206f0ecaef991aaf0" category="paragraph">Sécurisez l'accès des utilisateurs à votre organisation NetApp Console en gérant les paramètres de sécurité des membres. Vous pouvez réinitialiser les mots de passe des utilisateurs, gérer l'authentification multifacteurs (MFA) et recréer les informations d'identification des comptes de service.</block>
   <block id="fea697c6ae1d0da74f0ba44be3fc0d3f" category="section-title">Réinitialiser les mots de passe des utilisateurs (utilisateurs locaux uniquement)</block>
   <block id="3330914a79300c6835bbe3bc86cf9c45" category="paragraph">Les administrateurs de l'organisation ne peuvent pas réinitialiser les mots de passe des utilisateurs locaux. Ils peuvent toutefois demander aux utilisateurs de réinitialiser eux-mêmes leurs mots de passe.</block>
@@ -5400,7 +5381,6 @@
   <block id="b04b058acf83e4616c9312ab2b951050" category="paragraph">Notez que certains services peuvent être pris en charge avec des limitations. Pour plus de détails sur la façon dont ces services sont pris en charge en mode restreint et en mode privé, reportez-vous aux sections ci-dessus.</block>
   <block id="68a27766c88e7a46b8cf75f317897c53" category="cell">Indicateurs du tableau de bord pour les services de stockage et de données</block>
   <block id="caa439279d19ace285e22f87f479e876" category="summary">La NetApp Console vous aide à gérer et à protéger vos données sur l'ensemble de vos systèmes cloud et sur site. Elle comprend des outils permettant de garantir la sécurité et le bon fonctionnement de vos données.</block>
-  <block id="166d58641d71e8f7701618924f6e0230" category="doc">NetApp Console pour la gestion unifiée du stockage</block>
   <block id="aa14ca2be3c293532f200bf7d16ab2fa" category="paragraph">Utilisez la Console comme une application software-as-a-service (SaaS) ou installez-la dans votre environnement cloud ou sur site (mode restreint ou privé). Chaque mode prend en charge différents ensembles de fonctionnalités et exigences de sécurité.</block>
   <block id="45449898e6eb917b44e1e32f0b89ba76" category="paragraph">La NetApp Console fonctionne avec des agents NetApp Console que vous déployez dans votre environnement pour gérer les ressources et orchestrer les processus dans vos environnements sur site et cloud.</block>
   <block id="272b65faa175970c4d03415b57d4f80f" category="section-title">Choisissez comment accéder à la NetApp Console</block>
@@ -5460,7 +5440,6 @@
   <block id="2b4ee5a3ed1d0d51275a5e7bbd3c9ecf" category="paragraph">Configurez un rôle IAM qui permet à l'application NetApp Console en tant que logiciel en tant que service (SaaS) d'assumer le rôle.</block>
   <block id="3a18e641c4904b34adaf167885cce158" category="admonition">Le mode lecture seule n'est pas disponible lorsque NetApp Console est en mode privé. <block ref="dfc550bfde7e455e24c09c75b6f9a3cd" category="inline-link-macro-rx"></block>.</block>
   <block id="e6de9ba283a3b88438bc9364ca14a865" category="summary">Déployez la NetApp Console en mode privé pour pouvoir l'utiliser sans connexion sortante. Pour commencer, installez un agent Console, configurez la NetApp Console en accédant à l'interface utilisateur qui s'exécute sur l'agent Console, puis fournissez les autorisations cloud que vous avez préalablement définies.</block>
-  <block id="ed49d41012410c35755a665e704c51a3" category="doc">Déployez l'agent Console en mode privé</block>
   <block id="b3d73a3e909120ba0dfb51cbe2327967" category="paragraph">Téléchargez le programme d'installation du produit depuis le site d'assistance NetApp puis installez manuellement la Console sur votre propre hôte Linux.</block>
   <block id="c73db6dd4dc3a461773070693cc406c6" category="paragraph">Pour utiliser la NetApp Console dans l'<block ref="da2732e6e9a1be4ab82a1194533aac59" category="inline-link-rx"></block> ou l'<block ref="6f5217ea8a3f93cd9532863eb844647b" category="inline-link-rx"></block>, vous devez suivre des instructions distinctes pour démarrer dans ces environnements.<block ref="7305ccb1d247c4e62b18170abee468ff" category="inline-link-rx"></block></block>
   <block id="1c88387d9be2a13f9b45fd276e63cf80" category="list-text">Les privilèges root sont requis pour installer l'agent Console.</block>
@@ -5490,7 +5469,6 @@
   <block id="ab4fc3f68e8f23b6d532eb446e1e0a46" category="list-text">Selon la méthode d'authentification associée à votre connexion, vous serez invité à saisir vos identifiants.</block>
   <block id="3bcc313e589d80f58afe7da826230bf9" category="list-text">Une connexion fédérée si votre administrateur a configuré la fédération d'identité pour votre organisation</block>
   <block id="b4256d874b9eb9321ae2b4a02d8b30c0" category="summary">Préparez votre environnement avant de déployer NetApp Console en mode privé. Vous devez vérifier la configuration requise pour l’hôte, préparer le réseau, définir les autorisations, et plus encore.</block>
-  <block id="5f1067df496bfafd5eb793369b955e41" category="doc">Préparez-vous au déploiement en mode privé</block>
   <block id="984490bee63453d441c7b37cdc6c3db7" category="admonition">Pour utiliser NetApp Console dans le<block ref="da2732e6e9a1be4ab82a1194533aac59" category="inline-link-rx"></block> ou le<block ref="6f5217ea8a3f93cd9532863eb844647b" category="inline-link-rx"></block>, suivez les instructions spécifiques à ces environnements.<block ref="4d25824b3e9e7473eac5e4c3e5c39cc3" category="inline-link-rx"></block></block>
   <block id="7670b3e7fd0d9b5404a8ab86daf87444" category="section-title">Étape 1 : Comprendre le fonctionnement du mode privé</block>
   <block id="0c154543ae4407489c65103d2af0bf29" category="paragraph">En mode privé, vous installez un agent Console sur site ou dans le cloud, puis vous utilisez NetApp Console pour gérer vos systèmes de stockage (ONTAP sur site et Cloud Volumes ONTAP). Il n'y a aucune connexion aux points de terminaison de l'API NetApp Console ou à l'application SaaS NetApp Console, vous accédez donc à la Console depuis l'interface utilisateur locale fournie par l'agent Console.</block>
@@ -5520,7 +5498,6 @@
   <block id="fb743a256e003636e11c6a09e6f9f45c" category="paragraph">Vous devez activer plusieurs API pour déployer Cloud Volumes ONTAP dans Google Cloud.</block>
   <block id="c5b5e04334ad1c3a88fc36eb4c450924" category="paragraph">Utilisez l'interface basée sur un navigateur disponible localement à partir de l'agent NetApp Console installé. Vous ne pouvez pas accéder à la NetApp Console depuis la console web fournie par l'application SaaS.</block>
   <block id="482b4f20ae8169fa9067887ee7c6f373" category="summary">Le mode privé est généralement utilisé avec des environnements sur site sans connexion Internet et avec des régions cloud sécurisées, ce qui inclut AWS Secret Cloud, AWS Top Secret Cloud et Azure IL6.</block>
-  <block id="97159ba233bb02feaff6b3c2be05c879" category="doc">Flux de travail de démarrage pour NetApp Console en mode privé</block>
   <block id="86324dc19986cf024d27996fe0699e06" category="list-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="0be36da6d7a1ea4d94468b72475c7e35" category="inline-link-macro-rx"></block></block>
   <block id="8cb1247d6f1cd796c983b5b1cfbbd285" category="list-text">Configurez la mise en réseau qui permet d'accéder aux réseaux cibles.</block>
   <block id="8b08d043834b2ce6cdd1276030f09b82" category="list-text">Pour les déploiements dans le cloud, configurez les autorisations dans votre fournisseur de cloud afin de pouvoir associer ces autorisations à l'agent Console après avoir installé le logiciel.</block>
@@ -5528,8 +5505,6 @@
   <block id="43290dee15998094cd0591ca540849fc" category="list-text">Installez l'agent Console sur votre propre hôte Linux.</block>
   <block id="a5d18b4d32134c035ee19835845fb372" category="list-text">Configurez la NetApp Console en ouvrant un navigateur Web et en saisissant l'adresse IP de l'hôte Linux.</block>
   <block id="f5320dd227fd2915c76475559e91c231" category="list-text">Pour les déploiements dans le cloud, fournissez à la NetApp Console les autorisations que vous avez précédemment configurées.</block>
-  <block id="48c1fdc6148c4c5d5073b6e7a5d44800" category="doc">Démarrez le flux de travail pour NetApp Console en mode restreint</block>
-  <block id="91edb8869565e8b84d0bb89e65038d3a" category="doc">Processus de démarrage pour NetApp Console (application SaaS)</block>
   <block id="f98e75fe997bc0f9c22b78c53cbde10d" category="section-title">Désinstallez l'agent lorsqu'il dispose d'une connectivité sortante</block>
   <block id="8df5c96bcf4a5bf3cdde9f1422196766" category="section-title">Désinstallez l'agent lorsqu'il n'a aucune connectivité sortante</block>
   <block id="37ad32ae84be5d4772583f6e7502b281" category="paragraph">Si votre agent ne dispose d'aucune connectivité sortante (par exemple, en mode privé), vous devez supprimer manuellement le logiciel agent de l'hôte.</block>
@@ -5716,7 +5691,6 @@
   <block id="80f48611c1bef55d72d46a64fc380278" category="listing-title">Validation de la connectivité réseau et des exigences matérielles :</block>
   <block id="de69e8633d4ddcf1beb6e9af84080384" category="doc">Commandes de proxy transparentes pour l'agent Console dans NetApp Console</block>
   <block id="39442b581cc52635af9cf2e5d2fe3673" category="doc">Rôle d'accès analyste de support opérationnel dans la NetApp Console</block>
-  <block id="dce3cf2abadb3552176d2f6b8851afa8" category="doc">Accès réseau pour NetApp Console 3.9.55 et versions antérieures</block>
   <block id="242449bfa8c5aeec893a23b37cc87d38" category="doc">Accès réseau pour la NetApp Console</block>
   <block id="4d819fcab6255dc911eb706563c786c6" category="doc">Autorisations AWS pour l’agent NetApp Console</block>
   <block id="191d01a2e791f9226fdfc683126f30ab" category="doc">Autorisations Azure pour l’agent NetApp Console</block>
@@ -5739,9 +5713,7 @@
   <block id="5ac9b947c65653cf6d02fe3c59e7fa2f" category="summary">Vous pouvez déployer un agent Console sur AWS directement depuis la NetApp Console. Avant de déployer un agent Console sur AWS depuis la Console, vous devez configurer votre réseau et préparer les autorisations AWS.</block>
   <block id="dc06977a17baa1d2ac30423086ded05e" category="doc">Déployer un agent de Console dans AWS depuis NetApp Console</block>
   <block id="21bc24ad9112fe84642a352511c8c896" category="paragraph">Le déploiement d'un agent dans AWS lance une instance EC2 exécutant Linux et le logiciel agent Console dans un VPC de votre choix.</block>
-  <block id="13cc9918631bd12add35c3badfe98a74" category="doc">Déployez manuellement l'agent de Console dans AWS</block>
   <block id="3f0527499a34df287448340f6ef53274" category="paragraph">Vous pouvez déployer manuellement un agent Console sur un hôte Linux exécutant AWS. Pour déployer manuellement l'agent Console sur votre propre hôte Linux, vous devez vérifier la configuration requise de l'hôte, configurer votre réseau, préparer les autorisations AWS, déployer l'agent Console, puis fournir les autorisations que vous avez préparées.</block>
-  <block id="ae156547be858d5da6a6ad874dab7c9e" category="doc">Déployez un agent de Console depuis AWS Marketplace</block>
   <block id="1117dd42210c4bae3fbd14a0d5fbfb90" category="paragraph">Vous déployez un agent Console sur AWS directement depuis AWS Marketplace. Pour déployer un agent Console depuis AWS Marketplace, vous devez configurer votre réseau, préparer les autorisations AWS, vérifier les exigences de l'instance, puis déployer l'agent Console.</block>
   <block id="8803623e8c34d1e3b06ab16ac0799483" category="doc">Déployer un agent de console dans Azure depuis NetApp Console</block>
   <block id="34032c9a096e8efc23a3a259c8c09ac9" category="paragraph">Pour déployer un agent de Console dans Azure depuis la NetApp Console, vous devez configurer votre réseau, préparer les autorisations Azure, puis déployer l'agent de Console.</block>
@@ -5750,13 +5722,10 @@
   <block id="e9e3d2e696d0041aedbee33492e5bb65" category="doc">Déployez un agent de Console dans Google Cloud depuis NetApp Console</block>
   <block id="76755ec08e48ddd18aa09eb792dccf25" category="paragraph">Vous pouvez déployer un agent Console dans Google Cloud depuis la Console. Vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis déployer l'agent Console.</block>
   <block id="921f27265f15374a9fe7782b3f1e4497" category="paragraph">Le déploiement d'un agent dans Google Cloud lance une instance de machine virtuelle exécutant Linux et le logiciel agent Console dans un VPC de votre choix.</block>
-  <block id="1956f48ec510aa9e9aaa1693a61d862a" category="doc">Déployez un agent de Console depuis Google Cloud</block>
   <block id="269f4bb9794c23a34082aab4e7846b08" category="paragraph">Pour déployer un agent Console dans Google Cloud à l'aide de Google Cloud, vous devez configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, puis déployer l'agent Console.</block>
-  <block id="f03765e7c67cd3e0afdcbb02e2df97ae" category="doc">Déployez manuellement l'agent Console dans Google Cloud</block>
   <block id="4cf3aefb03cce74960230022eaa4e100" category="paragraph">Pour déployer manuellement l'agent Console sur votre propre hôte Linux, vous devez examiner les exigences de l'hôte, configurer votre réseau, préparer les autorisations Google Cloud, activer les API Google Cloud, installer la Console, puis fournir les autorisations que vous avez préparées.</block>
   <block id="c55edff269043bf525a954a4154ec0a3" category="list-text">Téléchargez le certificat auto-signé dans vos certificats de confiance si votre environnement l'exige. Vous remplacez ce certificat après l'installation.</block>
   <block id="e8e9fe3b3946d0efef2689d6b175ac89" category="summary">Déployez un agent Console sur site, puis connectez-vous et configurez-le pour qu'il fonctionne avec votre organisation Console.</block>
-  <block id="6bdefeb27ef2009862c6af73ba4aa4f9" category="doc">Maintenir la machine virtuelle pour un agent Console installé manuellement</block>
   <block id="9845a65d039380c03d0798dc8b86888f" category="paragraph">Lors de l'installation manuelle d'un agent Console, la maintenance du système d'exploitation sur l'hôte de l'agent relève de votre responsabilité (celle du client). Par exemple, vous (le client) devez appliquer les mises à jour de sécurité au système d'exploitation de l'hôte de l'agent en suivant les procédures standard de votre entreprise en matière de distribution de systèmes d'exploitation.</block>
   <block id="55775d5f288008be574f12b89a4bfa2f" category="section-title">Appliquer les mises à jour du système d'exploitation à l'hôte de l'agent</block>
   <block id="3ce4474c24a93038aca82b41eaebbafa" category="paragraph">Pour garantir la compatibilité avec les configurations prises en charge, vous devez empêcher la mise à niveau de Docker ou de Podman lors des mises à jour système de routine. Vous pouvez le faire soit en excluant temporairement Docker ou Podman lors des mises à jour, soit en configurant de manière permanente le gestionnaire de paquets pour ignorer les mises à jour de Docker ou de Podman.</block>
@@ -5889,7 +5858,6 @@
   <block id="fb1591c260dca92b4b768bb1b983b2f0" category="list-text">*Politique de pare-feu* : Choisissez de créer une nouvelle politique de pare-feu ou de sélectionner une politique de pare-feu existante autorisant les règles entrantes et sortantes requises.</block>
   <block id="e4c07f2bba651b4e0cbb7e5ba8fefde5" category="paragraph">Si vous avez des compartiments Google Cloud Storage dans le même compte Google Cloud où vous avez créé l'agent Console, un système Google Cloud Storage apparaît automatiquement sur la page *Systèmes*.<block ref="aefa7bc54c105a94a586917b309a8039" category="inline-link-rx"></block></block>
   <block id="c6757fa1172212bd89b40c339b1bf042" category="summary">Si vous êtes un utilisateur VMware, vous pouvez utiliser un fichier OVA pour installer un agent Console dans votre vCenter. Le téléchargement du fichier OVA ou l'URL est disponible via la NetApp Console.</block>
-  <block id="ad8b6fe2e7c4886f2851470625537eee" category="doc">Installez un agent Console sur site à l'aide de vCenter</block>
   <block id="6b3d86b99e2472a8ac2d2fee0825f8f7" category="paragraph">Si vous êtes un utilisateur VMware, vous pouvez utiliser un fichier OVA pour déployer un agent Console dans votre vCenter. Le téléchargement du fichier OVA ou l'URL est disponible via la NetApp Console.</block>
   <block id="dd610cd3b2866d7fae9848317b06c03a" category="admonition">Lorsque vous déployez un agent Console avec vos outils vCenter, vous pouvez utiliser la console web de la machine virtuelle pour effectuer des tâches de maintenance. <block ref="21e15fc43bbac3ef120d8f996828c28e" category="inline-link-macro-rx"></block></block>
   <block id="c12234e7a9633d15fc94f2e9e5a62020" category="admonition">Vous ne pouvez pas gérer les ressources Google Cloud avec un agent Console installé sur votre infrastructure locale. Pour gérer les ressources Google Cloud, installez un agent dans Google Cloud.</block>
@@ -6017,7 +5985,6 @@
   <block id="fffef7d3f6ea2dc8c70c1977d7df72cf" category="list-text">Sélectionnez *Administration &gt; Support*.</block>
   <block id="bdbe420ae669ff58f6ddfc76e934fcce" category="paragraph">Cette option vous invite à vous reconnecter. Veuillez noter que le jeton de ces comptes expire après 90 jours. Vous recevrez une notification à ce sujet.</block>
   <block id="1a653af9db5aa75c21774ad3e0c682b2" category="summary">Vous pouvez modifier votre vCenter ou hôte ESXi existant après le déploiement de l'agent Console. Par exemple, vous pouvez augmenter le CPU ou la RAM de l'instance de machine virtuelle qui héberge l'agent Console.</block>
-  <block id="0f90bce2ae7648cda1c8f5dc64f9eb4b" category="doc">Maintenez un vCenter ou un hôte ESXi pour l'agent Console</block>
   <block id="5701e28a09f3583ad12c519e7828b4a9" category="paragraph">Vous pouvez accéder à la console de maintenance depuis le vSphere client.</block>
   <block id="a2cfceffec1eb22eea65cb9fce81f24f" category="list-text">Ouvrez le client vSphere et connectez-vous à votre vCenter.</block>
   <block id="a81bffe28407c93287bf3f9f760bbd9f" category="paragraph">Modifiez les paramètres de l'instance de machine virtuelle dans votre vCenter ou hôte ESXi, puis utilisez la console de maintenance pour appliquer les modifications.</block>
@@ -6360,4 +6327,118 @@
   <block id="7f862a4b8fc22b0af5dda5c9ababa346" category="cell">iam:TagRole</block>
   <block id="ac63bb5663971c98e9ad66f59e257a30" category="summary">NetApp Console est une application SaaS qui utilise des agents Console pour gérer les systèmes de stockage cloud et sur site. NetApp Console déploiement local est une machine virtuelle auto-hébergée, sans agent, pour la gestion de parcs ONTAP à l'échelle de l'entreprise, avec application des politiques, correction des dérives et souveraineté des données.</block>
   <block id="e9136b652dc2f76f18a9d738127bb6a3" category="doc">Comparez NetApp Console et NetApp Console déploiement local</block>
+  <block id="b56346a21533cb3c02f75ab5cc7c59a8" category="doc">Agent Console 4.10.0</block>
+  <block id="e25811fd33a54b98aaedd7e6a9ea664b" category="paragraph">La version 4.10.0 prend en charge à la fois le mode standard et le mode restreint.</block>
+  <block id="657b18a162285732ef5f46d679b05663" category="section-title">Amélioration de la réactivité et de la fiabilité du Cloud Mediator</block>
+  <block id="d04e4287a3b42a9890f48390e8193dc1" category="paragraph">Le service traite désormais les mises à jour d'état du cluster plus efficacement, réduisant ainsi les délais d'attente intermittents et les interruptions, et renforçant la médiation automatique du basculement non planifié pour les relations SMaS.</block>
+  <block id="8e185da70c606c7dcf3a854773e5a5fd" category="paragraph">NetApp Console 4.10.0 administration inclut des correctifs de sécurité et de bogues.</block>
+  <block id="8007d72f5958d5f16c1840c38742f735" category="doc">Découvrez les projets et les autorisations Google Cloud dans la NetApp Console</block>
+  <block id="16c66023c031db06fc97aed45a9cef44" category="doc">Découvrez les méthodes de déploiement de l'agent NetApp Console</block>
+  <block id="0e28c7401e87a8a34b310094e185c429" category="doc">Découvrez la fédération d'identités dans la NetApp Console</block>
+  <block id="5d0a67c3c2ae237a4d67f9b0402e9f6e" category="doc">Découvrez le contrôle d'accès basé sur les rôles de la NetApp Console</block>
+  <block id="2afbfda002e90132791f5167feed883f" category="doc">Différences entre NetApp Console et le déploiement local de NetApp Console</block>
+  <block id="8e3ec462216d5097444b77ca00f80473" category="admonition">Choisissez NetApp Console si vous gérez des environnements cloud et sur site et souhaitez que NetApp gère l'infrastructure de la plateforme. Choisissez le déploiement local de NetApp Console si vous gérez un vaste parc ONTAP sur site et avez besoin d'une souveraineté des données totale ainsi que d'une gestion du stockage basée sur des politiques.</block>
+  <block id="d7500dc8af696cd476663bebb9d0fcb4" category="paragraph">NetApp héberge et maintient NetApp Console en tant qu'application SaaS. Vous vous inscrivez et commencez immédiatement à gérer le stockage. Pour gérer les systèmes de stockage, vous déployez des agents Console légers dans vos environnements cloud ou sur site. Les agents se connectent en sortie à la plateforme NetApp Console, et NetApp gère automatiquement l'authentification, les mises à niveau et la disponibilité de la plateforme.</block>
+  <block id="773ad4889739d9b22df6b5f152501006" category="paragraph">La NetApp Console prend également en charge le mode restreint (installé dans votre propre cloud public avec une connectivité sortante limitée) et le mode privé (installé sur site ou dans votre cloud sans connectivité à la plateforme NetApp Console, y compris les environnements isolés).</block>
+  <block id="5ceffe99385ecce35b5a538a16ca57cb" category="paragraph"><block ref="dc7c11e9da585b9fa1e35ca44da95ccc" category="inline-link-rx"></block>.</block>
+  <block id="6bc8e262d6c87c1cc67ba2e2ef69c080" category="paragraph">NetApp Console prend en charge la plus large gamme de systèmes de stockage, y compris le stockage cloud tel que Amazon FSx for ONTAP, Cloud Volumes ONTAP, Amazon S3, Google Cloud Storage, E-Series, StorageGRID, et les clusters ONTAP sur site. Elle donne accès à l'ensemble de la suite des services de données NetApp, y compris NetApp Backup and Recovery, NetApp Disaster Recovery, NetApp Ransomware Resilience, NetApp Copy and Sync, et NetApp Data Classification. NetApp Console propose également des fonctionnalités de contrat de support telles que Digital Advisor, la planification du cycle de vie et des tableaux de bord de durabilité.</block>
+  <block id="abd3ebf1d0176fca066a577a665824f3" category="paragraph">NetApp Console est parfaitement adaptée aux organisations qui gèrent des environnements de cloud hybride et qui souhaitent bénéficier du plus grand nombre de fonctionnalités, réduire les efforts nécessaires pour assurer le bon fonctionnement et disposer d'une licence flexible.</block>
+  <block id="78c9351d6bfa969cec1e259c5314fb98" category="inline-link">Découvrez la NetApp Console^.</block>
+  <block id="a005dfa7e9da2ab070c9b2a2cc506605" category="paragraph"><block ref="a005dfa7e9da2ab070c9b2a2cc506605" category="inline-link-rx"></block></block>
+  <block id="fae210aa9f9d8906ee39264d97001f11" category="section-title">NetApp Console déploiement local</block>
+  <block id="fcc4637d90c046c4a4ef32a9afdaa6fc" category="paragraph">Le déploiement local de la NetApp Console vous permet d’exécuter le plan de contrôle de la NetApp Console entièrement au sein de votre propre infrastructure sur site, sans que le trafic de gestion ne quitte votre environnement. Vous déployez la Console en tant que machine virtuelle à l’aide d’une image d’appliance virtuelle et la gérez comme n’importe quelle autre machine virtuelle dans votre environnement vCenter. Aucun agent Console n’est requis. La machine virtuelle communique directement avec vos clusters ONTAP.</block>
+  <block id="5fb781e175de9970e2718bb94cc3d721" category="paragraph">Bien que le mode privé de NetApp Console prenne également en charge les déploiements isolés et sur site, le déploiement local de Console est spécifiquement conçu pour la gestion de parcs ONTAP à l'échelle de l'entreprise. Il ajoute des fonctionnalités qui ne sont disponibles dans aucun mode de déploiement de NetApp Console :</block>
+  <block id="0d7759ae1f20023b009816231b4ec556" category="list-text">Politiques de classe de stockage</block>
+  <block id="704be31d8e2a42e0c7ff6b6f16b73c3e" category="list-text">Définissez une seule fois les normes de stockage sous forme de modèles réutilisables regroupant les exigences de performance, de capacité et de hiérarchisation. L'ensemble du provisionnement utilise des classes approuvées, et le déploiement local sur la Console surveille en permanence les charges de travail pour garantir leur conformité et identifier les écarts.</block>
+  <block id="6d84cd31d161fe86d10b8600c9e49fd4" category="list-text">Gestion de flotte</block>
+  <block id="7385a9be1dc0677e5961772473ab82cd" category="list-text">Organisez les clusters en dossiers et en flottes qui reflètent la structure de votre entreprise, puis déléguez l'administration au niveau de l'organisation, du dossier ou de la flotte.</block>
+  <block id="26f4e34d0f8df693380313a828150255" category="list-text">Analyseur de charge de travail</block>
+  <block id="48fa264a7a3c3c0d64a82ae09d190200" category="list-text">Corrélez la latence, le débit, les opérations d'entrée/sortie par seconde et les modifications de configuration au fil du temps afin d'identifier les problèmes de performance avant qu'ils n'affectent les charges de travail.</block>
+  <block id="f54523e7e9970026552c0beada420de7" category="list-text">Intégration de modèles de langage à grande échelle</block>
+  <block id="dbebae0d47896a2bb083de1589f27131" category="list-text">Connectez-vous à votre propre grand modèle de langage pour provisionner du stockage en utilisant le langage naturel, analyser les alertes et obtenir des réponses contextuelles sur votre environnement de stockage.</block>
+  <block id="8375d985c183af61065e987103e69be9" category="list-text">Remédiation guidée et automatisée</block>
+  <block id="2d9389b28f495b8afdcdf8f214f11df3" category="list-text">Lorsqu'une charge de travail s'écarte de sa classe de stockage ou qu'une alerte est déclenchée, le déploiement local de NetApp Console fournit des recommandations de correction. Utilisez les étapes guidées ou la correction automatisée en un clic pour rétablir la conformité sans intervention manuelle.</block>
+  <block id="73c797fde7608d30c65279e6ca248835" category="list-text">Remise d’alertes par e-mail et webhook</block>
+  <block id="69c0257b1ba8a3ba7687d4f7a9883d7f" category="list-text">Configurez les canaux de notification par e-mail et webhook afin que les alertes parviennent aux bonnes équipes lorsque les conditions de stockage changent. Les webhooks s’intègrent à vos outils de surveillance et de gestion des incidents existants.</block>
+  <block id="00c24ecc0e9a6f1c6a5202f40e8c96c1" category="paragraph">Le déploiement local de la console prend en charge les clusters ONTAP sur site ainsi que NetApp Backup and Recovery. Il s’intègre à Active Directory pour l’authentification fédérée et prend en charge l’authentification multifacteur pour les utilisateurs locaux.</block>
+  <block id="be6ca74d1ea996c7c4fe59d3f22d39a4" category="paragraph">Le déploiement local sur console est parfaitement adapté aux organisations disposant de vastes environnements ONTAP sur site qui nécessitent un provisionnement basé sur des politiques, des contrôles de conformité automatisés et une souveraineté des données totale.</block>
+  <block id="70b86d6aa7fb00fd1d760b33b8607159" category="inline-link-macro">Découvrez le déploiement local de la NetApp Console^.</block>
+  <block id="f64bf1d04df251b82d06554b478f9ae4" category="paragraph"><block ref="f64bf1d04df251b82d06554b478f9ae4" category="inline-link-macro-rx"></block></block>
+  <block id="0161e3d40bdbea6ca6998c8c60165b33" category="section-title">Comparaison des fonctionnalités</block>
+  <block id="bfd15aa26ba0ced782240c4a8b7e517e" category="section-title">Gestion du stockage</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Fonctionnalité</block>
+  <block id="23dad8eedc041cc12dbd56726f7f5a94" category="cell">Oui (nécessite l’agent Console)</block>
+  <block id="f92b8f818d9b311ddfe493bf8fd9d4d1" category="cell">Oui (communication directe depuis la machine virtuelle Console)</block>
+  <block id="5a33f8c167d1b84a718d0a9ab656e684" category="cell">Systèmes de stockage cloud (Amazon FSx for ONTAP, Cloud Volumes ONTAP, Amazon S3, et autres)</block>
+  <block id="5caa8b77e08ebd3908f7b342222cc4f7" category="cell">E-Series et StorageGRID</block>
+  <block id="b003a63279cc18b6fb1177d6fe5ae8b8" category="cell">Digital Advisor, planification du cycle de vie, durabilité</block>
+  <block id="f2f74222833c136454ac1c309093ce22" category="cell">Politiques de classe de stockage et surveillance de la conformité</block>
+  <block id="99a7a1aa741fd89b57934cd02731f4af" category="cell">Gestion de flotte (dossiers et flottes)</block>
+  <block id="d7ae72f8784c3d332b0fa036311ef934" category="cell">Intégration de modèles de langage à grande échelle pour les opérations assistées par l'IA</block>
+  <block id="c72a03504491ce72b87c21f210031a3e" category="section-title">Configuration et sécurité de la console</block>
+  <block id="a0e3089d312c100208595d685b4104d2" category="cell">Modèle de déploiement</block>
+  <block id="9e2f8f0cf1d9ef87b70b0927b7aa6315" category="cell">Logiciel en tant que service, hébergé par NetApp (différents modes de déploiement disponibles)</block>
+  <block id="e94cfdb1bcf6790d1866d9d05ab27a2c" category="cell">Machine virtuelle auto-hébergée dans votre propre infrastructure</block>
+  <block id="85ed230bbcc941c129c9222b688edfe4" category="cell">Mises à jour logicielles</block>
+  <block id="18989411927d889b19d609bcc0020172" category="cell">Automatique, géré par NetApp</block>
+  <block id="e1ba155a9f2e8c3be94020eef32a0301" category="cell">Manuel</block>
+  <block id="860d51de2751d60b75aa2bf4908d091f" category="cell">NetApp Console application (accès Internet ou machine virtuelle)</block>
+  <block id="04628071892bff31fcda3d0180ce0e14" category="cell">Machine virtuelle Console (locale, aucune connexion Internet requise)</block>
+  <block id="a492925ae64557e89b32f29da418b5eb" category="cell">souveraineté des données</block>
+  <block id="8128bb2b2b16d567cc51992879a88b83" category="cell">Le trafic de gestion est acheminé vers la plateforme NetApp Console</block>
+  <block id="9a85d1c8f123f061c5e7f2ebb079e094" category="cell">Aucune donnée ni aucun trafic de gestion ne quitte votre environnement</block>
+  <block id="9c5d46a76492e92eb9d02ae973277f0b" category="cell">Intégration Active Directory</block>
+  <block id="f45362733fe1dd1af3c58ae64471d466" category="cell">Journalisation des audits</block>
+  <block id="0b9c6eef4e3d3a222eb04e910d252339" category="cell">Licence</block>
+  <block id="5d888c34f4251b9bdd3ba8412b69ff87" category="cell">Abonnements Marketplace et utilisation de votre propre licence</block>
+  <block id="c7eca4d9dd171fc4b4a21c3425a47aa6" category="cell">Apportez votre propre licence</block>
+  <block id="699a6eee179cea80f5013d1166d0f30a" category="doc">Accès réseau pour les versions précédentes de NetApp Console</block>
+  <block id="ae48d1523d35962052b85097b64ff409" category="doc">NetApp Console Règles de groupe de sécurité de l'agent dans AWS</block>
+  <block id="6f395c5b2de11fd2469a348184719409" category="doc">NetApp Console : règles de groupe de sécurité de l'agent dans Azure</block>
+  <block id="c534d05a2204d355dd98c75ca4fa0ef0" category="doc">NetApp Console règles de pare-feu de l'agent dans Google Cloud</block>
+  <block id="ef7c9287a88e41770bcf8e2f71bf4a62" category="doc">Ports pour l'agent Console local dans NetApp Console</block>
+  <block id="b8a84f07d25586ae344b5d2fea360ceb" category="doc">Maintenez un hôte vCenter ou ESXi pour l’agent NetApp Console</block>
+  <block id="342c0cadebe48cf993f95cc497f1ee67" category="doc">Configurer un agent NetApp Console pour utiliser un serveur proxy</block>
+  <block id="538f73bc4b16880a92f834fffd5eee47" category="doc">Fédérez NetApp Console avec Active Directory Federation Services</block>
+  <block id="0e9b2bbb493d88a60e9b5623cd2d24b4" category="doc">Fédérer NetApp Console avec un fournisseur d'identité SAML</block>
+  <block id="7c7e37a60fdebfbcd688955b45cc315e" category="doc">Vérifiez votre domaine de messagerie pour la fédération dans la NetApp Console</block>
+  <block id="a7929bdeb057d0040937eace4fc80b03" category="doc">Obtenez de l'aide pour la NetApp Console</block>
+  <block id="eb6f589cc532511de3d491784eac9074" category="doc">Associer un agent NetApp Console à d'autres dossiers et projets</block>
+  <block id="ce28311053eab652f7cba323b87be0a8" category="doc">Surveillez ou auditez l'activité IAM dans la NetApp Console</block>
+  <block id="ed0b449f46c28022aa1e596cb60930ae" category="doc">Ajouter des membres à une organisation NetApp Console</block>
+  <block id="84f6282c0313bada67ece6dc68d0f5fd" category="doc">Renommez votre organisation NetApp Console et obtenez des identifiants</block>
+  <block id="2627c336d69cf7d192f27dbf9318645f" category="doc">Basculez entre les organisations, les projets et les agents de la NetApp Console</block>
+  <block id="5309258d747a9845e04a5a666f7e0bb8" category="doc">Gérez la sécurité des utilisateurs dans la NetApp Console</block>
+  <block id="fbec7d32f2a1eaf9c2331cfbeb40b4f8" category="doc">Déployez manuellement un agent Console dans AWS pour NetApp Console</block>
+  <block id="09f8a40b3c8ade5b73c631a145579e8d" category="doc">Déployez un agent NetApp Console depuis AWS Marketplace</block>
+  <block id="af8de380cb8547e69aa14de996858185" category="doc">Installez manuellement l’agent NetApp Console dans Azure</block>
+  <block id="d0ebd468c3f09a8b92c11ff75d7ad157" category="doc">Créez un agent NetApp Console à partir de la Place de marché Azure</block>
+  <block id="db0d4894b0f672f5846a0dd831c3acef" category="doc">Déployez un agent NetApp Console depuis Google Cloud</block>
+  <block id="d8c7869374338e02642160e98a2d8417" category="doc">Déployez manuellement l’agent NetApp Console dans Google Cloud</block>
+  <block id="5382ae577d3f63349dafa3576dfdb3ac" category="doc">Installez un agent NetApp Console sur site à l'aide de vCenter</block>
+  <block id="abca119af0a13b3133fa5afd29df6537" category="doc">Installez manuellement un agent NetApp Console sur site</block>
+  <block id="fb0147398e4c8a5b077a1394aed4389e" category="doc">Déployez l’agent NetApp Console en mode privé</block>
+  <block id="24aa86604f7c13368f329291e2176320" category="doc">Déployez l'agent NetApp Console en mode restreint</block>
+  <block id="9f055563896ad1d86b1aff07fa15e9db" category="doc">Installez un certificat signé par une autorité de certification pour l'accès à la NetApp Console</block>
+  <block id="732e996d6e02c3ebc791dbde9abe1e56" category="doc">Maintenir la machine virtuelle pour un agent NetApp Console installé manuellement</block>
+  <block id="9e85e0ca90299f57faff64486b07b169" category="doc">Afficher les systèmes associés aux différents agents NetApp Console</block>
+  <block id="df3c94950882fe8269c8bd3124102787" category="doc">Appliquez les autorisations ONTAP pour ONTAP System Manager dans la NetApp Console</block>
+  <block id="8fbfb7191006f1ff54bec4699202f25d" category="doc">Gérer les membres du partenariat dans NetApp Console</block>
+  <block id="2419efcdd1cfbd36c947ead316bdb610" category="doc">Fournir un accès aux ressources aux utilisateurs partenaires dans la NetApp Console</block>
+  <block id="88e7470f978d59065e8250e526936a9d" category="doc">Travailler dans une organisation partenaire dans NetApp Console</block>
+  <block id="47334a862ae2aa74700504caf1fe7ec6" category="doc">Préparez-vous au déploiement en mode privé de NetApp Console</block>
+  <block id="d8e9a7ffa6642a6f5e41c6f41381033a" category="doc">Préparez-vous au déploiement en mode restreint de la NetApp Console</block>
+  <block id="7382bba8f6132f40ca2d21fbbe55deed" category="doc">Démarrage rapide pour NetApp Console en mode privé</block>
+  <block id="4fd3dab039a9a697aa45cdf9e4151fa8" category="doc">Démarrage rapide pour NetApp Console en mode restreint</block>
+  <block id="d71f3be9ecdf6109c0abd62c58d4602a" category="doc">Démarrage rapide pour NetApp Console en mode standard</block>
+  <block id="b34b04cba573bd7f4b8706b27ab86ed4" category="doc">Exiger l'utilisation d'IMDSv2 sur les instances Amazon EC2 dans NetApp Console</block>
+  <block id="be55b27ac8e6a53f4b7611cb418cfbfe" category="doc">Abonnez-vous à NetApp Intelligent Services en mode restreint de NetApp Console</block>
+  <block id="5826831579ea4f43a0cb70045cf5f97b" category="doc">Abonnez-vous aux services de données NetApp Console en mode standard</block>
+  <block id="75aeae08e5ba1582cd3ad59827edc6ca" category="doc">Inscrivez-vous pour obtenir de l'assistance NetApp Console</block>
+  <block id="2639be1d095a58dd96a72a823ff1b61b" category="doc">Dépannez l’agent NetApp Console</block>
+  <block id="b5587e31ef788714566665f7aabf20e7" category="doc">Désinstallez et supprimez un agent NetApp Console</block>
+  <block id="6813bdd4cf22657750bba36b7a1c84f8" category="doc">Mettez à jour l'adressage et les URI de l'agent NetApp Console</block>
+  <block id="1ffdd70508b45fa8740a4e5db3fed667" category="doc">Mettre à niveau l’agent NetApp Console</block>
+  <block id="88119fcc4c91e2769610d7732f2d8876" category="doc">Quoi de neuf avec la NetApp Console</block>
+  <block id="01b8b50c6af6a26d04385207f4b3c02e" category="section-title">13 août 2026</block>
 </blocks>

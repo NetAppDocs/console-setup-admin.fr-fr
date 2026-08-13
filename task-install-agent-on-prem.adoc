@@ -4,7 +4,7 @@ permalink: task-install-agent-on-prem.html
 keywords: deploy agent, on prem agent deployment, on prem agent, deploy connector on prem, manual deployment 
 summary: 'Déployez un agent Console sur site, puis connectez-vous et configurez-le pour qu"il fonctionne avec votre organisation Console.' 
 ---
-= Installer manuellement un agent de console sur site
+= Installez manuellement un agent NetApp Console sur site
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

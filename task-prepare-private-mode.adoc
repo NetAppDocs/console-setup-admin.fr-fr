@@ -4,7 +4,7 @@ permalink: task-prepare-private-mode.html
 keywords: private mode requirements, requirements, install options, private mode networking, dark site, private mode permissions, permissions for private mode, networking for private mode 
 summary: Préparez votre environnement avant de déployer NetApp Console en mode privé. Vous devez vérifier la configuration requise pour l’hôte, préparer le réseau, définir les autorisations, et plus encore. 
 ---
-= Préparez-vous au déploiement en mode privé
+= Préparez-vous au déploiement en mode privé de NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

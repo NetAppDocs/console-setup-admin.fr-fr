@@ -4,7 +4,7 @@ permalink: task-install-agent-on-prem-ova.html
 keywords: install agent, on prem agent installation, on prem connector, vmware, OVA, manual install 
 summary: 'Si vous êtes un utilisateur VMware, vous pouvez utiliser un fichier OVA pour installer un agent Console dans votre vCenter. Le téléchargement du fichier OVA ou l"URL est disponible via la NetApp Console.' 
 ---
-= Installez un agent Console sur site à l'aide de vCenter
+= Installez un agent NetApp Console sur site à l'aide de vCenter
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

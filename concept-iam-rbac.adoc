@@ -4,7 +4,7 @@ permalink: concept-iam-rbac.html
 keywords: roles, permissions, role-based access control, rbac, iam, identity and access management, least privilege, access control, NetApp Console access, organization access, folder access, project access, resource access 
 summary: 'Gérez l"accès des utilisateurs à la NetApp Console grâce au contrôle d"accès basé sur les rôles (RBAC), en attribuant des rôles prédéfinis au niveau de l"organisation, du dossier ou du projet. Chaque rôle octroie des autorisations spécifiques qui définissent les actions que les utilisateurs peuvent effectuer dans le cadre de leur rôle.' 
 ---
-= Découvrez le contrôle d'accès basé sur les rôles (RBAC) de NetApp Console
+= Découvrez le contrôle d'accès basé sur les rôles de la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

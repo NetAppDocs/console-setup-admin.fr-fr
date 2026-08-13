@@ -4,7 +4,7 @@ permalink: task-partnerships-assign-users.html
 keywords: switch organizations, switch projects, projects, organizations, change, switch, change organizations, change projects, iam, identity and access management, switch connectors 
 summary: 'Vous pouvez ajouter des utilisateurs à un partenariat en les ajoutant à l"organisation partenaire.  Une fois que vous avez ajouté des utilisateurs, l’organisation partenaire est chargée de leur attribuer des rôles pour des ressources particulières au sein de son organisation.' 
 ---
-= Gérer les membres d'une organisation partenaire
+= Gérer les membres du partenariat dans NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

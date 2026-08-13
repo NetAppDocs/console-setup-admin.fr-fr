@@ -4,7 +4,7 @@ permalink: whats-new.html
 keywords: 'what"s new, features, new, release notes, enhancements, fixes, connectors, bluexp, iam, notice, releases, console' 
 summary: 'Découvrez les nouveautés concernant l"administration de la NetApp Console.' 
 ---
-= Quoi de neuf
+= Quoi de neuf avec la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -15,6 +15,33 @@ summary: 'Découvrez les nouveautés concernant l"administration de la NetApp Co
 
 [role="lead"]
 Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Console : gestion des identités et des accès (IAM), agents de console, informations d'identification du fournisseur de cloud, etc.
+
+
+
+[[13-august-2026]]
+== 13 août 2026
+
+
+
+[[console-agent-4-10-0]]
+=== Agent Console 4.10.0
+
+La version 4.10.0 prend en charge à la fois le mode standard et le mode restreint.
+
+Cette version de l'agent Console inclut des améliorations de sécurité et des corrections de bugs.
+
+
+
+==== Amélioration de la réactivité et de la fiabilité du Cloud Mediator
+
+Le service traite désormais les mises à jour d'état du cluster plus efficacement, réduisant ainsi les délais d'attente intermittents et les interruptions, et renforçant la médiation automatique du basculement non planifié pour les relations SMaS.
+
+
+
+[[netapp-console-administration]]
+=== Administration de la NetApp Console
+
+NetApp Console 4.10.0 administration inclut des correctifs de sécurité et de bogues.
 
 
 

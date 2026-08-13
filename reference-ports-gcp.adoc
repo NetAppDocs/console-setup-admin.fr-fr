@@ -4,7 +4,7 @@ permalink: reference-ports-gcp.html
 keywords: ports, firewall rules, http, https, inbound, outbound, connector, agent 
 summary: 'Les règles du pare-feu Google Cloud pour l"agent nécessitent des règles de trafic entrant et sortant. La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent Console à partir de la Console. Pour les autres options d"installation, vous devez configurer ce groupe de sécurité manuellement.' 
 ---
-= Règles de pare-feu de l'agent de console dans Google Cloud
+= NetApp Console règles de pare-feu de l'agent dans Google Cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

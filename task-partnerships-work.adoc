@@ -4,7 +4,7 @@ permalink: task-partnerships-work.html
 keywords: partner organizations, create partnership, MSPs, service provider access 
 summary: 'Une fois qu"un rôle vous a été attribué dans une organisation partenaire, vous pouvez basculer vers cette organisation et effectuer les actions pour lesquelles vous êtes autorisé à effectuer.' 
 ---
-= Travailler dans une organisation partenaire
+= Travailler dans une organisation partenaire dans NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

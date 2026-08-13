@@ -4,7 +4,7 @@ permalink: concept-accounts-gcp.html
 keywords: cloud provider accounts, gcp, gcp accounts, google cloud platform, google accounts, google cloud platform accounts, permissions, project, google cloud project, credential, bluexp 
 summary: 'Découvrez comment la NetApp Console utilise les informations d’identification Google Cloud pour effectuer des actions en votre nom et comment ces informations d’identification sont associées aux abonnements de la place de marché.  Comprendre ces détails peut être utile lorsque vous gérez les informations d"identification d"un ou plusieurs projets Google Cloud.  Par exemple, vous souhaiterez peut-être en savoir plus sur le compte de service associé à la machine virtuelle de l’agent de console.' 
 ---
-= En savoir plus sur les projets et les autorisations Google Cloud
+= Découvrez les projets et les autorisations Google Cloud dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept-federation.html
 keywords: identity federation, single sign-on, SSO, identity provider, IdP, SAML, Microsoft Entra ID, AD FS, PingFederate, ACS URL, Entity ID, user access, security, productivity, compliance, authentication, business continuity, account management, user experience, access control, workflow automation, credential management, login process, organization admin, bluexp, NetApp Console 
 summary: La fédération d’identité permet l’authentification unique avec la NetApp Console afin que les utilisateurs puissent se connecter à l’aide des informations d’identification de votre identité d’entreprise.  Pour commencer, passez en revue le processus de configuration. 
 ---
-= Activer l'authentification unique en utilisant la fédération d'identité avec la NetApp Console
+= Découvrez la fédération d'identités dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

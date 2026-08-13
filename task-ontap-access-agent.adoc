@@ -4,7 +4,7 @@ permalink: task-ontap-access-agent.html
 keywords: administer, credentials, ONTAP, connector, Cloud Volumes ONTAP, on-premises, roles, permissions, console agent, agent 
 summary: Les administrateurs peuvent configurer la NetApp Console pour demander à un utilisateur ses informations d’identification ONTAP . 
 ---
-= Appliquer les autorisations ONTAP pour ONTAP Advanced View (ONTAP System Manager)
+= Appliquez les autorisations ONTAP pour ONTAP System Manager dans la NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

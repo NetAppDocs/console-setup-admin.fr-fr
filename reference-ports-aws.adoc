@@ -4,7 +4,7 @@ permalink: reference-ports-aws.html
 keywords: ports, security group, http, https, inbound, outbound 
 summary: Le groupe de sécurité AWS pour l’agent de console nécessite des règles entrantes et sortantes.  La NetApp Console crée automatiquement ce groupe de sécurité lorsque vous créez un agent de console à partir de la console.  Vous devez configurer ce groupe de sécurité pour toutes les autres options d’installation. 
 ---
-= Règles du groupe de sécurité de l'agent de console dans AWS
+= NetApp Console Règles de groupe de sécurité de l'agent dans AWS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
