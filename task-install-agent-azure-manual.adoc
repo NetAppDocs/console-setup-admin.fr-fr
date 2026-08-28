@@ -68,10 +68,6 @@ Hyperviseur:: Un hyperviseur bare metal ou hébergé certifié pour exécuter un
 
  a| 
 Red Hat Enterprise Linux
-
-
-
- a| 
  a| 
 9,6
 
@@ -90,7 +86,6 @@ Pris en charge en mode d'application ou en mode permissif
 
 
  a| 
- a| 
 9,1 à 9,4
 
 * Versions en langue anglaise uniquement.
@@ -107,7 +102,6 @@ Pris en charge en mode d'application ou en mode permissif
 
 
 
- a| 
  a| 
 8,6 à 8,10
 
@@ -127,10 +121,6 @@ Pris en charge en mode d'application ou en mode permissif
 
  a| 
 Ubuntu
-
-
-
- a| 
  a| 
 24,04 LTS
  a| 
@@ -142,7 +132,6 @@ Non pris en charge
 
 
 
- a| 
  a| 
 22,04 LTS
  a| 
