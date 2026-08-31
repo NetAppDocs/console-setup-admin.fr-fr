@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: concept-securing-netapp-console.html 
+keywords: security, hardening, netapp console, console agent, identity and access management, iam, rbac, federation, mfa 
+summary: 'Découvrez comment sécuriser les déploiements de NetApp Console, l"accès des utilisateurs, les agents Console et les opérations de gestion du stockage.' 
+---
+= Sécurisation de la NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Protégez les opérations de stockage en limitant l'accès à la NetApp Console, en sécurisant les agents de la Console et en surveillant l'activité afin de détecter toute modification non autorisée ou involontaire.
+
+La sécurité est une responsabilité partagée. NetApp sécurise le service Console, tandis que vous êtes responsable du choix du mode de déploiement approprié, du contrôle des accès utilisateurs et comptes de service, de la sécurisation des environnements dans lesquels vous déployez les agents Console et de la surveillance de l'activité au sein de votre organisation.
+
+
+
+[[choose-the-appropriate-deployment-mode]]
+== Choisissez le mode de déploiement approprié
+
+Choisissez un mode de déploiement en fonction de vos exigences en matière de connectivité, d'isolation et d'exploitation :
+
+* Le mode standard utilise l'application SaaS hébergée dans le cloud.
+* Le mode restreint installe la Console dans un environnement cloud public avec une connectivité sortante limitée aux API NetApp.
+* Le mode privé installe la Console sur site ou dans un environnement isolé sans connectivité sortante vers NetApp.
+
+
+Chaque mode présente des exigences différentes en matière de disponibilité des fonctionnalités et de sécurité. link:concept-modes.html["En savoir plus sur les modes de déploiement de la NetApp Console"].
+
+
+
+[[control-identity-and-access]]
+== Contrôlez l'identité et l'accès
+
+Utilisez la gestion des identités et des accès (IAM) pour accorder aux utilisateurs et aux comptes de service uniquement l'accès dont ils ont besoin pour effectuer leurs tâches :
+
+* Organisez les ressources en projets et, le cas échéant, en dossiers qui reflètent les limites de votre entreprise ou de vos opérations.
+* Attribuez des rôles prédéfinis au niveau le plus bas de la hiérarchie organisationnelle qui fournit l'accès requis.
+* Examinez régulièrement les membres de l'organisation, les comptes de service et leurs rôles. Supprimez les accès qui ne sont plus nécessaires.
+* Utilisez la fédération d'identités pour l'authentification unique lorsqu'elle répond aux exigences de votre organisation. La fédération n'est pas disponible en mode privé.
+* Exigez que les utilisateurs locaux utilisent l’authentification multifacteur (MFA) et protégez les identifiants des comptes de service comme des secrets. Recréez les identifiants des comptes de service lorsqu’ils sont perdus ou doivent être renouvelés.
+
+
+link:concept-identity-and-access-management.html["Découvrez IAM dans la NetApp Console"].
+
+
+
+[[secure-console-agents]]
+== Agents de la console sécurisée
+
+Les agents de la Console assurent l’interface entre la Console et les systèmes de stockage, ainsi que les environnements cloud ou sur site. Les agents initient la communication avec la Console ; la Console n’initie pas les connexions vers les agents.
+
+Appliquez les contrôles suivants à chaque agent :
+
+* Déployez l'agent dans un environnement conforme aux exigences de votre organisation en matière d'hôte, de réseau et de contrôle d'accès.
+* Autorisez uniquement les connexions réseau sortantes requises et les autorisations cloud requises. Examinez les autorisations spécifiques au fournisseur et les exigences relatives aux ports avant le déploiement.
+* Utilisez une configuration de proxy prise en charge lorsque le trafic sortant doit transiter par un serveur proxy.
+* Installez un certificat signé par une autorité de certification lorsque les utilisateurs accèdent à la console web de l'agent via HTTPS.
+* Maintenez le logiciel de l'agent à jour. Les agents en mode privé doivent être mis à jour manuellement.
+* Sur AWS, envisagez d'exiger IMDSv2 pour les instances EC2 hébergeant un agent Console.
+
+
+link:concept-agents.html["En savoir plus sur les agents de console"].
+
+
+
+[[reduce-unintended-changes]]
+== Réduisez les modifications non intentionnelles
+
+Les administrateurs d'une organisation peuvent activer le mode lecture seule pour une organisation. Le mode lecture seule aide à empêcher les utilisateurs de modifier les systèmes de stockage ou d'utiliser les services de données tant qu'ils n'ont pas demandé des autorisations élevées.
+
+link:task-enable-read-only-mode.html["Découvrez comment activer le mode lecture seule"].
+
+
+
+[[monitor-and-review-activity]]
+== Surveiller et examiner l'activité
+
+Utilisez la chronologie des opérations pour consulter la gestion du stockage et l'activité des utilisateurs dans la NetApp Console. Examinez régulièrement l'accès des membres, les attributions de rôles, les informations d'identification des comptes de service, le statut des agents et les opérations récentes dans le cadre du processus de sécurité de votre organisation.
+
+link:task-monitor-cm-operations.html["Découvrez comment surveiller les opérations de la Console"].
+
+
+
+[[related-security-topics]]
+== Sujets de sécurité connexes
+
+* link:task-iam-user-security.html["Gérer la sécurité des utilisateurs"], y compris l’authentification multifacteur et les identifiants de compte de service.
+* link:concept-iam-rbac.html["Comprendre le contrôle d'accès basé sur les rôles (RBAC)"].
+* link:concept-federation.html["En savoir plus sur la fédération d'identité"].
+* link:reference-networking-saas-console.html["Examiner les exigences d'accès réseau pour l'application SaaS"].
+* link:reference-permissions.html["Examinez les autorisations du fournisseur de cloud et les exigences réseau"].
+* link:reference-compliance.html["Découvrez la conformité de sécurité pour NetApp Console"].
+

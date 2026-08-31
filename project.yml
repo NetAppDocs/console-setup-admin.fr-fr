@@ -240,6 +240,8 @@ sidebar:
           url: https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html
     - title: Sécurité et conformité
       entries:
+      - title: Console NetApp sécurisée
+        url: "/task-secure-netapp-console.html"
       - title: Fédération d'identité
         entries:
         - title: En savoir plus sur la fédération d'identité
