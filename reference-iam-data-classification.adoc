@@ -12,7 +12,7 @@ summary: 'NetApp Data Classification prend en charge deux rôles pour gérer l"a
 
 
 [role="lead"]
-NetApp Data Classification prend en charge la gestion des accès, vous offrant ainsi la possibilité d'attribuer aux utilisateurs un rôle adapté aux tâches qu'ils doivent accomplir au sein de votre organisation. La méthode d'attribution des rôles dépend de vos pratiques commerciales et de gestion du stockage.
+NetApp Data Classification prend en charge les rôles de gestion des identités et des accès (IAM), ce qui vous permet d’adapter l’accès aux tâches que les utilisateurs doivent accomplir. La manière dont vous attribuez les rôles dépend de vos propres pratiques métier et de gestion du stockage.
 
 La classification des données prend en charge deux rôles :
 
@@ -38,7 +38,7 @@ NOTE: L'administrateur de conformité a été ajouté à NetApp Data Classificat
 [[classification-viewer]]
 == Visionneuse de classification
 
-Le visualiseur de classification est conçu pour les utilisateurs qui ont besoin d'accéder aux résultats d'analyse dans NetApp Data Classification, mais qui n'ont pas besoin d'accéder aux ressources de configuration. Les utilisateurs disposant du rôle de visualiseur de classification peuvent consulter les résultats de la cartographie et des analyses complètes afin d'identifier les possibilités d'économies de stockage ou les risques potentiels pour les données. Les utilisateurs disposant du rôle de visualiseur de classification peuvent également générer des rapports pour les ressources auxquelles ils ont accès. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données.
+Le visualiseur de classification est conçu pour les utilisateurs qui ont besoin d'accéder aux résultats d'analyse dans NetApp Data Classification, mais pas aux ressources de configuration. Les utilisateurs disposant du rôle de visualiseur de classification peuvent consulter les résultats de la cartographie et des analyses complètes afin d'identifier les possibilités d'économies de stockage ou les risques potentiels pour les données. Les utilisateurs disposant du rôle de visualiseur de classification peuvent également générer des rapports pour les ressources auxquelles ils ont accès. Ces utilisateurs ne peuvent pas activer ou désactiver l'analyse des volumes, des compartiments ou des schémas de base de données.
 
 
 

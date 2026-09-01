@@ -140,7 +140,7 @@ Voici une liste des rôles dans la catégorie de service de données.  Chaque r�
 | link:reference-iam-disaster-rec-roles.html["Visionneuse de reprise après sinistre"] | VISIONNEUSE DE RÉCUPÉRATION EN CAS DE CATASTROPHE | Standard | Afficher uniquement les informations. 
 
 
-| Visionneuse de classification | VISIONNEUSE DE CLASSIFICATION | Standard, restreint, privé | Permet aux utilisateurs de consulter les résultats d'analyse NetApp Data Classification. Les utilisateurs disposant de ce rôle peuvent consulter les informations de conformité et générer des rapports pour les ressources auxquelles ils ont la permission d'accéder. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données. Data Classification ne dispose pas de rôle d'administrateur. 
+| link:reference-iam-data-classification.html["Visionneuse de classification"] | VISIONNEUSE DE CLASSIFICATION | Standard, restreint, privé | Permet aux utilisateurs de consulter les résultats d'analyse NetApp Data Classification. Les utilisateurs disposant de ce rôle peuvent consulter les informations de conformité et générer des rapports pour les ressources auxquelles ils ont la permission d'accéder. Ces utilisateurs ne peuvent ni activer ni désactiver l'analyse des volumes, des compartiments ou des schémas de base de données. Data Classification ne dispose pas de rôle d'administrateur. 
 
 
 | link:reference-iam-ransomware-roles.html["Administrateur de la résilience aux ransomwares"] | ADMINISTRATEUR DE PROTECTION CONTRE LES RANSOMWARE | Standard | Gérez les actions sur les onglets Protéger, Alertes, Récupérer, Paramètres et Rapports de NetApp Ransomware Resilience. 
