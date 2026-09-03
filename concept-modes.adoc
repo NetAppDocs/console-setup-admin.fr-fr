@@ -100,7 +100,7 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | Domaine de produits | NetApp service ou fonctionnalité | Agent de console requis 
 
 
-.12+| *Gestion des systèmes de stockage* Ce tableau indique les systèmes de stockage que vous pouvez gérer depuis la NetApp Console. Il ne répertorie pas les destinations de sauvegarde pour NetApp Backup and Recovery. | Alertes | Oui 
+.13+| *Gestion des systèmes de stockage* Ce tableau indique les systèmes de stockage que vous pouvez gérer depuis la NetApp Console. Il ne répertorie pas les destinations de sauvegarde pour NetApp Backup and Recovery. | Alertes | Oui 
 
 
 | Amazon FSx pour ONTAP | Oui pour la découverte et la gestion. Vous pouvez utiliser la découverte directe sans agent Console, mais vous avez besoin d'un agent pour utiliser les fonctionnalités de gestion. 
@@ -136,10 +136,10 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | StorageGRID | Oui 
 
 
-| Charges de travail | Non .8+| *Services de données* 
+| Charges de travail | Non 
 
 
-| NetApp Backup and Recovery | Oui 
+.8+| *Services de données* | NetApp Backup and Recovery | Oui 
 
 
 | Classification NetApp | Oui 
@@ -160,10 +160,10 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | NetApp Cloud Tiering | Oui 
 
 
-| NetApp Volume Caching | Oui .5+| *NetApp fonctionnalités du contrat d'assistance* 
+| NetApp Volume Caching | Oui 
 
 
-| Conseiller numérique | Oui 
+.5+| *NetApp fonctionnalités du contrat d'assistance* | Conseiller numérique | Oui 
 
 
 | Efficacité économique | Oui 
@@ -175,10 +175,10 @@ NetApp recommande aux clients de collaborer avec leur représentant NetApp pour 
 | Mises à jour logicielles | Non 
 
 
-| Durabilité | Oui .12+| *Fonctionnalités administratives* 
+| Durabilité | Oui 
 
 
-| Audit | Non 
+.11+| *Fonctionnalités administratives* | Audit | Non 
 
 
 | Centre d'automatisation | Non 
@@ -318,7 +318,7 @@ NetApp Replication
 | *NetApp fonctionnalités du contrat d'assistance* | Aucune | S/O 
 
 
-.12+| *Fonctionnalités administratives* | Audit | Non 
+.11+| *Fonctionnalités administratives* | Audit | Non 
 
 
 | Centre d'automatisation | Non 
@@ -674,7 +674,7 @@ Notez que certains services peuvent être pris en charge avec des limitations. P
 | Durabilité | Non | Non 
 
 
-.9+| *Fonctionnalités administratives* | Indicateurs du tableau de bord pour les services de stockage et de données | Non | Non 
+.11+| *Fonctionnalités administratives* | Indicateurs du tableau de bord pour les services de stockage et de données | Non | Non 
 
 
 | Gestion des identités et des accès | Oui | Oui 
@@ -701,5 +701,8 @@ Notez que certains services peuvent être pris en charge avec des limitations. P
 | Mode lecture seule | Oui | Non 
 
 
-| Notifications | Oui | Non | Audit 
+| Notifications | Oui | Non 
+
+
+| Audit | Oui | Oui 
 |===
