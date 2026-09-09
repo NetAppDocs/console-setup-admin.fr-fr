@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: task-cvo-rbac-setup.html 
+keywords: cloud volumes ontap, role-based access, iam, identity and access management, permissions, roles, users, subscribers 
+summary: 'Configurez l"accès basé sur les rôles pour Cloud Volumes ONTAP en organisant des projets, en ajoutant des membres à la NetApp Console et en attribuant des rôles Cloud Volumes ONTAP.' 
+---
+= Configurez l'accès basé sur les rôles pour Cloud Volumes ONTAP dans la NetApp Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Configurez l'accès à Cloud Volumes ONTAP afin que les utilisateurs existants de NetApp Console conservent l'accès dont ils ont besoin et que les nouveaux abonnés puissent ajouter des utilisateurs disposant des autorisations appropriées.
+
+Utilisez l'une des sections suivantes :
+
+* *Nouveautés sur NetApp Console et Cloud Volumes ONTAP* : configurez l’accès basé sur les rôles pour les nouveaux utilisateurs et les systèmes Cloud Volumes ONTAP.
+* *Mise à niveau vers une version d'agent Console prenant en charge les rôles* : Examinez les rôles attribués automatiquement aux utilisateurs existants et ajustez-les si nécessaire.
+
+
+
+
+[[set-up-access-for-users-after-initial-configuration-of-cloud-volumes-ontap]]
+== Configurez l'accès pour les utilisateurs après la configuration initiale de Cloud Volumes ONTAP
+
+Les nouveaux abonnés commencent par créer une organisation Console. Le premier abonné se voit attribuer le rôle d'administrateur de l'organisation. link:concept-identity-and-access-management.html["En savoir plus sur la gestion des identités et des accès"].
+
+
+
+[[plan-cloud-volumes-ontap-role-assignments]]
+=== Planifier les affectations de rôles Cloud Volumes ONTAP
+
+Attribuez un rôle Cloud Volumes ONTAP au niveau de l’organisation, du dossier ou du projet contenant le système. Les rôles de la plateforme permettent aux utilisateurs d’administrer les ressources NetApp Console, telles que les organisations, les dossiers, les projets, les membres et l’accès aux ressources. Les rôles Cloud Volumes ONTAP permettent aux utilisateurs de gérer les systèmes Cloud Volumes ONTAP.
+
+N'attribuez à chaque utilisateur que les rôles nécessaires. Attribuez à la fois un rôle de plateforme et un rôle Cloud Volumes ONTAP lorsqu'un utilisateur administre les ressources de la NetApp Console et gère les systèmes Cloud Volumes ONTAP. Un rôle de plateforme ne remplace pas un rôle Cloud Volumes ONTAP pour les opérations Cloud Volumes ONTAP.
+
+* Par exemple, attribuez les rôles *Folder or project admin* et *Cloud Volumes ONTAP admin* à un utilisateur qui gère l'accès à un projet et gère les systèmes Cloud Volumes ONTAP dans ce projet.
+* Attribuez les rôles d'*administrateur de l'organisation* et d'*opérateur Cloud Volumes ONTAP* à un utilisateur qui gère les paramètres de l'agent NetApp Console et les systèmes Cloud Volumes ONTAP dans toute l'organisation.
+* Si un utilisateur n'a pas besoin d'administrer les ressources de la NetApp Console, attribuez-lui uniquement un rôle Cloud Volumes ONTAP correspondant au niveau d'accès requis pour la gestion des systèmes Cloud Volumes ONTAP.
+
+
+
+
+==== Attributions de rôles recommandées lorsque les utilisateurs doivent également administrer les ressources de la NetApp Console
+
+Utilisez ces attributions de rôles lorsqu’un utilisateur doit administrer les ressources de la NetApp Console et gérer les systèmes Cloud Volumes ONTAP dans une organisation qui utilise NetApp Console uniquement pour Cloud Volumes ONTAP.
+
+[cols="20,30,30,20"]
+|===
+| Portée | Rôle de la plateforme | Rôle Cloud Volumes ONTAP | Recommandation 
+
+
+| Organisation | Administrateur de l'organisation | Opérateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console (y compris les paramètres de l'agent de la NetApp Console) et gérer les systèmes Cloud Volumes ONTAP 
+
+
+| Dossier ou projet | Administrateur de dossier ou de projet | Administrateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console dans un dossier ou un projet particulier et administrer les systèmes Cloud Volumes ONTAP 
+
+
+| Dossier ou projet | Administrateur de dossier ou de projet | Opérateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console dans un dossier ou un projet particulier et gérer les systèmes Cloud Volumes ONTAP 
+
+
+| Dossier ou projet | Administrateur de dossier ou de projet | Cloud Volumes ONTAP visionneuse | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console dans un dossier ou un projet particulier et n'a besoin que d'un accès en lecture seule aux systèmes Cloud Volumes ONTAP 
+|===
+
+NOTE: Un problème connu empêche actuellement la combinaison des rôles *Organization viewer* et *Cloud Volumes ONTAP viewer* de fonctionner au niveau de l'organisation. Utilisez le rôle *Organization admin* ou *Folder or project admin* comme solution temporaire.
+
+.Étapes
+. Inscrivez-vous à la NetApp Console et créez votre organisation.
+. Utilisez le projet par défaut ou créez des dossiers et des projets qui correspondent à la manière dont vous souhaitez organiser vos systèmes Cloud Volumes ONTAP.
+. Configurez ou associez l’abonnement Cloud Volumes ONTAP.
+. Ajoutez des utilisateurs, des comptes de service ou des groupes fédérés à l'organisation. link:task-iam-manage-members-permissions.html["Découvrez comment ajouter des membres à une organisation NetApp Console"].
+. Attribuez un rôle Cloud Volumes ONTAP à un utilisateur au niveau de l’organisation, du dossier ou du projet où le système sera géré. Si un membre doit également administrer les ressources de la NetApp Console et attribuer l’accès à d’autres, attribuez-lui le rôle de plateforme approprié.
+. Ajoutez ou découvrez le système Cloud Volumes ONTAP dans le projet où il sera géré. En savoir plus https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/index.html["Cloud Volumes ONTAP"^].
+. Si le système ou son agent Console doit être disponible dans d'autres projets, associez les ressources à ces projets. link:task-iam-manage-resources.html["Apprenez à associer des ressources à des dossiers et à des projets"].
+
+
+
+
+[[review-roles-after-upgrading-the-console-agent]]
+== Examinez les rôles après la mise à niveau de l'agent de la Console
+
+Après la mise à niveau d'un agent Console vers la version 4.9.0 ou ultérieure, la Console attribue automatiquement les rôles Cloud Volumes ONTAP aux utilisateurs existants en fonction de leurs rôles sur la plateforme. Cette attribution unique, appelée initialisation, permet aux utilisateurs de conserver un accès approprié à Cloud Volumes ONTAP sans qu'un administrateur ait à attribuer chaque rôle manuellement. L'initialisation attribue le rôle d'administrateur ou de lecteur Cloud Volumes ONTAP en fonction du rôle existant de l'utilisateur sur la plateforme. Ces correspondances s'appliquent uniquement pendant la migration ; un rôle sur la plateforme ne remplace pas un rôle Cloud Volumes ONTAP explicite pour les nouvelles attributions. Vérifiez les rôles initialisés pour vous assurer que les utilisateurs ne conservent que les accès nécessaires.
+
+.Étapes
+. Identifiez l’organisation, le dossier ou le projet qui contient chaque système Cloud Volumes ONTAP.
+. Examinez le rôle Cloud Volumes ONTAP attribué à chaque utilisateur et confirmez qu'il est attribué au niveau de l'organisation, du dossier ou du projet contenant le système. Pour les rôles prédéfinis attendus, voir link:reference-iam-cvo-roles.html#seeding-mappings-for-existing-users["Mappage de semences pour les utilisateurs existants"].
+. Attribuez ou modifiez le rôle Cloud Volumes ONTAP lorsque le rôle initial ne correspond pas aux responsabilités de l'utilisateur. Le processus d'initialisation attribue le rôle d'administrateur ou de lecteur Cloud Volumes ONTAP en fonction du rôle existant de l'utilisateur sur la plateforme. Si un utilisateur a besoin d'autorisations de niveau opérateur, attribuez explicitement le rôle d'opérateur Cloud Volumes ONTAP après l'initialisation.
+. Attendez jusqu'à une heure pour que les nouvelles attributions de rôles ou les mises à jour prennent effet. Cloud Volumes ONTAP actualise les attributions de rôles toutes les heures.
+. Demandez à l'utilisateur d'accéder au système Cloud Volumes ONTAP et vérifiez que les opérations disponibles correspondent au rôle attribué.
+
+
+Si un utilisateur ne peut pas accéder à un système, vérifiez qu'il dispose d'un rôle Cloud Volumes ONTAP au niveau de l'organisation, du dossier ou du projet.
+
+
+
+[[related-information]]
+== Informations connexes
+
+* link:reference-iam-cvo-roles.html["Rôles d'accès Cloud Volumes ONTAP"]
+* link:concept-iam-rbac.html["Découvrez le contrôle d'accès basé sur les rôles de la NetApp Console"]
+* link:task-iam-manage-roles.html["Gérer l'accès des membres dans la NetApp Console"]
+

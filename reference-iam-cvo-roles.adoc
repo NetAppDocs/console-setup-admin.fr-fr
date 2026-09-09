@@ -14,26 +14,71 @@ summary: 'Vous pouvez attribuer les rôles suivants aux utilisateurs afin de leu
 
 
 [role="lead"]
-Vous pouvez attribuer les rôles suivants aux utilisateurs afin de leur donner accès à Cloud Volumes ONTAP depuis la Console. Les rôles Cloud Volumes ONTAP vous offrent la flexibilité d’attribuer aux utilisateurs un rôle spécifique aux tâches qu’ils doivent accomplir au sein de votre organisation. La manière dont vous attribuez les rôles dépend de vos propres pratiques commerciales et de gestion du stockage.
-
-Cloud Volumes ONTAP utilise les rôles suivants :
+Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner accès à Cloud Volumes ONTAP dans la NetApp Console.
 
 * *Administrateur Cloud Volumes ONTAP* : Fournit un accès complet à toutes les opérations Cloud Volumes ONTAP.
-* *Cloud Volumes ONTAP operator* : Effectuez des opérations de stockage importantes, telles que la découverte et la gestion des systèmes Cloud Volumes ONTAP, y compris l’ajout de volumes, d’agrégats, d’instantanés et de réplications, la modification de certaines configurations et la mise à niveau des versions de Cloud Volumes ONTAP.
+* *Cloud Volumes ONTAP operator* : Effectue des opérations de stockage importantes, telles que la découverte et la gestion des systèmes Cloud Volumes ONTAP, y compris l’ajout de volumes, d’agrégats, d’instantanés et de réplications, la modification de certaines configurations et la mise à niveau des versions de Cloud Volumes ONTAP.
 * *Cloud Volumes ONTAP viewer* : Fournit un accès en lecture seule aux informations Cloud Volumes ONTAP. Ce rôle ne peut effectuer aucune opération active. Certains onglets et écrans contenant des informations de configuration peuvent être indisponibles pour les visionneurs.
 
 
-Pour plus de détails sur tous les rôles d'accès à la console NetApp, voir link:reference-iam-predefined-roles.html["rôles d'accès"].
+link:reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès"] .
+
+Attribuez les rôles Cloud Volumes ONTAP au niveau de l’organisation, du dossier ou du projet contenant le système. Les rôles de plateforme permettent aux utilisateurs d’administrer les ressources NetApp Console, tandis que les rôles Cloud Volumes ONTAP permettent aux utilisateurs de gérer les systèmes Cloud Volumes ONTAP. Pour obtenir des conseils sur la planification des attributions de rôles, consultez link:task-cvo-rbac-setup.html#plan-cloud-volumes-ontap-role-assignments["Configurer l'accès basé sur les rôles pour Cloud Volumes ONTAP"].
+
+
+
+[[role-migrations-for-existing-users]]
+== Migrations de rôles pour les utilisateurs existants
+
+Lorsque vous mettez à niveau un agent Console vers la version 4.9.0 ou ultérieure, la Console attribue des rôles Cloud Volumes ONTAP supplémentaires aux utilisateurs existants en fonction de leurs rôles sur la plateforme.
+
+
+NOTE: Lorsqu'un agent Console existant est mis à niveau vers la version 4.9.0 ou ultérieure, la Console exécute un processus d'initialisation unique qui attribue des rôles Cloud Volumes ONTAP aux utilisateurs existants de l'organisation. Ce processus peut prendre jusqu'à 30 minutes pour être terminé. Pour consulter et modifier les rôles initialisés, voir link:task-cvo-rbac-setup.html#review-roles-after-upgrading-the-console-agent["Examinez les rôles après la mise à niveau de l'agent de la Console"].
+
+Les correspondances suivantes s'appliquent uniquement à ce processus de migration ponctuel.
+
+[cols="50,50"]
+|===
+| Rôle existant sur la plateforme | Rôle Cloud Volumes ONTAP attribué lors de l'initialisation 
+
+
+| Super administrateur | Administrateur Cloud Volumes ONTAP 
+
+
+| Administrateur de l'organisation | Administrateur Cloud Volumes ONTAP 
+
+
+| Administrateur de la fédération | Administrateur Cloud Volumes ONTAP 
+
+
+| Administrateur de dossier ou de projet | Administrateur Cloud Volumes ONTAP 
+
+
+| Super spectateur | Cloud Volumes ONTAP visionneuse 
+
+
+| Visionneuse d'organisation | Cloud Volumes ONTAP visionneuse 
+
+
+| Téléspectateur de la Fédération | Cloud Volumes ONTAP visionneuse 
+
+
+| Visionneuse de dossiers ou de projets | Cloud Volumes ONTAP visionneuse 
+
+
+| Tout autre rôle sur la plateforme | Cloud Volumes ONTAP visionneuse 
+|===
+La NetApp Console attribue le rôle Cloud Volumes ONTAP au même niveau hiérarchique que le rôle de plateforme existant. Ces correspondances ne s'appliquent pas aux nouvelles attributions de rôles. Pour consulter et ajuster les rôles prédéfinis, voir link:task-cvo-rbac-setup.html#review-roles-after-upgrading-the-console-agent["Examinez les rôles après la mise à niveau de l'agent de la Console"].
+
+
+NOTE: Un problème connu empêche actuellement la combinaison des rôles *Organization viewer* et *Cloud Volumes ONTAP viewer* de fonctionner au niveau de l'organisation. Utilisez le rôle *Organization admin* ou *Folder or project admin* comme solution temporaire.
 
 
 
 [[how-role-changes-take-effect]]
 == Comment les changements de rôle prennent effet
 
-Cloud Volumes ONTAP applique le contrôle d'accès basé sur les rôles (RBAC) grâce à un cache local de chaque attribution de rôle. Le cache est actualisé automatiquement toutes les heures. Si un rôle est nouvellement attribué ou modifié, la prise en compte de la modification peut prendre jusqu'à une heure. Après l'actualisation, la Console active les flux de travail autorisés par ce rôle.
-
-
-NOTE: Lors du premier déploiement d'un agent Console, ou lors de la mise à niveau d'un agent Console existant vers Console 4.9.0 ou une version ultérieure, la Console exécute un processus d'initialisation unique qui attribue des rôles Cloud Volumes ONTAP aux utilisateurs existants de l'organisation. Ce processus peut prendre jusqu'à 30 minutes pour être terminé.
+Attendez jusqu'à une heure pour que les nouvelles attributions de rôles ou les mises à jour prennent effet. Cloud Volumes ONTAP actualise les attributions de rôles toutes les heures.
 
 
 
@@ -44,7 +89,7 @@ Le tableau suivant indique les actions que chaque rôle peut effectuer.
 
 [cols="40a,20a,20a,20a"]
 |===
-| Fonctionnalité et action | Cloud Volumes ONTAP visionneuse | Opérateur Cloud Volumes ONTAP | Administrateur Cloud Volumes ONTAP 
+| Fonctionnalité et action | Administrateur Cloud Volumes ONTAP | Opérateur Cloud Volumes ONTAP | Cloud Volumes ONTAP visionneuse 
 
 
  a| 
@@ -77,99 +122,99 @@ Oui
  a| 
 Découvrez un système
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Ajouter un volume
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Utilisez la *réplication* (non applicable à FSx pour ONTAP ni aux systèmes sur site)
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Utilisez le glisser-déposer pour la *réplication* (avec Cloud Volumes ONTAP comme source ou destination)
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Ajouter un système
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Accédez à un
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Ouvrir System Manager
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Activer Cloud Volumes ONTAP
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Supprimer un système
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
@@ -192,11 +237,11 @@ Oui
  a| 
 Modifier les paramètres de Cloud Volumes ONTAP
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
@@ -208,110 +253,110 @@ Oui
  a| 
 Ajouter un volume
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Ajouter un agrégat
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Utilisez *Upgrade now*
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Mettre à jour la version ONTAP
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Modifiez la configuration *CIFS setup* à partir du menu en forme de crayon
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Ouvrir System Manager
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Utilisez le bouton Marche/Arrêt
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Définir un mot de passe
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Retirez le système de l'espace de travail
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Supprimer le système
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
@@ -329,11 +374,11 @@ Modifiez ce qui suit à l'aide de l'icône en forme de crayon dans le volet de d
 * *WORM*
 
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
@@ -345,88 +390,88 @@ Oui
  a| 
 Ajouter un volume
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Cloner un volume
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Créer une copie instantanée
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Modifier les paramètres de volume
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Supprimer un volume
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Restaurer à partir d'une copie instantanée
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Changer le type de disque
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Modifier la politique de hiérarchisation
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
@@ -438,44 +483,44 @@ Oui
  a| 
 Ajouter un agrégat
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Ajouter un volume
  a| 
+Oui
+ a| 
+Oui
+ a| 
 Non
- a| 
-Oui
- a| 
-Oui
 
 
 
  a| 
 Augmenter la capacité
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Supprimer un agrégat
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
@@ -487,76 +532,76 @@ Oui
  a| 
 Interrompre la réplication
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Resynchroniser la réplication
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Réplication de resynchronisation inverse
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Modifier le calendrier
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Modifier le débit de transfert maximal
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Mise à jour de la réplication
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 
 
  a| 
 Supprimer la réplication
  a| 
-Non
- a| 
-Non
- a| 
 Oui
+ a| 
+Non
+ a| 
+Non
 
 |===
