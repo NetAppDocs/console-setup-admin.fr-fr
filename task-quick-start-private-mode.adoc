@@ -92,9 +92,6 @@ Classification NetApp
 Licenses and subscriptions gestion des licences et des abonnements
 
 * Seul BYOL est pris en charge avec le mode privé.
-+
-Pour Cloud Volumes ONTAP BYOL, seules les licences par nœud sont prises en charge. Les licences basées sur la capacité ne sont pas prises en charge. Parce qu'une connexion Internet sortante n'est pas disponible, vous devez importer manuellement votre fichier de licence Cloud Volumes ONTAP dans la Console.
-
 
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#add-unassigned-licenses["Découvrez comment ajouter des licences"^]

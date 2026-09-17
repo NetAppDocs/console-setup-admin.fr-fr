@@ -155,7 +155,16 @@ Voici une liste des rôles dans la catégorie de service de données.  Chaque r�
 | link:reference-iam-ransomware-roles.html["Visualiseur de comportement utilisateur de Ransomware Resilience"] | VISIONNEUSE DU COMPORTEMENT DES UTILISATEURS DE LA RÉSILIENCE AUX RANSOMWARES | Standard | Affichez les alertes et les informations sur les comportements suspects des utilisateurs dans Ransomware Resilience. 
 
 
-| Administrateur SnapCenter | SNAPCENTER_ADMIN | Standard, Privé | Offre la possibilité de sauvegarder des instantanés à partir de clusters ONTAP sur site à l'aide de NetApp Backup and Recovery pour les applications.  Un membre disposant de ce rôle peut effectuer les actions suivantes : * Effectuer n’importe quelle action à partir de Sauvegarde et récupération > Applications * Gérer tous les systèmes dans les projets et dossiers pour lesquels il dispose d’autorisations * Utiliser tous les services de la NetApp Console SnapCenter n’a pas de rôle de visualiseur. 
+| Administrateur SnapCenter | SNAPCENTER_ADMIN | Standard, Privé  a| 
+Permet de sauvegarder des instantanés à partir de clusters ONTAP locaux à l'aide de NetApp Backup and Recovery for applications. Un membre disposant de ce rôle peut effectuer les actions suivantes :
+
+* Effectuez une action depuis Sauvegarde et restauration > Applications
+* Gérer tous les systèmes des projets et dossiers pour lesquels ils disposent des autorisations
+* Utilisez tous les services NetApp Console
+
+
+SnapCenter n'a pas de rôle de spectateur.
+
 |===
 
 
