@@ -17,8 +17,8 @@ Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner acc�
 La reprise après sinistre utilise les rôles suivants :
 
 * *Administrateur de reprise après sinistre* : Effectuez toutes les actions.
-* *Administrateur de basculement de reprise après sinistre* : Effectuer le basculement et les migrations.
-* *Administrateur d'application de récupération après sinistre* : Créer des plans de réplication. Modifier les plans de réplication. Démarrer les tests de basculement.
+* *Administrateur de basculement en cas de sinistre* : effectuez des basculements et des migrations.
+* *Administrateur d'application de reprise après sinistre* : créer et modifier des plans de réplication ; initier des tests de basculement.
 * *Visionneuse de récupération après sinistre* : Afficher uniquement les informations.
 
 
@@ -26,21 +26,24 @@ Le tableau suivant indique les actions que chaque rôle peut effectuer.
 
 [cols="30,20a,20a,20a,20a"]
 |===
-| Fonctionnalité et action | Administrateur de reprise après sinistre | Administrateur de basculement de reprise après sinistre | Administrateur d'application de reprise après sinistre | Visionneuse de reprise après sinistre 
+| Action | Administrateur de reprise après sinistre | Administrateur de basculement de reprise après sinistre | Administrateur d'application de reprise après sinistre | Visionneuse de reprise après sinistre 
 
 
-| Afficher le tableau de bord et tous les onglets  a| 
+5+| *Activation et découverte* 
+
+
+| Activer la licence  a| 
 Oui
+ a| 
+Non
  a| 
 Oui
  a| 
-Oui
- a| 
-Oui
+Non
 
 
 
-| Démarrer un essai gratuit  a| 
+| Démarrez un essai gratuit  a| 
 Oui
  a| 
 Non
@@ -62,6 +65,17 @@ Non
 
 
 
+| Afficher le tableau de bord et tous les onglets  a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+ a| 
+Oui
+
+
+
 | Afficher les informations de licence  a| 
 Oui
  a| 
@@ -73,18 +87,29 @@ Oui
 
 
 
-| Activer la licence  a| 
+| Afficher les identifiants  a| 
+Oui
+ a| 
 Oui
  a| 
 Non
  a| 
+Non
+
+
+
+| Créer, mettre à jour ou supprimer des identifiants  a| 
 Oui
+ a| 
+Oui
+ a| 
+Non
  a| 
 Non
 
 
 
-5+| *Dans l'onglet Sites* : 
+5+| *Sites* 
 
 
 | Voir les sites  a| 
@@ -98,7 +123,7 @@ Oui
 
 
 
-| Ajouter, modifier ou supprimer des sites  a| 
+| Ajouter, modifier ou supprimer des sites ou des clusters  a| 
 Oui
  a| 
 Non
@@ -109,7 +134,18 @@ Non
 
 
 
-5+| *Dans l'onglet Plans de réplication* : 
+| Afficher les clusters  a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Plans de réplication* 
 
 
 | Afficher les plans de réplication  a| 
@@ -211,7 +247,32 @@ Non
 
 
 
-5+| *Dans l'onglet Groupes de ressources* : 
+5+| *Paramètres* 
+
+
+| Créer ou modifier AppVaults  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+| Créer ou modifier des transformations de ressources  a| 
+Oui
+ a| 
+Oui
+ a| 
+Non
+ a| 
+Non
+
+
+
+5+| *Groupes de ressources* 
 
 
 | Afficher les groupes de ressources  a| 
@@ -236,7 +297,7 @@ Non
 
 
 
-5+| *Dans l'onglet Suivi des tâches* : 
+5+| *Surveillance des tâches* 
 
 
 | Voir les offres d'emploi  a| 
