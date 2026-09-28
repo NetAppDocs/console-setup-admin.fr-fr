@@ -45,6 +45,13 @@ La version 4.10.0 inclut des mises à jour des composants et services suivants d
 |===
 
 
+[[private-mode-4-10-0-supports-red-hat-enterprise-linux-rhel-9-6]]
+=== Le mode privé 4.10.0 prend en charge Red Hat Enterprise Linux (RHEL) 9.6
+
+Le mode privé peut désormais être installé et exécuté sur Red Hat Enterprise Linux (RHEL) 9.6, offrant aux utilisateurs le système d'exploitation le plus récent pris en charge pour une sécurité et des performances améliorées. link:https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["Découvrez les exigences de l’hôte pour le mode privé"^]
+
+
+
 [[16-september-2026]]
 == 16 septembre 2026
 
