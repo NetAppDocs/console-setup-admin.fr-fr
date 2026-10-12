@@ -133,12 +133,12 @@ sidebar:
         url: "/concept-agents.html"
       - title: Agents de la console de maintenance
         entries:
-        - title: Maintenir les agents de Console installés manuellement
-          entries:
-          - title: Maintenir un agent installé sur VCenter
-            url: "/task-agent-vm-config.html"
-          - title: Maintenir un agent installé manuellement
-            url: "/task-maintain-agents.html"
+        - title: Maintenir un agent installé sur vCenter
+          url: "/task-agent-vm-config.html"
+        - title: Maintenance des machines virtuelles de l’agent NetApp Console
+          url: "/task-maintain-agents.html"
+      - title: Agents de la console sécurisée
+        entries:
         - title: Mise à jour des adresses des agents et des URI
           url: "/task-update-agent-addressing.html"
         - title: Installer un certificat signé par une autorité de certification pour
@@ -146,12 +146,12 @@ sidebar:
           url: "/task-installing-https-cert.html"
         - title: Configurer un agent de console pour utiliser un serveur proxy
           url: "/task-configuring-proxy.html"
-        - title: Dépanner l'agent de la console
-          url: "/task-troubleshoot-agent.html"
-        - title: Mettre à niveau l'agent de la console
-          url: "/task-upgrade-agent.html"
-        - title: Désinstaller et supprimer l'agent de la console
-          url: "/task-uninstall-agent.html"
+      - title: Dépanner l'agent de la console
+        url: "/task-troubleshoot-agent.html"
+      - title: Mettre à niveau l'agent de la console
+        url: "/task-upgrade-agent.html"
+      - title: Désinstaller et supprimer l'agent de la console
+        url: "/task-uninstall-agent.html"
       - title: Gérer les identifiants du fournisseur de cloud
         entries:
         - title: AWS

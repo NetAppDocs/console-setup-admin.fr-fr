@@ -28,7 +28,7 @@ Les détails de configuration suivants s'appliquent si vous avez déployé un ag
 [[console-agent-vm-details-for-aws]]
 === Détails de la machine virtuelle de l'agent de console pour AWS
 
-Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
+Si vous avez déployé un agent Console depuis la Console ou depuis AWS marketplace, veuillez noter ce qui suit :
 
 * Le type d'instance EC2 est t3.2xlarge.
 * Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
@@ -45,7 +45,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 [[console-agent-vm-details-for-azure]]
 === Détails de la machine virtuelle de l'agent de console pour Azure
 
-Si vous avez déployé un agent de console à partir de la console ou de la place de marché du fournisseur de cloud, notez les points suivants :
+Si vous avez déployé un agent Console depuis la Console ou depuis Azure marketplace, veuillez noter ce qui suit :
 
 * Le type de machine virtuelle est Standard_D8s_v3.
 * Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
@@ -61,7 +61,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 [[console-agent-vm-details-for-google-cloud]]
 === Détails de la machine virtuelle de l'agent de console pour Google Cloud
 
-Si vous avez déployé un agent de console à partir de la console, notez les points suivants :
+Si vous avez déployé un agent Console depuis la Console ou depuis la place de marché Google Cloud, veuillez noter ce qui suit :
 
 * L'instance de VM est n2-standard-8.
 * Le système d'exploitation de l'image est Ubuntu 22.04 LTS.

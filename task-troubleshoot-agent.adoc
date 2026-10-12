@@ -179,11 +179,6 @@ Vous pouvez également accéder au rapport de validation au format JSON et aux j
 [[disable-config-check]]
 === Désactiver les vérifications de configuration pour les installations manuelles
 
-
-
-[[disable-configuration-checks-for-manual-installations]]
-=== Désactiver les vérifications de configuration pour les installations manuelles
-
 Il peut arriver que vous ayez besoin de désactiver les contrôles de configuration qui vérifient la connectivité sortante lors de l'installation. Par exemple, lors de l'installation manuelle d'un agent dans votre environnement Government Cloud, vous devez désactiver les vérifications de configuration, sinon l'installation échouera.
 
 Vous désactivez la vérification de configuration en définissant l'indicateur _skipConfigCheck_ dans le fichier _com/opt/application/netapp/service-manager-2/config.json_. Par défaut, cet indicateur est défini sur faux et la vérification de configuration vérifie l'accès sortant pour l'agent. Définissez cet indicateur sur vrai pour désactiver la vérification. Familiarisez-vous avec la syntaxe JSON avant de passer à l'étape suivante.
