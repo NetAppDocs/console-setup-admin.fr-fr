@@ -6534,7 +6534,6 @@
   <block id="e4a3525277e1b4371bb89478f9422b67" category="list-text">*Cloud Volumes ONTAP operator* : Effectue des opérations de stockage importantes, telles que la découverte et la gestion des systèmes Cloud Volumes ONTAP, y compris l’ajout de volumes, d’agrégats, d’instantanés et de réplications, la modification de certaines configurations et la mise à niveau des versions de Cloud Volumes ONTAP.</block>
   <block id="769bcb1b917e9456afc908e3923e871d" category="inline-link-macro">Configurer l'accès basé sur les rôles pour Cloud Volumes ONTAP</block>
   <block id="460200b9d3d05ac8165deb4aceb3eee1" category="paragraph">Attribuez les rôles Cloud Volumes ONTAP au niveau de l’organisation, du dossier ou du projet contenant le système. Les rôles de plateforme permettent aux utilisateurs d’administrer les ressources NetApp Console, tandis que les rôles Cloud Volumes ONTAP permettent aux utilisateurs de gérer les systèmes Cloud Volumes ONTAP. Pour obtenir des conseils sur la planification des attributions de rôles, consultez <block ref="4fa2aa48d2bde5e7446b8c98acc74eca" category="inline-link-macro-rx"></block>.</block>
-  <block id="477c09cb5610382ea6fb7978147584f0" category="section-title">Migrations de rôles pour les utilisateurs existants</block>
   <block id="2144a74d9bd9b04e77b26ea6f662072b" category="paragraph">Lorsque vous mettez à niveau un agent Console vers la version 4.9.0 ou ultérieure, la Console attribue des rôles Cloud Volumes ONTAP supplémentaires aux utilisateurs existants en fonction de leurs rôles sur la plateforme.</block>
   <block id="8f07835784615aa819dfff43f4ab0f2e" category="inline-link-macro">Examinez les rôles après la mise à niveau de l'agent de la Console</block>
   <block id="cc4d5362d4db1743065e85867391e3f7" category="paragraph">Les correspondances suivantes s'appliquent uniquement à ce processus de migration ponctuel.</block>
@@ -6663,4 +6662,6 @@
   <block id="f195c3b76464876e0848dadd15d334f6" category="inline-link-macro">Découvrez comment augmenter la taille d'un agent local exécuté dans VCenter</block>
   <block id="4cbf31d3afff31a0915f41b3987e9479" category="list-text"><block ref="706e14d3d1493bd7bc93630a70dd883a" category="inline-link-macro-rx"></block>.</block>
   <block id="83ea5433d56d3644fb56d0b6b799c35e" category="sidebar">Maintenir un agent installé sur vCenter</block>
+  <block id="5d9476182acf1146ab60b631fc72ec99" category="admonition">Les rôles d'accès pour Cloud Volumes ONTAP sont disponibles lorsque vous exécutez une version d'agent Console 4.9.0 ou ultérieure.</block>
+  <block id="7be2d306061e806c6a2cf1ac2026ea93" category="section-title">Migration des rôles pour les utilisateurs existants après la mise à niveau vers la version 4.9.0 ou ultérieure de l'agent Console</block>
 </blocks>
