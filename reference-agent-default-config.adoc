@@ -31,7 +31,7 @@ Les détails de configuration suivants s'appliquent si vous avez déployé un ag
 Si vous avez déployé un agent Console depuis la Console ou depuis AWS marketplace, veuillez noter ce qui suit :
 
 * Le type d'instance EC2 est t3.2xlarge.
-* Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
+* Le système d'exploitation de l'image est Ubuntu 24.04 LTS.
 +
 Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.
 
@@ -48,7 +48,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 Si vous avez déployé un agent Console depuis la Console ou depuis Azure marketplace, veuillez noter ce qui suit :
 
 * Le type de machine virtuelle est Standard_D8s_v3.
-* Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
+* Le système d'exploitation de l'image est Ubuntu 24.04 LTS.
 +
 Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.
 
@@ -64,7 +64,7 @@ Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utili
 Si vous avez déployé un agent Console depuis la Console ou depuis la place de marché Google Cloud, veuillez noter ce qui suit :
 
 * L'instance de VM est n2-standard-8.
-* Le système d'exploitation de l'image est Ubuntu 22.04 LTS.
+* Le système d'exploitation de l'image est Ubuntu 24.04 LTS.
 +
 Le système d'exploitation n'inclut pas d'interface graphique.  Vous devez utiliser un terminal pour accéder au système.
 

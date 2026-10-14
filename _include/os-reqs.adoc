@@ -185,11 +185,11 @@ Pris en charge en mode d'application ou en mode permissif
  a| 
 Ubuntu
  a| 
-22,04 LTS
+24,04 LTS
  a| 
-4.0.0 ou version ultérieure
+4.0.0 ou version ultérieure avec la NetApp Console en mode privé
  a| 
-Docker Engine 23.0.6 à 26.0.0
+Docker Engine 23.0.6 à 28.0.0.
 
 26.0.0 est pris en charge avec les installations _new_ agent 3.9.44 ou ultérieures
  a| 
