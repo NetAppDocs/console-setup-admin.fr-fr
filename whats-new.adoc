@@ -18,6 +18,13 @@ Découvrez les nouveautés des fonctionnalités d'administration de la NetApp Co
 
 
 
+[[15-october-2026]]
+== 15 octobre 2026
+
+Directive non résolue dans <stdin> - include::_whatsnew/2026-10-13.adoc[]
+
+
+
 [[17-september-2026]]
 == 17 septembre 2026
 

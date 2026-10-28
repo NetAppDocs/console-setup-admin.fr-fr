@@ -54,7 +54,7 @@ Le déploiement local de la console prend en charge les clusters ONTAP sur site 
 
 Le déploiement local sur console est parfaitement adapté aux organisations disposant de vastes environnements ONTAP sur site qui nécessitent un provisionnement basé sur des politiques, des contrôles de conformité automatisés et une souveraineté des données totale.
 
-link:https://docs.netapp.com/us-en/console-local/concept-netapp-console-local.html["Découvrez le déploiement local de la NetApp Console^."]
+link:https://docs.netapp.com/us-en/console-local/concept-netapp-console-local.html["Découvrez le déploiement local de NetApp Console."^]
 
 
 
