@@ -20,38 +20,38 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 * Service de stockage simple (S3)
 
 
-| Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
+a| Pour gérer les ressources AWS. Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
 
 | Amazon FSx for NetApp ONTAP :
 
 * api.workloads.netapp.com
 
 
-| La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter FSx for ONTAP-based workloads.
+a| La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d’exploiter les charges de travail FSx basées sur ONTAP.
 
-| \ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
+a| * \https://management.azure.com * \https://login.microsoftonline.com * \https://blob.core.windows.net * \https://core.windows.net
 
-| Pour gérer les ressources dans les régions publiques Azure.
+a| Pour gérer les ressources dans les régions publiques d’Azure.
 
-| \ https://management.azure.microsoft.scloud \ https://login.microsoftonline.microsoft.scloud \ https://blob.core.microsoft.scloud \ https://core.microsoft.scloud
+a| * \https://management.azure.microsoft.scloud * \https://login.microsoftonline.microsoft.scloud * \https://blob.core.microsoft.scloud * \https://core.microsoft.scloud
 
-| Pour gérer les ressources dans la région Azure IL6.
+a| Pour gérer les ressources dans la région Azure IL6.
 
-| \ https://management.usgovcloudapi.net \ https://login.microsoftonline.us \ https://blob.core.usgovcloudapi.net \ https://core.usgovcloudapi.net
+a| * \https://management.usgovcloudapi.net * \https://login.microsoftonline.us * \https://*.blob.core.usgovcloudapi.net * \https://core.usgovcloudapi.net
 
-| Pour gérer les ressources dans les régions Azure Government.
+a| Pour gérer les ressources dans les régions Azure Government.
 
-| \ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn
+a| * \https://management.chinacloudapi.cn * \https://login.chinacloudapi.cn * \https://blob.core.chinacloudapi.cn * \https://core.chinacloudapi.cn
 
-| Pour gérer les ressources dans les régions Azure Chine.
+a| Pour gérer les ressources dans les régions Azure China.
 
-| \ https://www.googleapis.com/compute/v1/ \ https://compute.googleapis.com/compute/v1 \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://config.googleapis.com/v1/projects
+a| * \https://www.googleapis.com/compute/v1/ * \https://compute.googleapis.com/compute/v1 * \https://cloudresourcemanager.googleapis.com/v1/projects * \https://www.googleapis.com/compute/beta * \https://storage.googleapis.com/storage/v1 * \https://www.googleapis.com/storage/v1 * \https://iam.googleapis.com/v1 * \https://cloudkms.googleapis.com/v1 * \https://config.googleapis.com/v1/projects
 
-| Pour gérer les ressources dans Google Cloud.
+a| Pour gérer les ressources dans Google Cloud.
 
-| https://mysupport.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp. | https://signin.b2c.netapp.com | Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou ajouter de nouvelles informations d'identification NSS à la NetApp Console. | https://support.netapp.com | Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp, ainsi que pour recevoir les mises à jour logicielles pour Cloud Volumes ONTAP.
+a| * \https://mysupport.netapp.com a| Pour obtenir des informations de licence et envoyer des messages AutoSupport au NetApp Support. a| * \https://signin.b2c.netapp.com a| Pour mettre à jour les identifiants du NetApp Support Site (NSS) ou pour ajouter de nouveaux identifiants NSS à la NetApp Console. a| * \https://support.netapp.com a| Pour obtenir des informations de licence et envoyer des messages AutoSupport au NetApp Support, ainsi que pour recevoir des mises à jour logicielles pour Cloud Volumes ONTAP.
 
-| https://api.bluexp.netapp.com https://netapp-cloud-account.auth0.com https://netapp-cloud-account.us.auth0.com https://console.netapp.com https://components.console.bluexp.netapp.com https://cdn.auth0.com | Fournir des fonctionnalités et des services au sein de la NetApp Console.
+a| * \https://api.bluexp.netapp.com * \https://netapp-cloud-account.auth0.com * \https://netapp-cloud-account.us.auth0.com * \https://console.netapp.com * \https://components.console.bluexp.netapp.com * \https://cdn.auth0.com a| Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 [cols="2*"]
 |===
@@ -59,28 +59,38 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 
  a| 
-\ https://support.netapp.com \ https://mysupport.netapp.com
+* \ https://support.netapp.com
+* \ https://mysupport.netapp.com
+
  a| 
 Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
 
 
 
  a| 
-\https://\*.api.bluexp.netapp.com \ https://api.bluexp.netapp.com \https://*.cloudmanager.cloud.netapp.com \ https://cloudmanager.cloud.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com
+* \https://*.api.bluexp.netapp.com
+* \ https://api.bluexp.netapp.com
+* \https://*.cloudmanager.cloud.netapp.com
+* \ https://cloudmanager.cloud.netapp.com
+* \ https://netapp-cloud-account.auth0.com
+* \ https://netapp-cloud-account.us.auth0.com
+
 | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
 
 
  a| 
 Choisissez entre deux ensembles de points de terminaison :
 
-* Option 1 (recommandée)
-+
-\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+Option 1 (recommandée)
 
-* Option 2
-+
-\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
 
+
+Option 2
+
+* \https://*.blob.core.windows.net
+* \ https://cloudmanagerinfraprod.azurecr.io
 
  a| 
 Pour obtenir des images pour les mises à niveau de l'agent de console.
@@ -93,9 +103,20 @@ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre
 
 
 |===
-a| https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint) a| Pour obtenir des images pour les mises à niveau de l’agent Console.
+a| * \https://bluexpinfraprod.eastus2.data.azurecr.io * \https://bluexpinfraprod.azurecr.io
 
-a| https://occmclientinfragov.azurecr.us a| Pour obtenir des images pour les mises à niveau de l’agent Console.
+a| Pour obtenir les images nécessaires au déploiement de l'agent Console et aux mises à niveau.
+
+a| Pour les régions non gouvernementales, utilisez les points de terminaison suivants :
+
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
+
+
+Pour les régions gouvernementales, utilisez plutôt le point de terminaison suivant :
+
+* \https://occmclientinfragov.azurecr.us a| Pour obtenir des images pour le déploiement et les mises à niveau de l’agent Console.
+
 
 ^1^ NetApp recommande d'autoriser les points de terminaison de l'option 1 dans votre pare-feu car ils sont plus sécurisés et d'interdire les points de terminaison de l'option 2.  Notez les points suivants à propos de ces points de terminaison :
 
@@ -148,9 +169,17 @@ Pour les opérations quotidiennes.
 * \ https://cloudmanagerinfraprod.azurecr.io
 
  a| 
+Pour les régions non gouvernementales en mode standard et en mode restreint, utilisez les points de terminaison suivants :
+
 * \ https://bluexpinfraprod.eastus2.data.azurecr.io
 * \ https://bluexpinfraprod.azurecr.io
-* https://occmclientinfragov.azurecr.us.io (si vous vous trouvez dans un environnement en mode restreint)
 
-| Pour obtenir des images pour les mises à niveau de l'agent de console. 
+
+Pour les régions gouvernementales en mode restreint, utilisez plutôt le point de terminaison suivant :
+
+* \ https://occmclientinfragov.azurecr.us
+
+ a| 
+Pour obtenir les images nécessaires au déploiement et aux mises à niveau de l'agent Console.
+
 |===

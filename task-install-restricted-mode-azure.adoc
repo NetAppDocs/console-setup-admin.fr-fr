@@ -1,0 +1,330 @@
+---
+sidebar: sidebar 
+permalink: task-install-restricted-mode-azure.html 
+keywords: restricted mode, Azure, Azure Government, Azure Marketplace, Console agent 
+summary: 'Déployez le Console agent en mode restreint dans Azure depuis Marketplace, ou suivez la rubrique d"installation manuelle pour un hôte AWS, Azure ou Google Cloud.' 
+---
+= Déployez l’agent NetApp Console en mode restreint dans Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Déployez l’agent de console en mode restreint afin de pouvoir utiliser la NetApp Console avec une connectivité sortante limitée.  Pour commencer, installez l’agent de console, configurez la console en accédant à l’interface utilisateur qui s’exécute sur l’agent de console, puis fournissez les autorisations cloud que vous avez précédemment configurées.
+
+
+
+[[step-1-prepare-cloud-permissions]]
+== Étape 1 : Préparer les autorisations cloud
+
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Apprenez à préparer les autorisations cloud"] .
+
+
+
+[[step-2-prepare-network-access]]
+== Étape 2 : Préparer l'accès au réseau
+
+Autorisez les terminaux sortants suivants afin que l'agent Console puisse gérer les ressources Azure et accéder aux services de la NetApp Console.
+
+
+
+[[azure-endpoints]]
+=== Points de terminaison Azure
+
+Autorisez les points de terminaison qui s’appliquent à votre région Azure : public, Government ou China.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+* \https://management.azure.com
+* \https://login.microsoftonline.com
+* \https://blob.core.windows.net
+* \https://core.windows.net
+
+ a| 
+Pour gérer les ressources dans les régions publiques Azure.
+
+
+
+ a| 
+* \https://management.usgovcloudapi.net
+* \https://login.microsoftonline.us
+* \https://*.blob.core.usgovcloudapi.net
+* \https://core.usgovcloudapi.net
+
+ a| 
+Pour gérer les ressources dans les régions Azure Government.
+
+
+
+ a| 
+* \https://management.chinacloudapi.cn
+* \https://login.chinacloudapi.cn
+* \https://blob.core.chinacloudapi.cn
+* \https://core.chinacloudapi.cn
+
+ a| 
+Pour gérer les ressources dans les régions Azure Chine.
+
+|===
+
+
+[[netapp-console-endpoints]]
+=== Points de terminaison de NetApp Console
+
+Autorisez les points de terminaison partagés pour NetApp Support, les fonctionnalités de Console, ainsi que le déploiement et les mises à niveau de l’agent Console.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+* \ https://mysupport.netapp.com
+
+ a| 
+Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp.
+
+
+
+ a| 
+* \ https://signin.b2c.netapp.com
+
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
+
+
+
+ a| 
+* \ https://support.netapp.com
+
+ a| 
+Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp, ainsi que pour recevoir les mises à jour logicielles de Cloud Volumes ONTAP.
+
+
+
+ a| 
+* \ https://api.bluexp.netapp.com
+* \ https://netapp-cloud-account.auth0.com
+* \ https://netapp-cloud-account.us.auth0.com
+* \ https://console.netapp.com
+* \https://components.console.bluexp.netapp.com
+* \ https://cdn.auth0.com
+
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
+
+
+
+ a| 
+Pour les régions non gouvernementales, utilisez les points de terminaison suivants :
+
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
+
+
+Pour les régions gouvernementales, utilisez plutôt le point de terminaison suivant :
+
+* \ https://occmclientinfragov.azurecr.us
+
+ a| 
+Pour obtenir les images nécessaires au déploiement et aux mises à niveau de l'agent Console.
+
+|===
+Pour l’accès via le navigateur et les autres exigences réseau, consultez link:task-prepare-restricted-mode.html#step-5-prepare-network-access["Préparer l'accès réseau pour le mode restreint"].
+
+
+
+[[step-3-deploy-the-netapp-console-in-restricted-mode-in-azure]]
+== Étape 3 : Déployer la NetApp Console en mode restreint dans Azure
+
+La manière dont vous déployez le Console agent dépend du fait que vous utilisiez Azure Marketplace ou que vous l’installiez manuellement sur un hôte Linux dans votre environnement Azure.
+
+
+
+[[install-netapp-console-restricted-mode-from-the-azure-marketplace]]
+=== Installez le mode restreint de NetApp Console depuis Azure Marketplace
+
+.Avant de commencer
+Vous devriez avoir les éléments suivants :
+
+* Un réseau virtuel et un sous-réseau qui répondent aux exigences de mise en réseau.
++
+link:task-prepare-restricted-mode.html#step-5-prepare-network-access["En savoir plus sur les exigences de mise en réseau"]
+
+* Un rôle personnalisé Azure qui inclut les autorisations requises pour l’agent de la console.
++
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations Azure"]
+
+
+
+.Étapes
+. Accédez à la page de la machine virtuelle de l’agent de la NetApp Console dans la Place de marché Azure.
++
+** https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager["Page de la place de marché Azure pour les régions commerciales"^]
+** https://portal.azure.us/#create/netapp.netapp-oncommand-cloud-manageroccm-byol["Page de la place de marché Azure pour les régions Azure Government"^]
+
+
+. Sélectionnez *Obtenir maintenant* puis sélectionnez *Continuer*.
+. Depuis le portail Azure, sélectionnez *Créer* et suivez les étapes pour configurer la machine virtuelle.
++
+Notez les points suivants lorsque vous configurez la machine virtuelle :
+
++
+** *Taille de la VM* : Choisissez une taille de VM qui répond aux exigences de CPU et de RAM.  Nous recommandons Standard_D8s_v3.
+** *Disques* : L'agent de console peut fonctionner de manière optimale avec des disques HDD ou SSD.
+** *Adresse IP publique* : Pour utiliser une adresse IP publique avec la machine virtuelle de l’agent Console, sélectionnez une référence SKU de base.
++
+image:screenshot-azure-sku.png["Une capture d’écran de la création d’une nouvelle adresse IP dans Azure qui vous permet de choisir Basique dans le champ SKU."]
+
+
+
++
+Si vous utilisez plutôt une adresse IP SKU standard, la console utilise l'adresse IP _privée_ de l'agent de la console, au lieu de l'adresse IP publique. Si la machine que vous utilisez pour accéder à la console ne peut pas atteindre l'adresse IP privée, la console ne fonctionne pas.
+
++
++ https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses#sku["Documentation Azure : Référence IP publique"^]
+
++
+** *Groupe de sécurité réseau* : l’agent de console nécessite des connexions entrantes utilisant SSH, HTTP et HTTPS.
++
+link:reference-ports-azure.html["Afficher les règles du groupe de sécurité pour Azure"] .
+
+** *Identité* : Sous *Gestion*, sélectionnez *Activer l'identité gérée attribuée par le système*.
++
+Une identité gérée permet à la machine virtuelle de l'agent Console de s'identifier auprès de Microsoft Entra ID sans avoir besoin d'informations d'identification. https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["En savoir plus sur les identités gérées pour les ressources Azure"^] .
+
+
+
+. Sur la page *Réviser + créer*, vérifiez vos sélections et sélectionnez *Créer* pour démarrer le déploiement.
+
+
+.Résultat
+Azure déploie la machine virtuelle avec les paramètres spécifiés.  La machine virtuelle et le logiciel de l'agent de console devraient être exécutés dans environ cinq minutes.
+
+.Quelle est la prochaine étape ?
+Configurer la NetApp Console.
+
+
+
+[[manually-install-netapp-console-restricted-mode-in-azure]]
+=== Installer manuellement le mode restreint de NetApp Console dans Azure
+
+Pour les étapes d'installation manuelle, voir link:task-install-restricted-mode-manual.html["Installez manuellement le Console agent en mode restreint"].
+
+
+
+[[step-4-set-up-netapp-console]]
+== Étape 4 : Configurer NetApp Console
+
+Lorsque vous accédez à la console pour la première fois, vous êtes invité à choisir une organisation pour l'agent de la console et devez activer le mode restreint.
+
+.Avant de commencer
+La personne qui configure l’agent de la console doit se connecter à la console à l’aide d’un identifiant qui n’appartient pas déjà à une organisation de la console.
+
+Si votre compte est associé à une autre organisation, vous devez créer un nouveau compte.  Sinon, l'option permettant d'activer le mode restreint n'apparaît pas sur l'écran de configuration.
+
+.Étapes
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à l’instance de l’agent de console et entrez l’URL suivante de l’agent de console que vous avez installé.
+. Inscrivez-vous ou connectez-vous à la NetApp Console.
+. Une fois connecté, configurez la console :
++
+.. Entrez un nom pour l’agent de la console.
+.. Saisissez un nom pour une nouvelle organisation de console.
+.. Sélectionnez *Exécutez-vous dans un environnement sécurisé ?*
+.. Sélectionnez *Activer le mode restreint sur ce compte*.
++
+Notez que vous ne pouvez pas modifier ce paramètre une fois le compte créé.  Vous ne pouvez pas activer le mode restreint ultérieurement et vous ne pouvez pas le désactiver ultérieurement.
+
++
+Si vous avez déployé l'agent de console dans une région gouvernementale, la case à cocher est déjà activée et ne peut pas être modifiée.  Cela est dû au fait que le mode restreint est le seul mode pris en charge dans les régions gouvernementales.
+
+.. Sélectionnez *Commençons*.
+
+
+
+
+.Résultat
+L'agent de console est maintenant installé et configuré avec votre organisation de console.  Tous les utilisateurs doivent accéder à la console à l’aide de l’adresse IP de l’instance de l’agent de la console.
+
+.Quelle est la prochaine étape ?
+Fournissez à la console les autorisations que vous avez précédemment configurées.
+
+
+
+[[step-5-provide-permissions-to-the-console-agent]]
+== Étape 5 : Accorder des autorisations à l’agent de la console
+
+Si vous avez installé l'agent Console à partir d'Azure Marketplace ou manuellement, vous devez lui accorder les autorisations que vous avez configurées précédemment.
+
+Vous pouvez accorder des autorisations à l’agent Console soit en lui attribuant un rôle Azure, soit en fournissant les informations d’identification d’un principal de service Azure.
+
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Apprenez à préparer les autorisations cloud"] .
+
+[role="tabbed-block"]
+====
+.Rôle Azure
+--
+Accédez au portail Azure et attribuez le rôle personnalisé Azure à la machine virtuelle de l’agent de console pour un ou plusieurs abonnements.
+
+.Étapes
+. Depuis le portail Azure, ouvrez le service *Abonnements* et sélectionnez votre abonnement.
++
+Il est important d'attribuer le rôle à partir du service *Abonnements* car cela spécifie la portée de l'attribution du rôle au niveau de l'abonnement.  La _scope_ définit l’ensemble des ressources auxquelles l’accès s’applique.  Si vous spécifiez une étendue à un niveau différent (par exemple, au niveau de la machine virtuelle), votre capacité à effectuer des actions à partir de la NetApp Console sera affectée.
+
++
+https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview["Documentation Microsoft Azure : Comprendre la portée d'Azure RBAC"^]
+
+. Sélectionnez *Contrôle d'accès (IAM)* > *Ajouter* > *Ajouter une attribution de rôle*.
+. Dans l’onglet *Rôle*, sélectionnez le rôle *Opérateur de console* et sélectionnez *Suivant*.
++
+
+NOTE: L'opérateur de console est le nom par défaut fourni dans la politique.  Si vous avez choisi un nom différent pour le rôle, sélectionnez plutôt ce nom.
+
+. Dans l'onglet *Membres*, procédez comme suit :
++
+.. Attribuer l'accès à une *identité gérée*.
+.. Sélectionnez *Sélectionner les membres*, sélectionnez l’abonnement dans lequel la machine virtuelle de l’agent de console a été créée, sous *Identité gérée*, choisissez *Machine virtuelle*, puis sélectionnez la machine virtuelle de l’agent de console.
+.. Sélectionnez *Sélectionner*.
+.. Sélectionnez *Suivant*.
+.. Sélectionnez *Réviser + attribuer*.
+.. Si vous souhaitez gérer des ressources dans des abonnements Azure supplémentaires, passez à cet abonnement, puis répétez ces étapes.
+
+
+
+
+--
+.Principal de service Azure
+--
+Fournissez à la NetApp Console les identifiants du principal de service Azure que vous avez configuré précédemment.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : sélectionnez *Microsoft Azure > Agent*.
+.. *Définir les informations d'identification* : saisissez les informations sur le principal du service Microsoft Entra qui accorde les autorisations requises :
++
+*** ID de l'application (client)
+*** ID du répertoire (locataire)
+*** Secret client
+
+
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+.Résultat
+La NetApp Console dispose désormais des autorisations nécessaires pour effectuer des actions dans Azure en votre nom.
+
+--
+====

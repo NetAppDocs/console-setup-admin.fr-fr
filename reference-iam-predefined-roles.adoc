@@ -28,10 +28,20 @@ Les rôles de plate-forme accordent des autorisations d’administration à la N
 | Rôle de la plateforme | Nom de l'API* *Le nom de l'API est l'identifiant de rôle utilisé dans les API. Copiez la valeur exactement comme indiqué (y compris les majuscules et les underscores). | Disponibilité du mode | Responsabilités 
 
 
-| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de l'organisation"] | ORGANIZATION_ADMIN | Standard, restreint, privé | Ce rôle permet à un utilisateur d'accéder sans restriction à tous les projets et dossiers d'une organisation, d'ajouter des membres à n'importe quel projet ou dossier, ainsi que d'effectuer toute tâche et d'utiliser tout service de données pour lesquels aucun rôle explicite n'est associé. Les utilisateurs disposant de ce rôle gèrent votre organisation en créant des dossiers et des projets, en attribuant des rôles, en ajoutant des utilisateurs et en gérant les systèmes s'ils disposent des identifiants appropriés. C'est le seul rôle d'accès qui peut créer des agents Console. 
+| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de l'organisation"] | ORGANIZATION_ADMIN | Standard, restreint, privé  a| 
+Ce rôle permet à un utilisateur d'accéder sans restriction à tous les projets et dossiers d'une organisation, d'ajouter des membres à n'importe quel projet ou dossier, ainsi que d'effectuer toute tâche et d'utiliser tout service de données pour lesquels aucun rôle explicite n'est associé.
+
+Les utilisateurs disposant de ce rôle gèrent votre organisation en créant des dossiers et des projets, en attribuant des rôles, en ajoutant des utilisateurs et en gérant les systèmes s'ils disposent des identifiants appropriés.
+
+C'est le seul rôle d'accès qui peut créer des agents Console.
 
 
-| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de dossier ou de projet"] | ADMINISTRATEUR_DE_DOSSIER_OU_DE_PROJET | Standard, restreint, privé | Permet à un utilisateur un accès illimité aux projets et dossiers attribués. Ils peuvent ajouter des membres aux dossiers ou aux projets qu'ils gèrent, ainsi qu'effectuer n'importe quelle tâche et utiliser n'importe quel service de données ou application sur les ressources du dossier ou du projet qui leur est attribué. Les administrateurs de dossier ou de projet ne peuvent pas créer d’agents de console. 
+
+| link:reference-iam-platform-roles.html#organization-admin-roles["Administrateur de dossier ou de projet"] | ADMINISTRATEUR_DE_DOSSIER_OU_DE_PROJET | Standard, restreint, privé  a| 
+Permet à un utilisateur d'accéder sans restriction aux projets et dossiers qui lui sont attribués. Peut ajouter des membres aux dossiers ou projets qu'il gère, ainsi qu'effectuer toutes les tâches et utiliser tout service de données ou toute application sur les ressources du dossier ou du projet qui lui est attribué.
+
+Les administrateurs de dossier ou de projet ne peuvent pas créer d'agents de Console.
+
 
 
 | link:reference-iam-platform-roles.html#federation-roles["Administrateur de la fédération"] | ADMINISTRATION_FÉDÉRÉE | Standard, Restreint | Permet à un utilisateur de créer et de gérer des fédérations avec la console, ce qui permet l'authentification unique (SSO). 

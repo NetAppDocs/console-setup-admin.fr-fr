@@ -1,0 +1,358 @@
+---
+sidebar: sidebar 
+permalink: task-install-restricted-mode-aws.html 
+keywords: restricted mode, AWS, AWS GovCloud, AWS Marketplace, Console agent, Cloud Volumes ONTAP 
+summary: Déployez l’agent Console en mode restreint dans AWS à partir de la Marketplace Commercial ou Gov, ou installez-le manuellement sur un hôte Linux. 
+---
+= Déployez la NetApp Console en mode restreint dans AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Déployez l’agent de console en mode restreint afin de pouvoir utiliser la NetApp Console avec une connectivité sortante limitée.  Pour commencer, installez l’agent de console, configurez la console en accédant à l’interface utilisateur qui s’exécute sur l’agent de console, puis fournissez les autorisations cloud que vous avez précédemment configurées.
+
+Installez Console agent depuis AWS Marketplace (Commercial ou Gov Cloud) ou manuellement sur un hôte Linux.
+
+
+
+[[step-1-prepare-network-access]]
+== Étape 1: Préparer l'accès au réseau
+
+Autorisez les terminaux sortants suivants afin que l'agent Console puisse gérer les ressources AWS et accéder aux services NetApp Console.
+
+
+
+[[aws-endpoints]]
+=== Points de terminaison AWS
+
+Autorisez ces points de terminaison de service AWS à gérer les ressources AWS, y compris FSx for ONTAP.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+Services AWS (amazonaws.com) :
+
+* CloudFormation
+* Cloud de calcul élastique (EC2)
+* Gestion des identités et des accès (IAM)
+* Service de gestion des clés (KMS)
+* Service de jetons de sécurité (STS)
+* Service de stockage simple (S3)
+
+ a| 
+Pour gérer les ressources AWS.  Le point de terminaison dépend de votre région AWS. https://docs.aws.amazon.com/general/latest/gr/rande.html["Consultez la documentation AWS pour plus de détails"^]
+
+
+
+ a| 
+Amazon FSx for NetApp ONTAP :
+
+* api.workloads.netapp.com
+
+ a| 
+La console Web contacte ce point de terminaison pour interagir avec les API Workload Factory afin de gérer et d'exploiter les charges de travail basées sur FSx pour ONTAP.
+
+|===
+
+
+[[netapp-console-endpoints]]
+=== Points de terminaison de NetApp Console
+
+Autorisez les points de terminaison partagés pour NetApp Support, les fonctionnalités de Console, ainsi que le déploiement et les mises à niveau de l’agent Console.
+
+[cols="2a,1a"]
+|===
+| Points de terminaison | But 
+
+
+ a| 
+* \ https://mysupport.netapp.com
+
+ a| 
+Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp.
+
+
+
+ a| 
+* \ https://signin.b2c.netapp.com
+
+ a| 
+Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
+
+
+
+ a| 
+* \ https://support.netapp.com
+
+ a| 
+Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp, ainsi que pour recevoir les mises à jour logicielles de Cloud Volumes ONTAP.
+
+
+
+ a| 
+* \ https://api.bluexp.netapp.com
+* \ https://netapp-cloud-account.auth0.com
+* \ https://netapp-cloud-account.us.auth0.com
+* \ https://console.netapp.com
+* \https://components.console.bluexp.netapp.com
+* \ https://cdn.auth0.com
+
+ a| 
+Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
+
+
+
+ a| 
+Pour les régions non gouvernementales, utilisez les points de terminaison suivants :
+
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
+
+
+Pour les régions gouvernementales, utilisez plutôt le point de terminaison suivant :
+
+* \ https://occmclientinfragov.azurecr.us
+
+ a| 
+Pour obtenir les images nécessaires au déploiement et aux mises à niveau de l'agent Console.
+
+|===
+Pour l’accès via le navigateur et les autres exigences réseau, consultez link:task-prepare-restricted-mode.html#step-5-prepare-network-access["Préparer l'accès réseau pour le mode restreint"].
+
+
+
+[[step-2-deploy-the-netapp-console-in-restricted-mode-in-aws]]
+== Étape 2: Déployer la NetApp Console en mode restreint dans AWS
+
+La manière dont vous déployez le Console agent dépend de l’utilisation de AWS Commercial Marketplace, de AWS Gov Marketplace ou d’une installation manuelle sur un hôte Linux.
+
+
+
+[[install-netapp-console-restricted-mode-from-the-aws-commercial-marketplace]]
+=== Installez le mode restreint de NetApp Console depuis AWS Commercial Marketplace
+
+.Avant de commencer
+Veuillez vous munir des éléments suivants :
+
+* Un VPC et un sous-réseau qui répondent aux exigences de mise en réseau.
++
+link:task-prepare-restricted-mode.html#step-5-prepare-network-access["En savoir plus sur les exigences de mise en réseau"]
+
+* Un rôle IAM avec une politique attachée qui inclut les autorisations requises pour l’agent de la console.
++
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations AWS"]
+
+* Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.
+* Une compréhension des exigences en matière de CPU et de RAM pour l'agent.
++
+link:task-prepare-restricted-mode.html#step-3-review-host-requirements["Examen des exigences des agents"].
+
+* Une paire de clés pour l'instance EC2.
+
+
+.Étapes
+. Allez à la https://aws.amazon.com/marketplace/pp/prodview-jbay5iyfmu6ui["Liste des agents de la NetApp Console sur AWS Marketplace"^].
+. Sur la page Marketplace, sélectionnez *Continuer pour s'abonner*.
+. Pour vous abonner au logiciel, sélectionnez *Accepter les conditions*.
++
+Le processus d'abonnement peut prendre quelques minutes.
+
+. Une fois le processus d'abonnement terminé, sélectionnez *Continuer vers la configuration*.
+. Sur la page *Configurer ce logiciel*, assurez-vous d'avoir sélectionné la bonne région, puis sélectionnez *Continuer pour lancer*.
+. Sur la page *Lancer ce logiciel*, sous *Choisir une action*, sélectionnez *Lancer via EC2*, puis sélectionnez *Lancer*.
++
+Utilisez la console EC2 pour lancer l’instance et attacher un rôle IAM.  Cela n'est pas possible avec l'action *Lancer depuis le site Web*.
+
+. Suivez les instructions pour configurer et déployer l’instance :
++
+** *Nom et balises* : saisissez un nom et des balises pour l'instance.
+** *Images d'application et de système d'exploitation* : ignorez cette section.  L'AMI de l'agent de console est déjà sélectionné.
+** *Type d'instance* : Selon la disponibilité de la région, choisissez un type d'instance qui répond aux exigences de RAM et de CPU (t3.2xlarge est présélectionné et recommandé).
+** *Paire de clés (connexion)* : sélectionnez la paire de clés que vous souhaitez utiliser pour vous connecter en toute sécurité à l'instance.
+** *Paramètres réseau* : Modifiez les paramètres réseau selon vos besoins :
++
+*** Choisissez le VPC et le sous-réseau souhaités.
+*** Spécifiez si l’instance doit avoir une adresse IP publique.
+*** Spécifiez les paramètres du groupe de sécurité qui activent les méthodes de connexion requises pour l'instance de l'agent de console : SSH, HTTP et HTTPS.
++
+link:reference-ports-aws.html["Afficher les règles du groupe de sécurité pour AWS"] .
+
+
+
+** *Configurer le stockage* : Conservez la taille et le type de disque par défaut pour le volume racine.
++
+Si vous souhaitez activer le chiffrement Amazon EBS sur le volume racine, sélectionnez *Avancé*, développez *Volume 1*, sélectionnez *Chiffré*, puis choisissez une clé KMS.
+
+** *Détails avancés* : Sous *Profil d’instance IAM*, choisissez le rôle IAM qui inclut les autorisations requises pour l’agent de la console.
+** *Résumé* : Consultez le résumé et sélectionnez *Lancer l'instance*.
+
+
+
+
+.Résultat
+AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.
+
+.Quelle est la prochaine étape ?
+Configurer la NetApp Console.
+
+
+
+[[install-netapp-console-restricted-mode-from-the-aws-gov-marketplace]]
+=== Installez le mode restreint de NetApp Console depuis AWS Gov Marketplace
+
+.Avant de commencer
+Veuillez vous munir des éléments suivants :
+
+* Un VPC et un sous-réseau qui répondent aux exigences de mise en réseau.
++
+link:task-prepare-restricted-mode.html#step-5-prepare-network-access["En savoir plus sur les exigences de mise en réseau"]
+
+* Un rôle IAM avec une politique attachée qui inclut les autorisations requises pour l’agent de la console.
++
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Découvrez comment configurer les autorisations AWS"]
+
+* Autorisations d'abonnement et de désabonnement de la place de marché AWS pour votre utilisateur IAM.
+* Une paire de clés pour l'instance EC2.
+
+
+.Étapes
+. Accédez à l’offre d’agent NetApp Console sur AWS Marketplace.
++
+.. Ouvrez le service EC2 et sélectionnez *Lancer l'instance*.
+.. Sélectionnez *AWS Marketplace*.
+.. Recherchez la NetApp Console et sélectionnez l’offre.
++
+image:screenshot-gov-cloud-mktp.png["Une capture d'écran qui montre l'offre NetApp Console après l'avoir recherchée sur AWS Marketplace"]
+
+.. Sélectionnez *Continuer*.
+
+
+. Suivez les instructions pour configurer et démarrer l'instance :
++
+** *Choisissez un type d'instance* : Selon la disponibilité de la région, choisissez l'un des types d'instance pris en charge (t3.2xlarge est recommandé).
++
+link:task-prepare-restricted-mode.html["Examiner les exigences de l'instance"] .
+
+** *Configurer les détails de l'instance* : sélectionnez un VPC et un sous-réseau, choisissez le rôle IAM que vous avez créé à l'étape 1, activez la protection de terminaison (recommandé) et choisissez toute autre option de configuration qui répond à vos besoins.
+
+
++
+image:screenshot_aws_iam_role.gif["Une capture d’écran qui montre les champs de la page Configurer l’instance dans AWS.  Le rôle IAM que vous auriez dû créer à l’étape 1 est sélectionné."]
+
++
+** *Ajouter du stockage* : Conservez les options de stockage par défaut.
+** *Ajouter des balises* : saisissez des balises pour l'instance, si vous le souhaitez.
+** *Configurer le groupe de sécurité* : spécifiez les méthodes de connexion requises pour l’instance de l’agent de console : SSH, HTTP et HTTPS.
+** *Révision* : Vérifiez vos sélections et sélectionnez *Lancer*.
+
+
+
+
+.Résultat
+AWS lance le logiciel avec les paramètres spécifiés. L'agent de console se déploie en environ cinq minutes.
+
+.Quelle est la prochaine étape ?
+Configurer la console.
+
+
+
+[[manually-install-the-console-agent-in-aws]]
+=== Installez manuellement l’agent Console dans AWS
+
+Pour une installation manuelle sur un hôte AWS, voir link:task-install-restricted-mode-manual.html["Installez manuellement le Console agent en mode restreint"].
+
+
+
+[[step-3-set-up-netapp-console]]
+== Étape 3 : Configurer NetApp Console
+
+Lorsque vous accédez à la console pour la première fois, vous êtes invité à choisir une organisation pour l'agent de la console et devez activer le mode restreint.
+
+.Avant de commencer
+La personne qui configure l’agent de la console doit se connecter à la console à l’aide d’un identifiant qui n’appartient pas déjà à une organisation de la console.
+
+Si votre compte est associé à une autre organisation, vous devez créer un nouveau compte.  Sinon, l'option permettant d'activer le mode restreint n'apparaît pas sur l'écran de configuration.
+
+.Étapes
+. Ouvrez un navigateur Web à partir d’un hôte disposant d’une connexion à l’instance de l’agent de console et entrez l’URL suivante de l’agent de console que vous avez installé.
+. Inscrivez-vous ou connectez-vous à la NetApp Console.
+. Une fois connecté, configurez la console :
++
+.. Entrez un nom pour l’agent de la console.
+.. Saisissez un nom pour une nouvelle organisation de console.
+.. Sélectionnez *Exécutez-vous dans un environnement sécurisé ?*
+.. Sélectionnez *Activer le mode restreint sur ce compte*.
++
+Notez que vous ne pouvez pas modifier ce paramètre une fois le compte créé.  Vous ne pouvez pas activer le mode restreint ultérieurement et vous ne pouvez pas le désactiver ultérieurement.
+
++
+Si vous avez déployé l'agent de console dans une région gouvernementale, la case à cocher est déjà activée et ne peut pas être modifiée.  Cela est dû au fait que le mode restreint est le seul mode pris en charge dans les régions gouvernementales.
+
+.. Sélectionnez *Commençons*.
+
+
+
+
+.Résultat
+L'agent de console est maintenant installé et configuré avec votre organisation de console.  Tous les utilisateurs doivent accéder à la console à l’aide de l’adresse IP de l’instance de l’agent de la console.
+
+.Quelle est la prochaine étape ?
+Fournissez à la console les autorisations que vous avez précédemment configurées.
+
+
+
+[[step-4-provide-permissions-to-the-console-agent]]
+== Étape 4 : Accorder des autorisations à l’agent Console
+
+Si vous avez installé manuellement le Console agent dans AWS, vous devez lui accorder les autorisations que vous avez configurées précédemment.
+
+Ces étapes ne s'appliquent pas si vous avez déployé l'agent de console à partir d'AWS Marketplace, car vous avez choisi le rôle IAM requis lors du déploiement.
+
+Vous pouvez accorder les autorisations requises au Console agent soit en associant un rôle IAM à l’instance EC2, soit en fournissant une clé d’accès AWS pour un utilisateur IAM disposant des autorisations nécessaires.
+
+link:task-prepare-restricted-mode.html#step-6-prepare-cloud-permissions["Apprenez à préparer les autorisations cloud"] .
+
+[role="tabbed-block"]
+====
+.Rôle AWS IAM
+--
+Attachez le rôle IAM que vous avez précédemment créé à l’instance EC2 sur laquelle vous avez installé l’agent de console.
+
+Ces étapes s’appliquent uniquement si vous avez installé manuellement l’agent de console dans AWS.  Pour les déploiements AWS Marketplace, vous avez déjà associé l’instance de l’agent de console à un rôle IAM qui inclut les autorisations requises.
+
+.Étapes
+. Accédez à la console Amazon EC2.
+. Sélectionnez *Instances*.
+. Sélectionnez l’instance de l’agent de console.
+. Sélectionnez *Actions > Sécurité > Modifier le rôle IAM*.
+. Sélectionnez le rôle IAM et sélectionnez *Mettre à jour le rôle IAM*.
+
+
+--
+.Clé d'accès AWS
+--
+Fournissez à la NetApp Console la clé d’accès AWS pour un utilisateur IAM disposant des autorisations requises.
+
+.Étapes
+. Sélectionnez *Administration > Informations d'identification*.
+. Sélectionnez *Informations d'identification de l'organisation*.
+. Sélectionnez *Ajouter des informations d’identification* et suivez les étapes de l’assistant.
++
+.. *Emplacement des informations d'identification* : Sélectionnez *Amazon Web Services > Agent*.
+.. *Définir les informations d'identification* : saisissez une clé d'accès AWS et une clé secrète.
+.. *Abonnement Marketplace* : Associez un abonnement Marketplace à ces informations d'identification en vous abonnant maintenant ou en sélectionnant un abonnement existant.
+.. *Révision* : Confirmez les détails des nouvelles informations d'identification et sélectionnez *Ajouter*.
+
+
+
+
+--
+====

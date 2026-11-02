@@ -61,51 +61,70 @@ Les points de terminaison répertoriés ci-dessous sont tous des entrées CNAME.
 
 
  a| 
-\ https://management.azure.com \ https://login.microsoftonline.com \ https://blob.core.windows.net \ https://core.windows.net
+* \https://management.azure.com
+* \https://login.microsoftonline.com
+* \https://blob.core.windows.net
+* \https://core.windows.net
+
  a| 
 Pour gérer les ressources dans les régions publiques Azure.
 
 
 
  a| 
-\ https://management.chinacloudapi.cn \ https://login.chinacloudapi.cn \ https://blob.core.chinacloudapi.cn \ https://core.chinacloudapi.cn
+* \https://management.chinacloudapi.cn
+* \https://login.chinacloudapi.cn
+* \https://blob.core.chinacloudapi.cn
+* \https://core.chinacloudapi.cn
+
  a| 
 Pour gérer les ressources dans les régions Azure Chine.
 
 
 
  a| 
-\ https://mysupport.netapp.com
+* \ https://mysupport.netapp.com
+
  a| 
 Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp.
 
 
 
  a| 
-\ https://signin.b2c.netapp.com
+* \ https://signin.b2c.netapp.com
+
  a| 
 Pour mettre à jour les informations d'identification du site de support NetApp (NSS) ou pour ajouter de nouvelles informations d'identification NSS à la NetApp Console.
 
 
 
  a| 
-\ https://support.netapp.com
+* \ https://support.netapp.com
+
  a| 
 Pour obtenir des informations sur les licences et envoyer des messages AutoSupport au support NetApp, ainsi que pour recevoir les mises à jour logicielles de Cloud Volumes ONTAP.
 
 
 
  a| 
-\https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com \https://netapp-cloud-account.us.auth0.com \https://console.netapp.com \https://components.console.bluexp.netapp.com \https://cdn.auth0.com
+* \ https://api.bluexp.netapp.com
+* \ https://netapp-cloud-account.auth0.com
+* \ https://netapp-cloud-account.us.auth0.com
+* \ https://console.netapp.com
+* \https://components.console.bluexp.netapp.com
+* \ https://cdn.auth0.com
+
  a| 
 Pour fournir des fonctionnalités et des services au sein de la NetApp Console.
 
 
 
  a| 
-https://bluexpinfraprod.eastus2.data.azurecr.io https://bluexpinfraprod.azurecr.io https://occmclientinfragov.azurecr.us (nécessaire pour les déploiements en mode restreint)
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
+
  a| 
-Pour obtenir des images pour les mises à niveau de l'agent de console.
+Pour obtenir les images nécessaires au déploiement et aux mises à niveau de l'agent Console.
 
 |===
 --

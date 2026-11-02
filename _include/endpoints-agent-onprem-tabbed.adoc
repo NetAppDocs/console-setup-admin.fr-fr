@@ -10,7 +10,7 @@ Ces points de terminaison sont nécessaires pour tous les déploiements d'agents
 
 [cols="2a,1a"]
 |===
-| Points de terminaison | Objectif Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=nss-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=saas-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=upgrade-endpoints] 
+| Points de terminaison | Objectif Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=nss-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=saas-endpoints] Directive non résolue dans <stdin> - include::endpoints-agent.adoc[tag=upgrade-endpoints-saas] 
 |===
 --
 .Points de terminaison supplémentaires pour les ressources AWS

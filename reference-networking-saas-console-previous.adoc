@@ -82,11 +82,19 @@ Pour les opérations quotidiennes.
 * \ https://cloudmanagerinfraprod.azurecr.io
 
  a| 
+Pour les régions non gouvernementales en mode standard et en mode restreint, utilisez les points de terminaison suivants :
+
 * \ https://bluexpinfraprod.eastus2.data.azurecr.io
 * \ https://bluexpinfraprod.azurecr.io
-* https://occmclientinfragov.azurecr.us.io (si vous vous trouvez dans un environnement en mode restreint)
 
-| Pour obtenir des images pour les mises à niveau de l'agent de console. 
+
+Pour les régions gouvernementales en mode restreint, utilisez plutôt le point de terminaison suivant :
+
+* \ https://occmclientinfragov.azurecr.us
+
+ a| 
+Pour obtenir les images nécessaires au déploiement et aux mises à niveau de l'agent Console.
+
 |===
 .Étapes
 . Vérifiez que votre agent est en version 4.0.0 ou supérieure.link:task-troubleshoot-agent.html#view-the-console-agent-version["Afficher la version de l'agent."]
@@ -119,28 +127,38 @@ Ces points de terminaison sont utilisés pour les agents de console 3.9.55 et ve
 
 
  a| 
-\ https://support.netapp.com \ https://mysupport.netapp.com
+* \ https://support.netapp.com
+* \ https://mysupport.netapp.com
+
  a| 
 Pour obtenir des informations de licence et envoyer des messages AutoSupport au support NetApp .
 
 
 
  a| 
-\https://\*.api.bluexp.netapp.com \ https://api.bluexp.netapp.com \https://*.cloudmanager.cloud.netapp.com \ https://cloudmanager.cloud.netapp.com \ https://netapp-cloud-account.auth0.com \ https://netapp-cloud-account.us.auth0.com
+* \https://*.api.bluexp.netapp.com
+* \ https://api.bluexp.netapp.com
+* \https://*.cloudmanager.cloud.netapp.com
+* \ https://cloudmanager.cloud.netapp.com
+* \ https://netapp-cloud-account.auth0.com
+* \ https://netapp-cloud-account.us.auth0.com
+
 | Pour fournir des fonctionnalités et des services au sein de la NetApp Console. 
 
 
  a| 
 Choisissez entre deux ensembles de points de terminaison :
 
-* Option 1 (recommandée)
-+
-\ https://bluexpinfraprod.eastus2.data.azurecr.io \ https://bluexpinfraprod.azurecr.io
+Option 1 (recommandée)
 
-* Option 2
-+
-\https://*.blob.core.windows.net \ https://cloudmanagerinfraprod.azurecr.io
+* \ https://bluexpinfraprod.eastus2.data.azurecr.io
+* \ https://bluexpinfraprod.azurecr.io
 
+
+Option 2
+
+* \https://*.blob.core.windows.net
+* \ https://cloudmanagerinfraprod.azurecr.io
 
  a| 
 Pour obtenir des images pour les mises à niveau de l'agent de console.
