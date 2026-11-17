@@ -90,7 +90,7 @@ Après la mise à niveau d'un agent Console vers la version 4.9.0 ou ultérieure
 
 .Étapes
 . Identifiez l’organisation, le dossier ou le projet qui contient chaque système Cloud Volumes ONTAP.
-. Examinez le rôle Cloud Volumes ONTAP attribué à chaque utilisateur et confirmez qu'il est attribué au niveau de l'organisation, du dossier ou du projet contenant le système. link:reference-iam-cvo-roles.html#seeding-mappings-for-existing-users["Découvrez les rôles Cloud Volumes ONTAP qui sont attribués automatiquement après la mise à niveau"].
+. Examinez le rôle Cloud Volumes ONTAP attribué à chaque utilisateur et confirmez qu'il est attribué au niveau de l'organisation, du dossier ou du projet contenant le système. link:reference-iam-cvo-roles.html["Découvrez les rôles Cloud Volumes ONTAP qui sont attribués automatiquement après la mise à niveau"].
 . Attribuez ou modifiez le rôle Cloud Volumes ONTAP lorsque le rôle initial ne correspond pas aux responsabilités de l'utilisateur. Le processus d'initialisation attribue le rôle d'administrateur ou de lecteur Cloud Volumes ONTAP en fonction du rôle existant de l'utilisateur sur la plateforme. Si un utilisateur a besoin d'autorisations de niveau opérateur, attribuez explicitement le rôle d'opérateur Cloud Volumes ONTAP après l'initialisation.
 . Attendez jusqu'à une heure pour que les nouvelles attributions de rôles ou les mises à jour prennent effet. Cloud Volumes ONTAP actualise les attributions de rôles toutes les heures.
 . Demandez à l'utilisateur d'accéder au système Cloud Volumes ONTAP et vérifiez que les opérations disponibles correspondent au rôle attribué.
