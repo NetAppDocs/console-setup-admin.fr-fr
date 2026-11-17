@@ -5659,8 +5659,6 @@
   <block id="630125b3287d32dddd226602e8dd6803" category="list-text">Connectez-vous à la console de maintenance en utilisant le nom d'utilisateur<block ref="67f50785d40416a7a7689c5c353f1128" prefix=" " category="inline-code"></block> et le mot de passe de maintenance que vous avez spécifié lors du déploiement de l'OVA.</block>
   <block id="cd975b382ffd3de432ce2ffb42508a03" category="list-text">Appuyez sur <block ref="c4ca4238a0b923820dcc509a6f75849b" prefix=" " category="inline-code"></block> pour ouvrir le menu *Configuration système*.</block>
   <block id="ed9d848f40aa067619f57a0c3bdd1aa7" category="list-text">Appuyez sur <block ref="eccbc87e4b5ce2fe28308fd9f2a7baf3" prefix=" " category="inline-code"></block> Entrée pour sélectionner *Mise à niveau* et suivez les instructions à l'écran.</block>
-  <block id="c017b1c0dccb6954f1ade63dff926a0c" category="paragraph">La mise à niveau installe le système d'exploitation mis à jour, l'environnement d'exécution Docker et les services de l'agent Console en place. Si le noyau est mis à jour, la machine virtuelle redémarre automatiquement.</block>
-  <block id="5acb3aced6d8dac916dec3aade57b7e1" category="list-text">Une fois la mise à niveau terminée, vérifiez que l'agent de la Console fonctionne correctement :</block>
   <block id="969e7ac6672c561c12855b0df5552218" category="list-text">Sur le vSphere client, vérifiez que la machine virtuelle est allumée et que la console web est accessible.</block>
   <block id="f1dea5408c76a6c79fe56adbe57d4bf3" category="list-text">Dans la NetApp Console, accédez à *Administration &gt; Support &gt; Agents* et vérifiez que la version de l’agent correspond bien à la nouvelle version.</block>
   <block id="e169af5277f4f18447755957609654e2" category="list-text">Démontez l'ISO de la VM :</block>
@@ -6486,7 +6484,6 @@
   <block id="a22ba5cede201b398675ddfd63c9864d" category="paragraph">La version 4.10.0 inclut des mises à jour des composants et services suivants de la NetApp Console.</block>
   <block id="c1b9fde9363d4906a9e67eb0862e9fc7" category="cell">4.10.0</block>
   <block id="5ff195749703fc07b830e8ce460f4513" category="cell">Rendez-vous sur le <block ref="9d354d50c04a9174ec71f0d3d8410a23" category="inline-link-rx"></block> et consultez les modifications incluses pour les versions 4.10.0.</block>
-  <block id="669d8c7c23d7c1df9de525a93369bb8f" category="cell">1.546.0 (10 août 2026)</block>
   <block id="99eb4ee0a56c7fb9d9fef77053e43af4" category="paragraph">Permet de sauvegarder des instantanés à partir de clusters ONTAP locaux à l'aide de NetApp Backup and Recovery for applications. Un membre disposant de ce rôle peut effectuer les actions suivantes :</block>
   <block id="f44c611b4162cee5fdf2ee447ed48192" category="list-text">Effectuez une action depuis Sauvegarde et restauration &gt; Applications</block>
   <block id="e88871c7007d89688acdcb7ffa4922fe" category="list-text">Gérer tous les systèmes des projets et dossiers pour lesquels ils disposent des autorisations</block>
@@ -6789,5 +6786,17 @@
   <block id="2cf7a5d26ce7d4d99d4c91d9a7be62a2" category="section-title">Arrêtez et démarrez la machine virtuelle de l'agent</block>
   <block id="b4c95a42ca3d365982b8e5cd0c5f9a12" category="paragraph">Limitez l'interruption lors de l'arrêt et du redémarrage de la machine virtuelle de l'agent, car les services de gestion et de données dépendent du maintien en fonctionnement de l'agent.</block>
   <block id="4a818b70467076c03f2c14237204886a" category="paragraph">Vérifiez l’état de l’agent Console depuis sa machine virtuelle Linux afin de confirmer qu’il est en cours d’exécution.</block>
-  <block id="e370f8f4d5db9e4f93257ac02adddec3" category="section-title">09 novembre 2026</block>
+  <block id="daa04540ede89ebe21aa75e4bb91c101" category="cell">1.56.0 (10 août 2026)</block>
+  <block id="d68cd763bb6443bb6e7c8aa2306f8ef4" category="paragraph">Cette version de l’agent Console inclut des améliorations de sécurité et des corrections de bogues, ainsi que la nouvelle fonctionnalité suivante. Lorsque vous mettez à niveau un agent Console déployé sur vCenter vers la version 4.13.0 à l’aide d’une image ISO, assurez-vous que la machine virtuelle redémarre une fois la mise à niveau terminée. La machine virtuelle peut redémarrer automatiquement.</block>
+  <block id="fb37b2b6fa74940a30d42aec5c20c8f5" category="paragraph">Cette version inclut des améliorations de sécurité et des corrections de bugs, ainsi que la nouvelle fonctionnalité suivante.</block>
+  <block id="d2033ec1ec99f494b181d63a27d56e2d" category="section-title">Attribuez le rôle de contributeur Cloud Volumes ONTAP</block>
+  <block id="cd27e9569393bf08fe35ccdf2583e61b" category="paragraph">Vous pouvez désormais attribuer le rôle de contributeur Cloud Volumes ONTAP afin d’offrir aux membres un large accès à la gestion des systèmes Cloud Volumes ONTAP sans leur permettre de supprimer des systèmes, des volumes, des agrégats ou des relations de réplication. <block ref="8c5db5921f383526df21d84d3b1bfd83" category="inline-link-macro-rx"></block>.</block>
+  <block id="b83ef7028571cfab72ee7ce1a1a682a0" category="list-text">*Contributeur Cloud Volumes ONTAP* : fournit un accès similaire à celui du rôle d’administrateur Cloud Volumes ONTAP, à l’exception des opérations qui suppriment ou retirent des ressources, ou qui activent ou désactivent des systèmes. Les contributeurs peuvent effectuer des opérations telles que l’ajout de systèmes, la gestion de la réplication et la modification des paramètres des volumes et des systèmes, mais ne peuvent pas supprimer des systèmes, des volumes, des agrégats ou des relations de réplication.</block>
+  <block id="649973a0776cc2c800262363cd181d7b" category="cell">Contributeur de Cloud Volumes ONTAP</block>
+  <block id="51633f0b535a3fc11bc6c59b67c5d18b" category="cell"><block ref="51633f0b535a3fc11bc6c59b67c5d18b" category="inline-link-macro-rx"></block></block>
+  <block id="065242fa71340bedcbcdf967d279e80b" category="cell">CVO_CONTRIBUTOR</block>
+  <block id="4e0882ff89f5aa014ab9a6d53ca4f3b1" category="cell">Offre un accès similaire à celui du rôle d’administrateur Cloud Volumes ONTAP, à l’exception des opérations qui suppriment ou retirent des ressources, ou qui activent ou désactivent des systèmes.</block>
+  <block id="5d97bc96e49114d0d3e6c6bac921f939" category="paragraph">La mise à niveau installe le système d'exploitation mis à jour, l'environnement d'exécution Docker et les services de Console agent sur place. Lorsque vous effectuez la mise à niveau vers Console agent 4.13.0, assurez-vous de redémarrer la machine virtuelle une fois la mise à niveau terminée. La machine virtuelle peut redémarrer automatiquement. Console agent est indisponible jusqu'à la fin du redémarrage. Pour les autres versions, la machine virtuelle redémarre automatiquement si le noyau est mis à jour.</block>
+  <block id="74aaffed4ac921f25c719cb03ee18ea0" category="list-text">Une fois la mise à niveau terminée et tout redémarrage effectué, vérifiez que l’agent Console fonctionne correctement :</block>
+  <block id="3cc38715797be469f39edd81c803bf02" category="section-title">17 novembre 2026</block>
 </blocks>

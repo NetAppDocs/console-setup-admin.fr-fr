@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-iam-cvo-roles.html 
-keywords: cloud volumes ontap, role-based access control, rbac, viewer, operator, admin, access control, permissions, volumes, aggregates, replication, snapshots, ontap upgrade, IAM roles 
+keywords: cloud volumes ontap, role-based access control, rbac, viewer, operator, contributor, admin, access control, permissions, volumes, aggregates, replication, snapshots, ontap upgrade, IAM roles 
 summary: 'Vous pouvez attribuer les rôles suivants aux utilisateurs afin de leur donner accès à Cloud Volumes ONTAP depuis la Console. Les rôles Cloud Volumes ONTAP vous offrent la flexibilité d"attribuer aux utilisateurs un rôle spécifique aux tâches qu"ils doivent accomplir au sein de votre organisation.' 
 ---
 = Rôles d'accès Cloud Volumes ONTAP dans la NetApp Console
@@ -20,6 +20,7 @@ Vous pouvez attribuer les rôles suivants aux utilisateurs pour leur donner acc�
 NOTE: Les rôles d'accès pour Cloud Volumes ONTAP sont disponibles lorsque vous exécutez une version d'agent Console 4.9.0 ou ultérieure.
 
 * *Administrateur Cloud Volumes ONTAP* : Fournit un accès complet à toutes les opérations Cloud Volumes ONTAP.
+* *Contributeur Cloud Volumes ONTAP* : fournit un accès similaire à celui du rôle d’administrateur Cloud Volumes ONTAP, à l’exception des opérations qui suppriment ou retirent des ressources, ou qui activent ou désactivent des systèmes. Les contributeurs peuvent effectuer des opérations telles que l’ajout de systèmes, la gestion de la réplication et la modification des paramètres des volumes et des systèmes, mais ne peuvent pas supprimer des systèmes, des volumes, des agrégats ou des relations de réplication.
 * *Cloud Volumes ONTAP operator* : Effectue des opérations de stockage importantes, telles que la découverte et la gestion des systèmes Cloud Volumes ONTAP, y compris l’ajout de volumes, d’agrégats, d’instantanés et de réplications, la modification de certaines configurations et la mise à niveau des versions de Cloud Volumes ONTAP.
 * *Cloud Volumes ONTAP viewer* : Fournit un accès en lecture seule aux informations Cloud Volumes ONTAP. Ce rôle ne peut effectuer aucune opération active. Certains onglets et écrans contenant des informations de configuration peuvent être indisponibles pour les visionneurs.
 
@@ -40,9 +41,9 @@ Attendez jusqu'à une heure pour que les nouvelles attributions de rôles ou les
 
 Le tableau suivant indique les actions que chaque rôle peut effectuer.
 
-[cols="40a,20a,20a,20a"]
+[cols="28a,18a,18a,18a,18a"]
 |===
-| Fonctionnalité et action | Administrateur Cloud Volumes ONTAP | Opérateur Cloud Volumes ONTAP | Cloud Volumes ONTAP visionneuse 
+| Fonctionnalité et action | Administrateur Cloud Volumes ONTAP | Contributeur de Cloud Volumes ONTAP | Opérateur Cloud Volumes ONTAP | Cloud Volumes ONTAP visionneuse 
 
 
  a| 
@@ -52,6 +53,8 @@ Le tableau suivant indique les actions que chaque rôle peut effectuer.
 
  a| 
 Entrez un système
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -69,11 +72,15 @@ Oui
 Oui
  a| 
 Oui
+ a| 
+Oui
 
 
 
  a| 
 Découvrez un système
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -90,12 +97,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Utilisez la *réplication* (non applicable à FSx pour ONTAP ni aux systèmes sur site)
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -112,12 +123,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Ajouter un système
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -129,6 +144,8 @@ Non
 
  a| 
 Accédez à un
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -146,6 +163,8 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
@@ -157,6 +176,8 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
@@ -164,6 +185,8 @@ Non
 Supprimer un système
  a| 
 Oui
+ a| 
+Non
  a| 
 Non
  a| 
@@ -184,11 +207,15 @@ Oui
 Oui
  a| 
 Oui
+ a| 
+Oui
 
 
 
  a| 
 Modifier les paramètres de Cloud Volumes ONTAP
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -210,12 +237,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Ajouter un agrégat
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -232,6 +263,8 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
@@ -243,12 +276,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Modifiez la configuration *CIFS setup* à partir du menu en forme de crayon
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -266,6 +303,8 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
@@ -273,6 +312,8 @@ Non
 Utilisez le bouton Marche/Arrêt
  a| 
 Oui
+ a| 
+Non
  a| 
 Non
  a| 
@@ -288,6 +329,8 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
@@ -299,6 +342,8 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
@@ -306,6 +351,8 @@ Non
 Supprimer le système
  a| 
 Oui
+ a| 
+Non
  a| 
 Non
  a| 
@@ -329,6 +376,8 @@ Modifiez ce qui suit à l'aide de l'icône en forme de crayon dans le volet de d
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
  a| 
 Non
@@ -347,12 +396,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Cloner un volume
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -369,12 +422,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Modifier les paramètres de volume
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -392,11 +449,15 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
  a| 
 Restaurer à partir d'une copie instantanée
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -411,6 +472,8 @@ Changer le type de disque
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
  a| 
 Non
@@ -419,6 +482,8 @@ Non
 
  a| 
 Modifier la politique de hiérarchisation
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -440,6 +505,8 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
@@ -451,12 +518,16 @@ Oui
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
 
 
 
  a| 
 Augmenter la capacité
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -474,6 +545,8 @@ Oui
 Non
  a| 
 Non
+ a| 
+Non
 
 
 
@@ -484,6 +557,8 @@ Non
 
  a| 
 Interrompre la réplication
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -498,6 +573,8 @@ Resynchroniser la réplication
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
  a| 
 Non
@@ -506,6 +583,8 @@ Non
 
  a| 
 Réplication de resynchronisation inverse
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -520,6 +599,8 @@ Modifier le calendrier
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
  a| 
 Non
@@ -528,6 +609,8 @@ Non
 
  a| 
 Modifier le débit de transfert maximal
+ a| 
+Oui
  a| 
 Oui
  a| 
@@ -542,6 +625,8 @@ Mise à jour de la réplication
  a| 
 Oui
  a| 
+Oui
+ a| 
 Non
  a| 
 Non
@@ -552,6 +637,8 @@ Non
 Supprimer la réplication
  a| 
 Oui
+ a| 
+Non
  a| 
 Non
  a| 

@@ -74,9 +74,9 @@ Avant de commencer, prenez un instantané de la machine virtuelle au cas où vou
 . Appuyez sur  `1` pour ouvrir le menu *Configuration système*.
 . Appuyez sur  `3` Entrée pour sélectionner *Mise à niveau* et suivez les instructions à l'écran.
 +
-La mise à niveau installe le système d'exploitation mis à jour, l'environnement d'exécution Docker et les services de l'agent Console en place. Si le noyau est mis à jour, la machine virtuelle redémarre automatiquement.
+La mise à niveau installe le système d'exploitation mis à jour, l'environnement d'exécution Docker et les services de Console agent sur place. Lorsque vous effectuez la mise à niveau vers Console agent 4.13.0, assurez-vous de redémarrer la machine virtuelle une fois la mise à niveau terminée. La machine virtuelle peut redémarrer automatiquement. Console agent est indisponible jusqu'à la fin du redémarrage. Pour les autres versions, la machine virtuelle redémarre automatiquement si le noyau est mis à jour.
 
-. Une fois la mise à niveau terminée, vérifiez que l'agent de la Console fonctionne correctement :
+. Une fois la mise à niveau terminée et tout redémarrage effectué, vérifiez que l’agent Console fonctionne correctement :
 +
 .. Sur le vSphere client, vérifiez que la machine virtuelle est allumée et que la console web est accessible.
 .. Dans la NetApp Console, accédez à *Administration > Support > Agents* et vérifiez que la version de l’agent correspond bien à la nouvelle version.

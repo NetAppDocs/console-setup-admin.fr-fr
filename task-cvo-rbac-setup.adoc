@@ -57,10 +57,13 @@ Utilisez ces attributions de rôles lorsqu’un utilisateur doit administrer les
 | Portée | Rôle de la plateforme | Rôle Cloud Volumes ONTAP | Recommandation 
 
 
-| Organisation | Administrateur de l'organisation | Opérateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console (y compris les paramètres de l'agent de la NetApp Console) et gérer les systèmes Cloud Volumes ONTAP 
+| Organisation | Administrateur de l'organisation | Administrateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console (y compris les paramètres de l'agent de la NetApp Console) et gérer les systèmes Cloud Volumes ONTAP 
 
 
 | Dossier ou projet | Administrateur de dossier ou de projet | Administrateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console dans un dossier ou un projet particulier et administrer les systèmes Cloud Volumes ONTAP 
+
+
+| Dossier ou projet | Administrateur de dossier ou de projet | Contributeur de Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console dans un dossier ou un projet particulier et gérer les systèmes Cloud Volumes ONTAP 
 
 
 | Dossier ou projet | Administrateur de dossier ou de projet | Opérateur Cloud Volumes ONTAP | Lorsqu'un utilisateur doit administrer les ressources de la NetApp Console dans un dossier ou un projet particulier et gérer les systèmes Cloud Volumes ONTAP 
