@@ -21,7 +21,7 @@ Vous gérez les informations d'identification AWS et les abonnements Marketplace
 [[initial-aws-credentials]]
 == Informations d'identification AWS initiales
 
-Lorsque vous déployez un agent Console depuis la Console, vous devez fournir l'ARN d'un rôle IAM ou les clés d'accès d'un utilisateur IAM. La méthode d'authentification doit disposer des autorisations nécessaires pour déployer l'agent Console dans AWS. Les autorisations requises sont listées dans le link:task-install-agent-aws-console.html#aws-permissions-agent["Politique de déploiement d'agents pour AWS"].
+Lorsque vous déployez un Console agent depuis la Console, vous pouvez laisser la Console créer un rôle IAM pour vous, ou vous pouvez fournir l'ARN d'un rôle IAM ou les clés d'accès d'un utilisateur IAM. La méthode d'authentification doit disposer des autorisations nécessaires pour déployer le Console agent dans AWS. Les autorisations requises sont répertoriées dans link:task-install-agent-aws-console.html#aws-permissions-agent["Autorisations de déploiement de l’agent pour AWS"].
 
 Lorsque la Console lance l'agent Console dans AWS, elle crée un rôle IAM et un profil pour l'agent. Elle associe également une stratégie qui accorde à l'agent Console les autorisations nécessaires pour gérer les ressources et les processus au sein de ce compte AWS. link:reference-permissions-aws.html["Examinez comment l'agent utilise les autorisations"].
 

@@ -1,17 +1,27 @@
-= 
+= Résolution des problèmes liés à l’échec du déploiement de l’agent Console
 :allow-uri-read: 
 
 
-Si vous avez sélectionné la case à cocher *Valider la configuration de l'agent* sur la page *Réviser*, la console vérifie la configuration de l'agent de la console après sa création.  Si la console ne parvient pas à déployer l’agent, elle fournit un rapport téléchargeable pour vous aider à résoudre le problème.
 
 
-NOTE: Si la console déploie correctement l'agent, elle ne génère pas de rapport et une boîte de dialogue de confirmation s'affiche pour vérifier un déploiement réussi.
+[[troubleshoot-a-failed-console-agent-deployment]]
+[[troubleshoot-agent-deployment]]
+== Résolution des problèmes liés à l’échec du déploiement de l’agent Console
+
+Utilisez le rapport de déploiement pour identifier ce qui a bloqué le déploiement de l'agent Console, puis réessayez.
+
+La Console fournit un rapport uniquement si la case à cocher *Validate agent configuration* a été sélectionnée. Si le déploiement réussit, aucun rapport n'est généré.
 
 .Étapes
-. Dans la boîte de dialogue *Échec du déploiement de l'agent*, sélectionnez *Télécharger le rapport* pour télécharger un fichier PDF contenant le rapport de validation.
-. Vous pouvez également sélectionner *Recommencer* pour revenir à l'assistant *Déployer l'agent* et réessayer.
+. Dans la boîte de dialogue *Échec du déploiement de l'agent*, sélectionnez *Télécharger le rapport*.
 +
-Vous devez recommencer l’ensemble du processus si vous souhaitez essayer de déployer à nouveau l’agent.
+La Console télécharge un fichier PDF contenant le rapport de validation.
 
-. Accéder au rapport et aux journaux depuis l'hôte de l'agent de la console
+. Examinez le rapport et corrigez les problèmes qu'il recense.
+. Dans la boîte de dialogue, sélectionnez *Recommencer*, puis effectuez de nouveau le déploiement.
++
+Vous devez recommencer tout le processus pour réessayer.
 
+
+
+link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]

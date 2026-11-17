@@ -535,7 +535,28 @@ La console prépare l'agent en 10 minutes environ. Restez sur la page jusqu’à
 .Résultat
 Une fois le processus terminé, l’agent de la console peut être utilisé à partir de la console.
 
-
-NOTE: Si le déploiement échoue, vous pouvez télécharger un rapport et des journaux depuis la console pour vous aider à résoudre les problèmes.link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]
-
 Si vous disposez d’un stockage Blob Azure dans le même compte Azure où vous avez créé l’agent de console, vous verrez le stockage Blob Azure apparaître automatiquement sur la page *Systèmes*. https://docs.netapp.com/us-en/bluexp-blob-storage/index.html["Découvrez comment gérer le stockage Azure Blob depuis la NetApp Console"^]
+
+
+
+[[troubleshoot-a-failed-console-agent-deployment]]
+[[troubleshoot-agent-deployment]]
+== Résolution des problèmes liés à l’échec du déploiement de l’agent Console
+
+Utilisez le rapport de déploiement pour identifier ce qui a bloqué le déploiement de l'agent Console, puis réessayez.
+
+La Console fournit un rapport uniquement si la case à cocher *Validate agent configuration* a été sélectionnée. Si le déploiement réussit, aucun rapport n'est généré.
+
+.Étapes
+. Dans la boîte de dialogue *Échec du déploiement de l'agent*, sélectionnez *Télécharger le rapport*.
++
+La Console télécharge un fichier PDF contenant le rapport de validation.
+
+. Examinez le rapport et corrigez les problèmes qu'il recense.
+. Dans la boîte de dialogue, sélectionnez *Recommencer*, puis effectuez de nouveau le déploiement.
++
+Vous devez recommencer tout le processus pour réessayer.
+
+
+
+link:task-troubleshoot-agent.html#troubleshoot-installation["Découvrez comment résoudre les problèmes d’installation."]

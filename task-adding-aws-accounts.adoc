@@ -203,7 +203,7 @@ Reportez-vous à link:https://docs.aws.amazon.com/IAM/latest/UserGuide/access_po
 ** Créez une politique qui inclut les autorisations requises pour créer un agent de console.
 +
 *** https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["Afficher les autorisations nécessaires pour FSx pour ONTAP"^]
-*** link:task-install-agent-aws-console.html#aws-permissions-agent["Afficher la politique de déploiement de l'agent"]
+*** link:task-install-agent-aws-console.html#aws-permissions-assume-role-keys["Afficher la politique de déploiement de l'agent"]
 
 
 
